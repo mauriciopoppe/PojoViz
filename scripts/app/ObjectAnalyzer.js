@@ -3,32 +3,15 @@ define(['util/HashMap', 'util/hashKey',
   var defaultObjects = [
     Object, Function,
     Array, Date, Boolean, Number, Math, String, RegExp, JSON,
-    window.location
-    ],
+    // window
+  ],
       // a map of $$hashKey: value objects
       registeredObjects = new HashMap(),
       l = Infinity;
 
   function registerConstructorsAndPrototypes(objects) {
-    var name;
-    function getName(obj) {
-      var name = obj.name,
-          matchRE = obj.toString().match(/^\[object (\S*?)\]/);
-
-      name = name || (matchRE && matchRE[1]);
-      name = name || _.uniqueId();
-      return name;
-    }
-
     objects.forEach(function (obj) {
-      Object.defineProperty(obj, hashKey.hiddenKey, {
-        value: getName(obj)
-      });
-      if (obj.hasOwnProperty('prototype')) {
-        Object.defineProperty(obj.prototype, hashKey.hiddenKey, {
-          value: getName(obj) + '-prototype'
-        });
-      }
+      hashKey.createHashKeysFor(obj);
     });
   }
 
@@ -54,6 +37,7 @@ define(['util/HashMap', 'util/hashKey',
         try {
           r = good && typeof obj[v] === 'object';
         } catch (e) {
+          r = false;
           console.log(e);
         } finally {
           return r;
@@ -61,7 +45,12 @@ define(['util/HashMap', 'util/hashKey',
       }
       return good;
     }).map(function (v) {
-      var type = obj[v] ? typeof obj[v] : '' + obj[v];
+      var type;
+      try {
+        type = obj[v] ? typeof obj[v] : '' + obj[v];
+      } catch(e) {
+        type = 'null';
+      }
       return {
         name: v,
         cls: hashKey(obj),

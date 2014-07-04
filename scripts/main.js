@@ -19,7 +19,7 @@ requirejs(['lib/lodash', 'ObjectAnalyzer', 'dagre', 'Canvas'],
 
   var canvas,
       oa = ObjectAnalyzer
-        .levels(2)
+        // .levels(10)
         .init();
 
   // register objects
@@ -61,13 +61,33 @@ requirejs(['lib/lodash', 'ObjectAnalyzer', 'dagre', 'Canvas'],
 
     // data
     var nodes = [],
-        edges = [];
+        edges = [],
+        center = {x: 0, y: 0},
+        mn = {x: Infinity, y: Infinity},
+        mx = {x: -Infinity, y: -Infinity},
+        total = g.nodes().length;
     layout.eachNode(function (k, layoutInfo) {
+      var x = layoutInfo.x;
+      var y = layoutInfo.y;
+
       node = g.node(k);
-      node.x = layoutInfo.x;
-      node.y = layoutInfo.y;
+      node.x = x;
+      node.y = y;
+
+      center.x += x;
+      center.y += y;
+      mn.x = Math.min(mn.x, x);
+      mn.y = Math.min(mn.y, y);
+      mx.x = Math.max(mx.x, x);
+      mx.y = Math.max(mx.y, y);
+
       nodes.push(node);
     });
+
+    center.x /= total;
+    center.y /= total;
+
+    // console.log(cx, cy, mn, mx);
 
     _.forOwn(registeredObjects, function (v, k) {
       ObjectAnalyzer.getLinkDetails(v).forEach(function (info) {
@@ -79,18 +99,26 @@ requirejs(['lib/lodash', 'ObjectAnalyzer', 'dagre', 'Canvas'],
 
     return {
       edges: edges,
-      nodes: nodes
+      nodes: nodes,
+      center: center,
+      mn: mn,
+      mx: mx
     };
   }
 
   // render
   function render() {
+    var t = new Date();
     var data = process();
+    console.log('process: ' + (new Date() - t));
+    
+    t = new Date();
     if (canvas) {
       canvas.destroy();
     }
-    canvas = new Canvas(data.nodes, data.edges);
+    canvas = new Canvas(data);
     canvas.render();
+    console.log('render: ' + (new Date() - t));
   }
 
   window.dw = {

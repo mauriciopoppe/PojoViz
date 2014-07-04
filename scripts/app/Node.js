@@ -32,7 +32,7 @@ define(['lib/lodash', 'lib/d3', 'util/d3utils', 'Property'],
         .append('text')
           .text(function (d) {
             var name = d.label
-              .match(/\S*?-(\w*)/)[1]
+              .match(/\S*?-([\w-]*)/)[1]
               .replace('-', '.');
             return name;
           });

@@ -67,10 +67,10 @@ define(['lib/d3', 'util/d3utils', 'lib/lodash'],
           return d.name;
         })
         .on('click', function (d, i) {
-          var link = d.cls.match(/\S*?-(\w*)/);
-          console.log(link);
-          window.open('https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/' +
-            link[1] + '/' + d.name);
+          var link = d.cls.match(/\S*?-([\w-\.]*)/);
+          console.log(d, link);
+          window.open('https://developer.mozilla.org/en-US/search?q=' +
+            link[1] + ' ' + d.name);
         });
 
       propertyEnter
@@ -95,7 +95,7 @@ define(['lib/d3', 'util/d3utils', 'lib/lodash'],
           var text = d3
             .select(this.parentNode)
             .select('text');
-          return text.property('clientWidth') + 5;
+          return text.property('clientWidth') + 3;
         });
 
       propertyEnter.each(function (d) {

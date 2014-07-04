@@ -10,6 +10,12 @@
   stroke-width: 8px;
 }
 
+svg.canvas {
+  &.dragged {
+    cursor: move;
+  }
+}
+
 .dw-node {
   .node-background {
     fill: white;
@@ -27,6 +33,18 @@
 
       &:hover {
         cursor: pointer;
+      }
+
+      &.dw-__proto__ {
+        rect {
+          fill: purple;
+          fill-opacity: 0.15;
+          stroke-dasharray: 2;
+        }
+        text {
+          stroke-dasharray: 1;
+          fill: purple;
+        }
       }
 		}
 	}

@@ -4,12 +4,12 @@ define(['lib/d3', 'lib/lodash', 'util/d3utils', 'Node'],
   var prefix = utils.prefixer;
   var transformProperty = utils.transformProperty;
 
-  function Canvas(nodes, edges) {
+  function Canvas(data) {
     this.id = _.uniqueId();
-    this.createRoot();
+    this.createRoot(data.center, data.mn, data.mx);
     this.set({
-      nodes: nodes,
-      edges: edges
+      nodes: data.nodes,
+      edges: data.edges
     });
   }
 
@@ -19,7 +19,7 @@ define(['lib/d3', 'lib/lodash', 'util/d3utils', 'Node'],
       .remove();
   };
 
-  Canvas.prototype.createRoot = function() {
+  Canvas.prototype.createRoot = function(center, mn, mx) {
     var me = this;
 
     function redraw() {
@@ -34,13 +34,30 @@ define(['lib/d3', 'lib/lodash', 'util/d3utils', 'Node'],
       );
     }
 
+    function zoomBehavior(type) {
+      var start = type === 'start';
+      return function () {
+        d3.select(this).classed('dragged', start);
+      };
+    }
+
+    var scale = window.innerWidth / (mx.x - mn.x),
+        translate = [-center.x, -center.y];
+
     var zoom = d3.behavior.zoom()
-      .on('zoom', redraw);
+      .on('zoomstart', zoomBehavior('start'))
+      .on('zoom', redraw)
+      .on('zoomend', zoomBehavior('end'))
+      .scale(scale);
+      // .translate(translate);
 
     this.root = svg
       .call(zoom)
       .append('g')
-        .attr('class', 'root-' + this.id);
+        .attr('class', 'root-' + this.id)
+        .attr('transform', utils.transform({
+          scale: [scale]
+        }));
   };
 
   Canvas.prototype.set = function(obj, render) {
@@ -77,10 +94,14 @@ define(['lib/d3', 'lib/lodash', 'util/d3utils', 'Node'],
     })
     .target(function(d) {
       var to = me.root.select('.' + prefix(d.toHash)),
-          toData = to.datum(),
-          bbox = to.node().getBBox();
+          toData, bbox;
+      if (!to.node()) {
+        debugger;
+      }
+      toData = to.datum();
+      bbox = to.node().getBBox();
       return {
-        x: toData.y,// + bbox.height / 2,
+        x: toData.y + 10,// + bbox.height / 2,
         y: toData.x// + bbox.width / 2
       };
     })

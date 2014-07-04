@@ -74,33 +74,49 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 
 /* line 14, ../sass/screen.scss */
+svg.canvas.dragged {
+  cursor: move;
+}
+
+/* line 20, ../sass/screen.scss */
 .dw-node .node-background {
   fill: white;
   stroke: lightgrey;
   stroke-width: 2px;
 }
-/* line 24, ../sass/screen.scss */
+/* line 30, ../sass/screen.scss */
 .dw-node .dw-body .dw-property .dw-property-background {
   fill: white;
 }
-/* line 28, ../sass/screen.scss */
+/* line 34, ../sass/screen.scss */
 .dw-node .dw-body .dw-property:hover {
   cursor: pointer;
 }
+/* line 39, ../sass/screen.scss */
+.dw-node .dw-body .dw-property.dw-__proto__ rect {
+  fill: purple;
+  fill-opacity: 0.15;
+  stroke-dasharray: 2;
+}
+/* line 44, ../sass/screen.scss */
+.dw-node .dw-body .dw-property.dw-__proto__ text {
+  stroke-dasharray: 1;
+  fill: purple;
+}
 
-/* line 36, ../sass/screen.scss */
+/* line 54, ../sass/screen.scss */
 rect.dw-string {
   stroke: red;
 }
-/* line 39, ../sass/screen.scss */
+/* line 57, ../sass/screen.scss */
 rect.dw-number {
   stroke: blue;
 }
-/* line 42, ../sass/screen.scss */
+/* line 60, ../sass/screen.scss */
 rect.dw-function {
   stroke: green;
 }
-/* line 45, ../sass/screen.scss */
+/* line 63, ../sass/screen.scss */
 rect.dw-object {
   stroke: orange;
 }

@@ -1,0 +1,21 @@
+{
+	"SublimeLinter":
+	{
+		"linters":
+		{
+			"jshint":
+			{
+				"@disable": false,
+				"args": [],
+				"excludes": []
+			}
+		}
+	},
+	"folders":
+	[
+		{
+			"follow_symlinks": true,
+			"path": "."
+		}
+	]
+}

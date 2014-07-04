@@ -1,0 +1,6 @@
+# Algo
+
+- Grab the objects to analyze
+- Grab the properties (getPrototypeOf)
+- Create the layout
+- draw the objects

@@ -111,11 +111,9 @@ define(['lib/d3', 'lib/lodash', 'util/d3utils', 'Node'],
 
     function mouseEvent(type) {
       var over = type === 'over';
-      return function () {
+      return function (d) {
         d3.select(this)
-          .transition()
-          .duration(200)
-          .attr('stroke', over ? 'purple' : 'lightgray');
+          .classed('selected', over);
       };
     }
 
@@ -123,7 +121,13 @@ define(['lib/d3', 'lib/lodash', 'util/d3utils', 'Node'],
         .data(edges)
       .enter()
         .append('path')
-        .attr('class', 'link')
+        .attr('class', function (d) {
+          return [
+            prefix('to', d.toHash),
+            prefix('from', d.fromHash),
+            prefix('link')
+          ].join(' ');
+        })
         .attr('stroke', 'lightgray')
         .attr('stroke-opacity', 0.3)
         .attr('d', diagonal)

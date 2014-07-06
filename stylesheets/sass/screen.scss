@@ -10,9 +10,16 @@
   font-family: 'Roboto', sans-serif;
 }
 
-.link {
+.pv-link {
+  @include transition-property(stroke);
+  @include transition-duration(0.2s);
+
   fill: none;
   stroke-width: 8px;
+  stroke: lightgrey;
+  &.selected {
+    stroke: purple;
+  }
 }
 
 svg.canvas {
@@ -31,7 +38,7 @@ svg.canvas {
 
 .pv-node {
   @include transition-property(opacity);
-  @include transition-duration(0.3s);
+  @include transition-duration(0.2s);
 
   .node-background {
     fill: white;

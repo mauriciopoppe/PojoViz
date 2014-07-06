@@ -11,6 +11,26 @@ define(['lib/lodash', 'lib/d3', 'util/d3utils', 'Property',
       // create
       var enter = selection.enter();
 
+      function groupBehavior(type) {
+        var over = type === 'over';
+        return function (d, i) {
+          // hide all
+          parent.opacityToggle(over);
+
+          // select links
+          d3.selectAll('.' + prefix('to', d.label))
+            .classed('selected', over);
+
+          // select nodes
+          d.predecessors
+            .concat([d.label])
+            .forEach(function (v) {
+              d3.selectAll('.' + prefix(v))
+                .classed('selected', over);
+            });
+        };
+      };
+
       var nodeEnter = enter
         .append('g')
         .attr('class', function (d) {
@@ -18,31 +38,15 @@ define(['lib/lodash', 'lib/d3', 'util/d3utils', 'Property',
         })
         .attr('transform', function (d) {
           return utils.translate(d.x, d.y);
-        });
-
-      function rectBehavior(type) {
-        var over = type === 'over';
-        return function (d, i) {
-          // hide all
-          parent.opacityToggle(over);
-
-
-          d.predecessors
-            .concat([d.label])
-            .forEach(function (v) {
-              d3.select('.' + prefix(v))
-                .classed('selected', over);
-            });
-        };
-      };
-
+        })        
+        .on('mouseover', groupBehavior('over'))
+        .on('mouseout', groupBehavior('out'));
+      
       nodeEnter
         .append('rect')
         .attr('rx', 5)
         .attr('ry', 5)
-        .attr('class', 'node-background')
-        .on('mouseover', rectBehavior('over'))
-        .on('mouseout', rectBehavior('out'));
+        .attr('class', 'node-background');
 
       nodeEnter
         .append('g')

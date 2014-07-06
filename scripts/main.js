@@ -13,7 +13,6 @@ requirejs.config({
 });
 
 // app
-window.dw = {};
 requirejs(['lib/lodash', 'ObjectAnalyzer', 'dagre', 'Canvas'],
   function (_, ObjectAnalyzer, dagre, Canvas) {
 
@@ -73,6 +72,7 @@ requirejs(['lib/lodash', 'ObjectAnalyzer', 'dagre', 'Canvas'],
       node = g.node(k);
       node.x = x;
       node.y = y;
+      node.predecessors = g.predecessors(k);
 
       center.x += x;
       center.y += y;
@@ -121,9 +121,9 @@ requirejs(['lib/lodash', 'ObjectAnalyzer', 'dagre', 'Canvas'],
     console.log('render: ' + (new Date() - t));
   }
 
-  window.dw = {
+  window.pojoviz = {
     register: register,
     render: render
   };
-  window.dw.render();
+  window.pojoviz.render();
 });

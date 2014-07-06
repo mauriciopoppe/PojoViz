@@ -2,15 +2,27 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>RTAnalyzer</title>
+	<title>POJO Viz</title>
 	<script data-main="scripts/main.js" src="scripts/require.js"></script>
 	<link rel="stylesheet" href="stylesheets/stylesheets/screen.css">
+
+	<script src="bower_components/platform/platform.js"></script>
+	<link rel="import" href="bower_components/core-scaffold/core-scaffold.html">
 </head>
-<body>
-	
-	<svg class="canvas"></svg>
-	<script>document.write('<script src="http://' + (location.host || 'localhost')
-.split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')
+<body>	
+	<core-scaffold>
+		<core-header-panel navigation flex mode="seamed">
+			<core-menu-theme theme="core-light-theme">
+			</core-menu-theme>
+		</core-header-panel>
+
+		<div tool>
+			POJO Viz
+		</div>
+		<svg class="canvas"></svg>
+	</core-scaffold>
+
+	<!-- <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>'); -->
 </script>
 </body>
 </html>

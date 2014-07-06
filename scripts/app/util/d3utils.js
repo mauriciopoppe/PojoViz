@@ -20,7 +20,7 @@ define(['lib/lodash'], function (_) {
     },
     prefixer: function () {
       var args = [].slice.call(arguments);
-      args.unshift('dw');
+      args.unshift('pv');
       return args.join('-');
     },
     transformProperty: function (v) {

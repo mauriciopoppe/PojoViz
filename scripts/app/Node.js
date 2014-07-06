@@ -1,10 +1,11 @@
-define(['lib/lodash', 'lib/d3', 'util/d3utils', 'Property'],
-  function (_, d3, utils, dwProperty) {
+define(['lib/lodash', 'lib/d3', 'util/d3utils', 'Property',
+    'util/hashKey', 'ObjectAnalyzer'],
+  function (_, d3, utils, pojoVizProperty, hashKey, oa) {
 
   var prefix = utils.prefixer;
   var margin = { top: 0, right: 0, left: 0, bottom: 0 };
 
-  function Node() {
+  function Node(parent) {
 
     function my(selection) {
       // create
@@ -19,16 +20,34 @@ define(['lib/lodash', 'lib/d3', 'util/d3utils', 'Property'],
           return utils.translate(d.x, d.y);
         });
 
+      function rectBehavior(type) {
+        var over = type === 'over';
+        return function (d, i) {
+          // hide all
+          parent.opacityToggle(over);
+
+
+          d.predecessors
+            .concat([d.label])
+            .forEach(function (v) {
+              d3.select('.' + prefix(v))
+                .classed('selected', over);
+            });
+        };
+      };
+
       nodeEnter
         .append('rect')
         .attr('rx', 5)
         .attr('ry', 5)
-        .attr('class', 'node-background');
+        .attr('class', 'node-background')
+        .on('mouseover', rectBehavior('over'))
+        .on('mouseout', rectBehavior('out'));
 
       nodeEnter
         .append('g')
           .attr('class', prefix('title'))
-          .attr('transform', 'translate(20, 20)')
+          .attr('transform', 'translate(20, 25)')
         .append('text')
           .text(function (d) {
             var name = d.label
@@ -46,7 +65,7 @@ define(['lib/lodash', 'lib/d3', 'util/d3utils', 'Property'],
         .append('g')
           .attr('class', prefix('body'));
 
-      var propertyCtor = dwProperty();
+      var propertyCtor = pojoVizProperty();
       propertyCtor.margin(margin);
       bodyEnter.selectAll('g.' + prefix('property'))
         .data(function (d) { return d.properties; })

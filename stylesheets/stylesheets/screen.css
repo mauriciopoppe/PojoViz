@@ -67,56 +67,80 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   display: block;
 }
 
-/* line 8, ../sass/screen.scss */
+/* line 9, ../sass/screen.scss */
+*, *:before, *:after {
+  font-family: 'Roboto', sans-serif;
+}
+
+/* line 13, ../sass/screen.scss */
 .link {
   fill: none;
   stroke-width: 8px;
 }
 
-/* line 14, ../sass/screen.scss */
+/* line 19, ../sass/screen.scss */
 svg.canvas.dragged {
   cursor: move;
 }
+/* line 23, ../sass/screen.scss */
+svg.canvas .pv-nodes-focused .pv-node {
+  opacity: 0.3;
+}
+/* line 25, ../sass/screen.scss */
+svg.canvas .pv-nodes-focused .pv-node.selected {
+  opacity: 1;
+}
 
-/* line 20, ../sass/screen.scss */
-.dw-node .node-background {
+/* line 32, ../sass/screen.scss */
+.pv-node {
+  -webkit-transition-property: opacity;
+  -moz-transition-property: opacity;
+  -o-transition-property: opacity;
+  transition-property: opacity;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+/* line 36, ../sass/screen.scss */
+.pv-node .node-background {
   fill: white;
   stroke: lightgrey;
   stroke-width: 2px;
 }
-/* line 30, ../sass/screen.scss */
-.dw-node .dw-body .dw-property .dw-property-background {
+/* line 46, ../sass/screen.scss */
+.pv-node .pv-body .pv-property .pv-property-background {
   fill: white;
 }
-/* line 34, ../sass/screen.scss */
-.dw-node .dw-body .dw-property:hover {
+/* line 50, ../sass/screen.scss */
+.pv-node .pv-body .pv-property:hover {
   cursor: pointer;
 }
-/* line 39, ../sass/screen.scss */
-.dw-node .dw-body .dw-property.dw-__proto__ rect {
+/* line 55, ../sass/screen.scss */
+.pv-node .pv-body .pv-property.pv-__proto__ rect {
   fill: purple;
   fill-opacity: 0.15;
   stroke-dasharray: 2;
 }
-/* line 44, ../sass/screen.scss */
-.dw-node .dw-body .dw-property.dw-__proto__ text {
+/* line 60, ../sass/screen.scss */
+.pv-node .pv-body .pv-property.pv-__proto__ text {
   stroke-dasharray: 1;
   fill: purple;
 }
 
-/* line 54, ../sass/screen.scss */
-rect.dw-string {
+/* line 70, ../sass/screen.scss */
+rect.pv-string {
   stroke: red;
 }
-/* line 57, ../sass/screen.scss */
-rect.dw-number {
+/* line 73, ../sass/screen.scss */
+rect.pv-number {
   stroke: blue;
 }
-/* line 60, ../sass/screen.scss */
-rect.dw-function {
+/* line 76, ../sass/screen.scss */
+rect.pv-function {
   stroke: green;
 }
-/* line 63, ../sass/screen.scss */
-rect.dw-object {
+/* line 79, ../sass/screen.scss */
+rect.pv-object {
   stroke: orange;
 }

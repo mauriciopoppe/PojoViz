@@ -165,6 +165,9 @@ define(['util/HashMap', 'util/hashKey',
       return links;
     },
     getLinkDetails: function (obj) {
+      if (!obj) {
+        throw new Error('The object must be defined');
+      }
       return getOwnLinks(obj);
     }
   };

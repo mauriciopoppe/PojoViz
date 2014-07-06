@@ -8,7 +8,7 @@ define(['lib/lodash'], function (_) {
     }
     return typeof v + '-' + uid;
   };
-  hashKey.hiddenKey = '$$dwHiddenKey$$';
+  hashKey.hiddenKey = '__pojoVizKey__';
   hashKey.createHashKeysFor = function (obj) {
 
     function getName(obj) {

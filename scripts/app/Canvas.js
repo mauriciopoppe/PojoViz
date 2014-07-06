@@ -1,5 +1,5 @@
 define(['lib/d3', 'lib/lodash', 'util/d3utils', 'Node'],
-    function (d3, _, utils, dwNode) {
+    function (d3, _, utils, pojoVizNode) {
   var svg = d3.select('svg.canvas');
   var prefix = utils.prefixer;
   var transformProperty = utils.transformProperty;
@@ -131,10 +131,15 @@ define(['lib/d3', 'lib/lodash', 'util/d3utils', 'Node'],
         .on('mouseout', mouseEvent('out'));
   };
 
+  Canvas.prototype.opacityToggle = function(decrease) {
+    this.root
+      .classed(prefix('nodes-focused'), decrease);
+  };
+
   Canvas.prototype.renderNodes = function() {
     var nodes = this.nodes;
     
-    var nodeCtor = dwNode();
+    var nodeCtor = pojoVizNode(this);
     nodeCtor.margin({
       top: 10,
       left: 10,

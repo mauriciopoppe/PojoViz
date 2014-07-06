@@ -6,7 +6,8 @@
 .LSOverride
 
 # Icon must end with two \r
-Icon
+Icon
+
 
 # Thumbnails
 ._*
@@ -102,3 +103,5 @@ com_crashlytics_export_strings.xml
 #sftp configuration file
 sftp-config.json
 
+### Bower ###
+bower_components

@@ -4,6 +4,11 @@
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 
 @import "compass/reset";
+@import "compass/css3";
+
+*, *:before, *:after {
+  font-family: 'Roboto', sans-serif;
+}
 
 .link {
   fill: none;
@@ -14,20 +19,31 @@ svg.canvas {
   &.dragged {
     cursor: move;
   }
+  .pv-nodes-focused {
+    .pv-node {
+      opacity: 0.3;
+      &.selected {
+        opacity: 1;
+      }
+    }
+  }
 }
 
-.dw-node {
+.pv-node {
+  @include transition-property(opacity);
+  @include transition-duration(0.3s);
+
   .node-background {
     fill: white;
     stroke: lightgrey;
     stroke-width: 2px;
   }
-  .dw-title {
+  .pv-title {
     
   }
-	.dw-body {
-		.dw-property {
-			.dw-property-background {
+	.pv-body {
+		.pv-property {
+			.pv-property-background {
         fill: white;
       }
 
@@ -35,7 +51,7 @@ svg.canvas {
         cursor: pointer;
       }
 
-      &.dw-__proto__ {
+      &.pv-__proto__ {
         rect {
           fill: purple;
           fill-opacity: 0.15;
@@ -51,16 +67,16 @@ svg.canvas {
 }
 
 rect {
-	&.dw-string {
+	&.pv-string {
 		stroke: red;
 	}
-	&.dw-number {
+	&.pv-number {
 		stroke: blue;
 	}
-	&.dw-function {
+	&.pv-function {
 		stroke: green;
 	}
-	&.dw-object {
+	&.pv-object {
 		stroke: orange;
 	}
 }

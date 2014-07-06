@@ -1,0 +1,29 @@
+{
+  "name": "pojoviz",
+  "version": "0.0.1",
+  "authors": [
+    "Mauricio Poppe <me@maurizzzio.com>"
+  ],
+  "description": "Plain Old Javascript Object Visualization - Visualize your code",
+  "main": "index.html",
+  "moduleType": [
+    "amd"
+  ],
+  "keywords": [
+    "pojo",
+    "d3",
+    "visualization"
+  ],
+  "license": "MIT",
+  "homepage": "pojoviz.maurizzzio.me",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "core-elements": "Polymer/core-elements#~0.3.3"
+  }
+}

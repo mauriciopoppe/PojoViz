@@ -67,12 +67,32 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   display: block;
 }
 
-/* line 9, ../sass/screen.scss */
+/* line 13, ../sass/screen.scss */
 *, *:before, *:after {
   font-family: 'Roboto', sans-serif;
 }
 
-/* line 13, ../sass/screen.scss */
+/* line 19, ../sass/screen.scss */
+body /deep/ core-header-panel[main] {
+  background-color: white;
+}
+/* line 21, ../sass/screen.scss */
+body /deep/ core-header-panel[main] core-toolbar {
+  background-color: #03a9f4;
+}
+
+/* line 26, ../sass/screen.scss */
+.logo {
+  padding: 15px;
+  font-size: 50px;
+  font-weight: 100;
+}
+/* line 30, ../sass/screen.scss */
+.logo .subtitle {
+  font-size: 12px;
+}
+
+/* line 36, ../sass/screen.scss */
 .pv-link {
   -webkit-transition-property: stroke;
   -moz-transition-property: stroke;
@@ -86,25 +106,41 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   stroke-width: 8px;
   stroke: lightgrey;
 }
-/* line 20, ../sass/screen.scss */
+/* line 43, ../sass/screen.scss */
 .pv-link.selected {
-  stroke: purple;
+  stroke: #03a9f4;
+}
+/* line 45, ../sass/screen.scss */
+.pv-link.selected.predecessor {
+  stroke: #e51c23;
+}
+/* line 48, ../sass/screen.scss */
+.pv-link.selected.successor {
+  stroke: #03a9f4;
 }
 
-/* line 26, ../sass/screen.scss */
+/* line 57, ../sass/screen.scss */
 svg.canvas.dragged {
   cursor: move;
 }
-/* line 30, ../sass/screen.scss */
+/* line 61, ../sass/screen.scss */
 svg.canvas .pv-nodes-focused .pv-node {
   opacity: 0.3;
 }
-/* line 32, ../sass/screen.scss */
+/* line 63, ../sass/screen.scss */
 svg.canvas .pv-nodes-focused .pv-node.selected {
   opacity: 1;
 }
+/* line 67, ../sass/screen.scss */
+svg.canvas .pv-nodes-focused .pv-node.predecessor .node-background {
+  stroke: #f9bdbb;
+}
+/* line 72, ../sass/screen.scss */
+svg.canvas .pv-nodes-focused .pv-node.successor .node-background {
+  stroke: #b3e5fc;
+}
 
-/* line 39, ../sass/screen.scss */
+/* line 80, ../sass/screen.scss */
 .pv-node {
   -webkit-transition-property: opacity;
   -moz-transition-property: opacity;
@@ -115,45 +151,51 @@ svg.canvas .pv-nodes-focused .pv-node.selected {
   -o-transition-duration: 0.2s;
   transition-duration: 0.2s;
 }
-/* line 43, ../sass/screen.scss */
+/* line 84, ../sass/screen.scss */
 .pv-node .node-background {
   fill: white;
-  stroke: lightgrey;
+  fill-opacity: 1;
+  stroke-opacity: 1;
+  stroke: #b3e5fc;
   stroke-width: 2px;
 }
-/* line 53, ../sass/screen.scss */
+/* line 97, ../sass/screen.scss */
+.pv-node .pv-body .pv-property .pv-dot {
+  fill: #01579b;
+}
+/* line 101, ../sass/screen.scss */
 .pv-node .pv-body .pv-property .pv-property-background {
   fill: white;
 }
-/* line 57, ../sass/screen.scss */
+/* line 105, ../sass/screen.scss */
 .pv-node .pv-body .pv-property:hover {
   cursor: pointer;
 }
-/* line 62, ../sass/screen.scss */
+/* line 110, ../sass/screen.scss */
 .pv-node .pv-body .pv-property.pv-__proto__ rect {
-  fill: purple;
+  fill: #03a9f4;
   fill-opacity: 0.15;
   stroke-dasharray: 2;
 }
-/* line 67, ../sass/screen.scss */
+/* line 115, ../sass/screen.scss */
 .pv-node .pv-body .pv-property.pv-__proto__ text {
   stroke-dasharray: 1;
-  fill: purple;
+  fill: #03a9f4;
 }
 
-/* line 77, ../sass/screen.scss */
+/* line 125, ../sass/screen.scss */
 rect.pv-string {
   stroke: red;
 }
-/* line 80, ../sass/screen.scss */
+/* line 128, ../sass/screen.scss */
 rect.pv-number {
   stroke: blue;
 }
-/* line 83, ../sass/screen.scss */
+/* line 131, ../sass/screen.scss */
 rect.pv-function {
   stroke: green;
 }
-/* line 86, ../sass/screen.scss */
+/* line 134, ../sass/screen.scss */
 rect.pv-object {
   stroke: orange;
 }

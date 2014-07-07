@@ -103,7 +103,7 @@ define(['lib/d3', 'util/d3utils', 'lib/lodash'],
           d3.select(this)
             .append('circle')
             .attr('r', 4)
-            .attr('fill', 'purple')
+            .attr('class', prefix('dot'))
             .attr('cx', -10)
             .attr('cy', -2)
             .attr('opacity', 1);

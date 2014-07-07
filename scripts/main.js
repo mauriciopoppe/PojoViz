@@ -73,6 +73,7 @@ requirejs(['lib/lodash', 'ObjectAnalyzer', 'dagre', 'Canvas'],
       node.x = x;
       node.y = y;
       node.predecessors = g.predecessors(k);
+      node.successors = g.successors(k);
 
       center.x += x;
       center.y += y;

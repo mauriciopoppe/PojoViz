@@ -8,19 +8,71 @@
 
 	<script src="bower_components/platform/platform.js"></script>
 	<link rel="import" href="bower_components/core-scaffold/core-scaffold.html">
+	<link rel="import" href="bower_components/core-toolbar/core-toolbar.html">
+	<link rel="import" href="bower_components/core-menu/core-menu.html">
+	<link rel="import" href="bower_components/core-item/core-item.html">
+	<link rel="import" href="bower_components/core-animated-pages/core-animated-pages.html">
+	<link rel="import" href="bower_components/core-animated-pages/transitions/slide-from-right.html">
 </head>
-<body>	
-	<core-scaffold>
+<body unresolved>
+	<core-scaffold responsiveWidth="1000px">
 		<core-header-panel navigation flex mode="seamed">
-			<core-menu-theme theme="core-light-theme">
-			</core-menu-theme>
+			<div class="logo">
+				POJO Viz
+				<div class="subtitle middle">
+					Plain Old JavaScript Object Visualization
+				</div>
+			</div>
+			<!-- <div class="" flex> -->
+				<!-- Application -->
+			<!-- </div> -->
+			<core-menu theme="core-light-theme" valueattr="label" selected="App">
+				<core-item icon="exit-to-app" label="app">
+					<a href="#" target="_self"></a>
+				</core-item>
+				<core-item icon="settings" label="settings">
+					<a href="#settings" target="_self"></a>
+				</core-item>
+			</core-menu>
 		</core-header-panel>
 
 		<div tool>
-			POJO Viz
+			<!-- POJO Viz -->
 		</div>
-		<svg class="canvas"></svg>
+		
+		<core-animated-pages
+			transitions="slide-from-right"
+			valueattr="label"
+			selected="settings">
+
+			<svg label="app" class="canvas"></svg>
+
+			<div label="settings">
+		      <div style="background: red">
+		        hello world
+
+		        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod possimus placeat, laboriosam repellendus, culpa alias, accusamus asperiores repellat ipsa provident perspiciatis. Libero cupiditate facilis magnam, praesentium, voluptatum culpa ipsa sit!
+		        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod possimus placeat, laboriosam repellendus, culpa alias, accusamus asperiores repellat ipsa provident perspiciatis. Libero cupiditate facilis magnam, praesentium, voluptatum culpa ipsa sit!
+		        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod possimus placeat, laboriosam repellendus, culpa alias, accusamus asperiores repellat ipsa provident perspiciatis. Libero cupiditate facilis magnam, praesentium, voluptatum culpa ipsa sit!
+		        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod possimus placeat, laboriosam repellendus, culpa alias, accusamus asperiores repellat ipsa provident perspiciatis. Libero cupiditate facilis magnam, praesentium, voluptatum culpa ipsa sit!
+		        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod possimus placeat, laboriosam repellendus, culpa alias, accusamus asperiores repellat ipsa provident perspiciatis. Libero cupiditate facilis magnam, praesentium, voluptatum culpa ipsa sit!
+		      </div>
+		    </div>
+		</core-animated-pages>
 	</core-scaffold>
+
+	<script>
+		(function () {
+			var x = document.querySelector('core-header-panel core-menu');
+			var pages = document.querySelector('core-animated-pages');
+			x.addEventListener('core-select', function (e) {
+				var detail = e.detail;
+				if (detail.isSelected) {
+					pages.selected = detail.item.label;
+				}
+			});
+		})();
+	</script>
 
 	<!-- <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>'); -->
 </script>

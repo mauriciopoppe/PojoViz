@@ -5,11 +5,34 @@
 
 @import "compass/reset";
 @import "compass/css3";
+@import "base";
+// @import "palette/deepPurple";
+@import "palette/lightBlue";
+@import "palette/red";
 
 *, *:before, *:after {
   font-family: 'Roboto', sans-serif;
 }
 
+// polymer style fix
+body /deep/ { 
+  core-header-panel[main] {
+    background-color: white;
+    core-toolbar {
+      background-color: $blue-500;
+    }
+  }
+}
+.logo {
+  padding: 15px;
+  font-size: 50px;
+  font-weight: 100;
+  .subtitle {
+    font-size: 12px;
+  }
+}
+
+// app
 .pv-link {
   @include transition-property(stroke);
   @include transition-duration(0.2s);
@@ -18,11 +41,19 @@
   stroke-width: 8px;
   stroke: lightgrey;
   &.selected {
-    stroke: purple;
+    stroke: $blue-500;
+    &.predecessor {
+      stroke: $red-500;
+    }
+    &.successor {
+      stroke: $blue-500;
+    }
   }
 }
 
 svg.canvas {
+  // background-color: $c50;
+
   &.dragged {
     cursor: move;
   }
@@ -32,6 +63,16 @@ svg.canvas {
       &.selected {
         opacity: 1;
       }
+      &.predecessor {
+        .node-background {
+          stroke: $red-100;
+        }
+      }
+      &.successor {
+        .node-background {
+          stroke: $blue-100;
+        }
+      }
     }
   }
 }
@@ -39,10 +80,12 @@ svg.canvas {
 .pv-node {
   @include transition-property(opacity);
   @include transition-duration(0.2s);
-
+  
   .node-background {
     fill: white;
-    stroke: lightgrey;
+    fill-opacity: 1;
+    stroke-opacity: 1;
+    stroke: $blue-100;
     stroke-width: 2px;
   }
   .pv-title {
@@ -50,6 +93,11 @@ svg.canvas {
   }
 	.pv-body {
 		.pv-property {
+
+      .pv-dot {
+        fill: $blue-900;
+      }
+
 			.pv-property-background {
         fill: white;
       }
@@ -60,13 +108,13 @@ svg.canvas {
 
       &.pv-__proto__ {
         rect {
-          fill: purple;
+          fill: $blue-500;
           fill-opacity: 0.15;
           stroke-dasharray: 2;
         }
         text {
           stroke-dasharray: 1;
-          fill: purple;
+          fill: $blue-500;
         }
       }
 		}
@@ -87,3 +135,19 @@ rect {
 		stroke: orange;
 	}
 }
+
+// section {
+//   & > div {
+//     height: 100%;
+//     color: $red-500;
+//   }
+// }
+
+// core-animated-pages {
+//   position: absolute;
+//   right: 0;
+//   bottom: 0;
+//   left: 0;
+//   font-size: 72px;
+//   // overflow: hidden;
+// }

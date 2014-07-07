@@ -11,7 +11,7 @@ define(['lib/lodash', 'lib/d3', 'util/d3utils', 'Property',
       // create
       var enter = selection.enter();
 
-      function groupBehavior(type) {
+      function groupMouseBehavior(type) {
         var over = type === 'over';
         return function (d, i) {
           // hide all
@@ -19,14 +19,26 @@ define(['lib/lodash', 'lib/d3', 'util/d3utils', 'Property',
 
           // select links
           d3.selectAll('.' + prefix('to', d.label))
+            .classed('selected predecessor', over);
+          d3.selectAll('.' + prefix('from', d.label))
+            .classed('selected successor', over);
+
+          // select current node
+          d3.select('.' + prefix(d.label))
             .classed('selected', over);
 
-          // select nodes
+          // select predecessor nodes
           d.predecessors
-            .concat([d.label])
             .forEach(function (v) {
               d3.selectAll('.' + prefix(v))
-                .classed('selected', over);
+                .classed('selected predecessor', over);
+            });
+
+          // select successor nodes
+          d.successors
+            .forEach(function (v) {
+              d3.selectAll('.' + prefix(v))
+                .classed('selected successor', over);
             });
         };
       };
@@ -39,8 +51,8 @@ define(['lib/lodash', 'lib/d3', 'util/d3utils', 'Property',
         .attr('transform', function (d) {
           return utils.translate(d.x, d.y);
         })        
-        .on('mouseover', groupBehavior('over'))
-        .on('mouseout', groupBehavior('out'));
+        .on('mouseover', groupMouseBehavior('over'))
+        .on('mouseout', groupMouseBehavior('out'));
       
       nodeEnter
         .append('rect')

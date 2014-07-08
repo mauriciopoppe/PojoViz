@@ -73,7 +73,7 @@ define(['lib/d3', 'util/d3utils', 'lib/lodash'],
             link[1] + ' ' + d.name);
         });
 
-      propertyEnter
+      var rectWrap = propertyEnter
         .insert('rect', 'text')
         .attr('class', function (d) {
           return [
@@ -84,19 +84,25 @@ define(['lib/d3', 'util/d3utils', 'lib/lodash'],
         .attr('rx', 3)
         .attr('ry', 3)
         .attr('x', -2)
-        .attr('y', -9)
-        .attr('height', function (d) {
-          var text = d3
-            .select(this.parentNode)
-            .select('text');
-          return text.property('clientHeight');
-        })
-        .attr('width', function (d) {
-          var text = d3
-            .select(this.parentNode)
-            .select('text');
-          return text.property('clientWidth') + 3;
+        .attr('y', -9);
+
+      window.setTimeout(function () {
+        rectWrap.each(function (d) {
+          var me = d3.select(this)
+            .attr('height', function (d) {
+              var text = d3
+                .select(this.parentNode)
+                .select('text');
+              return text.property('clientHeight');
+            })
+            .attr('width', function (d) {
+              var text = d3
+                .select(this.parentNode)
+                .select('text');
+              return text.property('clientWidth') + 3;
+            });
         });
+      }, 0);      
 
       propertyEnter.each(function (d) {
         if (d.type === 'object') {

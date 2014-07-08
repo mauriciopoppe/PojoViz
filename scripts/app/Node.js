@@ -1,6 +1,6 @@
 define(['lib/lodash', 'lib/d3', 'util/d3utils', 'Property',
-    'util/hashKey', 'ObjectAnalyzer'],
-  function (_, d3, utils, pojoVizProperty, hashKey, oa) {
+    'util/hashKey'],
+  function (_, d3, utils, pojoVizProperty, hashKey) {
 
   var prefix = utils.prefixer;
   var margin = { top: 0, right: 0, left: 0, bottom: 0 };
@@ -41,7 +41,7 @@ define(['lib/lodash', 'lib/d3', 'util/d3utils', 'Property',
                 .classed('selected successor', over);
             });
         };
-      };
+      }
 
       var nodeEnter = enter
         .append('g')
@@ -50,7 +50,7 @@ define(['lib/lodash', 'lib/d3', 'util/d3utils', 'Property',
         })
         .attr('transform', function (d) {
           return utils.translate(d.x, d.y);
-        })        
+        })
         .on('mouseover', groupMouseBehavior('over'))
         .on('mouseout', groupMouseBehavior('out'));
       
@@ -88,15 +88,18 @@ define(['lib/lodash', 'lib/d3', 'util/d3utils', 'Property',
         .call(propertyCtor);
 
       // update the height & width of the rects
-      selection.each(function (d, i) {
-        var el = d3.select(this),
-            rect = el.select('rect.node-background');
+      // async
+      window.setTimeout(function () {
+        selection.each(function (d, i) {
+          var el = d3.select(this),
+              rect = el.select('rect.node-background');
 
-        var bbox = el.node().getBBox();
-        rect
-          .attr('width', bbox.width + 10 * 2)
-          .attr('height', bbox.height + 10);
-      });
+          var bbox = el.node().getBBox();
+          rect
+            .attr('width', bbox.width + 10 * 2)
+            .attr('height', bbox.height + 10);
+        });
+      }, 0);
     }
     my.margin = function (m) {
       if (!m) {

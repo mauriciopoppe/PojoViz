@@ -14,16 +14,35 @@
   font-family: 'Roboto', sans-serif;
 }
 
+.no-padding {
+  padding: 0!important;
+} 
+
 // polymer style fix
-body /deep/ { 
-  core-header-panel[main] {
-    background-color: white;
-    core-toolbar {
-      background-color: $blue-500;
+body { 
+  core-animated-pages {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    section {
+      padding: 40px;      
+    }
+  }
+
+  /deep/ {
+    core-header-panel[main] {
+      background-color: white;
+      core-toolbar {
+        background-color: $blue-500;
+      }
     }
   }
 }
 .logo {
+  text-align: center;
   padding: 15px;
   font-size: 50px;
   font-weight: 100;
@@ -134,6 +153,15 @@ rect {
 	&.pv-object {
 		stroke: orange;
 	}
+}
+
+pojoviz-settings::shadow {
+  paper-slider::shadow {
+    #sliderKnobInner, #sliderKnobInner::before, 
+    #sliderBar::shadow #activeProgress {
+      background-color: $blue-500;
+    }
+  }
 }
 
 // section {

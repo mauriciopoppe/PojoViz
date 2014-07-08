@@ -10,11 +10,14 @@
 	<link rel="import" href="bower_components/core-scaffold/core-scaffold.html">
 	<link rel="import" href="bower_components/core-toolbar/core-toolbar.html">
 	<link rel="import" href="bower_components/core-menu/core-menu.html">
+	<link rel="import" href="bower_components/core-menu/core-submenu.html">
 	<link rel="import" href="bower_components/core-item/core-item.html">
 	<link rel="import" href="bower_components/core-animated-pages/core-animated-pages.html">
-	<link rel="import" href="bower_components/core-animated-pages/transitions/slide-from-right.html">
+	<link rel="import" href="bower_components/core-animated-pages/transitions/cross-fade.html">
+
+	<link rel="import" href="elements/settings.html">
 </head>
-<body unresolved>
+<body unresolved fullbleed>
 	<core-scaffold responsiveWidth="1000px">
 		<core-header-panel navigation flex mode="seamed">
 			<div class="logo">
@@ -26,11 +29,27 @@
 			<!-- <div class="" flex> -->
 				<!-- Application -->
 			<!-- </div> -->
-			<core-menu theme="core-light-theme" valueattr="label" selected="App">
-				<core-item icon="exit-to-app" label="app">
-					<a href="#" target="_self"></a>
-				</core-item>
-				<core-item icon="settings" label="settings">
+			<core-menu theme="core-light-theme"
+				valueattr="label"
+				selected="Schemas">
+				
+				<core-submenu			
+					icon="exit-to-app"
+					label="Schemas">
+					<core-item data-value="render:builtIn" label="built-in objects">
+						<a href="#" target="_self"></a>
+					</core-item>
+				
+					<core-item data-value="render:win" label="window">
+						<a href="#" target="_self"></a>
+					</core-item>
+
+					<core-item data-value="render:user" label="user">
+						<a href="#" target="_self"></a>
+					</core-item>
+				</core-submenu>
+				
+				<core-item data-value="settings" icon="settings" label="Settings">
 					<a href="#settings" target="_self"></a>
 				</core-item>
 			</core-menu>
@@ -41,34 +60,49 @@
 		</div>
 		
 		<core-animated-pages
-			transitions="slide-from-right"
-			valueattr="label"
-			selected="settings">
+			transitions="cross-fade"
+			valueattr="label">
 
-			<svg label="app" class="canvas"></svg>
-
-			<div label="settings">
-		      <div style="background: red">
-		        hello world
-
-		        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod possimus placeat, laboriosam repellendus, culpa alias, accusamus asperiores repellat ipsa provident perspiciatis. Libero cupiditate facilis magnam, praesentium, voluptatum culpa ipsa sit!
-		        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod possimus placeat, laboriosam repellendus, culpa alias, accusamus asperiores repellat ipsa provident perspiciatis. Libero cupiditate facilis magnam, praesentium, voluptatum culpa ipsa sit!
-		        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod possimus placeat, laboriosam repellendus, culpa alias, accusamus asperiores repellat ipsa provident perspiciatis. Libero cupiditate facilis magnam, praesentium, voluptatum culpa ipsa sit!
-		        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod possimus placeat, laboriosam repellendus, culpa alias, accusamus asperiores repellat ipsa provident perspiciatis. Libero cupiditate facilis magnam, praesentium, voluptatum culpa ipsa sit!
-		        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod possimus placeat, laboriosam repellendus, culpa alias, accusamus asperiores repellat ipsa provident perspiciatis. Libero cupiditate facilis magnam, praesentium, voluptatum culpa ipsa sit!
-		      </div>
-		    </div>
+			<section label="app" class="no-padding">
+				<div class="canvas-wrapper" cross-fade>
+					<svg class="canvas"></svg>
+				</div>
+			</section>
+			
+			<section label="settings">
+				<div class="wrapper" cross-fade>
+			    	<pojoviz-settings></pojoviz-settings>
+		    	</div>
+		    </section>
 		</core-animated-pages>
 	</core-scaffold>
 
 	<script>
 		(function () {
-			var x = document.querySelector('core-header-panel core-menu');
+			var schemas = document.querySelector('core-header-panel core-menu');
 			var pages = document.querySelector('core-animated-pages');
-			x.addEventListener('core-select', function (e) {
-				var detail = e.detail;
+			var scaffold = document.querySelector('core-scaffold');
+
+			schemas.addEventListener('core-select', function (e) {
+				var detail = e.detail,
+					value,
+					action;
 				if (detail.isSelected) {
-					pages.selected = detail.item.label;
+					// doesn't have a submenu
+					if (!detail.item.$.submenu) {
+						value = detail.item.dataset.value.split(':');
+						action = value[0];
+						if (action === 'render') {
+							require(['../pojoviz'], function (pojoviz) {
+								pojoviz.setSelectedHash(value[1]);
+								pojoviz.render();
+							});
+							pages.selected = 'app';
+						} else {
+							pages.selected = 'settings';
+						}
+						scaffold.closeDrawer();
+					}
 				}
 			});
 		})();

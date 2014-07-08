@@ -13,15 +13,15 @@ define(['lib/lodash'], function (_) {
 
     function getName(obj) {
       var name, matchRE;
-      name = obj.name;
+      name = typeof obj.name === 'string' ?
+        obj.name : _.uniqueId();
       try {
         matchRE = obj.toString().match(/^\[object (\S*?)\]/);        
       } catch(e) {
         console.log(e);
       }
 
-      name = name || (matchRE && matchRE[1]);
-      name = name || _.uniqueId();
+      name = (matchRE && matchRE[1]) || name;
       name = name.replace(/[\. ]/g, '-');
       return name;
     }

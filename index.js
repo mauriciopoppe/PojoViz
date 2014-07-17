@@ -1,6 +1,5 @@
-var connect = require('connect'),
-    directory = 'public/';
-
-connect()
-    .use(connect.static(directory))
-    .listen(80);
+var connect = require('connect');
+var serveStatic = require('serve-static');
+var app = connect();
+app.use(serveStatic('public'));
+app.listen(3000);

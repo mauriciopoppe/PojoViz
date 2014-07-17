@@ -7,6 +7,7 @@
 	<link rel="stylesheet" href="stylesheets/stylesheets/screen.css">
 
 	<script src="bower_components/platform/platform.js"></script>
+
 	<link rel="import" href="bower_components/core-scaffold/core-scaffold.html">
 	<link rel="import" href="bower_components/core-toolbar/core-toolbar.html">
 	<link rel="import" href="bower_components/core-menu/core-menu.html">
@@ -16,6 +17,7 @@
 	<link rel="import" href="bower_components/core-animated-pages/transitions/cross-fade.html">
 
 	<link rel="import" href="elements/settings.html">
+	<link rel="import" href="elements/about.html">
 </head>
 <body unresolved fullbleed>
 	<core-scaffold responsiveWidth="1000px">
@@ -31,12 +33,21 @@
 			<!-- </div> -->
 			<core-menu theme="core-light-theme"
 				valueattr="label"
-				selected="Schemas">
+				selected="Known Schemas">
 				
-				<core-submenu			
+				<core-submenu
 					icon="exit-to-app"
-					label="Schemas">
+					label="Known Schemas"
+					>
 					<core-item data-value="render:builtIn" label="built-in objects">
+						<a href="#" target="_self"></a>
+					</core-item>
+
+					<core-item data-value="render:d3" label="D3">
+						<a href="#" target="_self"></a>
+					</core-item>
+
+					<core-item data-value="render:angular" label="Angular JS">
 						<a href="#" target="_self"></a>
 					</core-item>
 				
@@ -53,10 +64,13 @@
 					<a href="#settings" target="_self"></a>
 				</core-item>
 			</core-menu>
+
 		</core-header-panel>
 
-		<div tool>
-			<!-- POJO Viz -->
+		<div tool horizontal layout center style="width: 100%">
+			<div class="title"></div>
+			<div flex></div>
+			<pojoviz-about></pojoviz-about>
 		</div>
 		
 		<core-animated-pages
@@ -65,7 +79,7 @@
 
 			<section label="app" class="no-padding">
 				<div class="canvas-wrapper" cross-fade>
-					<svg class="canvas"></svg>
+					<svg class="canvas unselectable"></svg>
 				</div>
 			</section>
 			
@@ -82,6 +96,7 @@
 			var schemas = document.querySelector('core-header-panel core-menu');
 			var pages = document.querySelector('core-animated-pages');
 			var scaffold = document.querySelector('core-scaffold');
+			var tool = document.querySelector('[tool] .title');
 
 			schemas.addEventListener('core-select', function (e) {
 				var detail = e.detail,
@@ -101,6 +116,9 @@
 						} else {
 							pages.selected = 'settings';
 						}
+						// change title
+						tool.textContent = detail.item.label;
+
 						scaffold.closeDrawer();
 					}
 				}
@@ -108,6 +126,15 @@
 		})();
 	</script>
 
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-52923805-1', 'auto');
+	  ga('send', 'pageview');
+	</script>
 	<!-- <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>'); -->
 </script>
 </body>

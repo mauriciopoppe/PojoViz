@@ -1,8 +1,9 @@
-define(['lib/lodash', 'ObjectHashes', 'dagre', 'Canvas'],
-  function (_, ObjectHashes, dagre, Canvas) {
+define(['lib/lodash', 'util/utils', 'ObjectHashes', 'dagre', 'Canvas'],
+  function (_, utils, ObjectHashes, dagre, Canvas) {
 
   var selectedHash = ObjectHashes.builtIn,
-      oldSelectedHash;
+      oldSelectedHash,
+      pojoviz;
 
   function remove(objects, withPrototype) {
     selectedHash.forbidObjects(
@@ -21,14 +22,22 @@ define(['lib/lodash', 'ObjectHashes', 'dagre', 'Canvas'],
         registeredObjects = selectedHash.getObjects();
     
     _.forOwn(registeredObjects, function (v, k) {
+      var label = k.match(/\S*?-(.*)/)[1];
+      // console.log(k, label.length);
       node = {
         label: k,
-        width: 200
+        width: label.length * 10
       };
       properties = selectedHash.getProperties(v);
-      node.height = properties.length * 15 + 30;
+
+      // lines + header + padding bottom
+      node.height = properties.length * 15 + 50;
       node.properties = properties;
+      properties.forEach(function (v) {
+        node.width = Math.max(node.width, v.name.length * 10);
+      });
       // console.log(properties);
+      // console.log(node);
       g.addNode(k, node);
     });
 
@@ -41,9 +50,10 @@ define(['lib/lodash', 'ObjectHashes', 'dagre', 'Canvas'],
       });
     });
 
-    var layout = dagre
-      .layout()
-      .nodeSep(10)
+    var layout = dagre.layout()
+      .nodeSep(30)
+      // .rankSep(70)
+      // .rankDir('TB')
       .run(g);
 
     // data
@@ -63,19 +73,25 @@ define(['lib/lodash', 'ObjectHashes', 'dagre', 'Canvas'],
       node.predecessors = g.predecessors(k);
       node.successors = g.successors(k);
 
+      var mnx = x - node.width / 2;
+      var mny = y - node.height / 2;
+      var mxx = x + node.width / 2;
+      var mxy = y + node.height / 2;
+
       center.x += x;
       center.y += y;
-      mn.x = Math.min(mn.x, x);
-      mn.y = Math.min(mn.y, y);
-      mx.x = Math.max(mx.x, x);
-      mx.y = Math.max(mx.y, y);
+      mn.x = Math.min(mn.x, mnx);
+      mn.y = Math.min(mn.y, mny);
+      // console.log(x, y, ' dim ', node.width, node.height);
+      mx.x = Math.max(mx.x, mxx);
+      mx.y = Math.max(mx.y, mxy);
 
       nodes.push(node);
     });
 
     center.x /= (total || 1);
     center.y /= (total || 1);
-
+    // console.log(center, mn, mx);
     // console.log(cx, cy, mn, mx);
 
     _.forOwn(registeredObjects, function (v, k) {
@@ -85,6 +101,13 @@ define(['lib/lodash', 'ObjectHashes', 'dagre', 'Canvas'],
         }
       });
     });
+
+    // layout.eachNode(function(u, value) {
+    //   console.log("Node " + u + ": " + JSON.stringify(value));
+    // });
+    // layout.eachEdge(function(e, u, v, value) {
+    //   console.log("Edge " + u + " -> " + v + ": " + JSON.stringify(value));
+    // });
 
     return {
       edges: edges,
@@ -102,27 +125,29 @@ define(['lib/lodash', 'ObjectHashes', 'dagre', 'Canvas'],
     var t,
         data;
 
-    if (selectedHash.dirty() || oldSelectedHash !== selectedHash) {
-      selectedHash.dirty(false);
+    if (selectedHash.dirty || oldSelectedHash !== selectedHash) {
+      selectedHash.setDirty(false);
       
-      t = new Date();
-      preProcess();
-      data = process();
-      console.log('process: ' + (new Date() - t));
-      
-      t = new Date();
       if (canvas) {
         canvas.destroy();
       }
+      
+      console.time('process');
+      t = new Date();
+      preProcess();
+      data = process();
+      console.timeEnd('process');
+      
+      console.time('render');
       canvas = new Canvas(data);
       canvas.render();
-      console.log('render: ' + (new Date() - t));
+      console.timeEnd('render');      
     }
     cached = data;
   }
 
-  var pojoviz = {
-    // objectHashes: selectedHash,
+  // public api
+  pojoviz = {
     getSelectedHash: function () {
       return selectedHash;
     },
@@ -132,6 +157,16 @@ define(['lib/lodash', 'ObjectHashes', 'dagre', 'Canvas'],
     },
     render: render
   };
+
+  // custom events
+  document.addEventListener('property-click', function (e) {
+    var detail = e.detail;
+    pojoviz
+      .getSelectedHash()
+      .showSearch(detail.name, detail.property);
+    // console.log(detail.name, detail.property);
+  });
+  window.__jsonpCallbacks__ = {};
   
   // expose the app globally
   window.pojoviz = pojoviz;

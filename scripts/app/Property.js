@@ -1,7 +1,8 @@
-define(['lib/d3', 'util/d3utils', 'lib/lodash'],
+define(['lib/d3', 'util/utils', 'lib/lodash'],
     function (d3, utils, _) {
 
   var prefix = utils.prefixer;
+  var escapeCls = utils.escapeCls;
   var transformProperty = utils.transformProperty;
 
   function Property() {
@@ -43,7 +44,9 @@ define(['lib/d3', 'util/d3utils', 'lib/lodash'],
           .attr('class', function (d) {
             return [
               prefix('property'),
-              prefix(transformProperty(d.name))
+              prefix(
+                escapeCls(transformProperty(d.name))
+              )
             ].join(' ');
           })
           .attr('transform', function (d, i) {
@@ -67,10 +70,16 @@ define(['lib/d3', 'util/d3utils', 'lib/lodash'],
           return d.name;
         })
         .on('click', function (d, i) {
-          var link = d.cls.match(/\S*?-([\w-\.]*)/);
-          console.log(d, link);
-          window.open('https://developer.mozilla.org/en-US/search?q=' +
-            link[1] + ' ' + d.name);
+          console.log(d);
+          var link = d.cls.match(/\S*?-([\$\w-\.]*)/);
+          var ev = new CustomEvent('property-click', {
+            detail: {
+              name: link[1],
+              property: d.name
+            }
+          });
+          console.log(ev.detail);
+          document.dispatchEvent(ev);
         });
 
       var rectWrap = propertyEnter
@@ -86,8 +95,8 @@ define(['lib/d3', 'util/d3utils', 'lib/lodash'],
         .attr('x', -2)
         .attr('y', -9);
 
-      window.setTimeout(function () {
-        rectWrap.each(function (d) {
+      selection.selectAll('rect.' + prefix('property', 'background'))
+        .each(function (d) {
           var me = d3.select(this)
             .attr('height', function (d) {
               var text = d3
@@ -102,8 +111,7 @@ define(['lib/d3', 'util/d3utils', 'lib/lodash'],
               return text.property('clientWidth') + 3;
             });
         });
-      }, 0);      
-
+    
       propertyEnter.each(function (d) {
         if (d.type === 'object') {
           d3.select(this)

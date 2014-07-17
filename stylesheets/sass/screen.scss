@@ -6,9 +6,17 @@
 @import "compass/reset";
 @import "compass/css3";
 @import "base";
-// @import "palette/deepPurple";
-@import "palette/lightBlue";
-@import "palette/red";
+
+$main: $blue-500;
+$color-function: $red-100;
+$color-object: $blue-100;
+$color-string: $green-100;
+$color-number: $orange-100;
+$color-predecessor: $red-500;
+$color-successor: $blue-500;
+// $color-null: $red-100;
+// $color-undefined: $red-100;
+
 
 *, *:before, *:after {
   font-family: 'Roboto', sans-serif;
@@ -16,7 +24,7 @@
 
 .no-padding {
   padding: 0!important;
-} 
+}
 
 // polymer style fix
 body { 
@@ -36,7 +44,7 @@ body {
     core-header-panel[main] {
       background-color: white;
       core-toolbar {
-        background-color: $blue-500;
+        background-color: $main;
       }
     }
   }
@@ -60,12 +68,12 @@ body {
   stroke-width: 8px;
   stroke: lightgrey;
   &.selected {
-    stroke: $blue-500;
+    stroke: $main;
     &.predecessor {
-      stroke: $red-500;
+      stroke: $color-predecessor;
     }
     &.successor {
-      stroke: $blue-500;
+      stroke: $color-successor;
     }
   }
 }
@@ -84,12 +92,12 @@ svg.canvas {
       }
       &.predecessor {
         .node-background {
-          stroke: $red-100;
+          stroke: $color-predecessor;
         }
       }
       &.successor {
         .node-background {
-          stroke: $blue-100;
+          stroke: $color-successor;
         }
       }
     }
@@ -104,7 +112,7 @@ svg.canvas {
     fill: white;
     fill-opacity: 1;
     stroke-opacity: 1;
-    stroke: $blue-100;
+    stroke: $color-object;
     stroke-width: 2px;
   }
   .pv-title {
@@ -114,7 +122,7 @@ svg.canvas {
 		.pv-property {
 
       .pv-dot {
-        fill: $blue-900;
+        fill: $main;
       }
 
 			.pv-property-background {
@@ -127,39 +135,56 @@ svg.canvas {
 
       &.pv-__proto__ {
         rect {
-          fill: $blue-500;
+          fill: $color-object;
           fill-opacity: 0.15;
           stroke-dasharray: 2;
         }
         text {
           stroke-dasharray: 1;
-          fill: $blue-500;
+          fill: $color-object;
+        }
+      }
+
+      rect {
+        &.pv-string {
+          stroke: $color-string;
+        }
+        &.pv-number {
+          stroke: $color-number;
+        }
+        &.pv-function {
+          // stroke: $color-function;
+        }
+        &.pv-object {
+          stroke: $color-object;
         }
       }
 		}
 	}
+
+  &.pv-function {
+    rect.node-background {
+      stroke: $color-function;
+    }
+  }
 }
 
-rect {
-	&.pv-string {
-		stroke: red;
-	}
-	&.pv-number {
-		stroke: blue;
-	}
-	&.pv-function {
-		stroke: green;
-	}
-	&.pv-object {
-		stroke: orange;
-	}
-}
 
 pojoviz-settings::shadow {
+  // slider color
   paper-slider::shadow {
     #sliderKnobInner, #sliderKnobInner::before, 
     #sliderBar::shadow #activeProgress {
-      background-color: $blue-500;
+      background-color: $main;
+    }
+  }
+  // checkbox color
+  paper-checkbox::shadow {
+    #ink[checked] {
+      color: $main;
+    }
+    #checkbox.checked {
+      border-color: $main;
     }
   }
 }

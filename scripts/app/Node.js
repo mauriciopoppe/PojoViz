@@ -1,8 +1,9 @@
-define(['lib/lodash', 'lib/d3', 'util/d3utils', 'Property',
+define(['lib/lodash', 'lib/d3', 'util/utils', 'Property',
     'util/hashKey'],
   function (_, d3, utils, pojoVizProperty, hashKey) {
 
   var prefix = utils.prefixer;
+  var escapeCls = utils.escapeCls;
   var margin = { top: 0, right: 0, left: 0, bottom: 0 };
 
   function Node(parent) {
@@ -14,30 +15,32 @@ define(['lib/lodash', 'lib/d3', 'util/d3utils', 'Property',
       function groupMouseBehavior(type) {
         var over = type === 'over';
         return function (d, i) {
+          var labelEscaped = escapeCls(d.label);
+
           // hide all
           parent.opacityToggle(over);
 
           // select links
-          d3.selectAll('.' + prefix('to', d.label))
+          d3.selectAll('.' + prefix('to', labelEscaped))
             .classed('selected predecessor', over);
-          d3.selectAll('.' + prefix('from', d.label))
+          d3.selectAll('.' + prefix('from', labelEscaped))
             .classed('selected successor', over);
 
           // select current node
-          d3.select('.' + prefix(d.label))
+          d3.select('.' + prefix(labelEscaped))
             .classed('selected', over);
 
           // select predecessor nodes
           d.predecessors
             .forEach(function (v) {
-              d3.selectAll('.' + prefix(v))
+              d3.selectAll('.' + prefix(escapeCls(v)))
                 .classed('selected predecessor', over);
             });
 
           // select successor nodes
           d.successors
             .forEach(function (v) {
-              d3.selectAll('.' + prefix(v))
+              d3.selectAll('.' + prefix(escapeCls(v)))
                 .classed('selected successor', over);
             });
         };
@@ -46,10 +49,19 @@ define(['lib/lodash', 'lib/d3', 'util/d3utils', 'Property',
       var nodeEnter = enter
         .append('g')
         .attr('class', function (d) {
-          return [prefix('node'), prefix(d.label)].join(' ');
+          var type = d.label
+            .match(/^(\w)*/);
+          return [
+            prefix('node'),
+            prefix(type[0]),
+            prefix(escapeCls(d.label))
+          ].join(' ');
         })
         .attr('transform', function (d) {
-          return utils.translate(d.x, d.y);
+          return utils.translate(
+            d.x - d.width / 2,
+            d.y - d.height / 2
+          );
         })
         .on('mouseover', groupMouseBehavior('over'))
         .on('mouseout', groupMouseBehavior('out'));
@@ -67,7 +79,7 @@ define(['lib/lodash', 'lib/d3', 'util/d3utils', 'Property',
         .append('text')
           .text(function (d) {
             var name = d.label
-              .match(/\S*?-([\w-]*)/)[1]
+              .match(/\S*?-(.*)/)[1]
               .replace('-', '.');
             return name;
           });
@@ -84,22 +96,21 @@ define(['lib/lodash', 'lib/d3', 'util/d3utils', 'Property',
       var propertyCtor = pojoVizProperty();
       propertyCtor.margin(margin);
       bodyEnter.selectAll('g.' + prefix('property'))
-        .data(function (d) { return d.properties; })
+        .data(function (d) {
+          return d.properties;
+        })
         .call(propertyCtor);
 
-      // update the height & width of the rects
-      // async
-      window.setTimeout(function () {
-        selection.each(function (d, i) {
-          var el = d3.select(this),
-              rect = el.select('rect.node-background');
+      // fix node background width/height
+      selection.each(function (d, i) {
+        var el = d3.select(this),
+            rect = el.select('rect.node-background');
 
-          var bbox = el.node().getBBox();
-          rect
-            .attr('width', bbox.width + 10 * 2)
-            .attr('height', bbox.height + 10);
-        });
-      }, 0);
+        var bbox = el.node().getBBox();
+        rect
+          .attr('width', bbox.width + 10 * 2)
+          .attr('height', bbox.height + 10);
+      });
     }
     my.margin = function (m) {
       if (!m) {

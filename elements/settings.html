@@ -14,40 +14,36 @@
 				padding-left: 20px;
 				color: #bbb;
 			}
-		</style>
-		
-		<h3>Drawer Settings</h3>
-		<div horizontal layout>
-			<paper-checkbox id="hide-builtin" on-change="{{hideBuiltIn}}"></paper-checkbox>
-			<div vertical layout>
-				<h4>Hide built-in objects</h4>
-				<p>Hide all the builtIn objects/functions including its prototypes like Object, Object.prototype, Function, Function.prototype</p>
-			</div>
-		</div>
-		
-		<div horizontal layout>
-			<paper-checkbox on-change="{{showWindow}}"></paper-checkbox>
-			<div vertical layout>
-				<h4>Include the <i>window</i> object</h4>
-				<p>
-					Include the whole tree starting in the <i>window</i> object <br>
-					WARNING: the tree is HUGE so you have to be patient
-				</p>
-			</div>
-		</div>
+			.service-name {
+				padding-right: 50px;
+			}
+		</style>		
 
 		<section>
-			<div>
-				<h4>
-					Window max depth
-					<span class="depth-value">{{$.depth.value}}</span>
-				</h4>
-				<p>
-					Defines the maximum depth when running the dfs algorithm starting from the <i>window</i> object <br />
-					WARNING: The higher the value the longer the time needed for the browser to render the nodes
-				</p>
+			<h3>Angular drawer settings</h3>
+			<p>
+				Select ng module services to be drawn
+			</p>
+			<div layout wrap horizontal>
+				<template repeat="{{ service in angularServices }}">
+					<div class="angular-service" horizontal center layout style="width: 300px">
+						<div flex class="service-name"> {{ service.name }} </div>
+						<paper-checkbox checked="{{service.checked}}"></paper-checkbox>
+					</div>
+				</template>
 			</div>
-			<paper-slider on-change="{{windowDepthChange}}" id="depth" pin snaps max="10" step="1" value="3">
+		</section>
+		
+		<section>
+			<h3>
+				Window max depth
+				<span class="depth-value">{{$.depth.value}}</span>
+			</h3>
+			<p>
+				Defines the maximum depth when running the dfs algorithm starting from the <i>window</i> object <br />
+				WARNING: The higher the value the longer the time needed for the browser to render the nodes
+			</p>
+			<paper-slider on-change="{{windowDepthChange}}" id="depth" pin snaps max="10" step="1" value="2">
 			</paper-slider>
 		</section>
 
@@ -56,12 +52,20 @@
 	</template>
 	<script>
 		Polymer('pojoviz-settings', {
-			windowDepthChange: function (event, detail, el) {
-				require(['ObjectHashes'], function (objectHashes) {
-					console.log(el.value);
-					objectHashes.win.levels(el.value);
+			ready: function () {
+				var me = this;
+				require(['analyzer/angularAnalyzer'], function (angularAnalyzer) {
+					me.angularServices = angularAnalyzer.services;
 				});
 			},
+
+			windowDepthChange: function (event, detail, el) {
+				require(['ObjectHashes'], function (objectHashes) {
+					objectHashes.win.setLevels(el.value);
+				});
+			},
+
+			// deprecated
 			hideBuiltIn: function (event, detail, el) {
 				var oa = pojoviz.ObjectAnalyzer,
 					builtIn = oa.getBuiltInObjects();
@@ -72,7 +76,7 @@
 					oa.add(builtIn);
 				}
 			},
-
+			// deprecated
 			showWindow: function (event, detail, el) {
 				var oa = pojoviz.ObjectAnalyzer;
 				if (el.checked) {

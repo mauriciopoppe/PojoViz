@@ -1,12 +1,22 @@
-define(['lib/d3', 'lib/lodash', 'util/d3utils', 'Node'],
+define(['lib/d3', 'lib/lodash', 'util/utils', 'Node'],
     function (d3, _, utils, pojoVizNode) {
   var svg = d3.select('svg.canvas');
   var prefix = utils.prefixer;
+  var escapeCls = utils.escapeCls;
   var transformProperty = utils.transformProperty;
+
+  function getX(d) {
+    return d.x - d.width / 2;
+  }
+
+  function getY(d) {
+    return d.y - d.height / 2;
+  }
 
   function Canvas(data) {
     this.id = _.uniqueId();
-    this.createRoot(data.center, data.mn, data.mx);
+    this.data = data;
+    this.createRoot();
     this.set({
       nodes: data.nodes,
       edges: data.edges
@@ -14,13 +24,56 @@ define(['lib/d3', 'lib/lodash', 'util/d3utils', 'Node'],
   }
 
   Canvas.prototype.destroy = function() {
+    this.data = null;
+    svg.attr('opacity', 0);
     svg
       .selectAll('*')
       .remove();
   };
 
-  Canvas.prototype.createRoot = function(center, mn, mx) {
-    var me = this;
+  Canvas.prototype.createRoot = function() {
+    svg.attr('opacity', 1);
+    this.root = svg
+      .append('g')
+        .attr('class', 'root-' + this.id);
+  };
+
+  Canvas.prototype.set = function(obj, render) {
+    this.nodes = obj.nodes;
+    this.edges = obj.edges;
+    if (render) {
+      this.render();
+    }
+  };
+
+  Canvas.prototype.fixZoom = function() {
+    var me = this,
+        scr = svg.node(),
+        bbox = this.root.node().getBBox(),
+        screenWidth = scr.clientWidth,
+        screenHeight = scr.clientHeight,
+        canvasWidth = bbox.width,
+        canvasHeight = bbox.height,
+        sx = this.data.mn.x,
+        sy = this.data.mn.y,
+        scale = Math.min(
+          screenWidth / canvasWidth,
+          screenHeight / canvasHeight
+        ),
+        translate;
+
+    if (!isFinite(scale)) {
+      scale = 0;
+    }
+    // change the scale proportionally to its proximity to zero
+    scale -= scale / 10;
+
+    translate = [
+      -sx * scale + (screenWidth / 2 -
+        canvasWidth * scale / 2),
+      -sy * scale + (screenHeight / 2 -
+        canvasHeight * scale / 2),
+    ];
 
     function redraw() {
       var translation = d3.event.translate,
@@ -41,36 +94,35 @@ define(['lib/d3', 'lib/lodash', 'util/d3utils', 'Node'],
       };
     }
 
-    var scale = window.innerWidth / (mx.x - mn.x),
-        translate = [-center.x, -center.y];
-
+    // console.log('center', translate);
+    // console.log(scr.clientWidth, bbox.width, sx);
     var zoom = d3.behavior.zoom()
       .on('zoomstart', zoomBehavior('start'))
       .on('zoom', redraw)
       .on('zoomend', zoomBehavior('end'))
+      .translate(translate)
       .scale(scale);
-      // .translate(translate);
 
-    this.root = svg
-      .call(zoom)
-      .append('g')
-        .attr('class', 'root-' + this.id)
-        .attr('transform', utils.transform({
-          scale: [scale]
-        }));
-  };
+    svg.call(zoom);
 
-  Canvas.prototype.set = function(obj, render) {
-    this.nodes = obj.nodes;
-    this.edges = obj.edges;
-    if (render) {
-      this.render();
-    }
+    me.root
+      .attr('transform', utils.transform({
+        scale: [scale],
+        translate: [
+          -sx + (screenWidth / scale / 2 - canvasWidth / 2),
+          -sy + (screenHeight / scale / 2 - canvasHeight / 2)
+        ]
+      }))
+      .attr('opacity', 0)
+      .transition()
+      .duration(500)
+      .attr('opacity', 1);
   };
 
   Canvas.prototype.render = function() {
     this.renderNodes();
     this.renderEdges();
+    this.fixZoom();
   };
 
   Canvas.prototype.renderEdges = function() {
@@ -80,29 +132,33 @@ define(['lib/d3', 'lib/lodash', 'util/d3utils', 'Node'],
     // CREATE
     var diagonal = d3.svg.diagonal()
     .source(function(d) {
-      var from = me.root.select('.' + prefix(d.fromHash)),
+      var from = me.root.select('.' +
+            prefix(escapeCls(d.fromHash))
+          ),
           fromData = from.datum(),
           property = from.select('.' + prefix(
-            transformProperty(d.property)
+            escapeCls(transformProperty(d.property))
           )),
           propertyData = d3.transform(property.attr('transform'));
 
       return {
-        x: fromData.y + propertyData.translate[1] - 2,
-        y: fromData.x + propertyData.translate[0] - 10
+        x: getY(fromData) + propertyData.translate[1] - 2,
+        y: getX(fromData) + propertyData.translate[0] - 10
       };
     })
     .target(function(d) {
-      var to = me.root.select('.' + prefix(d.toHash)),
+      var to = me.root.select('.' +
+            prefix(escapeCls(d.toHash))
+          ),
           toData, bbox;
       if (!to.node()) {
-        debugger;
+        throw 'target node must exist';
       }
       toData = to.datum();
       bbox = to.node().getBBox();
       return {
-        x: toData.y + 10,// + bbox.height / 2,
-        y: toData.x// + bbox.width / 2
+        x: getY(toData) + 10,// + bbox.height / 2,
+        y: getX(toData)// + bbox.width / 2
       };
     })
     .projection(function(d) {
@@ -123,8 +179,8 @@ define(['lib/d3', 'lib/lodash', 'util/d3utils', 'Node'],
         .append('path')
         .attr('class', function (d) {
           return [
-            prefix('to', d.toHash),
-            prefix('from', d.fromHash),
+            prefix('to', escapeCls(d.toHash)),
+            prefix('from', escapeCls(d.fromHash)),
             prefix('link')
           ].join(' ');
         })

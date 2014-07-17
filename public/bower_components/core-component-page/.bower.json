@@ -1,0 +1,19 @@
+{
+  "name": "core-component-page",
+  "private": true,
+  "dependencies": {
+    "platform": "Polymer/platform#>=0.3.0 <1.0.0",
+    "polymer": "Polymer/polymer#>=0.3.0 <1.0.0"
+  },
+  "homepage": "https://github.com/Polymer/core-component-page",
+  "version": "0.3.3",
+  "_release": "0.3.3",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.3.3",
+    "commit": "31ff29fa197310d0d9e7e043c0dab8d0f9a511cf"
+  },
+  "_source": "git://github.com/Polymer/core-component-page.git",
+  "_target": ">=0.3.0 <1.0.0",
+  "_originalSource": "Polymer/core-component-page"
+}

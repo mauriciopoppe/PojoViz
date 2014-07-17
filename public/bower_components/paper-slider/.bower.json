@@ -1,0 +1,21 @@
+{
+  "name": "paper-slider",
+  "private": true,
+  "dependencies": {
+    "font-roboto": "Polymer/font-roboto#>=0.3.0 <1.0.0",
+    "paper-input": "Polymer/paper-input#>=0.3.0 <1.0.0",
+    "paper-progress": "Polymer/paper-progress#>=0.3.0 <1.0.0"
+  },
+  "homepage": "https://github.com/Polymer/paper-slider",
+  "version": "0.3.3",
+  "_release": "0.3.3",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.3.3",
+    "commit": "96af64fb2817c106d49e1fe0f7863e3dd5594f4b"
+  },
+  "_source": "git://github.com/Polymer/paper-slider.git",
+  "_target": "~0.3.3",
+  "_originalSource": "Polymer/paper-slider",
+  "_direct": true
+}

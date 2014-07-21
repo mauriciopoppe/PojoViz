@@ -2,7 +2,7 @@
  * In this file you should write your main styles. (or centralize your imports)
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
-/* line 17, ../../../../../../.rvm/gems/ruby-1.9.3-p545/gems/compass-0.12.3/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 17, ../../../../../../../.rvm/gems/ruby-1.9.3-p545/gems/compass-0.12.3/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -24,45 +24,45 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* line 22, ../../../../../../.rvm/gems/ruby-1.9.3-p545/gems/compass-0.12.3/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 22, ../../../../../../../.rvm/gems/ruby-1.9.3-p545/gems/compass-0.12.3/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html {
   line-height: 1;
 }
 
-/* line 24, ../../../../../../.rvm/gems/ruby-1.9.3-p545/gems/compass-0.12.3/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 24, ../../../../../../../.rvm/gems/ruby-1.9.3-p545/gems/compass-0.12.3/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 26, ../../../../../../.rvm/gems/ruby-1.9.3-p545/gems/compass-0.12.3/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 26, ../../../../../../../.rvm/gems/ruby-1.9.3-p545/gems/compass-0.12.3/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 28, ../../../../../../.rvm/gems/ruby-1.9.3-p545/gems/compass-0.12.3/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 28, ../../../../../../../.rvm/gems/ruby-1.9.3-p545/gems/compass-0.12.3/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 30, ../../../../../../.rvm/gems/ruby-1.9.3-p545/gems/compass-0.12.3/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 30, ../../../../../../../.rvm/gems/ruby-1.9.3-p545/gems/compass-0.12.3/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 103, ../../../../../../.rvm/gems/ruby-1.9.3-p545/gems/compass-0.12.3/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 103, ../../../../../../../.rvm/gems/ruby-1.9.3-p545/gems/compass-0.12.3/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 32, ../../../../../../.rvm/gems/ruby-1.9.3-p545/gems/compass-0.12.3/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 32, ../../../../../../../.rvm/gems/ruby-1.9.3-p545/gems/compass-0.12.3/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 116, ../../../../../../.rvm/gems/ruby-1.9.3-p545/gems/compass-0.12.3/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 116, ../../../../../../../.rvm/gems/ruby-1.9.3-p545/gems/compass-0.12.3/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
   display: block;
 }
@@ -145,28 +145,38 @@ body /deep/ core-header-panel[main] core-toolbar {
   stroke: #03a9f4;
 }
 
+/* line 81, ../sass/screen.scss */
+.canvas-wrapper {
+  height: 100%;
+}
+
 /* line 84, ../sass/screen.scss */
+svg.canvas {
+  width: 100%;
+  height: 100%;
+}
+/* line 89, ../sass/screen.scss */
 svg.canvas.dragged {
   cursor: move;
 }
-/* line 88, ../sass/screen.scss */
+/* line 93, ../sass/screen.scss */
 svg.canvas .pv-nodes-focused .pv-node {
   opacity: 0.3;
 }
-/* line 90, ../sass/screen.scss */
+/* line 95, ../sass/screen.scss */
 svg.canvas .pv-nodes-focused .pv-node.selected {
   opacity: 1;
 }
-/* line 94, ../sass/screen.scss */
+/* line 99, ../sass/screen.scss */
 svg.canvas .pv-nodes-focused .pv-node.predecessor .node-background {
   stroke: #e51c23;
 }
-/* line 99, ../sass/screen.scss */
+/* line 104, ../sass/screen.scss */
 svg.canvas .pv-nodes-focused .pv-node.successor .node-background {
   stroke: #03a9f4;
 }
 
-/* line 107, ../sass/screen.scss */
+/* line 112, ../sass/screen.scss */
 .pv-node {
   -webkit-transition-property: opacity;
   -moz-transition-property: opacity;
@@ -177,7 +187,7 @@ svg.canvas .pv-nodes-focused .pv-node.successor .node-background {
   -o-transition-duration: 0.2s;
   transition-duration: 0.2s;
 }
-/* line 111, ../sass/screen.scss */
+/* line 116, ../sass/screen.scss */
 .pv-node .node-background {
   fill: white;
   fill-opacity: 1;
@@ -185,56 +195,56 @@ svg.canvas .pv-nodes-focused .pv-node.successor .node-background {
   stroke: #b3e5fc;
   stroke-width: 2px;
 }
-/* line 124, ../sass/screen.scss */
+/* line 129, ../sass/screen.scss */
 .pv-node .pv-body .pv-property .pv-dot {
   fill: #03a9f4;
 }
-/* line 128, ../sass/screen.scss */
+/* line 133, ../sass/screen.scss */
 .pv-node .pv-body .pv-property .pv-property-background {
   fill: white;
 }
-/* line 132, ../sass/screen.scss */
+/* line 137, ../sass/screen.scss */
 .pv-node .pv-body .pv-property:hover {
   cursor: pointer;
 }
-/* line 137, ../sass/screen.scss */
+/* line 142, ../sass/screen.scss */
 .pv-node .pv-body .pv-property.pv-__proto__ rect {
   fill: #b3e5fc;
   fill-opacity: 0.15;
   stroke-dasharray: 2;
 }
-/* line 142, ../sass/screen.scss */
+/* line 147, ../sass/screen.scss */
 .pv-node .pv-body .pv-property.pv-__proto__ text {
   stroke-dasharray: 1;
   fill: #b3e5fc;
 }
-/* line 149, ../sass/screen.scss */
+/* line 154, ../sass/screen.scss */
 .pv-node .pv-body .pv-property rect.pv-string {
   stroke: #a3e9a4;
 }
-/* line 152, ../sass/screen.scss */
+/* line 157, ../sass/screen.scss */
 .pv-node .pv-body .pv-property rect.pv-number {
   stroke: #ffe0b2;
 }
-/* line 158, ../sass/screen.scss */
+/* line 163, ../sass/screen.scss */
 .pv-node .pv-body .pv-property rect.pv-object {
   stroke: #b3e5fc;
 }
-/* line 166, ../sass/screen.scss */
+/* line 171, ../sass/screen.scss */
 .pv-node.pv-function rect.node-background {
   stroke: #f9bdbb;
 }
 
-/* line 177, ../sass/screen.scss */
+/* line 182, ../sass/screen.scss */
 pojoviz-settings::shadow paper-slider::shadow #sliderKnobInner, pojoviz-settings::shadow paper-slider::shadow #sliderKnobInner::before,
 pojoviz-settings::shadow paper-slider::shadow #sliderBar::shadow #activeProgress {
   background-color: #03a9f4;
 }
-/* line 183, ../sass/screen.scss */
+/* line 188, ../sass/screen.scss */
 pojoviz-settings::shadow paper-checkbox::shadow #ink[checked] {
   color: #03a9f4;
 }
-/* line 186, ../sass/screen.scss */
+/* line 191, ../sass/screen.scss */
 pojoviz-settings::shadow paper-checkbox::shadow #checkbox.checked {
   border-color: #03a9f4;
 }

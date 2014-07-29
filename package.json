@@ -18,6 +18,7 @@
     ]
   },
   "browserify-shim": {
+    "dagre": "global:dagre",
     "d3": "global:d3",
     "angular": "global:angular"
   },

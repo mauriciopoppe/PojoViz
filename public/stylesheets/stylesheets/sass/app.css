@@ -64,7 +64,7 @@ body /deep/ core-header-panel[main] core-toolbar {
   -o-transition-duration: 0.2s;
   transition-duration: 0.2s;
   fill: none;
-  stroke-width: 15px;
+  stroke-width: 5px;
   stroke: lightgrey;
 }
 /* line 69, sass/app.scss */

@@ -40,7 +40,8 @@ function getProperties(obj, objectsOnly) {
         r = good && typeof obj[v] === 'object';
       } catch (e) {
         r = false;
-        console.log(e);
+        // uncomment to see why obj[v] is not allowed
+        // console.log(e);
       } finally {
         return r;
       }

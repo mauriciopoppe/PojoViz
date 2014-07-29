@@ -3,8 +3,6 @@
 <head>
 	<meta charset="UTF-8">
 	<title>POJO Viz</title>
-	<script data-main="scripts/main.js" src="scripts/require.js"></script>
-	<link rel="stylesheet" href="stylesheets/stylesheets/screen.css">
 
 	<script src="bower_components/platform/platform.js"></script>
 
@@ -18,6 +16,14 @@
 
 	<link rel="import" href="elements/settings.html">
 	<link rel="import" href="elements/about.html">
+
+	<!-- normalize -->
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css">
+	<link rel="stylesheet" href="stylesheets/app.css">
+
+	<!-- libraries -->
+	<script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.js"></script>
 </head>
 <body unresolved fullbleed>
 	<core-scaffold responsiveWidth="1000px">
@@ -79,7 +85,7 @@
 
 			<section label="app" class="no-padding">
 				<div class="canvas-wrapper" cross-fade>
-					<svg class="canvas unselectable"></svg>
+					<svg id="canvas" class="unselectable"></svg>
 				</div>
 			</section>
 			
@@ -90,6 +96,9 @@
 		    </section>
 		</core-animated-pages>
 	</core-scaffold>
+
+	<!-- app -->
+	<script src="build/pojoviz.js"></script>
 
 	<script>
 		(function () {
@@ -108,10 +117,8 @@
 						value = detail.item.dataset.value.split(':');
 						action = value[0];
 						if (action === 'render') {
-							require(['../pojoviz'], function (pojoviz) {
-								pojoviz.setSelectedHash(value[1]);
-								pojoviz.render();
-							});
+							pojoviz.setCurrentLibrary(value[1]);
+							pojoviz.render();
 							pages.selected = 'app';
 						} else {
 							pages.selected = 'settings';

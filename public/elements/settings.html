@@ -53,16 +53,14 @@
 	<script>
 		Polymer('pojoviz-settings', {
 			ready: function () {
-				var me = this;
-				require(['analyzer/angularAnalyzer'], function (angularAnalyzer) {
-					me.angularServices = angularAnalyzer.services;
-				});
+				var me = this,
+					angularAnalyzer = pojoviz.analyzer.angular;
+				me.angularServices = angularAnalyzer.services;
 			},
 
 			windowDepthChange: function (event, detail, el) {
-				require(['ObjectHashes'], function (objectHashes) {
-					objectHashes.win.setLevels(el.value);
-				});
+				var objectHashes = pojoviz.ObjectHashes;
+				objectHashes.win.setLevels(el.value);
 			},
 
 			// deprecated

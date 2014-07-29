@@ -3,7 +3,6 @@
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 
-@import "compass/reset";
 @import "compass/css3";
 @import "base";
 
@@ -65,7 +64,7 @@ body {
   @include transition-duration(0.2s);
 
   fill: none;
-  stroke-width: 8px;
+  stroke-width: 5px;
   stroke: lightgrey;
   &.selected {
     stroke: $main;
@@ -81,7 +80,7 @@ body {
 .canvas-wrapper {
   height: 100%;
 }
-svg.canvas {
+svg#canvas {
   // background-color: $c50;
   width: 100%;
   height: 100%;

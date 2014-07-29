@@ -75,14 +75,18 @@ gulp.task('browserSync', ['browserify'], function () {
 });
 
 gulp.task('compass', function () {
-  return gulp.src('./public/**/*.scss')
+  return gulp.src('./public/sass/*.scss')
     .pipe(compass({
-      // project: path.join(__dirname, 'docs/'),
-      css: './public/stylesheets',
-      sass: './public/stylesheets/sass'
+      config_file: 'compass.rb',
+      css: 'public/css',
+      sass: 'public/sass'
     }))
-    .pipe(gulp.dest('./public/stylesheets'))
-    .pipe(browserSync.reload({stream: true}));
+    .on('error', function (e) {
+      console.log(e);
+    })
+    .pipe(browserSync.reload({
+      stream: true
+    }));
 });
 
 function createTag(type, cb) {
@@ -104,8 +108,8 @@ gulp.task('useWatchify', function () {
   useWatchify = true;
 });
 
-gulp.task('watch', ['useWatchify', 'browserSync', 'compass'], function () {
-  gulp.watch('./public/**/*.scss', ['compass']);
+gulp.task('watch', ['useWatchify', 'browserSync'],  function () {
+  gulp.watch('public/sass/**', ['compass']);
 });
 
 // main tasks

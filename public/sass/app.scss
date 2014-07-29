@@ -64,7 +64,7 @@ body {
   @include transition-duration(0.2s);
 
   fill: none;
-  stroke-width: 5px;
+  stroke-width: 3px;
   stroke: lightgrey;
   &.selected {
     stroke: $main;

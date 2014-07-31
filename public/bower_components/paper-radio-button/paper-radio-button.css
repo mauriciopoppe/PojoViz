@@ -83,3 +83,16 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 #radioLabel[hidden] {
   display: none;
 }
+
+/* disabled state */
+:host([disabled]) {
+  pointer-events: none;
+}
+
+:host([disabled]) #offRadio {
+  border-color: #eaeaea !important;
+}
+
+:host([disabled]) #onRadio {
+  background-color: #eaeaea !important;
+}

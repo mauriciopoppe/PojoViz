@@ -10,7 +10,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 html /deep/ core-item {
   display: block;
   position: relative;
-  height: 40px;
+  min-height: 40px;
   white-space: nowrap;
 }
 

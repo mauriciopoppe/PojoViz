@@ -36,6 +36,15 @@ me.createHashKeysFor = function (obj) {
     return match && match[1];
   }
 
+  /**
+   * Analyze the internal property [[Class]] to guess the name
+   * of this object, e.g. [object Date], [object Math]
+   * Many object will give false positives (they will match [object Object])
+   * so let's consider Object as the name only if it's equal to
+   * Object.prototype
+   * @param  {Object}  obj
+   * @return {Boolean}
+   */
   function hasAClassName(obj) {
     var match = localToString(obj);
     if (match === 'Object') {
@@ -71,7 +80,8 @@ me.createHashKeysFor = function (obj) {
   // the constructor first so that the prototype becomes
   // [name].prototype
   if (obj.hasOwnProperty &&
-      obj.hasOwnProperty('constructor')) {
+      obj.hasOwnProperty('constructor') &&
+      typeof obj.constructor === 'function') {
     me.createHashKeysFor(obj.constructor);
   } else {
     me.set(obj, getName(obj));

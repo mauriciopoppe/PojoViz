@@ -235,7 +235,7 @@ To change the slider secondary progress bar color:
     
     trackEnd: function() {
       var s =  this.$.sliderKnob.style;
-      s.transform = s.webkitTransform = null;
+      s.transform = s.webkitTransform = '';
       this.$.sliderKnob.classList.remove('dragging');
       this.resetKnob();
       this.value = this.immediateValue;

@@ -7,7 +7,7 @@
       - hero and cross-fade-all should be always enabled.
   -->
   <template>
-    <core-animated-pages style="width:420px;height:630px;overflow:hidden;border:5px solid #ccc;background-color:#eee;">
+    <core-animated-pages style="width:420px;height:582px;overflow:hidden;background-color:#eee;">
       <section layout horizontal center center-justified>
       </section>
       <section>
@@ -19,121 +19,11 @@
 
   <template id="imports">
     <link rel="import" href="core-animated-pages.html">
+    <link rel="import" href="transitions/hero-transition.html">
+    <link rel="import" href="transitions/cross-fade.html">
     <link rel="import" href="transitions/slide-down.html">
     <link rel="import" href="transitions/slide-up.html">
     <link rel="import" href="transitions/tile-cascade.html">
   </template>
 
-</x-meta>
-
-<x-meta id="quiz-demo-grid" label="Quiz Demo Grid" group="Demo">
-<template>
-  <section layout vertical designMeta="quiz-demo-grid" style="box-sizing:border-box;width:420px;height:630px;">
-
-    <div class="tall-toolbar categories" id="toolbar" style="box-sizing:border-box;height:30%;position:relative;color:#fff;padding:48px;font-size:48px;background-color:#00bbd3;">
-      <span>Quiz Demo</span>
-    </div>
-
-    <div class="tiles-container" id="tiles-container" layout wrap horizontal around-justified center relative style="padding-left:3px;height:70%;">
-
-      <div class="tile" id="tile-profile" style="background-color:#ccc;box-sizing:border-box;float:left;height:30%;width:48%;margin:3px;" layout vertical relative>
-        <section class="tile-top" flex layout horizontal center center-justified></section>
-        <div class="tile-bottom" style="background-color:#aaa;padding:8px;color:#fff;">
-          Profile
-        </div>
-      </div>
-
-      <div class="tile" id="tile-general" hero style="background-color:#ffff8d;box-sizing:border-box;float:left;height:30%;width:48%;margin:3px;" layout vertical relative>
-        <section class="tile-top" flex layout horizontal center center-justified></section>
-        <div class="tile-bottom" hero style="background-color:#ffeb3b;padding:8px;color:#fff;">
-          <span>General Knowledge</span>
-        </div>
-      </div>
-
-      <div class="tile" style="background-color:#b9f6ca;box-sizing:border-box;float:left;height:30%;width:48%;margin:3px;" layout vertical relative>
-        <section class="tile-top" flex layout horizontal center center-justified></section>
-        <div class="tile-bottom" style="background-color:#0f9d58;padding:8px;color:#fff;">
-          Category 2
-        </div>
-      </div>
-
-      <div class="tile" style="background-color:#ff8a80;box-sizing:border-box;float:left;height:30%;width:48%;margin:3px;" layout vertical relative>
-        <section class="tile-top" flex layout horizontal center center-justified></section>
-        <div class="tile-bottom" style="background-color:#db4437;padding:8px;color:#fff;">
-          Category 3
-        </div>
-      </div>
-
-      <div class="tile" style="background-color:#82b1ff;box-sizing:border-box;float:left;height:30%;width:48%;margin:3px;" layout vertical relative>
-        <section class="tile-top" flex layout horizontal center center-justified></section>
-        <div class="tile-bottom" style="background-color:#4285f4;padding:8px;color:#fff;">
-          Category 4
-        </div>
-      </div>
-
-      <div class="tile" style="background-color:#b388ff;box-sizing:border-box;float:left;height:30%;width:48%;margin:3px;" layout vertical relative>
-        <section class="tile-top" flex layout horizontal center center-justified></section>
-        <div class="tile-bottom" style="background-color:#7e57c2;padding:8px;color:#fff;">
-          Category 5
-        </div>
-      </div>
-
-    </div>
-
-  </section>
-</template>
-</x-meta>
-
-<x-meta id="quiz-demo-front-page" label="Quiz Demo Front Page" group="Demo">
-<template>
-
-  <section layout vertical style="box-sizing:border-box;width:420px;height:630px;">
-
-    <section class="top" hero style="background-color:#ffff8d;" flex layout horizontal center center-justified>
-    </section>
-    <div class="bottom" hero style="box-sizing:border-box;position:relative;height:80px;background-color:#ffeb3b;padding:24px;color:#fff;font-size:32px;">
-      <span>General Knowledge</span>
-    </div>
-    <div hero class="dummy"></div>
-    <div class="fab fab-0" style="position:absolute;fill:#fff;bottom:50px;right:24px;">
-      <paper-fab icon="av:play-arrow" style="background-color:#ff4081;"></paper-fab>
-    </div>
-  </section>
-
-</template>
-
-<template id="imports">
-  <link rel="import" href="../core-icons/core-icons.html">
-  <link rel="import" href="../core-icons/iconsets/av-icons.html">
-  <link rel="import" href="../paper-fab/paper-fab.html">
-</template>
-</x-meta>
-
-<x-meta id="quiz-demo-question" label="Quiz Demo Question" group="Demo">
-<template>
-
-  <section layout vertical style="box-sizing:border-box;width:420px;height:630px;">
-
-    <div hero style="box-sizing:border-box;position:relative;height:240px;background-color:#ffeb3b;padding:24px;color:#fff;font-size:32px;">
-      <span>Question</span>
-    </div>
-    <section hero flex style="background-color:#eee;padding:24px;font-size:16px;">
-      <span>Answer here</span>
-    </section>
-  </section>
-
-</template>
-</x-meta>
-
-<x-meta id="quiz-demo-score" label="Quiz Demo Score" group="Demo">
-<template>
-
-  <section layout vertical style="box-sizing:border-box;width:420px;height:630px;background-color:#ffff8d;" center center-justified>
-
-    <div hero style="box-sizing:border-box;position:relative;height:150px;width:150px;background-color:#ffeb3b;color:#fff;font-size:100px;" layout vertical center center-justified>
-      <span>+8</span>
-    </div>
-  </section>
-
-</template>
 </x-meta>

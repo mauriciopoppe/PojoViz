@@ -17,6 +17,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   height: 64px;
   /* typography */
   font-size: 1.3em;
+  /* background */
+  background-color: #CFD8DC;
 }
 
 :host(.animate) {

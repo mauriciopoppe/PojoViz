@@ -175,7 +175,7 @@ For performance reasons, not every item in the list is rendered at once.
     // TODO(sorvell): selection currently cannot be maintained when
     // items are added or deleted.
     initalizeData: function() {
-      var exampleDatum = this.data[0];
+      var exampleDatum = this.data[0] || {};
       this._propertyNames = Object.getOwnPropertyNames(exampleDatum);
       this._physicalData = new Array(this._physicalCount);
       for (var i = 0; i < this._physicalCount; ++i) {

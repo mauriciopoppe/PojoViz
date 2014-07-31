@@ -15,12 +15,12 @@
     "highlightjs-element": "PolymerLabs/highlightjs-element#>=0.3.0 <1.0.0"
   },
   "homepage": "https://github.com/Polymer/core-doc-viewer",
-  "version": "0.3.3",
-  "_release": "0.3.3",
+  "version": "0.3.4",
+  "_release": "0.3.4",
   "_resolution": {
     "type": "version",
-    "tag": "0.3.3",
-    "commit": "f93664d3dc5ed668b7fd0edbd5b16b4d407491e9"
+    "tag": "0.3.4",
+    "commit": "9bf119ac9100a241f5ef64a9e87a7663675a3622"
   },
   "_source": "git://github.com/Polymer/core-doc-viewer.git",
   "_target": ">=0.3.0 <1.0.0",

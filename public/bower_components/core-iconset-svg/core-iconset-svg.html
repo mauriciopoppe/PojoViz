@@ -83,6 +83,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         var icon = this.iconById(id);
         if (icon) {
           var content = icon.cloneNode(true);
+          content.removeAttribute('id');
           var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
           svg.setAttribute('viewBox', '0 0 ' + this.iconSize + ' ' +
               this.iconSize);

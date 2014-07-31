@@ -126,7 +126,7 @@ function render() {
     if (canvas) {
       canvas.destroy();
     }
-    
+    console.log('rendering')
     console.time('process');
     t = new Date();
     library.preRender();

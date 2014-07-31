@@ -110,8 +110,12 @@ svg#canvas .pv-nodes-focused .pv-node.predecessor .node-background {
 svg#canvas .pv-nodes-focused .pv-node.successor .node-background {
   stroke: #03a9f4;
 }
+/* line 108, ../sass/app.scss */
+svg#canvas .pv-nodes-focused .pv-node.current .node-background {
+  stroke: #673ab7;
+}
 
-/* line 111, ../sass/app.scss */
+/* line 116, ../sass/app.scss */
 .pv-node {
   -webkit-transition-property: opacity;
   -moz-transition-property: opacity;
@@ -122,7 +126,7 @@ svg#canvas .pv-nodes-focused .pv-node.successor .node-background {
   -o-transition-duration: 0.2s;
   transition-duration: 0.2s;
 }
-/* line 115, ../sass/app.scss */
+/* line 120, ../sass/app.scss */
 .pv-node .node-background {
   fill: white;
   fill-opacity: 1;
@@ -130,56 +134,66 @@ svg#canvas .pv-nodes-focused .pv-node.successor .node-background {
   stroke: #b3e5fc;
   stroke-width: 2px;
 }
-/* line 128, ../sass/app.scss */
+/* line 127, ../sass/app.scss */
+.pv-node .pv-title {
+  font-size: 17px;
+  font-weight: 100;
+}
+/* line 134, ../sass/app.scss */
 .pv-node .pv-body .pv-property .pv-dot {
   fill: #03a9f4;
 }
-/* line 132, ../sass/app.scss */
+/* line 138, ../sass/app.scss */
 .pv-node .pv-body .pv-property .pv-property-background {
   fill: white;
 }
-/* line 136, ../sass/app.scss */
+/* line 142, ../sass/app.scss */
 .pv-node .pv-body .pv-property:hover {
   cursor: pointer;
 }
-/* line 141, ../sass/app.scss */
+/* line 147, ../sass/app.scss */
 .pv-node .pv-body .pv-property.pv-__proto__ rect {
   fill: #b3e5fc;
   fill-opacity: 0.15;
   stroke-dasharray: 2;
 }
-/* line 146, ../sass/app.scss */
+/* line 152, ../sass/app.scss */
 .pv-node .pv-body .pv-property.pv-__proto__ text {
   stroke-dasharray: 1;
   fill: #b3e5fc;
 }
-/* line 153, ../sass/app.scss */
+/* line 159, ../sass/app.scss */
 .pv-node .pv-body .pv-property rect.pv-string {
   stroke: #a3e9a4;
 }
-/* line 156, ../sass/app.scss */
+/* line 162, ../sass/app.scss */
 .pv-node .pv-body .pv-property rect.pv-number {
   stroke: #ffe0b2;
 }
-/* line 162, ../sass/app.scss */
+/* line 168, ../sass/app.scss */
 .pv-node .pv-body .pv-property rect.pv-object {
   stroke: #b3e5fc;
 }
-/* line 170, ../sass/app.scss */
+/* line 176, ../sass/app.scss */
 .pv-node.pv-function rect.node-background {
   stroke: #f9bdbb;
 }
 
-/* line 181, ../sass/app.scss */
+/* line 187, ../sass/app.scss */
 pojoviz-settings::shadow paper-slider::shadow #sliderKnobInner, pojoviz-settings::shadow paper-slider::shadow #sliderKnobInner::before,
 pojoviz-settings::shadow paper-slider::shadow #sliderBar::shadow #activeProgress {
   background-color: #03a9f4;
 }
-/* line 187, ../sass/app.scss */
+/* line 193, ../sass/app.scss */
 pojoviz-settings::shadow paper-checkbox::shadow #ink[checked] {
   color: #03a9f4;
 }
-/* line 190, ../sass/app.scss */
+/* line 196, ../sass/app.scss */
 pojoviz-settings::shadow paper-checkbox::shadow #checkbox.checked {
   border-color: #03a9f4;
+}
+
+/* line 203, ../sass/app.scss */
+core-submenu core-item {
+  font-size: 13px;
 }

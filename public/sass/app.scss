@@ -104,6 +104,11 @@ svg#canvas {
           stroke: $color-successor;
         }
       }
+      &.current {
+        .node-background {
+          stroke: $deepPurple-500;
+        }
+      }
     }
   }
 }
@@ -120,7 +125,8 @@ svg#canvas {
     stroke-width: 2px;
   }
   .pv-title {
-    
+    font-size: 17px;
+    font-weight: 100;
   }
 	.pv-body {
 		.pv-property {
@@ -193,18 +199,8 @@ pojoviz-settings::shadow {
   }
 }
 
-// section {
-//   & > div {
-//     height: 100%;
-//     color: $red-500;
-//   }
-// }
-
-// core-animated-pages {
-//   position: absolute;
-//   right: 0;
-//   bottom: 0;
-//   left: 0;
-//   font-size: 72px;
-//   // overflow: hidden;
-// }
+core-submenu {
+  core-item {
+    font-size: 13px;
+  }
+}

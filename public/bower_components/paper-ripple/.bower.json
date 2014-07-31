@@ -7,12 +7,12 @@
     "font-roboto": "Polymer/font-roboto#>=0.3.0 <1.0.0"
   },
   "homepage": "https://github.com/Polymer/paper-ripple",
-  "version": "0.3.3",
-  "_release": "0.3.3",
+  "version": "0.3.4",
+  "_release": "0.3.4",
   "_resolution": {
     "type": "version",
-    "tag": "0.3.3",
-    "commit": "4e858f8f86de8eb5f6ab8e31f1de80502b9bb2af"
+    "tag": "0.3.4",
+    "commit": "b241c26044d92e44125218862decfaefc70d9fb8"
   },
   "_source": "git://github.com/Polymer/paper-ripple.git",
   "_target": ">=0.3.0 <1.0.0",

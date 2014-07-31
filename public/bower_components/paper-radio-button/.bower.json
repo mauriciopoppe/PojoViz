@@ -5,12 +5,12 @@
     "paper-ripple": "Polymer/paper-ripple#>=0.3.0 <1.0.0"
   },
   "homepage": "https://github.com/Polymer/paper-radio-button",
-  "version": "0.3.3",
-  "_release": "0.3.3",
+  "version": "0.3.4",
+  "_release": "0.3.4",
   "_resolution": {
     "type": "version",
-    "tag": "0.3.3",
-    "commit": "96089ed3337ad30cd0d937daa0987d6613215b24"
+    "tag": "0.3.4",
+    "commit": "f09e904d9032a5c99cbdec723aec12a27eba9e13"
   },
   "_source": "git://github.com/Polymer/paper-radio-button.git",
   "_target": ">=0.3.0 <1.0.0",

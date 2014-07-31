@@ -1,4 +1,4 @@
 core-style
 ==========
 
-See the [component page](http://polymer.github.io/core-style) for more information.
+See the [component page](http://polymer-project.org/docs/elements/core-elements.html#core-style) for more information.

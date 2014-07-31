@@ -9,19 +9,28 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 <!--
 /**
- * @module Quantum Paper Elements
- */
-/**
- * paper-focusable is a base class for Quantum Paper elements that can be
- * focused.
+ * @group Paper Elements
  *
- * @class paper-focusable
+ * paper-focusable is a base class for paper elements that can be focused.
+ *
+ * @element paper-focusable
+ * @status beta
+ * @homepage github.io
  */
 -->
 
 <link href="../polymer/polymer.html" rel="import">
 
-<polymer-element name="paper-focusable" attributes="active focused disabled isToggle" tabindex="0" on-down="{{_downAction}}" on-up="{{_upAction}}" on-focus="{{focusAction}}" on-blur="{{blurAction}}">
+<polymer-element name="paper-focusable" attributes="active focused disabled isToggle" tabindex="0" on-down="{{downAction}}" on-up="{{upAction}}" on-focus="{{focusAction}}" on-blur="{{blurAction}}" on-contextmenu="{{contextMenuAction}}">
+
+  <template>
+    <style>
+      :host([disabled]) {
+        pointer-events: none;
+      }
+    </style>
+    <content></content>
+  </template>
 
   <script>
     Polymer('paper-focusable', {
@@ -88,13 +97,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         }
       },
 
-      _downAction: function(e) {
-        if (this.disabled) {
-          return;
-        }
-        this.downAction(e);
-      },
-
       downAction: function() {
         this.pressed = true;
         this.focused = false;
@@ -106,11 +108,16 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         }
       },
 
-      _upAction: function(e) {
-        if (this.disabled) {
-          return;
-        }
+      // Pulling up the context menu for an item should focus it; but we need to
+      // be careful about how we deal with down/up events surrounding context
+      // menus. The up event typically does not fire until the context menu
+      // closes: so we focus immediately.
+      //
+      // This fires _after_ downAction.
+      contextMenuAction: function(e) {
+        // Note that upAction may fire _again_ on the actual up event.
         this.upAction(e);
+        this.focusAction();
       },
 
       upAction: function() {

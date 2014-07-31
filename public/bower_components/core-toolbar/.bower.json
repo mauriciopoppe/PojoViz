@@ -5,12 +5,12 @@
     "core-icon-button": "Polymer/core-icon-button#>=0.3.0 <1.0.0"
   },
   "homepage": "https://github.com/Polymer/core-toolbar",
-  "version": "0.3.3",
-  "_release": "0.3.3",
+  "version": "0.3.4",
+  "_release": "0.3.4",
   "_resolution": {
     "type": "version",
-    "tag": "0.3.3",
-    "commit": "44d5de4dafe04bd6a2d1dfe944ed2424abac6aed"
+    "tag": "0.3.4",
+    "commit": "57df0e868df6ac502fca65093eed115125e33228"
   },
   "_source": "git://github.com/Polymer/core-toolbar.git",
   "_target": ">=0.3.0 <1.0.0",

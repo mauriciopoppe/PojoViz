@@ -8,7 +8,31 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 -->
 
 <!--
-`core-header-panel` contains a header section and a content panel section. Special
+`core-header-panel` contains a header section and a content panel section.
+
+__Important:__ The `core-header-panel` will not display if its parent does not have a height.
+
+Using [layout attributes](http://www.polymer-project.org/docs/polymer/layout-attrs.html), you can easily make the `core-header-panel` fill the screen
+
+    <body fullbleed layout vertical>
+      <core-header-panel flex>
+        <core-toolbar>
+          <div>Hello World!</div>
+        </core-toolbar>
+      </core-header-panel>
+    </body>
+
+or, if you would prefer to do it in CSS, just give `html`, `body`, and `core-header-panel` a height of 100%:
+
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
+    core-header-panel {
+      height: 100%;
+    }
+
+Special
 support is provided for scrolling modes when one uses a core-toolbar or equivalent
 for the header section.
 

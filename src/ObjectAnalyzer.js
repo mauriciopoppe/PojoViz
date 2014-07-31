@@ -76,8 +76,9 @@ function getProperties(obj, objectsOnly) {
       linkeable: true
     });
   }
-  var constructor = obj.hasOwnProperty('constructor') &&
-    obj.constructor;
+  var constructor = obj.hasOwnProperty &&
+    obj.hasOwnProperty('constructor') &&
+    typeof obj.constructor === 'function';
   if (constructor &&
       _.findIndex(properties, { name: 'constructor' }) === -1) {
     properties.push({
@@ -197,16 +198,24 @@ Analyzer.prototype = {
         properties = getProperties(obj, true),
         name = hashKey.get(obj);
 
+    function getAugmentedHash(obj, name) {
+      if (!hashKey.get(obj) &&
+          name !== 'prototype' && 
+          name !== 'constructor') {
+        hashKey.set(obj, name);
+      }
+      return hashKey(obj);
+    }
+
     if (!name) {
       throw 'the object needs to have a hashkey';
     }
 
     _.forEach(properties, function (v) {
       var ref = obj[v.name];
-      if (ref !== null &&
-          ref !== undefined &&
-          !me.isForbidden(ref)) {
-
+      if (!ref) { return; }
+      getAugmentedHash(ref, v.name);
+      if (!me.isForbidden(ref)) {
         links.push({
           from: obj,
           fromHash: hashKey(obj),

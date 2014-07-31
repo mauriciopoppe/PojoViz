@@ -14,14 +14,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   box-shadow: inset 0 0 2px 1px #ccc;
   cursor: col-resize;
 }
-  
+
 :host(.horizontal) {
   width: auto;
   height: 12px;
   cursor: row-resize;
   background-image: url(handle-h.svg);
 }
-  
+
 :host(:hover, :active) {
   background-color: #ddd;
 }

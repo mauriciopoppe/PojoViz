@@ -40,6 +40,12 @@ will be collapsed.  Use `opened` to show/hide the content.
 <script>
 
   Polymer('core-collapse', {
+    /**
+     * Fired when the target element has been resized as a result of the opened
+     * state changing.
+     * 
+     * @event core-resize
+    */
 
     /**
      * The target element.
@@ -165,6 +171,7 @@ will be collapsed.  Use `opened` to show/hide the content.
       }
       this.setTransitionDuration(null);
       this.toggleClosedClass(!this.opened);
+      this.asyncFire('core-resize', null, this.target);
     },
 
     toggleClosedClass: function(closed) {

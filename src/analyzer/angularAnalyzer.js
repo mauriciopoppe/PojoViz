@@ -51,13 +51,22 @@ function getSelectedServices() {
 
 // window.INJECTOR = injector;
 // window.SERVICES = services;
-res.add(getSelectedServices());
+// hashKey.set(angular, 'angular');
+// res.add(
+//   [angular]
+//     .concat(getSelectedServices())
+// );
 
-// expose the services for the ui
+// expose the services for the ui to list them (in settings)
 res.services = services;
+
 res.preRender = function () {
   res.getObjects().empty();
-  res.add(getSelectedServices());
+  hashKey.set(angular, 'angular');
+  res.add(
+    [angular]
+      .concat(getSelectedServices())
+  );
 };
 
 res.showSearch = function (name, property) {

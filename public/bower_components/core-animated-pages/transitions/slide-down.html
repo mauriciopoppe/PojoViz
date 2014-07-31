@@ -29,4 +29,27 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   }
 </core-style>
 
+<!--
+
+`slide-down` slides an element in the outgoing page from the top of the window and
+slides in an element in the incoming page from the top of the window during a page
+transition. You can configure the duration of the transition with the global variable
+`CoreStyle.g.transitions.slideDuration`.
+
+Example:
+
+    <core-animated-pages transition="slide-down">
+      <section>
+        <div id="div1" slide-down></div>
+      </section>
+      <section></section>
+    </core-animated-pages>
+
+@class slide-down
+@extends core-transition-pages
+@status beta
+@homepage github.io
+
+-->
+
 <core-transition-pages id="slide-down" activeClass="slide-down"></core-transition-pages>

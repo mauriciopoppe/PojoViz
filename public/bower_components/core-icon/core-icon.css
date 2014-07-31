@@ -9,6 +9,7 @@ html /deep/ core-icon {
   display: inline-block;
   vertical-align: middle;
   background-repeat: no-repeat;
+  fill: currentcolor;
 }
 
 html /deep/ core-icon[size=""] {

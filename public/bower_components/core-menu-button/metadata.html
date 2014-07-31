@@ -1,13 +1,17 @@
-﻿<x-meta id="polymer-ui-menu-button" label="Menu Button" group="Core" isContainer>
+﻿<x-meta id="core-menu-button" label="Menu Button" group="Core" isContainer>
+
   <template>
-    <polymer-ui-menu-button selected="0" theme="polymer-ui-light-theme">
-      <polymer-ui-menu-item icon="settings" label="Settings"></polymer-ui-menu-item>
-      <polymer-ui-menu-item icon="dialog" label="Dialog"></polymer-ui-menu-item>
-      <polymer-ui-menu-item icon="search" label="Search"></polymer-ui-menu-item>
-    </polymer-ui-menu-button>
+    <core-menu-button icon="more-vert" selected="0">
+      <core-item icon="content-cut" label="Cut"></core-item>
+      <core-item icon="content-copy" label="Copy"></core-item>
+      <core-item icon="content-paste" label="Paste"></core-item>
+    </core-menu-button>
   </template>
+
   <template id="imports">
-    <link rel="import" href="polymer-ui-menu-button.html">
-    <link rel="import" href="../polymer-ui-menu-item/polymer-ui-menu-item.html">
+    <link rel="import" href="core-menu-button.html">
+    <link rel="import" href="../core-icons/core-icons.html">
+    <link rel="import" href="../core-item/core-item.html">
   </template>
+  
 </x-meta>

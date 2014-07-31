@@ -5,11 +5,20 @@
 	<script src="../platform/platform.js"></script>
 	<link rel="import" href="../core-transition/core-transition-css.html">
 	<link rel="import" href="core-overlay.html">
-	
+	<style>
+		body {
+			margin: 0;
+		}
+
+		section {
+			padding: 24px;
+		}
+	</style>
 </head>
 <body unresolved>
-	
-	<x-container></x-container>
+	<section>
+		<x-container></x-container>
+	</section>
 
 	<!-- a simple dialog element made with core-overlay -->
 	<polymer-element name="x-dialog" attributes="opened autoCloseDisabled">

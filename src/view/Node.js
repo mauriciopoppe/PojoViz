@@ -30,7 +30,7 @@ function Node(parent) {
 
         // select current node
         d3.select('.' + prefix(labelEscaped))
-          .classed('selected', over);
+          .classed('selected current', over);
 
         // select predecessor nodes
         d.predecessors
@@ -75,10 +75,10 @@ function Node(parent) {
       .attr('class', 'node-background');
 
     nodeEnter
-      .append('g')
+      // .append('g')
+      .append('text')
         .attr('class', prefix('title'))
         .attr('transform', 'translate(20, 25)')
-      .append('text')
         .text(function (d) {
           var name = d.label
             .match(/\S*?-(.*)/)[1]
@@ -108,10 +108,12 @@ function Node(parent) {
       var el = d3.select(this),
           rect = el.select('rect.node-background');
 
+      // setTimeout(function () {
       var bbox = el.node().getBBox();
       rect
         .attr('width', bbox.width + 10 * 2)
         .attr('height', bbox.height + 10);
+      // }, 0);
     });
   }
   my.margin = function (m) {

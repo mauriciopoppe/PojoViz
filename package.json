@@ -19,6 +19,8 @@
   },
   "browserify-shim": {
     "dagre": "global:dagre",
+    "THREE": "global:THREE",
+    "t3": "global:t3",
     "d3": "global:d3",
     "angular": "global:angular"
   },
@@ -37,6 +39,7 @@
     "gulp-tag-version": "~1.0.2",
     "gulp-concat": "~2.3.4",
     "dagre": "~0.4.6",
-    "gulp-compass": "~1.2.0"
+    "gulp-compass": "~1.2.0",
+    "gulp-vulcanize": "~0.2.1"
   }
 }

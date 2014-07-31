@@ -13,6 +13,8 @@
 	<link rel="import" href="bower_components/core-item/core-item.html">
 	<link rel="import" href="bower_components/core-animated-pages/core-animated-pages.html">
 	<link rel="import" href="bower_components/core-animated-pages/transitions/cross-fade.html">
+	<link rel="import" href="bower_components/core-tooltip/core-tooltip.html">
+	<link rel="import" href="bower_components/core-icon/core-icon.html">
 
 	<link rel="import" href="elements/settings.html">
 	<link rel="import" href="elements/about.html">
@@ -24,6 +26,8 @@
 	<!-- libraries -->
 	<script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.js"></script>
+	<script src="bower_components/t3/examples/lib/three.js"></script>
+	<script src="bower_components/t3/dist/t3.js"></script>
 	<script src="lib/dagre.min.js"></script>
 </head>
 <body unresolved fullbleed>
@@ -50,6 +54,20 @@
 						<a href="#" target="_self"></a>
 					</core-item>
 
+					<core-item data-value="render:win" label="window">
+						<a href="#" target="_self"></a>
+						<core-tooltip label="huge data is coming" position="right">
+							<core-icon icon="warning" size="10"></core-icon>
+						</core-tooltip>
+					</core-item>
+
+				</core-submenu>
+				
+				<core-submenu
+					icon="star"
+					label="Notable Libraries"
+					>
+					
 					<core-item data-value="render:d3" label="D3">
 						<a href="#" target="_self"></a>
 					</core-item>
@@ -58,15 +76,26 @@
 						<a href="#" target="_self"></a>
 					</core-item>
 				
-					<core-item data-value="render:win" label="window">
+					<core-item data-value="render:threejs" label="three.js">
 						<a href="#" target="_self"></a>
 					</core-item>
 
-					<core-item data-value="render:user" label="user">
+				</core-submenu>
+
+				<core-submenu
+					icon="favorite"
+					label="My libraries"
+					>
+					<core-item data-value="render:pojoviz" label="POJO Viz">
 						<a href="#" target="_self"></a>
 					</core-item>
+
+					<core-item data-value="render:t3" label="t3">
+						<a href="#" target="_self"></a>
+					</core-item>
+
 				</core-submenu>
-				
+
 				<core-item data-value="settings" icon="settings" label="Settings">
 					<a href="#settings" target="_self"></a>
 				</core-item>

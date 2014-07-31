@@ -24,7 +24,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   <style shim-shadowdom>
 
+    html, body {
+      height: 100%;
+    }
+
     body {
+      margin: 0;
       font-family: sans-serif;
       color: #333;
     }
@@ -40,6 +45,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     /* background for toolbar when it is at its full size */
     core-scroll-header-panel::shadow #headerBg {
       background-image: url(images/bg3.jpg);
+    }
+
+    core-toolbar {
+      background-color: transparent;
     }
     
     .content {

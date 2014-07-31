@@ -9,7 +9,12 @@
   <link rel="import" href="core-collapse.html">
 
   <style>
-  
+    body {
+      overflow: auto;
+      margin: 8px 24px;
+    }
+
+
     .box {
       background: #eee;
     }
@@ -27,7 +32,7 @@
 </head>
 <body unresolved>
 
-  <section style="background: blue; width: 800px;">
+  <section style="background: steelblue;">
 
     <button onclick="document.querySelector('#collapse1').toggle()">toggle collapse</button>
 
@@ -37,7 +42,7 @@
 
   </section>
 
-  <section style="background: green; width: 800px;">
+  <section style="background: seagreen;">
 
     <button onclick="document.querySelector('#collapse2').toggle()">toggle collapse</button>
 

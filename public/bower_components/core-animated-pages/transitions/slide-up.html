@@ -48,7 +48,35 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     transform: translateY(100vh);
     z-index: -1;
   }
+
+  polyfill-rule {
+    content: ':host > [animate]:not(.core-selected) [slide-up-offscreen]';
+    -webkit-transform: translateY(1000px);
+  }
 </core-style>
+
+<!--
+
+`slide-up` slides an element in the outgoing page from the bottom of the window
+and slides in an element in the incoming page from the bottom of the window during
+a page transition. You can configure the duration of the transition with the global
+variable `CoreStyle.g.transitions.slideDuration`.
+
+Example:
+
+    <core-animated-pages transition="slide-up">
+      <section>
+        <div id="div1" slide-up></div>
+      </section>
+      <section></section>
+    </core-animated-pages>
+
+@class slide-up
+@extends core-transition-pages
+@status beta
+@homepage github.io
+
+-->
 
 <core-transition-pages id="slide-up" activeClass="slide-up"></core-transition-pages>
 <core-transition-pages id="slide-up-offscreen" activeClass="slide-up-offscreen"></core-transition-pages>

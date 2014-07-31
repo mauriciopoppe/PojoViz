@@ -4,3 +4,9 @@
 - Grab the properties (getPrototypeOf)
 - Create the layout
 - draw the objects
+
+# Palette
+
+- grey1: #333333
+- grey2: #292929
+- grey3: #242424

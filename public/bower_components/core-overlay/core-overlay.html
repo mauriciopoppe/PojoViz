@@ -335,7 +335,7 @@ Fired when the `core-overlay`'s `opened` property changes.
         // TODO(sorvell): force SD Polyfill to render
         forcePolyfillRender(this.target);
         if (!this._shouldPosition) {
-          this.target.style.position = 'static';
+          this.target.style.position = 'absolute';
           var computed = getComputedStyle(this.target);
           var t = (computed.top === 'auto' && computed.bottom === 'auto');
           var l = (computed.left === 'auto' && computed.right === 'auto');

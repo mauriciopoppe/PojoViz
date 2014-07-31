@@ -15,18 +15,97 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
 
-</head>
-<body>
+  <script src="../platform/platform.js"></script>
+  
+  <link rel="import" href="core-scroll-header-panel.html">
+  <link rel="import" href="demos/lorem-ipsum.html">
+  <link rel="import" href="../core-toolbar/core-toolbar.html">
+  <link rel="import" href="../core-icon-button/core-icon-button.html">
 
-    <a href="demos/demo1.html">Demo1</a><br><br>
-    <a href="demos/demo2.html">Demo2</a><br><br>
-    <a href="demos/demo3.html">Demo3</a><br><br>
-    <a href="demos/demo4.html">Demo4</a><br><br>
-    <a href="demos/demo5.html">Demo5</a><br><br>
-    <a href="demos/demo6.html">Demo6</a><br><br>
-    <a href="demos/demo7.html">Demo7</a><br><br>
-    <a href="demos/demo8.html">Demo8</a><br><br>
-    <a href="demos/demo9.html">Demo9</a><br><br>
+  <style shim-shadowdom>
+
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      color: #333;
+    }
+
+    core-scroll-header-panel {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+    
+    /* background for toolbar when it is at its full size */
+    core-scroll-header-panel::shadow #headerBg {
+      background-image: url(demos/images/bg9.jpg);
+    }
+    
+    /* background for toolbar when it is condensed */
+    core-scroll-header-panel::shadow #condensedHeaderBg {
+      background-color: #f4b400;
+    }
+    
+    core-toolbar {
+      color: #f1f1f1;
+      fill: #f1f1f1;
+      background-color: transparent;
+    }
+    
+    .title {
+      -webkit-transform-origin: 0;
+      transform-origin: 0;
+      font-size: 40px;
+    }
+    
+    .content {
+      padding: 10px 30px;
+    }
+
+  </style>
+
+</head>
+<body unresolved>
+
+  <core-scroll-header-panel condenses>
+
+    <core-toolbar class="tall">
+    
+      <core-icon-button icon="arrow-back"></core-icon-button>
+      <div flex></div>
+      <core-icon-button icon="search"></core-icon-button>
+      <core-icon-button icon="more-vert"></core-icon-button>
+      <div class="bottom indent title">Title</div>
+      
+    </core-toolbar>
+    
+    <div class="content">
+      
+      <lorem-ipsum paragraphs="100"></lorem-ipsum>
+      
+    </div>
+    
+  </core-scroll-header-panel>
+  
+  <script>
+  
+    // custom transformation: scale header's title
+    var titleStyle = document.querySelector('.title').style;
+    addEventListener('core-header-transform', function(e) {
+      var d = e.detail;
+      var m = d.height - d.condensedHeight;
+      var scale = Math.max(0.75, (m - d.y) / (m / 0.25)  + 0.75);
+      titleStyle.webkitTransform = titleStyle.transform = 
+          'scale(' + scale + ') translateZ(0)';
+    });
+  
+  </script>
   
 </body>
 </html>

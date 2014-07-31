@@ -24,6 +24,7 @@
     "tests"
   ],
   "dependencies": {
-    "core-elements": "Polymer/core-elements#~0.3.3"
+    "core-elements": "Polymer/core-elements#~0.3.3",
+    "t3": "~0.1.1"
   }
 }

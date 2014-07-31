@@ -5,6 +5,7 @@
   bottom: 0;
   right: 0;
   border-radius: inherit;
+  pointer-events: none;
 }
 
 .paper-shadow-animated.paper-shadow {

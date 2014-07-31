@@ -14,11 +14,12 @@ var compass = require('gulp-compass');
 var concat = require('gulp-concat');
 var bump = require('gulp-bump');
 var filter = require('gulp-filter');
+var vulcanize = require('gulp-vulcanize');
 var tagVersion = require('gulp-tag-version');
 var useWatchify;
 
 function run(bundler, minify) {
-  var output = './dist/';
+  var output = './build/';
   if (minify) {
     bundler = bundler.plugin('minifyify', {
       map: pkg.name + '.map.json',
@@ -36,7 +37,7 @@ function run(bundler, minify) {
       console.log(e);
     })
     .pipe(source(pkg.name + (minify ? '.min' : '') + '.js'))
-    .pipe(gulp.dest('./build/'))
+    .pipe(gulp.dest(output))
     .on('end', function () {
       console.timeEnd('build');
     });
@@ -51,10 +52,10 @@ gulp.task('browserify', function () {
   });
 
   var bundle = function () {
-    // if (!useWatchify) {
-    //   // concat + min
-    //   run(bundler, true);
-    // }
+    if (!useWatchify) {
+      // concat + min
+      run(bundler, true);
+    }
     // concat
     return run(bundler);
   };
@@ -67,11 +68,19 @@ gulp.task('browserify', function () {
 });
 
 gulp.task('browserSync', ['browserify'], function () {
-  browserSync({
+  browserSync.init(['build/**'], {
     server: {
       baseDir: './public'
     }
   });
+});
+
+gulp.task('vulcanize', function () {
+  return gulp.src('./public/index.html')
+    .pipe(vulcanize({
+      dest: './public/vulcanize.html',
+    }))
+    .pipe(gulp.dest('./public/'));
 });
 
 gulp.task('compass', function () {
@@ -113,7 +122,7 @@ gulp.task('watch', ['useWatchify', 'browserSync'],  function () {
 });
 
 // main tasks
-gulp.task('build', ['browserify', 'compass']);
+gulp.task('build', ['browserify', 'compass', 'vulcanize']);
 
 gulp.task('release.major', function (cb) { createTag('major', cb); });
 gulp.task('release.minor', function (cb) { createTag('minor', cb); });

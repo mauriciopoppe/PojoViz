@@ -6,8 +6,11 @@
 <!--
 
 `core-animated-pages` selects one of its children "pages" to show and runs a transition
-when switching between them. Transitions to run are specified in the `transitions`
-attribute as a space-delimited string, 
+when switching between them. The transitions are designed to be pluggable, and can
+accept any object that is an instance of a `core-transition-pages`. Transitions to run
+are specified in the `transitions` attribute as a space-delimited string of `id`s of
+transition elements. Several transitions are available with `core-animated-pages` by
+default, including `hero-transition`, `cross-fade`, and `tile-cascade`.
 
 Example:
 
@@ -42,6 +45,7 @@ Example:
         background-color: green;
       }
     </style>
+    // hero-transition and cross-fade are declared elsewhere
     <core-animated-pages transitions="hero-transition cross-fade">
       <section id="page1">
         <div id="hero1" hero-id="hero" hero></div>
@@ -65,11 +69,11 @@ Finding elements to transition
 In general, a transition is applied to elements marked with a certain attribute. For example,
 `hero-transition` applies the transition on elements with the `hero` and `hero-id` attribute.
 Among the transitions included with `core-animated-pages`, script-based transitions such as
-`hero-transition` generally look for elements up to one level of shadow root from the
+`hero-transition` generally look for elements up to one level of shadowRoot from the
 `core-animated-pages` element, and CSS-based transitions such as `cross-fade` look for elements
-within any shadow root of the page. This means which means you can use custom elements as a
-page and mark elements in their shadow roots as heroes, or mark elements in deeper shadow roots
-with other transitions.
+within any shadowRoot within the `core-animated-pages` element. This means you can use 
+custom elements as pages and mark elements in their shadowRoots as heroes, or mark 
+elements in deeper shadowRoots with other transitions.
 
 Example:
 
@@ -126,7 +130,7 @@ Example:
       // The below element is one level of shadow from the core-animated-pages and will
       // be transitioned.
       <div id="hero1" hero-id="foo" hero></div>
-      // The below element contains a hero inside its shadow root making it two levels away
+      // The below element contains a hero inside its shadowRoot making it two levels away
       // from the core-animated-pages, and will not be transitioned.
       <x-el></x-el>
     </template>
@@ -292,6 +296,13 @@ Fired when a page transition completes.
     },
 
     applyTransition: function(src, dst) {
+      if (this.animating) {
+        this.cancelAsync(this.animating);
+        this.animating = null;
+      }
+
+      Platform.flush();
+
       if (this.transitioning.indexOf(src) === -1) {
         this.transitioning.push(src);
       }
@@ -328,10 +339,17 @@ Fired when a page transition completes.
 
       if (!this._transitionElements.length) {
         this.complete();
+      } else {
+        this.animating = this.async(this.complete.bind(this), null, 5000);
       }
     },
 
     complete: function() {
+      if (this.animating) {
+        this.cancelAsync(this.animating);
+        this.animating = null;
+      }
+
       this.transitioning.forEach(function(t) {
         t.removeAttribute('animate');
       });

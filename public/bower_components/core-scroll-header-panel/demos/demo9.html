@@ -27,9 +27,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   <style shim-shadowdom>
 
+    html, body {
+      height: 100%;
+    }
+
     body {
+      margin: 0;
       font-family: sans-serif;
-      background-color: #ededed;
       color: #333;
     }
 
@@ -55,6 +59,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       background-color: #fff;
       border: 1px solid #eee;
       box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+    }
+
+    core-toolbar {
+      background-color: transparent;
     }
     
     .content {

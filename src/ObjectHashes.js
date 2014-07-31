@@ -1,26 +1,24 @@
 'use strict';
 
-var wrap = require('./ObjectAnalyzer'),
-  HashMap = require('./util/HashMap'),
-  angularAnalyzer = require('./analyzer/angularAnalyzer'),
-  builtInAnalyzer = require('./analyzer/builtInAnalyzer'),
-  d3Analyzer = require('./analyzer/d3Analyzer');
+var wrap = require('./ObjectAnalyzer');
 
 var libraries = {
-  builtIn: builtInAnalyzer,
-  angular: angularAnalyzer,
-  d3: d3Analyzer,
-  win: wrap(new HashMap(), new HashMap()),
-  user: wrap(new HashMap(), new HashMap()),
-  all: wrap(new HashMap(), new HashMap())
+  builtIn: require('./analyzer/builtInAnalyzer'),
+  angular: require('./analyzer/angularAnalyzer'),
+  d3: require('./analyzer/d3Analyzer'),
+  win: require('./analyzer/windowAnalyzer'),
+  pojoviz: require('./analyzer/pojovizAnalyzer'),
+  threejs: require('./analyzer/threejsAnalyzer'),
+  t3: require('./analyzer/t3Analyzer')
 };
 
+// console.log(libraries);
+
 // win max level initially is 0
-libraries.win.preRender = function () {
-  libraries.win.getObjects().empty();
-  libraries.win.analyzeObjects([window], 0);
-};
-libraries.user.analyzeObjects([], 0);
+// libraries.win.preRender = function () {
+//   libraries.win.getObjects().empty();
+//   libraries.win.analyzeObjects([window], 0);
+// };
 
 // console.log(builtIn.getObjects());
 // console.log(win.getObjects());

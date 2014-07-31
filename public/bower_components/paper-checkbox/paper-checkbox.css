@@ -57,6 +57,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 /* checkbox checked animations */
 #checkbox.checked.box {
+  border: solid 2px;
   -webkit-animation: box-shrink 140ms ease-out forwards;
   animation: box-shrink 140ms ease-out forwards;
 }
@@ -80,7 +81,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 @keyframes box-shrink {
   0% {
-    -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
     top: 0px;
     left: 0px;
@@ -88,7 +88,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     height: 18px;
   }
   100% {
-    -webkit-transform: rotate(45deg);
     transform: rotate(45deg);
     top: 13px;
     left: 5px;
@@ -125,7 +124,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 @keyframes checkmark-expand {
   0% {
-    -webkit-transform: rotate(45deg);
     transform: rotate(45deg);
     top: 13px;
     left: 5px;
@@ -133,7 +131,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     height: 4px;
   }
   100% {
-    -webkit-transform: rotate(45deg);
     transform: rotate(45deg);
     top: -4px;
     left: 6px; 
@@ -226,7 +223,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 @keyframes box-expand {
   0% {
-    -webkit-transform: rotate(45deg);
     transform: rotate(45deg);
     top: 13px;
     left: 5px;
@@ -234,7 +230,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     height: 4px;
   }
   100% {
-    -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
     top: 0px;
     left: 0px;
@@ -255,4 +250,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 #checkboxLabel[hidden] {
   display: none;
+}
+
+/* disabled state */
+:host([disabled]) {
+  pointer-events: none;
+}
+
+:host([disabled]) #checkbox {
+  border-color: #eaeaea !important;
 }

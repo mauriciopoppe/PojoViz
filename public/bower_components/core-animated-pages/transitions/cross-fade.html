@@ -12,20 +12,20 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <core-style id="cross-fade">
   polyfill-next-selector { content: ':host > * [cross-fade]'; }
   ::content > * /deep/ [cross-fade] {
-    -webkit-transition: opacity {{g.transitions.fadeDuration || g.transitions.duration}} cubic-bezier(0.4, 0, 0.2, 1);
-    transition: opacity {{g.transitions.fadeDuration || g.transitions.duration}} cubic-bezier(0.4, 0, 0.2, 1);
+    -webkit-transition: opacity {{g.transitions.xfadeDuration || g.transitions.duration}} cubic-bezier(0.4, 0, 0.2, 1);
+    transition: opacity {{g.transitions.xfadeDuration || g.transitions.duration}} cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   polyfill-next-selector { content: ':host > * [cross-fade][bg]'; }
   ::content > * /deep/ [cross-fade][bg] {
-    -webkit-transition: background-color {{g.transitions.fadeDuration || g.transitions.duration}} cubic-bezier(0.4, 0, 0.2, 1);
-    transition: background-color {{g.transitions.fadeDuration || g.transitions.duration}} cubic-bezier(0.4, 0, 0.2, 1);
+    -webkit-transition: background-color {{g.transitions.xfadeDuration || g.transitions.duration}} cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background-color {{g.transitions.xfadeDuration || g.transitions.duration}} cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   polyfill-next-selector { content: ':host > * [cross-fade][hero-p]'; }
   ::content > * /deep/ [cross-fade][hero-p] {
-    -webkit-transition: background-color {{g.transitions.fadeDuration || g.transitions.duration}} cubic-bezier(0.4, 0, 0.2, 1);
-    transition: background-color {{g.transitions.fadeDuration || g.transitions.duration}} cubic-bezier(0.4, 0, 0.2, 1);
+    -webkit-transition: background-color {{g.transitions.xfadeDuration || g.transitions.duration}} cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background-color {{g.transitions.xfadeDuration || g.transitions.duration}} cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   polyfill-next-selector { content: ':host > .core-selected [cross-fade]'; }
@@ -52,8 +52,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <core-style id="cross-fade-delayed">
   polyfill-next-selector { content: ':host > * [cross-fade-delayed]'; }
   ::content > * /deep/ [cross-fade-delayed] {
-    -webkit-transition: opacity {{g.transitions.fadeDuration || g.transitions.duration}} ease-out {{g.transitions.duration}};
-    transition: opacity {{g.transitions.fadeDuration || g.transitions.duration}} ease-out {{g.transitions.duration}};
+    -webkit-transition: opacity {{g.transitions.xfadeDuration || g.transitions.duration}} ease-out;
+    transition: opacity {{g.transitions.xfadeDuration || g.transitions.duration}} ease-out;
+  }
+
+  polyfill-next-selector { content: ':host > .core-selected [cross-fade-delayed]'; }
+  ::content > .core-selected /deep/ [cross-fade-delayed] {
+    -webkit-transition: opacity {{g.transitions.xfadeDuration || g.transitions.duration}} ease-out {{g.transitions.xfadeDelay || g.transitions.xfadeDuration || g.transitions.duration}};
+    transition: opacity {{g.transitions.xfadeDuration || g.transitions.duration}} ease-out {{g.transitions.xfadeDelay || g.transitions.xfadeDuration || g.transitions.duration}};
   }
 
   polyfill-next-selector { content: ':host > [animate]:not(.core-selected) [cross-fade-delayed]'; }
@@ -72,8 +78,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   /* cross-fade-all: cross fade everything except for heroes and their parents */
   polyfill-next-selector { content: ':host(.cross-fade-all) > * *:not([hero]):not([hero-p]):not([cross-fade])'; }
   :host(.cross-fade-all) ::content > * /deep/ *:not([hero]):not([hero-p]):not([cross-fade]) {
-    -webkit-transition: opacity {{g.transitions.fadeDuration || g.transitions.duration}} ease-out;
-    transition: opacity {{g.transitions.fadeDuration || g.transitions.duration}} ease-out;
+    -webkit-transition: opacity {{g.transitions.xfadeDuration || g.transitions.duration}} ease-out;
+    transition: opacity {{g.transitions.xfadeDuration || g.transitions.duration}} ease-out;
   }
 
   polyfill-next-selector { content: ':host(.cross-fade-all) > [animate]:not(.core-selected) *:not([hero]):not([hero-p]):not([cross-fade])'; }
@@ -89,8 +95,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   /* Only background-color is allowed for the hero's parents, no opacity transitions */
   polyfill-next-selector { content: ':host(.cross-fade-all) > * [hero-p]'; }
   :host(.cross-fade-all) ::content > * /deep/ [hero-p] {
-    -webkit-transition: background-color {{g.transitions.fadeDuration || g.transitions.duration}} ease-out;
-    transition: background-color {{g.transitions.fadeDuration || g.transitions.duration}} ease-out;
+    -webkit-transition: background-color {{g.transitions.xfadeDuration || g.transitions.duration}} ease-out;
+    transition: background-color {{g.transitions.xfadeDuration || g.transitions.duration}} ease-out;
     opacity: 1;
   }
 
@@ -99,6 +105,68 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     background-color: rgba(0, 0, 0, 0);
   }
 </core-style>
+
+<!--
+
+`cross-fade` fades out elements in the outgoing page and fades in elements in the
+incoming page during a page transition. You can configure the duration of the
+transition with the global variable `CoreStyle.g.transitions.xfadeDuration`.
+
+Example:
+
+    <core-animated-pages transition="cross-fade">
+      <section>
+        <div id="div1" cross-fade></div>
+      </section>
+      <section>
+        <div id="div2" cross-fade bg>
+          <div id="div3" cross-fade></div>
+          <div id="div4"></div>
+        </div>
+      </section>
+    </core-animated-pages>
+
+In the above example, `#div1` and `#div3` has the `cross-fade` attribute. `#div1`
+will fade out and `#div3` will fade in with opacity transitions when the page switches
+from 0 to 1. Sometimes, you may want to only fade the background color of an element
+but not its children, and you can use the `bg` attribute along with the `#div1`
+attribute as in `#div2`.
+
+@class cross-fade
+@extends core-transition-pages
+@status beta
+@homepage github.io
+
+-->
+
+<!--
+
+`cross-fade-delayed` performs a cross-fade after some delay, either specified in
+the global variable `CoreStyle.g.transitions.xfadeDelay` or the duration of the
+transition.
+
+Example:
+
+    <core-animated-pages transition="hero-transition cross-fade-delayed">
+      <section>
+        <div id="div1" hero-id hero></div>
+      </section>
+      <section>
+        <div id="div2" hero-id hero>
+          <div id="div3" cross-fade-delayed></div>
+        </div>
+      </section>
+    </core-animated-pages>
+
+In the above example, `#div3` fades in after the hero transition from `#div1` to
+`#div2` completes.
+
+@class cross-fade-delayed
+@extends core-transition-pages
+@status beta
+@homepage github.io
+
+-->
 
 <core-transition-pages id="cross-fade"></core-transition-pages>
 <core-transition-pages id="cross-fade-delayed"></core-transition-pages>

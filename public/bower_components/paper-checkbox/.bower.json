@@ -6,15 +6,14 @@
     "paper-radio-button": "Polymer/paper-radio-button#>=0.3.0 <1.0.0"
   },
   "homepage": "https://github.com/Polymer/paper-checkbox",
-  "version": "0.3.3",
-  "_release": "0.3.3",
+  "version": "0.3.4",
+  "_release": "0.3.4",
   "_resolution": {
     "type": "version",
-    "tag": "0.3.3",
-    "commit": "76e287a3979ef4e0b7b312068f101e0ce20bd663"
+    "tag": "0.3.4",
+    "commit": "4353752a3b79f7ee184784d948b44a5ee6202df5"
   },
   "_source": "git://github.com/Polymer/paper-checkbox.git",
   "_target": "~0.3.3",
-  "_originalSource": "Polymer/paper-checkbox",
-  "_direct": true
+  "_originalSource": "Polymer/paper-checkbox"
 }

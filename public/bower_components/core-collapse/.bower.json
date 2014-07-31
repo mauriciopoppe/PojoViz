@@ -5,12 +5,12 @@
     "polymer": "Polymer/polymer#>=0.3.0 <1.0.0"
   },
   "homepage": "https://github.com/Polymer/core-collapse",
-  "version": "0.3.3",
-  "_release": "0.3.3",
+  "version": "0.3.4",
+  "_release": "0.3.4",
   "_resolution": {
     "type": "version",
-    "tag": "0.3.3",
-    "commit": "358ad316615bd7a5bd40fef2f078973d46d4e8ee"
+    "tag": "0.3.4",
+    "commit": "3f1245651c3b4f233bdfae227e61496f2c9dbc20"
   },
   "_source": "git://github.com/Polymer/core-collapse.git",
   "_target": ">=0.3.0 <1.0.0",

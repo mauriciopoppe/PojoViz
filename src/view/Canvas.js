@@ -137,8 +137,11 @@ Canvas.prototype.renderEdges = function() {
   .source(function(d) {
     var from = me.root.select('.' +
           prefix(escapeCls(d.fromHash))
-        ),
-        fromData = from.datum(),
+        );
+    if (!from.node()) {
+      throw 'source node must exist';
+    }
+    var fromData = from.datum(),
         property = from.select('.' + prefix(
           escapeCls(transformProperty(d.property))
         )),

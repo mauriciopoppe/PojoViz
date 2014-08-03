@@ -43,7 +43,7 @@
 				Defines the maximum depth when running the dfs algorithm starting from the <i>window</i> object <br />
 				WARNING: The higher the value the longer the time needed for the browser to render the nodes
 			</p>
-			<paper-slider on-change="{{windowDepthChange}}" id="depth" pin snaps max="10" step="1" value="2">
+			<paper-slider on-change="{{windowDepthChange}}" id="depth" pin snaps max="10" step="1" value="1">
 			</paper-slider>
 		</section>
 
@@ -54,13 +54,13 @@
 		Polymer('pojoviz-settings', {
 			ready: function () {
 				var me = this,
-					angularAnalyzer = pojoviz.analyzer.angular;
+					angularAnalyzer = pojoviz.ObjectHashes.angular;
 				me.angularServices = angularAnalyzer.services;
 			},
 
 			windowDepthChange: function (event, detail, el) {
 				var objectHashes = pojoviz.ObjectHashes;
-				objectHashes.win.setLevels(el.value);
+				objectHashes.window.levels = el.value;
 			},
 
 			// deprecated

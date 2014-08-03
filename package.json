@@ -40,6 +40,7 @@
     "gulp-concat": "~2.3.4",
     "dagre": "~0.4.6",
     "gulp-compass": "~1.2.0",
-    "gulp-vulcanize": "~0.2.1"
+    "gulp-vulcanize": "~0.2.1",
+    "q": "~1.0.1"
   }
 }

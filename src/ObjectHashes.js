@@ -1,16 +1,32 @@
 'use strict';
 
-var wrap = require('./ObjectAnalyzer');
+var _ = require('lodash'),
+  Generic = require('./analyzer/GenericAnalyzer'),
+  Angular = require('./analyzer/Angular'),
+  T3 = require('./analyzer/T3'),
+  Window = require('./analyzer/Window'),
+  PojoViz = require('./analyzer/PojoViz'),
+  BuiltIn = require('./analyzer/BuiltIn');
 
-var libraries = {
-  builtIn: require('./analyzer/builtInAnalyzer'),
-  angular: require('./analyzer/angularAnalyzer'),
-  d3: require('./analyzer/d3Analyzer'),
-  win: require('./analyzer/windowAnalyzer'),
-  pojoviz: require('./analyzer/pojovizAnalyzer'),
-  threejs: require('./analyzer/threejsAnalyzer'),
-  t3: require('./analyzer/t3Analyzer')
+var libraries;
+
+var proto = {
+  createNew: function (global, options) {
+    console.log('creating a generic container for: ' + global);
+    return (libraries[global] = new Generic(options));
+  }
 };
+
+libraries = Object.create(proto);
+_.merge(libraries, {
+  builtIn: new BuiltIn(),
+  angular: new Angular(),
+  d3: new Generic({ global: 'd3' }),
+  window: new Window(),
+  pojoviz: new PojoViz(),
+  three: new Generic({ global: 'THREE' }),
+  t3: new T3()
+});
 
 // console.log(libraries);
 

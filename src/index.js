@@ -1,17 +1,22 @@
 var _ = require('lodash'),
+  Q = require('q'),
   dagre = require('dagre'),
   utils = require('./util/'),
   ObjectHashes = require('./ObjectHashes'),
   Canvas = require('./view/Canvas');
 
-var library = ObjectHashes.builtIn,
-  oldLibrary,
+// enable long stacks
+Q.longStackSupport = true;
+
+var container,
+  oldContainer,
   pojoviz;
 
 function process() {
   var g = new dagre.Digraph(),
       properties,
       node,
+      library = container.analyzer,
       registeredObjects = library.getObjects();
   
   // create the graph
@@ -114,55 +119,67 @@ function process() {
 }
 
 // render
-var canvas,
-    cached;
+var canvas;
 function render() {
-  var t,
-      data;
+  var data,
+    library = container.analyzer;
 
-  if (library.dirty || oldLibrary !== library) {
-    library.setDirty(false);
-    
-    if (canvas) {
-      canvas.destroy();
-    }
-    console.log('rendering')
-    console.time('process');
-    t = new Date();
-    library.preRender();
+  if (container === oldContainer) {
+    return;
+  }
+
+  // if (library.dirty) {
+  //   library.setDirty(false);    
+  if (canvas) {
+    canvas.destroy();
+  }
+
+  setTimeout(function () {
+    container.preRender();
+    console.log('process & render start: ', new Date());
     // data has
     // - edges (property -> node)
     // - nodes
     // - center
     // 
+    console.time('process');
     data = process();
     console.timeEnd('process');
     
     console.time('render');
     canvas = new Canvas(data);
     canvas.render();
-    console.timeEnd('render');
-  }
-  cached = data;
+    console.timeEnd('render');      
+    // }
+  }, 0);
 }
 
 // public api
 pojoviz = {
-  getCurrentLibrary: function () {
-    return library;
+  nullifyContainer: function () {
+    oldContainer = container;
+    container = null;
   },
-  setCurrentLibrary: function (k) {
-    oldLibrary = library;
-    library = ObjectHashes[k];
+  getContainer: function () {
+    return container;
+  },
+  setContainer: function (containerName, options) {
+    oldContainer = container;
+    container = ObjectHashes[containerName];
+
+    // TODO: create empty instance for new objects
+    if (!container) {
+      container = ObjectHashes.createNew(containerName, options);
+    } else {
+      // required to fetch external resources
+      container.src = options.src;
+    }
+
+    return container.init();
   },
   render: render,
 
   // expose inner modules
-  analyzer: {
-    angular: require('./analyzer/angularAnalyzer'),
-    builtIn: require('./analyzer/builtInAnalyzer'),
-    d3: require('./analyzer/d3Analyzer')
-  },
   ObjectHashes: require('./ObjectHashes'),
   ObjectAnalyzer: require('./ObjectAnalyzer')
 };
@@ -171,7 +188,7 @@ pojoviz = {
 document.addEventListener('property-click', function (e) {
   var detail = e.detail;
   pojoviz
-    .getCurrentLibrary()
+    .getContainer()
     .showSearch(detail.name, detail.property);
 });
 

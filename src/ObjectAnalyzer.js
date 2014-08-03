@@ -11,89 +11,6 @@ function eachObjectAndPrototype(obj, fn) {
 }
 
 /**
- * Gets the enumerable properties an object discarding
- * forbidden ones
- * 
- * @param  {Object} obj
- * @param  {boolean} objectsOnly True consider objects only
- * @return {Array} Array of objects, each object has the following
- * properties:
- *
- * - name
- * - cls
- * - type
- * - linkeable (if it's an object this property is set to true)
- */
-function getProperties(obj, objectsOnly) {
-  var properties = Object.getOwnPropertyNames(obj);
-
-  function forbiddenKey(v) {
-    return v.match(/^__.*?__$/) ||
-      v.match(/^\$\$.*?\$\$$/);
-  }
-
-  properties = _.filter(properties, function (v) {
-    var good = typeof v === 'string' && !forbiddenKey(v),
-        r;
-    if (objectsOnly) {
-      try {
-        r = good && typeof obj[v] === 'object';
-      } catch (e) {
-        r = false;
-        // uncomment to see why obj[v] is not allowed
-        // console.log(e);
-      } finally {
-        return r;
-      }
-    }
-    return good;
-  }).map(function (v) {
-    var type;
-    try {
-      // type = null|string|undefined|number|object
-      type = obj[v] ? typeof obj[v] : '' + obj[v];
-    } catch(e) {
-      type = 'undefined';
-    }
-    if (v === 'constructor') {
-      type = 'object';
-    }
-    return {
-      name: v,
-      cls: hashKey(obj),
-      type: type,
-      linkeable: type === 'object'
-    };
-  });
-
-  // special properties
-  var proto = Object.getPrototypeOf(obj);
-  if (proto) {
-    properties.push({
-      name: '[[Prototype]]',
-      cls: hashKey(obj),
-      type: 'object',
-      linkeable: true
-    });
-  }
-  var constructor = obj.hasOwnProperty &&
-    obj.hasOwnProperty('constructor') &&
-    typeof obj.constructor === 'function';
-  if (constructor &&
-      _.findIndex(properties, { name: 'constructor' }) === -1) {
-    properties.push({
-      cls: hashKey(obj),
-      name: 'constructor',
-      type: 'object',
-      linkeable: true
-    });
-  }
-
-  // console.log(properties);
-  return properties;
-}
-
-/**
  * Wraps a function with another
  * @param  {Function} fn
  * @param  {Function}   wrapper
@@ -195,14 +112,14 @@ Analyzer.prototype = {
     // TODO: memoization
     var me = this,
         links = [],
-        properties = getProperties(obj, true),
+        properties = me.getProperties(obj, true),
         name = hashKey.get(obj);
 
     function getAugmentedHash(obj, name) {
       if (!hashKey.get(obj) &&
-          name !== 'prototype' && 
+          name !== 'prototype' &&
           name !== 'constructor') {
-        hashKey.set(obj, name);
+        hashKey.createHashKeysFor(obj, name);
       }
       return hashKey(obj);
     }
@@ -291,12 +208,88 @@ Analyzer.prototype = {
     return this.getOwnLinks(obj);
   },
 
-  // template
-  preRender: function () {},
-  getProperties: getProperties,
-  showSearch: function (name, property) {
-    window.open('https://duckduckgo.com/?q=' +
-      name + ' ' + property);
+  /**
+   * Gets the enumerable properties an object discarding
+   * forbidden ones
+   * 
+   * @param  {Object} obj
+   * @param  {boolean} objectsOnly True consider objects only
+   * @return {Array} Array of objects, each object has the following
+   * properties:
+   *
+   * - name
+   * - cls
+   * - type
+   * - linkeable (if it's an object this property is set to true)
+   */
+  getProperties: function (obj, objectsOnly) {
+    var properties = Object.getOwnPropertyNames(obj);
+
+    function forbiddenKey(v) {
+      return v.match(/^__.*?__$/) ||
+        v.match(/^\$\$.*?\$\$$/) ||
+        v.match(/[:+~!><=]/);   // jquery strange property
+    }
+
+    properties = _.filter(properties, function (v) {
+      var good = typeof v === 'string' && !forbiddenKey(v),
+          r;
+      if (objectsOnly) {
+        try {
+          r = good && typeof obj[v] === 'object';
+        } catch (e) {
+          r = false;
+          // uncomment to see why obj[v] is not allowed
+          // console.log(e);
+        } finally {
+          return r;
+        }
+      }
+      return good;
+    }).map(function (v) {
+      var type;
+      try {
+        // type = null|string|undefined|number|object
+        type = obj[v] ? typeof obj[v] : '' + obj[v];
+      } catch(e) {
+        type = 'undefined';
+      }
+      if (v === 'constructor') {
+        type = 'object';
+      }
+      return {
+        name: v,
+        cls: hashKey(obj),
+        type: type,
+        linkeable: type === 'object'
+      };
+    });
+
+    // special properties
+    var proto = Object.getPrototypeOf(obj);
+    if (proto) {
+      properties.push({
+        name: '[[Prototype]]',
+        cls: hashKey(obj),
+        type: 'object',
+        linkeable: true
+      });
+    }
+    var constructor = obj.hasOwnProperty &&
+      obj.hasOwnProperty('constructor') &&
+      typeof obj.constructor === 'function';
+    if (constructor &&
+        _.findIndex(properties, { name: 'constructor' }) === -1) {
+      properties.push({
+        cls: hashKey(obj),
+        name: 'constructor',
+        type: 'object',
+        linkeable: true
+      });
+    }
+
+    // console.log(properties);
+    return properties;
   }
 };
 

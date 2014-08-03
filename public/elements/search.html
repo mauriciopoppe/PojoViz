@@ -1,0 +1,66 @@
+<link rel="import" href="../bower_components/core-ajax/core-ajax.html">
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../bower_components/core-icon-button/core-icon-button.html">
+<link rel="import" href="../bower_components/paper-dialog/paper-dialog.html">
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../bower_components/paper-input/paper-input.html">
+<link rel="import" href="../bower_components/paper-dialog/paper-dialog-transition.html">
+
+<polymer-element name="pojoviz-search">
+	<template>		
+		<core-icon-button icon="add" on-click="{{onIconClick}}"></core-icon-button>
+    <paper-dialog id="popup" heading="Add your library" transition="paper-dialog-transition-center">		
+			
+			<p>
+				Powered by <a href="https://cdnjs.com/">cdn.js</a>)
+			</p>
+
+			<core-ajax id="ajax"
+		    url="http://api.cdnjs.com/libraries"
+		    handleAs="json"
+		    on-core-response="{{handleResponse}}">
+	    </core-ajax>
+
+	    <paper-input id="inputQuery" floatingLabel
+	    	label="Add your preferred library"
+	    	on-input="{{onSearch}}"
+	    	value="{{query}}"
+	    	></paper-input>
+
+			<div layout horizontal>
+				<div flex></div>
+		    <paper-button label="Close" affirmative autofocus></paper-button>
+			</div>
+		</paper-dialog>
+
+	</template>
+	<script>
+		Polymer('pojoviz-search', {
+			ready: function () {
+				// var me = this,
+				// 	timer;
+				// me.$.inputQuery.oninput = function () {
+				// 	clearTimeout(timer);
+				// 	timer = setTimeout(function () {
+				// 		me.onSearch();
+				// 	}, 1000);
+				// };
+			},
+			onIconClick: function (event, detail, el) {
+				this.$.popup.toggle();
+			},
+			onSearch: function () {
+				var me = this;
+				var ajaxEl = me.$.ajax;
+				ajaxEl.params = JSON.stringify({
+					search: me.query,
+					fields: 'assets'
+				});
+				ajaxEl.go();
+			},
+			handleResponse: function (ev, response, el) {
+				console.log(response);
+			}
+		});
+	</script>
+</polymer-element>

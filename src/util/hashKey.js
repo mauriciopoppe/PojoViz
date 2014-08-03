@@ -24,7 +24,7 @@ me.get = function (v) {
   return v[me.hiddenKey];
 };
 
-me.createHashKeysFor = function (obj) {
+me.createHashKeysFor = function (obj, name) {
 
   function localToString(obj) {
     var match;
@@ -84,7 +84,7 @@ me.createHashKeysFor = function (obj) {
       typeof obj.constructor === 'function') {
     me.createHashKeysFor(obj.constructor);
   } else {
-    me.set(obj, getName(obj));
+    me.set(obj, name || getName(obj));
     if (obj.hasOwnProperty &&
         obj.hasOwnProperty('prototype')) {
       me.set(obj.prototype, getName(obj) + '-prototype');
@@ -93,8 +93,8 @@ me.createHashKeysFor = function (obj) {
 };
 
 me.set = function (obj, key) {
-  if (typeof key !== 'string') {
-    throw 'The key needs to be a string';
+  if (typeof key !== 'string' || !key) {
+    throw 'The key needs to be a valid string';
   }
   if (!me.get(obj)) {
     Object.defineProperty(obj, me.hiddenKey, {

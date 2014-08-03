@@ -18,17 +18,19 @@
 
 	<link rel="import" href="elements/settings.html">
 	<link rel="import" href="elements/about.html">
+	<link rel="import" href="elements/search.html">
 
 	<!-- normalize -->
 	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css">
 	<link rel="stylesheet" href="css/app.css">
 
-	<!-- libraries -->
-	<script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3.js"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.js"></script>
+	<!-- THREE is required for t3 -->
 	<script src="bower_components/t3/examples/lib/three.js"></script>
 	<script src="bower_components/t3/dist/t3.js"></script>
+	<!-- graph layout engine -->
 	<script src="lib/dagre.min.js"></script>
+	<!-- libraries -->
+	<script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3.js"></script>
 </head>
 <body unresolved fullbleed>
 	<core-scaffold responsiveWidth="1000px">
@@ -50,11 +52,13 @@
 					icon="exit-to-app"
 					label="Known Schemas"
 					>
-					<core-item data-value="render:builtIn" label="built-in objects">
+					<core-item label="built-in objects"
+						data-value="render:builtIn">
 						<a href="#" target="_self"></a>
 					</core-item>
 
-					<core-item data-value="render:win" label="window">
+					<core-item label="window"
+						data-value="render:window">
 						<a href="#" target="_self"></a>
 						<core-tooltip label="huge data is coming" position="right">
 							<core-icon icon="warning" size="10"></core-icon>
@@ -68,15 +72,40 @@
 					label="Notable Libraries"
 					>
 					
-					<core-item data-value="render:d3" label="D3">
+					<core-item label="jQuery"
+						data-src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"
+						data-value="render:jQuery"
+						data-global="jQuery">
 						<a href="#" target="_self"></a>
 					</core-item>
 
-					<core-item data-value="render:angular" label="Angular JS">
+					<core-item label="Polymer"
+						data-value="render:Polymer"
+						data-global="Polymer">
+						<a href="#" target="_self"></a>
+					</core-item>
+
+					<core-item label="D3"
+						data-value="render:d3">
+						<a href="#" target="_self"></a>
+					</core-item>
+
+					<core-item label="Angular JS"
+						data-src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.js"
+						data-value="render:angular">
 						<a href="#" target="_self"></a>
 					</core-item>
 				
-					<core-item data-value="render:threejs" label="three.js">
+					<core-item label="three.js"
+						data-value="render:three">
+						<a href="#" target="_self"></a>
+					</core-item>
+
+					<core-item label="Phaser"
+						data-value="render:Phaser"
+						data-src="//cdnjs.cloudflare.com/ajax/libs/phaser/2.0.6/phaser.min.js"
+						data-global="Phaser"
+						data-levels="1">
 						<a href="#" target="_self"></a>
 					</core-item>
 
@@ -86,11 +115,13 @@
 					icon="favorite"
 					label="My libraries"
 					>
-					<core-item data-value="render:pojoviz" label="POJO Viz">
+					<core-item label="POJO Viz"
+						data-value="render:pojoviz">
 						<a href="#" target="_self"></a>
 					</core-item>
 
-					<core-item data-value="render:t3" label="t3">
+					<core-item label="t3"
+						data-value="render:t3">
 						<a href="#" target="_self"></a>
 					</core-item>
 
@@ -103,9 +134,11 @@
 
 		</core-header-panel>
 
+		<!-- title + info -->
 		<div tool horizontal layout center style="width: 100%">
 			<div class="title"></div>
 			<div flex></div>
+			<pojoviz-search></pojoviz-search>
 			<pojoviz-about></pojoviz-about>
 		</div>
 		
@@ -144,13 +177,20 @@
 				if (detail.isSelected) {
 					// doesn't have a submenu
 					if (!detail.item.$.submenu) {
-						value = detail.item.dataset.value.split(':');
+						var dataSet = detail.item.dataset;
+						value = dataSet.value.split(':');
 						action = value[0];
 						if (action === 'render') {
-							pojoviz.setCurrentLibrary(value[1]);
-							pojoviz.render();
+							// global name, data properties
+							pojoviz.setContainer(value[1], dataSet)
+								.then(function() {
+									pojoviz.render();
+								})
+								.done();
+							// pojoviz.render();
 							pages.selected = 'app';
 						} else {
+							pojoviz.nullifyContainer();
 							pages.selected = 'settings';
 						}
 						// change title
@@ -160,6 +200,8 @@
 					}
 				}
 			});
+
+			// search			
 		})();
 	</script>
 

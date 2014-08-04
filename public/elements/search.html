@@ -4,16 +4,65 @@
 <link rel="import" href="../bower_components/paper-dialog/paper-dialog.html">
 <link rel="import" href="../bower_components/paper-button/paper-button.html">
 <link rel="import" href="../bower_components/paper-input/paper-input.html">
+<link rel="import" href="../bower_components/paper-radio-group/paper-radio-group.html">
+<link rel="import" href="../bower_components/paper-radio-button/paper-radio-button.html">
+<link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
 <link rel="import" href="../bower_components/paper-dialog/paper-dialog-transition.html">
 
-<polymer-element name="pojoviz-search">
-	<template>		
-		<core-icon-button icon="add" on-click="{{onIconClick}}"></core-icon-button>
-    <paper-dialog id="popup" heading="Add your library" transition="paper-dialog-transition-center">		
-			
-			<p>
-				Powered by <a href="https://cdnjs.com/">cdn.js</a>)
-			</p>
+<polymer-element name="pojoviz-search" attributes="globals">
+	<template>
+		<style>
+			paper-dialog {
+				width: 800px;
+				height: 650px;
+			}
+			.results {
+				padding: 0 30px;
+				max-height: 200px;
+				overflow-y: scroll;
+				font-size: 12px;
+			}
+			.library-name {
+				font-size: 15px;
+				font-weight: 100;
+			}
+			.library-url {
+				font-size: 12px;
+				word-wrap: break-word;
+			}
+			.add {
+				height: 30px;
+			}
+			.record {
+				margin: 20px 0;
+			}
+			paper-button {
+				background: #03a9f4;
+    		color: #fff;
+			}
+			paper-radio-button {
+				margin: auto;
+			}
+			.small {
+				font-size: 12px!important;
+				color: #03a9f4;
+				font-weight: 100;
+			}
+			paper-button {
+				margin: 0 10px;
+			}
+			paper-button[raisedButton].green {
+	      background: #259b24;
+	      color: #fff;
+	    }
+	    paper-button[raisedButton].blue {
+	      background: #03a9f4;
+	      color: #fff;
+	    }
+		</style>
+
+		<core-icon-button icon="search" on-click="{{onIconClick}}"></core-icon-button>
+    <paper-dialog id="popup" heading="Library Search" transition="paper-dialog-transition-center">		
 
 			<core-ajax id="ajax"
 		    url="http://api.cdnjs.com/libraries"
@@ -23,28 +72,87 @@
 
 	    <paper-input id="inputQuery" floatingLabel
 	    	label="Add your preferred library"
-	    	on-input="{{onSearch}}"
-	    	value="{{query}}"
-	    	></paper-input>
+	    	value="{{query}}"></paper-input>
 
-			<div layout horizontal>
-				<div flex></div>
-		    <paper-button label="Close" affirmative autofocus></paper-button>
-			</div>
+			<paper-radio-group
+				id="libraryGroup"
+				on-core-select="{{onRadioSelectChange}}"
+				target="{{$.results}}"
+				itemsSelector="paper-radio-button"
+				selected="0">
+		  	<div id="results" class="results">
+				    <template repeat="{{record in results}}">
+				    	<div class="record" layout horizontal>
+				    		<div flex one layout justified horizontal>
+							    <paper-radio-button
+							    	name="{{record.name}}"
+							    	value="{{record.latest}}">
+							    </paper-radio-button>
+				    		</div>
+								<div layout horizontal flex eleven>
+					    		<div class="library-name" flex one>{{record.name}}</div>
+					    		<div class="library-url" flex two>
+					    			{{record.latest}}
+					    		</div>
+								</div>
+				    	</div>
+				    </template>
+				</div>
+			</paper-radio-group>
+
+			<template if="{{libraryName}}">
+				<div>
+					<paper-input id="globalExported" floatingLabel
+			    	label="Enter the global variable exported"
+			    	value="{{globalExported}}">
+			    </paper-input>
+		    </div>
+		  </template>
+
+			<template if="{{libraryName && globalExported}}">
+				<div class="small">
+					<div>
+						name:   {{libraryName}} {{libraryUrl}} <br />
+						global: {{globalExported}}
+					</div>
+				</div>
+				<paper-button class="green"
+					on-click="{{onAddLibrary}}"
+					label="Add Library"
+					raisedButton affirmative autofocus>
+				</paper-button>
+			</template>
+	    
+			<paper-button class="blue" label="Close" raisedButton affirmative autofocus></paper-button>
 		</paper-dialog>
 
 	</template>
 	<script>
 		Polymer('pojoviz-search', {
+
+			publish: {
+				globals: {
+					value: [],
+					reflect: true
+				}
+			},
+
+			created: function () {
+				this.results = null;
+				this.libraryName = null;
+				this.libraryUrl = null;
+				this.globalExported = null;
+			},
+
 			ready: function () {
-				// var me = this,
-				// 	timer;
-				// me.$.inputQuery.oninput = function () {
-				// 	clearTimeout(timer);
-				// 	timer = setTimeout(function () {
-				// 		me.onSearch();
-				// 	}, 1000);
-				// };
+				var me = this,
+					timer;
+				me.$.inputQuery.oninput = function () {
+					clearTimeout(timer);
+					timer = setTimeout(function () {
+						me.onSearch();
+					}, 1000);
+				};
 			},
 			onIconClick: function (event, detail, el) {
 				this.$.popup.toggle();
@@ -53,13 +161,29 @@
 				var me = this;
 				var ajaxEl = me.$.ajax;
 				ajaxEl.params = JSON.stringify({
-					search: me.query,
+					search: me.$.inputQuery.inputValue,
 					fields: 'assets'
 				});
 				ajaxEl.go();
 			},
-			handleResponse: function (ev, response, el) {
-				console.log(response);
+			onRadioSelectChange: function (ev, detail, el) {
+				if (detail.isSelected) {
+					this.libraryName = detail.item.getAttribute('name');
+					this.libraryUrl = detail.item.getAttribute('value');
+				}
+			},
+			handleResponse: function (ev, detail, el) {
+				var results = detail.response.results;
+				this.results = results;
+			},
+			onAddLibrary: function (ev, detail, el) {
+				var userVars = pojoviz.userVariables;
+				userVars.push({
+					name: this.libraryName,
+					src: this.libraryUrl,
+					global: this.globalExported
+				});
+				// console.log(userVars);
 			}
 		});
 	</script>

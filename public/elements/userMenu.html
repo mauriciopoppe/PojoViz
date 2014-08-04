@@ -1,0 +1,39 @@
+<link rel="import" href="../bower_components/core-item/core-item.html">
+<link rel="import" href="../bower_components/core-menu/core-menu.html">
+<link rel="import" href="../bower_components/core-menu/core-submenu.html">
+<link rel="import" href="../bower_components/core-icon/core-icon.html">
+<polymer-element name="pojoviz-user-menu">
+	<template>	
+		<core-menu selected="0">
+			<core-submenu icon="cloud" label="Downloaded" on-core-select="{{onLibrarySelect}}">
+				<template repeat="{{library in libraries}}">
+					<core-item label="{{library.name}}"
+						data-value="render:{{library.name}}"
+						data-src="{{library.src}}"
+						data-global="{{library.global}}"
+						data-forbidden='window'
+						data-levels="2"
+						>
+						<a href="/#" target="_self"></a>
+					</core-item>
+				</template>
+			</core-submenu>
+		</core-menu>
+	</template>
+	<script>
+		Polymer('pojoviz-user-menu', {
+			created: function () {
+				var me = this;
+				this.libraries = pojoviz.userVariables;
+			},
+			onLibrarySelect: function (ev, detail, el) {
+				if (detail.isSelected) {
+					var ev = new CustomEvent('library-select', {
+						detail: detail.item
+					});
+					document.dispatchEvent(ev);
+				}
+			}
+		});
+	</script>
+</polymer-element>

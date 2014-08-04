@@ -19,6 +19,7 @@
 	<link rel="import" href="elements/settings.html">
 	<link rel="import" href="elements/about.html">
 	<link rel="import" href="elements/search.html">
+	<link rel="import" href="elements/userMenu.html">
 
 	<!-- normalize -->
 	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css">
@@ -44,7 +45,9 @@
 			<!-- <div class="" flex> -->
 				<!-- Application -->
 			<!-- </div> -->
-			<core-menu theme="core-light-theme"
+			<core-menu 
+				id="schemas"
+				theme="core-light-theme"
 				valueattr="label"
 				selected="Known Schemas">
 				
@@ -124,9 +127,14 @@
 						data-value="render:t3">
 						<a href="#" target="_self"></a>
 					</core-item>
-
 				</core-submenu>
+			</core-menu>
 
+			<!-- user libraries -->
+			<pojoviz-user-menu></pojoviz-user-menu>
+
+			<!-- settings -->
+			<core-menu>
 				<core-item data-value="settings" icon="settings" label="Settings">
 					<a href="#settings" target="_self"></a>
 				</core-item>
@@ -165,43 +173,51 @@
 
 	<script>
 		(function () {
-			var schemas = document.querySelector('core-header-panel core-menu');
+			var schemas = document.querySelector('core-header-panel #schemas');
 			var pages = document.querySelector('core-animated-pages');
 			var scaffold = document.querySelector('core-scaffold');
 			var tool = document.querySelector('[tool] .title');
+
+			function runLibrary(el) {
+				var dataSet = el.dataset,
+					value,
+					action;
+
+				console.log(dataSet);
+
+				value = dataSet.value.split(':');
+				action = value[0];
+				// global name, data properties
+				pojoviz.setContainer(value[1], dataSet)
+					.then(function() {
+						pojoviz.render();
+					})
+					.done();
+				// pojoviz.render();
+				pages.selected = 'app';
+				// change title
+				tool.textContent = el.label;
+				scaffold.closeDrawer();
+			}
 
 			schemas.addEventListener('core-select', function (e) {
 				var detail = e.detail,
 					value,
 					action;
-				if (detail.isSelected) {
-					// doesn't have a submenu
-					if (!detail.item.$.submenu) {
-						var dataSet = detail.item.dataset;
-						value = dataSet.value.split(':');
-						action = value[0];
-						if (action === 'render') {
-							// global name, data properties
-							pojoviz.setContainer(value[1], dataSet)
-								.then(function() {
-									pojoviz.render();
-								})
-								.done();
-							// pojoviz.render();
-							pages.selected = 'app';
-						} else {
-							pojoviz.nullifyContainer();
-							pages.selected = 'settings';
-						}
-						// change title
-						tool.textContent = detail.item.label;
-
-						scaffold.closeDrawer();
-					}
+				if (detail.isSelected &&
+					!detail.item.$.submenu) {
+					runLibrary(detail.item);
 				}
 			});
 
-			// search			
+			document.addEventListener('library-select', function (e) {
+				runLibrary(e.detail);
+			});
+
+			// settings
+			// document
+			// 	.querySelector('core-header-panel #settings')
+			// 	.addEventListener('core')
 		})();
 	</script>
 

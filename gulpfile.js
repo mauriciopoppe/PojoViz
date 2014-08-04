@@ -18,6 +18,11 @@ var vulcanize = require('gulp-vulcanize');
 var tagVersion = require('gulp-tag-version');
 var useWatchify;
 
+browserSync.use("logger", function () {
+    return function (emitter, options) {
+    };
+});
+
 function run(bundler, minify) {
   var output = './build/';
   if (minify) {

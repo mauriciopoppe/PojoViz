@@ -10,17 +10,22 @@
   user-select: none;
 }
 
-/* line 20, ../sass/app.scss */
+/* line 19, ../sass/app.scss */
+#__bs_notify__ {
+  display: none !important;
+}
+
+/* line 23, ../sass/app.scss */
 *, *:before, *:after {
   font-family: 'Roboto', sans-serif;
 }
 
-/* line 24, ../sass/app.scss */
+/* line 27, ../sass/app.scss */
 .no-padding {
   padding: 0 !important;
 }
 
-/* line 30, ../sass/app.scss */
+/* line 33, ../sass/app.scss */
 body core-animated-pages {
   position: absolute;
   top: 0;
@@ -28,32 +33,32 @@ body core-animated-pages {
   width: 100%;
   height: 100%;
 }
-/* line 37, ../sass/app.scss */
+/* line 40, ../sass/app.scss */
 body core-animated-pages section {
   padding: 40px;
 }
-/* line 43, ../sass/app.scss */
+/* line 46, ../sass/app.scss */
 body /deep/ core-header-panel[main] {
   background-color: white;
 }
-/* line 45, ../sass/app.scss */
+/* line 48, ../sass/app.scss */
 body /deep/ core-header-panel[main] core-toolbar {
   background-color: #03a9f4;
 }
 
-/* line 51, ../sass/app.scss */
+/* line 54, ../sass/app.scss */
 .logo {
   text-align: center;
   padding: 15px;
   font-size: 50px;
   font-weight: 100;
 }
-/* line 56, ../sass/app.scss */
+/* line 59, ../sass/app.scss */
 .logo .subtitle {
   font-size: 12px;
 }
 
-/* line 62, ../sass/app.scss */
+/* line 65, ../sass/app.scss */
 .pv-link {
   -webkit-transition-property: stroke;
   -moz-transition-property: stroke;
@@ -67,55 +72,55 @@ body /deep/ core-header-panel[main] core-toolbar {
   stroke-width: 3px;
   stroke: lightgrey;
 }
-/* line 69, ../sass/app.scss */
+/* line 72, ../sass/app.scss */
 .pv-link.selected {
   stroke: #03a9f4;
 }
-/* line 71, ../sass/app.scss */
+/* line 74, ../sass/app.scss */
 .pv-link.selected.predecessor {
   stroke: #e51c23;
 }
-/* line 74, ../sass/app.scss */
+/* line 77, ../sass/app.scss */
 .pv-link.selected.successor {
   stroke: #03a9f4;
 }
 
-/* line 80, ../sass/app.scss */
+/* line 83, ../sass/app.scss */
 .canvas-wrapper {
   height: 100%;
 }
 
-/* line 83, ../sass/app.scss */
+/* line 86, ../sass/app.scss */
 svg#canvas {
   width: 100%;
   height: 100%;
 }
-/* line 88, ../sass/app.scss */
+/* line 91, ../sass/app.scss */
 svg#canvas.dragged {
   cursor: move;
 }
-/* line 92, ../sass/app.scss */
+/* line 95, ../sass/app.scss */
 svg#canvas .pv-nodes-focused .pv-node {
   opacity: 0.3;
 }
-/* line 94, ../sass/app.scss */
+/* line 97, ../sass/app.scss */
 svg#canvas .pv-nodes-focused .pv-node.selected {
   opacity: 1;
 }
-/* line 98, ../sass/app.scss */
+/* line 101, ../sass/app.scss */
 svg#canvas .pv-nodes-focused .pv-node.predecessor .node-background {
   stroke: #e51c23;
 }
-/* line 103, ../sass/app.scss */
+/* line 106, ../sass/app.scss */
 svg#canvas .pv-nodes-focused .pv-node.successor .node-background {
   stroke: #03a9f4;
 }
-/* line 108, ../sass/app.scss */
+/* line 111, ../sass/app.scss */
 svg#canvas .pv-nodes-focused .pv-node.current .node-background {
   stroke: #673ab7;
 }
 
-/* line 116, ../sass/app.scss */
+/* line 119, ../sass/app.scss */
 .pv-node {
   -webkit-transition-property: opacity;
   -moz-transition-property: opacity;
@@ -126,7 +131,7 @@ svg#canvas .pv-nodes-focused .pv-node.current .node-background {
   -o-transition-duration: 0.2s;
   transition-duration: 0.2s;
 }
-/* line 120, ../sass/app.scss */
+/* line 123, ../sass/app.scss */
 .pv-node .node-background {
   fill: white;
   fill-opacity: 1;
@@ -134,66 +139,66 @@ svg#canvas .pv-nodes-focused .pv-node.current .node-background {
   stroke: #b3e5fc;
   stroke-width: 2px;
 }
-/* line 127, ../sass/app.scss */
+/* line 130, ../sass/app.scss */
 .pv-node .pv-title {
   font-size: 17px;
   font-weight: 100;
 }
-/* line 134, ../sass/app.scss */
+/* line 137, ../sass/app.scss */
 .pv-node .pv-body .pv-property .pv-dot {
   fill: #03a9f4;
 }
-/* line 138, ../sass/app.scss */
+/* line 141, ../sass/app.scss */
 .pv-node .pv-body .pv-property .pv-property-background {
   fill: white;
 }
-/* line 142, ../sass/app.scss */
+/* line 145, ../sass/app.scss */
 .pv-node .pv-body .pv-property:hover {
   cursor: pointer;
 }
-/* line 147, ../sass/app.scss */
+/* line 150, ../sass/app.scss */
 .pv-node .pv-body .pv-property.pv-__proto__ rect {
   fill: #b3e5fc;
   fill-opacity: 0.15;
   stroke-dasharray: 2;
 }
-/* line 152, ../sass/app.scss */
+/* line 155, ../sass/app.scss */
 .pv-node .pv-body .pv-property.pv-__proto__ text {
   stroke-dasharray: 1;
   fill: #b3e5fc;
 }
-/* line 159, ../sass/app.scss */
+/* line 162, ../sass/app.scss */
 .pv-node .pv-body .pv-property rect.pv-string {
   stroke: #a3e9a4;
 }
-/* line 162, ../sass/app.scss */
+/* line 165, ../sass/app.scss */
 .pv-node .pv-body .pv-property rect.pv-number {
   stroke: #ffe0b2;
 }
-/* line 168, ../sass/app.scss */
+/* line 171, ../sass/app.scss */
 .pv-node .pv-body .pv-property rect.pv-object {
   stroke: #b3e5fc;
 }
-/* line 176, ../sass/app.scss */
+/* line 179, ../sass/app.scss */
 .pv-node.pv-function rect.node-background {
   stroke: #f9bdbb;
 }
 
-/* line 187, ../sass/app.scss */
+/* line 190, ../sass/app.scss */
 pojoviz-settings::shadow paper-slider::shadow #sliderKnobInner, pojoviz-settings::shadow paper-slider::shadow #sliderKnobInner::before,
 pojoviz-settings::shadow paper-slider::shadow #sliderBar::shadow #activeProgress {
   background-color: #03a9f4;
 }
-/* line 193, ../sass/app.scss */
+/* line 196, ../sass/app.scss */
 pojoviz-settings::shadow paper-checkbox::shadow #ink[checked] {
   color: #03a9f4;
 }
-/* line 196, ../sass/app.scss */
+/* line 199, ../sass/app.scss */
 pojoviz-settings::shadow paper-checkbox::shadow #checkbox.checked {
   border-color: #03a9f4;
 }
 
-/* line 203, ../sass/app.scss */
+/* line 206, ../sass/app.scss */
 core-submenu core-item {
   font-size: 13px;
 }

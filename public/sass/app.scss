@@ -16,6 +16,9 @@ $color-successor: $blue-500;
 // $color-null: $red-100;
 // $color-undefined: $red-100;
 
+#__bs_notify__ {
+  display: none!important;
+}
 
 *, *:before, *:after {
   font-family: 'Roboto', sans-serif;

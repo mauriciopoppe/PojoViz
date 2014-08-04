@@ -16,12 +16,16 @@ function GenericAnalyzer(options) {
   this.global = options.global;
   this.displayName = options.displayName;
   this.renderEachTime = options.renderEachTime;
-  this.levels = options.hasOwnProperty('levels') ? options.levels : Infinity;
+  this.levels = options.hasOwnProperty('levels') ? options.levels : 10;
+  this.forbidden = options.forbidden || [];
   this.src = options.src;
 
   this.inspected = false;
 
   this.analyzer = analyzer();
+
+  // parse forbid string to array
+  this.parse();
 }
 
 GenericAnalyzer.prototype.init = function () {
@@ -35,15 +39,29 @@ GenericAnalyzer.prototype.init = function () {
     });
 };
 
+GenericAnalyzer.prototype.parse = function () {
+  if (typeof this.forbidden === 'string') {
+    this.forbidden = this.forbidden.split(',');
+  }
+};
+
 GenericAnalyzer.prototype.inspectSelf = function () {
   console.log('analyzing window.' + this.global);
 
-  var analyzer = this.analyzer;
+  var me = this,
+    analyzer = this.analyzer;
   // set a predefied global
   hashKey.createHashKeysFor(window[this.global], this.global);
   // update some properties of the analyzer
   analyzer.getObjects().empty();
   analyzer.setLevels(this.levels);
+  
+  this.forbidden.forEach(function(f) {
+    me.analyzer.forbid(
+      [f === 'window' ? window : window[f]], true
+    );
+  });
+
   analyzer.add([window[this.global]]);
 
 };

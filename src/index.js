@@ -181,7 +181,10 @@ pojoviz = {
 
   // expose inner modules
   ObjectHashes: require('./ObjectHashes'),
-  ObjectAnalyzer: require('./ObjectAnalyzer')
+  ObjectAnalyzer: require('./ObjectAnalyzer'),
+
+  // user vars
+  userVariables: []
 };
 
 // custom events

@@ -24,7 +24,14 @@
     "tests"
   ],
   "dependencies": {
-    "core-elements": "Polymer/core-elements#~0.3.3",
-    "t3": "~0.1.1"
+    "t3": "~0.1.1",
+    "core-elements": "Polymer/core-elements#~0.3.4",
+    "paper-dialog": "Polymer/paper-dialog#~0.3.4",
+    "paper-input": "Polymer/paper-input#~0.3.4",
+    "paper-button": "Polymer/paper-button#~0.3.4",
+    "paper-checkbox": "Polymer/paper-checkbox#~0.3.4",
+    "paper-slider": "Polymer/paper-slider#~0.3.4",
+    "paper-icon-button": "Polymer/paper-icon-button#~0.3.4",
+    "paper-radio-group": "Polymer/paper-radio-group#~0.3.4"
   }
 }

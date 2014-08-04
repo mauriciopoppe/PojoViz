@@ -133,13 +133,6 @@
 			<!-- user libraries -->
 			<pojoviz-user-menu></pojoviz-user-menu>
 
-			<!-- settings -->
-			<core-menu>
-				<core-item data-value="settings" icon="settings" label="Settings">
-					<a href="#settings" target="_self"></a>
-				</core-item>
-			</core-menu>
-
 		</core-header-panel>
 
 		<!-- title + info -->
@@ -148,6 +141,7 @@
 			<div flex></div>
 			<pojoviz-search></pojoviz-search>
 			<pojoviz-about></pojoviz-about>
+			<core-icon-button id="settings" icon="settings"></core-icon-button>
 		</div>
 		
 		<core-animated-pages
@@ -159,12 +153,11 @@
 					<svg id="canvas" class="unselectable"></svg>
 				</div>
 			</section>
-			
 			<section label="settings">
 				<div class="wrapper" cross-fade>
-			    	<pojoviz-settings></pojoviz-settings>
-		    	</div>
-		    </section>
+					<pojoviz-settings></pojoviz-settings>
+				</div>
+			</section>
 		</core-animated-pages>
 	</core-scaffold>
 
@@ -215,9 +208,11 @@
 			});
 
 			// settings
-			// document
-			// 	.querySelector('core-header-panel #settings')
-			// 	.addEventListener('core')
+			scaffold
+				.querySelector('core-scaffold #settings')
+				.addEventListener('click', function () {
+					pages.selected = 'settings';
+				});
 		})();
 	</script>
 

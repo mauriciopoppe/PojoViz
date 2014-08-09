@@ -14,25 +14,36 @@ function GenericAnalyzer(options) {
   //   throw 'name needs to be defined';
   // }
   this.global = options.global;
-  this.displayName = options.displayName;
-  this.renderEachTime = options.renderEachTime;
-  this.levels = options.hasOwnProperty('levels') ? options.levels : 10;
+  this.displayname = options.displayname;
+  this.rendereachtime = options.rendereachtime;
+  this.levels = options.hasOwnProperty('levels') ? options.levels : 100;
   this.forbidden = options.forbidden || [];
   this.src = options.src;
+  this.functionconstructors = options.hasOwnProperty('functionconstructors') ?
+    options.functionconstructors : GenericAnalyzer.SHOW_FUNCTION_CONSTRUCTORS;
+  this.allfunctions = options.allfunctions;
 
   this.inspected = false;
 
-  this.analyzer = analyzer();
-
   // parse forbid string to array
   this.parse();
+
+  this.analyzer = analyzer({
+    functionConstructors: this.functionconstructors,
+    allFunctions: this.allfunctions
+  });
 }
+
+GenericAnalyzer.SHOW_BUILTIN = false;
+GenericAnalyzer.SHOW_FUNCTION_CONSTRUCTORS = true;
+GenericAnalyzer.FORBIDDEN = 'pojoviz:window,pojoviz:builtIn,document';
 
 GenericAnalyzer.prototype.init = function () {
   var me = this;
+  console.log('%cPojoViz', 'font-size: 15px; color: ');
   return me.fetch()
     .then(function () {
-      if (me.renderEachTime || !me.inspected) {
+      if (me.rendereachtime || !me.inspected) {
         me.inspect();
       }
       return me;
@@ -43,23 +54,45 @@ GenericAnalyzer.prototype.parse = function () {
   if (typeof this.forbidden === 'string') {
     this.forbidden = this.forbidden.split(',');
   }
+  if (typeof this.functionconstructors === 'string') {
+    this.functionconstructors = this.functionconstructors === 'true';
+  }
+};
+
+GenericAnalyzer.prototype.markDirty = function () {
+  this.inspected = false;
 };
 
 GenericAnalyzer.prototype.inspectSelf = function () {
   console.log('analyzing window.' + this.global);
-
   var me = this,
-    analyzer = this.analyzer;
+    analyzer = this.analyzer,
+    forbidden = [].concat(this.forbidden);
   // set a predefied global
   hashKey.createHashKeysFor(window[this.global], this.global);
-  // update some properties of the analyzer
+  // clean
   analyzer.getObjects().empty();
+  analyzer.forbidden.empty();
   analyzer.setLevels(this.levels);
-  
-  this.forbidden.forEach(function(f) {
-    me.analyzer.forbid(
-      [f === 'window' ? window : window[f]], true
+
+  // settings > show links to built in objects
+  if (!GenericAnalyzer.SHOW_BUILTIN) {
+    forbidden = forbidden.concat(
+      GenericAnalyzer.FORBIDDEN.split(',')
     );
+  }
+
+  forbidden.forEach(function(f) {
+    var arr,
+      tokens;
+    if (!f.indexOf('pojoviz:')) {
+      tokens = f.split(':');
+      arr = require('../ObjectHashes')[tokens[1]].getObjects();
+    } else {
+      arr = [window[f]];
+    }
+    console.log('forbidding: ', arr);
+    analyzer.forbid(arr, true);
   });
 
   analyzer.add([window[this.global]]);
@@ -83,33 +116,39 @@ GenericAnalyzer.prototype.preRender = function () {
 
 GenericAnalyzer.prototype.fetch = function () {
   var me = this,
-    deferred = Q.defer(),
     script;
 
   function getValue() {
     return window[me.global];
   }
 
-  if (this.src) {
-    if (getValue()) {
-      console.log('resource already fetched ' + this.src);
-      deferred.resolve(getValue());
-    } else {
-      console.log('fetching script ' + this.src);
-      console.time('fetch');
+  function promisify(v) {
+    return function () {
+      utils.notification('fetching script ' + v, true);
+      var deferred = Q.defer();
       script = document.createElement('script');
-      script.src = this.src;
+      script.src = v;
       script.onload = function () {
-        console.timeEnd('fetch');
+        utils.notification('completed script ' + v, true);
         deferred.resolve(getValue());
       };
       document.head.appendChild(script);
-    }
-  } else {
-    deferred.resolve(getValue());
+      return deferred.promise;
+    };
   }
 
-  return deferred.promise;
+  if (this.src) {
+    if (getValue()) {
+      console.log('resource already fetched ' + this.src);
+    } else {
+      var srcs = this.src.split('|');
+      return srcs.reduce(function (prev, current) {
+        return prev.then(promisify(current));
+      }, Q('reduce'));
+    }
+  }
+
+  return Q(true);
 };
 
 GenericAnalyzer.prototype.showSearch = function (nodeName, nodeProperty) {
@@ -118,7 +157,7 @@ GenericAnalyzer.prototype.showSearch = function (nodeName, nodeProperty) {
     _.template('${searchEngine}${lucky}${libraryName} ${nodeName} ${nodeProperty}', {
       searchEngine: searchEngine,
       lucky: GenericAnalyzer.lucky ? '!ducky' : '',
-      libraryName: me.displayName || me.global,
+      libraryName: me.displayname || me.global,
       nodeName: nodeName,
       nodeProperty: nodeProperty
     })

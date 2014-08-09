@@ -41,6 +41,11 @@
     "dagre": "~0.4.6",
     "gulp-compass": "~1.2.0",
     "gulp-vulcanize": "~0.2.1",
-    "q": "~1.0.1"
+    "q": "~1.0.1",
+    "chai": "~1.9.1",
+    "gulp-mocha": "~0.5.2"
+  },
+  "dependencies": {
+    "karma": "~0.12.21"
   }
 }

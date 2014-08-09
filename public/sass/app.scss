@@ -134,8 +134,13 @@ svg#canvas {
 	.pv-body {
 		.pv-property {
 
-      .pv-dot {
+      .pv-dot-object {
         fill: $main;
+        fill-opacity: 1;
+      }
+      .pv-dot-function {
+        fill: $color-function;
+        // fill-opacity: 0.5;
       }
 
 			.pv-property-background {

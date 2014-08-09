@@ -26,6 +26,14 @@ function wrapFn(fn, wrapper) {
 }
 
 /**
+ * Properties forbidden in strict mode
+ * @type {Array}
+ */
+var forbiddenInStrictMode = [
+  'callee', 'caller', 'arguments'
+];
+
+/**
  * @constructor
  * Object analyz
  * @param {[type]} config [description]
@@ -48,14 +56,37 @@ function Analyzer(config) {
   this.forbidden = config.forbidden || new HashMap();
   /**
    * Dfs levels
-   * @type {Number}
+   * @type {number}
    */
   this.levels = Infinity;
   /**
-   * The analyzer needs this flag to work
-   * @type {Boolean}
+   * If the analyzer is dirty then it has some pending work
+   * to do
+   * @type {boolean}
    */
   this.dirty = true;
+  /**
+   * True to include function constructors in the analysis graph
+   * i.e. the functions that have a prototype
+   * @type {boolean}
+   */
+  this.functionConstructors =
+    config.hasOwnProperty('functionConstructors') ?
+    config.functionConstructors : false;
+  /**
+   * True to include all the functions in the analysis graph
+   * @type {boolean}
+   */
+  this.allFunctions =
+    config.hasOwnProperty('allFunctions') ?
+    config.allFunctions : false;
+  /**
+   * True to allow HTML nodes
+   * @type {boolean}
+   */
+  this.htmlNode =
+    config.hasOwnProperty('htmlNode') ?
+    config.htmlNode : false;
 }
 
 Analyzer.prototype = {
@@ -70,6 +101,128 @@ Analyzer.prototype = {
     return this.forbidden.get(obj);
   },
 
+  isLinkable: function (key, obj) {
+    if (!obj) {
+      return false;
+    }
+
+    var v = typeof obj === 'object';
+
+    // if (v) {
+    //   if (!this.htmlNode && v instanceof Node) { return false; }
+    //   return true;
+    // }
+
+    // if (!this.htmlNode) {
+    //   v = v && !(v instanceof Node);
+    // }fdeq1`
+
+    // typeof obj === 'function' &&
+    //   console.log(Object.getOwnPropertyNames(obj));
+    if (!v && this.allFunctions) {
+      // minimize the nodes created by considering functions
+      // with more properties than the usual ones
+      v = typeof obj === 'function';
+      v = v && Object.getOwnPropertyNames(obj).length > 5;
+    }
+    if (!v && this.functionConstructors) {
+      v = typeof obj === 'function';
+      v = v && (
+        obj.name &&
+        obj.name[0].match(/^[A-Z]/) ||
+        key[0].match(/^[A-Z]/)
+      );
+    }
+    return v;
+  },
+
+  /**
+   * Gets the enumerable properties an object discarding
+   * forbidden ones
+   *
+   * @param  {Object} obj
+   * @param  {boolean} objectsOnly True consider objects only
+   * @return {Array} Array of objects, each object has the following
+   * properties:
+   *
+   * - name
+   * - cls
+   * - type
+   * - linkeable (if it's an object this property is set to true)
+   */
+  getProperties: function (obj, objectsOnly) {
+    var me = this,
+      properties = Object.getOwnPropertyNames(obj);
+
+    function forbiddenKey(v) {
+      // forbidden in strict mode
+      return ~forbiddenInStrictMode.indexOf(v) ||
+        v.match(/^__.*?__$/) ||
+        v.match(/^\$\$.*?\$\$$/) ||
+        v.match(/[:+~!><=//\[\]@ ]/);   // jquery strange property
+    }
+
+    properties = _.filter(properties, function (v) {
+      var good = typeof v === 'string' && !forbiddenKey(v),
+          r;
+      if (objectsOnly) {
+        try {
+          r = good && me.isLinkable(v, obj[v]);
+        } catch (e) {
+          r = false;
+          // uncomment to see why obj[v] is not allowed
+          // console.log(e);
+        } finally {
+          return r;
+        }
+      }
+      return good;
+    }).map(function (v) {
+      var type;
+      try {
+        // type = null|string|undefined|number|object
+        type = obj[v] ? typeof obj[v] : '' + obj[v];
+      } catch(e) {
+        type = 'undefined';
+      }
+      // if (v === 'constructor') {
+      //   type = 'object';
+      // }
+      return {
+        name: v,
+        cls: hashKey(obj),
+        type: type,
+        linkeable: true
+      };
+    });
+
+    // special properties
+    var proto = Object.getPrototypeOf(obj);
+    if (proto) {
+      properties.push({
+        name: '[[Prototype]]',
+        cls: hashKey(obj),
+        type: 'object',
+        linkeable: true
+      });
+    }
+    var constructor = obj.hasOwnProperty &&
+      obj.hasOwnProperty('constructor') &&
+      typeof obj.constructor === 'function';
+    if (constructor &&
+        _.findIndex(properties, { name: 'constructor' }) === -1) {
+      properties.push({
+        cls: hashKey(obj),
+        name: 'constructor',
+        type: 'function',
+        linkeable: true
+      });
+    }
+
+    // console.log(properties);
+    return properties;
+  },
+
   /**
    * Analyzes a list of objects recursively
    * @param  {Array} objects      Array of objects
@@ -82,8 +235,18 @@ Analyzer.prototype = {
           !me.objectMap.get(v) &&         // already registered
           !me.isForbidden(v)              // forbidden check
           ) {
+
+        // if (v.hasOwnProperty('__processed__')) {
+        //   debugger;
+        //   throw 'wtf';
+        // }
+        // Object.defineProperty(v, '__processed__', {
+        //   value: 'processsed'
+        // });
+
         // add to the registered object pool
         me.objectMap.put(v);
+
         // dfs to the next level
         me.analyzeObjects(
           me.getOwnLinks(v).map(function (link) {
@@ -104,7 +267,7 @@ Analyzer.prototype = {
    * - toHash
    * - toHash
    * - property (string)
-   * 
+   *
    * @param  {Object} obj
    * @return {Array}
    */
@@ -113,10 +276,15 @@ Analyzer.prototype = {
     var me = this,
         links = [],
         properties = me.getProperties(obj, true),
-        name = hashKey.get(obj);
+        name = hashKey(obj);
+
+    // var names = properties.map(function (v) {
+    //   return v.name;
+    // });
+    // console.log(hashKey(obj), names);
 
     function getAugmentedHash(obj, name) {
-      if (!hashKey.get(obj) &&
+      if (!hashKey.has(obj) &&
           name !== 'prototype' &&
           name !== 'constructor') {
         hashKey.createHashKeysFor(obj, name);
@@ -132,6 +300,7 @@ Analyzer.prototype = {
       var ref = obj[v.name];
       if (!ref) { return; }
       getAugmentedHash(ref, v.name);
+
       if (!me.isForbidden(ref)) {
         links.push({
           from: obj,
@@ -153,7 +322,7 @@ Analyzer.prototype = {
         property: '[[Prototype]]'
       });
     }
-    
+
     // console.log(links);
     return links;
   },
@@ -170,6 +339,10 @@ Analyzer.prototype = {
     this.dirty = d;
   },
 
+  setFunctionConstructors: function (v) {
+    this.functionConstructors = v;
+  },
+
   getObjects: function () {
     return this.objectMap;
   },
@@ -182,7 +355,7 @@ Analyzer.prototype = {
    *   'object1': [ [object Object], [object Object], ... ],
    *   'object2': [ [object Object], [object Object], ... ]
    * }
-   * 
+   *
    * @return {Object}
    */
   getLinks: function () {
@@ -206,97 +379,13 @@ Analyzer.prototype = {
       throw 'The object must be defined';
     }
     return this.getOwnLinks(obj);
-  },
-
-  /**
-   * Gets the enumerable properties an object discarding
-   * forbidden ones
-   * 
-   * @param  {Object} obj
-   * @param  {boolean} objectsOnly True consider objects only
-   * @return {Array} Array of objects, each object has the following
-   * properties:
-   *
-   * - name
-   * - cls
-   * - type
-   * - linkeable (if it's an object this property is set to true)
-   */
-  getProperties: function (obj, objectsOnly) {
-    var properties = Object.getOwnPropertyNames(obj);
-
-    function forbiddenKey(v) {
-      return v.match(/^__.*?__$/) ||
-        v.match(/^\$\$.*?\$\$$/) ||
-        v.match(/[:+~!><=]/);   // jquery strange property
-    }
-
-    properties = _.filter(properties, function (v) {
-      var good = typeof v === 'string' && !forbiddenKey(v),
-          r;
-      if (objectsOnly) {
-        try {
-          r = good && typeof obj[v] === 'object';
-        } catch (e) {
-          r = false;
-          // uncomment to see why obj[v] is not allowed
-          // console.log(e);
-        } finally {
-          return r;
-        }
-      }
-      return good;
-    }).map(function (v) {
-      var type;
-      try {
-        // type = null|string|undefined|number|object
-        type = obj[v] ? typeof obj[v] : '' + obj[v];
-      } catch(e) {
-        type = 'undefined';
-      }
-      if (v === 'constructor') {
-        type = 'object';
-      }
-      return {
-        name: v,
-        cls: hashKey(obj),
-        type: type,
-        linkeable: type === 'object'
-      };
-    });
-
-    // special properties
-    var proto = Object.getPrototypeOf(obj);
-    if (proto) {
-      properties.push({
-        name: '[[Prototype]]',
-        cls: hashKey(obj),
-        type: 'object',
-        linkeable: true
-      });
-    }
-    var constructor = obj.hasOwnProperty &&
-      obj.hasOwnProperty('constructor') &&
-      typeof obj.constructor === 'function';
-    if (constructor &&
-        _.findIndex(properties, { name: 'constructor' }) === -1) {
-      properties.push({
-        cls: hashKey(obj),
-        name: 'constructor',
-        type: 'object',
-        linkeable: true
-      });
-    }
-
-    // console.log(properties);
-    return properties;
   }
 };
 
 // aditional objects that need the prototype to exist
 var aProto = Analyzer.prototype;
 _.merge(aProto, {
-  
+
   /**
    * Adds a list of objects to analyze and make the analyzer dirty
    * @param  {Array<Objects>} objects

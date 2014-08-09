@@ -4,13 +4,20 @@ var _ = require('lodash'),
   hashKey = require('../util/hashKey'),
   GenericAnalyzer = require('./GenericAnalyzer');
 
+var toInspect = [window];
+
 function Window() {
   GenericAnalyzer.call(this, {
-    renderEachTime: true
+    rendereachtime: true,
+    functionconstructors: false
   });
 }
 
 Window.prototype = Object.create(GenericAnalyzer.prototype);
+
+Window.prototype.getObjects = function () {
+  return toInspect;
+};
 
 Window.prototype.inspectSelf = function () {
   console.log('inspecting window');
@@ -24,7 +31,7 @@ Window.prototype.inspectSelf = function () {
   });
   this.analyzer.getObjects().empty();
   this.analyzer.setLevels(this.levels);
-  this.analyzer.add([window]);
+  this.analyzer.add(me.getObjects());
 };
 
 module.exports = Window;

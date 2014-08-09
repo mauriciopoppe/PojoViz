@@ -1,28 +1,61 @@
 'use strict';
 
 var _ = require('lodash'),
+  assert = require('./').assert,
   me, hashKey;
+
+function isObjectOrFunction(v) {
+  return v && (typeof v === 'object' || typeof v === 'function');
+}
+
+/**
+ * Gets a store hashkey only if it's an object
+ * @param  {[type]} obj
+ * @return {[type]}
+ */
+function get(obj) {
+  assert(isObjectOrFunction(obj), 'obj must be an object|function');
+  return obj.hasOwnProperty &&
+    obj.hasOwnProperty(me.hiddenKey) &&
+    obj[me.hiddenKey];
+}
+
+/**
+ * Sets a key on an object
+ * @param {[type]} obj [description]
+ * @param {[type]} key [description]
+ */
+function set(obj, key) {
+  assert(isObjectOrFunction(obj), 'obj must be an object|function');
+  assert(
+    key && typeof key === 'string',
+    'The key needs to be a valid string'
+  );
+  if (!get(obj)) {
+    Object.defineProperty(obj, me.hiddenKey, {
+      value: typeof obj + '-' + key
+    });
+  }
+  return me;
+}
 
 me = hashKey = function (v) {
   var value = v,
       uid = v;
-  if (v && (typeof v === 'object' || typeof v === 'function')) {
-    if (!me.get(v)) {
+
+  if (isObjectOrFunction(v)) {
+    if (!get(v)) {
       me.createHashKeysFor(v);
     }
-    uid = v[me.hiddenKey];
+    uid = get(v);
+    assert(uid, 'error getting the key');
+    return uid;
   }
+
+  // v is a primitive
   return typeof v + '-' + uid;
 };
 me.hiddenKey = '__pojoVizKey__';
-
-me.get = function (v) {
-  if (v.hasOwnProperty) {
-    return v.hasOwnProperty(me.hiddenKey) &&
-      v[me.hiddenKey];
-  }
-  return v[me.hiddenKey];
-};
 
 me.createHashKeysFor = function (obj, name) {
 
@@ -56,14 +89,15 @@ me.createHashKeysFor = function (obj, name) {
   function getName(obj) {
     var name, className;
 
-    if (obj.hasOwnProperty &&
-        obj.hasOwnProperty(me.hiddenKey)) {
-      return obj[me.hiddenKey];
+    // return the already generated hashKey
+    if (get(obj)) {
+      return get(obj);
     }
 
-    name = obj.hasOwnProperty &&
-      obj.hasOwnProperty('name') &&
-      typeof obj.name === 'string' &&
+    // generate a new key based on
+    // - the name if it's a function
+    // - a unique id
+    name = typeof obj.name === 'string' &&
       obj.name;
 
     className = hasAClassName(obj);
@@ -76,32 +110,31 @@ me.createHashKeysFor = function (obj, name) {
     return name;
   }
 
+  // the name is equal to the passed name or the
+  // generated name
+  name = name || getName(obj);
+
   // if the obj is a prototype then try to analyze
   // the constructor first so that the prototype becomes
   // [name].prototype
   if (obj.hasOwnProperty &&
       obj.hasOwnProperty('constructor') &&
       typeof obj.constructor === 'function') {
-    me.createHashKeysFor(obj.constructor);
-  } else {
-    me.set(obj, name || getName(obj));
-    if (obj.hasOwnProperty &&
-        obj.hasOwnProperty('prototype')) {
-      me.set(obj.prototype, getName(obj) + '-prototype');
-    }
+    return me.createHashKeysFor(obj.constructor);
+  }
+
+  // set name on self
+  set(obj, name);
+
+  // set name on the prototype
+  if (typeof obj === 'function' &&
+      obj.hasOwnProperty('prototype')) {
+    set(obj.prototype, name + '-prototype');
   }
 };
 
-me.set = function (obj, key) {
-  if (typeof key !== 'string' || !key) {
-    throw 'The key needs to be a valid string';
-  }
-  if (!me.get(obj)) {
-    Object.defineProperty(obj, me.hiddenKey, {
-      value: key
-    });
-  }
-  return me;
+me.has = function (v) {
+  return v.hasOwnProperty(me.hiddenKey);
 };
 
 module.exports = me;

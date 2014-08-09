@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>POJO Viz</title>
+	<title>Pojo Viz</title>
 
 	<script src="bower_components/platform/platform.js"></script>
 
@@ -15,6 +15,7 @@
 	<link rel="import" href="bower_components/core-animated-pages/transitions/cross-fade.html">
 	<link rel="import" href="bower_components/core-tooltip/core-tooltip.html">
 	<link rel="import" href="bower_components/core-icon/core-icon.html">
+	<link rel="import" href="bower_components/paper-toast/paper-toast.html">
 
 	<link rel="import" href="elements/settings.html">
 	<link rel="import" href="elements/about.html">
@@ -37,7 +38,7 @@
 	<core-scaffold responsiveWidth="1000px">
 		<core-header-panel navigation flex mode="seamed">
 			<div class="logo">
-				POJO Viz
+				PojoViz
 				<div class="subtitle middle">
 					Plain Old JavaScript Object Visualization
 				</div>
@@ -45,12 +46,12 @@
 			<!-- <div class="" flex> -->
 				<!-- Application -->
 			<!-- </div> -->
-			<core-menu 
+			<core-menu
 				id="schemas"
 				theme="core-light-theme"
 				valueattr="label"
 				selected="Known Schemas">
-				
+
 				<core-submenu
 					icon="exit-to-app"
 					label="Known Schemas"
@@ -69,12 +70,12 @@
 					</core-item>
 
 				</core-submenu>
-				
+
 				<core-submenu
 					icon="star"
 					label="Notable Libraries"
 					>
-					
+
 					<core-item label="jQuery"
 						data-src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"
 						data-value="render:jQuery"
@@ -93,12 +94,64 @@
 						<a href="#" target="_self"></a>
 					</core-item>
 
+					<core-item label="Lo-Dash"
+						data-src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.js"
+						data-value="render:lodash"
+						data-global="_">
+						<a href="#" target="_self"></a>
+					</core-item>
+
+					<core-item label="React"
+						data-src="//fb.me/react-0.11.1.js"
+						data-value="render:react"
+						data-global="React">
+						<a href="#" target="_self"></a>
+					</core-item>
+
 					<core-item label="Angular JS"
 						data-src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.js"
 						data-value="render:angular">
 						<a href="#" target="_self"></a>
 					</core-item>
-				
+
+					<core-item label="Modernizr"
+						data-src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"
+						data-value="render:modernizr"
+						data-global="Modernizr">
+						<a href="#" target="_self"></a>
+					</core-item>
+
+					<core-item label="Handlebars"
+						data-src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.1.2/handlebars.js"
+						data-functionconstructors="false"
+						data-value="render:handlebars"
+						data-global="Handlebars">
+						<a href="#" target="_self"></a>
+					</core-item>
+
+					<core-item label="EmberJS"
+						data-src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js|//cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.1.2/handlebars.js|//cdnjs.cloudflare.com/ajax/libs/ember.js/1.6.1/ember.js"
+						data-forbidden='$,Handlebars'
+						data-value="render:ember"
+						data-global="Ember">
+						<a href="#" target="_self"></a>
+					</core-item>
+
+					<core-item label="Backbone"
+						data-src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.js|//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone.js"
+						data-value="render:backbone"
+						data-global="Backbone">
+						<a href="#" target="_self"></a>
+					</core-item>
+
+					<!-- <core-item label="ExtJS Core"
+						data-src="//cdnjs.cloudflare.com/ajax/libs/extjs/4.2.1/builds/ext-core-dev.js"
+						data-functionconstructors="false"
+						data-value="render:extjs"
+						data-global="Ext">
+						<a href="#" target="_self"></a>
+					</core-item> -->
+
 					<core-item label="three.js"
 						data-value="render:three">
 						<a href="#" target="_self"></a>
@@ -107,8 +160,7 @@
 					<core-item label="Phaser"
 						data-value="render:Phaser"
 						data-src="//cdnjs.cloudflare.com/ajax/libs/phaser/2.0.6/phaser.min.js"
-						data-global="Phaser"
-						data-levels="1">
+						data-global="Phaser">
 						<a href="#" target="_self"></a>
 					</core-item>
 
@@ -118,7 +170,7 @@
 					icon="favorite"
 					label="My libraries"
 					>
-					<core-item label="POJO Viz"
+					<core-item label="PojoViz"
 						data-value="render:pojoviz">
 						<a href="#" target="_self"></a>
 					</core-item>
@@ -143,7 +195,7 @@
 			<pojoviz-about></pojoviz-about>
 			<core-icon-button id="settings" icon="settings"></core-icon-button>
 		</div>
-		
+
 		<core-animated-pages
 			transitions="cross-fade"
 			valueattr="label">
@@ -160,6 +212,8 @@
 			</section>
 		</core-animated-pages>
 	</core-scaffold>
+
+	<paper-toast id="toast" text=""></paper-toast>
 
 	<!-- app -->
 	<script src="build/pojoviz.js"></script>
@@ -182,6 +236,10 @@
 				pojoviz.setContainer(value[1], dataSet)
 					.then(function() {
 						pojoviz.render();
+					})
+					.fail(function (e) {
+						pojoviz.utils.notification(e);
+						throw e;
 					})
 					.done();
 				// pojoviz.render();
@@ -210,6 +268,14 @@
 				.querySelector('core-scaffold #settings')
 				.addEventListener('click', function () {
 					pages.selected = 'settings';
+				});
+
+			// toast
+			var toast = document.getElementById('toast');
+			document
+				.addEventListener('pojoviz-notification', function (e) {
+					toast.text = e.detail;
+					toast.show();
 				});
 		})();
 	</script>

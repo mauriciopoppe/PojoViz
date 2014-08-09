@@ -6,8 +6,8 @@ var GenericAnalyzer = require('./GenericAnalyzer'),
 function Angular() {
   GenericAnalyzer.call(this, {
     global: 'angular',
-    displayName: 'AngularJS',
-    renderEachTime: true
+    displayname: 'AngularJS',
+    rendereachtime: true
   });
 
   this.services = [

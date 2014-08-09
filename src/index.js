@@ -19,6 +19,8 @@ function process() {
       library = container.analyzer,
       registeredObjects = library.getObjects();
   
+  // console.log(registeredObjects);
+
   // create the graph
   // each element of the graph has
   // - label
@@ -128,12 +130,14 @@ function render() {
     return;
   }
 
+  utils.notification('processing ' + container.global);
+
   // if (library.dirty) {
   //   library.setDirty(false);    
   if (canvas) {
     canvas.destroy();
   }
-
+      
   setTimeout(function () {
     container.preRender();
     console.log('process & render start: ', new Date());
@@ -146,11 +150,14 @@ function render() {
     data = process();
     console.timeEnd('process');
     
+    utils.notification('rendering ' + container.global);
+  
     console.time('render');
     canvas = new Canvas(data);
     canvas.render();
     console.timeEnd('render');      
-    // }
+
+    utils.notification('complete!');  
   }, 0);
 }
 
@@ -182,6 +189,10 @@ pojoviz = {
   // expose inner modules
   ObjectHashes: require('./ObjectHashes'),
   ObjectAnalyzer: require('./ObjectAnalyzer'),
+  analyzer: {
+    GenericAnalyzer: require('./analyzer/GenericAnalyzer')
+  },
+  utils: require('./util'),
 
   // user vars
   userVariables: []

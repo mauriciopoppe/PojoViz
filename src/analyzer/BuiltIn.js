@@ -3,6 +3,12 @@
 var GenericAnalyzer = require('./GenericAnalyzer'),
   utils = require('../util');
 
+var toInspect = [
+  Object, Function,
+  Array, Date, Boolean, Number, Math, String, RegExp, JSON,
+  Error
+];
+
 function BuiltIn() {
   GenericAnalyzer.call(this);
 }
@@ -11,12 +17,11 @@ BuiltIn.prototype = Object.create(GenericAnalyzer.prototype);
 
 BuiltIn.prototype.inspectSelf = function () {
   console.log('inspecting builtIn objects');
-  var builtInObjects = [
-    Object, Function,
-    Array, Date, Boolean, Number, Math, String, RegExp, JSON,
-    Error
-  ];
-  this.analyzer.add(builtInObjects);
+  this.analyzer.add(this.getObjects());
+};
+
+BuiltIn.prototype.getObjects = function () {
+  return toInspect;
 };
 
 BuiltIn.prototype.showSearch = function (nodeName, nodeProperty) {

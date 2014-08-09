@@ -1,0 +1,1 @@
+require('./hashkey.spec.js');

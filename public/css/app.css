@@ -145,60 +145,65 @@ svg#canvas .pv-nodes-focused .pv-node.current .node-background {
   font-weight: 100;
 }
 /* line 137, ../sass/app.scss */
-.pv-node .pv-body .pv-property .pv-dot {
+.pv-node .pv-body .pv-property .pv-dot-object {
   fill: #03a9f4;
+  fill-opacity: 1;
 }
 /* line 141, ../sass/app.scss */
+.pv-node .pv-body .pv-property .pv-dot-function {
+  fill: #f9bdbb;
+}
+/* line 146, ../sass/app.scss */
 .pv-node .pv-body .pv-property .pv-property-background {
   fill: white;
 }
-/* line 145, ../sass/app.scss */
+/* line 150, ../sass/app.scss */
 .pv-node .pv-body .pv-property:hover {
   cursor: pointer;
 }
-/* line 150, ../sass/app.scss */
+/* line 155, ../sass/app.scss */
 .pv-node .pv-body .pv-property.pv-__proto__ rect {
   fill: #b3e5fc;
   fill-opacity: 0.15;
   stroke-dasharray: 2;
 }
-/* line 155, ../sass/app.scss */
+/* line 160, ../sass/app.scss */
 .pv-node .pv-body .pv-property.pv-__proto__ text {
   stroke-dasharray: 1;
   fill: #b3e5fc;
 }
-/* line 162, ../sass/app.scss */
+/* line 167, ../sass/app.scss */
 .pv-node .pv-body .pv-property rect.pv-string {
   stroke: #a3e9a4;
 }
-/* line 165, ../sass/app.scss */
+/* line 170, ../sass/app.scss */
 .pv-node .pv-body .pv-property rect.pv-number {
   stroke: #ffe0b2;
 }
-/* line 171, ../sass/app.scss */
+/* line 176, ../sass/app.scss */
 .pv-node .pv-body .pv-property rect.pv-object {
   stroke: #b3e5fc;
 }
-/* line 179, ../sass/app.scss */
+/* line 184, ../sass/app.scss */
 .pv-node.pv-function rect.node-background {
   stroke: #f9bdbb;
 }
 
-/* line 190, ../sass/app.scss */
+/* line 195, ../sass/app.scss */
 pojoviz-settings::shadow paper-slider::shadow #sliderKnobInner, pojoviz-settings::shadow paper-slider::shadow #sliderKnobInner::before,
 pojoviz-settings::shadow paper-slider::shadow #sliderBar::shadow #activeProgress {
   background-color: #03a9f4;
 }
-/* line 196, ../sass/app.scss */
+/* line 201, ../sass/app.scss */
 pojoviz-settings::shadow paper-checkbox::shadow #ink[checked] {
   color: #03a9f4;
 }
-/* line 199, ../sass/app.scss */
+/* line 204, ../sass/app.scss */
 pojoviz-settings::shadow paper-checkbox::shadow #checkbox.checked {
   border-color: #03a9f4;
 }
 
-/* line 206, ../sass/app.scss */
+/* line 211, ../sass/app.scss */
 core-submenu core-item {
   font-size: 13px;
 }

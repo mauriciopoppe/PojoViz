@@ -17,7 +17,46 @@
 			.service-name {
 				padding-right: 50px;
 			}
-		</style>		
+		</style>
+
+		<section>
+			<h3>General Settings</h3>
+
+			<div horizontal layout>
+		    <paper-checkbox on-change="{{onShowBuiltInChange}}"></paper-checkbox>
+		    <div vertical layout>
+		      <h4>Generate links to BuiltIn Objects</h4>
+		      <div>Most of the objects will have their [[<kbd>Prototype</kbd>]] property pointing to <kbd>Object.prototype</kbd> as well as the functions' [[<kbd>Prototype</kbd>]] pointing to <kbd>Function.prototype</kbd>. This feature is disabled because of the number of links created to these objects, check to enable this feature.</div>
+		    </div>
+		  </div>
+
+		  <div horizontal layout>
+		    <paper-checkbox checked="true" on-change="{{onFunctionConstructorsChange}}"></paper-checkbox>
+		    <div vertical layout>
+		      <h4>Function Constructors visibility</h4>
+		      <div>Something really hard to detect is when a function is a constructor, to <span>PojoViz</span> a function is a constructor when:
+					
+					<ul>
+						<li>the function has a <kbd>name</kbd> property which starts with an uppercase letter</li>
+						<li>if an object has a property which starts with an uppercase letter and this property is a function</li>
+					</ul>
+		      </div>
+		    </div>
+		  </div>
+		</section>
+
+		<section>
+			<h3>
+				Window max depth
+				<span class="depth-value">{{$.depth.value}}</span>
+			</h3>
+			<p>
+				Defines the maximum depth when running the dfs algorithm starting from the <i>window</i> object <br />
+				WARNING: The higher the value the longer the time needed for the browser to render the nodes
+			</p>
+			<paper-slider on-change="{{windowDepthChange}}" id="depth" pin snaps max="10" step="1" value="1">
+			</paper-slider>
+		</section>
 
 		<section>
 			<h3>Angular drawer settings</h3>
@@ -34,19 +73,6 @@
 			</div>
 		</section>
 		
-		<section>
-			<h3>
-				Window max depth
-				<span class="depth-value">{{$.depth.value}}</span>
-			</h3>
-			<p>
-				Defines the maximum depth when running the dfs algorithm starting from the <i>window</i> object <br />
-				WARNING: The higher the value the longer the time needed for the browser to render the nodes
-			</p>
-			<paper-slider on-change="{{windowDepthChange}}" id="depth" pin snaps max="10" step="1" value="1">
-			</paper-slider>
-		</section>
-
 		<content></content>
 
 	</template>
@@ -61,6 +87,19 @@
 			windowDepthChange: function (event, detail, el) {
 				var objectHashes = pojoviz.ObjectHashes;
 				objectHashes.window.levels = el.value;
+			},
+
+			onShowBuiltInChange: function (ev, detail, el) {
+				pojoviz.analyzer.GenericAnalyzer.SHOW_BUILTIN = el.checked;
+				pojoviz.ObjectHashes
+					.markDirty();
+			},
+
+			onFunctionConstructorsChange: function (ev, detail, el) {
+				pojoviz.analyzer.GenericAnalyzer.SHOW_FUNCTION_CONSTRUCTORS = el.checked;
+				pojoviz.ObjectHashes
+					.setFunctionConstructors(el.checked)
+					.markDirty();
 			},
 
 			// deprecated

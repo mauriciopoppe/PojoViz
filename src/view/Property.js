@@ -114,11 +114,11 @@ function Property() {
       });
   
     propertyEnter.each(function (d) {
-      if (d.type === 'object') {
+      if (d.type === 'object' || d.type === 'function') {
         d3.select(this)
           .append('circle')
           .attr('r', 4)
-          .attr('class', prefix('dot'))
+          .attr('class', prefix('dot-' + d.type))
           .attr('cx', -10)
           .attr('cy', -2)
           .attr('opacity', 1);

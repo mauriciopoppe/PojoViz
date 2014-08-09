@@ -7,6 +7,11 @@ var propertiesTransformation = {
 };
 
 var utils = {
+  assert: function (v, message) {
+    if (!v) {
+      throw message || 'error';
+    }
+  },
   translate: function (x, y) {
     return 'translate(' + (x || 0) + ', ' + (y || 0) + ')';
   },
@@ -45,6 +50,16 @@ var utils = {
       i += 1;
     });
     return s;
+  },
+  createEvent: function (eventName, details) {
+    return new CustomEvent(eventName, {
+      detail: details
+    });
+  },
+  notification: function (message, consoleToo) {
+    var ev = utils.createEvent('pojoviz-notification', message);
+    consoleToo && console.log(message);
+    document.dispatchEvent(ev);
   },
   createJsonpCallback: function (url) {
     var script = document.createElement('script');

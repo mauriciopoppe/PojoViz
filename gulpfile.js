@@ -9,6 +9,7 @@ var path = require('path');
 
 // gulp extras
 var gulp = require('gulp');
+var mocha = require('gulp-mocha');
 var git = require('gulp-git');
 var compass = require('gulp-compass');
 var concat = require('gulp-concat');
@@ -73,7 +74,7 @@ gulp.task('browserify', function () {
 });
 
 gulp.task('browserSync', ['browserify'], function () {
-  browserSync.init(['build/**'], {
+  browserSync.init(['./build/*'], {
     server: {
       baseDir: './public'
     }
@@ -103,6 +104,11 @@ gulp.task('compass', function () {
     }));
 });
 
+gulp.task('testOnce', function () {
+  return gulp.src('./test/*.js')
+    .pipe(mocha({ reporter: 'list' }));
+});
+
 function createTag(type, cb) {
   gulp.src(['./package.json', './bower.json'])
     .pipe(bump({ type: type }))
@@ -123,7 +129,8 @@ gulp.task('useWatchify', function () {
 });
 
 gulp.task('watch', ['useWatchify', 'browserSync'],  function () {
-  gulp.watch('public/sass/**', ['compass']);
+  gulp.watch('public/sass/**/*.scss', ['compass']);
+  gulp.watch('test/**/*.js', ['testOnce']);
 });
 
 // main tasks
@@ -132,5 +139,15 @@ gulp.task('build', ['browserify', 'compass', 'vulcanize']);
 gulp.task('release.major', function (cb) { createTag('major', cb); });
 gulp.task('release.minor', function (cb) { createTag('minor', cb); });
 gulp.task('release.patch', function (cb) { createTag('patch', cb); });
+
+gulp.task('test', function () {
+  var watcher = gulp.watch(
+    ['src/**/*.js', 'test/*.js'],
+    ['testOnce']
+  );
+  // watcher.on('change', function(event) {
+  //   console.log('File '+event.path+' was '+event.type+', running tasks...');
+  // });
+});
 
 gulp.task('default', ['watch']);

@@ -131,12 +131,12 @@ Canvas.prototype.render = function() {
 Canvas.prototype.renderEdges = function() {
   var me = this,
       edges = this.edges;
-  
+
   // CREATE
   var diagonal = d3.svg.diagonal()
   .source(function(d) {
     var from = me.root.select('.' +
-          prefix(escapeCls(d.fromHash))
+          prefix(escapeCls(d.from))
         );
     if (!from.node()) {
       throw 'source node must exist';
@@ -154,7 +154,7 @@ Canvas.prototype.renderEdges = function() {
   })
   .target(function(d) {
     var to = me.root.select('.' +
-          prefix(escapeCls(d.toHash))
+          prefix(escapeCls(d.to))
         ),
         toData, bbox;
     if (!to.node()) {
@@ -185,8 +185,8 @@ Canvas.prototype.renderEdges = function() {
       .append('path')
       .attr('class', function (d) {
         return [
-          prefix('to', escapeCls(d.toHash)),
-          prefix('from', escapeCls(d.fromHash)),
+          prefix('to', escapeCls(d.to)),
+          prefix('from', escapeCls(d.from)),
           prefix('link')
         ].join(' ');
       })
@@ -204,7 +204,7 @@ Canvas.prototype.opacityToggle = function(decrease) {
 
 Canvas.prototype.renderNodes = function() {
   var nodes = this.nodes;
-  
+
   var nodeCtor = pojoVizNode(this);
   nodeCtor.margin({
     top: 10,

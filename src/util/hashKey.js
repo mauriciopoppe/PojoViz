@@ -48,6 +48,9 @@ me = hashKey = function (v) {
       me.createHashKeysFor(v);
     }
     uid = get(v);
+    if (!uid) {
+      console.err('no hashkey :(', v);
+    }
     assert(uid, 'error getting the key');
     return uid;
   }

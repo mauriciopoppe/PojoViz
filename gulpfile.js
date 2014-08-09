@@ -105,8 +105,10 @@ gulp.task('compass', function () {
 });
 
 gulp.task('testOnce', function () {
-  return gulp.src('./test/*.js')
-    .pipe(mocha({ reporter: 'list' }));
+  return gulp.src('./test/')
+    .pipe(mocha({
+      reporter: 'spec'
+    }));
 });
 
 function createTag(type, cb) {
@@ -128,9 +130,8 @@ gulp.task('useWatchify', function () {
   useWatchify = true;
 });
 
-gulp.task('watch', ['useWatchify', 'browserSync'],  function () {
+gulp.task('watch', ['useWatchify', 'browserSync', 'test'],  function () {
   gulp.watch('public/sass/**/*.scss', ['compass']);
-  gulp.watch('test/**/*.js', ['testOnce']);
 });
 
 // main tasks

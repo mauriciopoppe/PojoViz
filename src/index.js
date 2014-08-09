@@ -17,9 +17,9 @@ function process() {
       properties,
       node,
       library = container.analyzer,
-      registeredObjects = library.getObjects();
-  
-  // console.log(registeredObjects);
+      str = library.stringify(),
+      libraryNodes = str.nodes,
+      libraryEdges = str.edges;
 
   // create the graph
   // each element of the graph has
@@ -27,15 +27,13 @@ function process() {
   // - width
   // - height
   // - properties
-  _.forOwn(registeredObjects, function (v, k) {
+  _.forOwn(libraryNodes, function (properties, k) {
     var label = k.match(/\S*?-(.*)/)[1];
     // console.log(k, label.length);
     node = {
       label: k,
       width: label.length * 10
     };
-    properties = library.getProperties(v);
-
     // lines + header + padding bottom
     node.height = properties.length * 15 + 50;
     node.properties = properties;
@@ -46,10 +44,10 @@ function process() {
   });
 
   // build the edges from node to node
-  _.forOwn(library.getLinks(), function (v, k) {
-    v.forEach(function (link) {
-      if (g.hasNode(k) && g.hasNode(link)) {
-        g.addEdge(null, k, link);
+  _.forOwn(libraryEdges, function (links) {
+    links.forEach(function (link) {
+      if (g.hasNode(link.from) && g.hasNode(link.to)) {
+        g.addEdge(null, link.from, link.to);
       }
     });
   });
@@ -101,12 +99,12 @@ function process() {
 
   center.x /= (total || 1);
   center.y /= (total || 1);
- 
+
   // create the edges from property to node
-  _.forOwn(registeredObjects, function (v, k) {
-    library.getLinkDetails(v).forEach(function (info) {
-      if (g.hasNode(info.fromHash) && g.hasNode(info.toHash)) {
-        edges.push(info);
+  _(libraryEdges).forOwn(function (links) {
+    links.forEach(function (link) {
+      if (g.hasNode(link.from) && g.hasNode(link.to)) {
+        edges.push(link);
       }
     });
   });
@@ -133,11 +131,11 @@ function render() {
   utils.notification('processing ' + container.global);
 
   // if (library.dirty) {
-  //   library.setDirty(false);    
+  //   library.setDirty(false);
   if (canvas) {
     canvas.destroy();
   }
-      
+
   setTimeout(function () {
     container.preRender();
     console.log('process & render start: ', new Date());
@@ -145,19 +143,19 @@ function render() {
     // - edges (property -> node)
     // - nodes
     // - center
-    // 
+    //
     console.time('process');
     data = process();
     console.timeEnd('process');
-    
+
     utils.notification('rendering ' + container.global);
-  
+
     console.time('render');
     canvas = new Canvas(data);
     canvas.render();
-    console.timeEnd('render');      
+    console.timeEnd('render');
 
-    utils.notification('complete!');  
+    utils.notification('complete!');
   }, 0);
 }
 

@@ -112,7 +112,7 @@ function Property() {
             return text.property('clientWidth') + 3;
           });
       });
-  
+
     propertyEnter.each(function (d) {
       if (d.type === 'object' || d.type === 'function') {
         d3.select(this)

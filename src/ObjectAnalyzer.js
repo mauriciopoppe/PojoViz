@@ -25,6 +25,11 @@ function wrapFn(fn, wrapper) {
   };
 }
 
+function isObjectOrFunction(v) {
+  return !!(v && (typeof v === 'object' ||
+    typeof v === 'function'));
+}
+
 /**
  * Properties forbidden in strict mode
  * @type {Array}
@@ -48,12 +53,25 @@ function Analyzer(config) {
    * Objects registered in this instance
    * @type {HashMap}
    */
-  this.objectMap = config.objectMap || new HashMap();
+  this.objects = config.objects || new HashMap();
   /**
    * Forbidden objects
    * @type {HashMap}
    */
   this.forbidden = config.forbidden || new HashMap();
+
+  /**
+   * Cache of properties
+   * @type {Object}
+   */
+  this.__cacheObjects = {};
+
+  /**
+   * Cache of links
+   * @type {Object}
+   */
+  this.__cacheLinks = {};
+
   /**
    * Dfs levels
    * @type {number}
@@ -65,6 +83,15 @@ function Analyzer(config) {
    * @type {boolean}
    */
   this.dirty = true;
+
+  /**
+   * True to save the properties of the objects analyzed in an
+   * internal cache
+   * @type {Boolean}
+   */
+  this.cache =
+    config.hasOwnProperty('cache') ?
+    config.cache : true;
   /**
    * True to include function constructors in the analysis graph
    * i.e. the functions that have a prototype
@@ -141,7 +168,6 @@ Analyzer.prototype = {
    * forbidden ones
    *
    * @param  {Object} obj
-   * @param  {boolean} objectsOnly True consider objects only
    * @return {Array} Array of objects, each object has the following
    * properties:
    *
@@ -150,22 +176,37 @@ Analyzer.prototype = {
    * - type
    * - linkeable (if it's an object this property is set to true)
    */
-  getProperties: function (obj, objectsOnly) {
+  getProperties: function (obj, linkableOnly) {
     var me = this,
-      properties = Object.getOwnPropertyNames(obj);
+      hk = hashKey(obj),
+      properties;
+
+    if (!obj) {
+      debugger;
+      throw 'ups';
+    }
+
+    if (this.cache) {
+      if (!linkableOnly && this.__cacheObjects[hk]) {
+        // console.log('objects from cache :)');
+        return this.__cacheObjects[hk];
+      }
+    }
+
+    properties = Object.getOwnPropertyNames(obj);
 
     function forbiddenKey(v) {
       // forbidden in strict mode
       return ~forbiddenInStrictMode.indexOf(v) ||
         v.match(/^__.*?__$/) ||
         v.match(/^\$\$.*?\$\$$/) ||
-        v.match(/[:+~!><=//\[\]@ ]/);   // jquery strange property
+        v.match(/[:+~!><=//\[\]@ ]/);
     }
 
     properties = _.filter(properties, function (v) {
       var good = typeof v === 'string' && !forbiddenKey(v),
           r;
-      if (objectsOnly) {
+      if (linkableOnly) {
         try {
           r = good && me.isLinkable(v, obj[v]);
         } catch (e) {
@@ -178,21 +219,22 @@ Analyzer.prototype = {
       }
       return good;
     }).map(function (v) {
-      var type;
+      var type,
+        linkeable;
       try {
         // type = null|string|undefined|number|object
-        type = obj[v] ? typeof obj[v] : '' + obj[v];
+        type = typeof obj[v];
+        linkeable = isObjectOrFunction(obj[v]);
       } catch(e) {
         type = 'undefined';
+        linkeable = false;
       }
-      // if (v === 'constructor') {
-      //   type = 'object';
-      // }
+
       return {
+        // parent: hashKey(obj),
         name: v,
-        cls: hashKey(obj),
         type: type,
-        linkeable: true
+        linkeable: linkeable
       };
     });
 
@@ -201,9 +243,10 @@ Analyzer.prototype = {
     if (proto) {
       properties.push({
         name: '[[Prototype]]',
-        cls: hashKey(obj),
+        // cls: hashKey(obj),
         type: 'object',
-        linkeable: true
+        linkeable: true,
+        hidden: true
       });
     }
     var constructor = obj.hasOwnProperty &&
@@ -212,11 +255,15 @@ Analyzer.prototype = {
     if (constructor &&
         _.findIndex(properties, { name: 'constructor' }) === -1) {
       properties.push({
-        cls: hashKey(obj),
+        // cls: hashKey(obj),
         name: 'constructor',
         type: 'function',
         linkeable: true
       });
+    }
+
+    if (this.cache && !linkableOnly) {
+      this.__cacheObjects[hk] = properties;
     }
 
     // console.log(properties);
@@ -232,7 +279,7 @@ Analyzer.prototype = {
     var me = this;
     objects.forEach(function (v) {
       if (currentLevel <= me.levels &&    // dfs level
-          !me.objectMap.get(v) &&         // already registered
+          !me.objects.get(v) &&         // already registered
           !me.isForbidden(v)              // forbidden check
           ) {
 
@@ -245,7 +292,7 @@ Analyzer.prototype = {
         // });
 
         // add to the registered object pool
-        me.objectMap.put(v);
+        me.objects.put(v);
 
         // dfs to the next level
         me.analyzeObjects(
@@ -263,25 +310,24 @@ Analyzer.prototype = {
    * following properties:
    *
    * - from
-   * - fromHash
-   * - toHash
-   * - toHash
+   * - to
    * - property (string)
    *
    * @param  {Object} obj
    * @return {Array}
    */
   getOwnLinks: function (obj) {
-    // TODO: memoization
     var me = this,
         links = [],
-        properties = me.getProperties(obj, true),
+        properties,
         name = hashKey(obj);
 
-    // var names = properties.map(function (v) {
-    //   return v.name;
-    // });
-    // console.log(hashKey(obj), names);
+    if (this.__cacheLinks[name]) {
+      // console.log('links from cache :)');
+      return this.__cacheLinks[name];
+    }
+
+    properties = me.getProperties(obj, true);
 
     function getAugmentedHash(obj, name) {
       if (!hashKey.has(obj) &&
@@ -298,7 +344,14 @@ Analyzer.prototype = {
 
     _.forEach(properties, function (v) {
       var ref = obj[v.name];
-      if (!ref) { return; }
+      // because of the levels a reference might not exist
+      if (!ref) {
+        return;
+      }
+
+      // if the object doesn't have a hashkey
+      // let's give it a name equal to the property
+      // being analyzed
       getAugmentedHash(ref, v.name);
 
       if (!me.isForbidden(ref)) {
@@ -323,7 +376,10 @@ Analyzer.prototype = {
       });
     }
 
-    // console.log(links);
+    if (this.cache) {
+      this.__cacheLinks[name] = links;
+    }
+
     return links;
   },
 
@@ -344,41 +400,54 @@ Analyzer.prototype = {
   },
 
   getObjects: function () {
-    return this.objectMap;
+    return this.objects;
   },
 
   /**
-   * For each object registered in this objectMap returns
-   * an array of the objects it's connected to:
-   *
-   * {
-   *   'object1': [ [object Object], [object Object], ... ],
-   *   'object2': [ [object Object], [object Object], ... ]
-   * }
-   *
-   * @return {Object}
-   */
-  getLinks: function () {
-    var me = this,
-        links = {};
-    _.forOwn(this.objectMap, function (v, k) {
-      links[k] = me.getOwnLinks(v).map(function (link) {
-        return hashKey(link.to);
-      });
-    });
-    return links;
-  },
-
-  /**
-   * Alias for getOwnLinks
-   * @param  {Object} obj
+   * Stringifies an object properties
+   * @param  obj
+   * @param  toString
    * @return {Array}
    */
-  getLinkDetails: function (obj) {
-    if (!obj) {
-      throw 'The object must be defined';
-    }
-    return this.getOwnLinks(obj);
+  stringifyObjectProperties: function (obj) {
+    return this.getProperties(obj);
+  },
+
+  /**
+   * Returns a representation of the links of
+   * an object
+   * @return {Array}
+   */
+  stringifyObjectLinks: function (obj) {
+    var me = this;
+    return me.getOwnLinks(obj).map(function (link) {
+      // discarded: from, to
+      return {
+        from: link.fromHash,
+        to: link.toHash,
+        property: link.property
+      };
+    });
+  },
+
+  /**
+   * Stringifies the objects saved in this analyzer
+   * @return {Object}
+   */
+  stringify: function () {
+    var me = this,
+      nodes = {},
+      edges = {};
+    console.time('stringify');
+    _(this.objects).forOwn(function (v) {
+      nodes[hashKey(v)] = me.stringifyObjectProperties(v);
+      edges[hashKey(v)] = me.stringifyObjectLinks(v);
+    });
+    console.timeEnd('stringify');
+    return {
+      nodes: nodes,
+      edges: edges
+    };
   }
 };
 
@@ -406,9 +475,9 @@ _.merge(aProto, {
   remove: wrapFn(function (objects, withPrototype) {
     var me = this;
     objects.forEach(function (obj) {
-      me.objectMap.remove(obj);
+      me.objects.remove(obj);
       if (withPrototype && obj.hasOwnProperty('prototype')) {
-        me.objectMap.remove(obj.prototype);
+        me.objects.remove(obj.prototype);
       }
     });
     return me;

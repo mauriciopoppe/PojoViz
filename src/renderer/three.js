@@ -1,4 +1,5 @@
 var t3 = require('t3'),
+  _ = require('lodash'),
   THREE = require('THREE'),
   id = 'threejscanvas',
   instance;
@@ -17,6 +18,7 @@ module.exports = {
   render: function (data) {
     var nodes = data.nodes,
       edges = data.edges,
+      nodeMap = {},
       margin = {
         top: 10,
         left: 10
@@ -33,6 +35,10 @@ module.exports = {
       },
       defaultColor = '#000000',
       titleHeight = 40;
+
+    nodes.forEach(function (node) {
+      nodeMap[node.label] = node;
+    });
 
     var el = document.getElementById(id);
     el.style.display = 'block';
@@ -88,7 +94,7 @@ module.exports = {
           margin.top + titleHeight + i * 15
         );
 
-        // draw spheres
+        // draw indicator circles
         if (property.type === 'function' || property.type === 'object') {
           sphere = new THREE.Mesh(
             new THREE.CircleGeometry(5, 8),
@@ -119,41 +125,131 @@ module.exports = {
       group.add(mesh);
     }
 
-    function drawNode(node) {
+    function drawNodes() {
       var me = this,
-        points = [],
-        g = new THREE.Object3D();
-      points.push(new THREE.Vector2(0, 0));
-      points.push(new THREE.Vector2(node.width, 0));
-      points.push(new THREE.Vector2(node.width, node.height));
-      points.push(new THREE.Vector2(0, node.height));
+        nodeGroup = new THREE.Object3D();
 
-      var shape = new THREE.Shape(points);
-      points = shape.createPointsGeometry();
+      nodes.forEach(function (node) {
+        var points = [],
+         g = new THREE.Object3D();
+        points.push(new THREE.Vector2(0, 0));
+        points.push(new THREE.Vector2(node.width, 0));
+        points.push(new THREE.Vector2(node.width, node.height));
+        points.push(new THREE.Vector2(0, node.height));
 
-      var type = node.label
-        .match(/^(\S*?)-/)[1];
-      var geometry = new THREE.ShapeGeometry(shape);
-      var mesh = new THREE.Line(
-        points,
-        new THREE.LineBasicMaterial({
-          color: borderStyle[type],
-          lineWidth: 2
-          // side: THREE.DoubleSide
-        })
-      );
+        var shape = new THREE.Shape(points);
+        points = shape.createPointsGeometry();
 
-      drawProperties(node, g);
-      g.add(mesh);
+        var type = node.label
+          .match(/^(\S*?)-/)[1];
+        var geometry = new THREE.ShapeGeometry(shape);
+        var mesh = new THREE.Line(
+          points,
+          new THREE.LineBasicMaterial({
+            color: borderStyle[type],
+            lineWidth: 1
+          })
+        );
 
-      g.position.set(
-        node.x - node.width * 0.5,
-        node.y - node.height * 0.5,
-        0
-      );
+        drawProperties(node, g);
+        g.add(mesh);
+
+        g.position.set(
+          node.x - node.width * 0.5,
+          node.y - node.height * 0.5,
+          0
+        );
+
+        nodeGroup.add(g);
+      });
 
       // mesh.position.z = Math.random() * 1000;
-      me.activeScene.add(g);
+      me.activeScene.add(nodeGroup);
+    }
+
+    function generateSpline(f, mid, t, d) {
+      var mult = 0,
+        bumpZ = mid.z * 0.2,
+        fm = new THREE.Vector3()
+          .addVectors(f, mid)
+          .multiplyScalar(0.5)
+          .add(new THREE.Vector3(
+            (mid.x - f.x) * mult,
+            (f.y - mid.y) * mult,
+            bumpZ
+          )),
+        mt = new THREE.Vector3()
+          .addVectors(mid, t)
+          .multiplyScalar(0.5)
+          .add(new THREE.Vector3(
+            (mid.x - t.x) * mult,
+            (t.y - mid.y) * mult,
+            bumpZ
+          ));
+
+      var spline = new THREE.Spline([
+        f, fm, mid, mt, t
+      ]), i, l = 3 * 10, index, position,
+        geometry = new THREE.Geometry();
+
+      geometry.colors = [];
+      for (i = 0; i < d; i += 1) {
+        index = i / d;
+        position = spline.getPoint(index);
+        geometry.vertices[i] = new THREE.Vector3(position.x, position.y, position.z);
+        geometry.colors[i] = new THREE.Color(0xffffff);
+        geometry.colors[i].setHSL(
+          // 200 / 360,
+          // index,
+          // 0.5
+          0,
+          0,
+          7/8
+        );
+      }
+      return geometry;
+    }
+
+    function drawEdges(scope) {
+      var me = this;
+      // console.log(edges);
+
+      edges.forEach(function (link, k) {
+        var from = nodeMap[link.from];
+        var to = nodeMap[link.to];
+
+        var index = _.findIndex(
+          from.properties,
+          { name: link.property }
+        );
+        console.log(from.x, from.y, to.x, to.y, index);
+        var fromV = new THREE.Vector3(
+          from.x - from.width * 0.5 + margin.left,
+          from.y - from.height * 0.5 + (from.properties.length - index) * 15 + 5,
+          0
+        );
+        var toV = new THREE.Vector3(
+          to.x - to.width * 0.5,
+          to.y - to.height * 0.5,
+          0
+        );
+        var d = fromV.distanceTo(toV);
+        var mid = new THREE.Vector3()
+          .addVectors(fromV, toV)
+          .multiplyScalar(0.5)
+          .setZ(50);
+
+        var geometry = generateSpline(fromV, mid, toV, d);
+        var material = new THREE.LineBasicMaterial({
+          color: 0xffffff,
+          opacity: 0.5,
+          linewidth: 4,
+          vertexColors: THREE.VertexColors
+        });
+        var mesh = new THREE.Line(geometry, material);
+
+        me.activeScene.add(mesh);
+      });
     }
 
     instance = t3.run({
@@ -196,7 +292,8 @@ module.exports = {
         camera.cameraControls.noKeys = true;
 
         // draw the nodes
-        nodes.map(drawNode, me);
+        drawNodes.call(me);
+        drawEdges.call(me);
       },
       update: function (delta) {
       }

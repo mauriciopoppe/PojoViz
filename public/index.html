@@ -29,6 +29,8 @@
 	<!-- THREE is required for t3 -->
 	<script src="bower_components/t3/examples/lib/three.js"></script>
 	<script src="bower_components/t3/dist/t3.js"></script>
+	<script src="fonts/helvetiker_bold.typeface.js"></script>
+	<script src="fonts/helvetiker_regular.typeface.js"></script>
 	<!-- graph layout engine -->
 	<script src="lib/dagre.min.js"></script>
 	<!-- libraries -->
@@ -202,6 +204,7 @@
 
 			<section label="app" class="no-padding">
 				<div class="canvas-wrapper" cross-fade>
+					<div id="threejscanvas" style="height: 100%"></div>
 					<svg id="canvas" class="unselectable"></svg>
 				</div>
 			</section>

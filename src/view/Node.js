@@ -3,7 +3,7 @@ var _ = require('lodash'),
   utils = require('../util/'),
   pojoVizProperty = require('./Property'),
   hashKey = require('../util/hashKey');
-  
+
 var prefix = utils.prefixer;
 var escapeCls = utils.escapeCls;
 var margin = { top: 0, right: 0, left: 0, bottom: 0 };
@@ -67,7 +67,7 @@ function Node(parent) {
       })
       .on('mouseover', groupMouseBehavior('over'))
       .on('mouseout', groupMouseBehavior('out'));
-    
+
     nodeEnter
       .append('rect')
       .attr('rx', 5)

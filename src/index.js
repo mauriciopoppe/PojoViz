@@ -3,14 +3,16 @@ var _ = require('lodash'),
   dagre = require('dagre'),
   utils = require('./util/'),
   ObjectHashes = require('./ObjectHashes'),
-  Canvas = require('./view/Canvas');
+  renderers = require('./renderer');
 
 // enable long stacks
 Q.longStackSupport = true;
 
 var container,
   oldContainer,
-  pojoviz;
+  oldRenderer,
+  renderer,
+  pojoviz;      // namespace
 
 function process() {
   var g = new dagre.Digraph(),
@@ -119,10 +121,8 @@ function process() {
 }
 
 // render
-var canvas;
 function render() {
-  var data,
-    library = container.analyzer;
+  var data;
 
   if (container === oldContainer) {
     return;
@@ -130,11 +130,9 @@ function render() {
 
   utils.notification('processing ' + container.global);
 
-  // if (library.dirty) {
-  //   library.setDirty(false);
-  if (canvas) {
-    canvas.destroy();
-  }
+  // pre render
+  oldRenderer && oldRenderer.clean();
+  renderer.clean();
 
   setTimeout(function () {
     container.preRender();
@@ -151,8 +149,7 @@ function render() {
     utils.notification('rendering ' + container.global);
 
     console.time('render');
-    canvas = new Canvas(data);
-    canvas.render();
+    renderer.render(data);
     console.timeEnd('render');
 
     utils.notification('complete!');
@@ -172,7 +169,6 @@ pojoviz = {
     oldContainer = container;
     container = ObjectHashes[containerName];
 
-    // TODO: create empty instance for new objects
     if (!container) {
       container = ObjectHashes.createNew(containerName, options);
     } else {
@@ -181,6 +177,13 @@ pojoviz = {
     }
 
     return container.init();
+  },
+  setRenderer: function (r) {
+    oldRenderer = renderer;
+    renderer = renderers[r];
+  },
+  getRenderer: function () {
+    return renderer;
   },
   render: render,
 
@@ -195,6 +198,9 @@ pojoviz = {
   // user vars
   userVariables: []
 };
+
+// defaults
+pojoviz.setRenderer('three');
 
 // custom events
 document.addEventListener('property-click', function (e) {

@@ -1,9 +1,12 @@
 <link rel="import" href="../bower_components/paper-checkbox/paper-checkbox.html">
 <link rel="import" href="../bower_components/paper-slider/paper-slider.html">
+<link rel="import" href="../bower_components/paper-radio-group/paper-radio-group.html">
+<link rel="import" href="../bower_components/paper-radio-button/paper-radio-button.html">
+
 <polymer-element name="pojoviz-settings">
 	<template>
 		<style>
-			paper-checkbox {
+			paper-checkbox, paper-radio-button {
 				padding: 20px 40px 20px 0;
 			}
 			paper-slider {
@@ -20,8 +23,40 @@
 		</style>
 
 		<section>
-			<h3>General Settings</h3>
+			<h1>General Settings</h1>
 
+			<h3>Renderers</h3>
+
+			<paper-radio-group
+				target="{{$.renderers}}"
+				itemsSelector="paper-radio-button"
+				on-core-select="{{onRadioSelectChange}}"
+				selected="0">
+
+				<div id="renderers">
+					<div horizontal layout>
+						<paper-radio-button
+				    	name="Three.js"
+				    	value="three">
+				    </paper-radio-button>
+				    <div vertical layout>
+				      <h4>Three js renderer</h4>
+				    </div>
+				  </div>
+
+					<div horizontal layout>
+						<paper-radio-button
+				    	name="d3"
+				    	value="d3">
+				    </paper-radio-button>
+				    <div vertical layout>
+				      <h4>D3 renderer</h4>
+				    </div>
+				  </div>
+				</div>
+			</paper-radio-group>
+
+			<h3>Additional options</h3>
 			<div horizontal layout>
 		    <paper-checkbox on-change="{{onShowBuiltInChange}}"></paper-checkbox>
 		    <div vertical layout>
@@ -35,7 +70,7 @@
 		    <div vertical layout>
 		      <h4>Function Constructors visibility</h4>
 		      <div>Something really hard to detect is when a function is a constructor, to <span>PojoViz</span> a function is a constructor when:
-					
+
 					<ul>
 						<li>the function has a <kbd>name</kbd> property which starts with an uppercase letter</li>
 						<li>if an object has a property which starts with an uppercase letter and this property is a function</li>
@@ -72,7 +107,7 @@
 				</template>
 			</div>
 		</section>
-		
+
 		<content></content>
 
 	</template>
@@ -100,6 +135,12 @@
 				pojoviz.ObjectHashes
 					.setFunctionConstructors(el.checked)
 					.markDirty();
+			},
+
+			onRadioSelectChange: function (ev, detail, el) {
+				if (detail.isSelected) {
+					pojoviz.setRenderer(detail.item.getAttribute('value'));
+				}
 			},
 
 			// deprecated

@@ -95,17 +95,17 @@ module.exports = {
         );
 
         // draw indicator circles
-        if (property.type === 'function' || property.type === 'object') {
-          sphere = new THREE.Mesh(
-            new THREE.CircleGeometry(5, 8),
-            new THREE.MeshBasicMaterial({
-              color: borderStyle[property.type]
-            })
-          );
-          sphere.position.x = margin.left;
-          sphere.position.y = (node.properties.length - i) * 15 + 5;
-          group.add(sphere);
-        }
+        // if (property.type === 'function' || property.type === 'object') {
+        //   sphere = new THREE.Mesh(
+        //     new THREE.CircleGeometry(5, 8),
+        //     new THREE.MeshBasicMaterial({
+        //       color: borderStyle[property.type]
+        //     })
+        //   );
+        //   sphere.position.x = margin.left;
+        //   sphere.position.y = (node.properties.length - i) * 15 + 5;
+        //   group.add(sphere);
+        // }
       });
 
       var texture = new THREE.Texture(canvas);
@@ -120,14 +120,22 @@ module.exports = {
           new THREE.PlaneGeometry(canvas.width, canvas.height),
           material
       );
-      mesh.position.x += node.width / 2;
-      mesh.position.y += node.height / 2;
+      // mesh.position.x += node.width / 2;
+      // mesh.position.y += node.height / 2;
+
+      mesh.position.set(
+        node.x,
+        node.y,
+        0
+      );
+
       group.add(mesh);
     }
 
     function drawNodes() {
       var me = this,
-        nodeGroup = new THREE.Object3D();
+        nodeGroup = new THREE.Object3D(),
+        nodeGeometry = new THREE.Geometry();
 
       nodes.forEach(function (node) {
         var points = [],
@@ -143,28 +151,36 @@ module.exports = {
         var type = node.label
           .match(/^(\S*?)-/)[1];
         var geometry = new THREE.ShapeGeometry(shape);
-        var mesh = new THREE.Line(
-          points,
-          new THREE.LineBasicMaterial({
-            color: borderStyle[type],
-            lineWidth: 1
-          })
-        );
+        var mesh = new THREE.Mesh(geometry);
 
-        drawProperties(node, g);
-        g.add(mesh);
-
-        g.position.set(
+        mesh.position.set(
           node.x - node.width * 0.5,
           node.y - node.height * 0.5,
           0
         );
+        mesh.updateMatrix();
+        nodeGeometry.merge(mesh.geometry, mesh.matrix);
 
-        nodeGroup.add(g);
+        // add the description in another group
+        drawProperties(node, nodeGroup);
       });
 
+      // var mesh = new THREE.Line(
+      //     points,
+      //     new THREE.LineBasicMaterial({
+      //       color: borderStyle[type],
+      //       lineWidth: 1
+      //     })
+      //   );
       // mesh.position.z = Math.random() * 1000;
       me.activeScene.add(nodeGroup);
+      me.activeScene.add(new THREE.Mesh(
+        nodeGeometry,
+        new THREE.LineBasicMaterial({
+          color: '#eeeeee',// borderStyle['function'],
+          lineWidth: 1
+        })
+      ));
     }
 
     function generateSpline(f, mid, t, d) {
@@ -269,10 +285,10 @@ module.exports = {
         this.activeScene.fog = null;
 
         // camera
-        var fov = 75,
+        var fov = 70,
           ratio = window.innerWidth / window.innerHeight,
           near = 1,
-          far = 50000;
+          far = 10000;
         var camera = new THREE.PerspectiveCamera(fov, ratio, near, far);
         camera.position.set(
           data.center.x,
@@ -293,9 +309,16 @@ module.exports = {
 
         // draw the nodes
         drawNodes.call(me);
-        drawEdges.call(me);
+        // drawEdges.call(me);
       },
       update: function (delta) {
+        var me = this;
+        me.ac = me.ac || 0;
+        me.ac += delta;
+        if (me.ac > 2) {
+          console.log(me.renderer.info.render);
+          me.ac = 0;
+        }
       }
     });
   }

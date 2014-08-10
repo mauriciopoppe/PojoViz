@@ -131,7 +131,7 @@ gulp.task('useWatchify', function () {
 });
 
 gulp.task('watch', ['useWatchify', 'browserSync', 'test'],  function () {
-  gulp.watch('public/sass/**/*.scss', ['compass']);
+  gulp.watch('./public/sass/**', ['compass']);
 });
 
 // main tasks

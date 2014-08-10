@@ -52,6 +52,15 @@ module.exports = {
     var wrapper = document.getElementById(id),
       bbox = wrapper.getBoundingClientRect();
 
+    function getY(node, i) {
+      return node.y - node.height * 0.5 +
+        (node.properties.length - i) * 15;
+    }
+
+    function getX(node) {
+      return node.x - node.width * 0.5 + margin.left;
+    }
+
     function createCameraControls(camera, domElement) {
       camera.cameraControls = new THREE.PanControls(camera, domElement);
     }
@@ -93,19 +102,6 @@ module.exports = {
           margin.left * 2,
           margin.top + titleHeight + i * 15
         );
-
-        // draw indicator circles
-        // if (property.type === 'function' || property.type === 'object') {
-        //   sphere = new THREE.Mesh(
-        //     new THREE.CircleGeometry(5, 8),
-        //     new THREE.MeshBasicMaterial({
-        //       color: borderStyle[property.type]
-        //     })
-        //   );
-        //   sphere.position.x = margin.left;
-        //   sphere.position.y = (node.properties.length - i) * 15 + 5;
-        //   group.add(sphere);
-        // }
       });
 
       var texture = new THREE.Texture(canvas);
@@ -180,6 +176,44 @@ module.exports = {
           color: '#eeeeee',// borderStyle['function'],
           lineWidth: 1
         })
+      ));
+    }
+
+    function drawCircles() {
+      var me = this,
+        circleMesh = new THREE.Mesh(new THREE.CircleGeometry(5, 8)),
+        meshes = {
+          object: {
+            material: new THREE.MeshBasicMaterial({
+              color: borderStyle.object
+            }),
+            geometry: new THREE.Geometry()
+          },
+          'function': {
+            material: new THREE.MeshBasicMaterial({
+              color: borderStyle['function']
+            }),
+            geometry: new THREE.Geometry()
+          }
+        };
+      nodes.forEach(function (node) {
+        node.properties.forEach(function (property, i) {
+          var geometry;
+          if (property.type === 'function' || property.type === 'object') {
+            circleMesh.position.set(
+              getX(node), getY(node, i), 0.1
+            );
+            circleMesh.updateMatrix();
+            meshes[property.type].geometry
+              .merge(circleMesh.geometry, circleMesh.matrix);
+          }
+        });
+      });
+      me.activeScene.add(new THREE.Mesh(
+        meshes.object.geometry, meshes.object.material
+      ));
+      me.activeScene.add(new THREE.Mesh(
+        meshes['function'].geometry, meshes['function'].material
       ));
     }
 
@@ -309,6 +343,7 @@ module.exports = {
 
         // draw the nodes
         drawNodes.call(me);
+        drawCircles.call(me);
         // drawEdges.call(me);
       },
       update: function (delta) {

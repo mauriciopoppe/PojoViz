@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<title>Pojo Viz</title>
 
-	<script src="bower_components/platform/platform.js"></script>
+	<script src="lib/vendor.js"></script>
 
   <!-- Meta -->
   <meta content="PojoViz" property="og:title">
@@ -11464,10 +11464,8 @@ license that can be found in the LICENSE file.
 	<!-- libraries -->
 	<script src="lib/d3.js"></script>
 	<script src="lib/tween.min.js"></script>
-
+	<script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.min.js"></script>
 	<!-- bundle: three + t3 + marked + highlight -->
-	<script src="lib/vendor.js"></script>
-
 </head>
 <body unresolved="" fullbleed="">
 	<core-scaffold responsivewidth="1000px">
@@ -11605,7 +11603,7 @@ license that can be found in the LICENSE file.
 	<paper-toast id="toast" text=""></paper-toast>
 
 	<!-- app -->
-	<script src="build/pojoviz.js"></script>
+	<script src="../build/pojoviz.js"></script>
 
 	<script>
 		// support onpushstate
@@ -11629,8 +11627,6 @@ license that can be found in the LICENSE file.
 			function runLibrary(dataSet) {
 				var value,
 					action;
-
-				console.log(dataSet);
 
 				value = dataSet.value.split(':');
 				action = value[0];

@@ -11418,7 +11418,7 @@ license that can be found in the LICENSE file.
 
 		<style>
 		</style>
-		<core-ajax auto="" url="../../README.md" handleas="json" on-core-response="{{handleResponse}}"></core-ajax>
+		<core-ajax id="ajax" url="../../README.md" handleas="json" on-core-response="{{handleResponse}}"></core-ajax>
 
 		<!-- content filled dinamically -->
 		<section id="parsed"></section>
@@ -11428,6 +11428,11 @@ license that can be found in the LICENSE file.
 		Polymer('pojoviz-readme', {
 			ready: function () {
 				this.isLocal = ~location.origin.indexOf('localhost');
+				this.isProduction = ~location.pathname.indexOf('vulcanize');
+				if (this.isProduction) {
+					this.$.ajax.url = this.$.ajax.url.substr(3);
+				}
+				this.$.ajax.go();
 			},
 			handleResponse: function (ev, detail, el) {
 				var me = this,
@@ -11441,7 +11446,7 @@ license that can be found in the LICENSE file.
 					if (me.isLocal) {
 						return str;
 					}
-					return str.replace(/src="/g, 'src="http://maurizzzio.github.io/pojoviz/public/');
+					return str.replace(/src="/g, 'src="http://maurizzzio.github.io/PojoViz/public/');
 				}
 
 				function replacePojoViz(str) {

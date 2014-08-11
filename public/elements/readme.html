@@ -6,7 +6,7 @@
 		<style>
 		</style>
 		<core-ajax
-			auto
+			id="ajax"
 			url="../../README.md"
 			handleAs="json"
 			on-core-response="{{handleResponse}}"
@@ -20,6 +20,11 @@
 		Polymer('pojoviz-readme', {
 			ready: function () {
 				this.isLocal = ~location.origin.indexOf('localhost');
+				this.isProduction = ~location.pathname.indexOf('vulcanize');
+				if (this.isProduction) {
+					this.$.ajax.url = this.$.ajax.url.substr(3);
+				}
+				this.$.ajax.go();
 			},
 			handleResponse: function (ev, detail, el) {
 				var me = this,
@@ -33,7 +38,7 @@
 					if (me.isLocal) {
 						return str;
 					}
-					return str.replace(/src="/g, 'src="http://maurizzzio.github.io/pojoviz/public/');
+					return str.replace(/src="/g, 'src="http://maurizzzio.github.io/PojoViz/public/');
 				}
 
 				function replacePojoViz(str) {

@@ -35,7 +35,7 @@
 	<!-- libraries -->
 	<script src="lib/d3.js"></script>
 	<script src="lib/tween.min.js"></script>
-
+	<script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.min.js"></script>
 	<!-- bundle: three + t3 + marked + highlight -->
 	<!-- build:js lib/vendor.js -->
 	<script type="text/javascript" src="bower_components/t3/examples/lib/three.js"></script>
@@ -272,8 +272,6 @@
 			function runLibrary(dataSet) {
 				var value,
 					action;
-
-				console.log(dataSet);
 
 				value = dataSet.value.split(':');
 				action = value[0];

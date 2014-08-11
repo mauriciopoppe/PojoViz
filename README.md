@@ -3,6 +3,8 @@ PojoViz - Plain Old JavaScript Object Visualization
 
 %PojoViz is a tool to analyze the plain objects of a JavaScript library/framework by finding all the relationships found among the library entry point (typically a global variable) and the objects/functions linked to it
 
+Note: this project was developed to work with Google Chrome, it's suggested that you use this browser for a complete experience
+
 ## Why?
 
 How many times did you find an awesome library/framework and wanted to see how it's structured just for fun?

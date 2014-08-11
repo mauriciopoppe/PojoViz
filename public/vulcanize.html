@@ -2,9 +2,13 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>POJO Viz</title>
+	<title>Pojo Viz</title>
 
 	<script src="bower_components/platform/platform.js"></script>
+
+  <!-- Meta -->
+  <meta content="PojoViz" property="og:title">
+  <meta content="PojoViz - visualize your code" name="description">
 
 	<div hidden><!--
 Copyright (c) 2014 The Polymer Project Authors. All rights reserved.
@@ -5271,6 +5275,1259 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 </polymer-element>
 </div>
 	<div hidden>undefined</div>
+	<div hidden><!--
+Copyright (c) 2014 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<!--
+`paper-toast` provides lightweight feedback about an operation in a small popup 
+at the base of the screen on mobile and at the lower left on desktop. Toasts are 
+above all other elements on screen, including the FAB.
+
+Toasts automatically disappear after a timeout or after user interaction 
+elsewhere on the screen, whichever comes first. Toasts can be swiped off 
+screen.  There can be only one on the screen at a time.
+
+Example:
+
+    <paper-toast text="Your draft has been discarded." onclick="discardDraft(el)"></paper-toast>
+    
+    <script>
+      function discardDraft(el) {
+        el.show();
+      }
+    </script>
+    
+An action button can be presented in the toast.
+
+Example (using Polymer's data-binding features):
+
+    <paper-toast id="toast2" text="Connection timed out. Showing limited messages.">
+      <div style="color: blue;" on-tap="{{retry}}">Retry</div>
+    </paper-toast>
+    
+Positioning toast:
+
+A standard toast appears near the lower left of the screen.  You can change the
+position by overriding bottom and left positions.
+
+    paper-toast {
+      bottom: 40px;
+      left: 10px;
+    }
+  
+To make it fit at the bottom of the screen:
+
+    paper-toast {
+      bottom: 0;
+      left: 0;
+      width: 100%;
+    }
+  
+When the screen size is smaller than the `responsiveWidth` (default to 480px),
+the toast will automatically fits at the bottom of the screen.
+
+@group Paper Elements
+@element paper-toast
+@homepage github.io
+-->
+
+<!--
+Copyright (c) 2014 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+
+
+<!--
+Copyright (c) 2014 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+
+
+<polymer-element name="core-key-helper" assetpath="bower_components/core-overlay/">
+  <script>
+    Polymer('core-key-helper', {
+      ENTER_KEY: 13,
+      ESCAPE_KEY: 27
+    });
+  </script>
+</polymer-element>
+
+<!--
+Copyright (c) 2014 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<polymer-element name="core-overlay-layer" assetpath="bower_components/core-overlay/">
+<template>
+  <style>
+    :host {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      display: none;
+    }
+
+    :host(.core-opened) {
+      display: block;
+    }
+  </style>
+  <content></content>
+</template>
+<script>
+(function() {
+
+  Polymer('core-overlay-layer', {
+    publish: {
+      opened: false
+    },
+    openedChanged: function() {
+      this.classList.toggle('core-opened', this.opened);
+    },
+    /**
+     * Adds an element to the overlay layer
+     */
+    addElement: function(element) {
+      if (!this.parentNode) {
+        document.querySelector('body').appendChild(this);
+      }
+      if (element.parentNode !== this) {
+        element.__contents = [];
+        var ip$ = element.querySelectorAll('content');
+        for (var i=0, l=ip$.length, n; (i<l) && (n = ip$[i]); i++) {
+          this.moveInsertedElements(n);
+          this.cacheDomLocation(n);
+          n.parentNode.removeChild(n);
+          element.__contents.push(n);
+        }
+        this.cacheDomLocation(element);
+        this.updateEventController(element);
+        var h = this.makeHost();
+        h.shadowRoot.appendChild(element);
+        element.__host = h;
+      }
+    },
+    makeHost: function() {
+      var h = document.createElement('overlay-host');
+      h.createShadowRoot();
+      this.appendChild(h);
+      return h;
+    },
+    moveInsertedElements: function(insertionPoint) {
+      var n$ = insertionPoint.getDistributedNodes();
+      var parent = insertionPoint.parentNode;
+      insertionPoint.__contents = [];
+      for (var i=0, l=n$.length, n; (i<l) && (n=n$[i]); i++) {
+        this.cacheDomLocation(n);
+        this.updateEventController(n);
+        insertionPoint.__contents.push(n);
+        parent.appendChild(n);  
+      }
+    },
+    updateEventController: function(element) {
+      element.eventController = this.element.findController(element);
+    },
+    /**
+     * Removes an element from the overlay layer
+     */
+    removeElement: function(element) {
+      element.eventController = null;
+      this.replaceElement(element);
+      var h = element.__host;
+      if (h) {
+        h.parentNode.removeChild(h);
+      }
+    },
+    replaceElement: function(element) {
+      if (element.__contents) {
+        for (var i=0, c$=element.__contents, c; (c=c$[i]); i++) {
+          this.replaceElement(c);
+        }
+        element.__contents = null;
+      }
+      if (element.__parentNode) {
+        var n = element.__nextElementSibling && element.__nextElementSibling 
+            === element.__parentNode ? element.__nextElementSibling : null;
+        element.__parentNode.insertBefore(element, n);
+      }
+    },
+    cacheDomLocation: function(element) {
+      element.__nextElementSibling = element.nextElementSibling;
+      element.__parentNode = element.parentNode;
+    }
+  });
+  
+})();
+</script>
+</polymer-element>
+
+
+<!--
+The `core-overlay` element displays overlayed on top of other content. It starts
+out hidden and is displayed by setting its `opened` property to true.
+A `core-overlay's` opened state can be toggled by calling the `toggle`
+method.
+
+The `core-overlay` will, by default, show/hide itself when it's opened. The 
+`target` property may be set to another element to cause that element to 
+be shown when the overlay is opened.
+
+It's common to want a `core-overlay` to animate to its opened
+position. The `core-overlay` element uses a `core-transition` to handle
+animation. The default transition is `core-transition-fade` which 
+causes the overlay to fade in when displayed. See 
+<a href="../core-transition/">`core-transition`</a> for more
+information about customizing a `core-overlay's` opening animation. The
+`backdrop` property can be set to true to show a backdrop behind the overlay
+that will darken the rest of the window.
+
+An element that should close the `core-overlay` will automatically
+do so if it's given the `core-overlay-toggle` attribute. This attribute
+can be customized with the `closeAttribute` property. You can also use
+`closeSelector` if more general matching is needed.
+
+By default  `core-overlay` will close whenever the user taps outside it or
+presses the escape key. This behavior can be turned off via the
+`autoCloseDisabled` property.
+
+    <core-overlay>
+      <h2>Dialog</h2>
+      <input placeholder="say something..." autofocus>
+      <div>I agree with this wholeheartedly.</div>
+      <button core-overlay-toggle>OK</button>
+    </core-overlay>
+
+`core-overlay` will automatically size and position itself according to the 
+following rules. If the target's style.top and style.left are unset, the 
+target will be centered. The size of the target is constrained to be no larger
+than the window dimensions. The `margin` property specifies the extra amount
+of space that should be reserved around the overlay. This can be used to ensure
+that, for example, a drop shadow is always visible around the overlay.
+
+@group Core Elements
+@element core-overlay
+@homepage github.io
+-->
+<!--
+Fired when the `core-overlay`'s `opened` property changes.
+
+@event core-overlay-open
+@param {Object} detail
+@param {Object} detail.opened the opened state
+-->
+
+<style>
+  .core-overlay-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+
+  .core-overlay-backdrop.core-opened {
+    opacity: 0.6;
+  }
+</style>
+
+<polymer-element name="core-overlay" assetpath="bower_components/core-overlay/">
+<script>
+(function() {
+
+  Polymer('core-overlay', {
+
+    publish: {
+      /**
+       * The target element that will be shown when the overlay is 
+       * opened. If unspecified, the core-overlay itself is the target.
+       *
+       * @attribute target
+       * @type Object
+       * @default the overlay element
+       */
+      target: null,
+
+
+      /**
+       * A `core-overlay`'s size is guaranteed to be 
+       * constrained to the window size. To achieve this, the sizingElement
+       * is sized with a max-height/width. By default this element is the 
+       * target element, but it can be specifically set to a specific element
+       * inside the target if that is more appropriate. This is useful, for 
+       * example, when a region inside the overlay should scroll if needed.
+       *
+       * @attribute sizingTarget
+       * @type Object
+       * @default the target element
+       */
+      sizingTarget: null,
+    
+      /**
+       * Set opened to true to show an overlay and to false to hide it.
+       * A `core-overlay` may be made initially opened by setting its
+       * `opened` attribute.
+       * @attribute opened
+       * @type boolean
+       * @default false
+       */
+      opened: false,
+
+      /**
+       * If true, the overlay has a backdrop darkening the rest of the screen.
+       * The backdrop element is attached to the document body and may be styled
+       * with the class `core-overlay-backdrop`. When opened the `core-opened`
+       * class is applied.
+       *
+       * @attribute backdrop
+       * @type boolean
+       * @default false
+       */    
+      backdrop: false,
+
+      /**
+       * If true, the overlay is guaranteed to display above page content.
+       *
+       * @attribute layered
+       * @type boolean
+       * @default false
+      */
+      layered: false,
+    
+      /**
+       * By default an overlay will close automatically if the user
+       * taps outside it or presses the escape key. Disable this
+       * behavior by setting the `autoCloseDisabled` property to true.
+       * @attribute autoCloseDisabled
+       * @type boolean
+       * @default false
+       */
+      autoCloseDisabled: false,
+
+      /**
+       * This property specifies an attribute on elements that should
+       * close the overlay on tap. Should not set `closeSelector` if this
+       * is set.
+       *
+       * @attribute closeAttribute
+       * @type string
+       * @default "core-overlay-toggle"
+       */
+      closeAttribute: 'core-overlay-toggle',
+
+      /**
+       * This property specifies a selector matching elements that should
+       * close the overlay on tap. Should not set `closeAttribute` if this
+       * is set.
+       *
+       * @attribute closeSelector
+       * @type string
+       * @default ""
+       */
+      closeSelector: '',
+
+      /**
+       * A `core-overlay` target's size is constrained to the window size.
+       * The `margin` property specifies a pixel amount around the overlay 
+       * that will be reserved. It's useful for ensuring that, for example, 
+       * a shadow displayed outside the target will always be visible.
+       *
+       * @attribute margin
+       * @type number
+       * @default 0
+       */
+      margin: 0,
+
+      /**
+       * The transition property specifies a string which identifies a 
+       * <a href="../core-transition/">`core-transition`</a> element that 
+       * will be used to help the overlay open and close. The default
+       * `core-transition-fade` will cause the overlay to fade in and out.
+       *
+       * @attribute transition
+       * @type string
+       * @default 'core-transition-fade'
+       */
+      transition: 'core-transition-fade'
+
+    },
+
+    captureEventName: 'tap',
+    targetListeners: {
+      'tap': 'tapHandler',
+      'keydown': 'keydownHandler',
+      'core-transitionend': 'transitionend'
+    },
+    
+    registerCallback: function(element) {
+      this.layer = document.createElement('core-overlay-layer');
+      this.keyHelper = document.createElement('core-key-helper');
+      this.meta = document.createElement('core-transition');
+      this.scrim = document.createElement('div');
+      this.scrim.className = 'core-overlay-backdrop';
+    },
+
+    ready: function() {
+      this.target = this.target || this;
+      // flush to ensure styles are installed before paint
+      Platform.flush();
+    },
+
+    /** 
+     * Toggle the opened state of the overlay.
+     * @method toggle
+     */
+    toggle: function() {
+      this.opened = !this.opened;
+    },
+
+    /** 
+     * Open the overlay. This is equivalent to setting the `opened`
+     * property to true.
+     * @method open
+     */
+    open: function() {
+      this.opened = true;
+    },
+
+    /** 
+     * Close the overlay. This is equivalent to setting the `opened` 
+     * property to false.
+     * @method close
+     */
+    close: function() {
+      this.opened = false;
+    },
+
+    domReady: function() {
+      this.ensureTargetSetup();
+    },
+
+    targetChanged: function(old) {
+      if (this.target) {
+        // really make sure tabIndex is set
+        if (this.target.tabIndex < 0) {
+          this.target.tabIndex = -1;
+        }
+        this.addElementListenerList(this.target, this.targetListeners);
+        this.target.style.display = 'none';
+      }
+      if (old) {
+        this.removeElementListenerList(old, this.targetListeners);
+        var transition = this.getTransition();
+        if (transition) {
+          transition.teardown(old);
+        } else {
+          old.style.position = null;
+          old.style.outline = null;
+        }
+        old.style.display = null;
+      }
+    },
+
+    // NOTE: wait to call this until we're as sure as possible that target
+    // is styled.
+    ensureTargetSetup: function() {
+      if (!this.target || this.target.__overlaySetup) {
+        return;
+      }
+      this.target.__overlaySetup = true;
+      this.target.style.display = null;
+      var transition = this.getTransition();
+      if (transition) {
+        transition.setup(this.target);
+      }
+      var computed = getComputedStyle(this.target);
+      this.targetStyle = {
+        position: computed.position === 'static' ? 'fixed' :
+            computed.position
+      }
+      if (!transition) {
+        this.target.style.position = this.targetStyle.position;
+        this.target.style.outline = 'none';
+      }
+      this.target.style.display = 'none';
+    },
+
+    openedChanged: function() {
+      this.ensureTargetSetup();
+      this.prepareRenderOpened();
+      // continue styling after delay so display state can change
+      // without aborting transitions
+      // note: we wait a full frame so that transition changes executed
+      // during measuring do not cause transition
+      this.async(function() {
+        this.target.style.display = null;
+        this.async('renderOpened');
+      });
+      this.fire('core-overlay-open', this.opened);
+    },
+
+    // tasks which must occur before opening; e.g. making the element visible
+    prepareRenderOpened: function() {
+      if (this.opened) {
+        addOverlay(this);
+      }
+      this.prepareBackdrop();
+      // async so we don't auto-close immediately via a click.
+      this.async(function() {
+        if (!this.autoCloseDisabled) {
+          this.enableElementListener(this.opened, document,
+              this.captureEventName, 'captureHandler', true);
+        }
+      });
+      this.enableElementListener(this.opened, window, 'resize',
+          'resizeHandler');
+
+      if (this.opened) {
+        // TODO(sorvell): force SD Polyfill to render
+        forcePolyfillRender(this.target);
+        if (!this._shouldPosition) {
+          this.target.style.position = 'absolute';
+          var computed = getComputedStyle(this.target);
+          var t = (computed.top === 'auto' && computed.bottom === 'auto');
+          var l = (computed.left === 'auto' && computed.right === 'auto');
+          this.target.style.position = this.targetStyle.position;
+          this._shouldPosition = {top: t, left: l};
+        }
+        // if we are showing, then take care when measuring
+        this.prepareMeasure(this.target);
+        this.updateTargetDimensions();
+        this.finishMeasure(this.target);
+        if (this.layered) {
+          this.layer.addElement(this.target);
+          this.layer.opened = this.opened;
+        }
+      }
+    },
+
+    // tasks which cause the overlay to actually open; typically play an
+    // animation
+    renderOpened: function() {
+      var transition = this.getTransition();
+      if (transition) {
+        transition.go(this.target, {opened: this.opened});
+      } else {
+        this.transitionend();
+      }
+      this.renderBackdropOpened();
+    },
+
+    // finishing tasks; typically called via a transition
+    transitionend: function(e) {
+      // make sure this is our transition event.
+      if (e && e.target !== this.target) {
+        return;
+      }
+      if (!this.opened) {
+        this.resetTargetDimensions();
+        this.target.style.display = 'none';
+        this.completeBackdrop();
+        removeOverlay(this);
+        if (this.layered) {
+          if (!currentOverlay()) {
+            this.layer.opened = this.opened;
+          }
+          this.layer.removeElement(this.target);
+        }
+      }
+      this.applyFocus();
+    },
+
+    prepareBackdrop: function() {
+      if (this.backdrop && this.opened) {
+        if (!this.scrim.parentNode) {
+          document.body.appendChild(this.scrim);
+          this.scrim.style.zIndex = currentOverlayZ() - 1;
+        }
+        trackBackdrop(this);
+      }
+    },
+
+    renderBackdropOpened: function() {
+      if (this.backdrop && getBackdrops().length < 2) {
+        this.scrim.classList.toggle('core-opened', this.opened);
+      }
+    },
+
+    completeBackdrop: function() {
+      if (this.backdrop) {
+        trackBackdrop(this);
+        if (getBackdrops().length === 0) {
+          this.scrim.parentNode.removeChild(this.scrim);
+        }
+      }
+    },
+
+    prepareMeasure: function(target) {
+      target.style.transition = target.style.webkitTransition = 'none';
+      target.style.transform = target.style.webkitTransform = 'none';
+      target.style.display = null;
+    },
+
+    finishMeasure: function(target) {
+      target.style.display = 'none';
+      target.style.transform = target.style.webkitTransform = null;
+      target.style.transition = target.style.webkitTransition = null;
+    },
+
+    getTransition: function() {
+      return this.meta.byId(this.transition);
+    },
+
+    getFocusNode: function() {
+      return this.target.querySelector('[autofocus]') || this.target;
+    },
+
+    applyFocus: function() {
+      var focusNode = this.getFocusNode();
+      if (this.opened) {
+        focusNode.focus();
+      } else {
+        focusNode.blur();
+        focusOverlay();
+      }
+    },
+
+    updateTargetDimensions: function() {
+      this.positionTarget();
+      this.sizeTarget();
+      //
+      if (this.layered) {
+        var rect = this.target.getBoundingClientRect();
+        this.target.style.top = rect.top + 'px';
+        this.target.style.left = rect.left + 'px';
+        this.target.style.right = this.target.style.bottom = 'auto';
+      }
+    },
+
+    sizeTarget: function() {
+      var sizer = this.sizingTarget || this.target;
+      var rect = sizer.getBoundingClientRect();
+      var mt = rect.top === this.margin ? this.margin : this.margin * 2;
+      var ml = rect.left === this.margin ? this.margin : this.margin * 2;
+      var h = window.innerHeight - rect.top - mt;
+      var w = window.innerWidth - rect.left - ml;
+      sizer.style.maxHeight = h + 'px';
+      sizer.style.maxWidth = w + 'px';
+      sizer.style.boxSizing = 'border-box';
+    },
+
+    positionTarget: function() {
+      // vertically and horizontally center if not positioned
+      if (this._shouldPosition.top) {
+        var t = Math.max((window.innerHeight - 
+            this.target.offsetHeight - this.margin*2) / 2, this.margin);
+        this.target.style.top = t + 'px';
+      }
+      if (this._shouldPosition.left) {
+        var l = Math.max((window.innerWidth - 
+            this.target.offsetWidth - this.margin*2) / 2, this.margin);
+        this.target.style.left = l + 'px';
+      }
+    },
+
+    resetTargetDimensions: function() {
+      this.target.style.top = this.target.style.left = null;
+      this.target.style.right = this.target.style.bottom = null;
+      this.target.style.width = this.target.style.height = null;
+      this._shouldPosition = null;
+    },
+
+    tapHandler: function(e) {
+      // closeSelector takes precedence since closeAttribute has a default non-null value.
+      if (e.target &&
+          (this.closeSelector && e.target.matches(this.closeSelector)) ||
+          (this.closeAttribute && e.target.hasAttribute(this.closeAttribute))) {
+        this.toggle();
+      } else {
+        if (this.autoCloseJob) {
+          this.autoCloseJob.stop();
+          this.autoCloseJob = null;
+        }
+      }
+    },
+    
+    // We use the traditional approach of capturing events on document
+    // to to determine if the overlay needs to close. However, due to 
+    // ShadowDOM event retargeting, the event target is not useful. Instead
+    // of using it, we attempt to close asynchronously and prevent the close
+    // if a tap event is immediately heard on the target.
+    // TODO(sorvell): This approach will not work with modal. For
+    // this we need a scrim.
+    captureHandler: function(e) {
+      if (!this.autoCloseDisabled && (currentOverlay() == this)) {
+        this.autoCloseJob = this.job(this.autoCloseJob, function() {
+          this.close();
+        });
+      }
+    },
+
+    keydownHandler: function(e) {
+      if (!this.autoCloseDisabled && (e.keyCode == this.keyHelper.ESCAPE_KEY)) {
+        this.close();
+        e.stopPropagation();
+      }
+    },
+
+    /**
+     * Extensions of core-overlay should implement the `resizeHandler`
+     * method to adjust the size and position of the overlay when the 
+     * browser window resizes.
+     * @method resizeHandler
+     */
+    resizeHandler: function() {
+      this.updateTargetDimensions();
+    },
+
+    // TODO(sorvell): these utility methods should not be here.
+    addElementListenerList: function(node, events) {
+      for (var i in events) {
+        this.addElementListener(node, i, events[i]);
+      }
+    },
+
+    removeElementListenerList: function(node, events) {
+      for (var i in events) {
+        this.removeElementListener(node, i, events[i]);
+      }
+    },
+
+    enableElementListener: function(enable, node, event, methodName, capture) {
+      if (enable) {
+        this.addElementListener(node, event, methodName, capture);
+      } else {
+        this.removeElementListener(node, event, methodName, capture);
+      }
+    },
+
+    addElementListener: function(node, event, methodName, capture) {
+      var fn = this._makeBoundListener(methodName);
+      if (node && fn) {
+        node.addEventListener(event, fn, capture);
+      }
+    },
+
+    removeElementListener: function(node, event, methodName, capture) {
+      var fn = this._makeBoundListener(methodName);
+      if (node && fn) {
+        node.removeEventListener(event, fn, capture);
+      }
+    },
+
+    _makeBoundListener: function(methodName) {
+      var self = this, method = this[methodName];
+      if (!method) {
+        return;
+      }
+      var bound = '_bound' + methodName;
+      if (!this[bound]) {
+        this[bound] = function(e) {
+          method.call(self, e);
+        }
+      }
+      return this[bound];
+    },
+  });
+
+  function forcePolyfillRender(target) {
+    if (window.ShadowDOMPolyfill) {
+      target.offsetHeight;
+    }
+  }
+
+  // TODO(sorvell): This should be an element with private state so it can
+  // be independent of overlay.
+  // track overlays for z-index and focus managemant
+  var overlays = [];
+  function addOverlay(overlay) {
+    var z0 = currentOverlayZ();
+    overlays.push(overlay);
+    var z1 = currentOverlayZ();
+    if (z1 <= z0) {
+      applyOverlayZ(overlay, z0);
+    }
+  }
+
+  function removeOverlay(overlay) {
+    var i = overlays.indexOf(overlay);
+    if (i >= 0) {
+      overlays.splice(i, 1);
+      setZ(overlay, null);
+    }
+  }
+  
+  function applyOverlayZ(overlay, aboveZ) {
+    setZ(overlay.target, aboveZ + 2);
+  }
+  
+  function setZ(element, z) {
+    element.style.zIndex = z;
+  }
+
+  function currentOverlay() {
+    return overlays[overlays.length-1];
+  }
+  
+  var DEFAULT_Z = 10;
+  
+  function currentOverlayZ() {
+    var z;
+    var current = currentOverlay();
+    if (current) {
+      var z1 = window.getComputedStyle(current.target).zIndex;
+      if (!isNaN(z1)) {
+        z = Number(z1);
+      }
+    }
+    return z || DEFAULT_Z;
+  }
+  
+  function focusOverlay() {
+    var current = currentOverlay();
+    if (current) {
+      current.applyFocus();
+    }
+  }
+
+  var backdrops = [];
+  function trackBackdrop(element) {
+    if (element.opened) {
+      backdrops.push(element);
+    } else {
+      var i = backdrops.indexOf(element);
+      if (i >= 0) {
+        backdrops.splice(i, 1);
+      }
+    }
+  }
+
+  function getBackdrops() {
+    return backdrops;
+  }
+})();
+</script>
+</polymer-element>
+
+<!--
+Copyright (c) 2014 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+
+
+<polymer-element name="core-transition-css" extends="core-transition" attributes="transitionType" assetpath="bower_components/core-transition/">
+<template>
+  <style no-shim="">/* Copyright (c) 2014 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt */
+
+:host(.core-transition) {
+  outline: none;
+  overflow: hidden;
+  opacity: 0;
+  transition: transform 0.2s ease-in-out, opacity 0.2s ease-in;
+  -webkit-transition: -webkit-transform 0.2s ease-in-out, opacity 0.2s ease-in;
+}
+
+
+:host(.core-transition.core-opened) {
+  opacity: 1;
+  transform: none;
+  -webkit-transform: none;
+}
+
+:host(.core-transition-center) {
+  transform: scale(0.5);
+  -webkit-transform: scale(0.5);
+}
+
+:host(.core-transition-top) {
+  transform: translateY(-200%);
+  -webkit-transform: translateY(-200%);
+}
+
+:host(.core-transition-bottom) {
+  transform: translateY(200%);
+  -webkit-transform: translateY(200%);
+}
+
+:host(.core-transition-left) {
+  transform: translateX(-200%);
+  -webkit-transform: translateX(-200%);
+}
+
+:host(.core-transition-right) {
+  transform: translateX(200%);
+  -webkit-transform: translateX(200%);
+}</style>
+</template>
+<script>
+
+  Polymer('core-transition-css', {
+    
+    baseClass: 'core-transition',
+    openedClass: 'core-opened',
+    closedClass: 'core-closed',
+    completeEventName: 'transitionend',
+
+    registerCallback: function(element) {
+      this.transitionStyle = element.templateContent().firstElementChild;
+    },
+
+    // template is just for loading styles, we don't need a shadowRoot
+    fetchTemplate: function() {
+      return null;
+    },
+
+    go: function(node, state) {
+      if (state.opened !== undefined) {
+        this.transitionOpened(node, state.opened);
+      }
+    },
+
+    setup: function(node) {
+      if (!node._hasTransitionStyle) {
+        if (!node.shadowRoot) {
+          node.createShadowRoot().innerHTML = '<content></content>';
+        }
+        this.installScopeStyle(this.transitionStyle, 'transition',
+            node.shadowRoot);
+        node._hasTransitionStyle = true;
+        node.classList.add(this.baseClass);
+        if (this.transitionType) {
+          node.classList.add(this.baseClass + '-' + this.transitionType);
+        }
+      }
+    },
+
+    transitionOpened: function(node, opened) {
+      this.listenOnce(node, this.completeEventName, function() {
+        node.classList.toggle(this.revealedClass, opened);
+        if (!opened) {
+          node.classList.remove(this.closedClass);
+        }
+        this.complete(node);
+      });
+      node.classList.toggle(this.openedClass, opened);
+      node.classList.toggle(this.closedClass, !opened);
+    }
+
+  });
+</script>
+</polymer-element>
+
+<core-transition-css id="core-transition-fade"></core-transition-css>
+<core-transition-css id="core-transition-center" transitiontype="center"></core-transition-css>
+<core-transition-css id="core-transition-top" transitiontype="top"></core-transition-css>
+<core-transition-css id="core-transition-bottom" transitiontype="bottom"></core-transition-css>
+<core-transition-css id="core-transition-left" transitiontype="left"></core-transition-css>
+<core-transition-css id="core-transition-right" transitiontype="right"></core-transition-css>
+
+
+
+<polymer-element name="paper-toast" attributes="text duration opened responsiveWidth swipeDisabled" role="status" assetpath="bower_components/paper-toast/">
+
+<template>
+
+  <style>/*
+Copyright (c) 2014 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+*/
+
+:host {
+  display: inline-block;
+  background: #323232;
+  color: #f1f1f1;
+  min-height: 48px;
+  min-width: 288px;
+  padding: 16px 24px 12px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  border-radius: 2px;
+  bottom: 12px;
+  left: 12px;
+  font-size: 14px;
+  cursor: default;
+}
+
+:host(.capsule) {
+  border-radius: 24px;
+}
+
+:host(.fit-bottom) {
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  min-width: 0;
+  border-radius: 0;
+}
+
+:host(.core-transition.dragging) {
+  transition: none;
+}
+
+:host(.core-transition.fade-out-down),
+:host(.core-transition.fade-out-up),
+:host(.core-transition.fade-out-right),
+:host(.core-transition.fade-out-left) {
+  opacity: 0;
+  transition: -webkit-transform 0.08s ease-in-out, opacity 0.08s ease-in-out;
+  transition: transform 0.08s ease-in-out, opacity 0.08s ease-in-out;
+}
+
+:host(.core-transition.fade-out-down) {
+  -webkit-transform: translate(0, 100%);
+  transform: translate(0, 100%);
+}
+
+:host(.core-transition.fade-out-up) {
+  -webkit-transform: translate(0, -100%);
+  transform: translate(0, -100%);
+}
+
+:host(.core-transition.fade-out-right) {
+  -webkit-transform: translate(100%, 0);
+  transform: translate(100%, 0);
+}
+
+:host(.core-transition.fade-out-left) {
+  -webkit-transform: translate(-100%, 0);
+  transform: translate(-100%, 0);
+}
+
+.toast-container {
+  overflow: hidden;
+}
+
+.toast-action {
+  padding-left: 24px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+</style>
+
+  <core-overlay opened="{{opened}}" target="{{}}" sizingtarget="{{$.container}}" transition="core-transition-bottom"></core-overlay>
+
+  <div class="toast-container" horizontal="" layout="">
+
+    <div class="toast-text" flex="">{{text}}</div>
+    
+    <div class="toast-text toast-action" on-tap="{{dismiss}}">
+      <content></content>
+    </div>
+
+  </div>
+  
+  <core-media-query query="max-width: {{responsiveWidth}}" querymatches="{{narrowMode}}"></core-media-query>
+
+</template>
+<script>
+
+  (function() {
+  
+    var currentToast;
+  
+    Polymer('paper-toast', {
+  
+      /**
+       * The text shows in a toast.
+       *
+       * @attribute text
+       * @type string
+       * @default ''
+       */
+      text: '',
+      
+      /**
+       * The duration in milliseconds to show the toast.
+       *
+       * @attribute duration
+       * @type number
+       * @default 3000
+       */
+      duration: 3000,
+      
+      /**
+       * Set opened to true to show the toast and to false to hide it.
+       *
+       * @attribute opened
+       * @type boolean
+       * @default false
+       */
+      opened: false,
+      
+      /**
+       * Min-width when the toast changes to narrow layout.  In narrow layout,
+       * the toast fits at the bottom of the screen when opened.
+       *
+       * @attribute responsiveWidth
+       * @type string
+       * @default '480px'
+       */
+      responsiveWidth: '480px',
+      
+      /**
+       * If true, the toast can't be swiped.
+       *
+       * @attribute swipeDisabled
+       * @type boolean
+       * @default false
+       */
+      swipeDisabled: false,
+      
+      eventDelegates: {
+        trackstart: 'trackStart',
+        track: 'track',
+        trackend: 'trackEnd',
+        transitionend: 'transitionEnd'
+      },
+      
+      narrowModeChanged: function() {
+        this.classList.toggle('fit-bottom', this.narrowMode);
+      },
+      
+      openedChanged: function() {
+        if (this.opened) {
+          this.dismissJob = this.job(this.dismissJob, this.dismiss, this.duration);
+        } else {
+          this.dismissJob && this.dismissJob.stop();
+          this.dismiss();
+        }
+      },
+      
+      /** 
+       * Toggle the opened state of the toast.
+       * @method toggle
+       */
+      toggle: function() {
+        this.opened = !this.opened;
+      },
+      
+      /** 
+       * Show the toast for the specified duration
+       * @method show
+       */
+      show: function() {
+        if (currentToast) {
+          currentToast.dismiss();
+        }
+        currentToast = this;
+        this.opened = true;
+      },
+      
+      /** 
+       * Dismiss the toast and hide it.
+       * @method dismiss
+       */
+      dismiss: function() {
+        if (this.dragging) {
+          this.shouldDismiss = true;
+        } else {
+          this.opened = false;
+          if (currentToast === this) {
+            currentToast = null;
+          }
+        }
+      },
+      
+      trackStart: function(e) {
+        if (!this.swipeDisabled) {
+          e.preventTap();
+          this.vertical = e.yDirection;
+          this.w = this.offsetWidth;
+          this.h = this.offsetHeight;
+          this.dragging = true;
+          this.classList.add('dragging');
+        }
+      },
+      
+      track: function(e) {
+        if (this.dragging) {
+          var s = this.style;
+          if (this.vertical) {
+            var y = e.dy;
+            s.opacity = (this.h - Math.abs(y)) / this.h;
+            s.webkitTransform = s.transform =  'translate3d(0, ' + y + 'px, 0)';
+          } else {
+            var x = e.dx;
+            s.opacity = (this.w - Math.abs(x)) / this.w;
+            s.webkitTransform = s.transform = 'translate3d(' + x + 'px, 0, 0)';
+          }
+        }
+      },
+      
+      trackEnd: function(e) {
+        if (this.dragging) {
+          this.classList.remove('dragging');
+          this.style.opacity = null;
+          this.style.webkitTransform = this.style.transform = null;
+          var cl = this.classList;
+          if (this.vertical) {
+            cl.toggle('fade-out-down', e.yDirection === 1 && e.dy > 0);
+            cl.toggle('fade-out-up', e.yDirection === -1 && e.dy < 0);
+          } else {
+            cl.toggle('fade-out-right', e.xDirection === 1 && e.dx > 0);
+            cl.toggle('fade-out-left', e.xDirection === -1 && e.dx < 0);
+          }
+          this.dragging = false;
+        }
+      },
+      
+      transitionEnd: function() {
+        var cl = this.classList;
+        if (cl.contains('fade-out-right') || cl.contains('fade-out-left') || 
+            cl.contains('fade-out-down') || cl.contains('fade-out-up')) {
+          this.dismiss();
+          cl.remove('fade-out-right', 'fade-out-left', 
+              'fade-out-down', 'fade-out-up');
+        } else if (this.shouldDismiss) {
+          this.dismiss();
+        }
+        this.shouldDismiss = false;
+      }
+  
+    });
+    
+  })();
+
+</script>
+</polymer-element>
+</div>
 
 	<div hidden><!--
 Copyright (c) 2014 The Polymer Project Authors. All rights reserved.
@@ -7944,10 +9201,81 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 </script>
 </polymer-element>
 
+<!--
+Copyright (c) 2014 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<!--
+`paper-radio-group` allows user to select only one radio button from a set.
+Checking one radio button that belongs to a radio group unchecks any 
+previously checked radio button within the same group. Use
+`selected` to get or set the selected radio button.
+
+Example:
+
+    <paper-radio-group selected="small">
+      <paper-radio-button name="small" label="Small"></paper-radio-button>
+      <paper-radio-button name="medium" label="Medium"></paper-radio-button>
+      <paper-radio-button name="large" label="Large"></paper-radio-button>
+    </paper-radio-group>
+
+See <a href="../paper-radio-button/">paper-radio-button</a> for more
+information about `paper-radio-button`.
+
+@group Paper Elements
+@element paper-radio-group
+@extends core-selector
+@homepage github.io
+-->
+
+
+
+
+<polymer-element name="paper-radio-group" extends="core-selector" role="radiogroup" assetpath="bower_components/paper-radio-group/">
+
+  <template>
+  
+    <style>
+    
+      :host {
+        display: inline-block;
+      }
+  
+      polyfill-next-selector { content: ':host > *'; }
+      ::content > * {
+        padding: 12px;
+      }
+    
+    </style>
+  
+    <shadow></shadow>
+    
+  </template>
+  
+  <script>
+  
+    Polymer('paper-radio-group', {
+      
+      selectedAttribute: 'checked',
+      activateEvent: 'paper-radio-button-activate'
+      
+    });
+  
+  </script>
+  
+</polymer-element>
+
+
+
 <polymer-element name="pojoviz-settings" assetpath="elements/">
 	<template>
 		<style>
-			paper-checkbox {
+			paper-checkbox, paper-radio-button {
 				padding: 20px 40px 20px 0;
 			}
 			paper-slider {
@@ -7961,7 +9289,102 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 			.service-name {
 				padding-right: 50px;
 			}
-		</style>		
+		</style>
+
+		<section>
+			<h1>General Settings</h1>
+
+			<h3>Renderers</h3>
+
+			<paper-radio-group target="{{$.renderers}}" itemsselector="paper-radio-button" on-core-select="{{onRadioSelectChange}}" selected="0">
+
+				<div id="renderers">
+					<div horizontal="" layout="">
+						<paper-radio-button name="d3" value="d3">
+				    </paper-radio-button>
+				    <div vertical="" layout="">
+				      <h4>D3 renderer</h4>
+				      <div>
+				      	The recommended renderer for small structures, if you see the application unresponsive maybe you can use the three.js renderer
+								<p>Controls:</p>
+				      	<ul>
+				      		<li>hover on a node: show its connections</li>
+				      		<li>left click + drag: pan</li>
+				      		<li>mouse wheel: zoom</li>
+				      	</ul>
+				      </div>
+				    </div>
+				  </div>
+					<div horizontal="" layout="">
+						<paper-radio-button name="Three.js" value="three">
+				    </paper-radio-button>
+				    <div vertical="" layout="">
+				      <h4>Three js renderer (experimental)</h4>
+				      <div>
+				      	The d3 renderer generates so many nodes for some libraries
+				      	that it becomes unresponsive, luckily the structure generated by <span class="pojoviz">PojoViz</span> is a simple collection of nodes and edges which can be rendered with three.js as well :)
+				      	<p>Controls:</p>
+				      	<ul>
+				      		<li>mouse wheel: zoom</li>
+				      		<li>click on a node: focus that node</li>
+				      		<li>left click + drag: pan</li>
+				      		<li>right click + drag: rotate</li>
+				      	</ul>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+			</paper-radio-group>
+
+			<h3>Additional options</h3>
+			<div horizontal="" layout="">
+		    <paper-checkbox on-change="{{onShowBuiltInChange}}"></paper-checkbox>
+		    <div vertical="" layout="">
+		      <h4>Generate links to BuiltIn Objects</h4>
+		      <div>Most of the objects will have their [[<kbd>Prototype</kbd>]] property pointing to <kbd>Object.prototype</kbd> as well as the functions&apos; [[<kbd>Prototype</kbd>]] pointing to <kbd>Function.prototype</kbd>. This feature is disabled because of the number of links created to these objects, check to enable this feature.</div>
+		    </div>
+		  </div>
+
+		  <div horizontal="" layout="">
+		    <paper-checkbox checked="true" on-change="{{onFunctionConstructorsChange}}"></paper-checkbox>
+		    <div vertical="" layout="">
+		      <h4>Function Constructors visibility</h4>
+		      <div>Something really hard to detect is when a function is a constructor, to <span class="pojoviz">PojoViz</span> a function is a constructor when:
+
+					<ul>
+						<li>the function has a <kbd>name</kbd> property which starts with an uppercase letter</li>
+						<li>if an object has a property which starts with an uppercase letter and this property is a function</li>
+					</ul>
+		      </div>
+		    </div>
+		  </div>
+		</section>
+
+		<section>
+			<h3>
+				Window max depth
+				<span class="depth-value">{{$.windowDepth.value}}</span>
+			</h3>
+			<p>
+				Defines the maximum depth when running the dfs algorithm starting from the <i>window</i> object <br>
+				WARNING: The higher the value the longer the time needed for the browser to render the nodes
+			</p>
+			<paper-slider on-change="{{windowDepthChange}}" id="windowDepth" pin="" snaps="" max="10" step="1" value="1">
+			</paper-slider>
+		</section>
+
+		<section>
+			<h3>
+				three.js max depth
+				<span class="depth-value">{{$.threeDepth.value}}</span>
+			</h3>
+			<p>
+				Defines the maximum depth when running the dfs algorithm starting from the <i>THREE</i> object <br>
+				WARNING: The higher the value the longer the time needed for the browser to render the nodes
+			</p>
+			<paper-slider on-change="{{threeDepthChange}}" id="threeDepth" pin="" snaps="" max="10" step="1" value="2">
+			</paper-slider>
+		</section>
 
 		<section>
 			<h3>Angular drawer settings</h3>
@@ -7977,19 +9400,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 				</template>
 			</div>
 		</section>
-		
-		<section>
-			<h3>
-				Window max depth
-				<span class="depth-value">{{$.depth.value}}</span>
-			</h3>
-			<p>
-				Defines the maximum depth when running the dfs algorithm starting from the <i>window</i> object <br>
-				WARNING: The higher the value the longer the time needed for the browser to render the nodes
-			</p>
-			<paper-slider on-change="{{windowDepthChange}}" id="depth" pin="" snaps="" max="10" step="1" value="2">
-			</paper-slider>
-		</section>
 
 		<content></content>
 
@@ -7998,13 +9408,37 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 		Polymer('pojoviz-settings', {
 			ready: function () {
 				var me = this,
-					angularAnalyzer = pojoviz.analyzer.angular;
+					angularAnalyzer = pojoviz.ObjectHashes.angular;
 				me.angularServices = angularAnalyzer.services;
 			},
 
 			windowDepthChange: function (event, detail, el) {
 				var objectHashes = pojoviz.ObjectHashes;
-				objectHashes.win.setLevels(el.value);
+				objectHashes.window.levels = el.value;
+			},
+
+			threeDepthChange: function (event, detail, el) {
+				var objectHashes = pojoviz.ObjectHashes;
+				objectHashes.three.levels = el.value;
+			},
+
+			onShowBuiltInChange: function (ev, detail, el) {
+				pojoviz.analyzer.GenericAnalyzer.SHOW_BUILTIN = el.checked;
+				pojoviz.ObjectHashes
+					.markDirty();
+			},
+
+			onFunctionConstructorsChange: function (ev, detail, el) {
+				pojoviz.analyzer.GenericAnalyzer.SHOW_FUNCTION_CONSTRUCTORS = el.checked;
+				pojoviz.ObjectHashes
+					.setFunctionConstructors(el.checked)
+					.markDirty();
+			},
+
+			onRadioSelectChange: function (ev, detail, el) {
+				if (detail.isSelected) {
+					pojoviz.setRenderer(detail.item.getAttribute('value'));
+				}
 			},
 
 			// deprecated
@@ -8075,799 +9509,6 @@ Transition examples:
 
 -->
 
-<!--
-Copyright (c) 2014 The Polymer Project Authors. All rights reserved.
-This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
-The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
-The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
-Code distributed by Google as part of the polymer project is also
-subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
--->
-
-
-
-<!--
-Copyright (c) 2014 The Polymer Project Authors. All rights reserved.
-This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
-The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
-The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
-Code distributed by Google as part of the polymer project is also
-subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
--->
-
-
-
-<polymer-element name="core-key-helper" assetpath="bower_components/core-overlay/">
-  <script>
-    Polymer('core-key-helper', {
-      ENTER_KEY: 13,
-      ESCAPE_KEY: 27
-    });
-  </script>
-</polymer-element>
-
-<!--
-Copyright (c) 2014 The Polymer Project Authors. All rights reserved.
-This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
-The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
-The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
-Code distributed by Google as part of the polymer project is also
-subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
--->
-
-<polymer-element name="core-overlay-layer" assetpath="bower_components/core-overlay/">
-<template>
-  <style>
-    :host {
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 1000;
-      display: none;
-    }
-
-    :host(.core-opened) {
-      display: block;
-    }
-  </style>
-  <content></content>
-</template>
-<script>
-(function() {
-
-  Polymer('core-overlay-layer', {
-    publish: {
-      opened: false
-    },
-    openedChanged: function() {
-      this.classList.toggle('core-opened', this.opened);
-    },
-    /**
-     * Adds an element to the overlay layer
-     */
-    addElement: function(element) {
-      if (!this.parentNode) {
-        document.querySelector('body').appendChild(this);
-      }
-      if (element.parentNode !== this) {
-        element.__contents = [];
-        var ip$ = element.querySelectorAll('content');
-        for (var i=0, l=ip$.length, n; (i<l) && (n = ip$[i]); i++) {
-          this.moveInsertedElements(n);
-          this.cacheDomLocation(n);
-          n.parentNode.removeChild(n);
-          element.__contents.push(n);
-        }
-        this.cacheDomLocation(element);
-        this.updateEventController(element);
-        var h = this.makeHost();
-        h.shadowRoot.appendChild(element);
-        element.__host = h;
-      }
-    },
-    makeHost: function() {
-      var h = document.createElement('overlay-host');
-      h.createShadowRoot();
-      this.appendChild(h);
-      return h;
-    },
-    moveInsertedElements: function(insertionPoint) {
-      var n$ = insertionPoint.getDistributedNodes();
-      var parent = insertionPoint.parentNode;
-      insertionPoint.__contents = [];
-      for (var i=0, l=n$.length, n; (i<l) && (n=n$[i]); i++) {
-        this.cacheDomLocation(n);
-        this.updateEventController(n);
-        insertionPoint.__contents.push(n);
-        parent.appendChild(n);  
-      }
-    },
-    updateEventController: function(element) {
-      element.eventController = this.element.findController(element);
-    },
-    /**
-     * Removes an element from the overlay layer
-     */
-    removeElement: function(element) {
-      element.eventController = null;
-      this.replaceElement(element);
-      var h = element.__host;
-      if (h) {
-        h.parentNode.removeChild(h);
-      }
-    },
-    replaceElement: function(element) {
-      if (element.__contents) {
-        for (var i=0, c$=element.__contents, c; (c=c$[i]); i++) {
-          this.replaceElement(c);
-        }
-        element.__contents = null;
-      }
-      if (element.__parentNode) {
-        var n = element.__nextElementSibling && element.__nextElementSibling 
-            === element.__parentNode ? element.__nextElementSibling : null;
-        element.__parentNode.insertBefore(element, n);
-      }
-    },
-    cacheDomLocation: function(element) {
-      element.__nextElementSibling = element.nextElementSibling;
-      element.__parentNode = element.parentNode;
-    }
-  });
-  
-})();
-</script>
-</polymer-element>
-
-
-<!--
-The `core-overlay` element displays overlayed on top of other content. It starts
-out hidden and is displayed by setting its `opened` property to true.
-A `core-overlay's` opened state can be toggled by calling the `toggle`
-method.
-
-The `core-overlay` will, by default, show/hide itself when it's opened. The 
-`target` property may be set to another element to cause that element to 
-be shown when the overlay is opened.
-
-It's common to want a `core-overlay` to animate to its opened
-position. The `core-overlay` element uses a `core-transition` to handle
-animation. The default transition is `core-transition-fade` which 
-causes the overlay to fade in when displayed. See 
-<a href="../core-transition/">`core-transition`</a> for more
-information about customizing a `core-overlay's` opening animation. The
-`backdrop` property can be set to true to show a backdrop behind the overlay
-that will darken the rest of the window.
-
-An element that should close the `core-overlay` will automatically
-do so if it's given the `core-overlay-toggle` attribute. This attribute
-can be customized with the `closeAttribute` property. You can also use
-`closeSelector` if more general matching is needed.
-
-By default  `core-overlay` will close whenever the user taps outside it or
-presses the escape key. This behavior can be turned off via the
-`autoCloseDisabled` property.
-
-    <core-overlay>
-      <h2>Dialog</h2>
-      <input placeholder="say something..." autofocus>
-      <div>I agree with this wholeheartedly.</div>
-      <button core-overlay-toggle>OK</button>
-    </core-overlay>
-
-`core-overlay` will automatically size and position itself according to the 
-following rules. If the target's style.top and style.left are unset, the 
-target will be centered. The size of the target is constrained to be no larger
-than the window dimensions. The `margin` property specifies the extra amount
-of space that should be reserved around the overlay. This can be used to ensure
-that, for example, a drop shadow is always visible around the overlay.
-
-@group Core Elements
-@element core-overlay
-@homepage github.io
--->
-<!--
-Fired when the `core-overlay`'s `opened` property changes.
-
-@event core-overlay-open
-@param {Object} detail
-@param {Object} detail.opened the opened state
--->
-
-<style>
-  .core-overlay-backdrop {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: black;
-    opacity: 0;
-    transition: opacity 0.2s;
-  }
-
-  .core-overlay-backdrop.core-opened {
-    opacity: 0.6;
-  }
-</style>
-
-<polymer-element name="core-overlay" assetpath="bower_components/core-overlay/">
-<script>
-(function() {
-
-  Polymer('core-overlay', {
-
-    publish: {
-      /**
-       * The target element that will be shown when the overlay is 
-       * opened. If unspecified, the core-overlay itself is the target.
-       *
-       * @attribute target
-       * @type Object
-       * @default the overlay element
-       */
-      target: null,
-
-
-      /**
-       * A `core-overlay`'s size is guaranteed to be 
-       * constrained to the window size. To achieve this, the sizingElement
-       * is sized with a max-height/width. By default this element is the 
-       * target element, but it can be specifically set to a specific element
-       * inside the target if that is more appropriate. This is useful, for 
-       * example, when a region inside the overlay should scroll if needed.
-       *
-       * @attribute sizingTarget
-       * @type Object
-       * @default the target element
-       */
-      sizingTarget: null,
-    
-      /**
-       * Set opened to true to show an overlay and to false to hide it.
-       * A `core-overlay` may be made initially opened by setting its
-       * `opened` attribute.
-       * @attribute opened
-       * @type boolean
-       * @default false
-       */
-      opened: false,
-
-      /**
-       * If true, the overlay has a backdrop darkening the rest of the screen.
-       * The backdrop element is attached to the document body and may be styled
-       * with the class `core-overlay-backdrop`. When opened the `core-opened`
-       * class is applied.
-       *
-       * @attribute backdrop
-       * @type boolean
-       * @default false
-       */    
-      backdrop: false,
-
-      /**
-       * If true, the overlay is guaranteed to display above page content.
-       *
-       * @attribute layered
-       * @type boolean
-       * @default false
-      */
-      layered: false,
-    
-      /**
-       * By default an overlay will close automatically if the user
-       * taps outside it or presses the escape key. Disable this
-       * behavior by setting the `autoCloseDisabled` property to true.
-       * @attribute autoCloseDisabled
-       * @type boolean
-       * @default false
-       */
-      autoCloseDisabled: false,
-
-      /**
-       * This property specifies an attribute on elements that should
-       * close the overlay on tap. Should not set `closeSelector` if this
-       * is set.
-       *
-       * @attribute closeAttribute
-       * @type string
-       * @default "core-overlay-toggle"
-       */
-      closeAttribute: 'core-overlay-toggle',
-
-      /**
-       * This property specifies a selector matching elements that should
-       * close the overlay on tap. Should not set `closeAttribute` if this
-       * is set.
-       *
-       * @attribute closeSelector
-       * @type string
-       * @default ""
-       */
-      closeSelector: '',
-
-      /**
-       * A `core-overlay` target's size is constrained to the window size.
-       * The `margin` property specifies a pixel amount around the overlay 
-       * that will be reserved. It's useful for ensuring that, for example, 
-       * a shadow displayed outside the target will always be visible.
-       *
-       * @attribute margin
-       * @type number
-       * @default 0
-       */
-      margin: 0,
-
-      /**
-       * The transition property specifies a string which identifies a 
-       * <a href="../core-transition/">`core-transition`</a> element that 
-       * will be used to help the overlay open and close. The default
-       * `core-transition-fade` will cause the overlay to fade in and out.
-       *
-       * @attribute transition
-       * @type string
-       * @default 'core-transition-fade'
-       */
-      transition: 'core-transition-fade'
-
-    },
-
-    captureEventName: 'tap',
-    targetListeners: {
-      'tap': 'tapHandler',
-      'keydown': 'keydownHandler',
-      'core-transitionend': 'transitionend'
-    },
-    
-    registerCallback: function(element) {
-      this.layer = document.createElement('core-overlay-layer');
-      this.keyHelper = document.createElement('core-key-helper');
-      this.meta = document.createElement('core-transition');
-      this.scrim = document.createElement('div');
-      this.scrim.className = 'core-overlay-backdrop';
-    },
-
-    ready: function() {
-      this.target = this.target || this;
-      // flush to ensure styles are installed before paint
-      Platform.flush();
-    },
-
-    /** 
-     * Toggle the opened state of the overlay.
-     * @method toggle
-     */
-    toggle: function() {
-      this.opened = !this.opened;
-    },
-
-    /** 
-     * Open the overlay. This is equivalent to setting the `opened`
-     * property to true.
-     * @method open
-     */
-    open: function() {
-      this.opened = true;
-    },
-
-    /** 
-     * Close the overlay. This is equivalent to setting the `opened` 
-     * property to false.
-     * @method close
-     */
-    close: function() {
-      this.opened = false;
-    },
-
-    domReady: function() {
-      this.ensureTargetSetup();
-    },
-
-    targetChanged: function(old) {
-      if (this.target) {
-        // really make sure tabIndex is set
-        if (this.target.tabIndex < 0) {
-          this.target.tabIndex = -1;
-        }
-        this.addElementListenerList(this.target, this.targetListeners);
-        this.target.style.display = 'none';
-      }
-      if (old) {
-        this.removeElementListenerList(old, this.targetListeners);
-        var transition = this.getTransition();
-        if (transition) {
-          transition.teardown(old);
-        } else {
-          old.style.position = null;
-          old.style.outline = null;
-        }
-        old.style.display = null;
-      }
-    },
-
-    // NOTE: wait to call this until we're as sure as possible that target
-    // is styled.
-    ensureTargetSetup: function() {
-      if (!this.target || this.target.__overlaySetup) {
-        return;
-      }
-      this.target.__overlaySetup = true;
-      this.target.style.display = null;
-      var transition = this.getTransition();
-      if (transition) {
-        transition.setup(this.target);
-      }
-      var computed = getComputedStyle(this.target);
-      this.targetStyle = {
-        position: computed.position === 'static' ? 'fixed' :
-            computed.position
-      }
-      if (!transition) {
-        this.target.style.position = this.targetStyle.position;
-        this.target.style.outline = 'none';
-      }
-      this.target.style.display = 'none';
-    },
-
-    openedChanged: function() {
-      this.ensureTargetSetup();
-      this.prepareRenderOpened();
-      // continue styling after delay so display state can change
-      // without aborting transitions
-      // note: we wait a full frame so that transition changes executed
-      // during measuring do not cause transition
-      this.async(function() {
-        this.target.style.display = null;
-        this.async('renderOpened');
-      });
-      this.fire('core-overlay-open', this.opened);
-    },
-
-    // tasks which must occur before opening; e.g. making the element visible
-    prepareRenderOpened: function() {
-      if (this.opened) {
-        addOverlay(this);
-      }
-      this.prepareBackdrop();
-      // async so we don't auto-close immediately via a click.
-      this.async(function() {
-        if (!this.autoCloseDisabled) {
-          this.enableElementListener(this.opened, document,
-              this.captureEventName, 'captureHandler', true);
-        }
-      });
-      this.enableElementListener(this.opened, window, 'resize',
-          'resizeHandler');
-
-      if (this.opened) {
-        // TODO(sorvell): force SD Polyfill to render
-        forcePolyfillRender(this.target);
-        if (!this._shouldPosition) {
-          this.target.style.position = 'absolute';
-          var computed = getComputedStyle(this.target);
-          var t = (computed.top === 'auto' && computed.bottom === 'auto');
-          var l = (computed.left === 'auto' && computed.right === 'auto');
-          this.target.style.position = this.targetStyle.position;
-          this._shouldPosition = {top: t, left: l};
-        }
-        // if we are showing, then take care when measuring
-        this.prepareMeasure(this.target);
-        this.updateTargetDimensions();
-        this.finishMeasure(this.target);
-        if (this.layered) {
-          this.layer.addElement(this.target);
-          this.layer.opened = this.opened;
-        }
-      }
-    },
-
-    // tasks which cause the overlay to actually open; typically play an
-    // animation
-    renderOpened: function() {
-      var transition = this.getTransition();
-      if (transition) {
-        transition.go(this.target, {opened: this.opened});
-      } else {
-        this.transitionend();
-      }
-      this.renderBackdropOpened();
-    },
-
-    // finishing tasks; typically called via a transition
-    transitionend: function(e) {
-      // make sure this is our transition event.
-      if (e && e.target !== this.target) {
-        return;
-      }
-      if (!this.opened) {
-        this.resetTargetDimensions();
-        this.target.style.display = 'none';
-        this.completeBackdrop();
-        removeOverlay(this);
-        if (this.layered) {
-          if (!currentOverlay()) {
-            this.layer.opened = this.opened;
-          }
-          this.layer.removeElement(this.target);
-        }
-      }
-      this.applyFocus();
-    },
-
-    prepareBackdrop: function() {
-      if (this.backdrop && this.opened) {
-        if (!this.scrim.parentNode) {
-          document.body.appendChild(this.scrim);
-          this.scrim.style.zIndex = currentOverlayZ() - 1;
-        }
-        trackBackdrop(this);
-      }
-    },
-
-    renderBackdropOpened: function() {
-      if (this.backdrop && getBackdrops().length < 2) {
-        this.scrim.classList.toggle('core-opened', this.opened);
-      }
-    },
-
-    completeBackdrop: function() {
-      if (this.backdrop) {
-        trackBackdrop(this);
-        if (getBackdrops().length === 0) {
-          this.scrim.parentNode.removeChild(this.scrim);
-        }
-      }
-    },
-
-    prepareMeasure: function(target) {
-      target.style.transition = target.style.webkitTransition = 'none';
-      target.style.transform = target.style.webkitTransform = 'none';
-      target.style.display = null;
-    },
-
-    finishMeasure: function(target) {
-      target.style.display = 'none';
-      target.style.transform = target.style.webkitTransform = null;
-      target.style.transition = target.style.webkitTransition = null;
-    },
-
-    getTransition: function() {
-      return this.meta.byId(this.transition);
-    },
-
-    getFocusNode: function() {
-      return this.target.querySelector('[autofocus]') || this.target;
-    },
-
-    applyFocus: function() {
-      var focusNode = this.getFocusNode();
-      if (this.opened) {
-        focusNode.focus();
-      } else {
-        focusNode.blur();
-        focusOverlay();
-      }
-    },
-
-    updateTargetDimensions: function() {
-      this.positionTarget();
-      this.sizeTarget();
-      //
-      if (this.layered) {
-        var rect = this.target.getBoundingClientRect();
-        this.target.style.top = rect.top + 'px';
-        this.target.style.left = rect.left + 'px';
-        this.target.style.right = this.target.style.bottom = 'auto';
-      }
-    },
-
-    sizeTarget: function() {
-      var sizer = this.sizingTarget || this.target;
-      var rect = sizer.getBoundingClientRect();
-      var mt = rect.top === this.margin ? this.margin : this.margin * 2;
-      var ml = rect.left === this.margin ? this.margin : this.margin * 2;
-      var h = window.innerHeight - rect.top - mt;
-      var w = window.innerWidth - rect.left - ml;
-      sizer.style.maxHeight = h + 'px';
-      sizer.style.maxWidth = w + 'px';
-      sizer.style.boxSizing = 'border-box';
-    },
-
-    positionTarget: function() {
-      // vertically and horizontally center if not positioned
-      if (this._shouldPosition.top) {
-        var t = Math.max((window.innerHeight - 
-            this.target.offsetHeight - this.margin*2) / 2, this.margin);
-        this.target.style.top = t + 'px';
-      }
-      if (this._shouldPosition.left) {
-        var l = Math.max((window.innerWidth - 
-            this.target.offsetWidth - this.margin*2) / 2, this.margin);
-        this.target.style.left = l + 'px';
-      }
-    },
-
-    resetTargetDimensions: function() {
-      this.target.style.top = this.target.style.left = null;
-      this.target.style.right = this.target.style.bottom = null;
-      this.target.style.width = this.target.style.height = null;
-      this._shouldPosition = null;
-    },
-
-    tapHandler: function(e) {
-      // closeSelector takes precedence since closeAttribute has a default non-null value.
-      if (e.target &&
-          (this.closeSelector && e.target.matches(this.closeSelector)) ||
-          (this.closeAttribute && e.target.hasAttribute(this.closeAttribute))) {
-        this.toggle();
-      } else {
-        if (this.autoCloseJob) {
-          this.autoCloseJob.stop();
-          this.autoCloseJob = null;
-        }
-      }
-    },
-    
-    // We use the traditional approach of capturing events on document
-    // to to determine if the overlay needs to close. However, due to 
-    // ShadowDOM event retargeting, the event target is not useful. Instead
-    // of using it, we attempt to close asynchronously and prevent the close
-    // if a tap event is immediately heard on the target.
-    // TODO(sorvell): This approach will not work with modal. For
-    // this we need a scrim.
-    captureHandler: function(e) {
-      if (!this.autoCloseDisabled && (currentOverlay() == this)) {
-        this.autoCloseJob = this.job(this.autoCloseJob, function() {
-          this.close();
-        });
-      }
-    },
-
-    keydownHandler: function(e) {
-      if (!this.autoCloseDisabled && (e.keyCode == this.keyHelper.ESCAPE_KEY)) {
-        this.close();
-        e.stopPropagation();
-      }
-    },
-
-    /**
-     * Extensions of core-overlay should implement the `resizeHandler`
-     * method to adjust the size and position of the overlay when the 
-     * browser window resizes.
-     * @method resizeHandler
-     */
-    resizeHandler: function() {
-      this.updateTargetDimensions();
-    },
-
-    // TODO(sorvell): these utility methods should not be here.
-    addElementListenerList: function(node, events) {
-      for (var i in events) {
-        this.addElementListener(node, i, events[i]);
-      }
-    },
-
-    removeElementListenerList: function(node, events) {
-      for (var i in events) {
-        this.removeElementListener(node, i, events[i]);
-      }
-    },
-
-    enableElementListener: function(enable, node, event, methodName, capture) {
-      if (enable) {
-        this.addElementListener(node, event, methodName, capture);
-      } else {
-        this.removeElementListener(node, event, methodName, capture);
-      }
-    },
-
-    addElementListener: function(node, event, methodName, capture) {
-      var fn = this._makeBoundListener(methodName);
-      if (node && fn) {
-        node.addEventListener(event, fn, capture);
-      }
-    },
-
-    removeElementListener: function(node, event, methodName, capture) {
-      var fn = this._makeBoundListener(methodName);
-      if (node && fn) {
-        node.removeEventListener(event, fn, capture);
-      }
-    },
-
-    _makeBoundListener: function(methodName) {
-      var self = this, method = this[methodName];
-      if (!method) {
-        return;
-      }
-      var bound = '_bound' + methodName;
-      if (!this[bound]) {
-        this[bound] = function(e) {
-          method.call(self, e);
-        }
-      }
-      return this[bound];
-    },
-  });
-
-  function forcePolyfillRender(target) {
-    if (window.ShadowDOMPolyfill) {
-      target.offsetHeight;
-    }
-  }
-
-  // TODO(sorvell): This should be an element with private state so it can
-  // be independent of overlay.
-  // track overlays for z-index and focus managemant
-  var overlays = [];
-  function addOverlay(overlay) {
-    var z0 = currentOverlayZ();
-    overlays.push(overlay);
-    var z1 = currentOverlayZ();
-    if (z1 <= z0) {
-      applyOverlayZ(overlay, z0);
-    }
-  }
-
-  function removeOverlay(overlay) {
-    var i = overlays.indexOf(overlay);
-    if (i >= 0) {
-      overlays.splice(i, 1);
-      setZ(overlay, null);
-    }
-  }
-  
-  function applyOverlayZ(overlay, aboveZ) {
-    setZ(overlay.target, aboveZ + 2);
-  }
-  
-  function setZ(element, z) {
-    element.style.zIndex = z;
-  }
-
-  function currentOverlay() {
-    return overlays[overlays.length-1];
-  }
-  
-  var DEFAULT_Z = 10;
-  
-  function currentOverlayZ() {
-    var z;
-    var current = currentOverlay();
-    if (current) {
-      var z1 = window.getComputedStyle(current.target).zIndex;
-      if (!isNaN(z1)) {
-        z = Number(z1);
-      }
-    }
-    return z || DEFAULT_Z;
-  }
-  
-  function focusOverlay() {
-    var current = currentOverlay();
-    if (current) {
-      current.applyFocus();
-    }
-  }
-
-  var backdrops = [];
-  function trackBackdrop(element) {
-    if (element.opened) {
-      backdrops.push(element);
-    } else {
-      var i = backdrops.indexOf(element);
-      if (i >= 0) {
-        backdrops.splice(i, 1);
-      }
-    }
-  }
-
-  function getBackdrops() {
-    return backdrops;
-  }
-})();
-</script>
-</polymer-element>
 
 <!--
 Copyright (c) 2014 The Polymer Project Authors. All rights reserved.
@@ -9806,127 +10447,6 @@ Code distributed by Google as part of the polymer project is also
 subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
 -->
 
-<!--
-Copyright (c) 2014 The Polymer Project Authors. All rights reserved.
-This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
-The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
-The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
-Code distributed by Google as part of the polymer project is also
-subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
--->
-
-
-
-<polymer-element name="core-transition-css" extends="core-transition" attributes="transitionType" assetpath="bower_components/core-transition/">
-<template>
-  <style no-shim="">/* Copyright (c) 2014 The Polymer Project Authors. All rights reserved.
-This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
-The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
-The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
-Code distributed by Google as part of the polymer project is also
-subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt */
-
-:host(.core-transition) {
-  outline: none;
-  overflow: hidden;
-  opacity: 0;
-  transition: transform 0.2s ease-in-out, opacity 0.2s ease-in;
-  -webkit-transition: -webkit-transform 0.2s ease-in-out, opacity 0.2s ease-in;
-}
-
-
-:host(.core-transition.core-opened) {
-  opacity: 1;
-  transform: none;
-  -webkit-transform: none;
-}
-
-:host(.core-transition-center) {
-  transform: scale(0.5);
-  -webkit-transform: scale(0.5);
-}
-
-:host(.core-transition-top) {
-  transform: translateY(-200%);
-  -webkit-transform: translateY(-200%);
-}
-
-:host(.core-transition-bottom) {
-  transform: translateY(200%);
-  -webkit-transform: translateY(200%);
-}
-
-:host(.core-transition-left) {
-  transform: translateX(-200%);
-  -webkit-transform: translateX(-200%);
-}
-
-:host(.core-transition-right) {
-  transform: translateX(200%);
-  -webkit-transform: translateX(200%);
-}</style>
-</template>
-<script>
-
-  Polymer('core-transition-css', {
-    
-    baseClass: 'core-transition',
-    openedClass: 'core-opened',
-    closedClass: 'core-closed',
-    completeEventName: 'transitionend',
-
-    registerCallback: function(element) {
-      this.transitionStyle = element.templateContent().firstElementChild;
-    },
-
-    // template is just for loading styles, we don't need a shadowRoot
-    fetchTemplate: function() {
-      return null;
-    },
-
-    go: function(node, state) {
-      if (state.opened !== undefined) {
-        this.transitionOpened(node, state.opened);
-      }
-    },
-
-    setup: function(node) {
-      if (!node._hasTransitionStyle) {
-        if (!node.shadowRoot) {
-          node.createShadowRoot().innerHTML = '<content></content>';
-        }
-        this.installScopeStyle(this.transitionStyle, 'transition',
-            node.shadowRoot);
-        node._hasTransitionStyle = true;
-        node.classList.add(this.baseClass);
-        if (this.transitionType) {
-          node.classList.add(this.baseClass + '-' + this.transitionType);
-        }
-      }
-    },
-
-    transitionOpened: function(node, opened) {
-      this.listenOnce(node, this.completeEventName, function() {
-        node.classList.toggle(this.revealedClass, opened);
-        if (!opened) {
-          node.classList.remove(this.closedClass);
-        }
-        this.complete(node);
-      });
-      node.classList.toggle(this.openedClass, opened);
-      node.classList.toggle(this.closedClass, !opened);
-    }
-
-  });
-</script>
-</polymer-element>
-
-<core-transition-css id="core-transition-fade"></core-transition-css>
-<core-transition-css id="core-transition-center" transitiontype="center"></core-transition-css>
-<core-transition-css id="core-transition-top" transitiontype="top"></core-transition-css>
-<core-transition-css id="core-transition-bottom" transitiontype="bottom"></core-transition-css>
-<core-transition-css id="core-transition-left" transitiontype="left"></core-transition-css>
-<core-transition-css id="core-transition-right" transitiontype="right"></core-transition-css>
 
 
 <polymer-element name="paper-dialog-transition" extends="core-transition-css" assetpath="bower_components/paper-dialog/">
@@ -10006,17 +10526,46 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <paper-dialog-transition id="paper-dialog-transition-center" transitiontype="center"></paper-dialog-transition>
 <polymer-element name="pojoviz-about" assetpath="elements/">
 	<template>
+		<style>
+			paper-dialog {
+				width: 600px;
+			}
+			paper-dialog p {
+				font-weight: 100!important;
+			}
+			paper-button[raisedButton].blue {
+	      background: #03a9f4;
+	      color: #fff;
+	    }
+		</style>
 		<core-icon-button icon="info-outline" on-click="{{onClick}}"></core-icon-button>
 		<paper-dialog id="popup" heading="About" transition="paper-dialog-transition-center">
-			Made by <a target="_blank" href="https://github.com/maurizzzio">maurizzzio</a>, have fun!
-			<br>
-			<br>
-			<br>
-			<br>
-			Search powered by: <a href="https://duckduckgo.com" target="_blank">
-				<img src="https://duckduckgo.com/assets/icons/meta/DDG-icon_32x32.png" alt="">
-			</a> 
-			<paper-button label="Close" affirmative="" autofocus></paper-button>
+			<p>
+				Made by <a target="_blank" href="https://github.com/maurizzzio">maurizzzio</a>, have fun!
+			</p>
+
+			<p>
+				Powered by:
+			</p>
+
+			<div layout="" horizontal="" around-justified="">
+				<a href="https://d3js.org" target="_blank">
+					<img src="images/d3.png" alt="" height="64">
+				</a>
+				<a href="https://threejs.org" target="_blank">
+					<img src="images/threejs.png" alt="" height="64">
+				</a>
+				<a href="https://github.com/cpettitt/dagre" target="_blank">
+					<img src="images/dagre.png" alt="">
+				</a>
+				<a href="https://duckduckgo.com" target="_blank">
+					<img src="https://duckduckgo.com/assets/icons/meta/DDG-icon_64x64.png" alt="">
+				</a>
+				<a href="https://cdnjs.com" target="_blank">
+					<img src="http://blog.cloudflare.com/static/images/cdnjs.png.scaled500.png" alt="">
+				</a>
+			</div>
+			<paper-button label="Close" class="blue" raisedbutton="" affirmative="" autofocus></paper-button>
 		</paper-dialog>
 	</template>
 	<script>
@@ -10027,23 +10576,904 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 		});
 	</script>
 </polymer-element></div>
+	<div hidden><!--
+Copyright (c) 2014 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<!--
+@group Polymer Core Elements
+
+The `core-ajax` element exposes `XMLHttpRequest` functionality.
+
+    <core-ajax
+        auto
+        url="http://gdata.youtube.com/feeds/api/videos/"
+        params='{"alt":"json", "q":"chrome"}'
+        handleAs="json"
+        on-core-response="{{handleResponse}}"></core-ajax>
+ 
+With `auto` set to `true`, the element performs a request whenever
+its `url` or `params` properties are changed.
+
+Note: The `params` attribute must be double quoted JSON.
+
+You can trigger a request explicitly by calling `go` on the
+element.
+
+@element core-ajax
+@status beta
+@homepage github.io
+-->
+<!--
+Copyright (c) 2014 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+<!--
+/**
+ * @group Polymer Core Elements
+ *
+ * core-xhr can be used to perform XMLHttpRequests.
+ *
+ *     <core-xhr id="xhr"></core-xhr>
+ *     ...
+ *     this.$.xhr.request({url: url, params: params, callback: callback});
+ *
+ * @element core-xhr
+ */
+-->
+
+
+
+<polymer-element name="core-xhr" hidden assetpath="bower_components/core-ajax/">
+
+  <script>
+
+    Polymer('core-xhr', {
+
+      /**
+       * Sends a HTTP request to the server and returns the XHR object.
+       *
+       * @method request
+       * @param {Object} inOptions
+       *    @param {String} inOptions.url The url to which the request is sent.
+       *    @param {String} inOptions.method The HTTP method to use, default is GET.
+       *    @param {boolean} inOptions.sync By default, all requests are sent asynchronously. To send synchronous requests, set to true.
+       *    @param {Object} inOptions.params Data to be sent to the server.
+       *    @param {Object} inOptions.body The content for the request body for POST method.
+       *    @param {Object} inOptions.headers HTTP request headers.
+       *    @param {String} inOptions.responseType The response type. Default is 'text'.
+       *    @param {boolean} inOptions.withCredentials Whether or not to send credentials on the request. Default is false.
+       *    @param {Object} inOptions.callback Called when request is completed.
+       * @returns {Object} XHR object.
+       */
+      request: function(options) {
+        var xhr = new XMLHttpRequest();
+        var url = options.url;
+        var method = options.method || 'GET';
+        var async = !options.sync;
+        //
+        var params = this.toQueryString(options.params);
+        if (params && method == 'GET') {
+          url += (url.indexOf('?') > 0 ? '&' : '?') + params;
+        }
+        var xhrParams = this.isBodyMethod(method) ? (options.body || params) : null;
+        //
+        xhr.open(method, url, async);
+        if (options.responseType) {
+          xhr.responseType = options.responseType;
+        }
+        if (options.withCredentials) {
+          xhr.withCredentials = true;
+        }
+        this.makeReadyStateHandler(xhr, options.callback);
+        this.setRequestHeaders(xhr, options.headers);
+        xhr.send(xhrParams);
+        if (!async) {
+          xhr.onreadystatechange(xhr);
+        }
+        return xhr;
+      },
+    
+      toQueryString: function(params) {
+        var r = [];
+        for (var n in params) {
+          var v = params[n];
+          n = encodeURIComponent(n);
+          r.push(v == null ? n : (n + '=' + encodeURIComponent(v)));
+        }
+        return r.join('&');
+      },
+
+      isBodyMethod: function(method) {
+        return this.bodyMethods[(method || '').toUpperCase()];
+      },
+      
+      bodyMethods: {
+        POST: 1,
+        PUT: 1,
+        DELETE: 1
+      },
+
+      makeReadyStateHandler: function(xhr, callback) {
+        xhr.onreadystatechange = function() {
+          if (xhr.readyState == 4) {
+            callback && callback.call(null, xhr.response, xhr);
+          }
+        };
+      },
+
+      setRequestHeaders: function(xhr, headers) {
+        if (headers) {
+          for (var name in headers) {
+            xhr.setRequestHeader(name, headers[name]);
+          }
+        }
+      }
+
+    });
+
+  </script>
+  
+</polymer-element>
+
+<polymer-element name="core-ajax" attributes="url handleAs auto params response method headers body contentType withCredentials" assetpath="bower_components/core-ajax/">
+<script>
+
+  Polymer('core-ajax', {
+    /**
+     * Fired when a response is received.
+     * 
+     * @event core-response
+     */
+
+    /**
+     * Fired when an error is received.
+     * 
+     * @event core-error
+     */
+
+    /**
+     * Fired whenever a response or an error is received.
+     *
+     * @event core-complete
+     */
+
+    /**
+     * The URL target of the request.
+     * 
+     * @attribute url
+     * @type string
+     * @default ''
+     */
+    url: '',
+
+    /**
+     * Specifies what data to store in the `response` property, and
+     * to deliver as `event.response` in `response` events.
+     * 
+     * One of:
+     * 
+     *    `text`: uses `XHR.responseText`.
+     *    
+     *    `xml`: uses `XHR.responseXML`.
+     *    
+     *    `json`: uses `XHR.responseText` parsed as JSON.
+     *
+     *    `arraybuffer`: uses `XHR.response`.
+     *
+     *    `blob`: uses `XHR.response`.
+     *
+     *    `document`: uses `XHR.response`.
+     *  
+     * @attribute handleAs
+     * @type string
+     * @default 'text'
+     */
+    handleAs: '',
+
+    /**
+     * If true, automatically performs an Ajax request when either `url` or `params` changes.
+     *
+     * @attribute auto
+     * @type boolean
+     * @default false
+     */
+    auto: false,
+
+    /**
+     * Parameters to send to the specified URL, as JSON.
+     *  
+     * @attribute params
+     * @type string (JSON)
+     * @default ''
+     */
+    params: '',
+
+    /**
+     * Returns the response object.
+     *
+     * @attribute response
+     * @type Object
+     * @default null
+     */
+    response: null,
+
+    /**
+     * The HTTP method to use such as 'GET', 'POST', 'PUT', or 'DELETE'.
+     * Default is 'GET'.
+     *
+     * @attribute method
+     * @type string
+     * @default ''
+     */
+    method: '',
+
+    /**
+     * HTTP request headers to send.
+     *
+     * Example:
+     *
+     *     <core-ajax 
+     *         auto
+     *         url="http://somesite.com"
+     *         headers='{"X-Requested-With": "XMLHttpRequest"}'
+     *         handleAs="json"
+     *         on-core-response="{{handleResponse}}"></core-ajax>
+     *  
+     * @attribute headers
+     * @type Object
+     * @default null
+     */
+    headers: null,
+
+    /**
+     * Optional raw body content to send when method === "POST".
+     *
+     * Example:
+     *
+     *     <core-ajax method="POST" auto url="http://somesite.com"
+     *         body='{"foo":1, "bar":2}'>
+     *     </core-ajax>
+     *  
+     * @attribute body
+     * @type Object
+     * @default null
+     */
+    body: null,
+
+    /**
+     * Content type to use when sending data.
+     *
+     * @attribute contentType
+     * @type string
+     * @default 'application/x-www-form-urlencoded'
+     */
+    contentType: 'application/x-www-form-urlencoded',
+
+    /**
+     * Set the withCredentials flag on the request.
+     * 
+     * @attribute withCredentials
+     * @type boolean
+     * @default false
+     */
+    withCredentials: false,
+    
+    /**
+     * Additional properties to send to core-xhr.
+     *
+     * Can be set to an object containing default properties
+     * to send as arguments to the `core-xhr.request()` method
+     * which implements the low-level communication.
+     * 
+     * @property xhrArgs
+     * @type Object
+     * @default null
+     */
+    xhrArgs: null,
+     
+    ready: function() {
+      this.xhr = document.createElement('core-xhr');
+    },
+
+    receive: function(response, xhr) {
+      if (this.isSuccess(xhr)) {
+        this.processResponse(xhr);
+      } else {
+        this.error(xhr);
+      }
+      this.complete(xhr);
+    },
+
+    isSuccess: function(xhr) {
+      var status = xhr.status || 0;
+      return !status || (status >= 200 && status < 300);
+    },
+
+    processResponse: function(xhr) {
+      var response = this.evalResponse(xhr);
+      this.response = response;
+      this.fire('core-response', {response: response, xhr: xhr});
+    },
+
+    error: function(xhr) {
+      var response = xhr.status + ': ' + xhr.responseText;
+      this.fire('core-error', {response: response, xhr: xhr});
+    },
+
+    complete: function(xhr) {
+      this.fire('core-complete', {response: xhr.status, xhr: xhr});
+    },
+
+    evalResponse: function(xhr) {
+      return this[(this.handleAs || 'text') + 'Handler'](xhr);
+    },
+
+    xmlHandler: function(xhr) {
+      return xhr.responseXML;
+    },
+
+    textHandler: function(xhr) {
+      return xhr.responseText;
+    },
+
+    jsonHandler: function(xhr) {
+      var r = xhr.responseText;
+      try {
+        return JSON.parse(r);
+      } catch (x) {
+        return r;
+      }
+    },
+
+    documentHandler: function(xhr) {
+      return xhr.response;
+    },
+
+    blobHandler: function(xhr) {
+      return xhr.response;
+    },
+
+    arraybufferHandler: function(xhr) {
+      return xhr.response;
+    },
+
+    urlChanged: function() {
+      if (!this.handleAs) {
+        var ext = String(this.url).split('.').pop();
+        switch (ext) {
+          case 'json':
+            this.handleAs = 'json';
+            break;
+        }
+      }
+      this.autoGo();
+    },
+
+    paramsChanged: function() {
+      this.autoGo();
+    },
+
+    autoChanged: function() {
+      this.autoGo();
+    },
+
+    // TODO(sorvell): multiple side-effects could call autoGo 
+    // during one micro-task, use a job to have only one action 
+    // occur
+    autoGo: function() {
+      if (this.auto) {
+        this.goJob = this.job(this.goJob, this.go, 0);
+      }
+    },
+
+    /**
+     * Performs an Ajax request to the specified URL.
+     *
+     * @method go
+     */
+    go: function() {
+      var args = this.xhrArgs || {};
+      // TODO(sjmiles): we may want XHR to default to POST if body is set
+      args.body = this.body || args.body;
+      args.params = this.params || args.params;
+      if (args.params && typeof(args.params) == 'string') {
+        args.params = JSON.parse(args.params);
+      }
+      args.headers = this.headers || args.headers || {};
+      if (args.headers && typeof(args.headers) == 'string') {
+        args.headers = JSON.parse(args.headers);
+      }
+      if (this.contentType) {
+        args.headers['content-type'] = this.contentType;
+      }
+      if (this.handleAs === 'arraybuffer' || this.handleAs === 'blob' ||
+          this.handleAs === 'document') {
+        args.responseType = this.handleAs;
+      }
+      args.withCredentials = this.withCredentials;
+      args.callback = this.receive.bind(this);
+      args.url = this.url;
+      args.method = this.method;
+      return args.url && this.xhr.request(args);
+    }
+
+  });
+
+</script>
+</polymer-element>
+
+
+
+
+
+
+
+
+<!--
+Copyright (c) 2014 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE
+The complete set of authors may be found at http://polymer.github.io/AUTHORS
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS
+-->
+
+<!--
+@group Paper Elements
+`paper-icon-button` is a button with an image placed at the center.
+
+Example:
+
+    <paper-icon-button iconSrc="star.png"></paper-icon-button>
+
+`paper-icon-button` includes a default icon set.  Use `icon` to specify 
+which icon from the icon set to use.
+
+Example:
+
+    <paper-icon-button icon="menu"></paper-icon-button>
+
+The icons provided by `core-icons` are SVG, and you can style them with CSS.
+
+Example:
+
+    <paper-icon-button icon="favorite" style="fill:red;"></paper-icon-button>
+
+See `core-iconset` for more information about how to use a custom icon set.
+
+@element paper-icon-button
+@extends paper-button
+@homepage github.io
+-->
+
+
+
+
+<polymer-element name="paper-icon-button" extends="paper-button" attributes="fill" assetpath="bower_components/paper-icon-button/">
+
+  <template>
+
+    <style>/*
+Copyright 2013 The Polymer Authors. All rights reserved.
+Use of this source code is governed by a BSD-style
+license that can be found in the LICENSE file.
+*/
+
+:host([disabled]) {
+  background: none !important;
+}
+
+:host([disabled]) /deep/ #icon {
+  fill: #c9c9c9;
+}
+
+:host(:not([fill])) /deep/ #focusBg {
+  border-radius: 50%;
+}</style>
+
+    <shadow></shadow>
+
+  </template>
+
+  <script>
+  
+    Polymer('paper-icon-button', {
+
+      publish: {
+
+        /**
+         * If true, the ripple expands to a square to fill the containing box.
+         *
+         * @attribute fill
+         * @type boolean
+         * @default false
+         */
+        fill: {value: false, reflect: true}
+
+      },
+
+      ready: function() {
+        this.$.ripple.classList.add('recenteringTouch');
+        this.fillChanged();
+      },
+
+      fillChanged: function() {
+        this.$.ripple.classList.toggle('circle', !this.fill);
+      },
+
+      iconChanged: function(oldIcon) {
+        if (!this.label) {
+          this.setAttribute('aria-label', this.icon);
+        }
+      }
+
+    });
+    
+  </script>
+  
+</polymer-element>
+
+
+
+<polymer-element name="pojoviz-search" attributes="globals" assetpath="elements/">
+	<template>
+		<style>
+			paper-dialog {
+				width: 800px;
+				height: 650px;
+			}
+			.results {
+				padding: 0 30px;
+				max-height: 200px;
+				overflow-y: scroll;
+				font-size: 12px;
+			}
+			.library-name {
+				font-size: 15px;
+				font-weight: 100;
+			}
+			.library-url {
+				font-size: 12px;
+				word-wrap: break-word;
+			}
+			.add {
+				height: 30px;
+			}
+			.record {
+				margin: 20px 0;
+			}
+			paper-button {
+				background: #03a9f4;
+    		color: #fff;
+			}
+			paper-radio-button {
+				margin: auto;
+			}
+			.small {
+				font-size: 12px!important;
+				color: #03a9f4;
+				font-weight: 100;
+			}
+			paper-button {
+				margin: 0 10px;
+			}
+			paper-button[raisedButton].green {
+	      background: #259b24;
+	      color: #fff;
+	    }
+	    paper-button[raisedButton].blue {
+	      background: #03a9f4;
+	      color: #fff;
+	    }
+		</style>
+
+		<core-icon-button icon="search" on-click="{{onIconClick}}"></core-icon-button>
+    <paper-dialog id="popup" heading="Library Search" transition="paper-dialog-transition-center">
+
+			<core-ajax id="ajax" url="http://api.cdnjs.com/libraries" handleas="json" on-core-response="{{handleResponse}}">
+	    </core-ajax>
+
+	    <paper-input id="inputQuery" floatinglabel="" label="Add your preferred library" value="{{query}}"></paper-input>
+
+			<paper-radio-group id="libraryGroup" on-core-select="{{onRadioSelectChange}}" target="{{$.results}}" itemsselector="paper-radio-button" selected="0">
+		  	<div id="results" class="results">
+				    <template repeat="{{record in results}}">
+				    	<div class="record" layout="" horizontal="">
+				    		<div flex="" one="" layout="" justified="" horizontal="">
+							    <paper-radio-button name="{{record.name}}" value="{{record.latest}}">
+							    </paper-radio-button>
+				    		</div>
+								<div layout="" horizontal="" flex="" eleven="">
+					    		<div class="library-name" flex="" one="">{{record.name}}</div>
+					    		<div class="library-url" flex="" two="">
+					    			{{record.latest}}
+					    		</div>
+								</div>
+				    	</div>
+				    </template>
+				</div>
+			</paper-radio-group>
+
+			<template if="{{libraryName}}">
+				<div>
+					<paper-input id="globalExported" floatinglabel="" label="Enter the global variable exported" value="{{globalExported}}">
+			    </paper-input>
+		    </div>
+		  </template>
+
+			<template if="{{libraryName &amp;&amp; globalExported}}">
+				<div class="small">
+					<div>
+						name:   {{libraryName}} {{libraryUrl}} <br>
+						global: {{globalExported}}
+					</div>
+				</div>
+				<paper-button class="green" on-click="{{onAddLibrary}}" label="Add Library" raisedbutton="" affirmative="" autofocus>
+				</paper-button>
+			</template>
+
+			<paper-button class="blue" label="Close" raisedbutton="" affirmative="" autofocus></paper-button>
+		</paper-dialog>
+
+	</template>
+	<script>
+		Polymer('pojoviz-search', {
+
+			publish: {
+				globals: {
+					value: [],
+					reflect: true
+				}
+			},
+
+			created: function () {
+				this.results = null;
+				this.libraryName = null;
+				this.libraryUrl = null;
+				this.globalExported = null;
+			},
+
+			ready: function () {
+				var me = this,
+					timer;
+				me.$.inputQuery.oninput = function () {
+					clearTimeout(timer);
+					timer = setTimeout(function () {
+						me.onSearch();
+					}, 1000);
+				};
+			},
+			onIconClick: function (event, detail, el) {
+				this.$.popup.toggle();
+			},
+			onSearch: function () {
+				var me = this;
+				var ajaxEl = me.$.ajax;
+				ajaxEl.params = JSON.stringify({
+					search: me.$.inputQuery.inputValue,
+					fields: 'assets'
+				});
+				ajaxEl.go();
+			},
+			onRadioSelectChange: function (ev, detail, el) {
+				if (detail.isSelected) {
+					this.libraryName = detail.item.getAttribute('name');
+					this.libraryUrl = detail.item.getAttribute('value');
+				}
+			},
+			handleResponse: function (ev, detail, el) {
+				var results = detail.response.results;
+				this.results = results;
+			},
+			onAddLibrary: function (ev, detail, el) {
+				var userVars = pojoviz.userVariables;
+				pojoviz.utils.notification('added library ' + this.libraryName + '! Find it under the "Downloaded" accordion');
+
+				userVars.push({
+					name: this.libraryName,
+					src: this.libraryUrl,
+					global: this.globalExported
+				});
+				// console.log(userVars);
+			}
+		});
+	</script>
+</polymer-element></div>
+	<div hidden>
+
+
+
+<polymer-element name="pojoviz-user-menu" assetpath="elements/">
+	<template>
+		<core-menu selected="0">
+			<core-submenu icon="cloud" label="Downloaded" on-core-select="{{onLibrarySelect}}">
+				<template repeat="{{library in libraries}}">
+					<core-item label="{{library.name}}" data-value="render:{{library.name}}" data-src="{{library.src}}" data-global="{{library.global}}">
+					</core-item>
+				</template>
+			</core-submenu>
+		</core-menu>
+	</template>
+	<script>
+		Polymer('pojoviz-user-menu', {
+			created: function () {
+				var me = this;
+				this.libraries = pojoviz.userVariables;
+			},
+			onLibrarySelect: function (ev, detail, el) {
+				if (detail.isSelected) {
+					var ev = new CustomEvent('library-select', {
+						detail: detail.item
+					});
+					document.dispatchEvent(ev);
+				}
+			}
+		});
+	</script>
+</polymer-element></div>
+	<div hidden>
+<polymer-element name="pojoviz-readme" assetpath="elements/">
+	<template>
+		<style>/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-title {
+  color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-attribute,
+.hljs-tag,
+.hljs-regexp,
+.ruby .hljs-constant,
+.xml .hljs-tag .hljs-title,
+.xml .hljs-pi,
+.xml .hljs-doctype,
+.html .hljs-doctype,
+.css .hljs-id,
+.css .hljs-class,
+.css .hljs-pseudo {
+  color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-preprocessor,
+.hljs-pragma,
+.hljs-built_in,
+.hljs-literal,
+.hljs-params,
+.hljs-constant {
+  color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.ruby .hljs-class .hljs-title,
+.css .hljs-rules .hljs-attribute {
+  color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-value,
+.hljs-inheritance,
+.hljs-header,
+.ruby .hljs-symbol,
+.xml .hljs-cdata {
+  color: #718c00;
+}
+
+/* Tomorrow Aqua */
+.css .hljs-hexcolor {
+  color: #3e999f;
+}
+
+/* Tomorrow Blue */
+.hljs-function,
+.python .hljs-decorator,
+.python .hljs-title,
+.ruby .hljs-function .hljs-title,
+.ruby .hljs-title .hljs-keyword,
+.perl .hljs-sub,
+.javascript .hljs-title,
+.coffeescript .hljs-title {
+  color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.javascript .hljs-function {
+  color: #8959a8;
+}
+
+.hljs {
+  display: block;
+  background: white;
+  color: #4d4d4c;
+  padding: 0.5em;
+}
+
+.coffeescript .javascript,
+.javascript .xml,
+.tex .hljs-formula,
+.xml .javascript,
+.xml .vbscript,
+.xml .css,
+.xml .hljs-cdata {
+  opacity: 0.5;
+}
+</style>
+
+		<style>
+		</style>
+		<core-ajax auto="" url="../../README.md" handleas="json" on-core-response="{{handleResponse}}"></core-ajax>
+
+		<!-- content filled dinamically -->
+		<section id="parsed"></section>
+
+	</template>
+	<script>
+		Polymer('pojoviz-readme', {
+			ready: function () {
+				this.isLocal = ~location.origin.indexOf('localhost');
+			},
+			handleResponse: function (ev, detail, el) {
+				var me = this,
+					parsed = marked(detail.response, {
+						highlight: function (code, lang) {
+							return hljs.highlight(lang, code).value;
+						}
+					});
+
+				function changeImg(str) {
+					if (me.isLocal) {
+						return str;
+					}
+					return str.replace(/src="/g, 'src="http://maurizzzio.github.io/pojoviz/public/');
+				}
+
+				function replacePojoViz(str) {
+					return str.replace(/%PojoViz/g, '<span class="pojoviz">PojoViz</span>');
+				}
+
+				me.$.parsed.innerHTML = [parsed]
+					.map(replacePojoViz)
+					.map(changeImg)[0];
+			}
+		});
+	</script>
+</polymer-element></div>
 
 	<!-- normalize -->
-	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css">
+	<link rel="stylesheet" href="css/normalize.min.css">
 	<link rel="stylesheet" href="css/app.css">
-
-	<!-- libraries -->
-	<script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3.js"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.js"></script>
-	<script src="bower_components/t3/examples/lib/three.js"></script>
-	<script src="bower_components/t3/dist/t3.js"></script>
+	<!-- graph layout engine -->
 	<script src="lib/dagre.min.js"></script>
+	<!-- libraries -->
+	<script src="lib/d3.js"></script>
+	<script src="lib/tween.min.js"></script>
+
+	<!-- bundle: three + t3 + marked + highlight -->
+	<script src="lib/vendor.js"></script>
+
 </head>
 <body unresolved="" fullbleed="">
 	<core-scaffold responsivewidth="1000px">
 		<core-header-panel navigation="" flex="" mode="seamed">
 			<div class="logo">
-				POJO Viz
+				PojoViz
 				<div class="subtitle middle">
 					Plain Old JavaScript Object Visualization
 				</div>
@@ -10051,109 +11481,254 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 			<!-- <div class="" flex> -->
 				<!-- Application -->
 			<!-- </div> -->
-			<core-menu theme="core-light-theme" valueattr="label" selected="Known Schemas">
-				
+			<core-menu id="schemas" theme="core-light-theme" valueattr="label" selected="Known Schemas">
+
 				<core-submenu icon="exit-to-app" label="Known Schemas">
-					<core-item data-value="render:builtIn" label="built-in objects">
-						<a href="#" target="_self"></a>
+
+					<core-item label="Objects" data-value="render:object">
 					</core-item>
 
-					<core-item data-value="render:win" label="window">
-						<a href="#" target="_self"></a>
+					<core-item label="built-in objects" data-value="render:builtIn">
+					</core-item>
+
+				</core-submenu>
+
+				<core-submenu icon="star" label="Notable Libraries">
+
+					<core-item label="jQuery" data-src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js" data-value="render:jQuery" data-global="jQuery">
+					</core-item>
+
+					<core-item label="Polymer" data-value="render:Polymer" data-global="Polymer">
+					</core-item>
+
+					<core-item label="D3" data-global="d3" data-allfunctions="true" data-value="render:d3">
+					</core-item>
+
+					<core-item label="Lo-Dash" data-src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.js" data-value="render:lodash" data-global="_">
+					</core-item>
+
+					<core-item label="React" data-src="//fb.me/react-0.11.1.js" data-value="render:react" data-global="React">
+					</core-item>
+
+					<core-item label="Angular JS" data-src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.js" data-value="render:angular">
+					</core-item>
+
+					<core-item label="Modernizr" data-src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js" data-value="render:modernizr" data-global="Modernizr">
+					</core-item>
+
+					<core-item label="Handlebars" data-src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.1.2/handlebars.js" data-functionconstructors="false" data-value="render:handlebars" data-global="Handlebars">
+					</core-item>
+
+					<core-item label="EmberJS" data-src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js|//cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.1.2/handlebars.js|//cdnjs.cloudflare.com/ajax/libs/ember.js/1.6.1/ember.js" data-forbidden="$,Handlebars" data-value="render:ember" data-global="Ember">
+					</core-item>
+
+					<core-item label="Backbone" data-src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.js|//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone.js" data-value="render:backbone" data-global="Backbone">
+					</core-item>
+
+					<!-- <core-item label="ExtJS Core"
+						data-src="//cdnjs.cloudflare.com/ajax/libs/extjs/4.2.1/builds/ext-core-dev.js"
+						data-functionconstructors="false"
+						data-value="render:extjs"
+						data-global="Ext">
+					</core-item> -->
+
+				</core-submenu>
+
+				<core-submenu icon="favorite" label="My libraries">
+					<core-item label="PojoViz" data-global="pojoviz" data-rendereachtime="true" data-value="render:pojoviz">
+					</core-item>
+
+					<core-item label="t3" data-global="t3" data-value="render:t3">
+					</core-item>
+				</core-submenu>
+
+				<core-submenu icon="warning" label="Huge Schemas">
+
+					<core-item label="window" data-value="render:window">
 						<core-tooltip label="huge data is coming" position="right">
 							<core-icon icon="warning" size="10"></core-icon>
 						</core-tooltip>
 					</core-item>
 
-				</core-submenu>
-				
-				<core-submenu icon="star" label="Notable Libraries">
-					
-					<core-item data-value="render:d3" label="D3">
-						<a href="#" target="_self"></a>
+					<!-- declared in object hashes -->
+					<core-item label="three.js" data-value="render:three">
 					</core-item>
 
-					<core-item data-value="render:angular" label="Angular JS">
-						<a href="#" target="_self"></a>
-					</core-item>
-				
-					<core-item data-value="render:threejs" label="three.js">
-						<a href="#" target="_self"></a>
+					<core-item label="Phaser" data-value="render:Phaser" data-src="//cdnjs.cloudflare.com/ajax/libs/phaser/2.0.6/phaser.min.js" data-global="Phaser">
 					</core-item>
 
 				</core-submenu>
 
-				<core-submenu icon="favorite" label="My libraries">
-					<core-item data-value="render:pojoviz" label="POJO Viz">
-						<a href="#" target="_self"></a>
-					</core-item>
-
-					<core-item data-value="render:t3" label="t3">
-						<a href="#" target="_self"></a>
-					</core-item>
-
-				</core-submenu>
-
-				<core-item data-value="settings" icon="settings" label="Settings">
-					<a href="#settings" target="_self"></a>
-				</core-item>
 			</core-menu>
+
+			<!-- user libraries -->
+			<pojoviz-user-menu></pojoviz-user-menu>
 
 		</core-header-panel>
 
+		<!-- title + info -->
 		<div tool="" horizontal="" layout="" center="" style="width: 100%">
 			<div class="title"></div>
 			<div flex=""></div>
+			<pojoviz-search></pojoviz-search>
 			<pojoviz-about></pojoviz-about>
+			<core-icon-button data-value="settings" class="toolbar-page" icon="settings">
+			</core-icon-button>
+			<core-icon-button id="readme" data-value="readme" class="toolbar-page" icon="drive-document">
+			</core-icon-button>
 		</div>
-		
+
 		<core-animated-pages transitions="cross-fade" valueattr="label">
 
 			<section label="app" class="no-padding">
 				<div class="canvas-wrapper" cross-fade="">
-					<svg id="canvas" class="unselectable"></svg>
+					<div id="threejscanvas" style="display: none; height: 100%"></div>
+					<svg id="canvas" class="unselectable" style="display: none;"></svg>
 				</div>
 			</section>
-			
 			<section label="settings">
 				<div class="wrapper" cross-fade="">
-			    	<pojoviz-settings></pojoviz-settings>
-		    	</div>
-		    </section>
+					<pojoviz-settings></pojoviz-settings>
+				</div>
+			</section>
+			<section label="readme">
+				<div class="wrapper" cross-fade="">
+					<pojoviz-readme></pojoviz-readme>
+				</div>
+			</section>
 		</core-animated-pages>
 	</core-scaffold>
+
+	<paper-toast id="toast" text=""></paper-toast>
 
 	<!-- app -->
 	<script src="build/pojoviz.js"></script>
 
 	<script>
+		// support onpushstate
+		(function (history) {
+			var pushState = history.pushState;
+			history.pushState = function(state) {
+				if (typeof history.onpushstate === "function") {
+					history.onpushstate({state: state});
+				}
+				return pushState.apply(history, arguments);
+			};
+		})(window.history);
+
 		(function () {
-			var schemas = document.querySelector('core-header-panel core-menu');
+			var schemas = document.querySelector('core-header-panel #schemas');
 			var pages = document.querySelector('core-animated-pages');
 			var scaffold = document.querySelector('core-scaffold');
 			var tool = document.querySelector('[tool] .title');
+			var currentPage;
+
+			function runLibrary(dataSet) {
+				var value,
+					action;
+
+				console.log(dataSet);
+
+				value = dataSet.value.split(':');
+				action = value[0];
+				// global name, data properties
+				pojoviz.setContainer(value[1], dataSet)
+					.then(function() {
+						pojoviz.render();
+					})
+					.fail(function (e) {
+						pojoviz.utils.notification(e);
+						throw e;
+					})
+					.done();
+				// pojoviz.render();
+				pages.selected = 'app';
+				// change title
+				tool.textContent = value[1];
+				scaffold.closeDrawer();
+			}
+
+			function changeHistory(el) {
+				window.history.pushState(
+					JSON.parse(JSON.stringify(el.dataset)),
+					el.dataset.value,
+					'#' + el.dataset.value
+				);
+			}
 
 			schemas.addEventListener('core-select', function (e) {
-				var detail = e.detail,
-					value,
-					action;
-				if (detail.isSelected) {
-					// doesn't have a submenu
-					if (!detail.item.$.submenu) {
-						value = detail.item.dataset.value.split(':');
-						action = value[0];
-						if (action === 'render') {
-							pojoviz.setCurrentLibrary(value[1]);
-							pojoviz.render();
-							pages.selected = 'app';
-						} else {
-							pages.selected = 'settings';
-						}
-						// change title
-						tool.textContent = detail.item.label;
+				var detail = e.detail;
+				if (detail.isSelected &&
+					!detail.item.$.submenu) {
+					changeHistory(detail.item);
+				}
+			});
 
-						scaffold.closeDrawer();
-					}
+			document.addEventListener('library-select', function (e) {
+				// runLibrary(e.detail);
+				changeHistory(e.detail);
+			});
+
+			window.onpopstate = history.onpushstate = function(e) {
+				var v = e.state.value;
+				if (~v.indexOf('render')) {
+					runLibrary(e.state);
+					return;
+				}
+
+				if (v === 'settings') {
+					pages.selected = 'settings';
+				} else if (v === 'readme') {
+					pages.selected = 'readme';
+				}
+				tool.textContent = '';
+			};
+
+			window.pushState = function (hash) {
+				// history
+				var el = document.querySelector('[data-value="' +
+					hash + '"]');
+				if (!el) {
+					el = scaffold.querySelector('#readme');
+				}
+				changeHistory(el);
+			};
+
+			// settings + readme
+			[].slice.call(scaffold
+				.querySelectorAll('core-scaffold .toolbar-page'))
+				.forEach(function (v) {
+					v.addEventListener('click', function (event) {
+						changeHistory(event.target);
+					});
+				});
+
+			// toast
+			var toast = document.getElementById('toast');
+			document
+				.addEventListener('pojoviz-notification', function (e) {
+					toast.text = e.detail;
+					toast.show();
+				});
+
+			window.addEventListener('polymer-ready', function () {
+				var el,
+					hash = (history.state && history.state.value) ||
+						location.hash.substr(1);
+
+				window.pushState(hash);
+
+				// query params
+				var params = {};
+				location.search.substring(1).split('&')
+					.forEach(function (v) {
+						var sp = v.split('=');
+						params[sp[0]] = sp[1];
+					});
+
+				// hide some elements
+				if (params.toolbar === 'false') {
+					document.documentElement.className += ' notoolbar';
 				}
 			});
 		})();
@@ -10168,7 +11743,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 	  ga('create', 'UA-52923805-1', 'auto');
 	  ga('send', 'pageview');
 	</script>
-	<!-- <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>'); -->
 
 </body>
 </html>

@@ -14,15 +14,12 @@ var git = require('gulp-git');
 var compass = require('gulp-compass');
 var concat = require('gulp-concat');
 var bump = require('gulp-bump');
+var rename = require('gulp-rename');
 var filter = require('gulp-filter');
 var vulcanize = require('gulp-vulcanize');
+var useref = require('gulp-useref');
 var tagVersion = require('gulp-tag-version');
 var useWatchify;
-
-browserSync.use("logger", function () {
-    return function (emitter, options) {
-    };
-});
 
 function run(bundler, minify) {
   var output = './build/';
@@ -81,14 +78,6 @@ gulp.task('browserSync', ['browserify'], function () {
   });
 });
 
-gulp.task('vulcanize', function () {
-  return gulp.src('./public/index.html')
-    .pipe(vulcanize({
-      dest: './public/vulcanize.html',
-    }))
-    .pipe(gulp.dest('./public/'));
-});
-
 gulp.task('compass', function () {
   return gulp.src('./public/sass/*.scss')
     .pipe(compass({
@@ -135,6 +124,28 @@ gulp.task('watch', ['useWatchify', 'browserSync'],  function () {
   gulp.watch('test/**', ['testOnce']);
 });
 
+gulp.task('rename', function () {
+  return gulp.src('public/index.html')
+    .pipe(rename('vulcanize.html'))
+    .pipe(gulp.dest('public/'));
+});
+
+gulp.task('vendor', ['rename'], function () {
+  var assets = useref.assets();
+  return gulp.src('public/vulcanize.html')
+    .pipe(assets)
+    .pipe(assets.restore())
+    .pipe(useref())
+    .pipe(gulp.dest('public/'));
+});
+
+gulp.task('vulcanize', ['vendor'], function () {
+  return gulp.src('./public/vulcanize.html')
+    .pipe(vulcanize({
+      dest: './public/vulcanize.html',
+    }))
+    .pipe(gulp.dest('./public/'));
+});
 // main tasks
 gulp.task('build', ['browserify', 'compass', 'vulcanize']);
 

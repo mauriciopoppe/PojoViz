@@ -30,19 +30,19 @@
 	<!-- normalize -->
 	<link rel="stylesheet" href="css/normalize.min.css">
 	<link rel="stylesheet" href="css/app.css">
-
-	<!-- THREE is required for t3 -->
-	<script src="bower_components/t3/examples/lib/three.js"></script>
-	<script src="bower_components/t3/dist/t3.js"></script>
-	<script src="fonts/helvetiker_bold.typeface.js"></script>
-	<script src="fonts/helvetiker_regular.typeface.js"></script>
 	<!-- graph layout engine -->
 	<script src="lib/dagre.min.js"></script>
 	<!-- libraries -->
 	<script src="lib/d3.js"></script>
 	<script src="lib/tween.min.js"></script>
-	<script src="bower_components/marked/lib/marked.js"></script>
-	<script src="bower_components/highlightjs/highlight.pack.js"></script>
+
+	<!-- bundle: three + t3 + marked + highlight -->
+	<!-- build:js lib/vendor.js -->
+	<script type="text/javascript" src="bower_components/t3/examples/lib/three.js"></script>
+	<script type="text/javascript" src="bower_components/t3/dist/t3.js"></script>
+	<script type="text/javascript" src="bower_components/marked/lib/marked.js"></script>
+	<script type="text/javascript" src="bower_components/highlightjs/highlight.pack.js"></script>
+	<!-- endbuild -->
 
 </head>
 <body unresolved fullbleed>

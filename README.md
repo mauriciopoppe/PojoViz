@@ -11,7 +11,12 @@ How many times did you find an awesome library/framework and wanted to see how i
 
 - Export any graph to a simple JSON file consisting of node/edges
 - Two renderers: SVG (d3) and WebGL (threejs)
+
+<img class="center" src="http://f.cl.ly/items/1h1Y1b1y3z363T1d0U3z/pojovizthree.mov.gif" alt="">
+
 - Analyze your preferred library/framework hosted on [http://cdnjs.com](http://cdnjs.com)
+
+<img class="center" src="http://f.cl.ly/items/0s2I0u2t2y1x2N3o0n2P/pojoviz-search.mov.gif" alt="">
 
 ## The algorithm
 

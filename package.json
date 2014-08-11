@@ -43,7 +43,9 @@
     "gulp-vulcanize": "~0.2.1",
     "q": "~1.0.1",
     "chai": "~1.9.1",
-    "gulp-mocha": "~0.5.2"
+    "gulp-mocha": "~0.5.2",
+    "gulp-rename": "~1.2.0",
+    "gulp-useref": "~0.6.0"
   },
   "dependencies": {
     "karma": "~0.12.21"

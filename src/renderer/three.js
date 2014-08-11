@@ -327,6 +327,7 @@ module.exports = {
       init: function () {
         var me = this,
           rendererEl = me.renderer.domElement;
+        me.datgui.close();
         me.activeScene.fog = null;
         me.renderer.sortObjects = false;
         me.renderer.shadowMapEnabled = true;

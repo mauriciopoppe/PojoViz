@@ -178,6 +178,8 @@
 			},
 			onAddLibrary: function (ev, detail, el) {
 				var userVars = pojoviz.userVariables;
+				pojoviz.utils.notification('added library ' + this.libraryName + '! Find it under the "Downloaded" accordion');
+
 				userVars.push({
 					name: this.libraryName,
 					src: this.libraryUrl,

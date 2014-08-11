@@ -76,7 +76,7 @@ gulp.task('browserify', function () {
 gulp.task('browserSync', ['browserify'], function () {
   browserSync.init(['./build/*'], {
     server: {
-      baseDir: './public'
+      baseDir: './'
     }
   });
 });
@@ -130,8 +130,9 @@ gulp.task('useWatchify', function () {
   useWatchify = true;
 });
 
-gulp.task('watch', ['useWatchify', 'browserSync', 'test'],  function () {
+gulp.task('watch', ['useWatchify', 'browserSync'],  function () {
   gulp.watch('./public/sass/**', ['compass']);
+  gulp.watch('./test/**', ['testOnce']);
 });
 
 // main tasks

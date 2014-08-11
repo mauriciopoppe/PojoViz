@@ -109,7 +109,7 @@ me.createHashKeysFor = function (obj, name) {
     }
 
     name = name || _.uniqueId();
-    name = name.replace(/[\. ]/g, '-');
+    name = name.replace(/[\. ]/img, '-');
     return name;
   }
 
@@ -120,9 +120,11 @@ me.createHashKeysFor = function (obj, name) {
   // if the obj is a prototype then try to analyze
   // the constructor first so that the prototype becomes
   // [name].prototype
+  // special case: object.constructor = object
   if (obj.hasOwnProperty &&
       obj.hasOwnProperty('constructor') &&
-      typeof obj.constructor === 'function') {
+      typeof obj.constructor === 'function' &&
+      obj.constructor !== obj) {
     return me.createHashKeysFor(obj.constructor);
   }
 
@@ -137,7 +139,8 @@ me.createHashKeysFor = function (obj, name) {
 };
 
 me.has = function (v) {
-  return v.hasOwnProperty(me.hiddenKey);
+  return v.hasOwnProperty &&
+    v.hasOwnProperty(me.hiddenKey);
 };
 
 module.exports = me;

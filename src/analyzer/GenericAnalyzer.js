@@ -16,10 +16,11 @@ function GenericAnalyzer(options) {
   this.global = options.global;
   this.displayname = options.displayname;
   this.rendereachtime = options.rendereachtime;
-  this.levels = options.hasOwnProperty('levels') ? options.levels : 100;
+  this.levels = options.hasOwnProperty('levels') ? options.levels : 10;
   this.forbidden = options.forbidden || [];
   this.src = options.src;
-  this.functionconstructors = options.hasOwnProperty('functionconstructors') ?
+  this._hasfc = options.hasOwnProperty('functionconstructors');
+  this.functionconstructors = this._hasfc ?
     options.functionconstructors : GenericAnalyzer.SHOW_FUNCTION_CONSTRUCTORS;
   this.allfunctions = options.allfunctions;
 

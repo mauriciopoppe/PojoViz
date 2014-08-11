@@ -32,7 +32,8 @@
     "paper-checkbox": "Polymer/paper-checkbox#~0.3.4",
     "paper-slider": "Polymer/paper-slider#~0.3.4",
     "paper-icon-button": "Polymer/paper-icon-button#~0.3.4",
-    "paper-radio-group": "Polymer/paper-radio-group#~0.3.4"
+    "paper-radio-group": "Polymer/paper-radio-group#~0.3.4",
+    "marked": "~0.3.2"
   },
   "devDependencies": {
     "paper-toast": "Polymer/paper-toast#~0.3.4"

@@ -28,14 +28,14 @@ function Canvas(data) {
 
 Canvas.prototype.destroy = function() {
   this.data = null;
-  svg.attr('opacity', 0);
+  svg.attr('style', 'display: none');
   svg
     .selectAll('*')
     .remove();
 };
 
 Canvas.prototype.createRoot = function() {
-  svg.attr('opacity', 1);
+  svg.attr('style', '');
   this.root = svg
     .append('g')
       .attr('class', 'root-' + this.id);

@@ -3,7 +3,7 @@
 <link rel="import" href="../bower_components/core-menu/core-submenu.html">
 <link rel="import" href="../bower_components/core-icon/core-icon.html">
 <polymer-element name="pojoviz-user-menu">
-	<template>	
+	<template>
 		<core-menu selected="0">
 			<core-submenu icon="cloud" label="Downloaded" on-core-select="{{onLibrarySelect}}">
 				<template repeat="{{library in libraries}}">
@@ -11,10 +11,7 @@
 						data-value="render:{{library.name}}"
 						data-src="{{library.src}}"
 						data-global="{{library.global}}"
-						data-forbidden='pojoviz:window'
-						data-levels="2"
 						>
-						<a href="/#" target="_self"></a>
 					</core-item>
 				</template>
 			</core-submenu>

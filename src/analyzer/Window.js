@@ -8,6 +8,7 @@ var toInspect = [window];
 
 function Window() {
   GenericAnalyzer.call(this, {
+    levels: 1,
     rendereachtime: true,
     functionconstructors: false
   });

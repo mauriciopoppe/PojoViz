@@ -182,8 +182,7 @@ Analyzer.prototype = {
       properties;
 
     if (!obj) {
-      debugger;
-      throw 'ups';
+      throw 'this method needs an object to analyze';
     }
 
     if (this.cache) {
@@ -461,7 +460,9 @@ _.merge(aProto, {
    * @return {this}
    */
   add: wrapFn(function (objects) {
+    console.time('analyze');
     this.analyzeObjects(objects, 0);
+    console.timeEnd('analyze');
     return this;
   }, aProto.makeDirty),
 

@@ -29,32 +29,44 @@ $color-successor: $blue-500;
 }
 
 // polymer style fix
-body { 
+body {
   core-animated-pages {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    
+
     section {
-      padding: 40px;      
+      padding: 40px;
     }
   }
 
   /deep/ {
+    h1 {
+      font-weight: 100;
+      font-size: 3em;
+    }
     core-header-panel[main] {
       background-color: white;
       core-toolbar {
         background-color: $main;
       }
     }
+    .pojoviz {
+      font-weight: 100;
+      font-size: 1.3rem;
+      color: $main;
+    }
+    core-item:hover {
+      cursor: pointer!important;
+    }
   }
 }
 .logo {
   text-align: center;
   padding: 15px;
-  font-size: 50px;
+  font-size: 4em;
   font-weight: 100;
   .subtitle {
     font-size: 12px;
@@ -119,7 +131,7 @@ svg#canvas {
 .pv-node {
   @include transition-property(opacity);
   @include transition-duration(0.2s);
-  
+
   .node-background {
     fill: white;
     fill-opacity: 1;
@@ -191,7 +203,7 @@ svg#canvas {
 pojoviz-settings::shadow {
   // slider color
   paper-slider::shadow {
-    #sliderKnobInner, #sliderKnobInner::before, 
+    #sliderKnobInner, #sliderKnobInner::before,
     #sliderBar::shadow #activeProgress {
       background-color: $main;
     }
@@ -203,6 +215,12 @@ pojoviz-settings::shadow {
     }
     #checkbox.checked {
       border-color: $main;
+    }
+  }
+  // radio-button color
+  paper-radio-button::shadow {
+    #onRadio {
+      background-color: $main;
     }
   }
 }

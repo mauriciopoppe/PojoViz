@@ -5,6 +5,7 @@ var _ = require('lodash'),
   Angular = require('./analyzer/Angular'),
   Window = require('./analyzer/Window'),
   PojoViz = require('./analyzer/PojoViz'),
+  PObject = require('./analyzer/Object'),
   BuiltIn = require('./analyzer/BuiltIn');
 
 var libraries;
@@ -25,7 +26,10 @@ var proto = {
   },
   setFunctionConstructors: function (newValue) {
     proto.all(function (v) {
-      v.analyzer.setFunctionConstructors(newValue);
+      // this only works on the generic analyzers
+      if (!v._hasfc) {
+        v.analyzer.setFunctionConstructors(newValue);
+      }
     });
     return proto;
   }
@@ -33,15 +37,20 @@ var proto = {
 
 libraries = Object.create(proto);
 _.merge(libraries, {
+  object: new PObject(),
   builtIn: new BuiltIn(),
   window: new Window(),
   // popular
   d3: new Generic({ global: 'd3', allfunctions: true }),
-  three: new Generic({ global: 'THREE' }),
   angular: new Angular(),
   // mine
   pojoviz: new PojoViz(),
-  t3: new Generic({ global: 't3', functionconstructors: true })
+  t3: new Generic({ global: 't3' }),
+  // huge
+  three: new Generic({
+    global: 'THREE',
+    rendereachtime: true
+  }),
 });
 
 // console.log(libraries);

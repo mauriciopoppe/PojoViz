@@ -104,10 +104,110 @@ it('should store the objects correctly', function () {
 
 <a class="as-button" href="javascript:pushState('render:pojoviz')">Show me the API</a>
 
+### new pojoviz.ObjectAnalyzer()
+Creates an instance of the analyzer class
+
+#### instance.setLevels(levels)
+Sets the maximum number of levels to analyze to be `levels`
+
+#### instance.forbid([objects])
+Forbids each element of the array `objects` from being analyzed
+
+#### instance.add([objects])
+Analyzes each element of the array `objects`
+
+#### instance.stringify()
+Stringifies the internal representation of the graph, this line should be called after `add` is called, it returns the following object
+
+```javascript
+{
+  "nodes": {
+    "function-Object": [{
+      "name": "length",
+      "type": "number",
+      "linkeable": false,
+      "label": "function-Object"
+    }, {
+      "name": "name",
+      "type": "string",
+      "linkeable": false,
+      "label": "function-Object"
+    }, ...],
+    "object-Object-prototype": [{
+      "name": "constructor",
+      "type": "function",
+      "linkeable": true,
+      "label": "object-Object-prototype"
+    }, {
+      "name": "toString",
+      "type": "function",
+      "linkeable": true,
+      "label": "object-Object-prototype"
+    }, ...],
+    "function-Function-prototype": [{
+      "name": "length",
+      "type": "number",
+      "linkeable": false,
+      "label": "function-Function-prototype"
+    }, {
+      "name": "name",
+      "type": "string",
+      "linkeable": false,
+      "label": "function-Function-prototype"
+    }, ...],
+    "function-Function": [{
+      "name": "prototype",
+      "type": "function",
+      "linkeable": true,
+      "label": "function-Function"
+    }, {
+      "name": "[[Prototype]]",
+      "type": "object",
+      "linkeable": true,
+      "hidden": true,
+      "label": "function-Function"
+    }, ...]
+  },
+  "edges": {
+    "function-Object": [{
+      "from": "function-Object",
+      "to": "object-Object-prototype",
+      "property": "prototype"
+    }, {
+      "from": "function-Object",
+      "to": "function-Function-prototype",
+      "property": "[[Prototype]]"
+    }],
+    "object-Object-prototype": [{
+      "from": "object-Object-prototype",
+      "to": "function-Object",
+      "property": "constructor"
+    }],
+    "function-Function-prototype": [{
+      "from": "function-Function-prototype",
+      "to": "function-Function",
+      "property": "constructor"
+    }, {
+      "from": "function-Function-prototype",
+      "to": "object-Object-prototype",
+      "property": "[[Prototype]]"
+    }],
+    "function-Function": [{
+      "from": "function-Function",
+      "to": "function-Function-prototype",
+      "property": "prototype"
+    }, {
+      "from": "function-Function",
+      "to": "function-Function-prototype",
+      "property": "[[Prototype]]"
+    }]
+  }
+}
+```
+
 ## TODO list
 
-- Documentation of %PojoViz's API
-- Getting started
+- Development
 - Move to the selected object on dot click
 - Undo/redo when doing the previous operation
 

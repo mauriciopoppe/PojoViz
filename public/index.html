@@ -4,14 +4,7 @@
 	<meta charset="UTF-8">
 	<title>Pojo Viz</title>
 
-	<!-- build:js lib/vendor.js -->
-	<script type="text/javascript" src="bower_components/polymer/polymer.js"></script>
-	<script type="text/javascript" src="bower_components/platform/platform.js"></script>
-	<script type="text/javascript" src="bower_components/t3/examples/lib/three.js"></script>
-	<script type="text/javascript" src="bower_components/t3/dist/t3.js"></script>
-	<script type="text/javascript" src="bower_components/marked/lib/marked.js"></script>
-	<script type="text/javascript" src="bower_components/highlightjs/highlight.pack.js"></script>
-	<!-- endbuild -->
+	<script src="bower_components/platform/platform.js"></script>
 
   <!-- Meta -->
   <meta content="PojoViz" property="og:title">
@@ -44,6 +37,13 @@
 	<script src="lib/tween.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.min.js"></script>
 	<!-- bundle: three + t3 + marked + highlight -->
+	<!-- build:js lib/vendor.js -->
+	<script type="text/javascript" src="bower_components/t3/examples/lib/three.js"></script>
+	<script type="text/javascript" src="bower_components/t3/dist/t3.js"></script>
+	<script type="text/javascript" src="bower_components/marked/lib/marked.js"></script>
+	<script type="text/javascript" src="bower_components/highlightjs/highlight.pack.js"></script>
+	<!-- endbuild -->
+
 </head>
 <body unresolved fullbleed>
 	<core-scaffold responsiveWidth="1000px">

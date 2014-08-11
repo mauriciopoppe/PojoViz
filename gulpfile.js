@@ -16,6 +16,8 @@ var concat = require('gulp-concat');
 var bump = require('gulp-bump');
 var rename = require('gulp-rename');
 var filter = require('gulp-filter');
+var gulpif = require('gulp-if');
+var uglify = require('gulp-uglify');
 var vulcanize = require('gulp-vulcanize');
 var useref = require('gulp-useref');
 var tagVersion = require('gulp-tag-version');
@@ -134,6 +136,7 @@ gulp.task('vendor', ['rename'], function () {
   var assets = useref.assets();
   return gulp.src('public/vulcanize.html')
     .pipe(assets)
+    .pipe(gulpif('*.js', uglify()))
     .pipe(assets.restore())
     .pipe(useref())
     .pipe(gulp.dest('public/'));

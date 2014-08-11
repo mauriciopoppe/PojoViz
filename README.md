@@ -21,7 +21,7 @@ How many times did you find an awesome library/framework and wanted to see how i
 
 - The library's representation in %PojoViz configured with the following properties:
 
-	- Global access point
+	- Global access point of the library (e.g. window.d3)
 	- The maximum number of levels allowed while running the DFS algorithm
 	- The *src* of the script (if it's an external resource)
 	- The forbidden objects which are discarded when found by the DFS algorithm
@@ -93,14 +93,18 @@ it('should store the objects correctly', function () {
 });
 ```
 
-An image is worth more than a thousand words, let's see what pojoviz generated for the test case above:
+<a class="as-button" href="javascript:pushState('render:object')">Show me the Object example</a>
 
-<img style="width: 70%; display: block; margin:auto" src="images/object.png" alt="">
+## API
+
+<a class="as-button" href="javascript:pushState('render:pojoviz')">Show me the API</a>
 
 ## TODO list
 
 - Documentation of %PojoViz's API
 - Getting started
+- Move to the selected object on dot click
+- Undo/redo when doing the previous operation
 
 ## Acknowledgments
 

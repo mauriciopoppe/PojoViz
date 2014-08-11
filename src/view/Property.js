@@ -72,7 +72,7 @@ function Property() {
       })
       .on('click', function (d, i) {
         console.log(d);
-        var link = d.cls.match(/\S*?-([\$\w-\.]*)/);
+        var link = d.label.match(/\S*?-([\$\w-\.]*)/);
         var ev = new CustomEvent('property-click', {
           detail: {
             name: link[1],

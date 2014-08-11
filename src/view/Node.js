@@ -99,6 +99,9 @@ function Node(parent) {
     propertyCtor.margin(margin);
     bodyEnter.selectAll('g.' + prefix('property'))
       .data(function (d) {
+        d.properties.forEach(function (p) {
+          p.label = d.label;
+        });
         return d.properties;
       })
       .call(propertyCtor);

@@ -95,6 +95,8 @@
 					</core-item>
 
 					<core-item label="D3"
+						data-global="d3"
+						data-allfunctions="true"
 						data-value="render:d3">
 					</core-item>
 
@@ -155,10 +157,13 @@
 					label="My libraries"
 					>
 					<core-item label="PojoViz"
+						data-global="pojoviz"
+						data-rendereachtime="true"
 						data-value="render:pojoviz">
 					</core-item>
 
 					<core-item label="t3"
+						data-global="t3"
 						data-value="render:t3">
 					</core-item>
 				</core-submenu>
@@ -175,6 +180,7 @@
 						</core-tooltip>
 					</core-item>
 
+					<!-- declared in object hashes -->
 					<core-item label="three.js"
 						data-value="render:three">
 					</core-item>
@@ -310,11 +316,25 @@
 				var v = e.state.value;
 				if (~v.indexOf('render')) {
 					runLibrary(e.state);
-				} else if (v === 'settings') {
+					return;
+				}
+
+				if (v === 'settings') {
 					pages.selected = 'settings';
 				} else if (v === 'readme') {
 					pages.selected = 'readme';
 				}
+				tool.textContent = '';
+			};
+
+			window.pushState = function (hash) {
+				// history
+				var el = document.querySelector('[data-value="' +
+					hash + '"]');
+				if (!el) {
+					el = scaffold.querySelector('#readme');
+				}
+				changeHistory(el);
 			};
 
 			// settings + readme
@@ -335,14 +355,24 @@
 				});
 
 			window.addEventListener('polymer-ready', function () {
-				var el;
-				if (history.state) {
-					el = document.querySelector('[data-value="' +
-						history.state.value + '"]');
-				} else {
-					el = scaffold.querySelector('#readme');
+				var el,
+					hash = (history.state && history.state.value) ||
+						location.hash.substr(1);
+
+				window.pushState(hash);
+
+				// query params
+				var params = {};
+				location.search.substring(1).split('&')
+					.forEach(function (v) {
+						var sp = v.split('=');
+						params[sp[0]] = sp[1];
+					});
+
+				// hide some elements
+				if (params.toolbar === 'false') {
+					document.documentElement.className += ' notoolbar';
 				}
-				changeHistory(el);
 			});
 		})();
 	</script>

@@ -28,6 +28,14 @@ $color-successor: $blue-500;
   padding: 0!important;
 }
 
+html {
+  &.notoolbar {
+    /deep/ core-toolbar {
+      display: none;
+    }
+  }
+}
+
 // polymer style fix
 body {
   core-animated-pages {
@@ -41,6 +49,7 @@ body {
       padding: 40px;
     }
   }
+
 
   /deep/ {
     h1 {
@@ -60,6 +69,22 @@ body {
     }
     core-item:hover {
       cursor: pointer!important;
+    }
+    .readme-iframe {
+      margin: auto;
+      display: block;
+      html {
+        -webkit-box-shadow: inset 0px 0px 14px 0px rgba(0,0,0,0.75);
+        -moz-box-shadow: inset 0px 0px 14px 0px rgba(0,0,0,0.75);
+        box-shadow: inset 0px 0px 14px 0px rgba(0,0,0,0.75);
+      }
+    }
+    .as-button {
+      text-decoration: none;
+      padding: 10px;
+      @include border-radius(15px);
+      background: $main;
+      color: white;
     }
   }
 }

@@ -15,14 +15,16 @@ function GenericAnalyzer(options) {
   // }
   this.global = options.global;
   this.displayname = options.displayname;
-  this.rendereachtime = options.rendereachtime;
   this.levels = options.hasOwnProperty('levels') ? options.levels : 10;
   this.forbidden = options.forbidden || [];
   this.src = options.src;
   this._hasfc = options.hasOwnProperty('functionconstructors');
   this.functionconstructors = this._hasfc ?
     options.functionconstructors : GenericAnalyzer.SHOW_FUNCTION_CONSTRUCTORS;
-  this.allfunctions = options.allfunctions;
+  this.rendereachtime = options.hasOwnProperty('rendereachtime') ?
+    options.rendereachtime : false;
+  this.allfunctions = options.hasOwnProperty('allfunctions') ?
+    options.allfunctions : false;
 
   this.inspected = false;
 
@@ -57,6 +59,12 @@ GenericAnalyzer.prototype.parse = function () {
   }
   if (typeof this.functionconstructors === 'string') {
     this.functionconstructors = this.functionconstructors === 'true';
+  }
+  if (typeof this.rendereachtime === 'string') {
+    this.rendereachtime = this.rendereachtime === 'true';
+  }
+  if (typeof this.allfunctions === 'string') {
+    this.allfunctions = this.allfunctions === 'true';
   }
 };
 

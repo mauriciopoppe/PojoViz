@@ -4,7 +4,6 @@ var _ = require('lodash'),
   Generic = require('./analyzer/GenericAnalyzer'),
   Angular = require('./analyzer/Angular'),
   Window = require('./analyzer/Window'),
-  PojoViz = require('./analyzer/PojoViz'),
   PObject = require('./analyzer/Object'),
   BuiltIn = require('./analyzer/BuiltIn');
 
@@ -41,11 +40,9 @@ _.merge(libraries, {
   builtIn: new BuiltIn(),
   window: new Window(),
   // popular
-  d3: new Generic({ global: 'd3', allfunctions: true }),
   angular: new Angular(),
   // mine
-  pojoviz: new PojoViz(),
-  t3: new Generic({ global: 't3' }),
+  // t3: new Generic({ global: 't3' }),
   // huge
   three: new Generic({
     global: 'THREE',

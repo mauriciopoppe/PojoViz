@@ -104,7 +104,9 @@ com_crashlytics_export_strings.xml
 sftp-config.json
 
 ### Bower ###
-public/bower_components
+public/bower_components/*
+!public/bower_components/platform
+!public/bower_components/polymer
 
 ### Node ###
 # Logs

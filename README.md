@@ -1,7 +1,7 @@
 PojoViz - Plain Old JavaScript Object Visualization
 =======
 
-%PojoViz is a tool to analyze the plain objects of a JavaScript library/framework by finding all the relationships found among the library entry point (typically a global variable) and the objects/functions linked to it
+%PojoViz is a tool to analyze the plain objects of a JavaScript library/framework by finding all the relationships found between the library entry point (typically a global variable) and the objects/functions linked to it
 
 Note: this project was developed to work with Google Chrome, it's suggested that you use this browser for a complete experience
 
@@ -26,17 +26,16 @@ How many times did you find an awesome library/framework and wanted to see how i
 
 ### Configuration phase
 
-- The library's representation in %PojoViz configured with the following properties:
+- The library's representation in %PojoViz is configured with the following properties:
 
-	- Global access point of the library (e.g. window.d3)
+	- Global access point to the library (e.g. window.d3)
 	- The maximum number of levels allowed while running the DFS algorithm
 	- The *src* of the script (if it's an external resource)
-	- The forbidden objects which are discarded when found by the DFS algorithm
+	- Forbidden objects which are discarded when found by the DFS algorithm
 
 ### Process phase
 
-- After the configuration is read %PojoViz's `ObjectAnalyzer` class analyzes the properties of this object and
-if any of them is an object/function constructor (configurable in settings) then `ObjectAnalyzer` will follow this link recursively saving each object/function found in a `HashMap`
+- After the configuration is read %PojoViz's `ObjectAnalyzer` class analyzes the properties of this object and if any of them is an object/function constructor (configurable in settings) then `ObjectAnalyzer` will follow this link recursively saving each object/function found in a `HashMap`
 - `ObjectAnalyzer` will also in the process save the links (edges of the graph) found (from an object property to an object/function constructor) in an array for later use
 - The main program will ask `ObjectAnalyzer` for a JSON representation of the nodes/edges of the generated graph
 - [Dagre](https://github.com/cpettitt/dagre)'s layout program is executed with the generated JSON which returns the positions of each node in a 2D plane
@@ -119,7 +118,7 @@ Forbids each element of the array `objects` from being analyzed
 Analyzes each element of the array `objects`
 
 #### instance.stringify()
-Stringifies the internal representation of the graph, this line should be called after `add` is called, it returns the following object
+Stringifies the internal representation of the graph, this line should be called after `add` is called, it returns a JSON representation of the graph like this one:
 
 ```javascript
 {
@@ -211,7 +210,7 @@ Stringifies the internal representation of the graph, this line should be called
 
 - Development
 - Move to the selected object on dot click
-- Undo/redo when doing the previous operation
+- Undo/redo
 
 ## Acknowledgments
 

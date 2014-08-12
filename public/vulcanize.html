@@ -11245,11 +11245,19 @@ license that can be found in the LICENSE file.
 
 			ready: function () {
 				var me = this,
+					urlRegex = /\s*http[s]?:\/\/.*?\/([-_\w]*\.js)\s*/gi,
 					timer;
 				me.$.inputQuery.oninput = function () {
+					var text = me.$.inputQuery.inputValue;
 					clearTimeout(timer);
 					timer = setTimeout(function () {
-						me.onSearch();
+						var m = text.match(urlRegex);
+						if (m) {
+							me.libraryUrl = text;
+							me.libraryName = text;
+						} else {
+							me.onSearch();
+						}
 					}, 1000);
 				};
 			},

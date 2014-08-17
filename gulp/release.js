@@ -9,16 +9,19 @@ var tagVersion = require('gulp-tag-version');
 
 module.exports = function (options) {
   function createTag(type, cb) {
-    gulp.src(['../package.json', '../bower.json'])
+    gulp.src(['./package.json', './bower.json'])
       .pipe(bump({ type: type }))
-      .pipe(gulp.dest('../'))
+      .pipe(gulp.dest('./'))
       .pipe(git.commit('bump version'))
       .pipe(filter('package.json'))
-      .pipe(tagVersion());
+      .pipe(tagVersion())
+      .on('error', function (err) {
+        console.error(err);
+      });
 
     exec('./push.sh', function (err, stdout, stderr) {
       console.log(stdout);
-      console.log(stderr);
+      console.error(stderr);
       cb(err);
     });
   }

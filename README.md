@@ -40,9 +40,9 @@ How many times did you find an awesome library/framework and wanted to see how i
 - The main program will ask `ObjectAnalyzer` for a JSON representation of the nodes/edges of the generated graph
 - [Dagre](https://github.com/cpettitt/dagre)'s layout program is executed with the generated JSON which returns the positions of each node in a 2D plane
 
-### Rendering phase
+### Render phase
 
-- The chosen renderer (d3 or three.js) builds the graph provided by the process phase by rendering the nodes' properties and edges
+- The chosen renderer (d3 or three.js) renders the graph provided by the process phase
 
 ## Hello Pojoviz
 
@@ -54,7 +54,8 @@ Object
  ... many properties here
  + keys (function)
  +--> prototype (object, the Object's prototype)
- +--> [[Prototype]] (the hidden link to its prototype, which is Function.prototype since Object is a function)
+ +--> [[Prototype]] (the hidden link to its prototype, which is
+ 					Function.prototype since Object is a function)
 
 	Object.prototype
 	 + toString (function, not a function constructor so it's not saved)

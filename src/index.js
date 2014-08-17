@@ -2,8 +2,7 @@ var _ = require('lodash'),
   Q = require('q'),
   dagre = require('dagre'),
   utils = require('./util/'),
-  ObjectHashes = require('./ObjectHashes'),
-  renderers = require('./renderer');
+  ObjectHashes = require('./ObjectHashes');
 
 // enable long stacks
 Q.longStackSupport = true;
@@ -158,6 +157,10 @@ function render() {
 
 // public api
 pojoviz = {
+  renderers: {},
+  addRenderers: function (newRenderers) {
+    _.merge(pojoviz.renderers, newRenderers);
+  },
   nullifyContainer: function () {
     oldContainer = container;
     container = null;
@@ -180,7 +183,7 @@ pojoviz = {
   },
   setRenderer: function (r) {
     oldRenderer = renderer;
-    renderer = renderers[r];
+    renderer = pojoviz.renderers[r];
   },
   getRenderer: function () {
     return renderer;
@@ -198,9 +201,6 @@ pojoviz = {
   // user vars
   userVariables: []
 };
-
-// defaults
-pojoviz.setRenderer('three');
 
 // custom events
 document.addEventListener('property-click', function (e) {

@@ -1,4 +1,4 @@
-var Canvas = require('../view/Canvas'),
+var Canvas = require('./Canvas'),
   canvas;
 
 module.exports = {

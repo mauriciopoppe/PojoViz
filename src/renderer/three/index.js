@@ -1,3 +1,5 @@
+require('./PanControls');
+
 var t3 = require('t3'),
   _ = require('lodash'),
   THREE = require('THREE'),

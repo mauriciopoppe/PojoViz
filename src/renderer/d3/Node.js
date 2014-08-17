@@ -1,8 +1,8 @@
 var _ = require('lodash'),
   d3 = require('d3'),
-  utils = require('../util/'),
+  utils = require('../../util/'),
   pojoVizProperty = require('./Property'),
-  hashKey = require('../util/hashKey');
+  hashKey = require('../../util/hashKey');
 
 var prefix = utils.prefixer;
 var escapeCls = utils.escapeCls;

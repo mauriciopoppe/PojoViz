@@ -1,18 +1,18 @@
 {
-  "name": "pojoviz",
-  "version": "0.0.1",
+  "name": "PojoViz",
+  "version": "0.1.1",
   "authors": [
-    "Mauricio Poppe <me@maurizzzio.com>"
+    "Mauricio Poppe <me@maurizzzio.me>"
   ],
-  "description": "Plain Old Javascript Object Visualization - Visualize your code",
+  "description": "PojoViz - Plain Old Javascript Object Visualization - analyze the plain objects of a JavaScript library/framework",
   "main": "index.html",
   "moduleType": [
-    "amd"
+    "umd"
   ],
   "keywords": [
-    "pojo",
-    "d3",
-    "visualization"
+    "PojoViz",
+    "JavaScript",
+    "Visualization"
   ],
   "license": "MIT",
   "homepage": "pojoviz.maurizzzio.me",
@@ -21,8 +21,9 @@
     "node_modules",
     "bower_components",
     "test",
-    "tests",
-    "public"
+    "public",
+    "gulp",
+    "src",
   ],
   "dependencies": {
     "t3": "~0.1.1",

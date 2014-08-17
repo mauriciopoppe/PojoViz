@@ -1,6 +1,6 @@
 var d3 = require('d3'),
   _ = require('lodash'),
-  utils = require('../util/'),
+  utils = require('../../util/'),
   pojoVizNode = require('./Node');
 
 var svg = d3.select('svg#canvas');

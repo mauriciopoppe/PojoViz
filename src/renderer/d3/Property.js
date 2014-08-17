@@ -1,6 +1,6 @@
 var d3 = require('d3'),
   _ = require('lodash'),
-  utils = require('../util/');
+  utils = require('../../util/');
 
 var prefix = utils.prefixer;
 var escapeCls = utils.escapeCls;

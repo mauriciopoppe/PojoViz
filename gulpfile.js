@@ -1,169 +1,85 @@
-// libs
-var browserSync = require('browser-sync');
-var watchify = require('watchify');
-var browserify = require('browserify');
-var source = require('vinyl-source-stream');
-var exec = require('child_process').exec;
-var pkg = require('./package.json');
-var path = require('path');
-
-// gulp extras
 var gulp = require('gulp');
-var mocha = require('gulp-mocha');
-var git = require('gulp-git');
-var compass = require('gulp-compass');
-var concat = require('gulp-concat');
-var bump = require('gulp-bump');
-var rename = require('gulp-rename');
-var filter = require('gulp-filter');
-var gulpif = require('gulp-if');
-var uglify = require('gulp-uglify');
-var vulcanize = require('gulp-vulcanize');
-var useref = require('gulp-useref');
-var tagVersion = require('gulp-tag-version');
-var useWatchify;
+var path = require('path');
+var _ = require('lodash');
+var me = __dirname;
+var pkg = require('./package.json');
 
-function run(bundler, minify) {
-  var output = './build/';
-  if (minify) {
-    bundler = bundler.plugin('minifyify', {
-      map: pkg.name + '.map.json',
-      output: output + pkg.name + '.map.json'
-    });
-  }
-
-  console.time('build');
-  return bundler
-    .bundle({
-      debug: true,
-      standalone: 'pojoviz'
-    })
-    .on('error', function (e) {
-      console.log(e);
-    })
-    .pipe(source(pkg.name + (minify ? '.min' : '') + '.js'))
-    .pipe(gulp.dest(output))
-    .on('end', function () {
-      console.timeEnd('build');
-    });
-}
-
-gulp.task('browserify', function () {
-  var method = useWatchify ? watchify : browserify;
-
-  var bundler = method({
-    entries: ['./src/index.js'],
-    extensions: ['js']
-  });
-
-  var bundle = function () {
-    if (!useWatchify) {
-      // concat + min
-      run(bundler, true);
-    }
-    // concat
-    return run(bundler);
-  };
-
-  if (useWatchify) {
-    bundler.on('update', bundle);
-  }
-
-  return bundle();
+var options = {
+  // client side project
+  project: 'public/',
+  // server side project
+  build: 'build/',
+  src: 'src/',
+  test: 'test/',
+  // for a client side project that needs minification
+  dist: 'dist/'
+};
+_(options).forOwn(function (v, k) {
+  options[k] = path.resolve(me, v);
 });
+options.libs = [
+  { require: 'q', expose: 'q' },
+  { require: 'lodash', expose: 'lodash' }
+];
 
-gulp.task('browserSync', ['browserify'], function () {
-  browserSync.init(['./build/*'], {
-    server: {
-      baseDir: './'
-    }
-  });
-});
+// tasks:
+// - bundle:vendor
+// - bundle:app
+var bundler = require('./gulp/bundle');
+bundler(options);
+// tasks:
+// - index:build
+require('./gulp/client')(options);
+// tasks:
+// - compass
+// - watch:compass
+require('./gulp/compass')(options);
+// tasks:
+// - server
+require('./gulp/server')(options);
+// tasks:
+// - test
+// - watch:test
+require('./gulp/test')(options);
+// tasks:
+// - polymer:rename
+// - polymer:build
+// - polymer
+require('./gulp/polymer')(_.merge(options, {
+  outputName: 'vulcanize.html',
+  outputDir: './public/'
+}));
+// tasks:
+// - release:major
+// - release:minor
+// - release:patch
+require('./gulp/release')();
 
-gulp.task('compass', function () {
-  return gulp.src('./public/sass/*.scss')
-    .pipe(compass({
-      config_file: 'compass.rb',
-      css: 'public/css',
-      sass: 'public/sass'
-    }))
-    .on('error', function (e) {
-      console.log(e);
-    })
-    .pipe(browserSync.reload({
-      stream: true
-    }));
-});
-
-gulp.task('testOnce', function () {
-  return gulp.src('./test/')
-    .pipe(mocha({
-      reporter: 'spec'
-    }));
-});
-
-function createTag(type, cb) {
-  gulp.src(['./package.json', './bower.json'])
-    .pipe(bump({ type: type }))
-    .pipe(gulp.dest('./'))
-    .pipe(git.commit('bump version'))
-    .pipe(filter('package.json'))
-    .pipe(tagVersion());
-
-  exec('./push.sh', function (err, stdout, stderr) {
-    console.log(stdout);
-    console.log(stderr);
-    cb(err);
-  });
-}
-
-gulp.task('useWatchify', function () {
-  useWatchify = true;
-});
-
-gulp.task('watch', ['useWatchify', 'browserSync'],  function () {
-  gulp.watch('public/sass/**', ['compass']);
-  gulp.watch('test/**', ['testOnce']);
-});
-
-gulp.task('rename', function () {
-  return gulp.src('public/index.html')
-    .pipe(rename('vulcanize.html'))
-    .pipe(gulp.dest('public/'));
-});
-
-gulp.task('vendor', ['rename'], function () {
-  var assets = useref.assets();
-  return gulp.src('public/vulcanize.html')
-    .pipe(assets)
-    .pipe(gulpif('*.js', uglify()))
-    .pipe(assets.restore())
-    .pipe(useref())
-    .pipe(gulp.dest('public/'));
-});
-
-gulp.task('vulcanize', ['vendor'], function () {
-  return gulp.src('./public/vulcanize.html')
-    .pipe(vulcanize({
-      dest: './public/vulcanize.html',
-    }))
-    .pipe(gulp.dest('./public/'));
-});
 // main tasks
-gulp.task('build', ['browserify', 'compass', 'vulcanize']);
-
-gulp.task('release.major', function (cb) { createTag('major', cb); });
-gulp.task('release.minor', function (cb) { createTag('minor', cb); });
-gulp.task('release.patch', function (cb) { createTag('patch', cb); });
-
-gulp.task('test', function () {
-  var watcher = gulp.watch(
-    ['src/**/*.js', 'test/*.js'],
-    ['testOnce']
-  );
-  // watcher.on('change', function(event) {
-  //   console.log('File '+event.path+' was '+event.type+', running tasks...');
-  // });
+gulp.task('watch', ['watch:test', 'watch:compass']);
+gulp.task('default', ['bundle', 'bundle:renderer', 'watch'], function () {
+  gulp.start('server');
 });
 
-gulp.task('default', ['watch']);
+// **** Custom build for pojoviz renderers ****
+gulp.task('bundle:renderer', function () {
+  bundler.bundlerGenerator({
+    src: './src/renderer/index.js',
+    name: pkg.name + '-renderers',
+    onPreBundle: function (bundler) {
+      options.libs.forEach(function(lib) {
+        bundler.external(lib.require, {expose: lib.expose});
+      });
+    }
+  });
+});
+
+// show be run with NODE_ENV=production
+gulp.task('build', [
+  'bundle',
+  'bundle:renderer',
+  'polymer',
+  'test',
+  'compass'
+  // 'index:build'
+]);

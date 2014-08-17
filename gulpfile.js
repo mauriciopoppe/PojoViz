@@ -19,7 +19,8 @@ _(options).forOwn(function (v, k) {
 });
 options.libs = [
   { require: 'q', expose: 'q' },
-  { require: 'lodash', expose: 'lodash' }
+  { require: 'lodash', expose: 'lodash' },
+  { require: 'dagre', expose: 'dagre' }
 ];
 
 // tasks:

@@ -18,7 +18,6 @@
     ]
   },
   "browserify-shim": {
-    "dagre": "global:dagre",
     "THREE": "global:THREE",
     "t3": "global:t3",
     "d3": "global:d3",

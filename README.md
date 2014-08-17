@@ -113,15 +113,12 @@ bower install pojoviz
 
 Usage:
 ```html
-<!-- dagre is not included in the bundle -->
-<script src="path/to/dagre"></script>
-
-<!-- include this script only if you don't use Q and lodash -->
+<!-- dagre, Q and lodash -->
 <script src="bower_components/pojoviz/build/pojoviz-vendor.js"></script>
 <script src="bower_components/pojoviz/build/pojoviz.js"></script>
 
 <!-- include this script if you want the d3 and three.js renderers too -->
-<!-- required dependencies: THREE, sole/tween.js, d3 -->
+<!-- required dependencies: THREE, sole/tween.js, d3, t3 -->
 <script src="bower_components/pojoviz-renderers.js"></script>
 ```
 
@@ -236,6 +233,10 @@ Stringifies the internal representation of the graph, this line should be called
 
 ## Changelog
 
+v0.1.2
+
+- Dagre is now in the pojoviz-vendor bundle
+
 v0.1.1
 
 - Improvements in the build system
@@ -243,7 +244,7 @@ v0.1.1
 
 v0.1.0
 
-Initial release
+- Initial release
 
 ## TODO list
 

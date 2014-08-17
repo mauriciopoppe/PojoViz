@@ -47,7 +47,7 @@ _.merge(libraries, {
   three: new Generic({
     global: 'THREE',
     rendereachtime: true
-  }),
+  })
 });
 
 // console.log(libraries);

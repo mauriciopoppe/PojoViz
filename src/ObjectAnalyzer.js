@@ -282,14 +282,6 @@ Analyzer.prototype = {
           !me.isForbidden(v)              // forbidden check
           ) {
 
-        // if (v.hasOwnProperty('__processed__')) {
-        //   debugger;
-        //   throw 'wtf';
-        // }
-        // Object.defineProperty(v, '__processed__', {
-        //   value: 'processsed'
-        // });
-
         // add to the registered object pool
         me.objects.put(v);
 

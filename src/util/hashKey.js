@@ -65,7 +65,7 @@ me.createHashKeysFor = function (obj, name) {
   function localToString(obj) {
     var match;
     try {
-      match = obj.toString().match(/^\[object (\S*?)\]/);
+      match = {}.toString.call(obj).match(/^\[object (\S*?)\]/);
     } catch (e) {
       match = false;
     }
@@ -100,7 +100,8 @@ me.createHashKeysFor = function (obj, name) {
     // generate a new key based on
     // - the name if it's a function
     // - a unique id
-    name = typeof obj.name === 'string' &&
+    name = typeof obj === 'function' &&
+      typeof obj.name === 'string' &&
       obj.name;
 
     className = hasAClassName(obj);
@@ -125,7 +126,7 @@ me.createHashKeysFor = function (obj, name) {
       obj.hasOwnProperty('constructor') &&
       typeof obj.constructor === 'function' &&
       obj.constructor !== obj) {
-    return me.createHashKeysFor(obj.constructor);
+    me.createHashKeysFor(obj.constructor);
   }
 
   // set name on self

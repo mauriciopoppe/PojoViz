@@ -114,6 +114,19 @@
 
 		<section>
 			<h3>
+				ExtJS max depth
+				<span class="depth-value">{{$.extDepth.value}}</span>
+			</h3>
+			<p>
+				Defines the maximum depth when running the dfs algorithm starting from the <i>Ext</i> object <br />
+				WARNING: The higher the value the longer the time needed for the browser to render the nodes
+			</p>
+			<paper-slider on-change="{{extDepthChange}}" id="extDepth" pin snaps max="10" step="1" value="3">
+			</paper-slider>
+		</section>
+
+		<section>
+			<h3>
 				three.js max depth
 				<span class="depth-value">{{$.threeDepth.value}}</span>
 			</h3>
@@ -154,6 +167,12 @@
 			windowDepthChange: function (event, detail, el) {
 				var objectHashes = pojoviz.ObjectHashes;
 				objectHashes.window.levels = el.value;
+			},
+
+			extDepthChange: function (event, detail, el) {
+				var objectHashes = pojoviz.ObjectHashes;
+				objectHashes.extjs &&
+					(objectHashes.extjs.levels = el.value);
 			},
 
 			threeDepthChange: function (event, detail, el) {

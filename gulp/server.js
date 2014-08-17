@@ -18,7 +18,7 @@ module.exports = function (options) {
       server: {
         baseDir: root
       },
-      logLevel: 'debug',
+      // logLevel: 'debug',
       // notify: false,
       // tunnel: true
     });

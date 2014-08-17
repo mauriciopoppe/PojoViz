@@ -9,6 +9,8 @@
   <!-- Meta -->
   <meta content="PojoViz" property="og:title">
   <meta content="PojoViz - visualize your code" name="description">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
 
 	<link rel="import" href="bower_components/core-scaffold/core-scaffold.html">
 	<link rel="import" href="bower_components/core-toolbar/core-toolbar.html">
@@ -141,14 +143,6 @@
 						data-value="render:backbone"
 						data-global="Backbone">
 					</core-item>
-
-					<!-- <core-item label="ExtJS Core"
-						data-src="//cdnjs.cloudflare.com/ajax/libs/extjs/4.2.1/builds/ext-core-dev.js"
-						data-functionconstructors="false"
-						data-value="render:extjs"
-						data-global="Ext">
-					</core-item> -->
-
 				</core-submenu>
 
 				<core-submenu
@@ -175,6 +169,17 @@
 					<core-item label="window"
 						data-value="render:window">
 						<core-tooltip label="huge data is coming" position="right">
+							<core-icon icon="warning" size="10"></core-icon>
+						</core-tooltip>
+					</core-item>
+
+					<core-item label="ExtJS Core"
+						data-value="render:extjs"
+						data-src="//cdn.sencha.com/ext/gpl/4.2.1/ext-all.js"
+						data-functionconstructors="false"
+						data-levels="2"
+						data-global="Ext">
+						<core-tooltip label="O: too much data" position="right">
 							<core-icon icon="warning" size="10"></core-icon>
 						</core-tooltip>
 					</core-item>

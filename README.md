@@ -45,6 +45,62 @@ How many times did you find an awesome library/framework and wanted to see how i
 
 - The chosen renderer (d3 or three.js) renders the graph provided by the process phase
 
+### Development notes
+
+- %PojoViz's `hashKey` class adds an additional property to any object analyzed which is `__pojoVizKey__`, the property is not writtable nor enumerable which has the form:
+
+```javascript
+[typeof [object]]-[object name]
+
+examples:
+
+  for Object.prototype
+  - object-Object-prototype
+
+  for the Object contructor
+  - function-Object
+
+  for a simple whose name can't be determined
+  - object-1
+
+```
+
+- %PojoViz's `hashKey` determines the name of a function/object with the following algorithm
+
+  - If the function has a `name` property then this property is the name of the object (this only works for functions)
+  - Analyze the hidden `[[Classname]]` property of the object by calling `{}.toString.call(object)`, if it gives the constructor name like `[object Date]` then the name of the object is `Date`
+  - If the object analyzed has a `name` at this point then it's `prototype` object is analyzed and given the name `name-prototype` if it doesn't have a name already:
+
+  ```javascript
+    e.g. analyzing the Object function
+    Object's name = Object
+      +--> when Object.prototype is analyzed it gets
+           the name Object.prototype
+  ```
+
+  - If the object doesn't have a name at this point then it's `constructor` property is analyzed if it's a function performing the steps above, hopefully doing it this way the constructor gets a name and it's prototype too
+
+  ```javascript
+    e.g. analyzing the Function.prototype object
+    Function.prototype doesn't have a name :(
+      +--> Check Function.prototype.constructor
+        +--> Function constructor has a name :)
+        +--> Function.prototype now gets the name of its constructor
+             appending -prototype
+  ```
+
+  - If the object doesn't have a name at this point then a unique name is generated using `_.uniqueId()` thus the name is always an increasing unqiue number
+
+- Some properties are not considered even if they are linkeable, these are: `calle`, `caller`, `arguments`
+- There are some hidden properties that are visible after executing `Object.getOwnPropertyNames`, the properties that match the following regex are not considered:
+
+  - `/^__.*?__$/` e.g. `__data__`
+  - `/^\$\$.*?\$\$$/` e.g. `$$hashKey$$`
+  - `/[:+~!><=//\[\]@ ]/` e.g. `+, @q, +=, -=`, this is done because we can't set a css class to an element with those characters ([Allowed characters](http://stackoverflow.com/questions/448981/what-characters-are-valid-in-css-class-selectors))
+
+- To boost the performance of the analysis step two objects are used to cache some properties for the nodes/edges
+- The current bottleneck of all the process is sadly the layout program
+
 ## Hello Pojoviz
 
 Let's say we want to analyze the structure of the mother of all objects, the  `Object` function, in the following example each link analyzed is marked with `-->`:
@@ -121,10 +177,6 @@ Usage:
 <!-- required dependencies: THREE, sole/tween.js, d3, t3 -->
 <script src="bower_components/pojoviz-renderers.js"></script>
 ```
-
-Development notes:
-
-- %PojoViz's `hashKey` class adds an additional property to any object analyzed which is `__pojoVizKey__`, the property is not writtable nor enumerable
 
 ## API
 
@@ -232,6 +284,11 @@ Stringifies the internal representation of the graph, this line should be called
 ```
 
 ## Changelog
+
+v0.1.3
+
+- Fixed a problem with the `hashKey` function that didn't create a hidden key in some objects
+- Added some development notes in this file
 
 v0.1.2
 

@@ -16,7 +16,7 @@ module.exports = function (options) {
       .pipe(filter('package.json'))
       .pipe(tagVersion());
 
-    exec('./push.sh', function (err, stdout, stderr) {
+    exec('../push.sh', function (err, stdout, stderr) {
       console.log(stdout);
       console.log(stderr);
       cb(err);

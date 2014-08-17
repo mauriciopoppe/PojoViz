@@ -3,7 +3,7 @@ PojoViz - Plain Old JavaScript Object Visualization
 
 %PojoViz is a tool to analyze the plain objects of a JavaScript library/framework by finding all the relationships found between the library entry point (typically a global variable) and the objects/functions linked to it
 
-Note: this project was developed to work with Google Chrome, it's suggested that you use this browser for a complete experience
+Note: this webpage was developed to work with Google Chrome and it uses <a href="http://caniuse.com/shadowdom">Shadow DOM</a>, it's suggested that you use this browser for a complete experience
 
 ## Why?
 
@@ -11,12 +11,12 @@ How many times did you find an awesome library/framework and wanted to see how i
 
 ## Features
 
-- Export any graph to a simple JSON file consisting of node/edges
+- Export the generated graph to a simple JSON file consisting of nodes/edges
 - Two renderers: SVG (d3) and WebGL (threejs)
 
 <img class="center" src="http://f.cl.ly/items/1h1Y1b1y3z363T1d0U3z/pojovizthree.mov.gif" alt="">
 
-- Analyze your preferred library/framework hosted on [http://cdnjs.com](http://cdnjs.com)
+- Analyze your preferred library/framework hosted anywhere, additional support to search libraries hosted on [http://cdnjs.com](http://cdnjs.com)
 
 <img class="center" src="http://f.cl.ly/items/0s2I0u2t2y1x2N3o0n2P/pojoviz-search.mov.gif" alt="">
 
@@ -28,16 +28,17 @@ How many times did you find an awesome library/framework and wanted to see how i
 
 - The library's representation in %PojoViz is configured with the following properties:
 
-	- Global access point to the library (e.g. window.d3)
+	- Global access point to the library (e.g. window.d3 or window.THREE)
 	- The maximum number of levels allowed while running the DFS algorithm
-	- The *src* of the script (if it's an external resource)
-	- Forbidden objects which are discarded when found by the DFS algorithm
+	- The *src* of the script (if it fetched from an external resource)
+	- The forbidden objects which are discarded when found by the DFS algorithm
 
 ### Process phase
 
-- After the configuration is read %PojoViz's `ObjectAnalyzer` class analyzes the properties of this object and if any of them is an object/function constructor (configurable in settings) then `ObjectAnalyzer` will follow this link recursively saving each object/function found in a `HashMap`
-- `ObjectAnalyzer` will also in the process save the links (edges of the graph) found (from an object property to an object/function constructor) in an array for later use
-- The main program will ask `ObjectAnalyzer` for a JSON representation of the nodes/edges of the generated graph
+- After the configuration is read %PojoViz's `ObjectAnalyzer` class analyzes the properties the global library/framework object, if any of these properties is an object/function constructor (configurable in settings) then `ObjectAnalyzer` will follow this link
+- The previous step is done recursively saving each object/function found in a `HashMap` until maximum number of levels has been reached discarding the `fobidden objects` in the process
+- `ObjectAnalyzer` will also in the process save the links found (from an object property to an object/function constructor) as the edges an internal  graph
+- The main program then asks `ObjectAnalyzer` for a JSON representation of the nodes/edges of the generated graph
 - [Dagre](https://github.com/cpettitt/dagre)'s layout program is executed with the generated JSON which returns the positions of each node in a 2D plane
 
 ### Render phase
@@ -101,6 +102,32 @@ it('should store the objects correctly', function () {
 ```
 
 <a class="as-button" href="javascript:pushState('render:object')">Show me the Object example</a>
+
+## Installation
+
+With bower:
+
+```javascript
+bower install pojoviz
+```
+
+Usage:
+```html
+<!-- dagre is not included in the bundle -->
+<script src="path/to/dagre"></script>
+
+<!-- include this script only if you don't use Q and lodash -->
+<script src="bower_components/pojoviz/build/pojoviz-vendor.js"></script>
+<script src="bower_components/pojoviz/build/pojoviz.js"></script>
+
+<!-- include this script if you want the d3 and three.js renderers too -->
+<!-- required dependencies: THREE, sole/tween.js, d3 -->
+<script src="bower_components/pojoviz-renderers.js"></script>
+```
+
+Development notes:
+
+- %PojoViz's `hashKey` class adds an additional property to any object analyzed which is `__pojoVizKey__`, the property is not writtable nor enumerable
 
 ## API
 
@@ -207,9 +234,19 @@ Stringifies the internal representation of the graph, this line should be called
 }
 ```
 
+## Changelog
+
+v0.1.1
+
+- Improvements in the build system
+- %PojoViz is now available through bower
+
+v0.1.0
+
+Initial release
+
 ## TODO list
 
-- Development
 - Move to the selected object on dot click
 - Undo/redo
 

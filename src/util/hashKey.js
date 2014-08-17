@@ -110,13 +110,13 @@ me.createHashKeysFor = function (obj, name) {
     }
 
     name = name || _.uniqueId();
-    name = name.replace(/[\. ]/img, '-');
     return name;
   }
 
   // the name is equal to the passed name or the
   // generated name
   name = name || getName(obj);
+  name = name.replace(/[\. ]/img, '-');
 
   // if the obj is a prototype then try to analyze
   // the constructor first so that the prototype becomes

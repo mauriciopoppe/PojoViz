@@ -199,7 +199,7 @@ Analyzer.prototype = {
       return ~forbiddenInStrictMode.indexOf(v) ||
         v.match(/^__.*?__$/) ||
         v.match(/^\$\$.*?\$\$$/) ||
-        v.match(/[:+~!><=//\[\]@ ]/);
+        v.match(/[:+~!><=//\[\]@\. ]/);
     }
 
     properties = _.filter(properties, function (v) {

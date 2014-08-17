@@ -96,7 +96,7 @@ examples:
 
   - `/^__.*?__$/` e.g. `__data__`
   - `/^\$\$.*?\$\$$/` e.g. `$$hashKey$$`
-  - `/[:+~!><=//\[\]@ ]/` e.g. `+, @q, +=, -=`, this is done because we can't set a css class to an element with those characters ([Allowed characters](http://stackoverflow.com/questions/448981/what-characters-are-valid-in-css-class-selectors))
+  - `/[:+~!><=//\[\]@\. ]/` e.g. `+, @q, +=, -=`, this is done because we can't set a css class to an element with those characters ([Allowed characters](http://stackoverflow.com/questions/448981/what-characters-are-valid-in-css-class-selectors))
 
 - To boost the performance of the analysis step two objects are used to cache some properties for the nodes/edges
 - The current bottleneck of all the process is sadly the layout program

@@ -1,9 +1,9 @@
 PojoViz - Plain Old JavaScript Object Visualization
 =======
 
-%PojoViz is a tool to analyze the plain objects of a JavaScript library/framework by finding all the relationships found between the library entry point (typically a global variable) and the objects/functions linked to it
+%PojoViz is a tool to analyze the plain objects of a JavaScript library/framework by finding all the relationships found between the library entry point (typically a global variable) and the objects/functions linked to it.
 
-Note: this webpage was developed to work with Google Chrome and it uses <a href="http://caniuse.com/shadowdom">Shadow DOM</a>, it's suggested that you use this browser for a complete experience
+Note: this webpage was developed to work with Google Chrome and it uses <a href="http://caniuse.com/shadowdom">Shadow DOM</a>, it's suggested that you use this browser for a complete experience.
 
 ## Why?
 
@@ -30,14 +30,14 @@ How many times did you find an awesome library/framework and wanted to see how i
 
 	- Global access point to the library (e.g. window.d3 or window.THREE)
 	- The maximum number of levels allowed while running the DFS algorithm
-	- The *src* of the script (if it fetched from an external resource)
-	- The forbidden objects which are discarded when found by the DFS algorithm
+	- The *src* of the script (if it's an external resource)
+	- The *forbidden objects* which are discarded when found by the DFS algorithm
 
 ### Process phase
 
 - After the configuration is read %PojoViz's `ObjectAnalyzer` class analyzes the properties the global library/framework object, if any of these properties is an object/function constructor (configurable in settings) then `ObjectAnalyzer` will follow this link
-- The previous step is done recursively saving each object/function found in a `HashMap` until maximum number of levels has been reached discarding the `fobidden objects` in the process
-- `ObjectAnalyzer` will also in the process save the links found (from an object property to an object/function constructor) as the edges an internal  graph
+- The previous step is done recursively saving each object/function found in a `HashMap` until the maximum number of levels has been reached discarding the *fobidden objects* in the process, these are the nodes of the graph
+- `ObjectAnalyzer` will also in the process save the links found (from an object property to an object/function constructor), these are the edges of the graph
 - The main program then asks `ObjectAnalyzer` for a JSON representation of the nodes/edges of the generated graph
 - [Dagre](https://github.com/cpettitt/dagre)'s layout program is executed with the generated JSON which returns the positions of each node in a 2D plane
 
@@ -47,29 +47,29 @@ How many times did you find an awesome library/framework and wanted to see how i
 
 ### Development notes
 
-- %PojoViz's `hashKey` class adds an additional property to any object analyzed which is `__pojoVizKey__`, the property is not writtable nor enumerable which has the form:
+- %PojoViz's `hashKey` class adds an additional property to any object analyzed which is `__pojoVizKey__`, the property is not writtable nor enumerable and has the form:
 
 ```javascript
 [typeof [object]]-[object name]
 
 examples:
 
-  for Object.prototype
-  - object-Object-prototype
-
-  for the Object contructor
+  the Object contructor
   - function-Object
 
-  for a simple whose name can't be determined
+  Object.prototype
+  - object-Object-prototype
+
+  for a simple object whose name can't be determined
   - object-1
 
 ```
 
-- %PojoViz's `hashKey` determines the name of a function/object with the following algorithm
+- %PojoViz's `hashKey` determines the name of a function/object with the following algorithm:
 
-  - If the function has a `name` property then this property is the name of the object (this only works for functions)
-  - Analyze the hidden `[[Classname]]` property of the object by calling `{}.toString.call(object)`, if it gives the constructor name like `[object Date]` then the name of the object is `Date`
-  - If the object analyzed has a `name` at this point then it's `prototype` object is analyzed and given the name `name-prototype` if it doesn't have a name already:
+  - If the function has a `name` property and it starts with an uppercase letter then this property is the name of the object (this only works for functions)
+  - Make an analysis of the hidden `[[Classname]]` property of the object by calling `{}.toString.call(object)` if it gives the constructor name then this is the name of the object/function, e.g. `[object Date]`
+  - If the object analyzed has a `name` at this point then it's `prototype` object (if there's one) is analyzed and given the name `name-prototype`
 
   ```javascript
     e.g. analyzing the Object function
@@ -78,7 +78,7 @@ examples:
            the name Object.prototype
   ```
 
-  - If the object doesn't have a name at this point then it's `constructor` property is analyzed if it's a function performing the steps above, hopefully doing it this way the constructor gets a name and it's prototype too
+  - If the object doesn't have a name at this point then it's `constructor` property is analyzed only if it's a function performing the steps above, hopefully doing it this way the constructor gets a name and it's prototype too
 
   ```javascript
     e.g. analyzing the Function.prototype object

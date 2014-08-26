@@ -11266,7 +11266,7 @@ license that can be found in the LICENSE file.
 
 			ready: function () {
 				var me = this,
-					urlRegex = /\s*http[s]?:\/\/.*?\/([-_\w]*\.js)\s*/gi,
+					urlRegex = /\s*http[s]?:\/\/.*/gi,
 					timer;
 				me.$.inputQuery.oninput = function () {
 					var text = me.$.inputQuery.inputValue;
@@ -11557,6 +11557,9 @@ license that can be found in the LICENSE file.
 					</core-item>
 
 					<core-item label="Backbone" data-src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.js|//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone.js" data-value="render:backbone" data-global="Backbone">
+					</core-item>
+
+					<core-item label="Marionette.js" data-src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js|//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.js|//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone.js|http://marionettejs.com/downloads/backbone.marionette.js" data-value="render:marionette.js" data-global="Backbone">
 					</core-item>
 				</core-submenu>
 

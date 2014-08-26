@@ -146,7 +146,7 @@
 
 			ready: function () {
 				var me = this,
-					urlRegex = /\s*http[s]?:\/\/.*?\/([-_\w]*\.js)\s*/gi,
+					urlRegex = /\s*http[s]?:\/\/.*/gi,
 					timer;
 				me.$.inputQuery.oninput = function () {
 					var text = me.$.inputQuery.inputValue;

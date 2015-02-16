@@ -77,6 +77,7 @@ function Inspector(config) {
     alwaysDirty: false,
     debug: false,
     forbiddenTokens: Inspector.DEFAULT_FORBIDDEN_TOKENS,
+    additionalForbiddenTokens: '',
     analyzerConfig: {}
   }, config);
 
@@ -136,7 +137,9 @@ function Inspector(config) {
    *
    * @type {Array}
    */
-  this.forbiddenTokens = (config.forbiddenTokens || '').split('|');
+  this.forbiddenTokens = (config.forbiddenTokens || '').split('|').concat(
+    (config.additionalForbiddenTokens || '').split('|')
+  );
 
   /**
    * This inspector is initially in a dirty state
@@ -174,8 +177,8 @@ function Inspector(config) {
 Inspector.instances = null;
 
 Inspector.DEFAULT_FORBIDDEN_TOKENS =
-  //'pojoviz:window|pojoviz:builtIn|global:document';
-  'pojoviz:window|pojoviz:builtIn';
+  'pojoviz:window|pojoviz:builtIn|global:document';
+  //'pojoviz:window|pojoviz:builtIn';
 
 /**
  * Init routine, should be called on demand to initialize the
@@ -303,6 +306,13 @@ Inspector.prototype.unsetDirty = function () {
   return this;
 };
 
+/**
+ * @template
+ * Should be called after the instance is created to modify it with
+ * additional options
+ */
+Inspector.prototype.modifyInstance = function (options) {
+};
 
 /**
  * @private

@@ -3,6 +3,7 @@ var Q = require('q');
 var dagre = require('dagre');
 var utils = require('./util/');
 var InspectedInstances = require('./InspectedInstances');
+var assert = require('assert');
 
 // enable promise chain debug
 Q.longStackSupport = true;
@@ -129,7 +130,7 @@ function render() {
     return;
   }
 
-  utils.notification('processing ' + inspector.global);
+  utils.notification('processing ' + inspector.entryPoint);
 
   // pre render
   oldRenderer && oldRenderer.clean();
@@ -171,21 +172,22 @@ pojoviz = {
   },
   /**
    *
-   * @param entryPoint
    * @param options
    * @returns {Promise}
    */
-  setCurrentInspector: function (entryPoint, options) {
+  setCurrentInspector: function (options) {
+    var entryPoint = options.displayName || options.entryPoint;
+    assert(entryPoint);
     oldInspector = inspector;
     inspector = InspectedInstances[entryPoint];
 
     if (!inspector) {
-      inspector = InspectedInstances.create(entryPoint, options);
+      inspector = InspectedInstances.create(options);
     //} else {
     //  // required to fetch external resources
     //  inspector.src = options.src;
     }
-
+    inspector.modifyInstance(options);
     return inspector.init();
   },
   setRenderer: function (r) {

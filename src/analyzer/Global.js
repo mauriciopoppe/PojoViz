@@ -8,7 +8,6 @@ var toInspect = [global];
 
 function Global() {
   Inspector.call(this, {
-    debug: true,
     analyzerConfig: {
       levels: 1
     },

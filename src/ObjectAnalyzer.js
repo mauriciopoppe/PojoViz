@@ -157,13 +157,6 @@ function Analyzer(config) {
 }
 
 /**
- * TODO: this property is not used anymore in the analyzer
- * see if it can be moved to the Inspector
- * @type {boolean}
- */
-Analyzer.VISIT_BUILTIN_OBJECTS = false;
-
-/**
  * True to add an additional flag to the traversable properties of a node
  * if the node is a constructor
  * @type {boolean}
@@ -251,6 +244,8 @@ Analyzer.prototype = {
       value = obj[property];
     } catch (e) {
       return {
+        parent: obj,
+        property: property,
         unreachable: true,
         isTraversable: false
       };

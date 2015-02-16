@@ -121,7 +121,7 @@ me.createHashKeysFor = function (obj, name) {
       obj.hasOwnProperty('constructor') &&
       typeof obj.constructor === 'function' &&
       obj.constructor !== obj) {
-    return me.createHashKeysFor(obj.constructor);
+    me.createHashKeysFor(obj.constructor);
   }
 
   // set name on self

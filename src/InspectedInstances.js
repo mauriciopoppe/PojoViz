@@ -12,13 +12,13 @@ var proto = {
   /**
    * Creates a new Inspector with `config` as its configuration
    * saved in `this` as `entryPoint`
-   * @param {string} entryPoint
    * @param {Object} options
    * @chainable
    */
-  create: function (entryPoint, options) {
-    console.log('creating a generic container for: ' + entryPoint, options);
-    return (libraries[entryPoint] = new Inspector(options));
+  create: function (options) {
+    var displayName = options.displayName || options.entryPoint;
+    console.log('creating a generic container for: ' + displayName, options);
+    return (libraries[displayName] = new Inspector(options));
   },
   /**
    * Execute `fn` with all the properties saved in `this`

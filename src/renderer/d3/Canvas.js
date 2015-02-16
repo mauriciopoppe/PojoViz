@@ -17,7 +17,6 @@ function getY(d) {
 }
 
 function Canvas(data) {
-  console.log(data);
   this.id = _.uniqueId();
   this.data = data;
   this.createRoot();

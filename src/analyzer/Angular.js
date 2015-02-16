@@ -8,7 +8,8 @@ function Angular(config) {
   Inspector.call(this, _.merge({
     entryPoint: 'angular',
     displayName: 'AngularJS',
-    alwaysDirty: true
+    alwaysDirty: true,
+    additionalForbiddenTokens: 'global:jQuery'
   }, config));
 
   this.services = [
@@ -61,12 +62,28 @@ Angular.prototype.getSelectedServices = function () {
  * @override
  */
 Angular.prototype.inspectSelf = function () {
+  var me = this;
   this.debug && console.log('inspecting angular');
   hashKey.createHashKeysFor(window.angular, 'angular');
-  this.analyzer.getItems().empty();
+
+  // get the objects that need to be forbidden
+  var toForbid = me.parseForbiddenTokens();
+  this.debug && console.log('forbidding: ', toForbid);
+  this.analyzer.forbid(toForbid, true);
+
   this.analyzer.add(
     [window.angular].concat(this.getSelectedServices())
   );
+};
+
+/**
+ * @template
+ * Since Angular is a script retrieved on demand but the instance
+ * is already created in InspectedInstance, let's alter the
+ * properties it has before making the request
+ */
+Angular.prototype.modifyInstance = function (options) {
+  this.src = options.src;
 };
 
 module.exports = Angular;

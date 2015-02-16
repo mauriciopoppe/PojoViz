@@ -1,6 +1,6 @@
 var _ = require('lodash'),
   d3 = require('d3'),
-  utils = require('../../util/'),
+  utils = require('../../renderer/utils'),
   pojoVizProperty = require('./Property'),
   hashKey = require('../../util/hashKey');
 

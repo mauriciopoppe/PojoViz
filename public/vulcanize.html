@@ -9423,35 +9423,35 @@ information about `paper-radio-button`.
 		Polymer('pojoviz-settings', {
 			ready: function () {
 				var me = this,
-					angularAnalyzer = pojoviz.ObjectHashes.angular;
+					angularAnalyzer = pojoviz.InspectedInstances.angular;
 				me.angularServices = angularAnalyzer.services;
 			},
 
 			windowDepthChange: function (event, detail, el) {
-				var objectHashes = pojoviz.ObjectHashes;
+				var objectHashes = pojoviz.InspectedInstances;
 				objectHashes.window.levels = el.value;
 			},
 
 			extDepthChange: function (event, detail, el) {
-				var objectHashes = pojoviz.ObjectHashes;
+				var objectHashes = pojoviz.InspectedInstances;
 				objectHashes.extjs &&
 					(objectHashes.extjs.levels = el.value);
 			},
 
 			threeDepthChange: function (event, detail, el) {
-				var objectHashes = pojoviz.ObjectHashes;
+				var objectHashes = pojoviz.InspectedInstances;
 				objectHashes.three.levels = el.value;
 			},
 
 			onShowBuiltInChange: function (ev, detail, el) {
-				pojoviz.analyzer.GenericAnalyzer.SHOW_BUILTIN = el.checked;
-				pojoviz.ObjectHashes
+				pojoviz.analyzer.Inspector.SHOW_BUILTIN = el.checked;
+				pojoviz.InspectedInstances
 					.markDirty();
 			},
 
 			onFunctionConstructorsChange: function (ev, detail, el) {
-				pojoviz.analyzer.GenericAnalyzer.SHOW_FUNCTION_CONSTRUCTORS = el.checked;
-				pojoviz.ObjectHashes
+				pojoviz.analyzer.Inspector.SHOW_FUNCTION_CONSTRUCTORS = el.checked;
+				pojoviz.InspectedInstances
 					.setFunctionConstructors(el.checked)
 					.markDirty();
 			},

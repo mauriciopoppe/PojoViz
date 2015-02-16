@@ -270,7 +270,7 @@ Inspector.prototype.parseForbiddenTokens = function () {
  * @chainable
  */
 Inspector.prototype.setDirty = function () {
-  this.dirty = false;
+  this.dirty = true;
   return this;
 };
 

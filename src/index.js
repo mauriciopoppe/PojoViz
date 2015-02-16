@@ -1,13 +1,13 @@
-var _ = require('lodash'),
-  Q = require('q'),
-  dagre = require('dagre'),
-  utils = require('./util/'),
-  ObjectHashes = require('./InspectedInstances');
+var _ = require('lodash');
+var Q = require('q');
+var dagre = require('dagre');
+var utils = require('./util/');
+var InspectedInstances = require('./InspectedInstances');
 
 // enable promise chain debug
 Q.longStackSupport = true;
 
-var container, oldContainer;
+var inspector, oldInspector;
 var renderer, oldRenderer;
 var pojoviz;
 
@@ -15,15 +15,15 @@ var pojoviz;
  *
  * @return {Object} [description]
  */
-function process(container) {
+function process(inspector) {
   var g = new dagre.Digraph(),
-      properties,
       node,
-      library = container.analyzer,
-      str = library.stringify(),
+      analyzer = inspector.analyzer,
+      str = analyzer.stringify(),
       libraryNodes = str.nodes,
       libraryEdges = str.edges;
 
+  //console.log(str);
   // create the graph
   // each element of the graph has
   // - label
@@ -32,7 +32,7 @@ function process(container) {
   // - properties
   _.forOwn(libraryNodes, function (properties, k) {
     var label = k.match(/\S*?-(.*)/)[1];
-    // console.log(k, label.length);
+    //console.log(k, label.length);
     node = {
       label: k,
       width: label.length * 10
@@ -41,7 +41,7 @@ function process(container) {
     node.height = properties.length * 15 + 50;
     node.properties = properties;
     properties.forEach(function (v) {
-      node.width = Math.max(node.width, v.name.length * 10);
+      node.width = Math.max(node.width, v.property.length * 10);
     });
     g.addNode(k, node);
   });
@@ -69,7 +69,7 @@ function process(container) {
       mx = {x: -Infinity, y: -Infinity},
       total = g.nodes().length;
 
-  // update the node info of the node adding:
+  // update the node info adding:
   // - x
   // - y
   // - predecessors
@@ -104,7 +104,7 @@ function process(container) {
   center.y /= (total || 1);
 
   // create the edges from property to node
-  _(libraryEdges).forOwn(function (links) {
+  _.forOwn(libraryEdges, function (links) {
     links.forEach(function (link) {
       if (g.hasNode(link.from) && g.hasNode(link.to)) {
         edges.push(link);
@@ -125,29 +125,28 @@ function process(container) {
 function render() {
   var data;
 
-  if (container === oldContainer) {
+  if (inspector === oldInspector) {
     return;
   }
 
-  utils.notification('processing ' + container.global);
+  utils.notification('processing ' + inspector.global);
 
   // pre render
   oldRenderer && oldRenderer.clean();
   renderer.clean();
 
   setTimeout(function () {
-    container.preRender();
+    inspector.preRender();
     console.log('process & render start: ', new Date());
-    // data has
+    // data:
     // - edges (property -> node)
     // - nodes
     // - center
-    //
     console.time('process');
-    data = process(container);
+    data = process(inspector);
     console.timeEnd('process');
 
-    utils.notification('rendering ' + container.global);
+    utils.notification('rendering ' + inspector.global);
 
     console.time('render');
     renderer.render(data);
@@ -163,25 +162,31 @@ pojoviz = {
   addRenderers: function (newRenderers) {
     _.merge(pojoviz.renderers, newRenderers);
   },
-  nullifyContainer: function () {
-    oldContainer = container;
-    container = null;
+  unsetInspector: function () {
+    oldInspector = inspector;
+    inspector = null;
   },
-  getContainer: function () {
-    return container;
+  getCurrentInspector: function () {
+    return inspector;
   },
-  setContainer: function (containerName, options) {
-    oldContainer = container;
-    container = ObjectHashes[containerName];
+  /**
+   *
+   * @param entryPoint
+   * @param options
+   * @returns {Promise}
+   */
+  setCurrentInspector: function (entryPoint, options) {
+    oldInspector = inspector;
+    inspector = InspectedInstances[entryPoint];
 
-    if (!container) {
-      container = ObjectHashes.create(containerName, options);
-    } else {
-      // required to fetch external resources
-      container.src = options.src;
+    if (!inspector) {
+      inspector = InspectedInstances.create(entryPoint, options);
+    //} else {
+    //  // required to fetch external resources
+    //  inspector.src = options.src;
     }
 
-    return container.init();
+    return inspector.init();
   },
   setRenderer: function (r) {
     oldRenderer = renderer;
@@ -193,22 +198,19 @@ pojoviz = {
   render: render,
 
   // expose inner modules
-  ObjectHashes: require('./InspectedInstances'),
   ObjectAnalyzer: require('./ObjectAnalyzer'),
+  InspectedInstances: require('./InspectedInstances'),
   analyzer: {
-    GenericAnalyzer: require('./analyzer/Inspector')
+    Inspector: require('./analyzer/Inspector')
   },
-  utils: require('./util'),
-
-  // user vars
-  userVariables: []
+  utils: require('./util')
 };
 
 // custom events
 document.addEventListener('property-click', function (e) {
   var detail = e.detail;
   pojoviz
-    .getContainer()
+    .getCurrentInspector()
     .showSearch(detail.name, detail.property);
 });
 

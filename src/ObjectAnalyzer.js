@@ -272,9 +272,9 @@ Analyzer.prototype = {
         --length;
       }
       // discard the prototype link to consider a property simple
-      //if (ownProperties.indexOf('prototype') > -1) {
-      //  --length;
-      //}
+      if (ownProperties.indexOf('prototype') > -1) {
+        --length;
+      }
       if (length <= 4) {
         // it's simple if it only has
         // - ["length", "name", "arguments", "caller"]
@@ -287,7 +287,8 @@ Analyzer.prototype = {
     // visit function constructors verify if `value` is a
     // function constructor (it's name must be capitalized to be one)
     if (properties.isFunction && this.visitConstructors) {
-      if (value.name && value.name[0].search(/^[A-Z]]/) > -1) {
+      if (typeof value.name === 'string' &&
+          value.name.search(/^[A-Z]/) > -1) {
         properties.isTraversable = true;
         properties.isConstructor = true;
       }

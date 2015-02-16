@@ -121,6 +121,22 @@ utils.functionChain = function () {
   return inner;
 };
 
+utils.createEvent = function (eventName, details) {
+  return new CustomEvent(eventName, {
+    detail: details
+  });
+};
+utils.notification = function (message, consoleToo) {
+  var ev = utils.createEvent('pojoviz-notification', message);
+  consoleToo && console.log(message);
+  document.dispatchEvent(ev);
+};
+utils.createJsonpCallback = function (url) {
+  var script = document.createElement('script');
+  script.src = url;
+  document.head.appendChild(script);
+};
+
 /**
  * @template
  *

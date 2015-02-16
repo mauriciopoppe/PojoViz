@@ -160,64 +160,42 @@
 		Polymer('pojoviz-settings', {
 			ready: function () {
 				var me = this,
-					angularAnalyzer = pojoviz.ObjectHashes.angular;
+					angularAnalyzer = pojoviz.InspectedInstances.angular;
 				me.angularServices = angularAnalyzer.services;
 			},
 
 			windowDepthChange: function (event, detail, el) {
-				var objectHashes = pojoviz.ObjectHashes;
+				var objectHashes = pojoviz.InspectedInstances;
 				objectHashes.window.levels = el.value;
 			},
 
 			extDepthChange: function (event, detail, el) {
-				var objectHashes = pojoviz.ObjectHashes;
+				var objectHashes = pojoviz.InspectedInstances;
 				objectHashes.extjs &&
 					(objectHashes.extjs.levels = el.value);
 			},
 
 			threeDepthChange: function (event, detail, el) {
-				var objectHashes = pojoviz.ObjectHashes;
+				var objectHashes = pojoviz.InspectedInstances;
 				objectHashes.three.levels = el.value;
 			},
 
 			onShowBuiltInChange: function (ev, detail, el) {
-				pojoviz.analyzer.GenericAnalyzer.SHOW_BUILTIN = el.checked;
-				pojoviz.ObjectHashes
-					.markDirty();
+//				pojoviz.analyzer.Inspector.SHOW_BUILTIN = el.checked;
+				pojoviz.InspectedInstances
+					.setDirty();
 			},
 
 			onFunctionConstructorsChange: function (ev, detail, el) {
-				pojoviz.analyzer.GenericAnalyzer.SHOW_FUNCTION_CONSTRUCTORS = el.checked;
-				pojoviz.ObjectHashes
-					.setFunctionConstructors(el.checked)
-					.markDirty();
+//				pojoviz.analyzer.Inspector.SHOW_FUNCTION_CONSTRUCTORS = el.checked;
+				pojoviz.InspectedInstances
+//					.setFunctionConstructors(el.checked)
+					.setDirty();
 			},
 
 			onRadioSelectChange: function (ev, detail, el) {
 				if (detail.isSelected) {
 					pojoviz.setRenderer(detail.item.getAttribute('value'));
-				}
-			},
-
-			// deprecated
-			hideBuiltIn: function (event, detail, el) {
-				var oa = pojoviz.ObjectAnalyzer,
-					builtIn = oa.getBuiltInObjects();
-				if (el.checked) {
-					oa.forbid(builtIn, true);
-				} else {
-					oa.unforbid(builtIn, true);
-					oa.add(builtIn);
-				}
-			},
-			// deprecated
-			showWindow: function (event, detail, el) {
-				var oa = pojoviz.ObjectAnalyzer;
-				if (el.checked) {
-					oa.levels(5);
-					oa.add([window], true);
-				} else {
-					oa.remove([window]);
 				}
 			}
 		});

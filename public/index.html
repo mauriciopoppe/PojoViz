@@ -70,16 +70,16 @@
 					>
 
 					<core-item label="Objects"
-						data-options="{
-							value: 'demo'
-						}"
+						data-options='{
+							"displayName": "object"
+						}'
 						data-value="render:object">
 					</core-item>
 
 					<core-item label="built-in objects"
-						data-options="{
-							value: 'builtIn'
-						}"
+						data-options='{
+							"displayName": "builtIn"
+						}'
 						data-value="render:builtIn">
 					</core-item>
 
@@ -91,14 +91,15 @@
 					>
 
 					<core-item label="jQuery"
-						data-options="{
-							src: '//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js',
-							value: 'jQuery',
-							global: 'jQuery'
-						}"
-						data-src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"
-						data-value="render:jQuery"
-						data-global="jQuery">
+						data-options='{
+							"src": "//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js",
+							"entryPoint": "jQuery",
+							"displayName": "jQuery",
+							"analyzerConfig": {
+							    "levels": 1
+							}
+						}'
+						data-value="render:jQuery">
 					</core-item>
 
 					<core-item label="Polymer"
@@ -125,7 +126,7 @@
 						data-options="{
 							value: '',
 							global: ''
-						}"						
+						}"
 						data-src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.js"
 						data-value="render:lodash"
 						data-global="_">
@@ -305,14 +306,14 @@
 			var tool = document.querySelector('[tool] .title');
 			var currentPage;
 
-			function runLibrary(dataSet) {
+			function runLibrary(options) {
 				var value,
 					action;
 
-				value = dataSet.value.split(':');
-				action = value[0];
+//				value = dataSet.value.split(':');
+//				action = value[0];
 				// global name, data properties
-				pojoviz.setContainer(value[1], dataSet)
+				pojoviz.setCurrentInspector(options.displayName, options)
 					.then(function() {
 						pojoviz.render();
 					})
@@ -324,7 +325,7 @@
 				// pojoviz.render();
 				pages.selected = 'app';
 				// change title
-				tool.textContent = value[1];
+//				tool.textContent = value[1];
 				scaffold.closeDrawer();
 			}
 
@@ -352,7 +353,7 @@
 			window.onpopstate = history.onpushstate = function(e) {
 				var v = e.state.value;
 				if (~v.indexOf('render')) {
-					runLibrary(e.state);
+					runLibrary(JSON.parse(e.state.options));
 					return;
 				}
 

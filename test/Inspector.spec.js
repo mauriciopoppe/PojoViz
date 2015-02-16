@@ -26,12 +26,10 @@ describe('Inspector', function () {
       var inspector = new BuiltIn();
       inspector.init();
 
-      var length = 0;
+      var length = inspector.getItems().length * 2;
       inspector.getItems().forEach(function (v) {
-        if (typeof v === 'function') {
-          length += 2;
-        } else {
-          length += 1;
+        if (typeof v === 'object') {
+          length -= 1;
         }
       });
 

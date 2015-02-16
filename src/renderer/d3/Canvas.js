@@ -1,6 +1,6 @@
 var d3 = require('d3'),
   _ = require('lodash'),
-  utils = require('../../util/'),
+  utils = require('../../renderer/utils'),
   pojoVizNode = require('./Node');
 
 var svg = d3.select('svg#canvas');
@@ -17,6 +17,7 @@ function getY(d) {
 }
 
 function Canvas(data) {
+  console.log(data);
   this.id = _.uniqueId();
   this.data = data;
   this.createRoot();

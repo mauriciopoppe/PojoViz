@@ -105,7 +105,7 @@ module.exports = function (options) {
   gulp.task('bundle:app', function () {
     return generateBundler({
       standalone: true,
-      src: path.join(options.src, 'index.js'),
+      src: path.resolve(options.src, 'index.js'),
       name: pkg.name,
       onPreBundle: function (bundler) {
         options.libs.forEach(function(lib) {

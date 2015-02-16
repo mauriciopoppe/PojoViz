@@ -1,4 +1,4 @@
-define(['lib/lodash', 'util/utils', 'ObjectHashes', 'dagre', 'Canvas'],
+define(['lib/lodash', 'util/utils', 'InspectedInstances', 'dagre', 'Canvas'],
   function (_, utils, ObjectHashes, dagre, Canvas) {
 
   var selectedHash = ObjectHashes.builtIn,

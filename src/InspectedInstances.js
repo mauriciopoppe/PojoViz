@@ -31,7 +31,7 @@ var proto = {
    * Marks all the properties saved in `this` as dirty
    * @chainable
    */
-  markDirty: function () {
+  setDirty: function () {
     this.all(function (v) {
       v.setDirty();
     });
@@ -57,12 +57,12 @@ _.merge(libraries, {
   //popular
   angular: new Angular(),
   //mine
-  t3: new Inspector({ entryPoint: 't3' })
+  t3: new Inspector({ entryPoint: 't3' }),
   //huge
-  //three: new Inspector({
-  //  global: 'THREE',
-  //  rendereachtime: true
-  //})
+  three: new Inspector({
+    entryPoint: 'THREE',
+    alwaysDirty: true
+  })
 });
 
 Inspector.instances = libraries;

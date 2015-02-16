@@ -1,6 +1,6 @@
 var d3 = require('d3'),
   _ = require('lodash'),
-  utils = require('../../util/');
+  utils = require('../../renderer/utils');
 
 var prefix = utils.prefixer;
 var escapeCls = utils.escapeCls;
@@ -46,7 +46,7 @@ function Property() {
           return [
             prefix('property'),
             prefix(
-              escapeCls(transformProperty(d.name))
+              escapeCls(transformProperty(d.property))
             )
           ].join(' ');
         })
@@ -68,7 +68,7 @@ function Property() {
         ].join(' ');
       })
       .text(function (d, i) {
-        return d.name;
+        return d.property;
       })
       .on('click', function (d, i) {
         console.log(d);
@@ -76,7 +76,7 @@ function Property() {
         var ev = new CustomEvent('property-click', {
           detail: {
             name: link[1],
-            property: d.name
+            property: d.property
           }
         });
         console.log(ev.detail);

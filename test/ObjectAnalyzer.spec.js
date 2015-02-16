@@ -18,7 +18,7 @@ describe('ObjectAnalyzer', function () {
     });
   });
 
-  describe('api test', function () {
+  describe('during api test', function () {
     var analyzer;
 
     beforeEach(function () {
@@ -155,7 +155,8 @@ describe('ObjectAnalyzer', function () {
       expect(checkProperties({
         property: 'Function',
         type: 'function',
-        isTraversable: true,
+        // not traversable since it's a simple function
+        isTraversable: false,
         isFunction: true,
         isObject: false,
         toString: 'Function'

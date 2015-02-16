@@ -1,9 +1,9 @@
 PojoViz - Plain Old JavaScript Object Visualization
 =======
 
-%PojoViz is a tool to analyze the plain objects of a JavaScript library/framework by finding all the relationships found between the library entry point (typically a global variable) and the objects/functions linked to it.
+%PojoViz is a tool to analyze the plain objects of a JavaScript library/framework by finding all the relationships found among the library entry point (typically a global variable) and the objects/functions linked to it.
 
-Note: this webpage was developed to work with Google Chrome and it uses <a href="http://caniuse.com/shadowdom">Shadow DOM</a>, it's suggested that you use this browser for a complete experience.
+Note: this webpage uses <a href="http://caniuse.com/shadowdom">Shadow DOM</a>, it's suggested that you use a browser that supports this technology for a complete experience.
 
 ## Why?
 
@@ -201,45 +201,45 @@ Stringifies the internal representation of the graph, this line should be called
 {
   "nodes": {
     "function-Object": [{
-      "name": "length",
+      "property": "length",
       "type": "number",
       "linkeable": false,
       "label": "function-Object"
     }, {
-      "name": "name",
+      "property": "name",
       "type": "string",
       "linkeable": false,
       "label": "function-Object"
     }, ...],
     "object-Object-prototype": [{
-      "name": "constructor",
+      "property": "constructor",
       "type": "function",
       "linkeable": true,
       "label": "object-Object-prototype"
     }, {
-      "name": "toString",
+      "property": "toString",
       "type": "function",
       "linkeable": true,
       "label": "object-Object-prototype"
     }, ...],
     "function-Function-prototype": [{
-      "name": "length",
+      "property": "length",
       "type": "number",
       "linkeable": false,
       "label": "function-Function-prototype"
     }, {
-      "name": "name",
+      "property": "name",
       "type": "string",
       "linkeable": false,
       "label": "function-Function-prototype"
     }, ...],
     "function-Function": [{
-      "name": "prototype",
+      "property": "prototype",
       "type": "function",
       "linkeable": true,
       "label": "function-Function"
     }, {
-      "name": "[[Prototype]]",
+      "property": "[[Prototype]]",
       "type": "object",
       "linkeable": true,
       "hidden": true,

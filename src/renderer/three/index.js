@@ -102,7 +102,7 @@ module.exports = {
         context.font = "normal 15px Arial";
         context.fillStyle = fillStyle[property.type] || defaultColor;
         context.fillText(
-          property.name,
+          property.property,
           margin.left * 2,
           margin.top + titleHeight + i * 15
         );
@@ -134,8 +134,7 @@ module.exports = {
 
     function drawNodes() {
       var me = this,
-        nodeGroup = new THREE.Object3D(),
-        nodeGeometry = new THREE.Geometry();
+        nodeGroup = new THREE.Object3D();
 
       nodes.forEach(function (node) {
         var points = [],
@@ -146,10 +145,7 @@ module.exports = {
         points.push(new THREE.Vector2(0, node.height));
 
         var shape = new THREE.Shape(points);
-        points = shape.createPointsGeometry();
 
-        var type = node.label
-          .match(/^(\S*?)-/)[1];
         var geometry = new THREE.ShapeGeometry(shape);
         var mesh = new THREE.Mesh(
           geometry,
@@ -209,7 +205,6 @@ module.exports = {
         };
       nodes.forEach(function (node) {
         node.properties.forEach(function (property, i) {
-          var geometry;
           if (property.type === 'function' || property.type === 'object') {
             circleMesh.position.set(
               getX(node), getY(node, i) + 5, 0.2
@@ -336,7 +331,6 @@ module.exports = {
         me.renderer.shadowMapType = THREE.PCFShadowMap;
 
         var mouse = new THREE.Vector3();
-        var oldIntersected = null;
         var moved = false, down = false;
         rendererEl.addEventListener('mousemove', function (e) {
           if (down) {
@@ -361,7 +355,6 @@ module.exports = {
           var bbox = rendererEl.getBoundingClientRect();
           var cx = e.clientX - bbox.left;
           var cy = e.clientY - bbox.top;
-          var tween;
           mouse.x = (cx / rendererEl.clientWidth) * 2 - 1;
           mouse.y = -(cy / rendererEl.clientHeight) * 2 + 1;
           var vector = new THREE.Vector3( mouse.x, mouse.y, 0.5 );
@@ -382,7 +375,7 @@ module.exports = {
             };
             new TWEEN.Tween(me.activeCamera.position)
               .to(_.merge({}, dest, {
-                z: iObject.userData.node.height
+                z: Math.max(iObject.userData.node.height, 350)
               }), 1000)
               .easing(TWEEN.Easing.Cubic.InOut)
               .start();

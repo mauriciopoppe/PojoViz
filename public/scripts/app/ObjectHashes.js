@@ -13,7 +13,7 @@ define(['ObjectAnalyzer', 'util/HashMap', 'analyzer/angularAnalyzer',
   
   // win max level initially is 0
   libraries.win.preRender = function () {
-    libraries.win.getObjects().empty();
+    libraries.win.getItems().empty();
     libraries.win.analyzeObjects([window], 0);
   };
   libraries.user.analyzeObjects([], 0);

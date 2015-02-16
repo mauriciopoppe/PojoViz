@@ -1,14 +1,15 @@
 'use strict';
 
-var GenericAnalyzer = require('./GenericAnalyzer'),
-  hashKey = require('../util/hashKey');
+var _ = require('lodash');
+var Inspector = require('./Inspector');
+var hashKey = require('../util/hashKey');
 
-function Angular() {
-  GenericAnalyzer.call(this, {
-    global: 'angular',
-    displayname: 'AngularJS',
-    rendereachtime: true
-  });
+function Angular(config) {
+  Inspector.call(this, _.merge({
+    entryPoint: 'angular',
+    displayName: 'AngularJS',
+    alwaysDirty: true
+  }, config));
 
   this.services = [
     '$animate',
@@ -30,14 +31,14 @@ function Angular() {
     '$sce',
     '$sceDelegate',
     '$templateCache',
-    '$timeout',
+    '$timeout'
     // '$window'
   ].map(function (v) {
     return { checked: true, name: v };
   });
 }
 
-Angular.prototype = Object.create(GenericAnalyzer.prototype);
+Angular.prototype = Object.create(Inspector.prototype);
 
 Angular.prototype.getSelectedServices = function () {
   var me = this,
@@ -56,10 +57,13 @@ Angular.prototype.getSelectedServices = function () {
   return toAnalyze;
 };
 
+/**
+ * @override
+ */
 Angular.prototype.inspectSelf = function () {
-  console.log('inspecting angular');
+  this.debug && console.log('inspecting angular');
   hashKey.createHashKeysFor(window.angular, 'angular');
-  this.analyzer.getObjects().empty();
+  this.analyzer.getItems().empty();
   this.analyzer.add(
     [window.angular].concat(this.getSelectedServices())
   );

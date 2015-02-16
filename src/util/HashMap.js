@@ -28,4 +28,7 @@ HashMap.prototype = {
   }
 };
 
+// alias
+HashMap.prototype.set = HashMap.prototype.put;
+
 module.exports = HashMap;

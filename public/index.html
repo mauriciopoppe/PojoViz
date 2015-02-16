@@ -70,10 +70,16 @@
 					>
 
 					<core-item label="Objects"
+						data-options="{
+							value: 'demo'
+						}"
 						data-value="render:object">
 					</core-item>
 
 					<core-item label="built-in objects"
+						data-options="{
+							value: 'builtIn'
+						}"
 						data-value="render:builtIn">
 					</core-item>
 
@@ -85,23 +91,41 @@
 					>
 
 					<core-item label="jQuery"
+						data-options="{
+							src: '//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js',
+							value: 'jQuery',
+							global: 'jQuery'
+						}"
 						data-src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"
 						data-value="render:jQuery"
 						data-global="jQuery">
 					</core-item>
 
 					<core-item label="Polymer"
+						data-options="{
+							value: 'Polymer',
+							global: 'Polymer'
+						}"
 						data-value="render:Polymer"
 						data-global="Polymer">
 					</core-item>
 
 					<core-item label="D3"
+						data-options="{
+							value: 'd3',
+							global: 'd3',
+							allFunctions: true
+						}"
 						data-global="d3"
 						data-allfunctions="true"
 						data-value="render:d3">
 					</core-item>
 
 					<core-item label="Lo-Dash"
+						data-options="{
+							value: '',
+							global: ''
+						}"						
 						data-src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.js"
 						data-value="render:lodash"
 						data-global="_">

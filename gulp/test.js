@@ -9,20 +9,18 @@ module.exports = function (options) {
   assert(options.test);
 
   gulp.task('test', function () {
-    return gulp.src(path.resolve(options.test, '*.js'))
+    return gulp.src(path.resolve(options.test, 'index.js'))
       .pipe(mocha({ reporter: 'spec' }))
       .on('error', function (err) {
-        console.log(err);
+        console.error(err);
+        this.emit('end');
       });
   });
 
   gulp.task('watch:test', function () {
-    gulp.watch(
-      [
-        path.resolve(options.src, '**'),
-        path.resolve(options.test, '**')
-      ],
-      ['test']
-    );
+    gulp.watch([
+      path.resolve(options.src, '**'),
+      path.resolve(options.test, '**')
+    ], ['test']);
   });
 };

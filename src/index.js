@@ -2,18 +2,20 @@ var _ = require('lodash'),
   Q = require('q'),
   dagre = require('dagre'),
   utils = require('./util/'),
-  ObjectHashes = require('./ObjectHashes');
+  ObjectHashes = require('./InspectedInstances');
 
-// enable long stacks
+// enable promise chain debug
 Q.longStackSupport = true;
 
-var container,
-  oldContainer,
-  oldRenderer,
-  renderer,
-  pojoviz;      // namespace
+var container, oldContainer;
+var renderer, oldRenderer;
+var pojoviz;
 
-function process() {
+/**
+ *
+ * @return {Object} [description]
+ */
+function process(container) {
   var g = new dagre.Digraph(),
       properties,
       node,
@@ -142,7 +144,7 @@ function render() {
     // - center
     //
     console.time('process');
-    data = process();
+    data = process(container);
     console.timeEnd('process');
 
     utils.notification('rendering ' + container.global);
@@ -173,7 +175,7 @@ pojoviz = {
     container = ObjectHashes[containerName];
 
     if (!container) {
-      container = ObjectHashes.createNew(containerName, options);
+      container = ObjectHashes.create(containerName, options);
     } else {
       // required to fetch external resources
       container.src = options.src;
@@ -191,10 +193,10 @@ pojoviz = {
   render: render,
 
   // expose inner modules
-  ObjectHashes: require('./ObjectHashes'),
+  ObjectHashes: require('./InspectedInstances'),
   ObjectAnalyzer: require('./ObjectAnalyzer'),
   analyzer: {
-    GenericAnalyzer: require('./analyzer/GenericAnalyzer')
+    GenericAnalyzer: require('./analyzer/Inspector')
   },
   utils: require('./util'),
 

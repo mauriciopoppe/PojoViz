@@ -19,7 +19,7 @@ define(['lib/lodash', 'util/utils', 'ObjectHashes', 'dagre', 'Canvas'],
     var g = new dagre.Digraph(),
         properties,
         node,
-        registeredObjects = selectedHash.getObjects();
+        registeredObjects = selectedHash.getItems();
     
     _.forOwn(registeredObjects, function (v, k) {
       var label = k.match(/\S*?-(.*)/)[1];

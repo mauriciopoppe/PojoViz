@@ -11519,26 +11519,44 @@ license that can be found in the LICENSE file.
 
 				<core-submenu icon="exit-to-app" label="Known Schemas">
 
-					<core-item label="Objects" data-value="render:object">
+					<core-item label="Objects" data-options="{
+							value: &apos;demo&apos;
+						}" data-value="render:object">
 					</core-item>
 
-					<core-item label="built-in objects" data-value="render:builtIn">
+					<core-item label="built-in objects" data-options="{
+							value: &apos;builtIn&apos;
+						}" data-value="render:builtIn">
 					</core-item>
 
 				</core-submenu>
 
 				<core-submenu icon="star" label="Notable Libraries">
 
-					<core-item label="jQuery" data-src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js" data-value="render:jQuery" data-global="jQuery">
+					<core-item label="jQuery" data-options="{
+							src: &apos;//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js&apos;,
+							value: &apos;jQuery&apos;,
+							global: &apos;jQuery&apos;
+						}" data-src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js" data-value="render:jQuery" data-global="jQuery">
 					</core-item>
 
-					<core-item label="Polymer" data-value="render:Polymer" data-global="Polymer">
+					<core-item label="Polymer" data-options="{
+							value: &apos;Polymer&apos;,
+							global: &apos;Polymer&apos;
+						}" data-value="render:Polymer" data-global="Polymer">
 					</core-item>
 
-					<core-item label="D3" data-global="d3" data-allfunctions="true" data-value="render:d3">
+					<core-item label="D3" data-options="{
+							value: &apos;d3&apos;,
+							global: &apos;d3&apos;,
+							allFunctions: true
+						}" data-global="d3" data-allfunctions="true" data-value="render:d3">
 					</core-item>
 
-					<core-item label="Lo-Dash" data-src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.js" data-value="render:lodash" data-global="_">
+					<core-item label="Lo-Dash" data-options="{
+							value: &apos;&apos;,
+							global: &apos;&apos;
+						}" data-src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.js" data-value="render:lodash" data-global="_">
 					</core-item>
 
 					<core-item label="React" data-src="//fb.me/react-0.11.1.js" data-value="render:react" data-global="React">

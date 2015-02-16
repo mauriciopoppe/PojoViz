@@ -179,7 +179,7 @@ define(['util/HashMap', 'util/hashKey',
       this.dirty = d;
     },
 
-    getObjects: function () {
+    getItems: function () {
       return this.objectMap;
     },
 

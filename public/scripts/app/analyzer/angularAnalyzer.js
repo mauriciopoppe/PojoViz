@@ -52,7 +52,7 @@ define(['ObjectAnalyzer', 'util/hashKey', 'util/HashMap', 'angular'],
   // expose the services for the ui
   res.services = services;
   res.preRender = function () {
-    res.getObjects().empty();
+    res.getItems().empty();
     res.add(getSelectedServices());
   };
 

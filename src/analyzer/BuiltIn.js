@@ -1,6 +1,6 @@
 'use strict';
 
-var GenericAnalyzer = require('./GenericAnalyzer'),
+var GenericAnalyzer = require('./Inspector'),
   utils = require('../util');
 
 var toInspect = [
@@ -9,25 +9,32 @@ var toInspect = [
   Error
 ];
 
-function BuiltIn() {
-  GenericAnalyzer.call(this);
+function BuiltIn(options) {
+  GenericAnalyzer.call(this, options);
 }
 
 BuiltIn.prototype = Object.create(GenericAnalyzer.prototype);
 
+/**
+ * @override
+ */
 BuiltIn.prototype.inspectSelf = function () {
-  console.log('inspecting builtIn objects');
-  this.analyzer.add(this.getObjects());
+  this.debug && console.log('inspecting builtIn objects');
+  this.analyzer.add(this.getItems());
 };
 
-BuiltIn.prototype.getObjects = function () {
+/**
+ * @override
+ * @returns {Array}
+ */
+BuiltIn.prototype.getItems = function () {
   return toInspect;
 };
 
 BuiltIn.prototype.showSearch = function (nodeName, nodeProperty) {
   var url = 'https://developer.mozilla.org/en-US/search?' +
     utils.toQueryString({
-      q: encodeURIComponent(nodeName + ' ' + nodeProperty),
+      q: encodeURIComponent(nodeName + ' ' + nodeProperty)
     });
   window.open(url);
 };

@@ -1,32 +1,29 @@
 'use strict';
 
-var _ = require('lodash'),
-  assert = require('./').assert,
-  me, hashKey;
-
-function isObjectOrFunction(v) {
-  return v && (typeof v === 'object' || typeof v === 'function');
-}
-
+var _ = require('lodash');
+var assert = require('assert');
+var utils = require('./');
+var me, hashKey;
 /**
  * Gets a store hashkey only if it's an object
  * @param  {[type]} obj
  * @return {[type]}
  */
 function get(obj) {
-  assert(isObjectOrFunction(obj), 'obj must be an object|function');
+  assert(utils.isObjectOrFunction(obj), 'obj must be an object|function');
   return obj.hasOwnProperty &&
     obj.hasOwnProperty(me.hiddenKey) &&
     obj[me.hiddenKey];
 }
 
 /**
+ * TODO: document
  * Sets a key on an object
  * @param {[type]} obj [description]
  * @param {[type]} key [description]
  */
 function set(obj, key) {
-  assert(isObjectOrFunction(obj), 'obj must be an object|function');
+  assert(utils.isObjectOrFunction(obj), 'obj must be an object|function');
   assert(
     key && typeof key === 'string',
     'The key needs to be a valid string'
@@ -40,10 +37,8 @@ function set(obj, key) {
 }
 
 me = hashKey = function (v) {
-  var value = v,
-      uid = v;
-
-  if (isObjectOrFunction(v)) {
+  var uid = v;
+  if (utils.isObjectOrFunction(v)) {
     if (!get(v)) {
       me.createHashKeysFor(v);
     }
@@ -126,7 +121,7 @@ me.createHashKeysFor = function (obj, name) {
       obj.hasOwnProperty('constructor') &&
       typeof obj.constructor === 'function' &&
       obj.constructor !== obj) {
-    me.createHashKeysFor(obj.constructor);
+    return me.createHashKeysFor(obj.constructor);
   }
 
   // set name on self

@@ -1,104 +1,197 @@
-var expect = require('chai').expect,
-  _ = require('lodash'),
-  hashKey = require('../src/util/hashKey'),
-  ObjectAnalyzer = require('../src/ObjectAnalyzer');
+var expect = require('chai').expect;
+var _ = require('lodash');
+var hashKey = require('../src/util/hashKey');
+var ObjectAnalyzer = require('../src/ObjectAnalyzer');
+var utils = require('../src/util/');
+
+// NOTE: objects.keys.shim does not exist in the browser
+delete Object.keys.shim;
 
 describe('ObjectAnalyzer', function () {
   describe('constructor', function () {
+
+    // todo: create better constructor tests
     it('sets all default properties', function () {
       var instance = new ObjectAnalyzer();
-      expect(instance.objects).to.be.a('object');
-      expect(instance.forbidden).to.be.a('object');
+      expect(instance.items).be.a('object');
+      expect(instance.forbidden).be.a('object');
     });
   });
 
   describe('api test', function () {
-    var wrap;
+    var analyzer;
 
     beforeEach(function () {
-      wrap = new ObjectAnalyzer();
+      analyzer = new ObjectAnalyzer();
     });
 
     it('should forbid objects when forbid(obj) is called', function () {
       function A(){}
-      wrap.forbid([A]);
-      expect(_.size(wrap.forbidden)).to.equal(1);
-      expect(_.size(wrap.objects)).to.equal(0);
+      analyzer.forbid([A]);
+      expect(_.size(analyzer.forbidden)).to.equal(1);
+      expect(_.size(analyzer.items)).to.equal(0);
     });
 
     it('should forbid with prototype when forbid(obj,true) ' +
         'is called', function () {
       function A(){}
-      wrap.forbid([A], true);
-      expect(_.size(wrap.forbidden)).to.equal(2);
-      expect(_.size(wrap.objects)).to.equal(0);
+      analyzer.forbid([A], true);
+      expect(_.size(analyzer.forbidden)).to.equal(2);
+      expect(_.size(analyzer.items)).to.equal(0);
     });
 
-    it('should store at least 4 objects when add is called', function () {
-      wrap.add([Object]);
-      expect(_.size(wrap.forbidden)).to.equal(0);
+    it('should store 4 objects when add is called with [Object]', function () {
+      analyzer.add([Object]);
+      expect(_.size(analyzer.forbidden)).to.equal(0);
       // Object
       //   + Function.prototype
       //     + Function
       // Object.prototype
-      expect(_.size(wrap.objects)).to.equal(4);
+      expect(_.size(analyzer.items)).to.equal(4);
     });
 
-    it('should store the objects correctly', function () {
-      wrap.add([Object]);
-      expect(wrap.objects['function-Object']).to.equal(Object);
-      expect(wrap.objects['object-Object-prototype']).to.equal(Object.prototype);
-      expect(wrap.objects['function-Function']).to.equal(Function);
-      expect(wrap.objects['function-Function-prototype']).to.equal(Function.prototype);
-      expect(wrap.objects['object-Function-prototype']).to.not.be.ok;
+    it('should store the objects in the items HashMap', function () {
+      analyzer.add([Object]);
+      expect(analyzer.items['function-Object']).to.equal(Object);
+      expect(analyzer.items['object-Object-prototype']).to.equal(Object.prototype);
+      expect(analyzer.items['function-Function']).to.equal(Function);
+      expect(analyzer.items['function-Function-prototype']).to.equal(Function.prototype);
+      expect(analyzer.items['object-Function-prototype']).equals(undefined);
     });
 
     it('should not store forbidden objects', function () {
-      wrap = new ObjectAnalyzer();
-      wrap.forbid([Object]);
-      wrap.add([Object]);
-      expect(_.size(wrap.forbidden)).to.equal(1);
-      expect(_.size(wrap.objects)).to.equal(0);
+      analyzer = new ObjectAnalyzer();
+      analyzer.forbid([Object]);
+      analyzer.add([Object]);
+      expect(_.size(analyzer.forbidden)).to.equal(1);
+      expect(_.size(analyzer.items)).to.equal(0);
 
-      wrap = new ObjectAnalyzer();
-      wrap.forbid([Object.prototype]);
-      wrap.add([Object]);
-      expect(_.size(wrap.forbidden)).to.equal(1);
-      expect(_.size(wrap.objects)).to.equal(3);
+      analyzer = new ObjectAnalyzer();
+      analyzer.forbid([Object.prototype]);
+      analyzer.add([Object]);
+      expect(_.size(analyzer.forbidden)).to.equal(1);
+      expect(_.size(analyzer.items)).to.equal(3);
 
-      wrap = new ObjectAnalyzer();
-      wrap.forbid([Object.prototype, Function]);
-      wrap.add([Object]);
-      expect(_.size(wrap.forbidden)).to.equal(2);
-      expect(_.size(wrap.objects)).to.equal(2);
+      analyzer = new ObjectAnalyzer();
+      analyzer.forbid([Object.prototype, Function]);
+      analyzer.add([Object]);
+      expect(_.size(analyzer.forbidden)).to.equal(2);
+      expect(_.size(analyzer.items)).to.equal(2);
 
-      wrap = new ObjectAnalyzer();
-      wrap.forbid([Object.prototype, Function, Function.prototype]);
-      wrap.add([Object]);
-      expect(_.size(wrap.forbidden)).to.equal(3);
-      expect(_.size(wrap.objects)).to.equal(1);
+      analyzer = new ObjectAnalyzer();
+      analyzer.forbid([Object.prototype, Function, Function.prototype]);
+      analyzer.add([Object]);
+      expect(_.size(analyzer.forbidden)).to.equal(3);
+      expect(_.size(analyzer.items)).to.equal(1);
     });
 
     it('should not store an object that is unreachable', function () {
-      wrap.forbid([Function.prototype]);
-      wrap.add([Object]);
-      expect(_.size(wrap.forbidden)).to.equal(1);
-      expect(_.size(wrap.objects)).to.equal(2);
+      analyzer.forbid([Function.prototype]);
+      analyzer.add([Object]);
+      expect(_.size(analyzer.forbidden)).to.equal(1);
+      expect(_.size(analyzer.items)).to.equal(2);
     });
 
-
     it('should return only objects when calling getProperties(obj, true)', function () {
-      var s = wrap.getProperties(global, true);
+      var s = analyzer.getProperties(global, true);
       expect(s).to.be.a('array');
       _(s).forOwn(function (v) {
-        expect(v.linkeable).to.be.true;
+        expect(v.isTraversable).to.be.true();
       });
     });
 
     it('should return an array when calling stringifyObjectProperties', function () {
-      var s = wrap.stringifyObjectProperties(Object);
-      expect(s).to.be.ok;
-      expect(s).to.be.a('array');
+      var obj = {};
+      obj.Number = 1;
+      obj.Boolean = false;
+      obj.String = "hi";
+      obj.Function = function () {};
+      obj.Object = {};
+      obj.Null = null;
+      obj.Undefined = undefined;
+
+      function checkProperties(s, d) {
+        var valid = true;
+        _.forOwn(s, function (value, key) {
+          valid = valid && (d[key] === value);
+        });
+        return valid;
+      }
+
+      var s = analyzer.stringifyObjectProperties(obj);
+
+      // enumerable properties are retrieved in the same order as they
+      // were declared, so getOwnPropertyNames should have the same order
+      expect(Object.getOwnPropertyNames(obj)).deep.equals(
+        ['Number', 'Boolean', 'String', 'Function', 'Object', 'Null', 'Undefined', hashKey.hiddenKey]
+      );
+      expect(_.pluck(s, 'property')).deep.equals(
+        ['Number', 'Boolean', 'String', 'Function', 'Object', 'Null', 'Undefined', '[[Prototype]]']
+      );
+      expect(checkProperties({
+        property: 'Number',
+        type: 'number',
+        isTraversable: false,
+        isFunction: false,
+        isObject: false,
+        toString: 'Number'
+      }, s[0])).equals(true);
+      expect(checkProperties({
+        property: 'Boolean',
+        type: 'boolean',
+        isTraversable: false,
+        isFunction: false,
+        isObject: false,
+        toString: 'Boolean'
+      }, s[1])).equals(true);
+      expect(checkProperties({
+        property: 'String',
+        type: 'string',
+        isTraversable: false,
+        isFunction: false,
+        isObject: false,
+        toString: 'String'
+      }, s[2])).equals(true);
+      expect(checkProperties({
+        property: 'Function',
+        type: 'function',
+        isTraversable: true,
+        isFunction: true,
+        isObject: false,
+        toString: 'Function'
+      }, s[3])).equals(true);
+      expect(checkProperties({
+        property: 'Object',
+        type: 'object',
+        isTraversable: true,
+        isFunction: false,
+        isObject: true,
+        toString: 'Object'
+      }, s[4])).equals(true);
+      expect(checkProperties({
+        property: 'Null',
+        type: 'object',
+        isTraversable: false,
+        isFunction: false,
+        isObject: false,
+        toString: 'Null'
+      }, s[5])).equals(true);
+      expect(checkProperties({
+        property: 'Undefined',
+        type: 'undefined',
+        isTraversable: false,
+        isFunction: false,
+        isObject: false,
+        toString: 'Undefined'
+      }, s[6])).equals(true);
+      expect(checkProperties({
+        property: '[[Prototype]]',
+        type: 'object',
+        isTraversable: true,
+        isFunction: false,
+        isObject: true,
+        toString: 'Object'
+      }, s[7])).equals(true);
     });
 
     it('should have the correct values for an object', function () {
@@ -115,22 +208,21 @@ describe('ObjectAnalyzer', function () {
       function A(){}
 
       function check(target) {
-        var arr = wrap.stringifyObjectProperties(target);
+        var arr = analyzer.stringifyObjectProperties(target);
         // console.log(arr);
-        expect(arr).to.be.ok;
         expect(arr).to.be.a('array');
         _(arr).forEach(function (v) {
           if (v.hidden) {
             return;
           }
-          var to = target[v.name],
+          var to = target[v.property],
             toType = typeof to;
 
           expect(toType).to.equal(v.type);
           if (to && (toType === 'object' || toType === 'function')) {
-            expect(v.linkeable).to.be.true;
+            expect(v.isTraversable).to.be.true();
           } else {
-            expect(v.linkeable).to.be.false;
+            expect(v.isTraversable).to.be.false();
           }
         });
       }
@@ -139,38 +231,70 @@ describe('ObjectAnalyzer', function () {
       check(A);
     });
 
-    it('stringifies an analyzer', function () {
-      wrap.add([Object]);
-      var s = wrap.stringify(),
-        nodes = s.nodes;
+    it('should return a string representation of the analyzer when `stringify` is called', function () {
+      analyzer.debug = false;
+      analyzer.add([Object]);
+      var s = analyzer.stringify();
+      var nodes = s.nodes;
       expect(_(nodes).size()).to.equal(4);
       expect(nodes['function-Object']).to.be.a('array');
       expect(nodes['object-Object-prototype']).to.be.a('array');
       expect(nodes['function-Function']).to.be.a('array');
       expect(nodes['function-Function-prototype']).to.be.a('array');
+
+      // analyzing Object
+      expect(s.edges['function-Object']).deep.equals([{
+        from: 'function-Object',
+        to: 'object-Object-prototype',
+        property: 'prototype'
+      }, {
+        from: 'function-Object',
+        to: 'function-Function-prototype',
+        property: '[[Prototype]]'
+      }]);
+
+      // analyzing Object-prototype
+      expect(s.edges['object-Object-prototype']).deep.equals([{
+        from: 'object-Object-prototype',
+        to: 'function-Object',
+        property: 'constructor'
+      }]);
+
+      // analyzing function-Function-prototype
+      expect(s.edges['function-Function-prototype']).deep.equals([{
+        from: 'function-Function-prototype',
+        to: 'function-Function',
+        property: 'constructor'
+      }, {
+        from: 'function-Function-prototype',
+        to: 'object-Object-prototype',
+        property: '[[Prototype]]'
+      }]);
+
+      // analyzing function-Function
+      expect(s.edges['function-Function']).deep.equals([{
+        from: 'function-Function',
+        to: 'function-Function-prototype',
+        property: 'prototype'
+      }, {
+        from: 'function-Function',
+        to: 'function-Function-prototype',
+        property: '[[Prototype]]'
+      }]);
     });
 
-    it('should have the correct links for an object', function () {
-      wrap.add([Object]);
-      var oLinks = wrap.stringifyObjectLinks(Object),
-        first = oLinks[0];
-      expect(_(first).size()).to.equal(3);
+    it('should stringify the edges of a node', function () {
+      analyzer.add([Object]);
+      var links = analyzer.stringifyObjectLinks(Object);
+      var first = links[0];
+      // properties: from, to, property
+      expect(_.size(first)).equals(3);
       expect(first.to).to.be.a('string');
       expect(first.from).to.be.a('string');
       expect(first.property).to.be.a('string');
-    });
-
-    it('should have all the objects that the link says', function () {
-      wrap.add([Object]);
-      var s = wrap.stringify(),
-        nodes = s.nodes,
-        edges = s.edges;
-      _(edges).forOwn(function (links, k) {
-        links.forEach(function (link) {
-          expect(nodes[link.from]).to.be.ok;
-          expect(nodes[link.to]).to.be.ok;
-        });
-      });
+      expect(
+        utils.isTraversable(Object[first.property])
+      ).equals(true);
     });
   });
 });

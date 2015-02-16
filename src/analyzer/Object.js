@@ -1,20 +1,18 @@
 'use strict';
-
-var GenericAnalyzer = require('./GenericAnalyzer'),
-  utils = require('../util');
-
-function PObject() {
-  GenericAnalyzer.call(this);
+var Inspector = require('./Inspector');
+function PObject(options) {
+  Inspector.call(this, options);
 }
 
-PObject.prototype = Object.create(GenericAnalyzer.prototype);
+PObject.prototype = Object.create(Inspector.prototype);
 
 PObject.prototype.inspectSelf = function () {
-  console.log('inspecting Object objects');
-  this.analyzer.add(this.getObjects());
+  this.debug && console.log('inspecting Object objects');
+  this.analyzer.add(this.getItems());
+  return this;
 };
 
-PObject.prototype.getObjects = function () {
+PObject.prototype.getItems = function () {
   return [Object];
 };
 

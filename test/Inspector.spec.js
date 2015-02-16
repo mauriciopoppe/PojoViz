@@ -1,7 +1,11 @@
 /**
  * Created by mauricio on 2/15/15.
  */
-var expect = require('chai').expect;
+require('../src/InspectedInstances');
+
+var chai = require('chai');
+var sinon = require('sinon');
+var expect = chai.expect;
 var _ = require('lodash');
 var Inspector = require('../src/analyzer/Inspector');
 var utils = require('../src/util/');
@@ -9,22 +13,19 @@ var utils = require('../src/util/');
 var BuiltIn = require('../src/analyzer/BuiltIn');
 var PObject = require('../src/analyzer/Object');
 
-require('../src/InspectedInstances');
-
 describe('Inspector', function () {
   describe('with predefined instances', function () {
     it('inspects the basic objects', function (done) {
       var inspector = new PObject();
-      inspector.init();
-      setTimeout(function () {
-        expect(_.size(inspector.analyzer.items)).equals(4);
-        done();
-      }, 1);
+      inspector.init()
+        .then(function () {
+          expect(_.size(inspector.analyzer.items)).equals(4);
+        })
+        .done(done, done);
     });
 
     it('inspects the builtIn objects', function (done) {
       var inspector = new BuiltIn();
-      inspector.init();
 
       var length = inspector.getItems().length * 2;
       inspector.getItems().forEach(function (v) {
@@ -33,26 +34,29 @@ describe('Inspector', function () {
         }
       });
 
-      setTimeout(function () {
-        expect(_.size(inspector.analyzer.items) >= length).equals(true);
-        done();
-      }, 1);
+      inspector.init()
+        .then(function () {
+          expect(_.size(inspector.analyzer.items) >= length).equals(true);
+        })
+        .done(done, done);
     });
   });
 
-  it('inspect a simple object including builtIn objects', function () {
+  it('inspect a simple object including builtIn objects', function (done) {
     global.x = {};
     var inspector = new Inspector({
       entryPoint: 'x',
-      forbiddenTokens: ''
+      forbiddenTokens: null
     });
     inspector.init()
       .then(function () {
-        expect(_.size(inspector.analyzer.items)).equals(4);
-      });
+        // x + object + object.prototype + function + function.prototype
+        expect(_.size(inspector.analyzer.items)).equals(5);
+      })
+      .done(done, done);
   });
 
-  it('inspect a simple object avoiding the Object.prototype link', function () {
+  it('inspect a simple object avoiding the Object.prototype link', function (done) {
     global.x = {};
     var inspector = new Inspector({
       entryPoint: 'x',
@@ -62,7 +66,8 @@ describe('Inspector', function () {
     inspector.init()
       .then(function () {
         expect(_.size(inspector.analyzer.items)).equals(1);
-      });
+      })
+      .done(done, done);
   });
 
   it('inspects a simple object avoiding the builtIn objects', function (done) {
@@ -72,11 +77,11 @@ describe('Inspector', function () {
       entryPoint: 'x',
       forbiddenTokens: 'pojoviz:builtIn'
     });
-    inspector.init();
-    setTimeout(function () {
-      expect(_.size(inspector.analyzer.items)).equals(1);
-      done();
-    }, 1);
+    inspector.init()
+      .then(function () {
+        expect(_.size(inspector.analyzer.items)).equals(1);
+      })
+      .done(done, done);
   });
 
   it('inspects a simple object avoiding the objects that are forbidden by default', function (done) {
@@ -85,10 +90,88 @@ describe('Inspector', function () {
       //debug: true,
       entryPoint: 'x'
     });
-    inspector.init();
-    setTimeout(function () {
-      expect(_.size(inspector.analyzer.items)).equals(1);
-      done();
-    }, 1);
+    inspector.init()
+      .then(function () {
+        expect(_.size(inspector.analyzer.items)).equals(1);
+      })
+      .done(done, done);
+  });
+
+  it('inspects a simple object avoiding controlling the number of levels reached', function (done) {
+    global.x = {};
+    var inspector = new Inspector({
+      entryPoint: 'x',
+      forbiddenTokens: null,
+      analyzerConfig: {
+        levels: 0
+      }
+    });
+    inspector.init()
+      .then(function () {
+        expect(_.size(inspector.analyzer.items)).equals(1);
+      })
+      .done(done, done);
+  });
+
+  it("should not analyze the same structure twice", function (done) {
+    global.x = {};
+    var inspector = new Inspector({
+      entryPoint: 'x',
+      forbiddenTokens: null
+    });
+
+    Inspector.prototype.inspectSelf = sinon.spy();
+
+    inspector.init()
+      .then(function () {
+        return inspector.init();
+      })
+      .then(function () {
+        expect(Inspector.prototype.inspectSelf.calledOnce)
+          .equals(true);
+      })
+      .done(done, done);
+  });
+
+  it("should analyze the same structure multiple times on demand", function (done) {
+    global.x = {};
+    var inspector = new Inspector({
+      entryPoint: 'x',
+      forbiddenTokens: null,
+      alwaysDirty: true
+    });
+
+    Inspector.prototype.inspectSelf = sinon.spy();
+
+    inspector.init()
+      .then(function () {
+        return inspector.init();
+      })
+      .then(function () {
+        return inspector.init();
+      })
+      .then(function () {
+        expect(Inspector.prototype.inspectSelf.callCount)
+          .equals(3);
+      })
+      .done(done, done);
+  });
+
+  // TODO: allow npm packages to be analyzed too
+  xit('fetches external resources before performing the analysis', function (done) {
+    var inspector = new Inspector({
+      src: '//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.js',
+      entryPoint: '_'
+    });
+
+    // disable notifications
+    var notification = utils.notification;
+    utils.notification = function () {};
+
+    inspector.init()
+      .then(function () {
+        utils.notification = notification;
+      })
+      .done(done, done);
   });
 });

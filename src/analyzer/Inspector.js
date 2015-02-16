@@ -218,9 +218,8 @@ Inspector.prototype.inspectSelf = function () {
   // set a predefined global name (so that it's known as entryPoint)
   hashKey.createHashKeysFor(start, me.entryPoint);
 
-  // clean the analyzer
-  analyzer.items.empty();
-  analyzer.forbidden.empty();
+  // before inspect hook
+  me.beforeInspectSelf();
 
   // get the objects that need to be forbidden
   var toForbid = me.parseForbiddenTokens();
@@ -230,7 +229,28 @@ Inspector.prototype.inspectSelf = function () {
   // perform the analysis
   me.debug && console.log('adding: ' + start);
   analyzer.add([start]);
+
+  // after inspect hook
+  me.afterInspectSelf();
   return me;
+};
+
+/**
+ * @template
+ * before inspect self hook
+ * Cleans the items stored in the analyzer
+ */
+Inspector.prototype.beforeInspectSelf = function () {
+  // clean the analyzer
+  this.analyzer.items.empty();
+  //this.analyzer.forbidden.empty();
+};
+
+/**
+ * @template
+ * after inspect self hook
+ */
+Inspector.prototype.afterInspectSelf = function () {
 };
 
 /**
@@ -265,8 +285,7 @@ Inspector.prototype.parseForbiddenTokens = function () {
 };
 
 /**
- * Marks this inspector as inspected (so that further calls
- * to inspect are not made)
+ * Marks this inspector as dirty
  * @chainable
  */
 Inspector.prototype.setDirty = function () {
@@ -275,13 +294,24 @@ Inspector.prototype.setDirty = function () {
 };
 
 /**
- * @template
+ * Marks this inspector as not dirty (so that further calls
+ * to inspect are not made)
+ * @chainable
+ */
+Inspector.prototype.unsetDirty = function () {
+  this.dirty = false;
+  return this;
+};
+
+
+/**
+ * @private
  * Performs the inspection on self
  * @chainable
  */
 Inspector.prototype.inspect = function () {
   return this
-    .setDirty()
+    .unsetDirty()
     .inspectSelf();
 };
 
@@ -377,7 +407,7 @@ Inspector.prototype.fetch = function () {
     }
   }
 
-  return Q(true);
+  return Q.delay(0);
 };
 
 Inspector.prototype.showSearch = function (nodeName, nodeProperty) {

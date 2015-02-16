@@ -6,6 +6,7 @@ var pkg = require('./package.json');
 
 var options = {
   // client side project
+  self: './',
   project: 'public/',
   // server side project
   build: 'build/',
@@ -42,6 +43,9 @@ require('./gulp/server')(options);
 // - test
 // - watch:test
 require('./gulp/test')(options);
+// tasks:
+// - jshint
+require('./gulp/linter')(options);
 // tasks:
 // - polymer:rename
 // - polymer:build
@@ -80,7 +84,6 @@ gulp.task('build', [
   'bundle',
   'bundle:renderer',
   'polymer',
-  'test',
   'compass'
   // 'index:build'
 ]);

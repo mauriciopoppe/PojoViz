@@ -1,6 +1,7 @@
 language: node_js
 
 node_js:
+  - "0.12"
   - "0.10"
 
 before_install:
@@ -8,12 +9,6 @@ before_install:
 
 install:
   - npm install
-
-before_script:
-  - npm install gulp-mocha
-  - npm install chai
-  - npm install jshint
-  - npm install jshint-stylish
 
 script:
   - gulp test

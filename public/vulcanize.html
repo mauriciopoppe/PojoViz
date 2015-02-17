@@ -11288,10 +11288,11 @@ license that can be found in the LICENSE file.
 
 				userVars.push({
 					name: this.libraryName,
-					src: this.libraryUrl,
-					global: this.globalExported
+                    options: JSON.stringify({
+                        src: this.libraryUrl,
+                        entryPoint: this.globalExported
+                    })
 				});
-				// console.log(userVars);
 			}
 		});
 	</script>
@@ -11305,7 +11306,7 @@ license that can be found in the LICENSE file.
 		<core-menu selected="0">
 			<core-submenu icon="cloud" label="Downloaded" on-core-select="{{onLibrarySelect}}">
 				<template repeat="{{library in libraries}}">
-					<core-item label="{{library.name}}" data-value="render:{{library.name}}" data-src="{{library.src}}" data-global="{{library.global}}">
+					<core-item label="{{library.name}}" data-options="{{ library.options }}" data-type="render:{{library.name}}">
 					</core-item>
 				</template>
 			</core-submenu>

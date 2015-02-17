@@ -6,6 +6,9 @@ node_js:
 install:
   - npm install
 
+before_install:
+  - npm install -g gulp
+
 script:
   - gulp test
   - gulp linter

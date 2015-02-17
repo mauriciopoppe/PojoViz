@@ -1,4 +1,4 @@
-PojoViz - Plain Old JavaScript Object Visualization
+PojoViz - Plain Old JavaScript Object Visualization [![Build Status](https://travis-ci.org/maurizzzio/PojoViz.svg?branch=master)](https://travis-ci.org/maurizzzio/PojoViz)
 =======
 
 %PojoViz is a tool to analyze the plain objects of a JavaScript library/framework by finding all the relationships found among the library entry point (typically a global variable) and the objects/functions linked to it.

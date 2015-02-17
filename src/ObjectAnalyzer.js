@@ -78,7 +78,7 @@ function Analyzer(config) {
   if (!(this instanceof Analyzer)) {
     return new Analyzer(config);
   }
-  config = config || {};
+  config = _.merge(_.clone(Analyzer.DEFAULT_CONFIG, true), config);
 
   /**
    * items registered in this instance
@@ -93,13 +93,6 @@ function Analyzer(config) {
   this.forbidden = config.forbidden || new HashMap();
 
   /**
-   * If the analyzer is dirty then it has some pending work
-   * to do
-   * @type {boolean}
-   */
-  this.dirty = true;
-
-  /**
    * Print debug info in the console
    * @type {boolean}
    */
@@ -111,15 +104,13 @@ function Analyzer(config) {
    * @type {Boolean}
    * @cfg {boolean} [cache=true]
    */
-  this.cache = typeof config.cache === 'boolean' ?
-    config.cache : true;
+  this.cache = config.cache;
 
   /**
    * Dfs levels
    * @type {number}
    */
-  this.levels = typeof config.levels === 'number' ?
-    config.levels : Analyzer.DFS_LEVELS;
+  this.levels = config.levels;
 
   /**
    * True to include function constructors in the analysis graph
@@ -127,8 +118,7 @@ function Analyzer(config) {
    * @type {boolean}
    * @cfg {boolean} [visitConstructors=false]
    */
-  this.visitConstructors = typeof config.visitConstructors === 'boolean' ?
-    config.visitConstructors : Analyzer.VISIT_CONSTRUCTORS;
+  this.visitConstructors = config.visitConstructors;
 
   /**
    * True to include all the functions in the analysis graph,
@@ -136,8 +126,7 @@ function Analyzer(config) {
    * @type {boolean}
    * @cfg {boolean} [visitSimpleFunctions=false]
    */
-  this.visitSimpleFunctions = typeof config.visitSimpleFunctions === 'boolean' ?
-    config.visitSimpleFunctions : Analyzer.VISIT_SIMPLE_FUNCTIONS;
+  this.visitSimpleFunctions = config.visitSimpleFunctions;
 
   /**
    * @private
@@ -175,6 +164,17 @@ Analyzer.VISIT_SIMPLE_FUNCTIONS = false;
  * @type {number}
  */
 Analyzer.DFS_LEVELS = 15;
+
+/**
+ * Default config used whenever an instance of Analyzer is created
+ * @type {Object}
+ */
+Analyzer.DEFAULT_CONFIG = {
+  cache: true,
+  visitConstructors: Analyzer.VISIT_CONSTRUCTORS,
+  visitSimpleFunctions: Analyzer.VISIT_SIMPLE_FUNCTIONS,
+  levels: Analyzer.DFS_LEVELS
+};
 
 Analyzer.prototype = {
   constructor: Analyzer,
@@ -663,6 +663,16 @@ Analyzer.prototype = {
         doAllow(obj);
       }
     });
+  },
+
+  /**
+   * Empties all the info stored in this analyzer
+   */
+  reset: function () {
+    this.__linksCache = {};
+    this.__objectsCache = {};
+    this.forbidden.empty();
+    this.items.empty();
   }
 };
 

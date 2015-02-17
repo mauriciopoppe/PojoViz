@@ -231,7 +231,7 @@ utils.propertyForbiddenRules = {
    * @returns {boolean}
    */
   symbols: function (object, property) {
-    return property.search(/[:+~!><=//\[\]@\. ]/) > -1;
+    return property.search(/[:+~!><=//\]@\. ]/) > -1;
   }
 };
 

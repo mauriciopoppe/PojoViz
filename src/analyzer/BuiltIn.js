@@ -1,7 +1,7 @@
 'use strict';
 
 var GenericAnalyzer = require('./Inspector'),
-  utils = require('../util');
+  utils = require('../renderer/utils');
 
 var toInspect = [
   Object, Function,

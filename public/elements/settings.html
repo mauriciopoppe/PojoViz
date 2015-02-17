@@ -77,26 +77,25 @@
 
 			<h3>Additional options</h3>
 			<div horizontal layout>
-		    <paper-checkbox on-change="{{onShowBuiltInChange}}"></paper-checkbox>
-		    <div vertical layout>
-		      <h4>Generate links to BuiltIn Objects</h4>
-		      <div>Most of the objects will have their [[<kbd>Prototype</kbd>]] property pointing to <kbd>Object.prototype</kbd> as well as the functions' [[<kbd>Prototype</kbd>]] pointing to <kbd>Function.prototype</kbd>. This feature is disabled because of the number of links created to these objects, check to enable this feature.</div>
-		    </div>
-		  </div>
+                <paper-checkbox on-change="{{onShowBuiltInChange}}"></paper-checkbox>
+                <div vertical layout>
+                  <h4>Generate links to BuiltIn Objects</h4>
+                  <div>Most of the objects will have their [[<kbd>Prototype</kbd>]] property pointing to <kbd>Object.prototype</kbd> as well as the functions' [[<kbd>Prototype</kbd>]] pointing to <kbd>Function.prototype</kbd>. This feature is disabled because of the number of links created to these objects, check to enable this feature.</div>
+                </div>
+            </div>
 
-		  <div horizontal layout>
-		    <paper-checkbox checked="true" on-change="{{onFunctionConstructorsChange}}"></paper-checkbox>
-		    <div vertical layout>
-		      <h4>Function Constructors visibility</h4>
-		      <div>Something really hard to detect is when a function is a constructor, to <span class="pojoviz">PojoViz</span> a function is a constructor when:
-
-					<ul>
-						<li>the function has a <kbd>name</kbd> property which starts with an uppercase letter</li>
-						<li>if an object has a property which starts with an uppercase letter and this property is a function</li>
-					</ul>
-		      </div>
-		    </div>
-		  </div>
+            <div horizontal layout>
+                <paper-checkbox checked="true" on-change="{{onFunctionConstructorsChange}}"></paper-checkbox>
+                <div vertical layout>
+                    <h4>Function Constructors visibility</h4>
+                    <div>Something really hard to detect is when a function is a constructor, to <span class="pojoviz">PojoViz</span> a function is a constructor when:
+                        <ul>
+                            <li>the function has a <kbd>name</kbd> property which starts with an uppercase letter</li>
+                            <li>if an object has a property which starts with an uppercase letter and this property is a function</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
 		</section>
 
 		<section>
@@ -112,31 +111,18 @@
 			</paper-slider>
 		</section>
 
-		<section>
-			<h3>
-				ExtJS max depth
-				<span class="depth-value">{{$.extDepth.value}}</span>
-			</h3>
-			<p>
-				Defines the maximum depth when running the dfs algorithm starting from the <i>Ext</i> object <br />
-				WARNING: The higher the value the longer the time needed for the browser to render the nodes
-			</p>
-			<paper-slider on-change="{{extDepthChange}}" id="extDepth" pin snaps max="10" step="1" value="3">
-			</paper-slider>
-		</section>
-
-		<section>
-			<h3>
-				three.js max depth
-				<span class="depth-value">{{$.threeDepth.value}}</span>
-			</h3>
-			<p>
-				Defines the maximum depth when running the dfs algorithm starting from the <i>THREE</i> object <br />
-				WARNING: The higher the value the longer the time needed for the browser to render the nodes
-			</p>
-			<paper-slider on-change="{{threeDepthChange}}" id="threeDepth" pin snaps max="10" step="1" value="2">
-			</paper-slider>
-		</section>
+		<!--<section>-->
+			<!--<h3>-->
+				<!--ExtJS max depth-->
+				<!--<span class="depth-value">{{$.extDepth.value}}</span>-->
+			<!--</h3>-->
+			<!--<p>-->
+				<!--Defines the maximum depth when running the dfs algorithm starting from the <i>Ext</i> object <br />-->
+				<!--WARNING: The higher the value the longer the time needed for the browser to render the nodes-->
+			<!--</p>-->
+			<!--<paper-slider on-change="{{extDepthChange}}" id="extDepth" pin snaps max="10" step="1" value="3">-->
+			<!--</paper-slider>-->
+		<!--</section>-->
 
 		<section>
 			<h3>Angular drawer settings</h3>
@@ -165,33 +151,46 @@
 			},
 
 			windowDepthChange: function (event, detail, el) {
-				var objectHashes = pojoviz.InspectedInstances;
-				objectHashes.window.levels = el.value;
-			},
-
-			extDepthChange: function (event, detail, el) {
-				var objectHashes = pojoviz.InspectedInstances;
-				objectHashes.extjs &&
-					(objectHashes.extjs.levels = el.value);
-			},
-
-			threeDepthChange: function (event, detail, el) {
-				var objectHashes = pojoviz.InspectedInstances;
-				objectHashes.three.levels = el.value;
+				var windowInspector = pojoviz.InspectedInstances.window;
+                // clears the canvas on the next execution
+                pojoviz.unsetInspector();
+                windowInspector.setDirty();
+                windowInspector.analyzer.reset();
+                windowInspector.analyzer.levels = el.value;
 			},
 
 			onShowBuiltInChange: function (ev, detail, el) {
-//				pojoviz.analyzer.Inspector.SHOW_BUILTIN = el.checked;
-				pojoviz.InspectedInstances
+                // clears the canvas on the next execution
+                pojoviz.unsetInspector();
+                // with all the inspected instances:
+                // - make it dirty
+                // - reset any info the analyzer might have
+                pojoviz.InspectedInstances
+                    .all(function (v) {
+                        v.analyzer.reset();
+                        v.setBuiltInVisibility(!el.checked);
+                    })
 					.setDirty();
+                // with new instances update the default info
+                pojoviz.analyzer.Inspector
+                    .setBuiltInVisibility(!el.checked);
 			},
 
 			onFunctionConstructorsChange: function (ev, detail, el) {
-//				pojoviz.analyzer.Inspector.SHOW_FUNCTION_CONSTRUCTORS = el.checked;
-				pojoviz.InspectedInstances
-//					.setFunctionConstructors(el.checked)
-					.setDirty();
-			},
+                // clears the canvas on the next execution
+                pojoviz.unsetInspector();
+                // with all the inspected instances:
+                // - make it dirty
+                // - reset any info the analyzer might have
+                pojoviz.InspectedInstances
+                        .all(function (v) {
+                            v.analyzer.reset();
+                            v.analyzer.visitConstructors = el.checked;
+                        })
+                        .setDirty();
+                // TODO: set the same config for new instances to be created
+                // just like onShowBuiltInChange
+            },
 
 			onRadioSelectChange: function (ev, detail, el) {
 				if (detail.isSelected) {

@@ -70,16 +70,7 @@ var searchEngine = 'https://duckduckgo.com/?q=';
  * @param {string} [config.forbiddenTokens=Inspector.DEFAULT_FORBIDDEN_TOKENS]
  */
 function Inspector(config) {
-  config = _.merge({
-    src: null,
-    entryPoint: '',
-    displayName: '',
-    alwaysDirty: false,
-    debug: false,
-    forbiddenTokens: Inspector.DEFAULT_FORBIDDEN_TOKENS,
-    additionalForbiddenTokens: '',
-    analyzerConfig: {}
-  }, config);
+  config = _.merge(_.clone(Inspector.DEFAULT_CONFIG, true), config);
 
   /**
    * If provided it'll be used as the starting object from the
@@ -176,9 +167,48 @@ function Inspector(config) {
  */
 Inspector.instances = null;
 
+
+/**
+ * @type {string[]}
+ */
+Inspector.DEFAULT_FORBIDDEN_TOKENS_ARRAY = ['pojoviz:window', 'pojoviz:builtIn', 'global:document'];
+/**
+ * Forbidden tokens which are set by default on any Inspector instance
+ * @type {string}
+ */
 Inspector.DEFAULT_FORBIDDEN_TOKENS =
-  'pojoviz:window|pojoviz:builtIn|global:document';
-  //'pojoviz:window|pojoviz:builtIn';
+  Inspector.DEFAULT_FORBIDDEN_TOKENS_ARRAY.join('|');
+
+/**
+ * Default config used whenever an instance of Inspector is created
+ * @type {Object}
+ */
+Inspector.DEFAULT_CONFIG = {
+  src: null,
+  entryPoint: '',
+  displayName: '',
+  alwaysDirty: false,
+  debug: false,
+  forbiddenTokens: Inspector.DEFAULT_FORBIDDEN_TOKENS,
+  additionalForbiddenTokens: '',
+  analyzerConfig: {}
+};
+
+/**
+ * Update the builtIn visibility of all the new instances to be created
+ * @param visible
+ */
+Inspector.setBuiltInVisibility = function (visible) {
+  var me = this;
+  var token = 'pojoviz:builtIn';
+  var arr = me.DEFAULT_FORBIDDEN_TOKENS_ARRAY;
+  if (visible) {
+    arr.push(token);
+  } else {
+    arr.splice(arr.indexOf(token), 1);
+  }
+  me.DEFAULT_CONFIG.forbiddenTokens = arr.join('|');
+};
 
 /**
  * Init routine, should be called on demand to initialize the
@@ -420,17 +450,32 @@ Inspector.prototype.fetch = function () {
   return Q.delay(0);
 };
 
+/**
+ * Toggles the visibility of the builtIn objects
+ * @param visible
+ */
+Inspector.prototype.setBuiltInVisibility = function (visible) {
+  var me = this;
+  var token = 'pojoviz:builtIn';
+  var arr = me.forbiddenTokens;
+  if (visible) {
+    arr.push(token);
+  } else {
+    arr.splice(arr.indexOf(token), 1);
+  }
+};
+
 Inspector.prototype.showSearch = function (nodeName, nodeProperty) {
   var me = this;
-  window.open(
-    _.template('${searchEngine}${lucky}${libraryName} ${nodeName} ${nodeProperty}', {
-      searchEngine: searchEngine,
-      lucky: Inspector.lucky ? '!ducky' : '',
-      libraryName: me.displayname || me.global,
-      nodeName: nodeName,
-      nodeProperty: nodeProperty
-    })
-  );
+  var tpl = _.template('${searchEngine}${lucky}${libraryName} ${nodeName} ${nodeProperty}');
+  var compiled = tpl({
+    searchEngine: searchEngine,
+    lucky: Inspector.lucky ? '!ducky' : '',
+    libraryName: me.entryPoint,
+    nodeName: nodeName,
+    nodeProperty: nodeProperty
+  });
+  window.open(compiled);
 };
 
 module.exports = Inspector;

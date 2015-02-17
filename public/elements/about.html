@@ -12,14 +12,14 @@
 				font-weight: 100!important;
 			}
 			paper-button[raisedButton].blue {
-	      background: #03a9f4;
-	      color: #fff;
-	    }
+              background: #03a9f4;
+              color: #fff;
+            }
 		</style>
 		<core-icon-button icon="info-outline" on-click="{{onClick}}"></core-icon-button>
-		<paper-dialog id="popup" heading="About" transition="paper-dialog-transition-center">
+		<paper-dialog id="aboutPopup" heading="About" transition="paper-dialog-transition-center" backdrop>
 			<p>
-				Made by <a target="_blank" href="https://github.com/maurizzzio">maurizzzio</a>, have fun!
+				Author <a target="_blank" href="https://twitter.com/iMauricio">@iMauricio</a>, have fun!
 			</p>
 
 			<p>
@@ -39,17 +39,13 @@
 				<a href="https://duckduckgo.com" target="_blank">
 					<img src="https://duckduckgo.com/assets/icons/meta/DDG-icon_64x64.png" alt="">
 				</a>
-				<!--<a href="https://cdnjs.com" target="_blank">-->
-					<!--<img src="http://blog.cloudflare.com/static/images/cdnjs.png.scaled500.png" alt="">-->
-				<!--</a>-->
 			</div>
-			<paper-button label="Close" class="blue" raisedButton affirmative autofocus></paper-button>
 		</paper-dialog>
 	</template>
 	<script>
 		Polymer('pojoviz-about', {
 			onClick: function (event, detail, el) {
-				this.$.popup.toggle();
+				this.$.aboutPopup.toggle();
 			}
 		});
 	</script>

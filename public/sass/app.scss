@@ -5,6 +5,8 @@
 
 @import "compass/css3";
 @import "base";
+@import "elements/search";
+@import "elements/about";
 
 $main: $blue-500;
 $color-function: $red-100;
@@ -49,7 +51,6 @@ body {
       padding: 40px;
     }
   }
-
 
   /deep/ {
     .center {

@@ -1,0 +1,12 @@
+/* popup */
+html {
+  /deep/ {
+    #aboutPopup {
+      &::shadow {
+        #scroller {
+          width: 600px;
+        }
+      }
+    }
+  }
+}

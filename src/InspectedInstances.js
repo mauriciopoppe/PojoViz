@@ -23,9 +23,11 @@ var proto = {
   /**
    * Execute `fn` with all the properties saved in `this`
    * @param fn
+   * @chainable
    */
   all: function (fn) {
     _.forOwn(libraries, fn);
+    return this;
   },
   /**
    * Marks all the properties saved in `this` as dirty

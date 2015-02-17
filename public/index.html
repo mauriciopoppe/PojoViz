@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<title>Pojo Viz</title>
 
-	<script src="bower_components/platform/platform.js"></script>
+    <script src="bower_components/webcomponentsjs/webcomponents.js"></script>
 
   <!-- Meta -->
   <meta content="PojoViz" property="og:title">
@@ -274,7 +274,7 @@
 				id="readme"
 				data-type="readme"
 				class="toolbar-page"
-				icon="drive-document">
+				icon="description">
 			</core-icon-button>
 		</div>
 
@@ -284,7 +284,9 @@
 
 			<section label="app" class="no-padding">
 				<div class="canvas-wrapper" cross-fade>
+                    <!--three js renderer canvas-->
 					<div id="threejscanvas" style="display: none; height: 100%"></div>
+                    <!--d3 renderer canvas-->
 					<svg id="canvas" class="unselectable" style="display: none;"></svg>
 				</div>
 			</section>
@@ -377,9 +379,11 @@
 			};
 
 			window.pushState = function (hash) {
-				// history
-				var el = document.querySelector('[data-value="' +
+				// on page load find an el with a data-type equal to the hash part
+				var el = document.querySelector('[data-type="' +
 					hash + '"]');
+
+                // default to readme if it doesn't exist
 				if (!el) {
 					el = scaffold.querySelector('#readme');
 				}

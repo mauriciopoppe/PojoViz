@@ -42,7 +42,7 @@ describe('Inspector', function () {
     });
   });
 
-  it('inspect a simple object including builtIn objects', function (done) {
+  it('inspects a simple object including builtIn objects', function (done) {
     global.x = {};
     var inspector = new Inspector({
       entryPoint: 'x',
@@ -56,7 +56,7 @@ describe('Inspector', function () {
       .done(done, done);
   });
 
-  it('inspect a simple object avoiding the Object.prototype link', function (done) {
+  it('inspects a simple object avoiding the Object.prototype link', function (done) {
     global.x = {};
     var inspector = new Inspector({
       entryPoint: 'x',

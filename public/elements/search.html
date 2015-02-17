@@ -4,198 +4,281 @@
 <link rel="import" href="../bower_components/paper-dialog/paper-dialog.html">
 <link rel="import" href="../bower_components/paper-button/paper-button.html">
 <link rel="import" href="../bower_components/paper-input/paper-input.html">
+<link rel="import" href="../bower_components/paper-slider/paper-slider.html">
+<link rel="import" href="../bower_components/paper-toggle-button/paper-toggle-button.html">
+<link rel="import" href="../bower_components/paper-spinner/paper-spinner.html">
 <link rel="import" href="../bower_components/paper-radio-group/paper-radio-group.html">
 <link rel="import" href="../bower_components/paper-radio-button/paper-radio-button.html">
 <link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
 <link rel="import" href="../bower_components/paper-dialog/paper-dialog-transition.html">
 
 <polymer-element name="pojoviz-search" attributes="globals">
-	<template>
-		<style>
-			paper-dialog {
-				width: 800px;
-				height: 650px;
-			}
-			.results {
-				padding: 0 30px;
-				max-height: 200px;
-				overflow-y: scroll;
-				font-size: 12px;
-			}
-			.library-name {
-				font-size: 15px;
-				font-weight: 100;
-			}
-			.library-url {
-				font-size: 12px;
-				word-wrap: break-word;
-			}
-			.add {
-				height: 30px;
-			}
-			.record {
-				margin: 20px 0;
-			}
-			paper-button {
-				background: #03a9f4;
-    		color: #fff;
-			}
-			paper-radio-button {
-				margin: auto;
-			}
-			.small {
-				font-size: 12px!important;
-				color: #03a9f4;
-				font-weight: 100;
-			}
-			paper-button {
-				margin: 0 10px;
-			}
-			paper-button[raisedButton].green {
-	      background: #259b24;
-	      color: #fff;
-	    }
-	    paper-button[raisedButton].blue {
-	      background: #03a9f4;
-	      color: #fff;
-	    }
-		</style>
+    <template>
 
-		<core-icon-button icon="search" on-click="{{onIconClick}}"></core-icon-button>
-    <paper-dialog id="popup" heading="Library Search" transition="paper-dialog-transition-center">
+        <core-icon-button icon="search" on-click="{{onIconClick}}"></core-icon-button>
+        <paper-dialog id="searchPopup" backdrop
+            heading="Library Search"
+            transition="paper-dialog-transition-center">
 
-			<core-ajax id="ajax"
-		    url="http://api.cdnjs.com/libraries"
-		    handleAs="json"
-		    on-core-response="{{handleResponse}}">
-	    </core-ajax>
+            <div center horizontal layout>
+                <div flex></div>
+                <div class="small">Powered by <a href='https://cdnjs.com/'>cdn.js</a></div>
+            </div>
 
-	    <paper-input id="inputQuery" floatingLabel
-	    	label="Add your preferred library"
-	    	value="{{query}}"></paper-input>
+            <core-ajax id="ajax"
+                url="http://api.cdnjs.com/libraries"
+                handleAs="json"
+                on-core-response="{{handleResponse}}">
+            </core-ajax>
 
-			<paper-radio-group
-				id="libraryGroup"
-				on-core-select="{{onRadioSelectChange}}"
-				target="{{$.results}}"
-				itemsSelector="paper-radio-button"
-				selected="0">
-		  	<div id="results" class="results">
-				    <template repeat="{{record in results}}">
-				    	<div class="record" layout horizontal>
-				    		<div flex one layout justified horizontal>
-							    <paper-radio-button
-							    	name="{{record.name}}"
-							    	value="{{record.latest}}">
-							    </paper-radio-button>
-				    		</div>
-								<div layout horizontal flex eleven>
-					    		<div class="library-name" flex one>{{record.name}}</div>
-					    		<div class="library-url" flex two>
-					    			{{record.latest}}
-					    		</div>
-								</div>
-				    	</div>
-				    </template>
-				</div>
-			</paper-radio-group>
 
-			<template if="{{libraryName}}">
-				<div>
-					<paper-input id="globalExported" floatingLabel
-			    	label="Enter the global variable exported"
-			    	value="{{globalExported}}">
-			    </paper-input>
-		    </div>
-		  </template>
+            <paper-input id="query" floatingLabel
+                label="Add your preferred library"
+                value="{{query}}"></paper-input>
 
-			<template if="{{libraryName && globalExported}}">
-				<div class="small">
-					<div>
-						name:   {{libraryName}} {{libraryUrl}} <br />
-						global: {{globalExported}}
-					</div>
-				</div>
-				<paper-button class="green"
-					on-click="{{onAddLibrary}}"
-					label="Add Library"
-					raisedButton affirmative autofocus>
-				</paper-button>
-			</template>
+            <!--spinner-->
+            <paper-spinner id="spinner"></paper-spinner>
 
-			<paper-button class="blue" label="Close" raisedButton affirmative autofocus></paper-button>
-		</paper-dialog>
+            <paper-radio-group
+                    id="libraryGroup"
+                    on-core-select="{{onRadioSelectChange}}"
+                    target="{{$.results}}"
+                    itemsSelector="paper-radio-button"
+                    selected="0">
+                <div id="results" class="results">
+                    <template repeat="{{record in results}}">
+                        <div class="record" layout horizontal>
+                            <div flex one layout justified horizontal>
+                                <paper-radio-button
+                                    name="{{record.name}}"
+                                    value="{{record.latest}}">
+                                </paper-radio-button>
+                            </div>
+                            <div layout horizontal flex eleven>
+                                <div class="library-name" flex one>{{record.name}}</div>
+                                <div class="library-url" flex two>
+                                    {{record.latest}}
+                                </div>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+            </paper-radio-group>
 
-	</template>
-	<script>
-		Polymer('pojoviz-search', {
+            <template if="{{options.displayName}}">
+                <section class="options">
+                    <!--entry point-->
+                    <paper-input id="entryPoint" floatingLabel label="Enter the entry point to this library (might be nested with .)"
+                         value="{{options.entryPoint}}">
+                    </paper-input>
 
-			publish: {
-				globals: {
-					value: [],
-					reflect: true
-				}
-			},
+                    <!--forbidden tokens-->
+                    <paper-input floatingLabel label="Forbidden tokens: "
+                                 value="{{options.forbiddenTokens}}">
+                    </paper-input>
+                    <div class="small">
+                        Pipe (|) separated list of commands that indicate objects that will be ignored
+                        during the analysis, each command has the following form:
 
-			created: function () {
-				this.results = null;
-				this.libraryName = null;
-				this.libraryUrl = null;
-				this.globalExported = null;
-			},
+                        <ul>
+                            <li>
+                                pojoviz:{string} - Forbids all the items saved in the {string} instance which
+                                is stored in the InspectedInstances object, assuming that each is a subclass of `Inspector`
+                            </li>
+                            <li>
+                                global:{string} - Forbids an object which is in the global object, {string} might
+                                also indicate a nested object using the normal dot notation
+                            </li>
+                        </ul>
 
-			ready: function () {
-				var me = this,
-					urlRegex = /\s*http[s]?:\/\/.*/gi,
-					timer;
-				me.$.inputQuery.oninput = function () {
-					var text = me.$.inputQuery.inputValue;
-					clearTimeout(timer);
-					timer = setTimeout(function () {
-						var m = text.match(urlRegex);
-						if (m) {
-							me.libraryUrl = text;
-							me.libraryName = text;
-						} else {
-							me.onSearch();
-						}
-					}, 1000);
-				};
-			},
-			onIconClick: function (event, detail, el) {
-				this.$.popup.toggle();
-			},
-			onSearch: function () {
-				var me = this;
-				var ajaxEl = me.$.ajax;
-				ajaxEl.params = JSON.stringify({
-					search: me.$.inputQuery.inputValue,
-					fields: 'assets'
-				});
-				ajaxEl.go();
-			},
-			onRadioSelectChange: function (ev, detail, el) {
-				if (detail.isSelected) {
-					this.libraryName = detail.item.getAttribute('name');
-					this.libraryUrl = detail.item.getAttribute('value');
-				}
-			},
-			handleResponse: function (ev, detail, el) {
-				var results = detail.response.results;
-				this.results = results;
-			},
-			onAddLibrary: function (ev, detail, el) {
-				var userVars = pojoviz.userVariables;
-				pojoviz.utils.notification('added library ' + this.libraryName + '! Find it under the "Downloaded" accordion');
+                        Examples:
+                        <ul>
+                            <li>pojoviz:builtIn (Forbids all the objects under the BuiltIn inspector)</li>
+                            <li>global:document (Forbids window.document)</li>
+                            <li>global:document.head (Forbids window.document.head)</li>
+                        </ul>
 
-				userVars.push({
-					name: this.libraryName,
-                    options: JSON.stringify({
-                        src: this.libraryUrl,
-                        entryPoint: this.globalExported
-                    })
-				});
-			}
-		});
-	</script>
+                        See <kbd>src/analyzer/Inspector</kbd> for a detailed explanation of this option
+                    </div>
+
+
+                    <!--levels-->
+                    <div center layout>
+                        <div class="bold">Levels: {{options.analyzerConfig.levels}}</div>
+                        <p class="small">
+                            Defines the maximum depth when running the dfs algorithm starting from the <i>entryPoint</i> object <br />
+                            WARNING: The higher the value the longer the time needed for the browser to render the nodes
+                        </p>
+                        <paper-slider min="0" max="20" value="{{options.analyzerConfig.levels}}" pin>
+                        </paper-slider>
+                    </div>
+
+                    <!--always dirty-->
+                    <div center horizontal layout>
+                        <paper-toggle-button checked="{{options.alwaysDirty}}">
+                        </paper-toggle-button>
+                        <div vertical layout flex>
+                            <div class="bold">Analyzer is always dirty</div>
+                            <p class="small">
+                                If enabled the analyzer will always perform a clean analysis of the library
+                                (i.e. the structure representation won't be cached in memory)
+                            </p>
+                        </div>
+                    </div>
+
+                    <!--analyzer config-->
+                    <!--simple functions-->
+                    <div center horizontal layout>
+                        <paper-toggle-button checked="{{options.analyzerConfig.visitSimpleFunctions}}">
+                        </paper-toggle-button>
+                        <div vertical layout flex>
+                            <div class="bold">Visit simple functions</div>
+                            <p class="small">The object analyzer doesn't visit functions that only have the basic properties
+                                <kbd>(["length", "name", "arguments", "caller", "prototype"])</kbd>  because of the number of
+                                nodes that are created, enable it to visit this kind of functions
+                            </p>
+                        </div>
+                    </div>
+
+                    <!--simple functions-->
+                    <div center horizontal layout>
+                        <paper-toggle-button checked="{{options.analyzerConfig.visitConstructors}}">
+                        </paper-toggle-button>
+                        <div vertical layout flex>
+                            <div class="bold">Visit constructors</div>
+                            <p class="small">
+                                If <i>visit simple function</i> is enabled it might avoid visiting
+                                function constructors (for the sake of the library they are functions which
+                                have a <i>name</i> property which starts with an uppercase letter), to
+                                avoid this undesired behavior enable this option
+                            </p>
+                        </div>
+                    </div>
+                </section>
+            </template>
+
+            <!--library name & global-->
+            <template if="{{options.displayName}}">
+                <h3>{{options.displayName}} configuration</h3>
+                <div class="small">
+                    <div>Display Name: <kbd>{{options.displayName}}</kbd></div>
+                    <div>Source: <kbd>{{options.src}}</kbd></div>
+                    <div>Levels: <kbd>{{options.analyzerConfig.levels}}</kbd></div>
+                    <div>Entry Point: <kbd>{{options.entryPoint}}</kbd></div>
+                    <div>Always dirty: <kbd>{{options.alwaysDirty}}</kbd></div>
+                    <div>Visit simple functions: <kbd>{{options.analyzerConfig.visitSimpleFunctions}}</kbd></div>
+                </div>
+            </template>
+
+            <!--<paper-button on-click="{{test}}">test</paper-button>-->
+
+            <div class="docked-bottom" center horizontal layout>
+                <div flex></div>
+
+                <!--save button is enabled only if the global & library name are set-->
+                <template if="{{options.displayName && options.entryPoint}}">
+                    <paper-button class="green" on-click="{{onAddLibrary}}"
+                        raisedButton affirmative autofocus>
+                        Add Library
+                    </paper-button>
+                </template>
+
+                <paper-button class="blue" raisedButton affirmative autofocus on-click="{{closeDialog}}">
+                    Close
+                </paper-button>
+            </div>
+        </paper-dialog>
+    </template>
+
+    <script>
+        Polymer('pojoviz-search', {
+
+            publish: {
+                globals: {
+                    value: [],
+                    reflect: true
+                }
+            },
+
+            created: function () {
+                this.results = null;
+
+                // sync this variable with options
+                this.options = JSON.parse(JSON.stringify(
+                    pojoviz.analyzer.Inspector.DEFAULT_CONFIG
+                ));
+                // default options for the search
+                this.options.analyzerConfig.levels = 10;
+                this.options.analyzerConfig.visitSimpleFunctions = false;
+                this.options.analyzerConfig.visitConstructors = true;
+            },
+
+            ready: function () {
+                var me = this,
+                    urlRegex = /\s*http[s]?:\/\/.*/gi,
+                    timer;
+                me.$.query.oninput = function () {
+                    var text = me.$.query.value;
+                    clearTimeout(timer);
+                    if (text.trim()) {
+                        timer = setTimeout(function () {
+                            var m = text.match(urlRegex);
+                            if (m) {
+                                me.options.src = text;
+                                me.options.displayName = text;
+                            } else {
+                                me.onSearch();
+                            }
+                        }, 1000);
+                    }
+                };
+            },
+
+            onIconClick: function (event, detail, el) {
+                this.$.searchPopup.toggle();
+            },
+            onSearch: function () {
+                var me = this;
+                var ajaxEl = me.$.ajax;
+                me.$.spinner.active = true;
+                ajaxEl.params = JSON.stringify({
+                    search: me.$.query.value,
+                    fields: 'assets'
+                });
+                ajaxEl.go();
+            },
+            onRadioSelectChange: function (ev, detail, el) {
+                if (detail.isSelected) {
+                    this.options.displayName = detail.item.getAttribute('name');
+                    this.options.src = detail.item.getAttribute('value');
+                }
+            },
+
+            handleResponse: function (ev, detail, el) {
+                var me = this;
+                me.$.spinner.active = false;
+                var results = detail.response.results;
+                this.results = results;
+            },
+            onAddLibrary: function (ev, detail, el) {
+                var userVars = pojoviz.userVariables;
+                pojoviz.utils.notification('added library ' + this.options.displayName +
+                '! Find it under the "Downloaded" accordion');
+
+                console.log('New inspector: ', JSON.stringify(this.options));
+
+                userVars.push({
+                    name: this.options.displayName,
+                    options: JSON.stringify(this.options)
+                });
+                this.closeDialog();
+            },
+            closeDialog: function () {
+                this.$.searchPopup.close();
+            },
+            test: function () {
+                console.log(this.options);
+            }
+        });
+    </script>
 </polymer-element>

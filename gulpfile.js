@@ -61,7 +61,7 @@ require('./gulp/polymer')(_.merge(options, {
 require('./gulp/release')();
 
 // main tasks
-gulp.task('watch', ['watch:test']);
+gulp.task('watch', ['watch:test', 'watch:compass']);
 gulp.task('default', ['bundle', 'bundle:renderer', 'watch'], function () {
   gulp.start('server');
 });

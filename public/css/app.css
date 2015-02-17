@@ -10,27 +10,107 @@
   user-select: none;
 }
 
-/* line 19, ../sass/app.scss */
+/* popup */
+/* line 6, ../sass/elements/search.scss */
+html /deep/ #searchPopup::shadow #scroller {
+  width: 850px;
+  height: 650px;
+}
+/* line 12, ../sass/elements/search.scss */
+html /deep/ #searchPopup paper-input {
+  width: 90%;
+}
+/* line 16, ../sass/elements/search.scss */
+html /deep/ #searchPopup paper-spinner {
+  position: relative;
+  top: 40px;
+  left: 20px;
+}
+/* line 23, ../sass/elements/search.scss */
+html /deep/ #searchPopup paper-radio-group .results {
+  max-height: 200px;
+  width: 90%;
+  overflow-y: scroll;
+  font-size: 12px;
+}
+/* line 29, ../sass/elements/search.scss */
+html /deep/ #searchPopup paper-radio-group .results paper-radio-button {
+  padding: 10px;
+}
+/* line 33, ../sass/elements/search.scss */
+html /deep/ #searchPopup paper-radio-group .results .library-name {
+  padding: 5px;
+  font-size: 15px;
+  font-weight: 100;
+}
+/* line 38, ../sass/elements/search.scss */
+html /deep/ #searchPopup paper-radio-group .results .library-url {
+  font-size: 12px;
+  word-wrap: break-word;
+}
+/* line 42, ../sass/elements/search.scss */
+html /deep/ #searchPopup paper-radio-group .results .record {
+  margin: 20px 0;
+}
+/* line 49, ../sass/elements/search.scss */
+html /deep/ #searchPopup .options .bold {
+  font-weight: bold;
+}
+/* line 53, ../sass/elements/search.scss */
+html /deep/ #searchPopup .options [center] {
+  margin: 20px 0;
+}
+/* line 58, ../sass/elements/search.scss */
+html /deep/ #searchPopup paper-toggle-button {
+  width: 50px;
+}
+/* line 66, ../sass/elements/search.scss */
+html /deep/ #searchPopup .small {
+  font-size: 12px !important;
+  font-weight: 100;
+}
+/* line 70, ../sass/elements/search.scss */
+html /deep/ #searchPopup paper-button {
+  margin: 0 10px;
+}
+/* line 73, ../sass/elements/search.scss */
+html /deep/ #searchPopup paper-button[raisedButton].green {
+  background: #259b24;
+  color: #fff;
+}
+/* line 77, ../sass/elements/search.scss */
+html /deep/ #searchPopup paper-button[raisedButton].blue {
+  background: #03a9f4;
+  color: #fff;
+}
+
+/* popup */
+/* line 6, ../sass/elements/about.scss */
+html /deep/ #aboutPopup::shadow #scroller {
+  width: 600px;
+}
+
+/* line 21, ../sass/app.scss */
 #__bs_notify__ {
   display: none !important;
 }
 
-/* line 23, ../sass/app.scss */
+/* line 25, ../sass/app.scss */
 *, *:before, *:after {
   font-family: 'Roboto', sans-serif;
 }
 
-/* line 27, ../sass/app.scss */
+/* line 29, ../sass/app.scss */
 .no-padding {
   padding: 0 !important;
 }
 
-/* line 33, ../sass/app.scss */
+/* line 35, ../sass/app.scss */
 html.notoolbar /deep/ core-toolbar {
   display: none;
 }
 
-/* line 41, ../sass/app.scss */
+/* line 43, ../sass/app.scss */
 body core-animated-pages {
   position: absolute;
   top: 0;
@@ -38,50 +118,50 @@ body core-animated-pages {
   width: 100%;
   height: 100%;
 }
-/* line 48, ../sass/app.scss */
+/* line 50, ../sass/app.scss */
 body core-animated-pages section {
   padding: 40px;
 }
-/* line 55, ../sass/app.scss */
+/* line 56, ../sass/app.scss */
 body /deep/ .center {
   display: block;
   margin: auto;
 }
-/* line 59, ../sass/app.scss */
+/* line 60, ../sass/app.scss */
 body /deep/ h1 {
   font-weight: 100;
   font-size: 3em;
 }
-/* line 63, ../sass/app.scss */
+/* line 64, ../sass/app.scss */
 body /deep/ core-header-panel[main] {
   background-color: white;
 }
-/* line 65, ../sass/app.scss */
+/* line 66, ../sass/app.scss */
 body /deep/ core-header-panel[main] core-toolbar {
   background-color: #03a9f4;
 }
-/* line 69, ../sass/app.scss */
+/* line 70, ../sass/app.scss */
 body /deep/ .pojoviz {
   font-weight: 100;
   font-size: 1.3rem;
   color: #03a9f4;
 }
-/* line 74, ../sass/app.scss */
+/* line 75, ../sass/app.scss */
 body /deep/ core-item:hover {
   cursor: pointer !important;
 }
-/* line 77, ../sass/app.scss */
+/* line 78, ../sass/app.scss */
 body /deep/ .readme-iframe {
   margin: auto;
   display: block;
 }
-/* line 80, ../sass/app.scss */
+/* line 81, ../sass/app.scss */
 body /deep/ .readme-iframe html {
   -webkit-box-shadow: inset 0px 0px 14px 0px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: inset 0px 0px 14px 0px rgba(0, 0, 0, 0.75);
   box-shadow: inset 0px 0px 14px 0px rgba(0, 0, 0, 0.75);
 }
-/* line 86, ../sass/app.scss */
+/* line 87, ../sass/app.scss */
 body /deep/ .as-button {
   text-decoration: none;
   padding: 10px;
@@ -94,19 +174,19 @@ body /deep/ .as-button {
   color: white;
 }
 
-/* line 95, ../sass/app.scss */
+/* line 96, ../sass/app.scss */
 .logo {
   text-align: center;
   padding: 15px;
   font-size: 4em;
   font-weight: 100;
 }
-/* line 100, ../sass/app.scss */
+/* line 101, ../sass/app.scss */
 .logo .subtitle {
   font-size: 12px;
 }
 
-/* line 106, ../sass/app.scss */
+/* line 107, ../sass/app.scss */
 .pv-link {
   -webkit-transition-property: stroke;
   -moz-transition-property: stroke;
@@ -120,55 +200,55 @@ body /deep/ .as-button {
   stroke-width: 3px;
   stroke: lightgrey;
 }
-/* line 113, ../sass/app.scss */
+/* line 114, ../sass/app.scss */
 .pv-link.selected {
   stroke: #03a9f4;
 }
-/* line 115, ../sass/app.scss */
+/* line 116, ../sass/app.scss */
 .pv-link.selected.predecessor {
   stroke: #e51c23;
 }
-/* line 118, ../sass/app.scss */
+/* line 119, ../sass/app.scss */
 .pv-link.selected.successor {
   stroke: #03a9f4;
 }
 
-/* line 124, ../sass/app.scss */
+/* line 125, ../sass/app.scss */
 .canvas-wrapper {
   height: 100%;
 }
 
-/* line 127, ../sass/app.scss */
+/* line 128, ../sass/app.scss */
 svg#canvas {
   width: 100%;
   height: 100%;
 }
-/* line 132, ../sass/app.scss */
+/* line 133, ../sass/app.scss */
 svg#canvas.dragged {
   cursor: move;
 }
-/* line 136, ../sass/app.scss */
+/* line 137, ../sass/app.scss */
 svg#canvas .pv-nodes-focused .pv-node {
   opacity: 0.3;
 }
-/* line 138, ../sass/app.scss */
+/* line 139, ../sass/app.scss */
 svg#canvas .pv-nodes-focused .pv-node.selected {
   opacity: 1;
 }
-/* line 142, ../sass/app.scss */
+/* line 143, ../sass/app.scss */
 svg#canvas .pv-nodes-focused .pv-node.predecessor .node-background {
   stroke: #e51c23;
 }
-/* line 147, ../sass/app.scss */
+/* line 148, ../sass/app.scss */
 svg#canvas .pv-nodes-focused .pv-node.successor .node-background {
   stroke: #03a9f4;
 }
-/* line 152, ../sass/app.scss */
+/* line 153, ../sass/app.scss */
 svg#canvas .pv-nodes-focused .pv-node.current .node-background {
   stroke: #673ab7;
 }
 
-/* line 160, ../sass/app.scss */
+/* line 161, ../sass/app.scss */
 .pv-node {
   -webkit-transition-property: opacity;
   -moz-transition-property: opacity;
@@ -179,7 +259,7 @@ svg#canvas .pv-nodes-focused .pv-node.current .node-background {
   -o-transition-duration: 0.2s;
   transition-duration: 0.2s;
 }
-/* line 164, ../sass/app.scss */
+/* line 165, ../sass/app.scss */
 .pv-node .node-background {
   fill: white;
   fill-opacity: 1;
@@ -187,75 +267,75 @@ svg#canvas .pv-nodes-focused .pv-node.current .node-background {
   stroke: #b3e5fc;
   stroke-width: 2px;
 }
-/* line 171, ../sass/app.scss */
+/* line 172, ../sass/app.scss */
 .pv-node .pv-title {
   font-size: 17px;
   font-weight: 100;
 }
-/* line 178, ../sass/app.scss */
+/* line 179, ../sass/app.scss */
 .pv-node .pv-body .pv-property .pv-dot-object {
   fill: #03a9f4;
   fill-opacity: 1;
 }
-/* line 182, ../sass/app.scss */
+/* line 183, ../sass/app.scss */
 .pv-node .pv-body .pv-property .pv-dot-function {
   fill: #f9bdbb;
 }
-/* line 187, ../sass/app.scss */
+/* line 188, ../sass/app.scss */
 .pv-node .pv-body .pv-property .pv-property-background {
   fill: white;
 }
-/* line 191, ../sass/app.scss */
+/* line 192, ../sass/app.scss */
 .pv-node .pv-body .pv-property:hover {
   cursor: pointer;
 }
-/* line 196, ../sass/app.scss */
+/* line 197, ../sass/app.scss */
 .pv-node .pv-body .pv-property.pv-__proto__ rect {
   fill: #b3e5fc;
   fill-opacity: 0.15;
   stroke-dasharray: 2;
 }
-/* line 201, ../sass/app.scss */
+/* line 202, ../sass/app.scss */
 .pv-node .pv-body .pv-property.pv-__proto__ text {
   stroke-dasharray: 1;
   fill: #b3e5fc;
 }
-/* line 208, ../sass/app.scss */
+/* line 209, ../sass/app.scss */
 .pv-node .pv-body .pv-property rect.pv-string {
   stroke: #a3e9a4;
 }
-/* line 211, ../sass/app.scss */
+/* line 212, ../sass/app.scss */
 .pv-node .pv-body .pv-property rect.pv-number {
   stroke: #ffe0b2;
 }
-/* line 217, ../sass/app.scss */
+/* line 218, ../sass/app.scss */
 .pv-node .pv-body .pv-property rect.pv-object {
   stroke: #b3e5fc;
 }
-/* line 225, ../sass/app.scss */
+/* line 226, ../sass/app.scss */
 .pv-node.pv-function rect.node-background {
   stroke: #f9bdbb;
 }
 
-/* line 236, ../sass/app.scss */
+/* line 237, ../sass/app.scss */
 pojoviz-settings::shadow paper-slider::shadow #sliderKnobInner, pojoviz-settings::shadow paper-slider::shadow #sliderKnobInner::before,
 pojoviz-settings::shadow paper-slider::shadow #sliderBar::shadow #activeProgress {
   background-color: #03a9f4;
 }
-/* line 242, ../sass/app.scss */
+/* line 243, ../sass/app.scss */
 pojoviz-settings::shadow paper-checkbox::shadow #ink[checked] {
   color: #03a9f4;
 }
-/* line 245, ../sass/app.scss */
+/* line 246, ../sass/app.scss */
 pojoviz-settings::shadow paper-checkbox::shadow #checkbox.checked {
   border-color: #03a9f4;
 }
-/* line 251, ../sass/app.scss */
+/* line 252, ../sass/app.scss */
 pojoviz-settings::shadow paper-radio-button::shadow #onRadio {
   background-color: #03a9f4;
 }
 
-/* line 258, ../sass/app.scss */
+/* line 259, ../sass/app.scss */
 core-submenu core-item {
   font-size: 13px;
 }

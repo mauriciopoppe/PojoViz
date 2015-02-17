@@ -10,12 +10,12 @@ describe('hashKey', function () {
     expect(hk({})).to.match(/^object-\d*$/);
   });
 
-  it('should be the same for the same object', function () {
+  it('should generate the same value for multiple calls on the same object', function () {
     var obj = {};
     expect(hk(obj)).to.equal(hk(obj));
   });
 
-  it('should look for the name property that the object may have', function () {
+  it('should look for the name property that function/object may have', function () {
     function A(){}
     expect(hk(A)).to.equal('function-A');
   });

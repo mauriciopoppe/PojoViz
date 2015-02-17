@@ -9,7 +9,8 @@ var toInspect = [global];
 function Global() {
   Inspector.call(this, {
     analyzerConfig: {
-      levels: 1
+      levels: 1,
+      visitConstructors: false
     },
     alwaysDirty: true
   });

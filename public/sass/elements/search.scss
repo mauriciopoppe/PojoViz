@@ -1,0 +1,83 @@
+/* popup */
+html {
+  /deep/ {
+    #searchPopup {
+      &::shadow {
+        #scroller {
+          width: 850px;
+          height: 650px;
+        }
+      }
+
+      paper-input {
+        width: 90%;
+      }
+
+      paper-spinner {
+        position: relative;
+        top: 40px;
+        left: 20px;
+      }
+
+      paper-radio-group {
+        .results {
+          max-height: 200px;
+          width: 90%;
+          overflow-y: scroll;
+          font-size: 12px;
+
+          paper-radio-button {
+            padding: 10px;
+          }
+
+          .library-name {
+            padding: 5px;
+            font-size: 15px;
+            font-weight: 100;
+          }
+          .library-url {
+            font-size: 12px;
+            word-wrap: break-word;
+          }
+          .record {
+            margin: 20px 0;
+          }
+        }
+      }
+
+      .options {
+        .bold {
+          font-weight: bold;
+        }
+
+        [center] {
+          margin: 20px 0;
+        }
+      }
+
+      paper-toggle-button {
+        width: 50px;
+      }
+
+//      [vertical] {
+//        margin-left: 30px;
+//      }
+
+      .small {
+        font-size: 12px!important;
+        font-weight: 100;
+      }
+      paper-button {
+        margin: 0 10px;
+      }
+      paper-button[raisedButton].green {
+        background: #259b24;
+        color: #fff;
+      }
+      paper-button[raisedButton].blue {
+        background: #03a9f4;
+        color: #fff;
+      }
+    }
+  }
+}

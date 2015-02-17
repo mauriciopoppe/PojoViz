@@ -21,7 +21,7 @@
     "d3": "global:d3",
     "angular": "global:angular"
   },
-  "devDependencies": {
+  "dependencies": {
     "browser-sync": "~1.3.0",
     "browserify": "~4.2.1",
     "browserify-shim": "~3.6.0",

@@ -18,7 +18,4 @@ before_script:
 script:
   - gulp test
   - gulp linter
-  - gulp build-app
-
-env:
-  - NODE_ENV=production
+  - NODE_ENV=production gulp build-app

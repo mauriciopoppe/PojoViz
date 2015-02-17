@@ -8,10 +8,8 @@
 			<core-submenu icon="cloud" label="Downloaded" on-core-select="{{onLibrarySelect}}">
 				<template repeat="{{library in libraries}}">
 					<core-item label="{{library.name}}"
-						data-value="render:{{library.name}}"
-						data-src="{{library.src}}"
-						data-global="{{library.global}}"
-						>
+                        data-options="{{ library.options }}"
+                        data-type="render:{{library.name}}">
 					</core-item>
 				</template>
 			</core-submenu>

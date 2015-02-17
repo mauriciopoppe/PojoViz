@@ -190,10 +190,11 @@
 
 				userVars.push({
 					name: this.libraryName,
-					src: this.libraryUrl,
-					global: this.globalExported
+                    options: JSON.stringify({
+                        src: this.libraryUrl,
+                        entryPoint: this.globalExported
+                    })
 				});
-				// console.log(userVars);
 			}
 		});
 	</script>

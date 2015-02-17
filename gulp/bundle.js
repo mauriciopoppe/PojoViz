@@ -5,7 +5,6 @@ var watchify = require('watchify');
 var source = require('vinyl-source-stream');
 var _ = require('lodash');
 var gulp = require('gulp');
-var uglify = require('gulp-uglify');
 
 var pkg = require('../package.json');
 var production = process.env.NODE_ENV === 'production';

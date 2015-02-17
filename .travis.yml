@@ -3,16 +3,22 @@ language: node_js
 node_js:
   - "0.10"
 
-install:
-  - npm install -f
-
 before_install:
   - npm install -g gulp
+
+install:
+  - npm install --production
+
+before_script:
+  - npm install gulp-mocha
+  - npm install chai
+  - npm install jshint
+  - npm install jshint-stylish
 
 script:
   - gulp test
   - gulp linter
-  - gulp build
+  - gulp build-app
 
 env:
   - NODE_ENV=production

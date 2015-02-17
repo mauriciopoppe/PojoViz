@@ -79,11 +79,12 @@ gulp.task('bundle:renderer', function () {
   });
 });
 
-// show be run with NODE_ENV=production
-gulp.task('build', [
+gulp.task('build-page', ['polymer', 'compass']);
+
+gulp.task('build-app', [
   'bundle',
-  'bundle:renderer',
-  'polymer',
-  'compass'
-  // 'index:build'
+  'bundle:renderer'
 ]);
+
+// show be run with NODE_ENV=production
+gulp.task('build', ['build-app', 'build-page']);

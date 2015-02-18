@@ -14,16 +14,8 @@ describe('Known configuration schemas', function () {
     var promises = [];
 
     var schemas = [{
-      label: 'EmberJS',
-      src: '//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js|//cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.1.2/handlebars.js|//cdnjs.cloudflare.com/ajax/libs/ember.js/1.6.1/ember.js',
-      entryPoint: 'Ember',
-      forbiddenTokens: 'global:$|global:Handlebars|pojoviz:builtIn|global:window|global:document'
-    }, {
-      entryPoint: 'Phaser',
-      src: '//cdnjs.cloudflare.com/ajax/libs/phaser/2.0.6/phaser.min.js',
-      analyzerConfig: {
-        visitSimpleFunctions: true
-      }
+      src: '//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js',
+      entryPoint: 'jQuery'
     }];
 
     utils.notification = function () {};

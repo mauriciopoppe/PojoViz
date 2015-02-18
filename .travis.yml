@@ -15,6 +15,6 @@ script:
   - gulp polymer
   - NODE_ENV=production gulp build
 #  e2e
-#  - browserify test/travis/schemas.spec.js -o bundle.js -s pojoviz
-#  - testem launchers
-#  - testem ci
+  - browserify test/travis/schemas.spec.js -o bundle.js -s pojoviz
+  - testem launchers
+  - testem ci

@@ -30,9 +30,6 @@ options.libs = [
 var bundler = require('./gulp/bundle');
 bundler(options);
 // tasks:
-// - index:build
-require('./gulp/client')(options);
-// tasks:
 // - compass
 // - watch:compass
 require('./gulp/compass')(options);

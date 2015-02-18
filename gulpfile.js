@@ -73,7 +73,9 @@ gulp.task('bundle:renderer', function () {
   });
 });
 
-gulp.task('build-page', ['polymer', 'compass']);
+gulp.task('build-page', ['compass'], function () {
+  gulp.run('polymer');
+});
 
 gulp.task('build-app', [
   'bundle',

@@ -4,7 +4,6 @@ var gulp = require('gulp');
 var git = require('gulp-git');
 var bump = require('gulp-bump');
 var filter = require('gulp-filter');
-var gulpif = require('gulp-if');
 var tagVersion = require('gulp-tag-version');
 
 module.exports = function (options) {

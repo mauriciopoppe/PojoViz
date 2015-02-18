@@ -4,10 +4,12 @@ node_js:
   - "0.10"
 
 before_install:
-  - npm install -g gulp browserify testem vulcanize
+  - npm install -g gulp vulcanize
+#  - npm install -g browserify testem
 
 install:
   - npm install
+  - bower install
 
 script:
   - gulp test
@@ -15,6 +17,6 @@ script:
   - gulp polymer
   - NODE_ENV=production gulp build-app
 #  e2e
-  - browserify test/travis/schemas.spec.js -o bundle.js -s pojoviz
-  - testem launchers
-  - testem ci
+#  - browserify test/travis/schemas.spec.js -o bundle.js -s pojoviz
+#  - testem launchers
+#  - testem ci

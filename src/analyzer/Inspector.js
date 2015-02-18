@@ -245,7 +245,10 @@ Inspector.prototype.inspectSelf = function () {
   var start = me.findNestedValueInGlobal(me.entryPoint);
   var analyzer = this.analyzer;
 
-  assert(start, 'entry point not found!');
+  if (!start) {
+    console.error(this);
+    throw 'entry point not found!';
+  }
   me.debug && console.log('analyzing global.' + me.entryPoint);
 
   // set a predefined global name (so that it's known as entryPoint)

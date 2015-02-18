@@ -6,6 +6,8 @@ node_js:
 
 before_install:
   - npm install -g gulp
+  - npm install -g browserify
+  - npm install -g testem
 
 install:
   - npm install
@@ -14,3 +16,5 @@ script:
   - gulp test
   - gulp linter
   - NODE_ENV=production gulp build-app
+#  e2e
+  - browserify test/travis/schemas.spec.js -o bundle.js -s pojoviz && testem ci

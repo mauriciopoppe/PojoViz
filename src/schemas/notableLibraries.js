@@ -15,8 +15,7 @@ module.exports = [{
   src: '//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.js'
 }, {
   src: '//fb.me/react-0.12.2.js',
-  displayName: 'React',
-  entryPoint: 'react'
+  entryPoint: 'React'
 }, {
   src: '//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.js',
   entryPoint: 'angular',

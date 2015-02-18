@@ -1,0 +1,16 @@
+{
+  "framework": "mocha",
+  "src_files": [
+    "node_modules/chai/chai.js",
+    "bundle.js"
+  ],
+  "launchers": {
+  },
+  "launch_in_dev": [
+    "node",
+    "chrome"
+  ],
+  "launch_in_ci": [
+    "chrome"
+  ]
+}

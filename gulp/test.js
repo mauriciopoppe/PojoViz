@@ -17,6 +17,15 @@ module.exports = function (options) {
       });
   });
 
+  gulp.task('travis:test', function () {
+    return gulp.src(path.resolve(options.test, 'travis/**/*.js'))
+      .pipe(mocha({ reporter: 'spec' }))
+      .on('error', function (err) {
+        console.error(err);
+        this.emit('end');
+      });
+  });
+
   gulp.task('watch:test', function () {
     gulp.watch([
       path.resolve(options.src, '**'),

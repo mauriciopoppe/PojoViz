@@ -252,6 +252,9 @@ pojoviz = {
   },
   render: render,
 
+  // exposed for testing purposes
+  process: process,
+
   // expose inner modules
   ObjectAnalyzer: require('./ObjectAnalyzer'),
   InspectedInstances: require('./InspectedInstances'),
@@ -268,7 +271,7 @@ pojoviz = {
 };
 
 // custom events
-document.addEventListener('property-click', function (e) {
+global.document && document.addEventListener('property-click', function (e) {
   var detail = e.detail;
   pojoviz
     .getCurrentInspector()

@@ -1,11 +1,5 @@
 var gulp = require('gulp');
-var vulcanize = require('gulp-vulcanize');
-var useref = require('gulp-useref');
-var uglify = require('gulp-uglify');
-var gulpif = require('gulp-if');
-var rename = require('gulp-rename');
 var assert = require('assert');
-var path = require('path');
 var exec = require('child_process').exec;
 
 module.exports = function (options) {

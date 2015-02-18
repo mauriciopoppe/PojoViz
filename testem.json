@@ -12,6 +12,6 @@
   ],
   "launch_in_ci": [
     "chromium",
-    "chrome"
+    "firefox"
   ]
 }

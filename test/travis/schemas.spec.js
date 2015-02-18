@@ -14,8 +14,11 @@ describe('Known configuration schemas', function () {
     var promises = [];
 
     var schemas = [{
-      src: '//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js',
-      entryPoint: 'jQuery'
+      label: 'Object',
+      displayName: 'object'
+    }, {
+      label: 'BuiltIn Objects',
+      displayName: 'builtIn'
     }];
 
     utils.notification = function () {};

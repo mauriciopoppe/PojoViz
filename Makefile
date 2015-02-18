@@ -1,7 +1,14 @@
-all: default
+all: run
+
+install:
+	npm install
+	bower install
 
 dobuild:
 	NODE_ENV=production gulp build
 
-default:
+test:
+	gulp test
+
+run:
 	gulp

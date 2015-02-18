@@ -50,10 +50,7 @@ require('./gulp/linter')(options);
 // - polymer:rename
 // - polymer:build
 // - polymer
-require('./gulp/polymer')(_.merge(options, {
-  outputName: 'vulcanize.html',
-  outputDir: './public/'
-}));
+require('./gulp/polymer')(options);
 // tasks:
 // - release:major
 // - release:minor

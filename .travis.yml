@@ -12,7 +12,7 @@ install:
 script:
   - gulp test
   - gulp linter
-  - NODE_ENV=production gulp build-app
+  - NODE_ENV=production gulp build
 #  e2e
   - browserify test/travis/schemas.spec.js -o bundle.js -s pojoviz
   - testem launchers

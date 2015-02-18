@@ -129,6 +129,14 @@ function Analyzer(config) {
   this.visitSimpleFunctions = config.visitSimpleFunctions;
 
   /**
+   * True to include all the functions in the analysis graph,
+   * see #traversableObjectProperties
+   * @type {boolean}
+   * @cfg {boolean} [visitSimpleFunctions=false]
+   */
+  this.visitArrays = config.visitArrays;
+
+  /**
    * @private
    * Internal property cache, each value is an array of objects
    * generated in #getProperties
@@ -160,6 +168,12 @@ Analyzer.VISIT_CONSTRUCTORS = true;
 Analyzer.VISIT_SIMPLE_FUNCTIONS = false;
 
 /**
+ * True to visit arrays
+ * @type {boolean}
+ */
+Analyzer.VISIT_ARRAYS = true;
+
+/**
  * Default number of levels to be analyzed by this constructor
  * @type {number}
  */
@@ -173,6 +187,7 @@ Analyzer.DEFAULT_CONFIG = {
   cache: true,
   visitConstructors: Analyzer.VISIT_CONSTRUCTORS,
   visitSimpleFunctions: Analyzer.VISIT_SIMPLE_FUNCTIONS,
+  visitArrays: Analyzer.VISIT_ARRAYS,
   levels: Analyzer.DFS_LEVELS
 };
 
@@ -287,6 +302,11 @@ Analyzer.prototype = {
         properties.isTraversable = true;
         properties.isConstructor = true;
       }
+    }
+
+    // verification of the flag visitArrays when it's set to false
+    if (properties.toString === 'Array' && !this.visitArrays) {
+      properties.isTraversable = false;
     }
 
     return properties;

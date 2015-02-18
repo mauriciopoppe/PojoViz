@@ -335,7 +335,7 @@ pojoviz-settings::shadow paper-radio-button::shadow #onRadio {
   background-color: #03a9f4;
 }
 
-/* line 259, ../sass/app.scss */
-core-submenu core-item {
+/* line 260, ../sass/app.scss */
+pojoviz-library-menu::shadow .library {
   font-size: 13px;
 }

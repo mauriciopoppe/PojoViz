@@ -11,8 +11,7 @@ var me, hashKey;
  */
 function get(obj) {
   assert(utils.isObjectOrFunction(obj), 'obj must be an object|function');
-  return obj.hasOwnProperty &&
-    obj.hasOwnProperty(me.hiddenKey) &&
+  return Object.prototype.hasOwnProperty.call(obj, me.hiddenKey) &&
     obj[me.hiddenKey];
 }
 
@@ -44,7 +43,7 @@ me = hashKey = function (v) {
     }
     uid = get(v);
     if (!uid) {
-      console.err('no hashkey :(', v);
+      throw Error(v + ' should have a hashKey at this point :(');
     }
     assert(uid, 'error getting the key');
     return uid;

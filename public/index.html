@@ -26,7 +26,7 @@
 	<link rel="import" href="elements/settings.html">
 	<link rel="import" href="elements/about.html">
 	<link rel="import" href="elements/search.html">
-	<link rel="import" href="elements/userMenu.html">
+	<link rel="import" href="elements/libraryMenu.html">
 	<link rel="import" href="elements/readme.html">
 
 	<!-- normalize -->
@@ -47,7 +47,9 @@
 
 </head>
 <body unresolved fullbleed>
-	<core-scaffold responsiveWidth="1000px">
+
+    <core-scaffold responsiveWidth="1000px">
+        <!--sidebar-->
 		<core-header-panel navigation flex mode="seamed">
 			<div class="logo">
 				PojoViz
@@ -55,213 +57,20 @@
 					Plain Old JavaScript Object Visualization
 				</div>
 			</div>
-			<!-- <div class="" flex> -->
-				<!-- Application -->
-			<!-- </div> -->
-			<core-menu
-				id="schemas"
-				theme="core-light-theme"
-				valueattr="label"
-				selected="Known Schemas">
 
-				<core-submenu
-					icon="exit-to-app"
-					label="Known Schemas"
-					>
+			<!-- libraries shown in the sidebar -->
+            <pojoviz-library-menu id="libraries">
+            </pojoviz-library-menu>
 
-					<core-item label="Objects"
-						data-options='{
-							"displayName": "object"
-						}'
-						data-type="render:object">
-					</core-item>
+        </core-header-panel>
 
-					<core-item label="built-in objects"
-						data-options='{
-							"displayName": "builtIn"
-						}'
-						data-type="render:builtIn">
-					</core-item>
-
-				</core-submenu>
-
-				<core-submenu
-					icon="star"
-					label="Notable Libraries"
-					>
-
-					<core-item label="jQuery"
-						data-options='{
-							"src": "//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js",
-							"entryPoint": "jQuery"
-						}'
-						data-type="render:jQuery">
-					</core-item>
-
-					<core-item label="Polymer"
-						data-options='{
-							"displayName": "Polymer",
-							"entryPoint": "Polymer"
-						}'
-						data-type="render:Polymer">
-					</core-item>
-
-					<core-item label="D3"
-						data-options='{
-							"displayName": "d3",
-							"entryPoint": "d3"
-						}'
-						data-type="render:d3">
-					</core-item>
-
-					<core-item label="Lo-Dash"
-						data-options='{
-						    "src": "//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.js",
-						    "entryPoint": "_",
-						    "displayName": "lodash"
-						}'
-						data-type="render:lodash">
-					</core-item>
-
-					<core-item label="React"
-                        data-options='{
-                            "src": "//fb.me/react-0.12.2.js",
-                            "entryPoint": "React"
-						}'
-						data-type="render:react">
-					</core-item>
-
-					<core-item label="Angular JS"
-                        data-options='{
-                            "src": "//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.js",
-                            "entryPoint": "angular"
-						}'
-						data-type="render:angular">
-					</core-item>
-
-					<core-item label="Modernizr"
-                        data-options='{
-                            "src": "//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js",
-                            "entryPoint": "Modernizr"
-						}'
-						data-type="render:modernizr">
-					</core-item>
-
-					<core-item label="Handlebars"
-                        data-options='{
-                            "src": "//cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.1.2/handlebars.js",
-                            "entryPoint": "Handlebars"
-						}'
-						data-type="render:handlebars">
-					</core-item>
-
-					<core-item label="EmberJS"
-                        data-options='{
-                            "src": "//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js|//cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.1.2/handlebars.js|//cdnjs.cloudflare.com/ajax/libs/ember.js/1.6.1/ember.js",
-                            "entryPoint": "Ember",
-                            "forbiddenTokens": "global:$|global:Handlebars|pojoviz:builtIn|global:window|global:document"
-						}'
-						data-type="render:ember">
-					</core-item>
-
-					<core-item label="Backbone"
-                        data-options='{
-                            "src": "//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.js|//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone.js",
-                            "entryPoint": "Backbone"
-						}'
-						data-type="render:backbone">
-					</core-item>
-
-					<core-item label="Marionette.js"
-                        data-options='{
-                            "src": "//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js|//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.js|//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone.js|http://marionettejs.com/downloads/backbone.marionette.js",
-                            "entryPoint": "Marionette"
-						}'
-						data-type="render:marionette.js">
-					</core-item>
-				</core-submenu>
-
-				<core-submenu
-					icon="favorite"
-					label="My libraries"
-					>
-					<core-item label="PojoViz"
-                        data-options='{
-                            "entryPoint": "pojoviz",
-                            "alwaysDirty": true
-						}'
-						data-type="render:pojoviz">
-					</core-item>
-
-					<core-item label="t3"
-                        data-options='{
-                            "entryPoint": "t3"
-						}'
-						data-type="render:t3">
-					</core-item>
-				</core-submenu>
-
-				<core-submenu
-					icon="warning"
-					label="Huge Schemas"
-					>
-
-					<core-item label="window"
-                        data-options='{
-                            "entryPoint": "window"
-						}'
-						data-type="render:window">
-						<core-tooltip label="huge data is coming" position="right">
-							<core-icon icon="warning" size="10"></core-icon>
-						</core-tooltip>
-					</core-item>
-
-					<core-item label="ExtJS Core"
-                        data-options='{
-                            "src": "//cdn.sencha.com/ext/gpl/4.2.1/ext-all.js",
-                            "entryPoint": "Ext",
-                            "analyzerConfig": {
-                                "levels": 1,
-                                "visitConstructors": false
-                            }
-						}'
-						data-type="render:extjs">
-						<core-tooltip label="O: too much data" position="right">
-							<core-icon icon="warning" size="10"></core-icon>
-						</core-tooltip>
-					</core-item>
-
-					<!-- declared in InspectedInstances -->
-					<core-item label="three.js"
-                        data-options='{
-                            "entryPoint": "THREE"
-						}'
-						data-type="render:three">
-					</core-item>
-
-					<core-item label="Phaser"
-                        data-options='{
-                            "src": "//cdnjs.cloudflare.com/ajax/libs/phaser/2.0.6/phaser.min.js",
-                            "entryPoint": "Phaser"
-						}'
-						data-type="render:Phaser">
-					</core-item>
-
-				</core-submenu>
-
-			</core-menu>
-
-			<!-- user libraries -->
-			<pojoviz-user-menu></pojoviz-user-menu>
-
-		</core-header-panel>
-
-		<!-- title + info -->
+		<!-- title + toolbar -->
 		<div tool horizontal layout center style="width: 100%">
 			<div class="title"></div>
 			<div flex></div>
-      <!-- GitHub buttons: see http://ghbtns.com -->
-      <iframe src="http://ghbtns.com/github-btn.html?user=maurizzzio&amp;repo=PojoViz&amp;type=watch&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
+
+            <!-- GitHub buttons: see http://ghbtns.com -->
+            <iframe src="http://ghbtns.com/github-btn.html?user=maurizzzio&amp;repo=PojoViz&amp;type=watch&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
 
 			<pojoviz-search></pojoviz-search>
 			<pojoviz-about></pojoviz-about>
@@ -278,6 +87,7 @@
 			</core-icon-button>
 		</div>
 
+        <!--content-->
 		<core-animated-pages
 			transitions="cross-fade"
 			valueattr="label">
@@ -302,7 +112,9 @@
 			</section>
 		</core-animated-pages>
 	</core-scaffold>
+    <!--end app-->
 
+    <!--notification-->
 	<paper-toast id="toast" text=""></paper-toast>
 
 	<!-- app -->
@@ -355,19 +167,6 @@
 				);
 			}
 
-			schemas.addEventListener('core-select', function (e) {
-				var detail = e.detail;
-				if (detail.isSelected &&
-					!detail.item.$.submenu) {
-					changeHistory(detail.item);
-				}
-			});
-
-			document.addEventListener('library-select', function (e) {
-				// runLibrary(e.detail);
-				changeHistory(e.detail);
-			});
-
 			window.onpopstate = history.onpushstate = function(e) {
 				var type = e.state.type;
 				if (~type.indexOf('render')) {
@@ -380,7 +179,7 @@
 
 			window.pushState = function (hash) {
 				// on page load find an el with a data-type equal to the hash part
-				var el = document.querySelector('[data-type="' +
+				var el = document.querySelector('html /deep/ [data-type="' +
 					hash + '"]');
 
                 // default to readme if it doesn't exist
@@ -390,7 +189,7 @@
 				changeHistory(el);
 			};
 
-			// settings + readme
+			// settings + readme on click event
 			[].slice.call(scaffold
 				.querySelectorAll('core-scaffold .toolbar-page'))
 				.forEach(function (v) {
@@ -399,7 +198,8 @@
 					});
 				});
 
-			// toast
+			// listen for the event notification to update the status
+            // of the toast (polymer's notification)
 			var toast = document.getElementById('toast');
 			document
 				.addEventListener('pojoviz-notification', function (e) {
@@ -408,12 +208,6 @@
 				});
 
 			window.addEventListener('polymer-ready', function () {
-				var el,
-					hash = (history.state && history.state.type) ||
-						location.hash.substr(1);
-
-				window.pushState(hash);
-
 				// query params
 				var params = {};
 				location.search.substring(1).split('&')
@@ -421,12 +215,46 @@
 						var sp = v.split('=');
 						params[sp[0]] = sp[1];
 					});
+                // hide some elements
+                if (params.toolbar === 'false') {
+                    document.documentElement.className += ' notoolbar';
+                }
 
-				// hide some elements
-				if (params.toolbar === 'false') {
-					document.documentElement.className += ' notoolbar';
-				}
-			});
+                // fired from elements/libraryMenu.html
+                document.addEventListener('library-select', function (e) {
+                    changeHistory(e.detail);
+                });
+
+                // bind the configuration of known schemas to the sidebar
+                document.getElementById('libraries').sections = [{
+                    icon: 'exit-to-app',
+                    label: 'Known Schemas',
+                    libraries: pojoviz.schemas.knownSchemas
+                }, {
+                    icon: 'favorite',
+                    label: 'Notable Libraries',
+                    libraries: pojoviz.schemas.notableLibraries
+                }, {
+                    icon: 'stars',
+                    label: 'My libraries',
+                    libraries: pojoviz.schemas.myLibraries
+                }, {
+                    icon: 'warning',
+                    label: 'Huge Schemas',
+                    libraries: pojoviz.schemas.hugeSchemas
+                }, {
+                    icon: 'cloud',
+                    label: 'Downloaded',
+                    libraries: pojoviz.schemas.downloaded
+                }];
+
+                // hash autorender check
+                setTimeout(function () {
+                    var hash = (history.state && history.state.type) ||
+                            location.hash.substr(1);
+                    window.pushState(hash);
+                }, 0)
+            });
 		})();
 	</script>
 

@@ -39,4 +39,10 @@ describe('hashKey', function () {
     expect(hk(A.prototype)).to.equal('object-A-prototype');
     expect(hk(A)).to.equal('function-A');
   });
+
+  it("should not set a key on an object which doesn't inherit from Object", function () {
+    var x = Object.create(null);
+    hk(x);
+    expect(hk(x).indexOf('object-') > -1).equals(true);
+  });
 });

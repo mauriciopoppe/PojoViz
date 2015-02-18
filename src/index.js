@@ -259,6 +259,10 @@ pojoviz = {
     Inspector: require('./analyzer/Inspector')
   },
   utils: require('./util'),
+
+  // known configurations
+  schemas: require('./schemas'),
+
   // used in search to save the downloaded configurations
   userVariables: []
 };

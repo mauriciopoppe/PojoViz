@@ -1,0 +1,38 @@
+<link rel="import" href="../bower_components/core-item/core-item.html">
+<link rel="import" href="../bower_components/core-menu/core-menu.html">
+<link rel="import" href="../bower_components/core-menu/core-submenu.html">
+<link rel="import" href="../bower_components/core-icon/core-icon.html">
+<polymer-element name="pojoviz-library-menu" attributes="sections">
+	<template>
+        <core-menu valueattr="label" selected="Known Schemas">
+            <template repeat="{{section in sections}}">
+                <core-submenu icon="{{section.icon}}" label="{{section.label}}" on-core-select="{{onLibrarySelect}}">
+                    <template repeat="{{library in section.libraries}}">
+                        <core-item class="library" label="{{ library.label || library.displayName || library.entryPoint }}"
+                            data-options="{{ format(library) }}"
+                            data-type="render:{{ library.displayName || library.entryPoint }}">
+                        </core-item>
+                    </template>
+                </core-submenu>
+            </template>
+        </core-menu>
+	</template>
+	<script>
+		Polymer('pojoviz-library-menu', {
+            created: function () {
+                this.sections = [];
+            },
+			onLibrarySelect: function (ev, detail, el) {
+				if (detail.isSelected) {
+					var ev = new CustomEvent('library-select', {
+						detail: detail.item
+					});
+					document.dispatchEvent(ev);
+				}
+			},
+            format: function (library) {
+                return JSON.stringify(library);
+            }
+		});
+	</script>
+</polymer-element>

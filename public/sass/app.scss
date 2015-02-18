@@ -255,8 +255,9 @@ pojoviz-settings::shadow {
   }
 }
 
-core-submenu {
-  core-item {
+// lower the font size of the items in the sidebar
+pojoviz-library-menu::shadow {
+  .library {
     font-size: 13px;
   }
 }

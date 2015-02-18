@@ -1,6 +1,7 @@
 /**
  * Created by mauricio on 2/17/15.
  */
+/*jshint loopfunc: true */
 var expect = require('chai').expect;
 var Q = require('q');
 var pojoviz = require('../../src/');
@@ -35,10 +36,6 @@ describe('Known configuration schemas', function () {
     Q.all(promises)
       .then(function () {
         done();
-      })
-      .fail(function (err) {
-        console.error(err);
-        throw err;
       })
       .done(null, done);
   });

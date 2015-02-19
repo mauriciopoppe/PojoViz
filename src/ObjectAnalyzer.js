@@ -557,10 +557,23 @@ Analyzer.prototype = {
   /**
    * Alias for #getProperties
    * @param  obj
+   * @param  plain True to return only primitive properties
    * @return {Array}
    */
-  stringifyObjectProperties: function (obj) {
-    return this.getProperties(obj);
+  stringifyObjectProperties: function (obj, plain) {
+    // delete non primitive properties
+    var properties = this.getProperties(obj);
+
+    if (plain) {
+      properties.forEach(function (property) {
+        _.forOwn(property, function (value, key) {
+          if (typeof value === 'object' || typeof value === 'function') {
+            delete property[key];
+          }
+        });
+      });
+    }
+    return properties;
   },
 
   /**
@@ -582,16 +595,17 @@ Analyzer.prototype = {
 
   /**
    * Stringifies the objects saved in this analyzer
+   * @param {boolean} plain True to return a plain output (without links to objects/functions)
    * @return {Object}
    */
-  stringify: function () {
+  stringify: function (plain) {
     var me = this,
       nodes = {},
       edges = {};
     me.debug && console.time('stringify');
     _.forOwn(me.items, function (v) {
       var hk = hashKey(v);
-      nodes[hk] = me.stringifyObjectProperties(v);
+      nodes[hk] = me.stringifyObjectProperties(v, plain);
       edges[hk] = me.stringifyObjectLinks(v);
     });
     me.debug && console.timeEnd('stringify');

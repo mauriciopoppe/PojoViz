@@ -10,31 +10,41 @@ var utils = pojoviz.utils;
 var renderer;
 module.exports = {
   renderers: {},
+
   /**
    * Given an inspector instance it build the graph and also the
    * layout of the nodes belonging to it, the resulting object is
    * an object which is used by a renderer to be drawn
    * @param {Inspector} inspector
-   * @return {Object} return An object with the following info:
-   *  {
-     *     nodes: [array of objects, each having label,x,y,height,
-     *            width,properties,successors,predecessors],
-     *     edges: [array of objects, each having to,from,property],
-     *     center: an object with the center of the bbox that covers
-     *            the layout of the graph
-     *     mn: an object with info about the minimum x,y of the bbox
-     *            that covers the layout of the graph
-     *     mx: an object with info about the maximum x,y of the bbox
-     *            that covers the layout of the graph
-     *  }
    */
   process: function (inspector) {
+    return this.doProcess(inspector.analyzer.stringify());
+  },
+  /**
+   * @param {object} nodesStringified An object with the following properties
+   *  {
+   *    nodes: [{}, ..] each object is generated in ObjectAnalyzer#stringify,
+   *    edges: [{}, ..] each object is generated in ObjectAnalyzer#stringify
+   *  }
+   *
+   * @return {Object} return An object with the following info:
+   *  {
+   *     nodes: [array of objects, each having label,x,y,height,
+   *            width,properties,successors,predecessors],
+   *     edges: [array of objects, each having to,from,property],
+   *     center: an object with the center of the bbox that covers
+   *            the layout of the graph
+   *     mn: an object with info about the minimum x,y of the bbox
+   *            that covers the layout of the graph
+   *     mx: an object with info about the maximum x,y of the bbox
+   *            that covers the layout of the graph
+   *  }
+   */
+  doProcess: function (nodesStringified) {
     var g = new dagre.Digraph(),
       node,
-      analyzer = inspector.analyzer,
-      str = analyzer.stringify(),
-      libraryNodes = str.nodes,
-      libraryEdges = str.edges;
+      libraryNodes = nodesStringified.nodes,
+      libraryEdges = nodesStringified.edges;
 
     // create the graph
     // each element of the graph has

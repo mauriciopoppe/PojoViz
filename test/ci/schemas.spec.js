@@ -5,7 +5,7 @@
 var expect = require('chai').expect;
 var Q = require('q');
 var pojoviz = require('../../src/');
-
+var utils = pojoviz.utils;
 global.pojoviz = pojoviz;
 pojoviz.draw = require('../../src/renderer/draw');
 

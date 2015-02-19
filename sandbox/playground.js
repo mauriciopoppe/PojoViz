@@ -3,14 +3,22 @@
  */
 var p = require('pojoviz');
 
-global.x = {};
+function withInspector() {
+  var inspector = p.getCurrentInspector();
+  inspector.analyzer.stringify();
+}
 
+// new
 p.setCurrentInspector({
   entryPoint: 'global',
   forbiddenTokens: ''
 })
-  .then(function () {
-    console.log(p.getCurrentInspector());
-    console.log(p.getCurrentInspector().analyzer);
-  })
+  .then(withInspector)
+  .done();
+
+// existing
+p.setCurrentInspector({
+  entryPoint: 'object'
+})
+  .then(withInspector)
   .done();

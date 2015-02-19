@@ -5,11 +5,17 @@
 var expect = require('chai').expect;
 var Q = require('q');
 var pojoviz = require('../../src/');
-var utils = require('../../src/util/');
+var utils = pojoviz.utils;
+
+global.pojoviz = pojoviz;
+pojoviz.draw = require('../../src/renderer/draw');
 
 describe('Known configuration schemas', function () {
   it('should be processed without errors', function (done) {
     this.timeout(3 * 60 * 1000);
+
+    // avoid CustomEvent error, to be fixed in PhantomJS 2
+    utils.notification = function () {};
 
     var promises = [];
 
@@ -20,13 +26,16 @@ describe('Known configuration schemas', function () {
       label: 'BuiltIn Objects',
       displayName: 'builtIn'
     }, {
-      label: 'EmberJS',
-      src: '//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js|//cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.1.2/handlebars.js|//cdnjs.cloudflare.com/ajax/libs/ember.js/1.6.1/ember.js',
-      entryPoint: 'Ember',
-      forbiddenTokens: 'global:$|global:Handlebars|pojoviz:builtIn|global:window|global:document'
+      entryPoint: 'pojoviz'
+    }, {
+      src: '//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js',
+      entryPoint: 'jQuery'
+    }, {
+      src: '//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.js',
+      entryPoint: 'angular',
+      label: 'Angular JS'
     }];
 
-    utils.notification = function () {};
     schemas.forEach(function (cfg) {
       cfg.debug = true;
       promises.push(

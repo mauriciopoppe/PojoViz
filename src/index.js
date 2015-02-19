@@ -69,12 +69,4 @@ pojoviz = {
   schemas: require('./schemas')
 };
 
-// custom events
-global.document && document.addEventListener('property-click', function (e) {
-  var detail = e.detail;
-  pojoviz
-    .getCurrentInspector()
-    .showSearch(detail.name, detail.property);
-});
-
 module.exports = pojoviz;

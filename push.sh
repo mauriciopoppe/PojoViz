@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # before push always create the build files
-gulp browserify
+NODE_ENV=production gulp build
 git commit -am "build files updated"
 
 git push origin master --tags

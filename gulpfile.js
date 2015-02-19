@@ -60,7 +60,8 @@ gulp.task('build-page', ['compass'], function () {
   gulp.start('polymer');
 });
 
-gulp.task('build-app', ['bundle']);
+gulp.task('build-app', ['browserify']);
 
 // show be run with NODE_ENV=production
+// to avoid calling watchify on the browserify task
 gulp.task('build', ['build-app', 'build-page']);

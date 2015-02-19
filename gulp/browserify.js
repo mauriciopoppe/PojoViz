@@ -73,7 +73,7 @@ module.exports = function (options) {
       return bundler.bundle()
         .on('error', gutil.log.bind(gutil, 'browserify error'))
         // turn to a stream the gulp expects
-        .pipe(source(name + (production ? '.min' : '') + '.js'))
+        .pipe(source(name + '.js'))
         .pipe(gulp.dest(options.build));
     }
 

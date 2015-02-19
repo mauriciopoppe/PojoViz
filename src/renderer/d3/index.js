@@ -2,7 +2,7 @@ var Canvas = require('./Canvas'),
   canvas;
 
 module.exports = {
-  clean: function () {
+  clear: function () {
     if (canvas) {
       canvas.destroy();
     }

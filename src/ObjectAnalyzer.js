@@ -75,9 +75,6 @@ function withFunctionAndPrototype(obj, fn) {
  * @param {Object} [config.visitSimpleFunctions = Analyzer.VISIT_SIMPLE_FUNCTIONS]
  */
 function Analyzer(config) {
-  if (!(this instanceof Analyzer)) {
-    return new Analyzer(config);
-  }
   config = _.merge(_.clone(Analyzer.DEFAULT_CONFIG, true), config);
 
   /**

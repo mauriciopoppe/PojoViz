@@ -7,7 +7,7 @@ var t3 = require('t3'),
   instance;
 
 module.exports = {
-  clean: function () {
+  clear: function () {
     var el = document.getElementById(id);
     while(el.firstChild) {
       el.removeChild(el.firstChild);

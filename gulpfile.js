@@ -18,17 +18,15 @@ var options = {
 _(options).forOwn(function (v, k) {
   options[k] = path.resolve(me, v);
 });
-options.libs = [
-  { require: 'q', expose: 'q' },
-  { require: 'lodash', expose: 'lodash' },
-  { require: 'dagre', expose: 'dagre' }
+// files that are not including in the app build
+options.vendor = [
+  'q', 'lodash', 'dagre'
 ];
 
 // tasks:
-// - bundle:vendor
-// - bundle:app
-var bundler = require('./gulp/bundle');
-bundler(options);
+// - watch:browserify
+// - browserify
+require('./gulp/browserify')(options);
 // tasks:
 // - compass
 // - watch:compass
@@ -44,8 +42,6 @@ require('./gulp/test')(options);
 // - jshint
 require('./gulp/linter')(options);
 // tasks:
-// - polymer:rename
-// - polymer:build
 // - polymer
 require('./gulp/polymer')(options);
 // tasks:
@@ -55,32 +51,16 @@ require('./gulp/polymer')(options);
 require('./gulp/release')();
 
 // main tasks
-gulp.task('watch', ['watch:test', 'watch:compass']);
-gulp.task('default', ['bundle', 'bundle:renderer', 'watch'], function () {
+gulp.task('watch', ['watch:test', 'watch:compass', 'watch:browserify']);
+gulp.task('default', ['watch'], function () {
   gulp.start('server');
 });
 
-// **** Custom build for pojoviz renderers ****
-gulp.task('bundle:renderer', function () {
-  bundler.bundlerGenerator({
-    src: './src/renderer/index.js',
-    name: pkg.name + '-renderers',
-    onPreBundle: function (bundler) {
-      options.libs.forEach(function(lib) {
-        bundler.external(lib.require, {expose: lib.expose});
-      });
-    }
-  });
-});
-
 gulp.task('build-page', ['compass'], function () {
-  gulp.run('polymer');
+  gulp.start('polymer');
 });
 
-gulp.task('build-app', [
-  'bundle',
-  'bundle:renderer'
-]);
+gulp.task('build-app', ['bundle']);
 
 // show be run with NODE_ENV=production
 gulp.task('build', ['build-app', 'build-page']);

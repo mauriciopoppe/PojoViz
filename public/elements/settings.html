@@ -194,8 +194,13 @@
 
 			onRadioSelectChange: function (ev, detail, el) {
 				if (detail.isSelected) {
-					pojoviz.setRenderer(detail.item.getAttribute('value'));
-				}
+                    // update the renderer
+					pojoviz.draw.setRenderer(detail.item.getAttribute('value'));
+				} else {
+                    // radio deselected
+                    // means that we have to clear this renderer
+                    pojoviz.draw.getRenderer().clear();
+                }
 			}
 		});
 	</script>

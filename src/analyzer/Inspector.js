@@ -6,7 +6,7 @@ var util = require('util');
 var assert = require('assert');
 var utils = require('../util/');
 var hashKey = require('../util/hashKey');
-var analyzer = require('../ObjectAnalyzer');
+var Analyzer = require('../ObjectAnalyzer');
 
 var searchEngine = 'https://duckduckgo.com/?q=';
 
@@ -157,7 +157,7 @@ function Inspector(config) {
    * the inspected objects
    * @type {ObjectAnalyzer}
    */
-  this.analyzer = analyzer(config.analyzerConfig);
+  this.analyzer = new Analyzer(config.analyzerConfig);
 }
 
 /**

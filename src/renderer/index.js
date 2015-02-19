@@ -3,7 +3,7 @@
 if (!global.pojoviz) {
   throw 'This is not a standalone project, global.pojoviz not found';
 }
-
+var pojoviz = global.pojoviz;
 var dagre = require('dagre');
 var assert = require('assert');
 var _ = require('lodash');

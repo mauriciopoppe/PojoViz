@@ -34,7 +34,7 @@ describe('Known configuration schemas', function () {
           .then(function () {
             console.time('process');
             console.log('processing: ', cfg.displayName || cfg.entryPoint);
-            pojoviz.process(pojoviz.getCurrentInspector());
+            pojoviz.draw.process(pojoviz.getCurrentInspector());
             console.timeEnd('process');
           })
       );

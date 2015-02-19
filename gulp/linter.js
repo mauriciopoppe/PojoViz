@@ -16,7 +16,7 @@ module.exports = function (options) {
     gulp.src([
       //path.resolve(options.src, '**/*.js'),
       path.resolve(options.src, '**/!(PanControls|TrackballControls)*.js'),
-      path.resolve(options.test, '**/*.js')
+      path.resolve(options.test, '**/!(ci)/*.js')
     ])
       .pipe(jshint(path.resolve(options.self, '.jshintrc')))
       .pipe(jshint.reporter('jshint-stylish'))

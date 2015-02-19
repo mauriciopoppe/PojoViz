@@ -1120,6 +1120,7 @@ var PObject = require('./analyzer/Object');
 var BuiltIn = require('./analyzer/BuiltIn');
 var Global = require('./analyzer/Global');
 var Angular = require('./analyzer/Angular');
+var libraries;
 
 var proto = {
   /**
@@ -1154,7 +1155,7 @@ var proto = {
   }
 };
 
-var libraries = Object.create(proto);
+libraries = Object.create(proto);
 //console.log(libraries);
 _.merge(libraries, {
   object: new PObject(),

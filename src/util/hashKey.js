@@ -27,10 +27,17 @@ function set(obj, key) {
     key && typeof key === 'string',
     'The key needs to be a valid string'
   );
+  var value;
   if (!get(obj)) {
+    value = typeof obj + '-' + key;
     Object.defineProperty(obj, me.hiddenKey, {
-      value: typeof obj + '-' + key
+      value: value
     });
+    if (!obj[me.hiddenKey]) {
+      console.warn('Object.defineProperty did not work! setting the value on the object directly');
+      obj[me.hiddenKey] = value;
+    }
+    assert(obj[me.hiddenKey], 'Object.defineProperty did not work!');
   }
   return me;
 }
@@ -52,7 +59,8 @@ me = hashKey = function (v) {
   // v is a primitive
   return typeof v + '-' + uid;
 };
-me.hiddenKey = '__pojoVizKey__';
+
+me.hiddenKey = '__pojovizKey__';
 
 me.createHashKeysFor = function (obj, name) {
 

@@ -33,18 +33,6 @@ var utils = {
   },
   escapeCls: function(v) {
     return v.replace(/\$/g, '_');
-  },
-  toQueryString: function (obj) {
-    var s = '',
-        i = 0;
-    _.forOwn(obj, function (v, k) {
-      if (i) {
-        s += '&';
-      }
-      s += k + '=' + v;
-      i += 1;
-    });
-    return s;
   }
 };
 

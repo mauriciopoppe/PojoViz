@@ -305,6 +305,10 @@ v0.1.0
 
 ## TODO list
 
+- Render NodeJS global objects
+- Render NodeJS packages
+- Create a dev tutorial on how to visualize libraries
+- Render scope variables analyzing the ast (see Esprima)
 - Move to the selected object on dot click
 - Undo/redo
 

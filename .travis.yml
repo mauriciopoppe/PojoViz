@@ -20,3 +20,4 @@ script:
 #  ci test
   - browserify test/ci/schemas.spec.js -o test/ci/bundle.js -s pojoviz
   - gulp test:ci
+  - ./sandbox/sandbox-test.sh

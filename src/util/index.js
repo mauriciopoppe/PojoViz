@@ -136,6 +136,18 @@ utils.createJsonpCallback = function (url) {
   script.src = url;
   document.head.appendChild(script);
 };
+utils.toQueryString = function (obj) {
+  var s = '',
+    i = 0;
+  _.forOwn(obj, function (v, k) {
+    if (i) {
+      s += '&';
+    }
+    s += k + '=' + v;
+    i += 1;
+  });
+  return s;
+};
 
 /**
  * @template

@@ -1,4 +1,4 @@
-all: run
+all: install dobuild run
 
 install:
 	npm install

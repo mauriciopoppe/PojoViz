@@ -6,7 +6,6 @@ var PObject = require('./analyzer/Object');
 var BuiltIn = require('./analyzer/BuiltIn');
 var Global = require('./analyzer/Global');
 var Angular = require('./analyzer/Angular');
-var libraries;
 
 var proto = {
   /**
@@ -39,18 +38,9 @@ var proto = {
     });
     return this;
   }
-  //setFunctionConstructors: function (newValue) {
-  //  this.all(function (v) {
-  //    // this only works on the generic analyzers
-  //    if (!v._hasfc) {
-  //      v.analyzer.setFunctionConstructors(newValue);
-  //    }
-  //  });
-  //  return proto;
-  //}
 };
 
-libraries = Object.create(proto);
+var libraries = Object.create(proto);
 //console.log(libraries);
 _.merge(libraries, {
   object: new PObject(),

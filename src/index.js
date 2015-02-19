@@ -1,8 +1,9 @@
-var _ = require('lodash');
 var Q = require('q');
 var utils = require('./util/');
-var InspectedInstances = require('./InspectedInstances');
 var assert = require('assert');
+
+var Inspector = require('./analyzer/Inspector');
+var InspectedInstances = require('./InspectedInstances');
 
 // enable promise chain debug
 Q.longStackSupport = true;
@@ -48,9 +49,6 @@ pojoviz = {
 
     if (!inspector) {
       inspector = InspectedInstances.create(options);
-    //} else {
-    //  // required to fetch external resources
-    //  inspector.src = options.src;
     }
     inspector.modifyInstance(options);
     return inspector.init();
@@ -58,11 +56,11 @@ pojoviz = {
 
   // expose inner modules
   ObjectAnalyzer: require('./ObjectAnalyzer'),
-  InspectedInstances: require('./InspectedInstances'),
+  InspectedInstances: InspectedInstances,
   analyzer: {
-    Inspector: require('./analyzer/Inspector')
+    Inspector: Inspector
   },
-  Inspector: require('./analyzer/Inspector'),
+  Inspector: Inspector,
   utils: require('./util'),
 
   // known configurations

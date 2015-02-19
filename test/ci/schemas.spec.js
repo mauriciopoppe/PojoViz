@@ -4,8 +4,7 @@
 /*jshint loopfunc: true */
 var expect = require('chai').expect;
 var Q = require('q');
-var pojoviz = require('pojoviz');
-var utils = pojoviz.utils;
+var pojoviz = require('../../src/');
 
 global.pojoviz = pojoviz;
 pojoviz.draw = require('../../src/renderer/draw');

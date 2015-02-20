@@ -2,7 +2,7 @@
  * Created by mauricio on 2/17/15.
  */
 module.exports = [{
-  entryPoint: 'window'
+  entryPoint: 'global'
 }, {
   label: 'ExtJS',
   src: '//cdn.sencha.com/ext/gpl/4.2.1/ext-all.js',

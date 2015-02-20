@@ -171,7 +171,11 @@ Inspector.instances = null;
  * Default forbidden commands (in node global is the global object)
  * @type {string[]}
  */
-Inspector.DEFAULT_FORBIDDEN_TOKENS_ARRAY = ['pojoviz:global', 'pojoviz:builtIn', 'global:document'];
+Inspector.DEFAULT_FORBIDDEN_TOKENS_ARRAY = [
+  'pojoviz:global',
+  'pojoviz:builtIn',
+  'global:document'
+];
 
 /**
  * Forbidden tokens which are set by default on any Inspector instance

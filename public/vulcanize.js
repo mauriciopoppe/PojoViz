@@ -80864,6 +80864,32 @@ Polymer('paper-dialog');;
 
   ;
 
+        Polymer('pojoviz-inspector-form', {
+            /**
+             * True to hide the src input
+             * @type {boolean}
+             */
+            hideSrc: false,
+
+            created: function () {
+                this.record = {
+                    analyzerConfig: {}
+                };
+                // sync this variable with options
+//                this.record = JSON.parse(JSON.stringify(
+//                    pojoviz.Inspector.DEFAULT_CONFIG
+//                ));
+                // default options for the search
+//                this.record.analyzerConfig.levels = 10;
+//                this.record.analyzerConfig.visitSimpleFunctions = false;
+//                this.record.analyzerConfig.visitConstructors = true;
+            },
+            getValues: function () {
+                return this.record;
+            }
+        });
+    ;
+
         Polymer('pojoviz-search', {
 
             publish: {
@@ -80874,7 +80900,7 @@ Polymer('paper-dialog');;
             },
 
             created: function () {
-                this.results = null;
+                this.results = [];
 
                 // sync this variable with options
                 this.options = JSON.parse(JSON.stringify(
@@ -80934,16 +80960,13 @@ Polymer('paper-dialog');;
                 this.results = results;
             },
             onAddLibrary: function (ev, detail, el) {
-                var userVars = pojoviz.userVariables;
+                var downloaded = pojoviz.schemas.downloaded;
                 pojoviz.utils.notification('added library ' + this.options.displayName +
                 '! Find it under the "Downloaded" accordion');
 
                 console.log('New inspector: ', JSON.stringify(this.options));
 
-                userVars.push({
-                    name: this.options.displayName,
-                    options: JSON.stringify(this.options)
-                });
+                downloaded.push(JSON.parse(JSON.stringify(this.options)));
                 this.closeDialog();
             },
             closeDialog: function () {
@@ -80961,15 +80984,12 @@ Polymer('paper-dialog');;
             },
 			onLibrarySelect: function (ev, detail, el) {
 				if (detail.isSelected) {
-					var ev = new CustomEvent('library-select', {
-						detail: detail.item
+					var customEv = new CustomEvent('library-select', {
+						detail: detail.item.dataset.command
 					});
-					document.dispatchEvent(ev);
+					document.dispatchEvent(customEv);
 				}
-			},
-            format: function (library) {
-                return JSON.stringify(library);
-            }
+			}
 		});
 	;
 
@@ -81056,7 +81076,8 @@ pojoviz = {
    * InspectorInstances
    * @returns {Promise}
    */
-  setCurrentInspector: function (options) {
+  run: function (options) {
+    assert(options);
     var entryPoint = options.displayName || options.entryPoint;
     assert(entryPoint);
     oldInspector = inspector;
@@ -81081,6 +81102,9 @@ pojoviz = {
   // known configurations
   schemas: require('./schemas')
 };
+
+// alias
+pojoviz.setCurrentInspector = pojoviz.run;
 
 module.exports = pojoviz;
 },{"./InspectedInstances":7,"./ObjectAnalyzer":8,"./analyzer/Inspector":12,"./schemas":15,"./util":21,"./util/":21,"assert":2,"q":undefined}],2:[function(require,module,exports){
@@ -82754,13 +82778,13 @@ Analyzer.prototype = {
    * @return {Array}
    */
   stringifyObjectProperties: function (obj, plain) {
-    // delete non primitive properties
     var properties = this.getProperties(obj);
 
     if (plain) {
+    // delete non primitive properties
       properties.forEach(function (property) {
         _.forOwn(property, function (value, key) {
-          if (typeof value === 'object' || typeof value === 'function') {
+          if (value && (typeof value === 'object' || typeof value === 'function')) {
             delete property[key];
           }
         });
@@ -83627,14 +83651,33 @@ module.exports = [{
 /**
  * Created by mauricio on 2/17/15.
  */
-module.exports = {
+var _ = require('lodash');
+
+var proto = {
+  find: function (entry) {
+    function predicate(v) {
+      return v.displayName === entry || v.entryPoint === entry;
+    }
+    var result;
+    _.forOwn(this, function (schema) {
+      result = result || _.find(schema, predicate);
+    });
+    return result;
+  }
+};
+
+var schemas = Object.create(proto);
+
+_.merge(schemas, {
   knownSchemas: require('./knownSchemas'),
   notableLibraries: require('./notableLibraries'),
   myLibraries: require('./myLibraries'),
   hugeSchemas: require('./hugeSchemas'),
   downloaded: []
-};
-},{"./hugeSchemas":14,"./knownSchemas":16,"./myLibraries":17,"./notableLibraries":18}],16:[function(require,module,exports){
+});
+
+module.exports = schemas;
+},{"./hugeSchemas":14,"./knownSchemas":16,"./myLibraries":17,"./notableLibraries":18,"lodash":undefined}],16:[function(require,module,exports){
 /**
  * Created by mauricio on 2/17/15.
  */
@@ -87497,10 +87540,11 @@ module.exports = utils;
 			var scaffold = document.querySelector('core-scaffold');
 			var tool = document.querySelector('[tool] .title');
 
-			function runLibrary(options) {
+			function runLibrary(entry) {
 				// global name, data properties
+                var schema = pojoviz.schemas.find(entry);
 				pojoviz
-                    .setCurrentInspector(options)
+                    .run(schema)
 					.then(function() {
 						pojoviz.draw.render();
 					})
@@ -87516,34 +87560,35 @@ module.exports = utils;
 				scaffold.closeDrawer();
 			}
 
-			function changeHistory(el) {
+            /**
+             * Pushes a new token to the history stack
+             * @param {string} hash
+             */
+			function changeHistory(hash) {
 				window.history.pushState(
-					JSON.parse(JSON.stringify(el.dataset)),
-					el.dataset.type,
-					'#' + el.dataset.type
+                    {command: hash},
+					hash,
+					'#' + hash
 				);
 			}
 
 			window.onpopstate = history.onpushstate = function(e) {
-				var type = e.state.type;
-				if (~type.indexOf('render')) {
-					runLibrary(JSON.parse(e.state.options));
+				var command = e.state.command;
+				if (~command.indexOf('render/')) {
+					runLibrary(command.split('/')[1]);
 					return;
 				}
-                pages.selected = type;
+                pages.selected = command;
 				tool.textContent = '';
 			};
 
 			window.pushState = function (hash) {
-				// on page load find an el with a data-type equal to the hash part
-				var el = document.querySelector('html /deep/ [data-type="' +
-					hash + '"]');
-
-                // default to readme if it doesn't exist
-				if (!el) {
-					el = scaffold.querySelector('#readme');
+				// if the hash doesn't start with render/
+				if (hash.indexOf('render/') === -1) {
+                    // default to readme
+					hash = 'readme';
 				}
-				changeHistory(el);
+				changeHistory(hash);
 			};
 
 			// settings + readme on click event
@@ -87551,7 +87596,7 @@ module.exports = utils;
 				.querySelectorAll('core-scaffold .toolbar-page'))
 				.forEach(function (v) {
 					v.addEventListener('click', function (event) {
-						changeHistory(event.target);
+						changeHistory(event.target.dataset.command);
 					});
 				});
 
@@ -87607,8 +87652,8 @@ module.exports = utils;
 
                 // hash autorender check
                 setTimeout(function () {
-                    var hash = (history.state && history.state.type) ||
-                            location.hash.substr(1);
+                    var hash = (history.state && history.state.command) ||
+                        location.hash.substr(1);
                     window.pushState(hash);
                 }, 0)
             });

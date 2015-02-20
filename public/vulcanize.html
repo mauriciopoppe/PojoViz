@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="en"><head>
 	<meta charset="UTF-8">
-	<title>Pojo Viz</title>
+	<title>PojoViz</title>
 
     
 
@@ -1011,6 +1011,19 @@ in another form (e.g. a text block following the spinner).
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 	
 
 
@@ -1018,6 +1031,7 @@ in another form (e.g. a text block following the spinner).
 
 	
 
+	
 
 	<!-- normalize -->
 	<style>/*! normalize.css v3.0.1 | MIT License | git.io/normalize */html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block;vertical-align:baseline}audio:not([controls]){display:none;height:0}[hidden],template{display:none}a{background:transparent}a:active,a:hover{outline:0}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:bold}dfn{font-style:italic}h1{font-size:2em;margin:.67em 0}mark{background:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-0.5em}sub{bottom:-0.25em}img{border:0}svg:not(:root){overflow:hidden}figure{margin:1em 40px}hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0}pre{overflow:auto}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}button,input,optgroup,select,textarea{color:inherit;font:inherit;margin:0}button{overflow:visible}button,select{text-transform:none}button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}input{line-height:normal}input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0}input[type="number"]::-webkit-inner-spin-button,input[type="number"]::-webkit-outer-spin-button{height:auto}input[type="search"]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}fieldset{border:1px solid #c0c0c0;margin:0 2px;padding:.35em .625em .75em}legend{border:0;padding:0}textarea{overflow:auto}optgroup{font-weight:bold}table{border-collapse:collapse;border-spacing:0}td,th{padding:0}</style>
@@ -1031,6 +1045,29 @@ in another form (e.g. a text block following the spinner).
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
+}
+
+/* line 4, ../sass/elements/inspector.scss */
+html /deep/ pojoviz-inspector-form /deep/ paper-input {
+  width: 100%;
+}
+/* line 8, ../sass/elements/inspector.scss */
+html /deep/ pojoviz-inspector-form /deep/ paper-spinner {
+  position: relative;
+  top: 40px;
+  left: 20px;
+}
+/* line 15, ../sass/elements/inspector.scss */
+html /deep/ pojoviz-inspector-form /deep/ .options .bold {
+  font-weight: bold;
+}
+/* line 19, ../sass/elements/inspector.scss */
+html /deep/ pojoviz-inspector-form /deep/ .options [center] {
+  margin: 20px 0;
+}
+/* line 25, ../sass/elements/inspector.scss */
+html /deep/ pojoviz-inspector-form /deep/ paper-toggle-button {
+  width: 50px;
 }
 
 /* popup */
@@ -1111,29 +1148,30 @@ html /deep/ #searchPopup paper-button[raisedButton].blue {
 /* line 6, ../sass/elements/about.scss */
 html /deep/ #aboutPopup::shadow #scroller {
   width: 600px;
+  height: 350px;
 }
 
-/* line 21, ../sass/app.scss */
+/* line 22, ../sass/app.scss */
 #__bs_notify__ {
   display: none !important;
 }
 
-/* line 25, ../sass/app.scss */
+/* line 26, ../sass/app.scss */
 *, *:before, *:after {
   font-family: 'Roboto', sans-serif;
 }
 
-/* line 29, ../sass/app.scss */
+/* line 30, ../sass/app.scss */
 .no-padding {
   padding: 0 !important;
 }
 
-/* line 35, ../sass/app.scss */
+/* line 36, ../sass/app.scss */
 html.notoolbar /deep/ core-toolbar {
   display: none;
 }
 
-/* line 43, ../sass/app.scss */
+/* line 44, ../sass/app.scss */
 body core-animated-pages {
   position: absolute;
   top: 0;
@@ -1141,50 +1179,50 @@ body core-animated-pages {
   width: 100%;
   height: 100%;
 }
-/* line 50, ../sass/app.scss */
+/* line 51, ../sass/app.scss */
 body core-animated-pages section {
   padding: 40px;
 }
-/* line 56, ../sass/app.scss */
+/* line 57, ../sass/app.scss */
 body /deep/ .center {
   display: block;
   margin: auto;
 }
-/* line 60, ../sass/app.scss */
+/* line 61, ../sass/app.scss */
 body /deep/ h1 {
   font-weight: 100;
   font-size: 3em;
 }
-/* line 64, ../sass/app.scss */
+/* line 65, ../sass/app.scss */
 body /deep/ core-header-panel[main] {
   background-color: white;
 }
-/* line 66, ../sass/app.scss */
+/* line 67, ../sass/app.scss */
 body /deep/ core-header-panel[main] core-toolbar {
   background-color: #03a9f4;
 }
-/* line 70, ../sass/app.scss */
+/* line 71, ../sass/app.scss */
 body /deep/ .pojoviz {
   font-weight: 100;
   font-size: 1.3rem;
   color: #03a9f4;
 }
-/* line 75, ../sass/app.scss */
+/* line 76, ../sass/app.scss */
 body /deep/ core-item:hover {
   cursor: pointer !important;
 }
-/* line 78, ../sass/app.scss */
+/* line 79, ../sass/app.scss */
 body /deep/ .readme-iframe {
   margin: auto;
   display: block;
 }
-/* line 81, ../sass/app.scss */
+/* line 82, ../sass/app.scss */
 body /deep/ .readme-iframe html {
   -webkit-box-shadow: inset 0px 0px 14px 0px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: inset 0px 0px 14px 0px rgba(0, 0, 0, 0.75);
   box-shadow: inset 0px 0px 14px 0px rgba(0, 0, 0, 0.75);
 }
-/* line 87, ../sass/app.scss */
+/* line 88, ../sass/app.scss */
 body /deep/ .as-button {
   text-decoration: none;
   padding: 10px;
@@ -1197,19 +1235,19 @@ body /deep/ .as-button {
   color: white;
 }
 
-/* line 96, ../sass/app.scss */
+/* line 97, ../sass/app.scss */
 .logo {
   text-align: center;
   padding: 15px;
   font-size: 4em;
   font-weight: 100;
 }
-/* line 101, ../sass/app.scss */
+/* line 102, ../sass/app.scss */
 .logo .subtitle {
   font-size: 12px;
 }
 
-/* line 107, ../sass/app.scss */
+/* line 108, ../sass/app.scss */
 .pv-link {
   -webkit-transition-property: stroke;
   -moz-transition-property: stroke;
@@ -1223,55 +1261,55 @@ body /deep/ .as-button {
   stroke-width: 3px;
   stroke: lightgrey;
 }
-/* line 114, ../sass/app.scss */
+/* line 115, ../sass/app.scss */
 .pv-link.selected {
   stroke: #03a9f4;
 }
-/* line 116, ../sass/app.scss */
+/* line 117, ../sass/app.scss */
 .pv-link.selected.predecessor {
   stroke: #e51c23;
 }
-/* line 119, ../sass/app.scss */
+/* line 120, ../sass/app.scss */
 .pv-link.selected.successor {
   stroke: #03a9f4;
 }
 
-/* line 125, ../sass/app.scss */
+/* line 126, ../sass/app.scss */
 .canvas-wrapper {
   height: 100%;
 }
 
-/* line 128, ../sass/app.scss */
+/* line 129, ../sass/app.scss */
 svg#canvas {
   width: 100%;
   height: 100%;
 }
-/* line 133, ../sass/app.scss */
+/* line 134, ../sass/app.scss */
 svg#canvas.dragged {
   cursor: move;
 }
-/* line 137, ../sass/app.scss */
+/* line 138, ../sass/app.scss */
 svg#canvas .pv-nodes-focused .pv-node {
   opacity: 0.3;
 }
-/* line 139, ../sass/app.scss */
+/* line 140, ../sass/app.scss */
 svg#canvas .pv-nodes-focused .pv-node.selected {
   opacity: 1;
 }
-/* line 143, ../sass/app.scss */
+/* line 144, ../sass/app.scss */
 svg#canvas .pv-nodes-focused .pv-node.predecessor .node-background {
   stroke: #e51c23;
 }
-/* line 148, ../sass/app.scss */
+/* line 149, ../sass/app.scss */
 svg#canvas .pv-nodes-focused .pv-node.successor .node-background {
   stroke: #03a9f4;
 }
-/* line 153, ../sass/app.scss */
+/* line 154, ../sass/app.scss */
 svg#canvas .pv-nodes-focused .pv-node.current .node-background {
   stroke: #673ab7;
 }
 
-/* line 161, ../sass/app.scss */
+/* line 162, ../sass/app.scss */
 .pv-node {
   -webkit-transition-property: opacity;
   -moz-transition-property: opacity;
@@ -1282,7 +1320,7 @@ svg#canvas .pv-nodes-focused .pv-node.current .node-background {
   -o-transition-duration: 0.2s;
   transition-duration: 0.2s;
 }
-/* line 165, ../sass/app.scss */
+/* line 166, ../sass/app.scss */
 .pv-node .node-background {
   fill: white;
   fill-opacity: 1;
@@ -1290,75 +1328,87 @@ svg#canvas .pv-nodes-focused .pv-node.current .node-background {
   stroke: #b3e5fc;
   stroke-width: 2px;
 }
-/* line 172, ../sass/app.scss */
+/* line 173, ../sass/app.scss */
 .pv-node .pv-title {
   font-size: 17px;
   font-weight: 100;
 }
-/* line 179, ../sass/app.scss */
+/* line 180, ../sass/app.scss */
 .pv-node .pv-body .pv-property .pv-dot-object {
   fill: #03a9f4;
   fill-opacity: 1;
 }
-/* line 183, ../sass/app.scss */
+/* line 184, ../sass/app.scss */
 .pv-node .pv-body .pv-property .pv-dot-function {
   fill: #f9bdbb;
 }
-/* line 188, ../sass/app.scss */
+/* line 189, ../sass/app.scss */
 .pv-node .pv-body .pv-property .pv-property-background {
   fill: white;
 }
-/* line 192, ../sass/app.scss */
+/* line 193, ../sass/app.scss */
 .pv-node .pv-body .pv-property:hover {
   cursor: pointer;
 }
-/* line 197, ../sass/app.scss */
+/* line 198, ../sass/app.scss */
 .pv-node .pv-body .pv-property.pv-__proto__ rect {
   fill: #b3e5fc;
   fill-opacity: 0.15;
   stroke-dasharray: 2;
 }
-/* line 202, ../sass/app.scss */
+/* line 203, ../sass/app.scss */
 .pv-node .pv-body .pv-property.pv-__proto__ text {
   stroke-dasharray: 1;
   fill: #b3e5fc;
 }
-/* line 209, ../sass/app.scss */
+/* line 210, ../sass/app.scss */
 .pv-node .pv-body .pv-property rect.pv-string {
   stroke: #a3e9a4;
 }
-/* line 212, ../sass/app.scss */
+/* line 213, ../sass/app.scss */
 .pv-node .pv-body .pv-property rect.pv-number {
   stroke: #ffe0b2;
 }
-/* line 218, ../sass/app.scss */
+/* line 219, ../sass/app.scss */
 .pv-node .pv-body .pv-property rect.pv-object {
   stroke: #b3e5fc;
 }
-/* line 226, ../sass/app.scss */
+/* line 227, ../sass/app.scss */
 .pv-node.pv-function rect.node-background {
   stroke: #f9bdbb;
 }
 
-/* line 237, ../sass/app.scss */
+/* line 234, ../sass/app.scss */
+html /deep/ .small {
+  font-size: 12px !important;
+  font-weight: 100;
+}
+
+/* line 242, ../sass/app.scss */
+html /deep/ paper-dialog::shadow #scroller {
+  width: 850px;
+  height: 650px;
+}
+
+/* line 253, ../sass/app.scss */
 pojoviz-settings::shadow paper-slider::shadow #sliderKnobInner, pojoviz-settings::shadow paper-slider::shadow #sliderKnobInner::before,
 pojoviz-settings::shadow paper-slider::shadow #sliderBar::shadow #activeProgress {
   background-color: #03a9f4;
 }
-/* line 243, ../sass/app.scss */
+/* line 259, ../sass/app.scss */
 pojoviz-settings::shadow paper-checkbox::shadow #ink[checked] {
   color: #03a9f4;
 }
-/* line 246, ../sass/app.scss */
+/* line 262, ../sass/app.scss */
 pojoviz-settings::shadow paper-checkbox::shadow #checkbox.checked {
   border-color: #03a9f4;
 }
-/* line 252, ../sass/app.scss */
+/* line 268, ../sass/app.scss */
 pojoviz-settings::shadow paper-radio-button::shadow #onRadio {
   background-color: #03a9f4;
 }
 
-/* line 260, ../sass/app.scss */
+/* line 276, ../sass/app.scss */
 pojoviz-library-menu::shadow .library {
   font-size: 13px;
 }
@@ -4918,11 +4968,127 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   
 
 </polymer-element>
-<polymer-element name="pojoviz-search" attributes="globals" assetpath="elements/">
+
+<polymer-element name="pojoviz-inspector-form" attributes="record hideSrc" assetpath="elements/">
+    <template>
+        <!--spinner-->
+        <paper-spinner id="spinner"></paper-spinner>
+
+        <section class="options">
+
+            <!--source-->
+            <template if="{{ !hideSrc }}">
+                <paper-input id="src" floatinglabel="" label="Library remote source" value="{{ record.src }}">
+                </paper-input>
+            </template>
+
+            <!--entry point-->
+            <paper-input id="entryPoint" floatinglabel="" label="Enter the entry point to this library (might be nested with .)" value="{{ record.entryPoint }}">
+            </paper-input>
+
+            <!--forbidden tokens-->
+            <paper-input floatinglabel="" label="Forbidden tokens: " value="{{ record.forbiddenTokens }}">
+            </paper-input>
+            <div class="small">
+                Pipe (|) separated list of commands that indicate objects that will be ignored
+                during the analysis, each command has the following form:
+
+                <ul>
+                    <li>
+                        pojoviz:{string} - Forbids all the items saved in the {string} instance which
+                        is stored in the InspectedInstances object, assuming that each is a subclass of `Inspector`
+                    </li>
+                    <li>
+                        global:{string} - Forbids an object which is in the global object, {string} might
+                        also indicate a nested object using the normal dot notation
+                    </li>
+                </ul>
+
+                Examples:
+                <ul>
+                    <li>pojoviz:builtIn (Forbids all the objects under the BuiltIn inspector)</li>
+                    <li>global:document (Forbids window.document)</li>
+                    <li>global:document.head (Forbids window.document.head)</li>
+                </ul>
+
+                See <kbd>src/analyzer/Inspector</kbd> for a detailed explanation of this option
+            </div>
+
+
+            <!--levels-->
+            <div center="" layout="">
+                <div class="bold">Levels: {{record.analyzerConfig.levels}}</div>
+                <p class="small">
+                    Defines the maximum depth when running the dfs algorithm starting from the <i>entryPoint</i> object <br>
+                    WARNING: The higher the value the longer the time needed for the browser to render the nodes
+                </p>
+                <paper-slider min="0" max="20" value="{{ record.analyzerConfig.levels }}" pin="">
+                </paper-slider>
+            </div>
+
+            <!--always dirty-->
+            <div center="" horizontal="" layout="">
+                <paper-toggle-button checked="{{ record.alwaysDirty }}">
+                </paper-toggle-button>
+                <div vertical="" layout="" flex="">
+                    <div class="bold">Analyzer is always dirty</div>
+                    <p class="small">
+                        If enabled the analyzer will always perform a clean analysis of the library
+                        (i.e. the structure representation won't be cached in memory)
+                    </p>
+                </div>
+            </div>
+
+            <!--analyzer config-->
+            <!--simple functions-->
+            <div center="" horizontal="" layout="">
+                <paper-toggle-button checked="{{ record.analyzerConfig.visitSimpleFunctions }}">
+                </paper-toggle-button>
+                <div vertical="" layout="" flex="">
+                    <div class="bold">Visit simple functions</div>
+                    <p class="small">The object analyzer doesn't visit functions that only have the basic properties
+                        <kbd>(["length", "name", "arguments", "caller", "prototype"])</kbd>  because of the number of
+                        nodes that are created, enable it to visit this kind of functions
+                    </p>
+                </div>
+            </div>
+
+            <!--simple functions-->
+            <div center="" horizontal="" layout="">
+                <paper-toggle-button checked="{{ record.analyzerConfig.visitConstructors }}">
+                </paper-toggle-button>
+                <div vertical="" layout="" flex="">
+                    <div class="bold">Visit constructors</div>
+                    <p class="small">
+                        If <i>visit simple function</i> is enabled it might avoid visiting
+                        function constructors (for the sake of the library they are functions which
+                        have a <i>name</i> property which starts with an uppercase letter), to
+                        avoid this undesired behavior enable this option
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!--library name & global-->
+        <!--<template if="{{  record.displayName || record.entryPoint }}">-->
+            <!--<h3>{{ record.displayName || record.entryPoint }} configuration</h3>-->
+            <!--<div class="small">-->
+                <!--<div>Display Name: <kbd>{{record.displayName}}</kbd></div>-->
+                <!--<div>Source: <kbd>{{record.src}}</kbd></div>-->
+                <!--<div>Levels: <kbd>{{record.analyzerConfig.levels}}</kbd></div>-->
+                <!--<div>Entry Point: <kbd>{{record.entryPoint}}</kbd></div>-->
+                <!--<div>Always dirty: <kbd>{{record.alwaysDirty}}</kbd></div>-->
+                <!--<div>Visit simple functions: <kbd>{{record.analyzerConfig.visitSimpleFunctions}}</kbd></div>-->
+            <!--</div>-->
+        <!--</template>-->
+    </template>
+
+    
+</polymer-element><polymer-element name="pojoviz-search" attributes="globals" assetpath="elements/">
     <template>
 
         <core-icon-button icon="search" on-click="{{onIconClick}}"></core-icon-button>
-        <paper-dialog id="searchPopup" backdrop="" heading="Library Search" transition="paper-dialog-transition-center">
+        <paper-dialog class="configuration-form" id="searchPopup" backdrop="" heading="Library Search" transition="paper-dialog-transition-center">
 
             <div center="" horizontal="" layout="">
                 <div flex=""></div>
@@ -4932,12 +5098,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             <core-ajax id="ajax" url="http://api.cdnjs.com/libraries" handleas="json" on-core-response="{{handleResponse}}">
             </core-ajax>
 
-
+            <!--query-->
             <paper-input id="query" floatinglabel="" label="Add your preferred library" value="{{query}}"></paper-input>
 
-            <!--spinner-->
             <paper-spinner id="spinner"></paper-spinner>
 
+            <!--library selection from cdnjs list-->
             <paper-radio-group id="libraryGroup" on-core-select="{{onRadioSelectChange}}" target="{{$.results}}" itemsselector="paper-radio-button" selected="0">
                 <div id="results" class="results">
                     <template repeat="{{record in results}}">
@@ -4957,97 +5123,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 </div>
             </paper-radio-group>
 
+            <!--content-->
             <template if="{{options.displayName}}">
-                <section class="options">
-                    <!--entry point-->
-                    <paper-input id="entryPoint" floatinglabel="" label="Enter the entry point to this library (might be nested with .)" value="{{options.entryPoint}}">
-                    </paper-input>
-
-                    <!--forbidden tokens-->
-                    <paper-input floatinglabel="" label="Forbidden tokens: " value="{{options.forbiddenTokens}}">
-                    </paper-input>
-                    <div class="small">
-                        Pipe (|) separated list of commands that indicate objects that will be ignored
-                        during the analysis, each command has the following form:
-
-                        <ul>
-                            <li>
-                                pojoviz:{string} - Forbids all the items saved in the {string} instance which
-                                is stored in the InspectedInstances object, assuming that each is a subclass of `Inspector`
-                            </li>
-                            <li>
-                                global:{string} - Forbids an object which is in the global object, {string} might
-                                also indicate a nested object using the normal dot notation
-                            </li>
-                        </ul>
-
-                        Examples:
-                        <ul>
-                            <li>pojoviz:builtIn (Forbids all the objects under the BuiltIn inspector)</li>
-                            <li>global:document (Forbids window.document)</li>
-                            <li>global:document.head (Forbids window.document.head)</li>
-                        </ul>
-
-                        See <kbd>src/analyzer/Inspector</kbd> for a detailed explanation of this option
-                    </div>
-
-
-                    <!--levels-->
-                    <div center="" layout="">
-                        <div class="bold">Levels: {{options.analyzerConfig.levels}}</div>
-                        <p class="small">
-                            Defines the maximum depth when running the dfs algorithm starting from the <i>entryPoint</i> object <br>
-                            WARNING: The higher the value the longer the time needed for the browser to render the nodes
-                        </p>
-                        <paper-slider min="0" max="20" value="{{options.analyzerConfig.levels}}" pin="">
-                        </paper-slider>
-                    </div>
-
-                    <!--always dirty-->
-                    <div center="" horizontal="" layout="">
-                        <paper-toggle-button checked="{{options.alwaysDirty}}">
-                        </paper-toggle-button>
-                        <div vertical="" layout="" flex="">
-                            <div class="bold">Analyzer is always dirty</div>
-                            <p class="small">
-                                If enabled the analyzer will always perform a clean analysis of the library
-                                (i.e. the structure representation won't be cached in memory)
-                            </p>
-                        </div>
-                    </div>
-
-                    <!--analyzer config-->
-                    <!--simple functions-->
-                    <div center="" horizontal="" layout="">
-                        <paper-toggle-button checked="{{options.analyzerConfig.visitSimpleFunctions}}">
-                        </paper-toggle-button>
-                        <div vertical="" layout="" flex="">
-                            <div class="bold">Visit simple functions</div>
-                            <p class="small">The object analyzer doesn't visit functions that only have the basic properties
-                                <kbd>(["length", "name", "arguments", "caller", "prototype"])</kbd>  because of the number of
-                                nodes that are created, enable it to visit this kind of functions
-                            </p>
-                        </div>
-                    </div>
-
-                    <!--simple functions-->
-                    <div center="" horizontal="" layout="">
-                        <paper-toggle-button checked="{{options.analyzerConfig.visitConstructors}}">
-                        </paper-toggle-button>
-                        <div vertical="" layout="" flex="">
-                            <div class="bold">Visit constructors</div>
-                            <p class="small">
-                                If <i>visit simple function</i> is enabled it might avoid visiting
-                                function constructors (for the sake of the library they are functions which
-                                have a <i>name</i> property which starts with an uppercase letter), to
-                                avoid this undesired behavior enable this option
-                            </p>
-                        </div>
-                    </div>
-                </section>
+                <pojoviz-inspector-form record="{{options}}" hidesrc="">
+                </pojoviz-inspector-form>
             </template>
 
-            <!--library name & global-->
+            <!--library configuration summary-->
             <template if="{{options.displayName}}">
                 <h3>{{options.displayName}} configuration</h3>
                 <div class="small">
@@ -5059,8 +5141,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                     <div>Visit simple functions: <kbd>{{options.analyzerConfig.visitSimpleFunctions}}</kbd></div>
                 </div>
             </template>
-
-            <!--<paper-button on-click="{{test}}">test</paper-button>-->
 
             <div class="docked-bottom" center="" horizontal="" layout="">
                 <div flex=""></div>
@@ -5087,7 +5167,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             <template repeat="{{section in sections}}">
                 <core-submenu icon="{{section.icon}}" label="{{section.label}}" on-core-select="{{onLibrarySelect}}">
                     <template repeat="{{library in section.libraries}}">
-                        <core-item class="library" label="{{ library.label || library.displayName || library.entryPoint }}" data-options="{{ format(library) }}" data-type="render:{{ library.displayName || library.entryPoint }}">
+                        <core-item class="library" label="{{ library.label || library.displayName || library.entryPoint }}" data-command="render/{{ library.displayName || library.entryPoint }}">
                         </core-item>
                     </template>
                 </core-submenu>
@@ -5229,9 +5309,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 			<pojoviz-search></pojoviz-search>
 			<pojoviz-about></pojoviz-about>
-			<core-icon-button data-type="settings" class="toolbar-page" icon="settings">
+			<core-icon-button data-command="settings" class="toolbar-page" icon="settings">
 			</core-icon-button>
-			<core-icon-button id="readme" data-type="readme" class="toolbar-page" icon="description">
+			<core-icon-button id="readme" data-command="readme" class="toolbar-page" icon="description">
 			</core-icon-button>
 		</div>
 
@@ -5257,6 +5337,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 				</div>
 			</section>
 		</core-animated-pages>
+
+        <!--popup shown to edit a known configuration -->
+        <paper-dialog id="knownConfigurationPopup" class="configuration-form" backdrop="" heading="Edit Configuration" transition="paper-dialog-transition-center">
+            <pojoviz-inspector-form></pojoviz-inspector-form>
+        </paper-dialog>
+
 	</core-scaffold>
     <!--end app-->
 

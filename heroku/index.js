@@ -21,7 +21,7 @@ function run(config) {
 
 app
   .use(router(app))
-  .post('/global', function *(next) {
+  .post('/node/global', function *(next) {
     try {
       this.body = yield run(this.params);
     } catch (e) {

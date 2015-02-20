@@ -3,7 +3,8 @@
  */
 var app = require('koa')();
 var router = require('koa-router');
-var pojoviz = require('pojoviz');
+//var pojoviz = require('pojoviz');
+var pojoviz = require('../src/');
 var Promise = require('promise');
 
 var util = require('util');
@@ -14,7 +15,6 @@ function run(config) {
       .setCurrentInspector(config)
       .then(function () {
         var str = pojoviz.getCurrentInspector().analyzer.stringify(true);
-        console.log(util.inspect(str, false, null));
         return JSON.stringify(str);
       })
       .then(resolve, reject);
@@ -26,10 +26,10 @@ app
   .get('/', function *(next) {
     this.body = yield run({
       entryPoint: 'global',
-      forbiddenTokens: '',
-      analyzerConfig: {
-        levels: 0
-      }
+      forbiddenTokens: ''
+      //analyzerConfig: {
+      //  levels: 0
+      //}
     });
     yield next;
   });

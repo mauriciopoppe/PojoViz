@@ -1,0 +1,30 @@
+html {
+  /deep/ pojoviz-inspector-form {
+    /deep/ {
+      paper-input {
+        width: 100%;
+      }
+
+      paper-spinner {
+        position: relative;
+        top: 40px;
+        left: 20px;
+      }
+
+      .options {
+        .bold {
+          font-weight: bold;
+        }
+
+        [center] {
+          margin: 20px 0;
+        }
+      }
+
+      // radio like toggles
+      paper-toggle-button {
+        width: 50px;
+      }
+    }
+  }
+}

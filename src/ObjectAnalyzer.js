@@ -561,13 +561,13 @@ Analyzer.prototype = {
    * @return {Array}
    */
   stringifyObjectProperties: function (obj, plain) {
-    // delete non primitive properties
     var properties = this.getProperties(obj);
 
     if (plain) {
+    // delete non primitive properties
       properties.forEach(function (property) {
         _.forOwn(property, function (value, key) {
-          if (typeof value === 'object' || typeof value === 'function') {
+          if (value && (typeof value === 'object' || typeof value === 'function')) {
             delete property[key];
           }
         });

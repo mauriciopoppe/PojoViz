@@ -12,11 +12,13 @@
 <link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
 <link rel="import" href="../bower_components/paper-dialog/paper-dialog-transition.html">
 
+<link rel="import" href="./inspector.html">
+
 <polymer-element name="pojoviz-search" attributes="globals">
     <template>
 
         <core-icon-button icon="search" on-click="{{onIconClick}}"></core-icon-button>
-        <paper-dialog id="searchPopup" backdrop
+        <paper-dialog class="configuration-form" id="searchPopup" backdrop
             heading="Library Search"
             transition="paper-dialog-transition-center">
 
@@ -31,14 +33,14 @@
                 on-core-response="{{handleResponse}}">
             </core-ajax>
 
-
+            <!--query-->
             <paper-input id="query" floatingLabel
                 label="Add your preferred library"
                 value="{{query}}"></paper-input>
 
-            <!--spinner-->
             <paper-spinner id="spinner"></paper-spinner>
 
+            <!--library selection from cdnjs list-->
             <paper-radio-group
                     id="libraryGroup"
                     on-core-select="{{onRadioSelectChange}}"
@@ -65,99 +67,13 @@
                 </div>
             </paper-radio-group>
 
+            <!--content-->
             <template if="{{options.displayName}}">
-                <section class="options">
-                    <!--entry point-->
-                    <paper-input id="entryPoint" floatingLabel label="Enter the entry point to this library (might be nested with .)"
-                         value="{{options.entryPoint}}">
-                    </paper-input>
-
-                    <!--forbidden tokens-->
-                    <paper-input floatingLabel label="Forbidden tokens: "
-                                 value="{{options.forbiddenTokens}}">
-                    </paper-input>
-                    <div class="small">
-                        Pipe (|) separated list of commands that indicate objects that will be ignored
-                        during the analysis, each command has the following form:
-
-                        <ul>
-                            <li>
-                                pojoviz:{string} - Forbids all the items saved in the {string} instance which
-                                is stored in the InspectedInstances object, assuming that each is a subclass of `Inspector`
-                            </li>
-                            <li>
-                                global:{string} - Forbids an object which is in the global object, {string} might
-                                also indicate a nested object using the normal dot notation
-                            </li>
-                        </ul>
-
-                        Examples:
-                        <ul>
-                            <li>pojoviz:builtIn (Forbids all the objects under the BuiltIn inspector)</li>
-                            <li>global:document (Forbids window.document)</li>
-                            <li>global:document.head (Forbids window.document.head)</li>
-                        </ul>
-
-                        See <kbd>src/analyzer/Inspector</kbd> for a detailed explanation of this option
-                    </div>
-
-
-                    <!--levels-->
-                    <div center layout>
-                        <div class="bold">Levels: {{options.analyzerConfig.levels}}</div>
-                        <p class="small">
-                            Defines the maximum depth when running the dfs algorithm starting from the <i>entryPoint</i> object <br />
-                            WARNING: The higher the value the longer the time needed for the browser to render the nodes
-                        </p>
-                        <paper-slider min="0" max="20" value="{{options.analyzerConfig.levels}}" pin>
-                        </paper-slider>
-                    </div>
-
-                    <!--always dirty-->
-                    <div center horizontal layout>
-                        <paper-toggle-button checked="{{options.alwaysDirty}}">
-                        </paper-toggle-button>
-                        <div vertical layout flex>
-                            <div class="bold">Analyzer is always dirty</div>
-                            <p class="small">
-                                If enabled the analyzer will always perform a clean analysis of the library
-                                (i.e. the structure representation won't be cached in memory)
-                            </p>
-                        </div>
-                    </div>
-
-                    <!--analyzer config-->
-                    <!--simple functions-->
-                    <div center horizontal layout>
-                        <paper-toggle-button checked="{{options.analyzerConfig.visitSimpleFunctions}}">
-                        </paper-toggle-button>
-                        <div vertical layout flex>
-                            <div class="bold">Visit simple functions</div>
-                            <p class="small">The object analyzer doesn't visit functions that only have the basic properties
-                                <kbd>(["length", "name", "arguments", "caller", "prototype"])</kbd>  because of the number of
-                                nodes that are created, enable it to visit this kind of functions
-                            </p>
-                        </div>
-                    </div>
-
-                    <!--simple functions-->
-                    <div center horizontal layout>
-                        <paper-toggle-button checked="{{options.analyzerConfig.visitConstructors}}">
-                        </paper-toggle-button>
-                        <div vertical layout flex>
-                            <div class="bold">Visit constructors</div>
-                            <p class="small">
-                                If <i>visit simple function</i> is enabled it might avoid visiting
-                                function constructors (for the sake of the library they are functions which
-                                have a <i>name</i> property which starts with an uppercase letter), to
-                                avoid this undesired behavior enable this option
-                            </p>
-                        </div>
-                    </div>
-                </section>
+                <pojoviz-inspector-form record="{{options}}" hideSrc>
+                </pojoviz-inspector-form>
             </template>
 
-            <!--library name & global-->
+            <!--library configuration summary-->
             <template if="{{options.displayName}}">
                 <h3>{{options.displayName}} configuration</h3>
                 <div class="small">
@@ -169,8 +85,6 @@
                     <div>Visit simple functions: <kbd>{{options.analyzerConfig.visitSimpleFunctions}}</kbd></div>
                 </div>
             </template>
-
-            <!--<paper-button on-click="{{test}}">test</paper-button>-->
 
             <div class="docked-bottom" center horizontal layout>
                 <div flex></div>
@@ -201,7 +115,7 @@
             },
 
             created: function () {
-                this.results = null;
+                this.results = [];
 
                 // sync this variable with options
                 this.options = JSON.parse(JSON.stringify(
@@ -261,16 +175,13 @@
                 this.results = results;
             },
             onAddLibrary: function (ev, detail, el) {
-                var userVars = pojoviz.userVariables;
+                var downloaded = pojoviz.schemas.downloaded;
                 pojoviz.utils.notification('added library ' + this.options.displayName +
                 '! Find it under the "Downloaded" accordion');
 
                 console.log('New inspector: ', JSON.stringify(this.options));
 
-                userVars.push({
-                    name: this.options.displayName,
-                    options: JSON.stringify(this.options)
-                });
+                downloaded.push(JSON.parse(JSON.stringify(this.options)));
                 this.closeDialog();
             },
             closeDialog: function () {

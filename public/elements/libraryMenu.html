@@ -9,8 +9,7 @@
                 <core-submenu icon="{{section.icon}}" label="{{section.label}}" on-core-select="{{onLibrarySelect}}">
                     <template repeat="{{library in section.libraries}}">
                         <core-item class="library" label="{{ library.label || library.displayName || library.entryPoint }}"
-                            data-options="{{ format(library) }}"
-                            data-type="render:{{ library.displayName || library.entryPoint }}">
+                            data-command="render/{{ library.displayName || library.entryPoint }}">
                         </core-item>
                     </template>
                 </core-submenu>
@@ -24,14 +23,17 @@
             },
 			onLibrarySelect: function (ev, detail, el) {
 				if (detail.isSelected) {
-					var ev = new CustomEvent('library-select', {
+					var customEv = new CustomEvent('library-select', {
 						detail: detail.item
 					});
-					document.dispatchEvent(ev);
+					document.dispatchEvent(customEv);
 				}
 			},
-            format: function (library) {
-                return JSON.stringify(library);
+//            format: function (library) {
+//                return JSON.stringify(library);
+//            },
+            onLibraryEdit: function () {
+                console.log(arguments);
             }
 		});
 	</script>

@@ -28,6 +28,7 @@
 	<link rel="import" href="elements/search.html">
 	<link rel="import" href="elements/libraryMenu.html">
 	<link rel="import" href="elements/readme.html">
+	<link rel="import" href="elements/inspector.html">
 
 	<!-- normalize -->
 	<link rel="stylesheet" href="css/normalize.min.css">
@@ -75,13 +76,13 @@
 			<pojoviz-search></pojoviz-search>
 			<pojoviz-about></pojoviz-about>
 			<core-icon-button
-				data-type="settings"
+				data-command="settings"
 				class="toolbar-page"
 				icon="settings">
 			</core-icon-button>
 			<core-icon-button
 				id="readme"
-				data-type="readme"
+				data-command="readme"
 				class="toolbar-page"
 				icon="description">
 			</core-icon-button>
@@ -111,6 +112,13 @@
 				</div>
 			</section>
 		</core-animated-pages>
+
+        <!--popup shown to edit a known configuration -->
+        <paper-dialog id="knownConfigurationPopup" class="configuration-form" backdrop
+                  heading="Edit Configuration" transition="paper-dialog-transition-center">
+            <pojoviz-inspector-form></pojoviz-inspector-form>
+        </paper-dialog>
+
 	</core-scaffold>
     <!--end app-->
 
@@ -140,10 +148,11 @@
 			var scaffold = document.querySelector('core-scaffold');
 			var tool = document.querySelector('[tool] .title');
 
-			function runLibrary(options) {
+			function runLibrary(entry) {
 				// global name, data properties
+                var schema = pojoviz.schemas.find(entry);
 				pojoviz
-                    .setCurrentInspector(options)
+                    .run(schema)
 					.then(function() {
 						pojoviz.draw.render();
 					})
@@ -161,25 +170,25 @@
 
 			function changeHistory(el) {
 				window.history.pushState(
-					JSON.parse(JSON.stringify(el.dataset)),
-					el.dataset.type,
-					'#' + el.dataset.type
+                    {command: el.dataset.command},
+					el.dataset.command,
+					'#' + el.dataset.command
 				);
 			}
 
 			window.onpopstate = history.onpushstate = function(e) {
-				var type = e.state.type;
-				if (~type.indexOf('render')) {
-					runLibrary(JSON.parse(e.state.options));
+				var command = e.state.command;
+				if (~command.indexOf('render/')) {
+					runLibrary(command.split('/')[1]);
 					return;
 				}
-                pages.selected = type;
+                pages.selected = command;
 				tool.textContent = '';
 			};
 
 			window.pushState = function (hash) {
-				// on page load find an el with a data-type equal to the hash part
-				var el = document.querySelector('html /deep/ [data-type="' +
+				// on page load find an el with a data-command equal to the hash part
+				var el = document.querySelector('html /deep/ [data-command="' +
 					hash + '"]');
 
                 // default to readme if it doesn't exist
@@ -250,8 +259,8 @@
 
                 // hash autorender check
                 setTimeout(function () {
-                    var hash = (history.state && history.state.type) ||
-                            location.hash.substr(1);
+                    var hash = (history.state && history.state.command) ||
+                        location.hash.substr(1);
                     window.pushState(hash);
                 }, 0)
             });

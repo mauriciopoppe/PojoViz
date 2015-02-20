@@ -41,7 +41,8 @@ pojoviz = {
    * InspectorInstances
    * @returns {Promise}
    */
-  setCurrentInspector: function (options) {
+  run: function (options) {
+    assert(options);
     var entryPoint = options.displayName || options.entryPoint;
     assert(entryPoint);
     oldInspector = inspector;
@@ -66,5 +67,8 @@ pojoviz = {
   // known configurations
   schemas: require('./schemas')
 };
+
+// alias
+pojoviz.setCurrentInspector = pojoviz.run;
 
 module.exports = pojoviz;

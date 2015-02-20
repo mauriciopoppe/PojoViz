@@ -5,6 +5,7 @@
 
 @import "compass/css3";
 @import "base";
+@import "elements/inspector";
 @import "elements/search";
 @import "elements/about";
 
@@ -229,6 +230,21 @@ svg#canvas {
   }
 }
 
+// small font
+html /deep/ .small {
+  font-size: 12px!important;
+  font-weight: 100;
+}
+
+// popup common
+html /deep/ {
+  paper-dialog {
+    &::shadow #scroller {
+      width: 850px;
+      height: 650px;
+    }
+  }
+}
 
 pojoviz-settings::shadow {
   // slider color

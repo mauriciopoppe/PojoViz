@@ -1,5 +1,9 @@
 # Created by http://www.gitignore.io
 
+### OWN
+
+heroku/
+
 ### OSX ###
 .DS_Store
 .AppleDouble

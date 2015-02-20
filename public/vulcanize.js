@@ -82198,7 +82198,7 @@ libraries = Object.create(proto);
 _.merge(libraries, {
   object: new PObject(),
   builtIn: new BuiltIn(),
-  window: new Global(),
+  global: new Global(),
   //popular
   angular: new Angular(),
   //mine
@@ -83289,11 +83289,16 @@ function Inspector(config) {
  */
 Inspector.instances = null;
 
-
 /**
+ * Default forbidden commands (in node global is the global object)
  * @type {string[]}
  */
-Inspector.DEFAULT_FORBIDDEN_TOKENS_ARRAY = ['pojoviz:window', 'pojoviz:builtIn', 'global:document'];
+Inspector.DEFAULT_FORBIDDEN_TOKENS_ARRAY = [
+  'pojoviz:global',
+  'pojoviz:builtIn',
+  'global:document'
+];
+
 /**
  * Forbidden tokens which are set by default on any Inspector instance
  * @type {string}
@@ -83630,7 +83635,7 @@ module.exports = PObject;
  * Created by mauricio on 2/17/15.
  */
 module.exports = [{
-  entryPoint: 'window'
+  entryPoint: 'global'
 }, {
   label: 'ExtJS',
   src: '//cdn.sencha.com/ext/gpl/4.2.1/ext-all.js',

@@ -24,17 +24,11 @@
 			onLibrarySelect: function (ev, detail, el) {
 				if (detail.isSelected) {
 					var customEv = new CustomEvent('library-select', {
-						detail: detail.item
+						detail: detail.item.dataset.command
 					});
 					document.dispatchEvent(customEv);
 				}
-			},
-//            format: function (library) {
-//                return JSON.stringify(library);
-//            },
-            onLibraryEdit: function () {
-                console.log(arguments);
-            }
+			}
 		});
 	</script>
 </polymer-element>

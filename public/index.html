@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Pojo Viz</title>
+	<title>PojoViz</title>
 
     <script src="bower_components/webcomponentsjs/webcomponents.js"></script>
 
@@ -168,11 +168,15 @@
 				scaffold.closeDrawer();
 			}
 
-			function changeHistory(el) {
+            /**
+             * Pushes a new token to the history stack
+             * @param {string} hash
+             */
+			function changeHistory(hash) {
 				window.history.pushState(
-                    {command: el.dataset.command},
-					el.dataset.command,
-					'#' + el.dataset.command
+                    {command: hash},
+					hash,
+					'#' + hash
 				);
 			}
 
@@ -187,15 +191,12 @@
 			};
 
 			window.pushState = function (hash) {
-				// on page load find an el with a data-command equal to the hash part
-				var el = document.querySelector('html /deep/ [data-command="' +
-					hash + '"]');
-
-                // default to readme if it doesn't exist
-				if (!el) {
-					el = scaffold.querySelector('#readme');
+				// if the hash doesn't start with render/
+				if (hash.indexOf('render/') === -1) {
+                    // default to readme
+					hash = 'readme';
 				}
-				changeHistory(el);
+				changeHistory(hash);
 			};
 
 			// settings + readme on click event
@@ -203,7 +204,7 @@
 				.querySelectorAll('core-scaffold .toolbar-page'))
 				.forEach(function (v) {
 					v.addEventListener('click', function (event) {
-						changeHistory(event.target);
+						changeHistory(event.target.dataset.command);
 					});
 				});
 

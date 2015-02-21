@@ -830,6 +830,7 @@ object like this: `{v: 'top', h: 'right'}`.
 
 
 
+
 <style shim-shadowdom="">
   /* FIXME consider theming */
 
@@ -1253,32 +1254,32 @@ html /deep/ .canvas-wrapper {
   height: 100%;
 }
 /* line 32, ../sass/renderer/d3.scss */
-html /deep/ svg#canvas {
+html /deep/ svg {
   width: 100%;
   height: 100%;
 }
 /* line 37, ../sass/renderer/d3.scss */
-html /deep/ svg#canvas.dragged {
+html /deep/ svg.dragged {
   cursor: move;
 }
 /* line 41, ../sass/renderer/d3.scss */
-html /deep/ svg#canvas .pv-nodes-focused .pv-node {
+html /deep/ svg .pv-nodes-focused .pv-node {
   opacity: 0.3;
 }
 /* line 43, ../sass/renderer/d3.scss */
-html /deep/ svg#canvas .pv-nodes-focused .pv-node.selected {
+html /deep/ svg .pv-nodes-focused .pv-node.selected {
   opacity: 1;
 }
 /* line 47, ../sass/renderer/d3.scss */
-html /deep/ svg#canvas .pv-nodes-focused .pv-node.predecessor .node-background {
+html /deep/ svg .pv-nodes-focused .pv-node.predecessor .node-background {
   stroke: #e51c23;
 }
 /* line 52, ../sass/renderer/d3.scss */
-html /deep/ svg#canvas .pv-nodes-focused .pv-node.successor .node-background {
+html /deep/ svg .pv-nodes-focused .pv-node.successor .node-background {
   stroke: #03a9f4;
 }
 /* line 57, ../sass/renderer/d3.scss */
-html /deep/ svg#canvas .pv-nodes-focused .pv-node.current .node-background {
+html /deep/ svg .pv-nodes-focused .pv-node.current .node-background {
   stroke: #673ab7;
 }
 /* line 65, ../sass/renderer/d3.scss */
@@ -2812,7 +2813,6 @@ polyfill-next-selector { content: ':host > *:not(.core-selected):not([animate])'
 
 <polymer-element name="core-tooltip" attributes="noarrow position label show tipAttribute" role="tooltip" tabindex="0" assetpath="bower_components/core-tooltip/">
 <template>
-
   <style>/* Copyright (c) 2014 The Polymer Project Authors. All rights reserved.
 This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
 The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
@@ -2918,6 +2918,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   border-right-color: rgba(0,0,0,0.8);
 }
 </style>
+
   <div id="tooltip" hidden?="{{!hasTooltipContent}}" class="core-tooltip {{position}} {{ {noarrow: noarrow, show: show &amp;&amp; !disabled} | tokenList}}">
     <content id="c" select="[{{tipAttribute}}]">{{label}}</content>
   </div>
@@ -3302,9 +3303,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 </polymer-element>
 <polymer-element name="paper-checkbox" extends="paper-radio-button" role="checkbox" assetpath="bower_components/paper-checkbox/">
-<template>
+  <template>
 
-  <style>/*
+    <style>/*
 Copyright (c) 2014 The Polymer Project Authors. All rights reserved.
 This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
 The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
@@ -3450,20 +3451,20 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 }
 </style>
 
-  <div id="checkboxContainer" class="{{ {labeled: label} | tokenList }}">
-  
-    <paper-ripple id="ink" class="circle recenteringTouch" checked?="{{!checked}}"></paper-ripple>
-     
-    <div id="checkbox">
-      <div id="checkmark" on-animationend="{{checkboxAnimationEnd}}" on-webkitanimationend="{{checkboxAnimationEnd}}"></div>
+    <div id="checkboxContainer" class="{{ {labeled: label} | tokenList }}">
+
+      <paper-ripple id="ink" class="circle recenteringTouch" checked?="{{!checked}}"></paper-ripple>
+
+      <div id="checkbox" class="{{ {checked: checked} | tokenList }}">
+        <div id="checkmark" class="{{ {hidden: !checked} | tokenList }}"></div>
+      </div>
+
     </div>
-    
-  </div>
+
+    <div id="checkboxLabel" hidden?="{{!label}}">{{label}}<content></content></div>
+
+  </template>
   
-  <div id="checkboxLabel" hidden?="{{!label}}">{{label}}<content></content></div>
-
-</template>
-
 </polymer-element>
 
 <polymer-element name="core-range" attributes="value min max step ratio" assetpath="bower_components/core-range/">
@@ -3605,7 +3606,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 </core-style>
 
-<polymer-element name="paper-input-decorator" layout="" vertical="" on-transitionend="{{transitionEndAction}}" on-webkittransitionend="{{transitionEndAction}}" on-input="{{inputAction}}" on-down="{{downAction}}" on-tap="{{tapAction}}" assetpath="bower_components/paper-input/">
+<polymer-element name="paper-input-decorator" layout="" vertical="" on-transitionend="{{transitionEndAction}}" on-webkittransitionend="{{transitionEndAction}}" on-input="{{inputAction}}" on-down="{{downAction}}" on-tap="{{tapAction}}" on-char-counter-error="{{charCounterErrorAction}}" assetpath="bower_components/paper-input/">
 
   <template>
 
@@ -3756,7 +3757,7 @@ polyfill-next-selector {
         <span id="labelText" class="label-text" invisible?="{{!_labelVisible}}" animated?="{{labelAnimated}}">{{label}}</span>
       </div>
 
-      <content></content>
+      <content select="*:not(.counter)"></content>
 
     </div>
 
@@ -3765,9 +3766,14 @@ polyfill-next-selector {
       <div id="focusedUnderline" class="focused-underline" fit="" invisible?="{{!underlineVisible}}" animated?="{{underlineAnimated}}"></div>
     </div>
 
-    <div class="error" layout="" horizontal="" center="" hidden?="{{!isInvalid}}">
-      <div class="error-text" flex="" auto="" role="alert" aria-hidden="{{!isInvalid}}">{{error}}</div>
-      <core-icon class="error-icon" icon="warning"></core-icon>
+    <div class="footer" layout="" horizontal="" end-justified="">
+      <div class="error" flex="" layout="" horizontal="" center="" hidden?="{{!isInvalid}}">
+        <div class="error-text" flex="" auto="" role="alert" aria-hidden="{{!isInvalid}}">{{error}}</div>
+        <core-icon id="errorIcon" class="error-icon" icon="warning"></core-icon>
+      </div>
+      <div aria-hidden="true">
+        <content select=".counter"></content>
+      </div>
     </div>
 
   </template>

@@ -1,9 +1,10 @@
 var d3 = require('d3'),
+  assert = require('assert'),
   _ = require('lodash'),
   utils = require('../../renderer/utils'),
   pojoVizNode = require('./Node');
 
-var svg = d3.select('svg#canvas');
+var rootSvg;
 var prefix = utils.prefixer;
 var escapeCls = utils.escapeCls;
 var transformProperty = utils.transformProperty;
@@ -16,10 +17,11 @@ function getY(d) {
   return d.y - d.height / 2;
 }
 
-function Canvas(data) {
+function Canvas(data, el) {
+  assert(el);
   this.id = _.uniqueId();
   this.data = data;
-  this.createRoot();
+  this.createRoot(el);
   this.set({
     nodes: data.nodes,
     edges: data.edges
@@ -28,15 +30,18 @@ function Canvas(data) {
 
 Canvas.prototype.destroy = function() {
   this.data = null;
-  svg.attr('style', 'display: none');
-  svg
+  rootSvg
     .selectAll('*')
     .remove();
 };
 
-Canvas.prototype.createRoot = function() {
-  svg.attr('style', '');
-  this.root = svg
+Canvas.prototype.createRoot = function(el) {
+  var root = d3.select(el);
+  assert(root[0][0], "canvas couldn't be selected");
+  root.selectAll('*').remove();
+  rootSvg = root.append('svg');
+  rootSvg.attr('style', 'width: 100%; height: 100%');
+  this.root = rootSvg
     .append('g')
       .attr('class', 'root-' + this.id);
 };
@@ -51,7 +56,7 @@ Canvas.prototype.set = function(obj, render) {
 
 Canvas.prototype.fixZoom = function() {
   var me = this,
-      scr = svg.node(),
+      scr = rootSvg.node(),
       bbox = this.root.node().getBBox(),
       screenWidth = scr.clientWidth,
       screenHeight = scr.clientHeight,
@@ -106,7 +111,7 @@ Canvas.prototype.fixZoom = function() {
     .translate(translate)
     .scale(scale);
 
-  svg.call(zoom);
+  rootSvg.call(zoom);
 
   me.root
     .attr('transform', utils.transform({

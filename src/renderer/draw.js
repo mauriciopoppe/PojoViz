@@ -159,7 +159,7 @@ module.exports = {
     var me = this;
 
     inspector = inspector || pojoviz.getCurrentInspector();
-    renderer = renderer || pojoviz.draw.getRenderer();
+    renderer = renderer || pojoviz.draw.getCurrentRenderer();
 
     utils.notification('processing ' + inspector.entryPoint);
 
@@ -212,10 +212,19 @@ module.exports = {
   },
 
   /**
+   * Gets a renderer by key
+   * @param key
+   * @returns {*}
+   */
+  getRenderer: function (key) {
+    return this.renderers[key];
+  },
+
+  /**
    * Gets the current renderer
    * @returns {*}
    */
-  getRenderer: function () {
+  getCurrentRenderer: function () {
     return renderer;
   }
 };

@@ -55,11 +55,9 @@ module.exports = function (options) {
     var bundler;
     if (!production) {
       bundler = watchify(browserify(bundleOptions), watchify.args);
-      bundler.on('update', (function (b) {
-        return function () {
-          bundle(b);
-        };
-      })(bundler));
+      bundler.on('update', function () {
+        return bundle(bundler);
+      });
     } else {
       bundler = browserify(bundleOptions);
     }
@@ -97,8 +95,8 @@ module.exports = function (options) {
     return bundle
       .bundle()
       .pipe(source(pkg.name + '-vendor.js'))
-      .pipe(buffer())
-      .pipe(uglify())
+      //.pipe(buffer())
+      //.pipe(uglify())
       .pipe(gulp.dest(options.build));
   }
 

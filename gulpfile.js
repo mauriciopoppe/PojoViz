@@ -51,17 +51,18 @@ require('./gulp/polymer')(options);
 require('./gulp/release')();
 
 // main tasks
+// NOTE: gulp.watch has conflicts with watchify
 gulp.task('watch', ['watch:test', 'watch:compass', 'watch:browserify']);
 gulp.task('default', ['watch'], function () {
   gulp.start('server');
 });
 
-gulp.task('build-page', ['compass'], function () {
+gulp.task('build:page', ['compass'], function () {
   gulp.start('polymer');
 });
 
-gulp.task('build-app', ['browserify']);
+gulp.task('build:app', ['browserify']);
 
 // show be run with NODE_ENV=production
 // to avoid calling watchify on the browserify task
-gulp.task('build', ['build-app', 'build-page']);
+gulp.task('build', ['build:app', 'build:page']);

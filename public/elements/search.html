@@ -79,10 +79,10 @@
                 <div class="small">
                     <div>Display Name: <kbd>{{options.displayName}}</kbd></div>
                     <div>Source: <kbd>{{options.src}}</kbd></div>
-                    <div>Levels: <kbd>{{options.analyzerConfig.levels}}</kbd></div>
+                    <div>Levels: <kbd>{{options.analyzer.levels}}</kbd></div>
                     <div>Entry Point: <kbd>{{options.entryPoint}}</kbd></div>
                     <div>Always dirty: <kbd>{{options.alwaysDirty}}</kbd></div>
-                    <div>Visit simple functions: <kbd>{{options.analyzerConfig.visitSimpleFunctions}}</kbd></div>
+                    <div>Visit simple functions: <kbd>{{options.analyzer.visitSimpleFunctions}}</kbd></div>
                 </div>
             </template>
 
@@ -116,15 +116,9 @@
 
             created: function () {
                 this.results = [];
-
-                // sync this variable with options
-                this.options = JSON.parse(JSON.stringify(
-                    pojoviz.analyzer.Inspector.DEFAULT_CONFIG
-                ));
-                // default options for the search
-                this.options.analyzerConfig.levels = 10;
-                this.options.analyzerConfig.visitSimpleFunctions = false;
-                this.options.analyzerConfig.visitConstructors = true;
+                this.options = {
+                    analyzer: {}
+                };
             },
 
             ready: function () {
@@ -149,6 +143,15 @@
             },
 
             onIconClick: function (event, detail, el) {
+                // options is a copy of the default values
+                this.options = _.merge(
+                    {},
+                    pojoviz.Inspector.DEFAULT_CONFIG
+                );
+                this.options.analyzer = _.merge(
+                    {},
+                    pojoviz.ObjectAnalyzer.DEFAULT_CONFIG
+                );
                 this.$.searchPopup.toggle();
             },
             onSearch: function () {
@@ -179,9 +182,13 @@
                 pojoviz.utils.notification('added library ' + this.options.displayName +
                 '! Find it under the "Downloaded" accordion');
 
+                // the form saves analyzer instead of analyzerConfig
+                this.options.analyzerConfig = this.options.analyzer;
+                delete this.options.analyzer;
+
                 console.log('New inspector: ', JSON.stringify(this.options));
 
-                downloaded.push(JSON.parse(JSON.stringify(this.options)));
+                downloaded.push(this.options);
                 this.closeDialog();
             },
             closeDialog: function () {

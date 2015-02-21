@@ -27,19 +27,27 @@ html {
 
 // polymer style fix
 body {
-  core-animated-pages {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-
-    section {
-      padding: 40px;
-    }
-  }
-
   /deep/ {
+    core-animated-pages {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      section {
+        padding: 40px;
+      }
+    }
+    .logo {
+      text-align: center;
+      padding: 30px 15px 15px;
+      font-size: 4em;
+      font-weight: 100;
+      .subtitle {
+        padding-top: 10px;
+        font-size: 12px;
+      }
+    }
     .center {
       display: block;
       margin: auto;
@@ -54,6 +62,9 @@ body {
         background-color: $main;
       }
     }
+
+    // readme
+    // pojoviz-text
     .pojoviz {
       font-weight: 100;
       font-size: 1.3rem;
@@ -78,17 +89,33 @@ body {
       background: $main;
       color: white;
     }
-  }
-}
 
-.logo {
-  text-align: center;
-  padding: 30px 15px 15px;
-  font-size: 4em;
-  font-weight: 100;
-  .subtitle {
-    padding-top: 10px;
-    font-size: 12px;
+    // lower the font size of the items in the sidebar
+    pojoviz-library-menu::shadow {
+      .library {
+        font-size: 13px;
+      }
+    }
+
+    // library runtime configuration
+    .library-runtime-configuration {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      font-size: 13px;
+      opacity: 0.3;
+
+      @include transition-property(opacity);
+      @include transition-duration($transition-duration);
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+    .unselectable {
+
+    }
   }
 }
 
@@ -105,28 +132,5 @@ html /deep/ {
       width: 850px;
       height: 650px;
     }
-  }
-}
-
-// lower the font size of the items in the sidebar
-pojoviz-library-menu::shadow {
-  .library {
-    font-size: 13px;
-  }
-}
-
-// library runtime configuration
-.library-runtime-configuration {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  font-size: 13px;
-  opacity: 0.3;
-
-  @include transition-property(opacity);
-  @include transition-duration($transition-duration);
-
-  &:hover {
-    opacity: 1;
   }
 }

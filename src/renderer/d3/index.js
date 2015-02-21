@@ -1,5 +1,6 @@
 var Canvas = require('./Canvas'),
-  canvas;
+  canvas,
+  canvasEl;
 
 module.exports = {
   clear: function () {
@@ -8,8 +9,11 @@ module.exports = {
     }
   },
   render: function (data) {
-    canvas = new Canvas(data);
+    canvas = new Canvas(data, canvasEl);
     canvas.render();
+  },
+  setCanvasEl: function (el) {
+    canvasEl = el;
   }
 };
 

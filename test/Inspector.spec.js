@@ -84,15 +84,31 @@ describe('Inspector', function () {
       .done(done, done);
   });
 
-  it('inspects a simple object avoiding the objects that are forbidden by default', function (done) {
+  it('inspects a simple object avoiding objects forbidden by default', function (done) {
     global.x = {};
     var inspector = new Inspector({
       //debug: true,
       entryPoint: 'x'
     });
+    expect(inspector.forbiddenTokens).equals('pojoviz:global|pojoviz:builtIn|global:document');
     inspector.init()
       .then(function () {
         expect(_.size(inspector.analyzer.items)).equals(1);
+      })
+      .done(done, done);
+  });
+
+  it('inspects a simple object avoiding objects forbidden by default + additional forbidden tokens', function (done) {
+    global.x = {};
+    var inspector = new Inspector({
+      //debug: true,
+      entryPoint: 'x',
+      additionalForbiddenTokens: 'global:x'
+    });
+    expect(inspector.forbiddenTokens).equals('pojoviz:global|pojoviz:builtIn|global:document|global:x');
+    inspector.init()
+      .then(function () {
+        expect(_.size(inspector.analyzer.items)).equals(0);
       })
       .done(done, done);
   });

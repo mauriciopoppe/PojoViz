@@ -14,7 +14,6 @@ module.exports = function (options) {
       .pipe(mocha({ reporter: 'spec' }))
       .on('error', function (err) {
         console.error(err);
-        this.emit('end');
       });
   });
 
@@ -26,7 +25,7 @@ module.exports = function (options) {
   });
 
   gulp.task('watch:test', function () {
-    gulp.watch([
+    return gulp.watch([
       path.resolve(options.src, '**'),
       path.resolve(options.test, '**')
     ], ['test']);

@@ -23,6 +23,7 @@
 	<link rel="import" href="bower_components/core-icon/core-icon.html">
 	<link rel="import" href="bower_components/paper-toast/paper-toast.html">
 
+	<link rel="import" href="elements/app.html">
 	<link rel="import" href="elements/settings.html">
 	<link rel="import" href="elements/about.html">
 	<link rel="import" href="elements/search.html">
@@ -50,88 +51,7 @@
 
 </head>
 <body unresolved fullbleed>
-
-    <core-scaffold responsiveWidth="1000px">
-        <!--sidebar-->
-		<core-header-panel navigation flex mode="seamed">
-			<div class="logo">
-				PojoViz
-				<div class="subtitle middle">
-					Plain Old JavaScript Object Visualization
-				</div>
-			</div>
-
-			<!-- libraries shown in the sidebar -->
-            <pojoviz-library-menu id="libraries">
-            </pojoviz-library-menu>
-
-        </core-header-panel>
-
-		<!-- title + toolbar -->
-		<div tool horizontal layout center style="width: 100%">
-			<div class="title"></div>
-			<div flex></div>
-
-            <!-- GitHub buttons: see http://ghbtns.com -->
-            <iframe src="http://ghbtns.com/github-btn.html?user=maurizzzio&amp;repo=PojoViz&amp;type=watch&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
-
-			<pojoviz-search></pojoviz-search>
-			<pojoviz-about></pojoviz-about>
-			<core-icon-button
-				data-command="settings"
-				class="toolbar-page"
-				icon="settings">
-			</core-icon-button>
-			<core-icon-button
-				id="readme"
-				data-command="readme"
-				class="toolbar-page"
-				icon="description">
-			</core-icon-button>
-		</div>
-
-        <!--content-->
-		<core-animated-pages
-			transitions="cross-fade"
-			valueattr="label">
-
-			<section label="app" class="no-padding">
-				<div class="canvas-wrapper" cross-fade>
-
-                    <!--configuration options-->
-                    <div horizontal class="library-runtime-configuration">
-                        <paper-button id="runtime-configuration">configuration</paper-button>
-                    </div>
-
-                    <!--three js renderer canvas-->
-					<div id="threejscanvas" style="display: none; height: 100%"></div>
-                    <!--d3 renderer canvas-->
-					<svg id="canvas" class="unselectable" style="display: none;"></svg>
-				</div>
-			</section>
-			<section label="settings">
-				<div class="wrapper" cross-fade>
-					<pojoviz-settings></pojoviz-settings>
-				</div>
-			</section>
-			<section label="readme">
-				<div class="wrapper" cross-fade>
-					<pojoviz-readme></pojoviz-readme>
-				</div>
-			</section>
-		</core-animated-pages>
-
-        <!--popup shown to edit a known configuration -->
-        <paper-dialog id="knownConfigurationPopup" class="configuration-form" backdrop
-                  heading="Edit Configuration" transition="paper-dialog-transition-center">
-            <pojoviz-inspector-form></pojoviz-inspector-form>
-        </paper-dialog>
-
-	</core-scaffold>
-    <!--end app-->
-
-    <!--notification-->
-	<paper-toast id="toast" text=""></paper-toast>
+    <pojoviz-app></pojoviz-app>
 
 	<!-- app -->
 	<script src="../build/pojoviz-vendor.js"></script>

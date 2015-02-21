@@ -22,14 +22,15 @@ module.exports = function (options) {
         css: 'css',
         sass: 'sass'
       }))
-      .pipe(gulp.dest(dest))
-      .pipe(reload({stream: true}))
       .on('error', function (e) {
         console.log(e);
-      });
+        this.emit('end');
+      })
+      .pipe(gulp.dest(dest))
+      .pipe(reload({stream: true}));
   });
 
   gulp.task('watch:compass', function () {
-    gulp.watch(path.join(options.project, 'sass/**'), ['compass']);
+    return gulp.watch(path.join(options.project, 'sass/**'), ['compass']);
   });
 };

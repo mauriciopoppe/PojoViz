@@ -2,17 +2,45 @@
  * In this file you should write your main styles. (or centralize your imports)
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
-/* line 1, ../sass/_common.scss */
-.unselectable {
+/* line 4, ../sass/_common.scss */
+html /deep/ .unselectable {
   -moz-user-select: none;
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
 }
-
-/* line 8, ../sass/_common.scss */
-.no-padding {
+/* line 11, ../sass/_common.scss */
+html /deep/ .no-padding {
   padding: 0 !important;
+}
+
+/* line 21, ../sass/_common.scss */
+html /deep/ paper-toggle-button::shadow .toggle-ink {
+  color: #4fc3f7;
+}
+/* line 25, ../sass/_common.scss */
+html /deep/ paper-toggle-button::shadow [checked] .toggle-bar {
+  background-color: #b3e5fc;
+}
+/* line 28, ../sass/_common.scss */
+html /deep/ paper-toggle-button::shadow [checked] .toggle-button {
+  background-color: #4fc3f7;
+}
+/* line 36, ../sass/_common.scss */
+html /deep/ paper-input /deep/ .focused-underline {
+  background-color: #4fc3f7;
+}
+/* line 41, ../sass/_common.scss */
+html /deep/ paper-input /deep/ [focused] /deep/ .floated-label .label-text {
+  color: #4fc3f7;
+}
+/* line 47, ../sass/_common.scss */
+html /deep/ paper-slider::shadow #sliderKnobInner, html /deep/ paper-slider::shadow #sliderKnobInner::before {
+  background-color: #4fc3f7;
+}
+/* line 50, ../sass/_common.scss */
+html /deep/ paper-slider::shadow #sliderBar::shadow #activeProgress {
+  background-color: #4fc3f7;
 }
 
 /* line 7, ../sass/elements/settings.scss */
@@ -33,25 +61,25 @@ pojoviz-settings::shadow paper-radio-button::shadow #onRadio {
   background-color: #03a9f4;
 }
 
-/* line 4, ../sass/elements/inspector.scss */
+/* line 6, ../sass/elements/inspector.scss */
 html /deep/ pojoviz-inspector-form /deep/ paper-input {
   width: 100%;
 }
-/* line 8, ../sass/elements/inspector.scss */
+/* line 10, ../sass/elements/inspector.scss */
 html /deep/ pojoviz-inspector-form /deep/ paper-spinner {
   position: relative;
   top: 40px;
   left: 20px;
 }
-/* line 15, ../sass/elements/inspector.scss */
+/* line 17, ../sass/elements/inspector.scss */
 html /deep/ pojoviz-inspector-form /deep/ .options .bold {
   font-weight: bold;
 }
-/* line 19, ../sass/elements/inspector.scss */
+/* line 21, ../sass/elements/inspector.scss */
 html /deep/ pojoviz-inspector-form /deep/ .options [center] {
   margin: 20px 0;
 }
-/* line 25, ../sass/elements/inspector.scss */
+/* line 27, ../sass/elements/inspector.scss */
 html /deep/ pojoviz-inspector-form /deep/ paper-toggle-button {
   width: 50px;
 }
@@ -137,8 +165,8 @@ html /deep/ #aboutPopup::shadow #scroller {
   height: 350px;
 }
 
-/* line 10, ../sass/renderer/d3.scss */
-.pv-link {
+/* line 11, ../sass/renderer/d3.scss */
+html /deep/ .pv-link {
   -webkit-transition-property: stroke;
   -moz-transition-property: stroke;
   -o-transition-property: stroke;
@@ -151,56 +179,53 @@ html /deep/ #aboutPopup::shadow #scroller {
   stroke-width: 3px;
   stroke: lightgrey;
 }
-/* line 17, ../sass/renderer/d3.scss */
-.pv-link.selected {
+/* line 18, ../sass/renderer/d3.scss */
+html /deep/ .pv-link.selected {
   stroke: #03a9f4;
 }
-/* line 19, ../sass/renderer/d3.scss */
-.pv-link.selected.predecessor {
+/* line 20, ../sass/renderer/d3.scss */
+html /deep/ .pv-link.selected.predecessor {
   stroke: #e51c23;
 }
-/* line 22, ../sass/renderer/d3.scss */
-.pv-link.selected.successor {
+/* line 23, ../sass/renderer/d3.scss */
+html /deep/ .pv-link.selected.successor {
   stroke: #03a9f4;
 }
-
-/* line 28, ../sass/renderer/d3.scss */
-.canvas-wrapper {
+/* line 29, ../sass/renderer/d3.scss */
+html /deep/ .canvas-wrapper {
   height: 100%;
 }
-
-/* line 31, ../sass/renderer/d3.scss */
-svg#canvas {
+/* line 32, ../sass/renderer/d3.scss */
+html /deep/ svg#canvas {
   width: 100%;
   height: 100%;
 }
-/* line 36, ../sass/renderer/d3.scss */
-svg#canvas.dragged {
+/* line 37, ../sass/renderer/d3.scss */
+html /deep/ svg#canvas.dragged {
   cursor: move;
 }
-/* line 40, ../sass/renderer/d3.scss */
-svg#canvas .pv-nodes-focused .pv-node {
+/* line 41, ../sass/renderer/d3.scss */
+html /deep/ svg#canvas .pv-nodes-focused .pv-node {
   opacity: 0.3;
 }
-/* line 42, ../sass/renderer/d3.scss */
-svg#canvas .pv-nodes-focused .pv-node.selected {
+/* line 43, ../sass/renderer/d3.scss */
+html /deep/ svg#canvas .pv-nodes-focused .pv-node.selected {
   opacity: 1;
 }
-/* line 46, ../sass/renderer/d3.scss */
-svg#canvas .pv-nodes-focused .pv-node.predecessor .node-background {
+/* line 47, ../sass/renderer/d3.scss */
+html /deep/ svg#canvas .pv-nodes-focused .pv-node.predecessor .node-background {
   stroke: #e51c23;
 }
-/* line 51, ../sass/renderer/d3.scss */
-svg#canvas .pv-nodes-focused .pv-node.successor .node-background {
+/* line 52, ../sass/renderer/d3.scss */
+html /deep/ svg#canvas .pv-nodes-focused .pv-node.successor .node-background {
   stroke: #03a9f4;
 }
-/* line 56, ../sass/renderer/d3.scss */
-svg#canvas .pv-nodes-focused .pv-node.current .node-background {
+/* line 57, ../sass/renderer/d3.scss */
+html /deep/ svg#canvas .pv-nodes-focused .pv-node.current .node-background {
   stroke: #673ab7;
 }
-
-/* line 64, ../sass/renderer/d3.scss */
-.pv-node {
+/* line 65, ../sass/renderer/d3.scss */
+html /deep/ .pv-node {
   -webkit-transition-property: opacity;
   -moz-transition-property: opacity;
   -o-transition-property: opacity;
@@ -210,61 +235,61 @@ svg#canvas .pv-nodes-focused .pv-node.current .node-background {
   -o-transition-duration: 0.25s;
   transition-duration: 0.25s;
 }
-/* line 68, ../sass/renderer/d3.scss */
-.pv-node .node-background {
+/* line 69, ../sass/renderer/d3.scss */
+html /deep/ .pv-node .node-background {
   fill: white;
   fill-opacity: 1;
   stroke-opacity: 1;
   stroke: #b3e5fc;
   stroke-width: 2px;
 }
-/* line 75, ../sass/renderer/d3.scss */
-.pv-node .pv-title {
+/* line 76, ../sass/renderer/d3.scss */
+html /deep/ .pv-node .pv-title {
   font-size: 17px;
   font-weight: 100;
 }
-/* line 82, ../sass/renderer/d3.scss */
-.pv-node .pv-body .pv-property .pv-dot-object {
+/* line 83, ../sass/renderer/d3.scss */
+html /deep/ .pv-node .pv-body .pv-property .pv-dot-object {
   fill: #03a9f4;
   fill-opacity: 1;
 }
-/* line 86, ../sass/renderer/d3.scss */
-.pv-node .pv-body .pv-property .pv-dot-function {
+/* line 87, ../sass/renderer/d3.scss */
+html /deep/ .pv-node .pv-body .pv-property .pv-dot-function {
   fill: #f9bdbb;
 }
-/* line 91, ../sass/renderer/d3.scss */
-.pv-node .pv-body .pv-property .pv-property-background {
+/* line 92, ../sass/renderer/d3.scss */
+html /deep/ .pv-node .pv-body .pv-property .pv-property-background {
   fill: white;
 }
-/* line 95, ../sass/renderer/d3.scss */
-.pv-node .pv-body .pv-property:hover {
+/* line 96, ../sass/renderer/d3.scss */
+html /deep/ .pv-node .pv-body .pv-property:hover {
   cursor: pointer;
 }
-/* line 100, ../sass/renderer/d3.scss */
-.pv-node .pv-body .pv-property.pv-__proto__ rect {
+/* line 101, ../sass/renderer/d3.scss */
+html /deep/ .pv-node .pv-body .pv-property.pv-__proto__ rect {
   fill: #b3e5fc;
   fill-opacity: 0.15;
   stroke-dasharray: 2;
 }
-/* line 105, ../sass/renderer/d3.scss */
-.pv-node .pv-body .pv-property.pv-__proto__ text {
+/* line 106, ../sass/renderer/d3.scss */
+html /deep/ .pv-node .pv-body .pv-property.pv-__proto__ text {
   stroke-dasharray: 1;
   fill: #b3e5fc;
 }
-/* line 112, ../sass/renderer/d3.scss */
-.pv-node .pv-body .pv-property rect.pv-string {
+/* line 113, ../sass/renderer/d3.scss */
+html /deep/ .pv-node .pv-body .pv-property rect.pv-string {
   stroke: #a3e9a4;
 }
-/* line 115, ../sass/renderer/d3.scss */
-.pv-node .pv-body .pv-property rect.pv-number {
+/* line 116, ../sass/renderer/d3.scss */
+html /deep/ .pv-node .pv-body .pv-property rect.pv-number {
   stroke: #ffe0b2;
 }
-/* line 121, ../sass/renderer/d3.scss */
-.pv-node .pv-body .pv-property rect.pv-object {
+/* line 122, ../sass/renderer/d3.scss */
+html /deep/ .pv-node .pv-body .pv-property rect.pv-object {
   stroke: #b3e5fc;
 }
-/* line 129, ../sass/renderer/d3.scss */
-.pv-node.pv-function rect.node-background {
+/* line 130, ../sass/renderer/d3.scss */
+html /deep/ .pv-node.pv-function rect.node-background {
   stroke: #f9bdbb;
 }
 
@@ -278,8 +303,8 @@ html.notoolbar /deep/ core-toolbar {
   display: none;
 }
 
-/* line 30, ../sass/app.scss */
-body core-animated-pages {
+/* line 31, ../sass/app.scss */
+body /deep/ core-animated-pages {
   position: absolute;
   top: 0;
   left: 0;
@@ -287,49 +312,61 @@ body core-animated-pages {
   height: 100%;
 }
 /* line 37, ../sass/app.scss */
-body core-animated-pages section {
+body /deep/ core-animated-pages section {
   padding: 40px;
 }
-/* line 43, ../sass/app.scss */
+/* line 41, ../sass/app.scss */
+body /deep/ .logo {
+  text-align: center;
+  padding: 30px 15px 15px;
+  font-size: 4em;
+  font-weight: 100;
+}
+/* line 46, ../sass/app.scss */
+body /deep/ .logo .subtitle {
+  padding-top: 10px;
+  font-size: 12px;
+}
+/* line 51, ../sass/app.scss */
 body /deep/ .center {
   display: block;
   margin: auto;
 }
-/* line 47, ../sass/app.scss */
+/* line 55, ../sass/app.scss */
 body /deep/ h1 {
   font-weight: 100;
   font-size: 3em;
 }
-/* line 51, ../sass/app.scss */
+/* line 59, ../sass/app.scss */
 body /deep/ core-header-panel[main] {
   background-color: white;
 }
-/* line 53, ../sass/app.scss */
+/* line 61, ../sass/app.scss */
 body /deep/ core-header-panel[main] core-toolbar {
   background-color: #03a9f4;
 }
-/* line 57, ../sass/app.scss */
+/* line 68, ../sass/app.scss */
 body /deep/ .pojoviz {
   font-weight: 100;
   font-size: 1.3rem;
   color: #03a9f4;
 }
-/* line 62, ../sass/app.scss */
+/* line 73, ../sass/app.scss */
 body /deep/ core-item:hover {
   cursor: pointer !important;
 }
-/* line 65, ../sass/app.scss */
+/* line 76, ../sass/app.scss */
 body /deep/ .readme-iframe {
   margin: auto;
   display: block;
 }
-/* line 68, ../sass/app.scss */
+/* line 79, ../sass/app.scss */
 body /deep/ .readme-iframe html {
   -webkit-box-shadow: inset 0px 0px 14px 0px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: inset 0px 0px 14px 0px rgba(0, 0, 0, 0.75);
   box-shadow: inset 0px 0px 14px 0px rgba(0, 0, 0, 0.75);
 }
-/* line 74, ../sass/app.scss */
+/* line 85, ../sass/app.scss */
 body /deep/ .as-button {
   text-decoration: none;
   padding: 10px;
@@ -341,39 +378,12 @@ body /deep/ .as-button {
   background: #03a9f4;
   color: white;
 }
-
-/* line 84, ../sass/app.scss */
-.logo {
-  text-align: center;
-  padding: 30px 15px 15px;
-  font-size: 4em;
-  font-weight: 100;
-}
-/* line 89, ../sass/app.scss */
-.logo .subtitle {
-  padding-top: 10px;
-  font-size: 12px;
-}
-
-/* line 96, ../sass/app.scss */
-html /deep/ .small {
-  font-size: 12px !important;
-  font-weight: 100;
-}
-
-/* line 104, ../sass/app.scss */
-html /deep/ paper-dialog::shadow #scroller {
-  width: 850px;
-  height: 650px;
-}
-
-/* line 113, ../sass/app.scss */
-pojoviz-library-menu::shadow .library {
+/* line 95, ../sass/app.scss */
+body /deep/ pojoviz-library-menu::shadow .library {
   font-size: 13px;
 }
-
-/* line 119, ../sass/app.scss */
-.library-runtime-configuration {
+/* line 101, ../sass/app.scss */
+body /deep/ .library-runtime-configuration {
   position: absolute;
   bottom: 0;
   right: 0;
@@ -388,7 +398,19 @@ pojoviz-library-menu::shadow .library {
   -o-transition-duration: 0.25s;
   transition-duration: 0.25s;
 }
-/* line 129, ../sass/app.scss */
-.library-runtime-configuration:hover {
+/* line 111, ../sass/app.scss */
+body /deep/ .library-runtime-configuration:hover {
   opacity: 1;
+}
+
+/* line 123, ../sass/app.scss */
+html /deep/ .small {
+  font-size: 12px !important;
+  font-weight: 100;
+}
+
+/* line 131, ../sass/app.scss */
+html /deep/ paper-dialog::shadow #scroller {
+  width: 850px;
+  height: 650px;
 }

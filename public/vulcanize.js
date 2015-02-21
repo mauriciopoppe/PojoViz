@@ -73950,6 +73950,94 @@ return{aliases:["jsp"],k:r,i:/<\//,c:[{cN:"javadoc",b:"/\\*\\*",e:"\\*/",r:0,c:[
 }return{cI:!0,i:"[=/|']",c:[e.CLCM,e.CBCM,a,{cN:"id",b:"\\#[A-Za-z0-9_-]+",r:0},{cN:"class",b:"\\.[A-Za-z0-9_-]+",r:0},{cN:"attr_selector",b:"\\[",e:"\\]",i:"$"},{cN:"tag",b:"\\b(a|abbr|acronym|address|area|article|aside|audio|b|base|big|blockquote|body|br|button|canvas|caption|cite|code|col|colgroup|command|datalist|dd|del|details|dfn|div|dl|dt|em|embed|fieldset|figcaption|figure|footer|form|frame|frameset|(h[1-6])|head|header|hgroup|hr|html|i|iframe|img|input|ins|kbd|keygen|label|legend|li|link|map|mark|meta|meter|nav|noframes|noscript|object|ol|optgroup|option|output|p|param|pre|progress|q|rp|rt|ruby|samp|script|section|select|small|span|strike|strong|style|sub|sup|table|tbody|td|textarea|tfoot|th|thead|time|title|tr|tt|ul|var|video)\\b",r:0},{cN:"pseudo",b:":(visited|valid|root|right|required|read-write|read-only|out-range|optional|only-of-type|only-child|nth-of-type|nth-last-of-type|nth-last-child|nth-child|not|link|left|last-of-type|last-child|lang|invalid|indeterminate|in-range|hover|focus|first-of-type|first-line|first-letter|first-child|first|enabled|empty|disabled|default|checked|before|after|active)"},{cN:"pseudo",b:"::(after|before|choices|first-letter|first-line|repeat-index|repeat-item|selection|value)"},r,{cN:"attribute",b:"\\b(z-index|word-wrap|word-spacing|word-break|width|widows|white-space|visibility|vertical-align|unicode-bidi|transition-timing-function|transition-property|transition-duration|transition-delay|transition|transform-style|transform-origin|transform|top|text-underline-position|text-transform|text-shadow|text-rendering|text-overflow|text-indent|text-decoration-style|text-decoration-line|text-decoration-color|text-decoration|text-align-last|text-align|tab-size|table-layout|right|resize|quotes|position|pointer-events|perspective-origin|perspective|page-break-inside|page-break-before|page-break-after|padding-top|padding-right|padding-left|padding-bottom|padding|overflow-y|overflow-x|overflow-wrap|overflow|outline-width|outline-style|outline-offset|outline-color|outline|orphans|order|opacity|object-position|object-fit|normal|none|nav-up|nav-right|nav-left|nav-index|nav-down|min-width|min-height|max-width|max-height|mask|marks|margin-top|margin-right|margin-left|margin-bottom|margin|list-style-type|list-style-position|list-style-image|list-style|line-height|letter-spacing|left|justify-content|initial|inherit|ime-mode|image-orientation|image-resolution|image-rendering|icon|hyphens|height|font-weight|font-variant-ligatures|font-variant|font-style|font-stretch|font-size-adjust|font-size|font-language-override|font-kerning|font-feature-settings|font-family|font|float|flex-wrap|flex-shrink|flex-grow|flex-flow|flex-direction|flex-basis|flex|filter|empty-cells|display|direction|cursor|counter-reset|counter-increment|content|column-width|column-span|column-rule-width|column-rule-style|column-rule-color|column-rule|column-gap|column-fill|column-count|columns|color|clip-path|clip|clear|caption-side|break-inside|break-before|break-after|box-sizing|box-shadow|box-decoration-break|bottom|border-width|border-top-width|border-top-style|border-top-right-radius|border-top-left-radius|border-top-color|border-top|border-style|border-spacing|border-right-width|border-right-style|border-right-color|border-right|border-radius|border-left-width|border-left-style|border-left-color|border-left|border-image-width|border-image-source|border-image-slice|border-image-repeat|border-image-outset|border-image|border-color|border-collapse|border-bottom-width|border-bottom-style|border-bottom-right-radius|border-bottom-left-radius|border-bottom-color|border-bottom|border|background-size|background-repeat|background-position|background-origin|background-image|background-color|background-clip|background-attachment|background|backface-visibility|auto|animation-timing-function|animation-play-state|animation-name|animation-iteration-count|animation-fill-mode|animation-duration|animation-direction|animation-delay|animation|align-self|align-items|align-content)\\b",i:"[^\\s]"},{cN:"value",b:"\\b(whitespace|wait|w-resize|visible|vertical-text|vertical-ideographic|uppercase|upper-roman|upper-alpha|underline|transparent|top|thin|thick|text|text-top|text-bottom|tb-rl|table-header-group|table-footer-group|sw-resize|super|strict|static|square|solid|small-caps|separate|se-resize|scroll|s-resize|rtl|row-resize|ridge|right|repeat|repeat-y|repeat-x|relative|progress|pointer|overline|outside|outset|oblique|nowrap|not-allowed|normal|none|nw-resize|no-repeat|no-drop|newspaper|ne-resize|n-resize|move|middle|medium|ltr|lr-tb|lowercase|lower-roman|lower-alpha|loose|list-item|line|line-through|line-edge|lighter|left|keep-all|justify|italic|inter-word|inter-ideograph|inside|inset|inline|inline-block|inherit|inactive|ideograph-space|ideograph-parenthesis|ideograph-numeric|ideograph-alpha|horizontal|hidden|help|hand|groove|fixed|ellipsis|e-resize|double|dotted|distribute|distribute-space|distribute-letter|distribute-all-lines|disc|disabled|default|decimal|dashed|crosshair|collapse|col-resize|circle|char|center|capitalize|break-word|break-all|bottom|both|bolder|bold|block|bidi-override|below|baseline|auto|always|all-scroll|absolute|table|table-cell)\\b"},{cN:"value",b:":",e:";",c:[a,r,i,e.CSSNM,e.QSM,e.ASM,{cN:"important",b:"!important"}]},{cN:"at_rule",b:"@",e:"[{;]",k:"mixin include extend for if else each while charset import debug media page content font-face namespace warn",c:[a,r,e.QSM,e.ASM,i,e.CSSNM,{cN:"preprocessor",b:"\\s[A-Za-z0-9_.-]+",r:0}]}]}}),hljs.registerLanguage("smali",function(){var e=["add","and","cmp","cmpg","cmpl","const","div","double","float","goto","if","int","long","move","mul","neg","new","nop","not","or","rem","return","shl","shr","sput","sub","throw","ushr","xor"],t=["aget","aput","array","check","execute","fill","filled","goto/16","goto/32","iget","instance","invoke","iput","monitor","packed","sget","sparse"],r=["transient","constructor","abstract","final","synthetic","public","private","protected","static","bridge","system"];return{aliases:["smali"],c:[{cN:"string",b:'"',e:'"',r:0},{cN:"comment",b:"#",e:"$",r:0},{cN:"keyword",b:"\\s*\\.end\\s[a-zA-Z0-9]*",r:1},{cN:"keyword",b:"^[ ]*\\.[a-zA-Z]*",r:0},{cN:"keyword",b:"\\s:[a-zA-Z_0-9]*",r:0},{cN:"keyword",b:"\\s("+r.join("|")+")",r:1},{cN:"keyword",b:"\\[",r:0},{cN:"instruction",b:"\\s("+e.join("|")+")\\s",r:1},{cN:"instruction",b:"\\s("+e.join("|")+")((\\-|/)[a-zA-Z0-9]+)+\\s",r:10},{cN:"instruction",b:"\\s("+t.join("|")+")((\\-|/)[a-zA-Z0-9]+)*\\s",r:10},{cN:"class",b:"L[^(;:\n]*;",r:0},{cN:"function",b:'( |->)[^(\n ;"]*\\(',r:0},{cN:"function",b:"\\)",r:0},{cN:"variable",b:"[vp][0-9]+",r:0}]}}),hljs.registerLanguage("smalltalk",function(e){var t="[a-z][a-zA-Z0-9_]*",r={cN:"char",b:"\\$.{1}"},a={cN:"symbol",b:"#"+e.UIR};return{aliases:["st"],k:"self super nil true false thisContext",c:[{cN:"comment",b:'"',e:'"'},e.ASM,{cN:"class",b:"\\b[A-Z][A-Za-z0-9_]*",r:0},{cN:"method",b:t+":",r:0},e.CNM,a,r,{cN:"localvars",b:"\\|[ ]*"+t+"([ ]+"+t+")*[ ]*\\|",rB:!0,e:/\|/,i:/\S/,c:[{b:"(\\|[ ]*)?"+t}]},{cN:"array",b:"\\#\\(",e:"\\)",c:[e.ASM,r,e.CNM,a]}]}}),hljs.registerLanguage("sml",function(e){return{aliases:["ml"],k:{keyword:"abstype and andalso as case datatype do else end eqtype exception fn fun functor handle if in include infix infixr let local nonfix of op open orelse raise rec sharing sig signature struct structure then type val with withtype where while",built_in:"array bool char exn int list option order real ref string substring vector unit word",literal:"true false NONE SOME LESS EQUAL GREATER nil"},i:/\/\/|>>/,l:"[a-z_]\\w*!?",c:[{cN:"literal",b:"\\[(\\|\\|)?\\]|\\(\\)"},{cN:"comment",b:"\\(\\*",e:"\\*\\)",c:["self",e.PWM]},{cN:"symbol",b:"'[A-Za-z_](?!')[\\w']*"},{cN:"tag",b:"`[A-Z][\\w']*"},{cN:"type",b:"\\b[A-Z][\\w']*",r:0},{b:"[a-z_]\\w*'[\\w']*"},e.inherit(e.ASM,{cN:"char",r:0}),e.inherit(e.QSM,{i:null}),{cN:"number",b:"\\b(0[xX][a-fA-F0-9_]+[Lln]?|0[oO][0-7_]+[Lln]?|0[bB][01_]+[Lln]?|[0-9][0-9_]*([Lln]|(\\.[0-9_]*)?([eE][-+]?[0-9_]+)?)?)",r:0},{b:/[-=]>/}]}}),hljs.registerLanguage("sql",function(e){var t={cN:"comment",b:"--",e:"$"};return{cI:!0,i:/[<>]/,c:[{cN:"operator",bK:"begin end start commit rollback savepoint lock alter create drop rename call delete do handler insert load replace select truncate update set show pragma grant merge describe use explain help declare prepare execute deallocate savepoint release unlock purge reset change stop analyze cache flush optimize repair kill install uninstall checksum restore check backup",e:/;/,eW:!0,k:{keyword:"abs absolute acos action add adddate addtime aes_decrypt aes_encrypt after aggregate all allocate alter analyze and any are as asc ascii asin assertion at atan atan2 atn2 authorization authors avg backup before begin benchmark between bin binlog bit_and bit_count bit_length bit_or bit_xor both by cache call cascade cascaded case cast catalog ceil ceiling chain change changed char_length character_length charindex charset check checksum checksum_agg choose close coalesce coercibility collate collation collationproperty column columns columns_updated commit compress concat concat_ws concurrent connect connection connection_id consistent constraint constraints continue contributors conv convert convert_tz corresponding cos cot count count_big crc32 create cross cume_dist curdate current current_date current_time current_timestamp current_user cursor curtime data database databases datalength date_add date_format date_sub dateadd datediff datefromparts datename datepart datetime2fromparts datetimeoffsetfromparts day dayname dayofmonth dayofweek dayofyear deallocate declare decode default deferrable deferred degrees delayed delete des_decrypt des_encrypt des_key_file desc describe descriptor diagnostics difference disconnect distinct distinctrow div do domain double drop dumpfile each else elt enclosed encode encrypt end end-exec engine engines eomonth errors escape escaped event eventdata events except exception exec execute exists exp explain export_set extended external extract fast fetch field fields find_in_set first first_value floor flush for force foreign format found found_rows from from_base64 from_days from_unixtime full function get get_format get_lock getdate getutcdate global go goto grant grants greatest group group_concat grouping grouping_id gtid_subset gtid_subtract handler having help hex high_priority hosts hour ident_current ident_incr ident_seed identified identity if ifnull ignore iif ilike immediate in index indicator inet6_aton inet6_ntoa inet_aton inet_ntoa infile initially inner innodb input insert install instr intersect into is is_free_lock is_ipv4 is_ipv4_compat is_ipv4_mapped is_not is_not_null is_used_lock isdate isnull isolation join key kill language last last_day last_insert_id last_value lcase lead leading least leaves left len lenght level like limit lines ln load load_file local localtime localtimestamp locate lock log log10 log2 logfile logs low_priority lower lpad ltrim make_set makedate maketime master master_pos_wait match matched max md5 medium merge microsecond mid min minute mod mode module month monthname mutex name_const names national natural nchar next no no_write_to_binlog not now nullif nvarchar oct octet_length of old_password on only open optimize option optionally or ord order outer outfile output pad parse partial partition password patindex percent_rank percentile_cont percentile_disc period_add period_diff pi plugin position pow power pragma precision prepare preserve primary prior privileges procedure procedure_analyze processlist profile profiles public publishingservername purge quarter query quick quote quotename radians rand read references regexp relative relaylog release release_lock rename repair repeat replace replicate reset restore restrict return returns reverse revoke right rlike rollback rollup round row row_count rows rpad rtrim savepoint schema scroll sec_to_time second section select serializable server session session_user set sha sha1 sha2 share show sign sin size slave sleep smalldatetimefromparts snapshot some soname soundex sounds_like space sql sql_big_result sql_buffer_result sql_cache sql_calc_found_rows sql_no_cache sql_small_result sql_variant_property sqlstate sqrt square start starting status std stddev stddev_pop stddev_samp stdev stdevp stop str str_to_date straight_join strcmp string stuff subdate substr substring subtime subtring_index sum switchoffset sysdate sysdatetime sysdatetimeoffset system_user sysutcdatetime table tables tablespace tan temporary terminated tertiary_weights then time time_format time_to_sec timediff timefromparts timestamp timestampadd timestampdiff timezone_hour timezone_minute to to_base64 to_days to_seconds todatetimeoffset trailing transaction translation trigger trigger_nestlevel triggers trim truncate try_cast try_convert try_parse ucase uncompress uncompressed_length unhex unicode uninstall union unique unix_timestamp unknown unlock update upgrade upped upper usage use user user_resources using utc_date utc_time utc_timestamp uuid uuid_short validate_password_strength value values var var_pop var_samp variables variance varp version view warnings week weekday weekofyear weight_string when whenever where with work write xml xor year yearweek zon",literal:"true false null",built_in:"array bigint binary bit blob boolean char character date dec decimal float int integer interval number numeric real serial smallint varchar varying int8 serial8 text"},c:[{cN:"string",b:"'",e:"'",c:[e.BE,{b:"''"}]},{cN:"string",b:'"',e:'"',c:[e.BE,{b:'""'}]},{cN:"string",b:"`",e:"`",c:[e.BE]},e.CNM,e.CBCM,t]},e.CBCM,t]}}),hljs.registerLanguage("stata",function(e){return{aliases:["do","ado"],cI:!0,k:"if else in foreach for forv forva forval forvalu forvalue forvalues by bys bysort xi quietly qui capture about ac ac_7 acprplot acprplot_7 adjust ado adopath adoupdate alpha ameans an ano anov anova anova_estat anova_terms anovadef aorder ap app appe appen append arch arch_dr arch_estat arch_p archlm areg areg_p args arima arima_dr arima_estat arima_p as asmprobit asmprobit_estat asmprobit_lf asmprobit_mfx__dlg asmprobit_p ass asse asser assert avplot avplot_7 avplots avplots_7 bcskew0 bgodfrey binreg bip0_lf biplot bipp_lf bipr_lf bipr_p biprobit bitest bitesti bitowt blogit bmemsize boot bootsamp bootstrap bootstrap_8 boxco_l boxco_p boxcox boxcox_6 boxcox_p bprobit br break brier bro brow brows browse brr brrstat bs bs_7 bsampl_w bsample bsample_7 bsqreg bstat bstat_7 bstat_8 bstrap bstrap_7 ca ca_estat ca_p cabiplot camat canon canon_8 canon_8_p canon_estat canon_p cap caprojection capt captu captur capture cat cc cchart cchart_7 cci cd censobs_table centile cf char chdir checkdlgfiles checkestimationsample checkhlpfiles checksum chelp ci cii cl class classutil clear cli clis clist clo clog clog_lf clog_p clogi clogi_sw clogit clogit_lf clogit_p clogitp clogl_sw cloglog clonevar clslistarray cluster cluster_measures cluster_stop cluster_tree cluster_tree_8 clustermat cmdlog cnr cnre cnreg cnreg_p cnreg_sw cnsreg codebook collaps4 collapse colormult_nb colormult_nw compare compress conf confi confir confirm conren cons const constr constra constrai constrain constraint continue contract copy copyright copysource cor corc corr corr2data corr_anti corr_kmo corr_smc corre correl correla correlat correlate corrgram cou coun count cox cox_p cox_sw coxbase coxhaz coxvar cprplot cprplot_7 crc cret cretu cretur creturn cross cs cscript cscript_log csi ct ct_is ctset ctst_5 ctst_st cttost cumsp cumsp_7 cumul cusum cusum_7 cutil d datasig datasign datasigna datasignat datasignatu datasignatur datasignature datetof db dbeta de dec deco decod decode deff des desc descr descri describ describe destring dfbeta dfgls dfuller di di_g dir dirstats dis discard disp disp_res disp_s displ displa display distinct do doe doed doedi doedit dotplot dotplot_7 dprobit drawnorm drop ds ds_util dstdize duplicates durbina dwstat dydx e ed edi edit egen eivreg emdef en enc enco encod encode eq erase ereg ereg_lf ereg_p ereg_sw ereghet ereghet_glf ereghet_glf_sh ereghet_gp ereghet_ilf ereghet_ilf_sh ereghet_ip eret eretu eretur ereturn err erro error est est_cfexist est_cfname est_clickable est_expand est_hold est_table est_unhold est_unholdok estat estat_default estat_summ estat_vce_only esti estimates etodow etof etomdy ex exi exit expand expandcl fac fact facto factor factor_estat factor_p factor_pca_rotated factor_rotate factormat fcast fcast_compute fcast_graph fdades fdadesc fdadescr fdadescri fdadescrib fdadescribe fdasav fdasave fdause fh_st file open file read file close file filefilter fillin find_hlp_file findfile findit findit_7 fit fl fli flis flist for5_0 form forma format fpredict frac_154 frac_adj frac_chk frac_cox frac_ddp frac_dis frac_dv frac_in frac_mun frac_pp frac_pq frac_pv frac_wgt frac_xo fracgen fracplot fracplot_7 fracpoly fracpred fron_ex fron_hn fron_p fron_tn fron_tn2 frontier ftodate ftoe ftomdy ftowdate g gamhet_glf gamhet_gp gamhet_ilf gamhet_ip gamma gamma_d2 gamma_p gamma_sw gammahet gdi_hexagon gdi_spokes ge gen gene gener genera generat generate genrank genstd genvmean gettoken gl gladder gladder_7 glim_l01 glim_l02 glim_l03 glim_l04 glim_l05 glim_l06 glim_l07 glim_l08 glim_l09 glim_l10 glim_l11 glim_l12 glim_lf glim_mu glim_nw1 glim_nw2 glim_nw3 glim_p glim_v1 glim_v2 glim_v3 glim_v4 glim_v5 glim_v6 glim_v7 glm glm_6 glm_p glm_sw glmpred glo glob globa global glogit glogit_8 glogit_p gmeans gnbre_lf gnbreg gnbreg_5 gnbreg_p gomp_lf gompe_sw gomper_p gompertz gompertzhet gomphet_glf gomphet_glf_sh gomphet_gp gomphet_ilf gomphet_ilf_sh gomphet_ip gphdot gphpen gphprint gprefs gprobi_p gprobit gprobit_8 gr gr7 gr_copy gr_current gr_db gr_describe gr_dir gr_draw gr_draw_replay gr_drop gr_edit gr_editviewopts gr_example gr_example2 gr_export gr_print gr_qscheme gr_query gr_read gr_rename gr_replay gr_save gr_set gr_setscheme gr_table gr_undo gr_use graph graph7 grebar greigen greigen_7 greigen_8 grmeanby grmeanby_7 gs_fileinfo gs_filetype gs_graphinfo gs_stat gsort gwood h hadimvo hareg hausman haver he heck_d2 heckma_p heckman heckp_lf heckpr_p heckprob hel help hereg hetpr_lf hetpr_p hetprob hettest hexdump hilite hist hist_7 histogram hlogit hlu hmeans hotel hotelling hprobit hreg hsearch icd9 icd9_ff icd9p iis impute imtest inbase include inf infi infil infile infix inp inpu input ins insheet insp inspe inspec inspect integ inten intreg intreg_7 intreg_p intrg2_ll intrg_ll intrg_ll2 ipolate iqreg ir irf irf_create irfm iri is_svy is_svysum isid istdize ivprob_1_lf ivprob_lf ivprobit ivprobit_p ivreg ivreg_footnote ivtob_1_lf ivtob_lf ivtobit ivtobit_p jackknife jacknife jknife jknife_6 jknife_8 jkstat joinby kalarma1 kap kap_3 kapmeier kappa kapwgt kdensity kdensity_7 keep ksm ksmirnov ktau kwallis l la lab labe label labelbook ladder levels levelsof leverage lfit lfit_p li lincom line linktest lis list lloghet_glf lloghet_glf_sh lloghet_gp lloghet_ilf lloghet_ilf_sh lloghet_ip llogi_sw llogis_p llogist llogistic llogistichet lnorm_lf lnorm_sw lnorma_p lnormal lnormalhet lnormhet_glf lnormhet_glf_sh lnormhet_gp lnormhet_ilf lnormhet_ilf_sh lnormhet_ip lnskew0 loadingplot loc loca local log logi logis_lf logistic logistic_p logit logit_estat logit_p loglogs logrank loneway lookfor lookup lowess lowess_7 lpredict lrecomp lroc lroc_7 lrtest ls lsens lsens_7 lsens_x lstat ltable ltable_7 ltriang lv lvr2plot lvr2plot_7 m ma mac macr macro makecns man manova manova_estat manova_p manovatest mantel mark markin markout marksample mat mat_capp mat_order mat_put_rr mat_rapp mata mata_clear mata_describe mata_drop mata_matdescribe mata_matsave mata_matuse mata_memory mata_mlib mata_mosave mata_rename mata_which matalabel matcproc matlist matname matr matri matrix matrix_input__dlg matstrik mcc mcci md0_ md1_ md1debug_ md2_ md2debug_ mds mds_estat mds_p mdsconfig mdslong mdsmat mdsshepard mdytoe mdytof me_derd mean means median memory memsize meqparse mer merg merge mfp mfx mhelp mhodds minbound mixed_ll mixed_ll_reparm mkassert mkdir mkmat mkspline ml ml_5 ml_adjs ml_bhhhs ml_c_d ml_check ml_clear ml_cnt ml_debug ml_defd ml_e0 ml_e0_bfgs ml_e0_cycle ml_e0_dfp ml_e0i ml_e1 ml_e1_bfgs ml_e1_bhhh ml_e1_cycle ml_e1_dfp ml_e2 ml_e2_cycle ml_ebfg0 ml_ebfr0 ml_ebfr1 ml_ebh0q ml_ebhh0 ml_ebhr0 ml_ebr0i ml_ecr0i ml_edfp0 ml_edfr0 ml_edfr1 ml_edr0i ml_eds ml_eer0i ml_egr0i ml_elf ml_elf_bfgs ml_elf_bhhh ml_elf_cycle ml_elf_dfp ml_elfi ml_elfs ml_enr0i ml_enrr0 ml_erdu0 ml_erdu0_bfgs ml_erdu0_bhhh ml_erdu0_bhhhq ml_erdu0_cycle ml_erdu0_dfp ml_erdu0_nrbfgs ml_exde ml_footnote ml_geqnr ml_grad0 ml_graph ml_hbhhh ml_hd0 ml_hold ml_init ml_inv ml_log ml_max ml_mlout ml_mlout_8 ml_model ml_nb0 ml_opt ml_p ml_plot ml_query ml_rdgrd ml_repor ml_s_e ml_score ml_searc ml_technique ml_unhold mleval mlf_ mlmatbysum mlmatsum mlog mlogi mlogit mlogit_footnote mlogit_p mlopts mlsum mlvecsum mnl0_ mor more mov move mprobit mprobit_lf mprobit_p mrdu0_ mrdu1_ mvdecode mvencode mvreg mvreg_estat n nbreg nbreg_al nbreg_lf nbreg_p nbreg_sw nestreg net newey newey_7 newey_p news nl nl_7 nl_9 nl_9_p nl_p nl_p_7 nlcom nlcom_p nlexp2 nlexp2_7 nlexp2a nlexp2a_7 nlexp3 nlexp3_7 nlgom3 nlgom3_7 nlgom4 nlgom4_7 nlinit nllog3 nllog3_7 nllog4 nllog4_7 nlog_rd nlogit nlogit_p nlogitgen nlogittree nlpred no nobreak noi nois noisi noisil noisily note notes notes_dlg nptrend numlabel numlist odbc old_ver olo olog ologi ologi_sw ologit ologit_p ologitp on one onew onewa oneway op_colnm op_comp op_diff op_inv op_str opr opro oprob oprob_sw oprobi oprobi_p oprobit oprobitp opts_exclusive order orthog orthpoly ou out outf outfi outfil outfile outs outsh outshe outshee outsheet ovtest pac pac_7 palette parse parse_dissim pause pca pca_8 pca_display pca_estat pca_p pca_rotate pcamat pchart pchart_7 pchi pchi_7 pcorr pctile pentium pergram pergram_7 permute permute_8 personal peto_st pkcollapse pkcross pkequiv pkexamine pkexamine_7 pkshape pksumm pksumm_7 pl plo plot plugin pnorm pnorm_7 poisgof poiss_lf poiss_sw poisso_p poisson poisson_estat post postclose postfile postutil pperron pr prais prais_e prais_e2 prais_p predict predictnl preserve print pro prob probi probit probit_estat probit_p proc_time procoverlay procrustes procrustes_estat procrustes_p profiler prog progr progra program prop proportion prtest prtesti pwcorr pwd q\\s qby qbys qchi qchi_7 qladder qladder_7 qnorm qnorm_7 qqplot qqplot_7 qreg qreg_c qreg_p qreg_sw qu quadchk quantile quantile_7 que quer query range ranksum ratio rchart rchart_7 rcof recast reclink recode reg reg3 reg3_p regdw regr regre regre_p2 regres regres_p regress regress_estat regriv_p remap ren rena renam rename renpfix repeat replace report reshape restore ret retu retur return rm rmdir robvar roccomp roccomp_7 roccomp_8 rocf_lf rocfit rocfit_8 rocgold rocplot rocplot_7 roctab roctab_7 rolling rologit rologit_p rot rota rotat rotate rotatemat rreg rreg_p ru run runtest rvfplot rvfplot_7 rvpplot rvpplot_7 sa safesum sample sampsi sav save savedresults saveold sc sca scal scala scalar scatter scm_mine sco scob_lf scob_p scobi_sw scobit scor score scoreplot scoreplot_help scree screeplot screeplot_help sdtest sdtesti se search separate seperate serrbar serrbar_7 serset set set_defaults sfrancia sh she shel shell shewhart shewhart_7 signestimationsample signrank signtest simul simul_7 simulate simulate_8 sktest sleep slogit slogit_d2 slogit_p smooth snapspan so sor sort spearman spikeplot spikeplot_7 spikeplt spline_x split sqreg sqreg_p sret sretu sretur sreturn ssc st st_ct st_hc st_hcd st_hcd_sh st_is st_issys st_note st_promo st_set st_show st_smpl st_subid stack statsby statsby_8 stbase stci stci_7 stcox stcox_estat stcox_fr stcox_fr_ll stcox_p stcox_sw stcoxkm stcoxkm_7 stcstat stcurv stcurve stcurve_7 stdes stem stepwise stereg stfill stgen stir stjoin stmc stmh stphplot stphplot_7 stphtest stphtest_7 stptime strate strate_7 streg streg_sw streset sts sts_7 stset stsplit stsum sttocc sttoct stvary stweib su suest suest_8 sum summ summa summar summari summariz summarize sunflower sureg survcurv survsum svar svar_p svmat svy svy_disp svy_dreg svy_est svy_est_7 svy_estat svy_get svy_gnbreg_p svy_head svy_header svy_heckman_p svy_heckprob_p svy_intreg_p svy_ivreg_p svy_logistic_p svy_logit_p svy_mlogit_p svy_nbreg_p svy_ologit_p svy_oprobit_p svy_poisson_p svy_probit_p svy_regress_p svy_sub svy_sub_7 svy_x svy_x_7 svy_x_p svydes svydes_8 svygen svygnbreg svyheckman svyheckprob svyintreg svyintreg_7 svyintrg svyivreg svylc svylog_p svylogit svymarkout svymarkout_8 svymean svymlog svymlogit svynbreg svyolog svyologit svyoprob svyoprobit svyopts svypois svypois_7 svypoisson svyprobit svyprobt svyprop svyprop_7 svyratio svyreg svyreg_p svyregress svyset svyset_7 svyset_8 svytab svytab_7 svytest svytotal sw sw_8 swcnreg swcox swereg swilk swlogis swlogit swologit swoprbt swpois swprobit swqreg swtobit swweib symmetry symmi symplot symplot_7 syntax sysdescribe sysdir sysuse szroeter ta tab tab1 tab2 tab_or tabd tabdi tabdis tabdisp tabi table tabodds tabodds_7 tabstat tabu tabul tabula tabulat tabulate te tempfile tempname tempvar tes test testnl testparm teststd tetrachoric time_it timer tis tob tobi tobit tobit_p tobit_sw token tokeni tokeniz tokenize tostring total translate translator transmap treat_ll treatr_p treatreg trim trnb_cons trnb_mean trpoiss_d2 trunc_ll truncr_p truncreg tsappend tset tsfill tsline tsline_ex tsreport tsrevar tsrline tsset tssmooth tsunab ttest ttesti tut_chk tut_wait tutorial tw tware_st two twoway twoway__fpfit_serset twoway__function_gen twoway__histogram_gen twoway__ipoint_serset twoway__ipoints_serset twoway__kdensity_gen twoway__lfit_serset twoway__normgen_gen twoway__pci_serset twoway__qfit_serset twoway__scatteri_serset twoway__sunflower_gen twoway_ksm_serset ty typ type typeof u unab unabbrev unabcmd update us use uselabel var var_mkcompanion var_p varbasic varfcast vargranger varirf varirf_add varirf_cgraph varirf_create varirf_ctable varirf_describe varirf_dir varirf_drop varirf_erase varirf_graph varirf_ograph varirf_rename varirf_set varirf_table varlist varlmar varnorm varsoc varstable varstable_w varstable_w2 varwle vce vec vec_fevd vec_mkphi vec_p vec_p_w vecirf_create veclmar veclmar_w vecnorm vecnorm_w vecrank vecstable verinst vers versi versio version view viewsource vif vwls wdatetof webdescribe webseek webuse weib1_lf weib2_lf weib_lf weib_lf0 weibhet_glf weibhet_glf_sh weibhet_glfa weibhet_glfa_sh weibhet_gp weibhet_ilf weibhet_ilf_sh weibhet_ilfa weibhet_ilfa_sh weibhet_ip weibu_sw weibul_p weibull weibull_c weibull_s weibullhet wh whelp whi which whil while wilc_st wilcoxon win wind windo window winexec wntestb wntestb_7 wntestq xchart xchart_7 xcorr xcorr_7 xi xi_6 xmlsav xmlsave xmluse xpose xsh xshe xshel xshell xt_iis xt_tis xtab_p xtabond xtbin_p xtclog xtcloglog xtcloglog_8 xtcloglog_d2 xtcloglog_pa_p xtcloglog_re_p xtcnt_p xtcorr xtdata xtdes xtfront_p xtfrontier xtgee xtgee_elink xtgee_estat xtgee_makeivar xtgee_p xtgee_plink xtgls xtgls_p xthaus xthausman xtht_p xthtaylor xtile xtint_p xtintreg xtintreg_8 xtintreg_d2 xtintreg_p xtivp_1 xtivp_2 xtivreg xtline xtline_ex xtlogit xtlogit_8 xtlogit_d2 xtlogit_fe_p xtlogit_pa_p xtlogit_re_p xtmixed xtmixed_estat xtmixed_p xtnb_fe xtnb_lf xtnbreg xtnbreg_pa_p xtnbreg_refe_p xtpcse xtpcse_p xtpois xtpoisson xtpoisson_d2 xtpoisson_pa_p xtpoisson_refe_p xtpred xtprobit xtprobit_8 xtprobit_d2 xtprobit_re_p xtps_fe xtps_lf xtps_ren xtps_ren_8 xtrar_p xtrc xtrc_p xtrchh xtrefe_p xtreg xtreg_be xtreg_fe xtreg_ml xtreg_pa_p xtreg_re xtregar xtrere_p xtset xtsf_ll xtsf_llti xtsum xttab xttest0 xttobit xttobit_8 xttobit_p xttrans yx yxview__barlike_draw yxview_area_draw yxview_bar_draw yxview_dot_draw yxview_dropline_draw yxview_function_draw yxview_iarrow_draw yxview_ilabels_draw yxview_normal_draw yxview_pcarrow_draw yxview_pcbarrow_draw yxview_pccapsym_draw yxview_pcscatter_draw yxview_pcspike_draw yxview_rarea_draw yxview_rbar_draw yxview_rbarm_draw yxview_rcap_draw yxview_rcapsym_draw yxview_rconnected_draw yxview_rline_draw yxview_rscatter_draw yxview_rspike_draw yxview_spike_draw yxview_sunflower_draw zap_s zinb zinb_llf zinb_plf zip zip_llf zip_p zip_plf zt_ct_5 zt_hc_5 zt_hcd_5 zt_is_5 zt_iss_5 zt_sho_5 zt_smp_5 ztbase_5 ztcox_5 ztdes_5 ztereg_5 ztfill_5 ztgen_5 ztir_5 ztjoin_5 ztnb ztnb_p ztp ztp_p zts_5 ztset_5 ztspli_5 ztsum_5 zttoct_5 ztvary_5 ztweib_5",c:[{cN:"label",v:[{b:"\\$\\{?[a-zA-Z_]+\\}?"},{b:"`[a-zA-Z_]+'"}]},{cN:"string",v:[{b:'`".*"\''},{b:'".*"'}]},{cN:"literal",v:[{b:"\\b(abs|acos|asin|atan|atan2|atanh|ceil|cloglog|comb|cos|digamma|exp|floor|invcloglog|invlogit|ln|lnfact|lnfactorial|lngamma|log|log10|max|min|mod|reldif|round|sign|sin|sqrt|sum|tan|tanh|trigamma|trunc|betaden|Binomial|binorm|binormal|chi2|chi2tail|dgammapda|dgammapdada|dgammapdadx|dgammapdx|dgammapdxdx|F|Fden|Ftail|gammaden|gammap|ibeta|invbinomial|invchi2|invchi2tail|invF|invFtail|invgammap|invibeta|invnchi2|invnFtail|invnibeta|invnorm|invnormal|invttail|nbetaden|nchi2|nFden|nFtail|nibeta|norm|normal|normalden|normd|npnchi2|tden|ttail|uniform|abbrev|char|index|indexnot|length|lower|ltrim|match|plural|proper|real|regexm|regexr|regexs|reverse|rtrim|string|strlen|strlower|strltrim|strmatch|strofreal|strpos|strproper|strreverse|strrtrim|strtrim|strupper|subinstr|subinword|substr|trim|upper|word|wordcount|_caller|autocode|byteorder|chop|clip|cond|e|epsdouble|epsfloat|group|inlist|inrange|irecode|matrix|maxbyte|maxdouble|maxfloat|maxint|maxlong|mi|minbyte|mindouble|minfloat|minint|minlong|missing|r|recode|replay|return|s|scalar|d|date|day|dow|doy|halfyear|mdy|month|quarter|week|year|d|daily|dofd|dofh|dofm|dofq|dofw|dofy|h|halfyearly|hofd|m|mofd|monthly|q|qofd|quarterly|tin|twithin|w|weekly|wofd|y|yearly|yh|ym|yofd|yq|yw|cholesky|colnumb|colsof|corr|det|diag|diag0cnt|el|get|hadamard|I|inv|invsym|issym|issymmetric|J|matmissing|matuniform|mreldif|nullmat|rownumb|rowsof|sweep|syminv|trace|vec|vecdiag)(?=\\(|$)"}]},{cN:"comment",v:[{b:"^\\*.*$"},e.CLCM,e.CBCM]}]}}),hljs.registerLanguage("step21",function(e){var t="[A-Z_][A-Z0-9_.]*",r="END-ISO-10303-21;",a={literal:"",built_in:"",keyword:"HEADER ENDSEC DATA"},i={cN:"preprocessor",b:"ISO-10303-21;",r:10},n=[e.CLCM,{cN:"comment",b:"/\\*\\*!",e:"\\*/",c:[e.PWM]},e.CBCM,e.CNM,e.inherit(e.ASM,{i:null}),e.inherit(e.QSM,{i:null}),{cN:"string",b:"'",e:"'"},{cN:"label",v:[{b:"#",e:"\\d+",i:"\\W"}]}];return{aliases:["p21","step","stp"],cI:!0,l:t,k:a,c:[{cN:"preprocessor",b:r,r:10},i].concat(n)}}),hljs.registerLanguage("stylus",function(e){var t={cN:"variable",b:"\\$"+e.IR},r={cN:"hexcolor",b:"#([a-fA-F0-9]{6}|[a-fA-F0-9]{3})",r:10},a=["charset","css","debug","extend","font-face","for","import","include","media","mixin","page","warn","while"],i=["after","before","first-letter","first-line","active","first-child","focus","hover","lang","link","visited"],n=["a","abbr","address","article","aside","audio","b","blockquote","body","button","canvas","caption","cite","code","dd","del","details","dfn","div","dl","dt","em","fieldset","figcaption","figure","footer","form","h1","h2","h3","h4","h5","h6","header","hgroup","html","i","iframe","img","input","ins","kbd","label","legend","li","mark","menu","nav","object","ol","p","q","quote","samp","section","span","strong","summary","sup","table","tbody","td","textarea","tfoot","th","thead","time","tr","ul","var","video"],o="[\\.\\s\\n\\[\\:,]",s=["align-content","align-items","align-self","animation","animation-delay","animation-direction","animation-duration","animation-fill-mode","animation-iteration-count","animation-name","animation-play-state","animation-timing-function","auto","backface-visibility","background","background-attachment","background-clip","background-color","background-image","background-origin","background-position","background-repeat","background-size","border","border-bottom","border-bottom-color","border-bottom-left-radius","border-bottom-right-radius","border-bottom-style","border-bottom-width","border-collapse","border-color","border-image","border-image-outset","border-image-repeat","border-image-slice","border-image-source","border-image-width","border-left","border-left-color","border-left-style","border-left-width","border-radius","border-right","border-right-color","border-right-style","border-right-width","border-spacing","border-style","border-top","border-top-color","border-top-left-radius","border-top-right-radius","border-top-style","border-top-width","border-width","bottom","box-decoration-break","box-shadow","box-sizing","break-after","break-before","break-inside","caption-side","clear","clip","clip-path","color","column-count","column-fill","column-gap","column-rule","column-rule-color","column-rule-style","column-rule-width","column-span","column-width","columns","content","counter-increment","counter-reset","cursor","direction","display","empty-cells","filter","flex","flex-basis","flex-direction","flex-flow","flex-grow","flex-shrink","flex-wrap","float","font","font-family","font-feature-settings","font-kerning","font-language-override","font-size","font-size-adjust","font-stretch","font-style","font-variant","font-variant-ligatures","font-weight","height","hyphens","icon","image-orientation","image-rendering","image-resolution","ime-mode","inherit","initial","justify-content","left","letter-spacing","line-height","list-style","list-style-image","list-style-position","list-style-type","margin","margin-bottom","margin-left","margin-right","margin-top","marks","mask","max-height","max-width","min-height","min-width","nav-down","nav-index","nav-left","nav-right","nav-up","none","normal","object-fit","object-position","opacity","order","orphans","outline","outline-color","outline-offset","outline-style","outline-width","overflow","overflow-wrap","overflow-x","overflow-y","padding","padding-bottom","padding-left","padding-right","padding-top","page-break-after","page-break-before","page-break-inside","perspective","perspective-origin","pointer-events","position","quotes","resize","right","tab-size","table-layout","text-align","text-align-last","text-decoration","text-decoration-color","text-decoration-line","text-decoration-style","text-indent","text-overflow","text-rendering","text-shadow","text-transform","text-underline-position","top","transform","transform-origin","transform-style","transition","transition-delay","transition-duration","transition-property","transition-timing-function","unicode-bidi","vertical-align","visibility","white-space","widows","width","word-break","word-spacing","word-wrap","z-index"],l=["\\{","\\}","\\?","(\\bReturn\\b)","(\\bEnd\\b)","(\\bend\\b)",";","#\\s","\\*\\s","===\\s","\\|"];
 return{aliases:["styl"],cI:!1,i:"("+l.join("|")+")",k:"if else for in",c:[e.QSM,e.ASM,e.CLCM,e.CBCM,r,{b:"\\.[a-zA-Z][a-zA-Z0-9_-]*"+o,rB:!0,c:[{cN:"class",b:"\\.[a-zA-Z][a-zA-Z0-9_-]*"}]},{b:"\\#[a-zA-Z][a-zA-Z0-9_-]*"+o,rB:!0,c:[{cN:"id",b:"\\#[a-zA-Z][a-zA-Z0-9_-]*"}]},{b:"\\b("+n.join("|")+")"+o,rB:!0,c:[{cN:"tag",b:"\\b[a-zA-Z][a-zA-Z0-9_-]*"}]},{cN:"pseudo",b:"&?:?:\\b("+i.join("|")+")"+o},{cN:"at_rule",b:"@("+a.join("|")+")\\b"},t,e.CSSNM,e.NM,{cN:"function",b:"\\b[a-zA-Z][a-zA-Z0-9_-]*\\(.*\\)",i:"[\\n]",rB:!0,c:[{cN:"title",b:"\\b[a-zA-Z][a-zA-Z0-9_-]*"},{cN:"params",b:/\(/,e:/\)/,c:[r,t,e.ASM,e.CSSNM,e.NM,e.QSM]}]},{cN:"attribute",b:"\\b("+s.reverse().join("|")+")\\b"}]}}),hljs.registerLanguage("swift",function(e){var t={keyword:"class deinit enum extension func import init let protocol static struct subscript typealias var break case continue default do else fallthrough if in for return switch where while as dynamicType is new super self Self Type __COLUMN__ __FILE__ __FUNCTION__ __LINE__ associativity didSet get infix inout left mutating none nonmutating operator override postfix precedence prefix right set unowned unowned safe unsafe weak willSet",literal:"true false nil",built_in:"abs advance alignof alignofValue assert bridgeFromObjectiveC bridgeFromObjectiveCUnconditional bridgeToObjectiveC bridgeToObjectiveCUnconditional c contains count countElements countLeadingZeros debugPrint debugPrintln distance dropFirst dropLast dump encodeBitsAsWords enumerate equal false filter find getBridgedObjectiveCType getVaList indices insertionSort isBridgedToObjectiveC isBridgedVerbatimToObjectiveC isUniquelyReferenced join lexicographicalCompare map max maxElement min minElement nil numericCast partition posix print println quickSort reduce reflect reinterpretCast reverse roundUpToAlignment sizeof sizeofValue sort split startsWith strideof strideofValue swap swift toString transcode true underestimateCount unsafeReflect withExtendedLifetime withObjectAtPlusZero withUnsafePointer withUnsafePointerToObject withUnsafePointers withVaList"},r={cN:"type",b:"\\b[A-Z][\\w']*",r:0},a={cN:"comment",b:"/\\*",e:"\\*/",c:[e.PWM,"self"]},i={cN:"subst",b:/\\\(/,e:"\\)",k:t,c:[]},n={cN:"number",b:"\\b([\\d_]+(\\.[\\deE_]+)?|0x[a-fA-F0-9_]+(\\.[a-fA-F0-9p_]+)?|0b[01_]+|0o[0-7_]+)\\b",r:0},o=e.inherit(e.QSM,{c:[i,e.BE]});return i.c=[n],{k:t,c:[o,e.CLCM,a,r,n,{cN:"func",bK:"func",e:"{",eE:!0,c:[e.inherit(e.TM,{b:/[A-Za-z$_][0-9A-Za-z$_]*/,i:/\(/}),{cN:"generics",b:/\</,e:/\>/,i:/\>/},{cN:"params",b:/\(/,e:/\)/,k:t,c:["self",n,o,e.CBCM,{b:":"}],i:/["']/}],i:/\[|%/},{cN:"class",k:"struct protocol class extension enum",b:"(struct|protocol|class(?! (func|var))|extension|enum)",e:"\\{",eE:!0,c:[e.inherit(e.TM,{b:/[A-Za-z$_][0-9A-Za-z$_]*/})]},{cN:"preprocessor",b:"(@assignment|@class_protocol|@exported|@final|@lazy|@noreturn|@NSCopying|@NSManaged|@objc|@optional|@required|@auto_closure|@noreturn|@IBAction|@IBDesignable|@IBInspectable|@IBOutlet|@infix|@prefix|@postfix)"}]}}),hljs.registerLanguage("tcl",function(e){return{aliases:["tk"],k:"after append apply array auto_execok auto_import auto_load auto_mkindex auto_mkindex_old auto_qualify auto_reset bgerror binary break catch cd chan clock close concat continue dde dict encoding eof error eval exec exit expr fblocked fconfigure fcopy file fileevent filename flush for foreach format gets glob global history http if incr info interp join lappend|10 lassign|10 lindex|10 linsert|10 list llength|10 load lrange|10 lrepeat|10 lreplace|10 lreverse|10 lsearch|10 lset|10 lsort|10 mathfunc mathop memory msgcat namespace open package parray pid pkg::create pkg_mkIndex platform platform::shell proc puts pwd read refchan regexp registry regsub|10 rename return safe scan seek set socket source split string subst switch tcl_endOfWord tcl_findLibrary tcl_startOfNextWord tcl_startOfPreviousWord tcl_wordBreakAfter tcl_wordBreakBefore tcltest tclvars tell time tm trace unknown unload unset update uplevel upvar variable vwait while",c:[{cN:"comment",v:[{b:";[ \\t]*#",e:"$"},{b:"^[ \\t]*#",e:"$"}]},{bK:"proc",e:"[\\{]",eE:!0,c:[{cN:"symbol",b:"[ \\t\\n\\r]+(::)?[a-zA-Z_]((::)?[a-zA-Z0-9_])*",e:"[ \\t\\n\\r]",eW:!0,eE:!0}]},{cN:"variable",eE:!0,v:[{b:"\\$(\\{)?(::)?[a-zA-Z_]((::)?[a-zA-Z0-9_])*\\(([a-zA-Z0-9_])*\\)",e:"[^a-zA-Z0-9_\\}\\$]"},{b:"\\$(\\{)?(::)?[a-zA-Z_]((::)?[a-zA-Z0-9_])*",e:"(\\))?[^a-zA-Z0-9_\\}\\$]"}]},{cN:"string",c:[e.BE],v:[e.inherit(e.ASM,{i:null}),e.inherit(e.QSM,{i:null})]},{cN:"number",v:[e.BNM,e.CNM]}]}}),hljs.registerLanguage("tex",function(){var e={cN:"command",b:"\\\\[a-zA-Zа-яА-я]+[\\*]?"},t={cN:"command",b:"\\\\[^a-zA-Zа-яА-я0-9]"},r={cN:"special",b:"[{}\\[\\]\\&#~]",r:0};return{c:[{b:"\\\\[a-zA-Zа-яА-я]+[\\*]? *= *-?\\d*\\.?\\d+(pt|pc|mm|cm|in|dd|cc|ex|em)?",rB:!0,c:[e,t,{cN:"number",b:" *=",e:"-?\\d*\\.?\\d+(pt|pc|mm|cm|in|dd|cc|ex|em)?",eB:!0}],r:10},e,t,r,{cN:"formula",b:"\\$\\$",e:"\\$\\$",c:[e,t,r],r:0},{cN:"formula",b:"\\$",e:"\\$",c:[e,t,r],r:0},{cN:"comment",b:"%",e:"$",r:0}]}}),hljs.registerLanguage("thrift",function(e){var t="bool byte i16 i32 i64 double string binary";return{k:{keyword:"namespace const typedef struct enum service exception void oneway set list map required optional",built_in:t,literal:"true false"},c:[e.QSM,e.NM,e.CLCM,e.CBCM,{cN:"class",bK:"struct enum service exception",e:/\{/,i:/\n/,c:[e.inherit(e.TM,{starts:{eW:!0,eE:!0}})]},{cN:"stl_container",b:"\\b(set|list|map)\\s*<",e:">",k:t,c:["self"]}]}}),hljs.registerLanguage("twig",function(){var e={cN:"params",b:"\\(",e:"\\)"},t="attribute block constant cycle date dump include max min parent random range source template_from_string",r={cN:"function",bK:t,r:0,c:[e]},a={cN:"filter",b:/\|[A-Za-z]+\:?/,k:"abs batch capitalize convert_encoding date date_modify default escape first format join json_encode keys last length lower merge nl2br number_format raw replace reverse round slice sort split striptags title trim upper url_encode",c:[r]},i="autoescape block do embed extends filter flush for if import include macro sandbox set spaceless use verbatim";return i=i+" "+i.split(" ").map(function(e){return"end"+e}).join(" "),{aliases:["craftcms"],cI:!0,sL:"xml",subLanguageMode:"continuous",c:[{cN:"comment",b:/\{#/,e:/#}/},{cN:"template_tag",b:/\{%/,e:/%}/,k:i,c:[a,r]},{cN:"variable",b:/\{\{/,e:/}}/,c:[a,r]}]}}),hljs.registerLanguage("typescript",function(e){return{aliases:["ts"],k:{keyword:"in if for while finally var new function|0 do return void else break catch instanceof with throw case default try this switch continue typeof delete let yield const class public private get set super interface extendsstatic constructor implements enum export import declare",literal:"true false null undefined NaN Infinity",built_in:"eval isFinite isNaN parseFloat parseInt decodeURI decodeURIComponent encodeURI encodeURIComponent escape unescape Object Function Boolean Error EvalError InternalError RangeError ReferenceError StopIteration SyntaxError TypeError URIError Number Math Date String RegExp Array Float32Array Float64Array Int16Array Int32Array Int8Array Uint16Array Uint32Array Uint8Array Uint8ClampedArray ArrayBuffer DataView JSON Intl arguments require module console window document any number boolean string void"},c:[{cN:"pi",b:/^\s*('|")use strict('|")/,r:0},e.ASM,e.QSM,e.CLCM,e.CBCM,e.CNM,{b:"("+e.RSR+"|\\b(case|return|throw)\\b)\\s*",k:"return throw case",c:[e.CLCM,e.CBCM,e.RM,{b:/</,e:/>;/,r:0,sL:"xml"}],r:0},{cN:"function",bK:"function",e:/\{/,eE:!0,c:[e.inherit(e.TM,{b:/[A-Za-z$_][0-9A-Za-z$_]*/}),{cN:"params",b:/\(/,e:/\)/,c:[e.CLCM,e.CBCM],i:/["'\(]/}],i:/\[|%/,r:0},{cN:"constructor",bK:"constructor",e:/\{/,eE:!0,r:10},{cN:"module",bK:"module",e:/\{/,eE:!0},{cN:"interface",bK:"interface",e:/\{/,eE:!0},{b:/\$[(.]/},{b:"\\."+e.IR,r:0}]}}),hljs.registerLanguage("vala",function(e){return{k:{keyword:"char uchar unichar int uint long ulong short ushort int8 int16 int32 int64 uint8 uint16 uint32 uint64 float double bool struct enum string void weak unowned owned async signal static abstract interface override while do for foreach else switch case break default return try catch public private protected internal using new this get set const stdout stdin stderr var",built_in:"DBus GLib CCode Gee Object",literal:"false true null"},c:[{cN:"class",bK:"class interface delegate namespace",e:"{",eE:!0,i:"[^,:\\n\\s\\.]",c:[e.UTM]},e.CLCM,e.CBCM,{cN:"string",b:'"""',e:'"""',r:5},e.ASM,e.QSM,e.CNM,{cN:"preprocessor",b:"^#",e:"$",r:2},{cN:"constant",b:" [A-Z_]+ ",r:0}]}}),hljs.registerLanguage("vbnet",function(e){return{aliases:["vb"],cI:!0,k:{keyword:"addhandler addressof alias and andalso aggregate ansi as assembly auto binary by byref byval call case catch class compare const continue custom declare default delegate dim distinct do each equals else elseif end enum erase error event exit explicit finally for friend from function get global goto group handles if implements imports in inherits interface into is isfalse isnot istrue join key let lib like loop me mid mod module mustinherit mustoverride mybase myclass namespace narrowing new next not notinheritable notoverridable of off on operator option optional or order orelse overloads overridable overrides paramarray partial preserve private property protected public raiseevent readonly redim rem removehandler resume return select set shadows shared skip static step stop structure strict sub synclock take text then throw to try unicode until using when where while widening with withevents writeonly xor",built_in:"boolean byte cbool cbyte cchar cdate cdec cdbl char cint clng cobj csbyte cshort csng cstr ctype date decimal directcast double gettype getxmlnamespace iif integer long object sbyte short single string trycast typeof uinteger ulong ushort",literal:"true false nothing"},i:"//|{|}|endif|gosub|variant|wend",c:[e.inherit(e.QSM,{c:[{b:'""'}]}),{cN:"comment",b:"'",e:"$",rB:!0,c:[{cN:"xmlDocTag",b:"'''|<!--|-->"},{cN:"xmlDocTag",b:"</?",e:">"}]},e.CNM,{cN:"preprocessor",b:"#",e:"$",k:"if else elseif end region externalsource"}]}}),hljs.registerLanguage("vbscript",function(e){return{aliases:["vbs"],cI:!0,k:{keyword:"call class const dim do loop erase execute executeglobal exit for each next function if then else on error option explicit new private property let get public randomize redim rem select case set stop sub while wend with end to elseif is or xor and not class_initialize class_terminate default preserve in me byval byref step resume goto",built_in:"lcase month vartype instrrev ubound setlocale getobject rgb getref string weekdayname rnd dateadd monthname now day minute isarray cbool round formatcurrency conversions csng timevalue second year space abs clng timeserial fixs len asc isempty maths dateserial atn timer isobject filter weekday datevalue ccur isdate instr datediff formatdatetime replace isnull right sgn array snumeric log cdbl hex chr lbound msgbox ucase getlocale cos cdate cbyte rtrim join hour oct typename trim strcomp int createobject loadpicture tan formatnumber mid scriptenginebuildversion scriptengine split scriptengineminorversion cint sin datepart ltrim sqr scriptenginemajorversion time derived eval date formatpercent exp inputbox left ascw chrw regexp server response request cstr err",literal:"true false null nothing empty"},i:"//",c:[e.inherit(e.QSM,{c:[{b:'""'}]}),{cN:"comment",b:/'/,e:/$/,r:0},e.CNM]}}),hljs.registerLanguage("vbscript-html",function(){return{sL:"xml",subLanguageMode:"continuous",c:[{b:"<%",e:"%>",sL:"vbscript"}]}}),hljs.registerLanguage("verilog",function(e){return{aliases:["v"],cI:!0,k:{keyword:"always and assign begin buf bufif0 bufif1 case casex casez cmos deassign default defparam disable edge else end endcase endfunction endmodule endprimitive endspecify endtable endtask event for force forever fork function if ifnone initial inout input join macromodule module nand negedge nmos nor not notif0 notif1 or output parameter pmos posedge primitive pulldown pullup rcmos release repeat rnmos rpmos rtran rtranif0 rtranif1 specify specparam table task timescale tran tranif0 tranif1 wait while xnor xor",typename:"highz0 highz1 integer large medium pull0 pull1 real realtime reg scalared signed small strong0 strong1 supply0 supply0 supply1 supply1 time tri tri0 tri1 triand trior trireg vectored wand weak0 weak1 wire wor"},c:[e.CBCM,e.CLCM,e.QSM,{cN:"number",b:"\\b(\\d+'(b|h|o|d|B|H|O|D))?[0-9xzXZ]+",c:[e.BE],r:0},{cN:"typename",b:"\\.\\w+",r:0},{cN:"value",b:"#\\((?!parameter).+\\)"},{cN:"keyword",b:"\\+|-|\\*|/|%|<|>|=|#|`|\\!|&|\\||@|:|\\^|~|\\{|\\}",r:0}]}}),hljs.registerLanguage("vhdl",function(e){return{cI:!0,k:{keyword:"abs access after alias all and architecture array assert attribute begin block body buffer bus case component configuration constant context cover disconnect downto default else elsif end entity exit fairness file for force function generate generic group guarded if impure in inertial inout is label library linkage literal loop map mod nand new next nor not null of on open or others out package port postponed procedure process property protected pure range record register reject release rem report restrict restrict_guarantee return rol ror select sequence severity shared signal sla sll sra srl strong subtype then to transport type unaffected units until use variable vmode vprop vunit wait when while with xnor xor",typename:"boolean bit character severity_level integer time delay_length natural positive string bit_vector file_open_kind file_open_status std_ulogic std_ulogic_vector std_logic std_logic_vector unsigned signed boolean_vector integer_vector real_vector time_vector"},i:"{",c:[e.CBCM,{cN:"comment",b:"--",e:"$"},e.QSM,e.CNM,{cN:"literal",b:"'(U|X|0|1|Z|W|L|H|-)'",c:[e.BE]},{cN:"attribute",b:"'[A-Za-z](_?[A-Za-z0-9])*",c:[e.BE]}]}}),hljs.registerLanguage("vim",function(e){return{l:/[!#@\w]+/,k:{keyword:"N|0 P|0 X|0 a|0 ab abc abo al am an|0 ar arga argd arge argdo argg argl argu as au aug aun b|0 bN ba bad bd be bel bf bl bm bn bo bp br brea breaka breakd breakl bro bufdo buffers bun bw c|0 cN cNf ca cabc caddb cad caddf cal cat cb cc ccl cd ce cex cf cfir cgetb cgete cg changes chd che checkt cl cla clo cm cmapc cme cn cnew cnf cno cnorea cnoreme co col colo com comc comp con conf cope cp cpf cq cr cs cst cu cuna cunme cw d|0 delm deb debugg delc delf dif diffg diffo diffp diffpu diffs diffthis dig di dl dell dj dli do doautoa dp dr ds dsp e|0 ea ec echoe echoh echom echon el elsei em en endfo endf endt endw ene ex exe exi exu f|0 files filet fin fina fini fir fix fo foldc foldd folddoc foldo for fu g|0 go gr grepa gu gv ha h|0 helpf helpg helpt hi hid his i|0 ia iabc if ij il im imapc ime ino inorea inoreme int is isp iu iuna iunme j|0 ju k|0 keepa kee keepj lN lNf l|0 lad laddb laddf la lan lat lb lc lch lcl lcs le lefta let lex lf lfir lgetb lgete lg lgr lgrepa lh ll lla lli lmak lm lmapc lne lnew lnf ln loadk lo loc lockv lol lope lp lpf lr ls lt lu lua luad luaf lv lvimgrepa lw m|0 ma mak map mapc marks mat me menut mes mk mks mksp mkv mkvie mod mz mzf nbc nb nbs n|0 new nm nmapc nme nn nnoreme noa no noh norea noreme norm nu nun nunme ol o|0 om omapc ome on ono onoreme opt ou ounme ow p|0 profd prof pro promptr pc ped pe perld po popu pp pre prev ps pt ptN ptf ptj ptl ptn ptp ptr pts pu pw py3 python3 py3d py3f py pyd pyf q|0 quita qa r|0 rec red redi redr redraws reg res ret retu rew ri rightb rub rubyd rubyf rund ru rv s|0 sN san sa sal sav sb sbN sba sbf sbl sbm sbn sbp sbr scrip scripte scs se setf setg setl sf sfir sh sim sig sil sl sla sm smap smapc sme sn sni sno snor snoreme sor so spelld spe spelli spellr spellu spellw sp spr sre st sta startg startr star stopi stj sts sun sunm sunme sus sv sw sy synti sync t|0 tN tabN tabc tabdo tabe tabf tabfir tabl tabm tabnew tabn tabo tabp tabr tabs tab ta tags tc tcld tclf te tf th tj tl tm tn to tp tr try ts tu u|0 undoj undol una unh unl unlo unm unme uns up v|0 ve verb vert vim vimgrepa vi viu vie vm vmapc vme vne vn vnoreme vs vu vunme windo w|0 wN wa wh wi winc winp wn wp wq wqa ws wu wv x|0 xa xmapc xm xme xn xnoreme xu xunme y|0 z|0 ~ Next Print append abbreviate abclear aboveleft all amenu anoremenu args argadd argdelete argedit argglobal arglocal argument ascii autocmd augroup aunmenu buffer bNext ball badd bdelete behave belowright bfirst blast bmodified bnext botright bprevious brewind break breakadd breakdel breaklist browse bunload bwipeout change cNext cNfile cabbrev cabclear caddbuffer caddexpr caddfile call catch cbuffer cclose center cexpr cfile cfirst cgetbuffer cgetexpr cgetfile chdir checkpath checktime clist clast close cmap cmapclear cmenu cnext cnewer cnfile cnoremap cnoreabbrev cnoremenu copy colder colorscheme command comclear compiler continue confirm copen cprevious cpfile cquit crewind cscope cstag cunmap cunabbrev cunmenu cwindow delete delmarks debug debuggreedy delcommand delfunction diffupdate diffget diffoff diffpatch diffput diffsplit digraphs display deletel djump dlist doautocmd doautoall deletep drop dsearch dsplit edit earlier echo echoerr echohl echomsg else elseif emenu endif endfor endfunction endtry endwhile enew execute exit exusage file filetype find finally finish first fixdel fold foldclose folddoopen folddoclosed foldopen function global goto grep grepadd gui gvim hardcopy help helpfind helpgrep helptags highlight hide history insert iabbrev iabclear ijump ilist imap imapclear imenu inoremap inoreabbrev inoremenu intro isearch isplit iunmap iunabbrev iunmenu join jumps keepalt keepmarks keepjumps lNext lNfile list laddexpr laddbuffer laddfile last language later lbuffer lcd lchdir lclose lcscope left leftabove lexpr lfile lfirst lgetbuffer lgetexpr lgetfile lgrep lgrepadd lhelpgrep llast llist lmake lmap lmapclear lnext lnewer lnfile lnoremap loadkeymap loadview lockmarks lockvar lolder lopen lprevious lpfile lrewind ltag lunmap luado luafile lvimgrep lvimgrepadd lwindow move mark make mapclear match menu menutranslate messages mkexrc mksession mkspell mkvimrc mkview mode mzscheme mzfile nbclose nbkey nbsart next nmap nmapclear nmenu nnoremap nnoremenu noautocmd noremap nohlsearch noreabbrev noremenu normal number nunmap nunmenu oldfiles open omap omapclear omenu only onoremap onoremenu options ounmap ounmenu ownsyntax print profdel profile promptfind promptrepl pclose pedit perl perldo pop popup ppop preserve previous psearch ptag ptNext ptfirst ptjump ptlast ptnext ptprevious ptrewind ptselect put pwd py3do py3file python pydo pyfile quit quitall qall read recover redo redir redraw redrawstatus registers resize retab return rewind right rightbelow ruby rubydo rubyfile rundo runtime rviminfo substitute sNext sandbox sargument sall saveas sbuffer sbNext sball sbfirst sblast sbmodified sbnext sbprevious sbrewind scriptnames scriptencoding scscope set setfiletype setglobal setlocal sfind sfirst shell simalt sign silent sleep slast smagic smapclear smenu snext sniff snomagic snoremap snoremenu sort source spelldump spellgood spellinfo spellrepall spellundo spellwrong split sprevious srewind stop stag startgreplace startreplace startinsert stopinsert stjump stselect sunhide sunmap sunmenu suspend sview swapname syntax syntime syncbind tNext tabNext tabclose tabedit tabfind tabfirst tablast tabmove tabnext tabonly tabprevious tabrewind tag tcl tcldo tclfile tearoff tfirst throw tjump tlast tmenu tnext topleft tprevious trewind tselect tunmenu undo undojoin undolist unabbreviate unhide unlet unlockvar unmap unmenu unsilent update vglobal version verbose vertical vimgrep vimgrepadd visual viusage view vmap vmapclear vmenu vnew vnoremap vnoremenu vsplit vunmap vunmenu write wNext wall while winsize wincmd winpos wnext wprevious wqall wsverb wundo wviminfo xit xall xmapclear xmap xmenu xnoremap xnoremenu xunmap xunmenu yank",built_in:"abs acos add and append argc argidx argv asin atan atan2 browse browsedir bufexists buflisted bufloaded bufname bufnr bufwinnr byte2line byteidx call ceil changenr char2nr cindent clearmatches col complete complete_add complete_check confirm copy cos cosh count cscope_connection cursor deepcopy delete did_filetype diff_filler diff_hlID empty escape eval eventhandler executable exists exp expand extend feedkeys filereadable filewritable filter finddir findfile float2nr floor fmod fnameescape fnamemodify foldclosed foldclosedend foldlevel foldtext foldtextresult foreground function garbagecollect get getbufline getbufvar getchar getcharmod getcmdline getcmdpos getcmdtype getcwd getfontname getfperm getfsize getftime getftype getline getloclist getmatches getpid getpos getqflist getreg getregtype gettabvar gettabwinvar getwinposx getwinposy getwinvar glob globpath has has_key haslocaldir hasmapto histadd histdel histget histnr hlexists hlID hostname iconv indent index input inputdialog inputlist inputrestore inputsave inputsecret insert invert isdirectory islocked items join keys len libcall libcallnr line line2byte lispindent localtime log log10 luaeval map maparg mapcheck match matchadd matcharg matchdelete matchend matchlist matchstr max min mkdir mode mzeval nextnonblank nr2char or pathshorten pow prevnonblank printf pumvisible py3eval pyeval range readfile reltime reltimestr remote_expr remote_foreground remote_peek remote_read remote_send remove rename repeat resolve reverse round screenattr screenchar screencol screenrow search searchdecl searchpair searchpairpos searchpos server2client serverlist setbufvar setcmdpos setline setloclist setmatches setpos setqflist setreg settabvar settabwinvar setwinvar sha256 shellescape shiftwidth simplify sin sinh sort soundfold spellbadword spellsuggest split sqrt str2float str2nr strchars strdisplaywidth strftime stridx string strlen strpart strridx strtrans strwidth submatch substitute synconcealed synID synIDattr synIDtrans synstack system tabpagebuflist tabpagenr tabpagewinnr tagfiles taglist tan tanh tempname tolower toupper tr trunc type undofile undotree values virtcol visualmode wildmenumode winbufnr wincol winheight winline winnr winrestcmd winrestview winsaveview winwidth writefile xor"},i:/[{:]/,c:[e.NM,e.ASM,{cN:"string",b:/"((\\")|[^"\n])*("|\n)/},{cN:"variable",b:/[bwtglsav]:[\w\d_]*/},{cN:"function",bK:"function function!",e:"$",r:0,c:[e.TM,{cN:"params",b:"\\(",e:"\\)"}]}]}}),hljs.registerLanguage("x86asm",function(e){return{cI:!0,l:"\\.?"+e.IR,k:{keyword:"lock rep repe repz repne repnz xaquire xrelease bnd nobnd aaa aad aam aas adc add and arpl bb0_reset bb1_reset bound bsf bsr bswap bt btc btr bts call cbw cdq cdqe clc cld cli clts cmc cmp cmpsb cmpsd cmpsq cmpsw cmpxchg cmpxchg486 cmpxchg8b cmpxchg16b cpuid cpu_read cpu_write cqo cwd cwde daa das dec div dmint emms enter equ f2xm1 fabs fadd faddp fbld fbstp fchs fclex fcmovb fcmovbe fcmove fcmovnb fcmovnbe fcmovne fcmovnu fcmovu fcom fcomi fcomip fcomp fcompp fcos fdecstp fdisi fdiv fdivp fdivr fdivrp femms feni ffree ffreep fiadd ficom ficomp fidiv fidivr fild fimul fincstp finit fist fistp fisttp fisub fisubr fld fld1 fldcw fldenv fldl2e fldl2t fldlg2 fldln2 fldpi fldz fmul fmulp fnclex fndisi fneni fninit fnop fnsave fnstcw fnstenv fnstsw fpatan fprem fprem1 fptan frndint frstor fsave fscale fsetpm fsin fsincos fsqrt fst fstcw fstenv fstp fstsw fsub fsubp fsubr fsubrp ftst fucom fucomi fucomip fucomp fucompp fxam fxch fxtract fyl2x fyl2xp1 hlt ibts icebp idiv imul in inc incbin insb insd insw int int01 int1 int03 int3 into invd invpcid invlpg invlpga iret iretd iretq iretw jcxz jecxz jrcxz jmp jmpe lahf lar lds lea leave les lfence lfs lgdt lgs lidt lldt lmsw loadall loadall286 lodsb lodsd lodsq lodsw loop loope loopne loopnz loopz lsl lss ltr mfence monitor mov movd movq movsb movsd movsq movsw movsx movsxd movzx mul mwait neg nop not or out outsb outsd outsw packssdw packsswb packuswb paddb paddd paddsb paddsiw paddsw paddusb paddusw paddw pand pandn pause paveb pavgusb pcmpeqb pcmpeqd pcmpeqw pcmpgtb pcmpgtd pcmpgtw pdistib pf2id pfacc pfadd pfcmpeq pfcmpge pfcmpgt pfmax pfmin pfmul pfrcp pfrcpit1 pfrcpit2 pfrsqit1 pfrsqrt pfsub pfsubr pi2fd pmachriw pmaddwd pmagw pmulhriw pmulhrwa pmulhrwc pmulhw pmullw pmvgezb pmvlzb pmvnzb pmvzb pop popa popad popaw popf popfd popfq popfw por prefetch prefetchw pslld psllq psllw psrad psraw psrld psrlq psrlw psubb psubd psubsb psubsiw psubsw psubusb psubusw psubw punpckhbw punpckhdq punpckhwd punpcklbw punpckldq punpcklwd push pusha pushad pushaw pushf pushfd pushfq pushfw pxor rcl rcr rdshr rdmsr rdpmc rdtsc rdtscp ret retf retn rol ror rdm rsdc rsldt rsm rsts sahf sal salc sar sbb scasb scasd scasq scasw sfence sgdt shl shld shr shrd sidt sldt skinit smi smint smintold smsw stc std sti stosb stosd stosq stosw str sub svdc svldt svts swapgs syscall sysenter sysexit sysret test ud0 ud1 ud2b ud2 ud2a umov verr verw fwait wbinvd wrshr wrmsr xadd xbts xchg xlatb xlat xor cmove cmovz cmovne cmovnz cmova cmovnbe cmovae cmovnb cmovb cmovnae cmovbe cmovna cmovg cmovnle cmovge cmovnl cmovl cmovnge cmovle cmovng cmovc cmovnc cmovo cmovno cmovs cmovns cmovp cmovpe cmovnp cmovpo je jz jne jnz ja jnbe jae jnb jb jnae jbe jna jg jnle jge jnl jl jnge jle jng jc jnc jo jno js jns jpo jnp jpe jp sete setz setne setnz seta setnbe setae setnb setnc setb setnae setcset setbe setna setg setnle setge setnl setl setnge setle setng sets setns seto setno setpe setp setpo setnp addps addss andnps andps cmpeqps cmpeqss cmpleps cmpless cmpltps cmpltss cmpneqps cmpneqss cmpnleps cmpnless cmpnltps cmpnltss cmpordps cmpordss cmpunordps cmpunordss cmpps cmpss comiss cvtpi2ps cvtps2pi cvtsi2ss cvtss2si cvttps2pi cvttss2si divps divss ldmxcsr maxps maxss minps minss movaps movhps movlhps movlps movhlps movmskps movntps movss movups mulps mulss orps rcpps rcpss rsqrtps rsqrtss shufps sqrtps sqrtss stmxcsr subps subss ucomiss unpckhps unpcklps xorps fxrstor fxrstor64 fxsave fxsave64 xgetbv xsetbv xsave xsave64 xsaveopt xsaveopt64 xrstor xrstor64 prefetchnta prefetcht0 prefetcht1 prefetcht2 maskmovq movntq pavgb pavgw pextrw pinsrw pmaxsw pmaxub pminsw pminub pmovmskb pmulhuw psadbw pshufw pf2iw pfnacc pfpnacc pi2fw pswapd maskmovdqu clflush movntdq movnti movntpd movdqa movdqu movdq2q movq2dq paddq pmuludq pshufd pshufhw pshuflw pslldq psrldq psubq punpckhqdq punpcklqdq addpd addsd andnpd andpd cmpeqpd cmpeqsd cmplepd cmplesd cmpltpd cmpltsd cmpneqpd cmpneqsd cmpnlepd cmpnlesd cmpnltpd cmpnltsd cmpordpd cmpordsd cmpunordpd cmpunordsd cmppd comisd cvtdq2pd cvtdq2ps cvtpd2dq cvtpd2pi cvtpd2ps cvtpi2pd cvtps2dq cvtps2pd cvtsd2si cvtsd2ss cvtsi2sd cvtss2sd cvttpd2pi cvttpd2dq cvttps2dq cvttsd2si divpd divsd maxpd maxsd minpd minsd movapd movhpd movlpd movmskpd movupd mulpd mulsd orpd shufpd sqrtpd sqrtsd subpd subsd ucomisd unpckhpd unpcklpd xorpd addsubpd addsubps haddpd haddps hsubpd hsubps lddqu movddup movshdup movsldup clgi stgi vmcall vmclear vmfunc vmlaunch vmload vmmcall vmptrld vmptrst vmread vmresume vmrun vmsave vmwrite vmxoff vmxon invept invvpid pabsb pabsw pabsd palignr phaddw phaddd phaddsw phsubw phsubd phsubsw pmaddubsw pmulhrsw pshufb psignb psignw psignd extrq insertq movntsd movntss lzcnt blendpd blendps blendvpd blendvps dppd dpps extractps insertps movntdqa mpsadbw packusdw pblendvb pblendw pcmpeqq pextrb pextrd pextrq phminposuw pinsrb pinsrd pinsrq pmaxsb pmaxsd pmaxud pmaxuw pminsb pminsd pminud pminuw pmovsxbw pmovsxbd pmovsxbq pmovsxwd pmovsxwq pmovsxdq pmovzxbw pmovzxbd pmovzxbq pmovzxwd pmovzxwq pmovzxdq pmuldq pmulld ptest roundpd roundps roundsd roundss crc32 pcmpestri pcmpestrm pcmpistri pcmpistrm pcmpgtq popcnt getsec pfrcpv pfrsqrtv movbe aesenc aesenclast aesdec aesdeclast aesimc aeskeygenassist vaesenc vaesenclast vaesdec vaesdeclast vaesimc vaeskeygenassist vaddpd vaddps vaddsd vaddss vaddsubpd vaddsubps vandpd vandps vandnpd vandnps vblendpd vblendps vblendvpd vblendvps vbroadcastss vbroadcastsd vbroadcastf128 vcmpeq_ospd vcmpeqpd vcmplt_ospd vcmpltpd vcmple_ospd vcmplepd vcmpunord_qpd vcmpunordpd vcmpneq_uqpd vcmpneqpd vcmpnlt_uspd vcmpnltpd vcmpnle_uspd vcmpnlepd vcmpord_qpd vcmpordpd vcmpeq_uqpd vcmpnge_uspd vcmpngepd vcmpngt_uspd vcmpngtpd vcmpfalse_oqpd vcmpfalsepd vcmpneq_oqpd vcmpge_ospd vcmpgepd vcmpgt_ospd vcmpgtpd vcmptrue_uqpd vcmptruepd vcmplt_oqpd vcmple_oqpd vcmpunord_spd vcmpneq_uspd vcmpnlt_uqpd vcmpnle_uqpd vcmpord_spd vcmpeq_uspd vcmpnge_uqpd vcmpngt_uqpd vcmpfalse_ospd vcmpneq_ospd vcmpge_oqpd vcmpgt_oqpd vcmptrue_uspd vcmppd vcmpeq_osps vcmpeqps vcmplt_osps vcmpltps vcmple_osps vcmpleps vcmpunord_qps vcmpunordps vcmpneq_uqps vcmpneqps vcmpnlt_usps vcmpnltps vcmpnle_usps vcmpnleps vcmpord_qps vcmpordps vcmpeq_uqps vcmpnge_usps vcmpngeps vcmpngt_usps vcmpngtps vcmpfalse_oqps vcmpfalseps vcmpneq_oqps vcmpge_osps vcmpgeps vcmpgt_osps vcmpgtps vcmptrue_uqps vcmptrueps vcmplt_oqps vcmple_oqps vcmpunord_sps vcmpneq_usps vcmpnlt_uqps vcmpnle_uqps vcmpord_sps vcmpeq_usps vcmpnge_uqps vcmpngt_uqps vcmpfalse_osps vcmpneq_osps vcmpge_oqps vcmpgt_oqps vcmptrue_usps vcmpps vcmpeq_ossd vcmpeqsd vcmplt_ossd vcmpltsd vcmple_ossd vcmplesd vcmpunord_qsd vcmpunordsd vcmpneq_uqsd vcmpneqsd vcmpnlt_ussd vcmpnltsd vcmpnle_ussd vcmpnlesd vcmpord_qsd vcmpordsd vcmpeq_uqsd vcmpnge_ussd vcmpngesd vcmpngt_ussd vcmpngtsd vcmpfalse_oqsd vcmpfalsesd vcmpneq_oqsd vcmpge_ossd vcmpgesd vcmpgt_ossd vcmpgtsd vcmptrue_uqsd vcmptruesd vcmplt_oqsd vcmple_oqsd vcmpunord_ssd vcmpneq_ussd vcmpnlt_uqsd vcmpnle_uqsd vcmpord_ssd vcmpeq_ussd vcmpnge_uqsd vcmpngt_uqsd vcmpfalse_ossd vcmpneq_ossd vcmpge_oqsd vcmpgt_oqsd vcmptrue_ussd vcmpsd vcmpeq_osss vcmpeqss vcmplt_osss vcmpltss vcmple_osss vcmpless vcmpunord_qss vcmpunordss vcmpneq_uqss vcmpneqss vcmpnlt_usss vcmpnltss vcmpnle_usss vcmpnless vcmpord_qss vcmpordss vcmpeq_uqss vcmpnge_usss vcmpngess vcmpngt_usss vcmpngtss vcmpfalse_oqss vcmpfalsess vcmpneq_oqss vcmpge_osss vcmpgess vcmpgt_osss vcmpgtss vcmptrue_uqss vcmptruess vcmplt_oqss vcmple_oqss vcmpunord_sss vcmpneq_usss vcmpnlt_uqss vcmpnle_uqss vcmpord_sss vcmpeq_usss vcmpnge_uqss vcmpngt_uqss vcmpfalse_osss vcmpneq_osss vcmpge_oqss vcmpgt_oqss vcmptrue_usss vcmpss vcomisd vcomiss vcvtdq2pd vcvtdq2ps vcvtpd2dq vcvtpd2ps vcvtps2dq vcvtps2pd vcvtsd2si vcvtsd2ss vcvtsi2sd vcvtsi2ss vcvtss2sd vcvtss2si vcvttpd2dq vcvttps2dq vcvttsd2si vcvttss2si vdivpd vdivps vdivsd vdivss vdppd vdpps vextractf128 vextractps vhaddpd vhaddps vhsubpd vhsubps vinsertf128 vinsertps vlddqu vldqqu vldmxcsr vmaskmovdqu vmaskmovps vmaskmovpd vmaxpd vmaxps vmaxsd vmaxss vminpd vminps vminsd vminss vmovapd vmovaps vmovd vmovq vmovddup vmovdqa vmovqqa vmovdqu vmovqqu vmovhlps vmovhpd vmovhps vmovlhps vmovlpd vmovlps vmovmskpd vmovmskps vmovntdq vmovntqq vmovntdqa vmovntpd vmovntps vmovsd vmovshdup vmovsldup vmovss vmovupd vmovups vmpsadbw vmulpd vmulps vmulsd vmulss vorpd vorps vpabsb vpabsw vpabsd vpacksswb vpackssdw vpackuswb vpackusdw vpaddb vpaddw vpaddd vpaddq vpaddsb vpaddsw vpaddusb vpaddusw vpalignr vpand vpandn vpavgb vpavgw vpblendvb vpblendw vpcmpestri vpcmpestrm vpcmpistri vpcmpistrm vpcmpeqb vpcmpeqw vpcmpeqd vpcmpeqq vpcmpgtb vpcmpgtw vpcmpgtd vpcmpgtq vpermilpd vpermilps vperm2f128 vpextrb vpextrw vpextrd vpextrq vphaddw vphaddd vphaddsw vphminposuw vphsubw vphsubd vphsubsw vpinsrb vpinsrw vpinsrd vpinsrq vpmaddwd vpmaddubsw vpmaxsb vpmaxsw vpmaxsd vpmaxub vpmaxuw vpmaxud vpminsb vpminsw vpminsd vpminub vpminuw vpminud vpmovmskb vpmovsxbw vpmovsxbd vpmovsxbq vpmovsxwd vpmovsxwq vpmovsxdq vpmovzxbw vpmovzxbd vpmovzxbq vpmovzxwd vpmovzxwq vpmovzxdq vpmulhuw vpmulhrsw vpmulhw vpmullw vpmulld vpmuludq vpmuldq vpor vpsadbw vpshufb vpshufd vpshufhw vpshuflw vpsignb vpsignw vpsignd vpslldq vpsrldq vpsllw vpslld vpsllq vpsraw vpsrad vpsrlw vpsrld vpsrlq vptest vpsubb vpsubw vpsubd vpsubq vpsubsb vpsubsw vpsubusb vpsubusw vpunpckhbw vpunpckhwd vpunpckhdq vpunpckhqdq vpunpcklbw vpunpcklwd vpunpckldq vpunpcklqdq vpxor vrcpps vrcpss vrsqrtps vrsqrtss vroundpd vroundps vroundsd vroundss vshufpd vshufps vsqrtpd vsqrtps vsqrtsd vsqrtss vstmxcsr vsubpd vsubps vsubsd vsubss vtestps vtestpd vucomisd vucomiss vunpckhpd vunpckhps vunpcklpd vunpcklps vxorpd vxorps vzeroall vzeroupper pclmullqlqdq pclmulhqlqdq pclmullqhqdq pclmulhqhqdq pclmulqdq vpclmullqlqdq vpclmulhqlqdq vpclmullqhqdq vpclmulhqhqdq vpclmulqdq vfmadd132ps vfmadd132pd vfmadd312ps vfmadd312pd vfmadd213ps vfmadd213pd vfmadd123ps vfmadd123pd vfmadd231ps vfmadd231pd vfmadd321ps vfmadd321pd vfmaddsub132ps vfmaddsub132pd vfmaddsub312ps vfmaddsub312pd vfmaddsub213ps vfmaddsub213pd vfmaddsub123ps vfmaddsub123pd vfmaddsub231ps vfmaddsub231pd vfmaddsub321ps vfmaddsub321pd vfmsub132ps vfmsub132pd vfmsub312ps vfmsub312pd vfmsub213ps vfmsub213pd vfmsub123ps vfmsub123pd vfmsub231ps vfmsub231pd vfmsub321ps vfmsub321pd vfmsubadd132ps vfmsubadd132pd vfmsubadd312ps vfmsubadd312pd vfmsubadd213ps vfmsubadd213pd vfmsubadd123ps vfmsubadd123pd vfmsubadd231ps vfmsubadd231pd vfmsubadd321ps vfmsubadd321pd vfnmadd132ps vfnmadd132pd vfnmadd312ps vfnmadd312pd vfnmadd213ps vfnmadd213pd vfnmadd123ps vfnmadd123pd vfnmadd231ps vfnmadd231pd vfnmadd321ps vfnmadd321pd vfnmsub132ps vfnmsub132pd vfnmsub312ps vfnmsub312pd vfnmsub213ps vfnmsub213pd vfnmsub123ps vfnmsub123pd vfnmsub231ps vfnmsub231pd vfnmsub321ps vfnmsub321pd vfmadd132ss vfmadd132sd vfmadd312ss vfmadd312sd vfmadd213ss vfmadd213sd vfmadd123ss vfmadd123sd vfmadd231ss vfmadd231sd vfmadd321ss vfmadd321sd vfmsub132ss vfmsub132sd vfmsub312ss vfmsub312sd vfmsub213ss vfmsub213sd vfmsub123ss vfmsub123sd vfmsub231ss vfmsub231sd vfmsub321ss vfmsub321sd vfnmadd132ss vfnmadd132sd vfnmadd312ss vfnmadd312sd vfnmadd213ss vfnmadd213sd vfnmadd123ss vfnmadd123sd vfnmadd231ss vfnmadd231sd vfnmadd321ss vfnmadd321sd vfnmsub132ss vfnmsub132sd vfnmsub312ss vfnmsub312sd vfnmsub213ss vfnmsub213sd vfnmsub123ss vfnmsub123sd vfnmsub231ss vfnmsub231sd vfnmsub321ss vfnmsub321sd rdfsbase rdgsbase rdrand wrfsbase wrgsbase vcvtph2ps vcvtps2ph adcx adox rdseed clac stac xstore xcryptecb xcryptcbc xcryptctr xcryptcfb xcryptofb montmul xsha1 xsha256 llwpcb slwpcb lwpval lwpins vfmaddpd vfmaddps vfmaddsd vfmaddss vfmaddsubpd vfmaddsubps vfmsubaddpd vfmsubaddps vfmsubpd vfmsubps vfmsubsd vfmsubss vfnmaddpd vfnmaddps vfnmaddsd vfnmaddss vfnmsubpd vfnmsubps vfnmsubsd vfnmsubss vfrczpd vfrczps vfrczsd vfrczss vpcmov vpcomb vpcomd vpcomq vpcomub vpcomud vpcomuq vpcomuw vpcomw vphaddbd vphaddbq vphaddbw vphadddq vphaddubd vphaddubq vphaddubw vphaddudq vphadduwd vphadduwq vphaddwd vphaddwq vphsubbw vphsubdq vphsubwd vpmacsdd vpmacsdqh vpmacsdql vpmacssdd vpmacssdqh vpmacssdql vpmacsswd vpmacssww vpmacswd vpmacsww vpmadcsswd vpmadcswd vpperm vprotb vprotd vprotq vprotw vpshab vpshad vpshaq vpshaw vpshlb vpshld vpshlq vpshlw vbroadcasti128 vpblendd vpbroadcastb vpbroadcastw vpbroadcastd vpbroadcastq vpermd vpermpd vpermps vpermq vperm2i128 vextracti128 vinserti128 vpmaskmovd vpmaskmovq vpsllvd vpsllvq vpsravd vpsrlvd vpsrlvq vgatherdpd vgatherqpd vgatherdps vgatherqps vpgatherdd vpgatherqd vpgatherdq vpgatherqq xabort xbegin xend xtest andn bextr blci blcic blsi blsic blcfill blsfill blcmsk blsmsk blsr blcs bzhi mulx pdep pext rorx sarx shlx shrx tzcnt tzmsk t1mskc valignd valignq vblendmpd vblendmps vbroadcastf32x4 vbroadcastf64x4 vbroadcasti32x4 vbroadcasti64x4 vcompresspd vcompressps vcvtpd2udq vcvtps2udq vcvtsd2usi vcvtss2usi vcvttpd2udq vcvttps2udq vcvttsd2usi vcvttss2usi vcvtudq2pd vcvtudq2ps vcvtusi2sd vcvtusi2ss vexpandpd vexpandps vextractf32x4 vextractf64x4 vextracti32x4 vextracti64x4 vfixupimmpd vfixupimmps vfixupimmsd vfixupimmss vgetexppd vgetexpps vgetexpsd vgetexpss vgetmantpd vgetmantps vgetmantsd vgetmantss vinsertf32x4 vinsertf64x4 vinserti32x4 vinserti64x4 vmovdqa32 vmovdqa64 vmovdqu32 vmovdqu64 vpabsq vpandd vpandnd vpandnq vpandq vpblendmd vpblendmq vpcmpltd vpcmpled vpcmpneqd vpcmpnltd vpcmpnled vpcmpd vpcmpltq vpcmpleq vpcmpneqq vpcmpnltq vpcmpnleq vpcmpq vpcmpequd vpcmpltud vpcmpleud vpcmpnequd vpcmpnltud vpcmpnleud vpcmpud vpcmpequq vpcmpltuq vpcmpleuq vpcmpnequq vpcmpnltuq vpcmpnleuq vpcmpuq vpcompressd vpcompressq vpermi2d vpermi2pd vpermi2ps vpermi2q vpermt2d vpermt2pd vpermt2ps vpermt2q vpexpandd vpexpandq vpmaxsq vpmaxuq vpminsq vpminuq vpmovdb vpmovdw vpmovqb vpmovqd vpmovqw vpmovsdb vpmovsdw vpmovsqb vpmovsqd vpmovsqw vpmovusdb vpmovusdw vpmovusqb vpmovusqd vpmovusqw vpord vporq vprold vprolq vprolvd vprolvq vprord vprorq vprorvd vprorvq vpscatterdd vpscatterdq vpscatterqd vpscatterqq vpsraq vpsravq vpternlogd vpternlogq vptestmd vptestmq vptestnmd vptestnmq vpxord vpxorq vrcp14pd vrcp14ps vrcp14sd vrcp14ss vrndscalepd vrndscaleps vrndscalesd vrndscaless vrsqrt14pd vrsqrt14ps vrsqrt14sd vrsqrt14ss vscalefpd vscalefps vscalefsd vscalefss vscatterdpd vscatterdps vscatterqpd vscatterqps vshuff32x4 vshuff64x2 vshufi32x4 vshufi64x2 kandnw kandw kmovw knotw kortestw korw kshiftlw kshiftrw kunpckbw kxnorw kxorw vpbroadcastmb2q vpbroadcastmw2d vpconflictd vpconflictq vplzcntd vplzcntq vexp2pd vexp2ps vrcp28pd vrcp28ps vrcp28sd vrcp28ss vrsqrt28pd vrsqrt28ps vrsqrt28sd vrsqrt28ss vgatherpf0dpd vgatherpf0dps vgatherpf0qpd vgatherpf0qps vgatherpf1dpd vgatherpf1dps vgatherpf1qpd vgatherpf1qps vscatterpf0dpd vscatterpf0dps vscatterpf0qpd vscatterpf0qps vscatterpf1dpd vscatterpf1dps vscatterpf1qpd vscatterpf1qps prefetchwt1 bndmk bndcl bndcu bndcn bndmov bndldx bndstx sha1rnds4 sha1nexte sha1msg1 sha1msg2 sha256rnds2 sha256msg1 sha256msg2 hint_nop0 hint_nop1 hint_nop2 hint_nop3 hint_nop4 hint_nop5 hint_nop6 hint_nop7 hint_nop8 hint_nop9 hint_nop10 hint_nop11 hint_nop12 hint_nop13 hint_nop14 hint_nop15 hint_nop16 hint_nop17 hint_nop18 hint_nop19 hint_nop20 hint_nop21 hint_nop22 hint_nop23 hint_nop24 hint_nop25 hint_nop26 hint_nop27 hint_nop28 hint_nop29 hint_nop30 hint_nop31 hint_nop32 hint_nop33 hint_nop34 hint_nop35 hint_nop36 hint_nop37 hint_nop38 hint_nop39 hint_nop40 hint_nop41 hint_nop42 hint_nop43 hint_nop44 hint_nop45 hint_nop46 hint_nop47 hint_nop48 hint_nop49 hint_nop50 hint_nop51 hint_nop52 hint_nop53 hint_nop54 hint_nop55 hint_nop56 hint_nop57 hint_nop58 hint_nop59 hint_nop60 hint_nop61 hint_nop62 hint_nop63",literal:"ip eip rip al ah bl bh cl ch dl dh sil dil bpl spl r8b r9b r10b r11b r12b r13b r14b r15b ax bx cx dx si di bp sp r8w r9w r10w r11w r12w r13w r14w r15w eax ebx ecx edx esi edi ebp esp eip r8d r9d r10d r11d r12d r13d r14d r15d rax rbx rcx rdx rsi rdi rbp rsp r8 r9 r10 r11 r12 r13 r14 r15 cs ds es fs gs ss st st0 st1 st2 st3 st4 st5 st6 st7 mm0 mm1 mm2 mm3 mm4 mm5 mm6 mm7 xmm0  xmm1  xmm2  xmm3  xmm4  xmm5  xmm6  xmm7  xmm8  xmm9 xmm10  xmm11 xmm12 xmm13 xmm14 xmm15 xmm16 xmm17 xmm18 xmm19 xmm20 xmm21 xmm22 xmm23 xmm24 xmm25 xmm26 xmm27 xmm28 xmm29 xmm30 xmm31 ymm0  ymm1  ymm2  ymm3  ymm4  ymm5  ymm6  ymm7  ymm8  ymm9 ymm10  ymm11 ymm12 ymm13 ymm14 ymm15 ymm16 ymm17 ymm18 ymm19 ymm20 ymm21 ymm22 ymm23 ymm24 ymm25 ymm26 ymm27 ymm28 ymm29 ymm30 ymm31 zmm0  zmm1  zmm2  zmm3  zmm4  zmm5  zmm6  zmm7  zmm8  zmm9 zmm10  zmm11 zmm12 zmm13 zmm14 zmm15 zmm16 zmm17 zmm18 zmm19 zmm20 zmm21 zmm22 zmm23 zmm24 zmm25 zmm26 zmm27 zmm28 zmm29 zmm30 zmm31 k0 k1 k2 k3 k4 k5 k6 k7 bnd0 bnd1 bnd2 bnd3 cr0 cr1 cr2 cr3 cr4 cr8 dr0 dr1 dr2 dr3 dr8 tr3 tr4 tr5 tr6 tr7 r0 r1 r2 r3 r4 r5 r6 r7 r0b r1b r2b r3b r4b r5b r6b r7b r0w r1w r2w r3w r4w r5w r6w r7w r0d r1d r2d r3d r4d r5d r6d r7d r0h r1h r2h r3h r0l r1l r2l r3l r4l r5l r6l r7l r8l r9l r10l r11l r12l r13l r14l r15l",pseudo:"db dw dd dq dt ddq do dy dz resb resw resd resq rest resdq reso resy resz incbin equ times",preprocessor:"%define %xdefine %+ %undef %defstr %deftok %assign %strcat %strlen %substr %rotate %elif %else %endif %ifmacro %ifctx %ifidn %ifidni %ifid %ifnum %ifstr %iftoken %ifempty %ifenv %error %warning %fatal %rep %endrep %include %push %pop %repl %pathsearch %depend %use %arg %stacksize %local %line %comment %endcomment .nolist byte word dword qword nosplit rel abs seg wrt strict near far a32 ptr __FILE__ __LINE__ __SECT__  __BITS__ __OUTPUT_FORMAT__ __DATE__ __TIME__ __DATE_NUM__ __TIME_NUM__ __UTC_DATE__ __UTC_TIME__ __UTC_DATE_NUM__ __UTC_TIME_NUM__  __PASS__ struc endstruc istruc at iend align alignb sectalign daz nodaz up down zero default option assume public ",built_in:"bits use16 use32 use64 default section segment absolute extern global common cpu float __utf16__ __utf16le__ __utf16be__ __utf32__ __utf32le__ __utf32be__ __float8__ __float16__ __float32__ __float64__ __float80m__ __float80e__ __float128l__ __float128h__ __Infinity__ __QNaN__ __SNaN__ Inf NaN QNaN SNaN float8 float16 float32 float64 float80m float80e float128l float128h __FLOAT_DAZ__ __FLOAT_ROUND__ __FLOAT__"},c:[{cN:"comment",b:";",e:"$",r:0},{cN:"number",b:"\\b(?:([0-9][0-9_]*)?\\.[0-9_]*(?:[eE][+-]?[0-9_]+)?|(0[Xx])?[0-9][0-9_]*\\.?[0-9_]*(?:[pP](?:[+-]?[0-9_]+)?)?)\\b",r:0},{cN:"number",b:"\\$[0-9][0-9A-Fa-f]*",r:0},{cN:"number",b:"\\b(?:[0-9A-Fa-f][0-9A-Fa-f_]*[HhXx]|[0-9][0-9_]*[DdTt]?|[0-7][0-7_]*[QqOo]|[0-1][0-1_]*[BbYy])\\b"},{cN:"number",b:"\\b(?:0[HhXx][0-9A-Fa-f_]+|0[DdTt][0-9_]+|0[QqOo][0-7_]+|0[BbYy][0-1_]+)\\b"},e.QSM,{cN:"string",b:"'",e:"[^\\\\]'",r:0},{cN:"string",b:"`",e:"[^\\\\]`",r:0},{cN:"string",b:"\\.[A-Za-z0-9]+",r:0},{cN:"label",b:"^\\s*[A-Za-z._?][A-Za-z0-9_$#@~.?]*(:|\\s+label)",r:0},{cN:"label",b:"^\\s*%%[A-Za-z0-9_$#@~.?]*:",r:0},{cN:"argument",b:"%[0-9]+",r:0},{cN:"built_in",b:"%!S+",r:0}]}
 }),hljs.registerLanguage("xl",function(e){var t="ObjectLoader Animate MovieCredits Slides Filters Shading Materials LensFlare Mapping VLCAudioVideo StereoDecoder PointCloud NetworkAccess RemoteControl RegExp ChromaKey Snowfall NodeJS Speech Charts",r={keyword:"if then else do while until for loop import with is as where when by data constant",literal:"true false nil",type:"integer real text name boolean symbol infix prefix postfix block tree",built_in:"in mod rem and or xor not abs sign floor ceil sqrt sin cos tan asin acos atan exp expm1 log log2 log10 log1p pi at",module:t,id:"text_length text_range text_find text_replace contains page slide basic_slide title_slide title subtitle fade_in fade_out fade_at clear_color color line_color line_width texture_wrap texture_transform texture scale_?x scale_?y scale_?z? translate_?x translate_?y translate_?z? rotate_?x rotate_?y rotate_?z? rectangle circle ellipse sphere path line_to move_to quad_to curve_to theme background contents locally time mouse_?x mouse_?y mouse_buttons"},a={cN:"constant",b:"[A-Z][A-Z_0-9]+",r:0},i={cN:"variable",b:"([A-Z][a-z_0-9]+)+",r:0},n={cN:"id",b:"[a-z][a-z_0-9]+",r:0},o={cN:"string",b:'"',e:'"',i:"\\n"},s={cN:"string",b:"'",e:"'",i:"\\n"},l={cN:"string",b:"<<",e:">>"},c={cN:"number",b:"[0-9]+#[0-9A-Z_]+(\\.[0-9-A-Z_]+)?#?([Ee][+-]?[0-9]+)?",r:10},p={cN:"import",bK:"import",e:"$",k:{keyword:"import",module:t},r:0,c:[o]},d={cN:"function",b:"[a-z].*->"};return{aliases:["tao"],l:/[a-zA-Z][a-zA-Z0-9_?]*/,k:r,c:[e.CLCM,e.CBCM,o,s,l,d,p,a,i,n,c,e.NM]}});;
+/**
+ * @license
+ * lodash 3.3.0 (Custom Build) lodash.com/license | Underscore.js 1.7.0 underscorejs.org/LICENSE
+ * Build: `lodash modern -o ./lodash.js`
+ */
+;(function(){function n(n,t){if(n!==t){var r=n===n,e=t===t;if(n>t||!r||typeof n=="undefined"&&e)return 1;if(n<t||!e||typeof t=="undefined"&&r)return-1}return 0}function t(n,t,r){if(t!==t)return h(n,r);r=(r||0)-1;for(var e=n.length;++r<e;)if(n[r]===t)return r;return-1}function r(n){return typeof n=="function"||false}function e(n,t){var r=n.length;for(n.sort(t);r--;)n[r]=n[r].c;return n}function u(n){return typeof n=="string"?n:null==n?"":n+""}function o(n){return n.charCodeAt(0)}function i(n,t){for(var r=-1,e=n.length;++r<e&&-1<t.indexOf(n.charAt(r)););return r
+}function f(n,t){for(var r=n.length;r--&&-1<t.indexOf(n.charAt(r)););return r}function a(t,r){return n(t.a,r.a)||t.b-r.b}function c(t,r){for(var e=-1,u=t.a,o=r.a,i=u.length;++e<i;){var f=n(u[e],o[e]);if(f)return f}return t.b-r.b}function l(n){return Nt[n]}function s(n){return Ut[n]}function p(n){return"\\"+$t[n]}function h(n,t,r){var e=n.length;for(t=r?t||e:(t||0)-1;r?t--:++t<e;){var u=n[t];if(u!==u)return t}return-1}function _(n){return n&&typeof n=="object"||false}function g(n){return 160>=n&&9<=n&&13>=n||32==n||160==n||5760==n||6158==n||8192<=n&&(8202>=n||8232==n||8233==n||8239==n||8287==n||12288==n||65279==n)
+}function v(n,t){for(var r=-1,e=n.length,u=-1,o=[];++r<e;)n[r]===t&&(n[r]=z,o[++u]=r);return o}function y(n){for(var t=-1,r=n.length;++t<r&&g(n.charCodeAt(t)););return t}function d(n){for(var t=n.length;t--&&g(n.charCodeAt(t)););return t}function m(n){return Ft[n]}function w(g){function Nt(n){if(_(n)&&!(Wo(n)||n instanceof Lt)){if(n instanceof Ft)return n;if(Fu.call(n,"__chain__")&&Fu.call(n,"__wrapped__"))return ge(n)}return new Ft(n)}function Ut(){}function Ft(n,t,r){this.__wrapped__=n,this.__actions__=r||[],this.__chain__=!!t
+}function Lt(n){this.__wrapped__=n,this.__actions__=null,this.__dir__=1,this.__dropCount__=0,this.__filtered__=false,this.__iteratees__=null,this.__takeCount__=po,this.__views__=null}function $t(){this.__data__={}}function zt(n){var t=n?n.length:0;for(this.data={hash:ro(null),set:new Gu};t--;)this.push(n[t])}function Dt(n,t){var r=n.data;return(typeof t=="string"||He(t)?r.set.has(t):r.hash[t])?0:-1}function qt(n,t){var r=-1,e=n.length;for(t||(t=bu(e));++r<e;)t[r]=n[r];return t}function Pt(n,t){for(var r=-1,e=n.length;++r<e&&false!==t(n[r],r,n););return n
+}function Kt(n,t){for(var r=-1,e=n.length;++r<e;)if(!t(n[r],r,n))return false;return true}function Vt(n,t){for(var r=-1,e=n.length,u=-1,o=[];++r<e;){var i=n[r];t(i,r,n)&&(o[++u]=i)}return o}function Yt(n,t){for(var r=-1,e=n.length,u=bu(e);++r<e;)u[r]=t(n[r],r,n);return u}function Zt(n){for(var t=-1,r=n.length,e=so;++t<r;){var u=n[t];u>e&&(e=u)}return e}function Gt(n,t,r,e){var u=-1,o=n.length;for(e&&o&&(r=n[++u]);++u<o;)r=t(r,n[u],u,n);return r}function Jt(n,t,r,e){var u=n.length;for(e&&u&&(r=n[--u]);u--;)r=t(r,n[u],u,n);
+return r}function Xt(n,t){for(var r=-1,e=n.length;++r<e;)if(t(n[r],r,n))return true;return false}function Ht(n,t){return typeof n=="undefined"?t:n}function Qt(n,t,r,e){return typeof n!="undefined"&&Fu.call(e,r)?n:t}function nr(n,t,r){var e=$o(t);if(!r)return rr(t,n,e);for(var u=-1,o=e.length;++u<o;){var i=e[u],f=n[i],a=r(f,t[i],i,n,t);(a===a?a===f:f!==f)&&(typeof f!="undefined"||i in n)||(n[i]=a)}return n}function tr(n,t){for(var r=-1,e=n.length,u=fe(e),o=t.length,i=bu(o);++r<o;){var f=t[r];u?(f=parseFloat(f),i[r]=oe(f,e)?n[f]:b):i[r]=n[f]
+}return i}function rr(n,t,r){r||(r=t,t={});for(var e=-1,u=r.length;++e<u;){var o=r[e];t[o]=n[o]}return t}function er(n,t,r){var e=typeof n;if("function"==e){if(e=typeof t!="undefined"){var e=Nt.support,u=!(e.funcNames?n.name:e.funcDecomp);if(!u){var o=Nu.call(n);e.funcNames||(u=!mt.test(o)),u||(u=Et.test(o)||Qe(n),xo(n,u))}e=u}n=e?Fr(n,t,r):n}else n=null==n?yu:"object"==e?Ar(n):typeof t=="undefined"?Er(n+""):jr(n+"",t);return n}function ur(n,t,r,e,u,o,i){var f;if(r&&(f=u?r(n,e,u):r(n)),typeof f!="undefined")return f;
+if(!He(n))return n;if(e=Wo(n)){if(f=re(n),!t)return qt(n,f)}else{var a=$u.call(n),c=a==V;if(a!=Z&&a!=D&&(!c||u))return St[a]?ue(n,a,t):u?n:{};if(f=ee(c?{}:n),!t)return rr(n,f,$o(n))}for(o||(o=[]),i||(i=[]),u=o.length;u--;)if(o[u]==n)return i[u];return o.push(n),i.push(f),(e?Pt:vr)(n,function(e,u){f[u]=ur(e,t,r,u,n,o,i)}),f}function or(n,t,r,e){if(typeof n!="function")throw new Cu(B);return Ju(function(){n.apply(b,Or(r,e))},t)}function ir(n,r){var e=n?n.length:0,u=[];if(!e)return u;var o=-1,i=te(),f=i==t,a=f&&200<=r.length&&Ao(r),c=r.length;
+a&&(i=Dt,f=false,r=a);n:for(;++o<e;)if(a=n[o],f&&a===a){for(var l=c;l--;)if(r[l]===a)continue n;u.push(a)}else 0>i(r,a)&&u.push(a);return u}function fr(n,t){var r=n?n.length:0;if(!fe(r))return vr(n,t);for(var e=-1,u=_e(n);++e<r&&false!==t(u[e],e,u););return n}function ar(n,t){var r=n?n.length:0;if(!fe(r))return yr(n,t);for(var e=_e(n);r--&&false!==t(e[r],r,e););return n}function cr(n,t){var r=true;return fr(n,function(n,e,u){return r=!!t(n,e,u)}),r}function lr(n,t){var r=[];return fr(n,function(n,e,u){t(n,e,u)&&r.push(n)
+}),r}function sr(n,t,r,e){var u;return r(n,function(n,r,o){return t(n,r,o)?(u=e?r:n,false):void 0}),u}function pr(n,t,r,e){e=(e||0)-1;for(var u=n.length,o=-1,i=[];++e<u;){var f=n[e];if(_(f)&&fe(f.length)&&(Wo(f)||Ge(f))){t&&(f=pr(f,t,r));var a=-1,c=f.length;for(i.length+=c;++a<c;)i[++o]=f[a]}else r||(i[++o]=f)}return i}function hr(n,t,r){var e=-1,u=_e(n);r=r(n);for(var o=r.length;++e<o;){var i=r[e];if(false===t(u[i],i,u))break}return n}function _r(n,t,r){var e=_e(n);r=r(n);for(var u=r.length;u--;){var o=r[u];
+if(false===t(e[o],o,e))break}return n}function gr(n,t){hr(n,t,iu)}function vr(n,t){return hr(n,t,$o)}function yr(n,t){return _r(n,t,$o)}function dr(n,t){for(var r=-1,e=t.length,u=-1,o=[];++r<e;){var i=t[r];Uo(n[i])&&(o[++u]=i)}return o}function mr(n,t,r){var e=-1,u=typeof t=="function",o=n?n.length:0,i=fe(o)?bu(o):[];return fr(n,function(n){var o=u?t:null!=n&&n[t];i[++e]=o?o.apply(n,r):b}),i}function wr(n,t,r,e,u,o){if(n===t)return 0!==n||1/n==1/t;var i=typeof n,f=typeof t;if("function"!=i&&"object"!=i&&"function"!=f&&"object"!=f||null==n||null==t)n=n!==n&&t!==t;
+else n:{var i=wr,f=Wo(n),a=Wo(t),c=M,l=M;f||(c=$u.call(n),c==D?c=Z:c!=Z&&(f=eu(n))),a||(l=$u.call(t),l==D?l=Z:l!=Z&&eu(t));var s=c==Z,a=l==Z,l=c==l;if(!l||f||s)if(c=s&&Fu.call(n,"__wrapped__"),a=a&&Fu.call(t,"__wrapped__"),c||a)n=i(c?n.value():n,a?t.value():t,r,e,u,o);else if(l){for(u||(u=[]),o||(o=[]),c=u.length;c--;)if(u[c]==n){n=o[c]==t;break n}u.push(n),o.push(t),n=(f?Jr:Hr)(n,t,i,r,e,u,o),u.pop(),o.pop()}else n=false;else n=Xr(n,t,c)}return n}function br(n,t,r,e,u){var o=t.length;if(null==n)return!o;
+for(var i=-1,f=!u;++i<o;)if(f&&e[i]?r[i]!==n[t[i]]:!Fu.call(n,t[i]))return false;for(i=-1;++i<o;){var a=t[i];if(f&&e[i])a=Fu.call(n,a);else{var c=n[a],l=r[i],a=u?u(c,l,a):b;typeof a=="undefined"&&(a=wr(l,c,u,true))}if(!a)return false}return true}function xr(n,t){var r=[];return fr(n,function(n,e,u){r.push(t(n,e,u))}),r}function Ar(n){var t=$o(n),r=t.length;if(1==r){var e=t[0],u=n[e];if(ae(u))return function(n){return null!=n&&n[e]===u&&Fu.call(n,e)}}for(var o=bu(r),i=bu(r);r--;)u=n[t[r]],o[r]=u,i[r]=ae(u);return function(n){return br(n,t,o,i)
+}}function jr(n,t){return ae(t)?function(r){return null!=r&&r[n]===t}:function(r){return null!=r&&wr(t,r[n],null,true)}}function kr(n,t,r,e,u){if(!He(n))return n;var o=fe(t.length)&&(Wo(t)||eu(t));return(o?Pt:vr)(t,function(t,i,f){if(_(t)){e||(e=[]),u||(u=[]);n:{t=e;for(var a=u,c=t.length,l=f[i];c--;)if(t[c]==l){n[i]=a[c],i=void 0;break n}c=n[i],f=r?r(c,l,i,n,f):b;var s=typeof f=="undefined";s&&(f=l,fe(l.length)&&(Wo(l)||eu(l))?f=Wo(c)?c:c?qt(c):[]:Fo(l)||Ge(l)?f=Ge(c)?uu(c):Fo(c)?c:{}:s=false),t.push(l),a.push(f),s?n[i]=kr(f,l,r,t,a):(f===f?f!==c:c===c)&&(n[i]=f),i=void 0
+}return i}a=n[i],f=r?r(a,t,i,n,f):b,(l=typeof f=="undefined")&&(f=t),!o&&typeof f=="undefined"||!l&&(f===f?f===a:a!==a)||(n[i]=f)}),n}function Er(n){return function(t){return null==t?b:t[n]}}function Rr(n,t){return n+Ku(lo()*(t-n+1))}function Ir(n,t,r,e,u){return u(n,function(n,u,o){r=e?(e=false,n):t(r,n,u,o)}),r}function Or(n,t,r){var e=-1,u=n.length;for(t=null==t?0:+t||0,0>t&&(t=-t>u?0:u+t),r=typeof r=="undefined"||r>u?u:+r||0,0>r&&(r+=u),u=t>r?0:r-t>>>0,t>>>=0,r=bu(u);++e<u;)r[e]=n[e+t];return r}function Cr(n,t){var r;
+return fr(n,function(n,e,u){return r=t(n,e,u),!r}),!!r}function Tr(n,r){var e=-1,u=te(),o=n.length,i=u==t,f=i&&200<=o,a=f&&Ao(),c=[];a?(u=Dt,i=false):(f=false,a=r?[]:c);n:for(;++e<o;){var l=n[e],s=r?r(l,e,n):l;if(i&&l===l){for(var p=a.length;p--;)if(a[p]===s)continue n;r&&a.push(s),c.push(l)}else 0>u(a,s)&&((r||f)&&a.push(s),c.push(l))}return c}function Sr(n,t){for(var r=-1,e=t.length,u=bu(e);++r<e;)u[r]=n[t[r]];return u}function Wr(n,t){var r=n;r instanceof Lt&&(r=r.value());for(var e=-1,u=t.length;++e<u;){var r=[r],o=t[e];
+Yu.apply(r,o.args),r=o.func.apply(o.thisArg,r)}return r}function Nr(n,t,r){var e=0,u=n?n.length:e;if(typeof t=="number"&&t===t&&u<=go){for(;e<u;){var o=e+u>>>1,i=n[o];(r?i<=t:i<t)?e=o+1:u=o}return u}return Ur(n,t,yu,r)}function Ur(n,t,r,e){t=r(t);for(var u=0,o=n?n.length:0,i=t!==t,f=typeof t=="undefined";u<o;){var a=Ku((u+o)/2),c=r(n[a]),l=c===c;(i?l||e:f?l&&(e||typeof c!="undefined"):e?c<=t:c<t)?u=a+1:o=a}return io(o,_o)}function Fr(n,t,r){if(typeof n!="function")return yu;if(typeof t=="undefined")return n;
+switch(r){case 1:return function(r){return n.call(t,r)};case 3:return function(r,e,u){return n.call(t,r,e,u)};case 4:return function(r,e,u,o){return n.call(t,r,e,u,o)};case 5:return function(r,e,u,o,i){return n.call(t,r,e,u,o,i)}}return function(){return n.apply(t,arguments)}}function Lr(n){return Mu.call(n,0)}function $r(n,t,r){for(var e=r.length,u=-1,o=oo(n.length-e,0),i=-1,f=t.length,a=bu(o+f);++i<f;)a[i]=t[i];for(;++u<e;)a[r[u]]=n[u];for(;o--;)a[i++]=n[u++];return a}function Br(n,t,r){for(var e=-1,u=r.length,o=-1,i=oo(n.length-u,0),f=-1,a=t.length,c=bu(i+a);++o<i;)c[o]=n[o];
+for(i=o;++f<a;)c[i+f]=t[f];for(;++e<u;)c[i+r[e]]=n[o++];return c}function zr(n,t){return function(r,e,u){var o=t?t():{};if(e=ne(e,u,3),Wo(r)){u=-1;for(var i=r.length;++u<i;){var f=r[u];n(o,f,e(f,u,r),r)}}else fr(r,function(t,r,u){n(o,t,e(t,r,u),u)});return o}}function Dr(n){return function(){var t=arguments.length,r=arguments[0];if(2>t||null==r)return r;if(3<t&&ie(arguments[1],arguments[2],arguments[3])&&(t=2),3<t&&"function"==typeof arguments[t-2])var e=Fr(arguments[--t-1],arguments[t--],5);else 2<t&&"function"==typeof arguments[t-1]&&(e=arguments[--t]);
+for(var u=0;++u<t;){var o=arguments[u];o&&n(r,o,e)}return r}}function Mr(n,t){function r(){return(this instanceof r?e:n).apply(t,arguments)}var e=Pr(n);return r}function qr(n){return function(t){var r=-1;t=hu(au(t));for(var e=t.length,u="";++r<e;)u=n(u,t[r],r);return u}}function Pr(n){return function(){var t=bo(n.prototype),r=n.apply(t,arguments);return He(r)?r:t}}function Kr(n,t){return function(r,e,u){u&&ie(r,e,u)&&(e=null);var i=ne(),f=null==e;if(i===er&&f||(f=false,e=i(e,u,3)),f){if(e=Wo(r),e||!ru(r))return n(e?r:he(r));
+e=o}return Qr(r,e,t)}}function Vr(n,t,r,e,u,o,i,f,a,c){function l(){for(var w=arguments.length,x=w,k=bu(w);x--;)k[x]=arguments[x];if(e&&(k=$r(k,e,u)),o&&(k=Br(k,o,i)),_||y){var x=l.placeholder,E=v(k,x),w=w-E.length;if(w<c){var R=f?qt(f):null,w=oo(c-w,0),C=_?E:null,E=_?null:E,T=_?k:null,k=_?null:k;return t|=_?I:O,t&=~(_?O:I),g||(t&=~(A|j)),k=Vr(n,t,r,T,C,k,E,R,a,w),k.placeholder=x,k}}if(x=p?r:this,h&&(n=x[m]),f)for(R=k.length,w=io(f.length,R),C=qt(k);w--;)E=f[w],k[w]=oe(E,R)?C[E]:b;return s&&a<k.length&&(k.length=a),(this instanceof l?d||Pr(n):n).apply(x,k)
+}var s=t&T,p=t&A,h=t&j,_=t&E,g=t&k,y=t&R,d=!h&&Pr(n),m=n;return l}function Yr(n,t,r){return n=n.length,t=+t,n<t&&eo(t)?(t-=n,r=null==r?" ":r+"",su(r,qu(t/r.length)).slice(0,t)):""}function Zr(n,t,r,e){function u(){for(var t=-1,f=arguments.length,a=-1,c=e.length,l=bu(f+c);++a<c;)l[a]=e[a];for(;f--;)l[a++]=arguments[++t];return(this instanceof u?i:n).apply(o?r:this,l)}var o=t&A,i=Pr(n);return u}function Gr(n,t,r,e,u,o,i,f){var a=t&j;if(!a&&typeof n!="function")throw new Cu(B);var c=e?e.length:0;if(c||(t&=~(I|O),e=u=null),c-=u?u.length:0,t&O){var l=e,s=u;
+e=u=null}var p=!a&&jo(n);if(r=[n,t,r,e,u,l,s,o,i,f],p&&true!==p){e=r[1],t=p[1],f=e|t,o=T|C,u=A|j,i=o|u|k|R;var l=e&T&&!(t&T),s=e&C&&!(t&C),h=(s?r:p)[7],_=(l?r:p)[8];o=f>=o&&f<=i&&(e<C||(s||l)&&h.length<=_),(!(e>=C&&t>u||e>u&&t>=C)||o)&&(t&A&&(r[2]=p[2],f|=e&A?0:k),(e=p[3])&&(u=r[3],r[3]=u?$r(u,e,p[4]):qt(e),r[4]=u?v(r[3],z):qt(p[4])),(e=p[5])&&(u=r[5],r[5]=u?Br(u,e,p[6]):qt(e),r[6]=u?v(r[5],z):qt(p[6])),(e=p[7])&&(r[7]=qt(e)),t&T&&(r[8]=null==r[8]?p[8]:io(r[8],p[8])),null==r[9]&&(r[9]=p[9]),r[0]=p[0],r[1]=f),t=r[1],f=r[9]
+}return r[9]=null==f?a?0:n.length:oo(f-c,0)||0,(p?xo:ko)(t==A?Mr(r[0],r[2]):t!=I&&t!=(A|I)||r[4].length?Vr.apply(b,r):Zr.apply(b,r),r)}function Jr(n,t,r,e,u,o,i){var f=-1,a=n.length,c=t.length,l=true;if(a!=c&&(!u||c<=a))return false;for(;l&&++f<a;){var s=n[f],p=t[f],l=b;if(e&&(l=u?e(p,s,f):e(s,p,f)),typeof l=="undefined")if(u)for(var h=c;h--&&(p=t[h],!(l=s&&s===p||r(s,p,e,u,o,i))););else l=s&&s===p||r(s,p,e,u,o,i)}return!!l}function Xr(n,t,r){switch(r){case q:case P:return+n==+t;case K:return n.name==t.name&&n.message==t.message;
+case Y:return n!=+n?t!=+t:0==n?1/n==1/t:n==+t;case G:case J:return n==t+""}return false}function Hr(n,t,r,e,u,o,i){var f=$o(n),a=f.length,c=$o(t).length;if(a!=c&&!u)return false;for(var l,c=-1;++c<a;){var s=f[c],p=Fu.call(t,s);if(p){var h=n[s],_=t[s],p=b;e&&(p=u?e(_,h,s):e(h,_,s)),typeof p=="undefined"&&(p=h&&h===_||r(h,_,e,u,o,i))}if(!p)return false;l||(l="constructor"==s)}return l||(r=n.constructor,e=t.constructor,!(r!=e&&"constructor"in n&&"constructor"in t)||typeof r=="function"&&r instanceof r&&typeof e=="function"&&e instanceof e)?true:false
+}function Qr(n,t,r){var e=r?po:so,u=e,o=u;return fr(n,function(n,i,f){i=t(n,i,f),((r?i<u:i>u)||i===e&&i===o)&&(u=i,o=n)}),o}function ne(n,t,r){var e=Nt.callback||gu,e=e===gu?er:e;return r?e(n,t,r):e}function te(n,r,e){var u=Nt.indexOf||we,u=u===we?t:u;return n?u(n,r,e):u}function re(n){var t=n.length,r=new n.constructor(t);return t&&"string"==typeof n[0]&&Fu.call(n,"index")&&(r.index=n.index,r.input=n.input),r}function ee(n){return n=n.constructor,typeof n=="function"&&n instanceof n||(n=Ru),new n
+}function ue(n,t,r){var e=n.constructor;switch(t){case X:return Lr(n);case q:case P:return new e(+n);case H:case Q:case nt:case tt:case rt:case et:case ut:case ot:case it:return t=n.buffer,new e(r?Lr(t):t,n.byteOffset,n.length);case Y:case J:return new e(n);case G:var u=new e(n.source,dt.exec(n));u.lastIndex=n.lastIndex}return u}function oe(n,t){return n=+n,t=null==t?yo:t,-1<n&&0==n%1&&n<t}function ie(n,t,r){if(!He(r))return false;var e=typeof t;return"number"==e?(e=r.length,e=fe(e)&&oe(t,e)):e="string"==e&&t in r,t=r[t],e&&(n===n?n===t:t!==t)
+}function fe(n){return typeof n=="number"&&-1<n&&0==n%1&&n<=yo}function ae(n){return n===n&&(0===n?0<1/n:!He(n))}function ce(n,t){n=_e(n);for(var r=-1,e=t.length,u={};++r<e;){var o=t[r];o in n&&(u[o]=n[o])}return u}function le(n,t){var r={};return gr(n,function(n,e,u){t(n,e,u)&&(r[e]=n)}),r}function se(n){var t;if(!_(n)||$u.call(n)!=Z||!(Fu.call(n,"constructor")||(t=n.constructor,typeof t!="function"||t instanceof t)))return false;var r;return gr(n,function(n,t){r=t}),typeof r=="undefined"||Fu.call(n,r)
+}function pe(n){for(var t=iu(n),r=t.length,e=r&&n.length,u=Nt.support,u=e&&fe(e)&&(Wo(n)||u.nonEnumArgs&&Ge(n)),o=-1,i=[];++o<r;){var f=t[o];(u&&oe(f,e)||Fu.call(n,f))&&i.push(f)}return i}function he(n){return null==n?[]:fe(n.length)?He(n)?n:Ru(n):fu(n)}function _e(n){return He(n)?n:Ru(n)}function ge(n){return n instanceof Lt?n.clone():new Ft(n.__wrapped__,n.__chain__,qt(n.__actions__))}function ve(n,t,r){return n&&n.length?((r?ie(n,t,r):null==t)&&(t=1),Or(n,0>t?0:t)):[]}function ye(n,t,r){var e=n?n.length:0;
+return e?((r?ie(n,t,r):null==t)&&(t=1),t=e-(+t||0),Or(n,0,0>t?0:t)):[]}function de(n,t,r){var e=-1,u=n?n.length:0;for(t=ne(t,r,3);++e<u;)if(t(n[e],e,n))return e;return-1}function me(n){return n?n[0]:b}function we(n,r,e){var u=n?n.length:0;if(!u)return-1;if(typeof e=="number")e=0>e?oo(u+e,0):e||0;else if(e)return e=Nr(n,r),n=n[e],(r===r?r===n:n!==n)?e:-1;return t(n,r,e)}function be(n){return ve(n,1)}function xe(n,r,e,u){if(!n||!n.length)return[];null!=r&&typeof r!="boolean"&&(u=e,e=ie(n,r,u)?null:r,r=false);
+var o=ne();if((o!==er||null!=e)&&(e=o(e,u,3)),r&&te()==t){r=e;var i;e=-1,u=n.length;for(var o=-1,f=[];++e<u;){var a=n[e],c=r?r(a,e,n):a;e&&i===c||(i=c,f[++o]=a)}n=f}else n=Tr(n,e);return n}function Ae(n){for(var t=-1,r=(n&&n.length&&Zt(Yt(n,Uu)))>>>0,e=bu(r);++t<r;)e[t]=Yt(n,Er(t));return e}function je(n,t){var r=-1,e=n?n.length:0,u={};for(!e||t||Wo(n[0])||(t=[]);++r<e;){var o=n[r];t?u[o]=t[r]:o&&(u[o[0]]=o[1])}return u}function ke(n){return n=Nt(n),n.__chain__=true,n}function Ee(n,t,r){return t.call(r,n)
+}function Re(n,t,r){var e=Wo(n)?Kt:cr;return(typeof t!="function"||typeof r!="undefined")&&(t=ne(t,r,3)),e(n,t)}function Ie(n,t,r){var e=Wo(n)?Vt:lr;return t=ne(t,r,3),e(n,t)}function Oe(n,t,r){return Wo(n)?(t=de(n,t,r),-1<t?n[t]:b):(t=ne(t,r,3),sr(n,t,fr))}function Ce(n,t,r){return typeof t=="function"&&typeof r=="undefined"&&Wo(n)?Pt(n,t):fr(n,Fr(t,r,3))}function Te(n,t,r){if(typeof t=="function"&&typeof r=="undefined"&&Wo(n))for(r=n.length;r--&&false!==t(n[r],r,n););else n=ar(n,Fr(t,r,3));return n
+}function Se(n,t,r){var e=n?n.length:0;return fe(e)||(n=fu(n),e=n.length),e?(r=typeof r=="number"?0>r?oo(e+r,0):r||0:0,typeof n=="string"||!Wo(n)&&ru(n)?r<e&&-1<n.indexOf(t,r):-1<te(n,t,r)):false}function We(n,t,r){var e=Wo(n)?Yt:xr;return t=ne(t,r,3),e(n,t)}function Ne(n,t,r,e){return(Wo(n)?Gt:Ir)(n,ne(t,e,4),r,3>arguments.length,fr)}function Ue(n,t,r,e){return(Wo(n)?Jt:Ir)(n,ne(t,e,4),r,3>arguments.length,ar)}function Fe(n,t,r){return(r?ie(n,t,r):null==t)?(n=he(n),t=n.length,0<t?n[Rr(0,t-1)]:b):(n=Le(n),n.length=io(0>t?0:+t||0,n.length),n)
+}function Le(n){n=he(n);for(var t=-1,r=n.length,e=bu(r);++t<r;){var u=Rr(0,t);t!=u&&(e[t]=e[u]),e[u]=n[t]}return e}function $e(n,t,r){var e=Wo(n)?Xt:Cr;return(typeof t!="function"||typeof r!="undefined")&&(t=ne(t,r,3)),e(n,t)}function Be(n,t){var r;if(typeof t!="function"){if(typeof n!="function")throw new Cu(B);var e=n;n=t,t=e}return function(){return 0<--n?r=t.apply(this,arguments):t=null,r}}function ze(n,t){var r=A;if(2<arguments.length)var e=Or(arguments,2),u=v(e,ze.placeholder),r=r|I;return Gr(n,r,t,e,u)
+}function De(n,t){var r=A|j;if(2<arguments.length)var e=Or(arguments,2),u=v(e,De.placeholder),r=r|I;return Gr(t,r,n,e,u)}function Me(n,t,r){return r&&ie(n,t,r)&&(t=null),n=Gr(n,E,null,null,null,null,null,t),n.placeholder=Me.placeholder,n}function qe(n,t,r){return r&&ie(n,t,r)&&(t=null),n=Gr(n,R,null,null,null,null,null,t),n.placeholder=qe.placeholder,n}function Pe(n,t,r){function e(){var r=t-(So()-c);0>=r||r>t?(f&&Pu(f),r=p,f=s=p=b,r&&(h=So(),a=n.apply(l,i),s||f||(i=l=null))):s=Ju(e,r)}function u(){s&&Pu(s),f=s=p=b,(g||_!==t)&&(h=So(),a=n.apply(l,i),s||f||(i=l=null))
+}function o(){if(i=arguments,c=So(),l=this,p=g&&(s||!v),false===_)var r=v&&!s;else{f||v||(h=c);var o=_-(c-h),y=0>=o||o>_;y?(f&&(f=Pu(f)),h=c,a=n.apply(l,i)):f||(f=Ju(u,o))}return y&&s?s=Pu(s):s||t===_||(s=Ju(e,t)),r&&(y=true,a=n.apply(l,i)),!y||s||f||(i=l=null),a}var i,f,a,c,l,s,p,h=0,_=false,g=true;if(typeof n!="function")throw new Cu(B);if(t=0>t?0:t,true===r)var v=true,g=false;else He(r)&&(v=r.leading,_="maxWait"in r&&oo(+r.maxWait||0,t),g="trailing"in r?r.trailing:g);return o.cancel=function(){s&&Pu(s),f&&Pu(f),f=s=p=b
+},o}function Ke(){var n=arguments,t=n.length-1;if(0>t)return function(n){return n};if(!Kt(n,r))throw new Cu(B);return function(){for(var r=t,e=n[r].apply(this,arguments);r--;)e=n[r].call(this,e);return e}}function Ve(n,t){function r(){var e=r.cache,u=t?t.apply(this,arguments):arguments[0];if(e.has(u))return e.get(u);var o=n.apply(this,arguments);return e.set(u,o),o}if(typeof n!="function"||t&&typeof t!="function")throw new Cu(B);return r.cache=new Ve.Cache,r}function Ye(n){var t=Or(arguments,1),r=v(t,Ye.placeholder);
+return Gr(n,I,null,t,r)}function Ze(n){var t=Or(arguments,1),r=v(t,Ze.placeholder);return Gr(n,O,null,t,r)}function Ge(n){return fe(_(n)?n.length:b)&&$u.call(n)==D||false}function Je(n){return n&&1===n.nodeType&&_(n)&&-1<$u.call(n).indexOf("Element")||false}function Xe(n){return _(n)&&typeof n.message=="string"&&$u.call(n)==K||false}function He(n){var t=typeof n;return"function"==t||n&&"object"==t||false}function Qe(n){return null==n?false:$u.call(n)==V?zu.test(Nu.call(n)):_(n)&&bt.test(n)||false}function nu(n){return typeof n=="number"||_(n)&&$u.call(n)==Y||false
+}function tu(n){return _(n)&&$u.call(n)==G||false}function ru(n){return typeof n=="string"||_(n)&&$u.call(n)==J||false}function eu(n){return _(n)&&fe(n.length)&&Tt[$u.call(n)]||false}function uu(n){return rr(n,iu(n))}function ou(n){return dr(n,iu(n))}function iu(n){if(null==n)return[];He(n)||(n=Ru(n));for(var t=n.length,t=t&&fe(t)&&(Wo(n)||wo.nonEnumArgs&&Ge(n))&&t||0,r=n.constructor,e=-1,r=typeof r=="function"&&r.prototype===n,u=bu(t),o=0<t;++e<t;)u[e]=e+"";for(var i in n)o&&oe(i,t)||"constructor"==i&&(r||!Fu.call(n,i))||u.push(i);
+return u}function fu(n){return Sr(n,$o(n))}function au(n){return(n=u(n))&&n.replace(xt,l)}function cu(n){return(n=u(n))&&kt.test(n)?n.replace(jt,"\\$&"):n}function lu(n,t,r){return r&&ie(n,t,r)&&(t=0),co(n,t)}function su(n,t){var r="";if(n=u(n),t=+t,1>t||!n||!eo(t))return r;do t%2&&(r+=n),t=Ku(t/2),n+=n;while(t);return r}function pu(n,t,r){var e=n;return(n=u(n))?(r?ie(e,t,r):null==t)?n.slice(y(n),d(n)+1):(t+="",n.slice(i(n,t),f(n,t)+1)):n}function hu(n,t,r){return r&&ie(n,t,r)&&(t=null),n=u(n),n.match(t||It)||[]
+}function _u(){var n=arguments.length,t=arguments[0];try{for(var r=bu(n?n-1:0);0<--n;)r[n-1]=arguments[n];return t.apply(b,r)}catch(e){return Xe(e)?e:new Au(e)}}function gu(n,t,r){return r&&ie(n,t,r)&&(t=null),_(n)?du(n):er(n,t)}function vu(n){return function(){return n}}function yu(n){return n}function du(n){return Ar(ur(n,true))}function mu(n,t,r){if(null==r){var e=He(t),u=e&&$o(t);((u=u&&u.length&&dr(t,u))?u.length:e)||(u=false,r=t,t=n,n=this)}u||(u=dr(t,$o(t)));var o=true,e=-1,i=Uo(n),f=u.length;false===r?o=false:He(r)&&"chain"in r&&(o=r.chain);
+for(;++e<f;){r=u[e];var a=t[r];n[r]=a,i&&(n.prototype[r]=function(t){return function(){var r=this.__chain__;if(o||r){var e=n(this.__wrapped__);return(e.__actions__=qt(this.__actions__)).push({func:t,args:arguments,thisArg:n}),e.__chain__=r,e}return r=[this.value()],Yu.apply(r,arguments),t.apply(n,r)}}(a))}return n}function wu(){}g=g?Mt.defaults(Bt.Object(),g,Mt.pick(Bt,Ct)):Bt;var bu=g.Array,xu=g.Date,Au=g.Error,ju=g.Function,ku=g.Math,Eu=g.Number,Ru=g.Object,Iu=g.RegExp,Ou=g.String,Cu=g.TypeError,Tu=bu.prototype,Su=Ru.prototype,Wu=(Wu=g.window)&&Wu.document,Nu=ju.prototype.toString,Uu=Er("length"),Fu=Su.hasOwnProperty,Lu=0,$u=Su.toString,Bu=g._,zu=Iu("^"+cu($u).replace(/toString|(function).*?(?=\\\()| for .+?(?=\\\])/g,"$1.*?")+"$"),Du=Qe(Du=g.ArrayBuffer)&&Du,Mu=Qe(Mu=Du&&new Du(0).slice)&&Mu,qu=ku.ceil,Pu=g.clearTimeout,Ku=ku.floor,Vu=Qe(Vu=Ru.getPrototypeOf)&&Vu,Yu=Tu.push,Zu=Su.propertyIsEnumerable,Gu=Qe(Gu=g.Set)&&Gu,Ju=g.setTimeout,Xu=Tu.splice,Hu=Qe(Hu=g.Uint8Array)&&Hu,Qu=Qe(Qu=g.WeakMap)&&Qu,no=function(){try{var n=Qe(n=g.Float64Array)&&n,t=new n(new Du(10),0,1)&&n
+}catch(r){}return t}(),to=Qe(to=bu.isArray)&&to,ro=Qe(ro=Ru.create)&&ro,eo=g.isFinite,uo=Qe(uo=Ru.keys)&&uo,oo=ku.max,io=ku.min,fo=Qe(fo=xu.now)&&fo,ao=Qe(ao=Eu.isFinite)&&ao,co=g.parseInt,lo=ku.random,so=Eu.NEGATIVE_INFINITY,po=Eu.POSITIVE_INFINITY,ho=ku.pow(2,32)-1,_o=ho-1,go=ho>>>1,vo=no?no.BYTES_PER_ELEMENT:0,yo=ku.pow(2,53)-1,mo=Qu&&new Qu,wo=Nt.support={};!function(n){wo.funcDecomp=!Qe(g.WinRTError)&&Et.test(w),wo.funcNames=typeof ju.name=="string";try{wo.dom=11===Wu.createDocumentFragment().nodeType
+}catch(t){wo.dom=false}try{wo.nonEnumArgs=!Zu.call(arguments,1)}catch(r){wo.nonEnumArgs=true}}(0,0),Nt.templateSettings={escape:_t,evaluate:gt,interpolate:vt,variable:"",imports:{_:Nt}};var bo=function(){function n(){}return function(t){if(He(t)){n.prototype=t;var r=new n;n.prototype=null}return r||g.Object()}}(),xo=mo?function(n,t){return mo.set(n,t),n}:yu;Mu||(Lr=Du&&Hu?function(n){var t=n.byteLength,r=no?Ku(t/vo):0,e=r*vo,u=new Du(t);if(r){var o=new no(u,0,r);o.set(new no(n,0,r))}return t!=e&&(o=new Hu(u,e),o.set(new Hu(n,e))),u
+}:vu(null));var Ao=ro&&Gu?function(n){return new zt(n)}:vu(null),jo=mo?function(n){return mo.get(n)}:wu,ko=function(){var n=0,t=0;return function(r,e){var u=So(),o=U-(u-t);if(t=u,0<o){if(++n>=N)return r}else n=0;return xo(r,e)}}(),Eo=zr(function(n,t,r){Fu.call(n,r)?++n[r]:n[r]=1}),Ro=zr(function(n,t,r){Fu.call(n,r)?n[r].push(t):n[r]=[t]}),Io=zr(function(n,t,r){n[r]=t}),Oo=Kr(Zt),Co=Kr(function(n){for(var t=-1,r=n.length,e=po;++t<r;){var u=n[t];u<e&&(e=u)}return e},true),To=zr(function(n,t,r){n[r?0:1].push(t)
+},function(){return[[],[]]}),So=fo||function(){return(new xu).getTime()},Wo=to||function(n){return _(n)&&fe(n.length)&&$u.call(n)==M||false};wo.dom||(Je=function(n){return n&&1===n.nodeType&&_(n)&&!Fo(n)||false});var No=ao||function(n){return typeof n=="number"&&eo(n)},Uo=r(/x/)||Hu&&!r(Hu)?function(n){return $u.call(n)==V}:r,Fo=Vu?function(n){if(!n||$u.call(n)!=Z)return false;var t=n.valueOf,r=Qe(t)&&(r=Vu(t))&&Vu(r);return r?n==r||Vu(n)==r:se(n)}:se,Lo=Dr(nr),$o=uo?function(n){if(n)var t=n.constructor,r=n.length;
+return typeof t=="function"&&t.prototype===n||typeof n!="function"&&r&&fe(r)?pe(n):He(n)?uo(n):[]}:pe,Bo=Dr(kr),zo=qr(function(n,t,r){return t=t.toLowerCase(),n+(r?t.charAt(0).toUpperCase()+t.slice(1):t)}),Do=qr(function(n,t,r){return n+(r?"-":"")+t.toLowerCase()});8!=co(Ot+"08")&&(lu=function(n,t,r){return(r?ie(n,t,r):null==t)?t=0:t&&(t=+t),n=pu(n),co(n,t||(wt.test(n)?16:10))});var Mo=qr(function(n,t,r){return n+(r?"_":"")+t.toLowerCase()}),qo=qr(function(n,t,r){return n+(r?" ":"")+(t.charAt(0).toUpperCase()+t.slice(1))
+});return Nt.prototype=Ut.prototype,Ft.prototype=bo(Ut.prototype),Ft.prototype.constructor=Ft,Lt.prototype=bo(Ut.prototype),Lt.prototype.constructor=Lt,$t.prototype["delete"]=function(n){return this.has(n)&&delete this.__data__[n]},$t.prototype.get=function(n){return"__proto__"==n?b:this.__data__[n]},$t.prototype.has=function(n){return"__proto__"!=n&&Fu.call(this.__data__,n)},$t.prototype.set=function(n,t){return"__proto__"!=n&&(this.__data__[n]=t),this},zt.prototype.push=function(n){var t=this.data;
+typeof n=="string"||He(n)?t.set.add(n):t.hash[n]=true},Ve.Cache=$t,Nt.after=function(n,t){if(typeof t!="function"){if(typeof n!="function")throw new Cu(B);var r=n;n=t,t=r}return n=eo(n=+n)?n:0,function(){return 1>--n?t.apply(this,arguments):void 0}},Nt.ary=function(n,t,r){return r&&ie(n,t,r)&&(t=null),t=n&&null==t?n.length:oo(+t||0,0),Gr(n,T,null,null,null,null,t)},Nt.assign=Lo,Nt.at=function(n){return fe(n?n.length:0)&&(n=he(n)),tr(n,pr(arguments,false,false,1))},Nt.before=Be,Nt.bind=ze,Nt.bindAll=function(n){for(var t=n,r=1<arguments.length?pr(arguments,false,false,1):ou(n),e=-1,u=r.length;++e<u;){var o=r[e];
+t[o]=Gr(t[o],A,t)}return t},Nt.bindKey=De,Nt.callback=gu,Nt.chain=ke,Nt.chunk=function(n,t,r){t=(r?ie(n,t,r):null==t)?1:oo(+t||1,1),r=0;for(var e=n?n.length:0,u=-1,o=bu(qu(e/t));r<e;)o[++u]=Or(n,r,r+=t);return o},Nt.compact=function(n){for(var t=-1,r=n?n.length:0,e=-1,u=[];++t<r;){var o=n[t];o&&(u[++e]=o)}return u},Nt.constant=vu,Nt.countBy=Eo,Nt.create=function(n,t,r){var e=bo(n);return r&&ie(n,t,r)&&(t=null),t?rr(t,e,$o(t)):e},Nt.curry=Me,Nt.curryRight=qe,Nt.debounce=Pe,Nt.defaults=function(n){if(null==n)return n;
+var t=qt(arguments);return t.push(Ht),Lo.apply(b,t)},Nt.defer=function(n){return or(n,1,arguments,1)},Nt.delay=function(n,t){return or(n,t,arguments,2)},Nt.difference=function(){for(var n=-1,t=arguments.length;++n<t;){var r=arguments[n];if(Wo(r)||Ge(r))break}return ir(r,pr(arguments,false,true,++n))},Nt.drop=ve,Nt.dropRight=ye,Nt.dropRightWhile=function(n,t,r){var e=n?n.length:0;if(!e)return[];for(t=ne(t,r,3);e--&&t(n[e],e,n););return Or(n,0,e+1)},Nt.dropWhile=function(n,t,r){var e=n?n.length:0;if(!e)return[];
+var u=-1;for(t=ne(t,r,3);++u<e&&t(n[u],u,n););return Or(n,u)},Nt.fill=function(n,t,r,e){var u=n?n.length:0;if(!u)return[];for(r&&typeof r!="number"&&ie(n,t,r)&&(r=0,e=u),u=n.length,r=null==r?0:+r||0,0>r&&(r=-r>u?0:u+r),e=typeof e=="undefined"||e>u?u:+e||0,0>e&&(e+=u),u=r>e?0:e>>>0,r>>>=0;r<u;)n[r++]=t;return n},Nt.filter=Ie,Nt.flatten=function(n,t,r){var e=n?n.length:0;return r&&ie(n,t,r)&&(t=false),e?pr(n,t):[]},Nt.flattenDeep=function(n){return n&&n.length?pr(n,true):[]},Nt.flow=function(){var n=arguments,t=n.length;
+if(!t)return function(n){return n};if(!Kt(n,r))throw new Cu(B);return function(){for(var r=0,e=n[r].apply(this,arguments);++r<t;)e=n[r].call(this,e);return e}},Nt.flowRight=Ke,Nt.forEach=Ce,Nt.forEachRight=Te,Nt.forIn=function(n,t,r){return(typeof t!="function"||typeof r!="undefined")&&(t=Fr(t,r,3)),hr(n,t,iu)},Nt.forInRight=function(n,t,r){return t=Fr(t,r,3),_r(n,t,iu)},Nt.forOwn=function(n,t,r){return(typeof t!="function"||typeof r!="undefined")&&(t=Fr(t,r,3)),vr(n,t)},Nt.forOwnRight=function(n,t,r){return t=Fr(t,r,3),_r(n,t,$o)
+},Nt.functions=ou,Nt.groupBy=Ro,Nt.indexBy=Io,Nt.initial=function(n){return ye(n,1)},Nt.intersection=function(){for(var n=[],r=-1,e=arguments.length,u=[],o=te(),i=o==t;++r<e;){var f=arguments[r];(Wo(f)||Ge(f))&&(n.push(f),u.push(i&&120<=f.length&&Ao(r&&f)))}var e=n.length,i=n[0],a=-1,c=i?i.length:0,l=[],s=u[0];n:for(;++a<c;)if(f=i[a],0>(s?Dt(s,f):o(l,f))){for(r=e;--r;){var p=u[r];if(0>(p?Dt(p,f):o(n[r],f)))continue n}s&&s.push(f),l.push(f)}return l},Nt.invert=function(n,t,r){r&&ie(n,t,r)&&(t=null),r=-1;
+for(var e=$o(n),u=e.length,o={};++r<u;){var i=e[r],f=n[i];t?Fu.call(o,f)?o[f].push(i):o[f]=[i]:o[f]=i}return o},Nt.invoke=function(n,t){return mr(n,t,Or(arguments,2))},Nt.keys=$o,Nt.keysIn=iu,Nt.map=We,Nt.mapValues=function(n,t,r){var e={};return t=ne(t,r,3),vr(n,function(n,r,u){e[r]=t(n,r,u)}),e},Nt.matches=du,Nt.matchesProperty=function(n,t){return jr(n+"",ur(t,true))},Nt.memoize=Ve,Nt.merge=Bo,Nt.mixin=mu,Nt.negate=function(n){if(typeof n!="function")throw new Cu(B);return function(){return!n.apply(this,arguments)
+}},Nt.omit=function(n,t,r){if(null==n)return{};if(typeof t!="function"){var e=Yt(pr(arguments,false,false,1),Ou);return ce(n,ir(iu(n),e))}return t=Fr(t,r,3),le(n,function(n,r,e){return!t(n,r,e)})},Nt.once=function(n){return Be(n,2)},Nt.pairs=function(n){for(var t=-1,r=$o(n),e=r.length,u=bu(e);++t<e;){var o=r[t];u[t]=[o,n[o]]}return u},Nt.partial=Ye,Nt.partialRight=Ze,Nt.partition=To,Nt.pick=function(n,t,r){return null==n?{}:typeof t=="function"?le(n,Fr(t,r,3)):ce(n,pr(arguments,false,false,1))},Nt.pluck=function(n,t){return We(n,Er(t))
+},Nt.property=function(n){return Er(n+"")},Nt.propertyOf=function(n){return function(t){return null==n?b:n[t]}},Nt.pull=function(){var n=arguments[0];if(!n||!n.length)return n;for(var t=0,r=te(),e=arguments.length;++t<e;)for(var u=0,o=arguments[t];-1<(u=r(n,o,u));)Xu.call(n,u,1);return n},Nt.pullAt=function(t){var r=t||[],e=pr(arguments,false,false,1),u=e.length,o=tr(r,e);for(e.sort(n);u--;){var i=parseFloat(e[u]);if(i!=f&&oe(i)){var f=i;Xu.call(r,i,1)}}return o},Nt.range=function(n,t,r){r&&ie(n,t,r)&&(t=r=null),n=+n||0,r=null==r?1:+r||0,null==t?(t=n,n=0):t=+t||0;
+var e=-1;t=oo(qu((t-n)/(r||1)),0);for(var u=bu(t);++e<t;)u[e]=n,n+=r;return u},Nt.rearg=function(n){var t=pr(arguments,false,false,1);return Gr(n,C,null,null,null,t)},Nt.reject=function(n,t,r){var e=Wo(n)?Vt:lr;return t=ne(t,r,3),e(n,function(n,r,e){return!t(n,r,e)})},Nt.remove=function(n,t,r){var e=-1,u=n?n.length:0,o=[];for(t=ne(t,r,3);++e<u;)r=n[e],t(r,e,n)&&(o.push(r),Xu.call(n,e--,1),u--);return o},Nt.rest=be,Nt.shuffle=Le,Nt.slice=function(n,t,r){var e=n?n.length:0;return e?(r&&typeof r!="number"&&ie(n,t,r)&&(t=0,r=e),Or(n,t,r)):[]
+},Nt.sortBy=function(n,t,r){var u=-1,o=n?n.length:0,i=fe(o)?bu(o):[];return r&&ie(n,t,r)&&(t=null),t=ne(t,r,3),fr(n,function(n,r,e){i[++u]={a:t(n,r,e),b:u,c:n}}),e(i,a)},Nt.sortByAll=function(n){var t=arguments;3<t.length&&ie(t[1],t[2],t[3])&&(t=[n,t[1]]);var r=-1,u=n?n.length:0,o=pr(t,false,false,1),i=fe(u)?bu(u):[];return fr(n,function(n){for(var t=o.length,e=bu(t);t--;)e[t]=null==n?b:n[o[t]];i[++r]={a:e,b:r,c:n}}),e(i,c)},Nt.spread=function(n){if(typeof n!="function")throw new Cu(B);return function(t){return n.apply(this,t)
+}},Nt.take=function(n,t,r){return n&&n.length?((r?ie(n,t,r):null==t)&&(t=1),Or(n,0,0>t?0:t)):[]},Nt.takeRight=function(n,t,r){var e=n?n.length:0;return e?((r?ie(n,t,r):null==t)&&(t=1),t=e-(+t||0),Or(n,0>t?0:t)):[]},Nt.takeRightWhile=function(n,t,r){var e=n?n.length:0;if(!e)return[];for(t=ne(t,r,3);e--&&t(n[e],e,n););return Or(n,e+1)},Nt.takeWhile=function(n,t,r){var e=n?n.length:0;if(!e)return[];var u=-1;for(t=ne(t,r,3);++u<e&&t(n[u],u,n););return Or(n,0,u)},Nt.tap=function(n,t,r){return t.call(r,n),n
+},Nt.throttle=function(n,t,r){var e=true,u=true;if(typeof n!="function")throw new Cu(B);return false===r?e=false:He(r)&&(e="leading"in r?!!r.leading:e,u="trailing"in r?!!r.trailing:u),Wt.leading=e,Wt.maxWait=+t,Wt.trailing=u,Pe(n,t,Wt)},Nt.thru=Ee,Nt.times=function(n,t,r){if(n=+n,1>n||!eo(n))return[];var e=-1,u=bu(io(n,ho));for(t=Fr(t,r,1);++e<n;)e<ho?u[e]=t(e):t(e);return u},Nt.toArray=function(n){var t=n?n.length:0;return fe(t)?t?qt(n):[]:fu(n)},Nt.toPlainObject=uu,Nt.transform=function(n,t,r,e){var u=Wo(n)||eu(n);
+return t=ne(t,e,4),null==r&&(u||He(n)?(e=n.constructor,r=u?Wo(n)?new e:[]:bo(Uo(e)&&e.prototype)):r={}),(u?Pt:vr)(n,function(n,e,u){return t(r,n,e,u)}),r},Nt.union=function(){return Tr(pr(arguments,false,true))},Nt.uniq=xe,Nt.unzip=Ae,Nt.values=fu,Nt.valuesIn=function(n){return Sr(n,iu(n))},Nt.where=function(n,t){return Ie(n,Ar(t))},Nt.without=function(n){return ir(n,Or(arguments,1))},Nt.wrap=function(n,t){return t=null==t?yu:t,Gr(t,I,null,[n],[])},Nt.xor=function(){for(var n=-1,t=arguments.length;++n<t;){var r=arguments[n];
+if(Wo(r)||Ge(r))var e=e?ir(e,r).concat(ir(r,e)):r}return e?Tr(e):[]},Nt.zip=function(){for(var n=arguments.length,t=bu(n);n--;)t[n]=arguments[n];return Ae(t)},Nt.zipObject=je,Nt.backflow=Ke,Nt.collect=We,Nt.compose=Ke,Nt.each=Ce,Nt.eachRight=Te,Nt.extend=Lo,Nt.iteratee=gu,Nt.methods=ou,Nt.object=je,Nt.select=Ie,Nt.tail=be,Nt.unique=xe,mu(Nt,Nt),Nt.attempt=_u,Nt.camelCase=zo,Nt.capitalize=function(n){return(n=u(n))&&n.charAt(0).toUpperCase()+n.slice(1)},Nt.clone=function(n,t,r,e){return t&&typeof t!="boolean"&&ie(n,t,r)?t=false:typeof t=="function"&&(e=r,r=t,t=false),r=typeof r=="function"&&Fr(r,e,1),ur(n,t,r)
+},Nt.cloneDeep=function(n,t,r){return t=typeof t=="function"&&Fr(t,r,1),ur(n,true,t)},Nt.deburr=au,Nt.endsWith=function(n,t,r){n=u(n),t+="";var e=n.length;return r=(typeof r=="undefined"?e:io(0>r?0:+r||0,e))-t.length,0<=r&&n.indexOf(t,r)==r},Nt.escape=function(n){return(n=u(n))&&ht.test(n)?n.replace(st,s):n},Nt.escapeRegExp=cu,Nt.every=Re,Nt.find=Oe,Nt.findIndex=de,Nt.findKey=function(n,t,r){return t=ne(t,r,3),sr(n,t,vr,true)},Nt.findLast=function(n,t,r){return t=ne(t,r,3),sr(n,t,ar)},Nt.findLastIndex=function(n,t,r){var e=n?n.length:0;
+for(t=ne(t,r,3);e--;)if(t(n[e],e,n))return e;return-1},Nt.findLastKey=function(n,t,r){return t=ne(t,r,3),sr(n,t,yr,true)},Nt.findWhere=function(n,t){return Oe(n,Ar(t))},Nt.first=me,Nt.has=function(n,t){return n?Fu.call(n,t):false},Nt.identity=yu,Nt.includes=Se,Nt.indexOf=we,Nt.inRange=function(n,t,r){return t=+t||0,"undefined"===typeof r?(r=t,t=0):r=+r||0,n>=t&&n<r},Nt.isArguments=Ge,Nt.isArray=Wo,Nt.isBoolean=function(n){return true===n||false===n||_(n)&&$u.call(n)==q||false},Nt.isDate=function(n){return _(n)&&$u.call(n)==P||false
+},Nt.isElement=Je,Nt.isEmpty=function(n){if(null==n)return true;var t=n.length;return fe(t)&&(Wo(n)||ru(n)||Ge(n)||_(n)&&Uo(n.splice))?!t:!$o(n).length},Nt.isEqual=function(n,t,r,e){return r=typeof r=="function"&&Fr(r,e,3),!r&&ae(n)&&ae(t)?n===t:(e=r?r(n,t):b,typeof e=="undefined"?wr(n,t,r):!!e)},Nt.isError=Xe,Nt.isFinite=No,Nt.isFunction=Uo,Nt.isMatch=function(n,t,r,e){var u=$o(t),o=u.length;if(r=typeof r=="function"&&Fr(r,e,3),!r&&1==o){var i=u[0];if(e=t[i],ae(e))return null!=n&&e===n[i]&&Fu.call(n,i)
+}for(var i=bu(o),f=bu(o);o--;)e=i[o]=t[u[o]],f[o]=ae(e);return br(n,u,i,f,r)},Nt.isNaN=function(n){return nu(n)&&n!=+n},Nt.isNative=Qe,Nt.isNull=function(n){return null===n},Nt.isNumber=nu,Nt.isObject=He,Nt.isPlainObject=Fo,Nt.isRegExp=tu,Nt.isString=ru,Nt.isTypedArray=eu,Nt.isUndefined=function(n){return typeof n=="undefined"},Nt.kebabCase=Do,Nt.last=function(n){var t=n?n.length:0;return t?n[t-1]:b},Nt.lastIndexOf=function(n,t,r){var e=n?n.length:0;if(!e)return-1;var u=e;if(typeof r=="number")u=(0>r?oo(e+r,0):io(r||0,e-1))+1;
+else if(r)return u=Nr(n,t,true)-1,n=n[u],(t===t?t===n:n!==n)?u:-1;if(t!==t)return h(n,u,true);for(;u--;)if(n[u]===t)return u;return-1},Nt.max=Oo,Nt.min=Co,Nt.noConflict=function(){return g._=Bu,this},Nt.noop=wu,Nt.now=So,Nt.pad=function(n,t,r){n=u(n),t=+t;var e=n.length;return e<t&&eo(t)?(e=(t-e)/2,t=Ku(e),e=qu(e),r=Yr("",e,r),r.slice(0,t)+n+r):n},Nt.padLeft=function(n,t,r){return(n=u(n))&&Yr(n,t,r)+n},Nt.padRight=function(n,t,r){return(n=u(n))&&n+Yr(n,t,r)},Nt.parseInt=lu,Nt.random=function(n,t,r){r&&ie(n,t,r)&&(t=r=null);
+var e=null==n,u=null==t;return null==r&&(u&&typeof n=="boolean"?(r=n,n=1):typeof t=="boolean"&&(r=t,u=true)),e&&u&&(t=1,u=false),n=+n||0,u?(t=n,n=0):t=+t||0,r||n%1||t%1?(r=lo(),io(n+r*(t-n+parseFloat("1e-"+((r+"").length-1))),t)):Rr(n,t)},Nt.reduce=Ne,Nt.reduceRight=Ue,Nt.repeat=su,Nt.result=function(n,t,r){return t=null==n?b:n[t],typeof t=="undefined"&&(t=r),Uo(t)?t.call(n):t},Nt.runInContext=w,Nt.size=function(n){var t=n?n.length:0;return fe(t)?t:$o(n).length},Nt.snakeCase=Mo,Nt.some=$e,Nt.sortedIndex=function(n,t,r,e){var u=ne(r);
+return u===er&&null==r?Nr(n,t):Ur(n,t,u(r,e,1))},Nt.sortedLastIndex=function(n,t,r,e){var u=ne(r);return u===er&&null==r?Nr(n,t,true):Ur(n,t,u(r,e,1),true)},Nt.startCase=qo,Nt.startsWith=function(n,t,r){return n=u(n),r=null==r?0:io(0>r?0:+r||0,n.length),n.lastIndexOf(t,r)==r},Nt.template=function(n,t,r){var e=Nt.templateSettings;r&&ie(n,t,r)&&(t=r=null),n=u(n),t=nr(nr({},r||t),e,Qt),r=nr(nr({},t.imports),e.imports,Qt);var o,i,f=$o(r),a=Sr(r,f),c=0;r=t.interpolate||At;var l="__p+='";r=Iu((t.escape||At).source+"|"+r.source+"|"+(r===vt?yt:At).source+"|"+(t.evaluate||At).source+"|$","g");
+var s="sourceURL"in t?"//# sourceURL="+t.sourceURL+"\n":"";if(n.replace(r,function(t,r,e,u,f,a){return e||(e=u),l+=n.slice(c,a).replace(Rt,p),r&&(o=true,l+="'+__e("+r+")+'"),f&&(i=true,l+="';"+f+";\n__p+='"),e&&(l+="'+((__t=("+e+"))==null?'':__t)+'"),c=a+t.length,t}),l+="';",(t=t.variable)||(l="with(obj){"+l+"}"),l=(i?l.replace(ft,""):l).replace(at,"$1").replace(ct,"$1;"),l="function("+(t||"obj")+"){"+(t?"":"obj||(obj={});")+"var __t,__p=''"+(o?",__e=_.escape":"")+(i?",__j=Array.prototype.join;function print(){__p+=__j.call(arguments,'')}":";")+l+"return __p}",t=_u(function(){return ju(f,s+"return "+l).apply(b,a)
+}),t.source=l,Xe(t))throw t;return t},Nt.trim=pu,Nt.trimLeft=function(n,t,r){var e=n;return(n=u(n))?n.slice((r?ie(e,t,r):null==t)?y(n):i(n,t+"")):n},Nt.trimRight=function(n,t,r){var e=n;return(n=u(n))?(r?ie(e,t,r):null==t)?n.slice(0,d(n)+1):n.slice(0,f(n,t+"")+1):n},Nt.trunc=function(n,t,r){r&&ie(n,t,r)&&(t=null);var e=S;if(r=W,null!=t)if(He(t)){var o="separator"in t?t.separator:o,e="length"in t?+t.length||0:e;r="omission"in t?u(t.omission):r}else e=+t||0;if(n=u(n),e>=n.length)return n;if(e-=r.length,1>e)return r;
+if(t=n.slice(0,e),null==o)return t+r;if(tu(o)){if(n.slice(e).search(o)){var i,f=n.slice(0,e);for(o.global||(o=Iu(o.source,(dt.exec(o)||"")+"g")),o.lastIndex=0;n=o.exec(f);)i=n.index;t=t.slice(0,null==i?e:i)}}else n.indexOf(o,e)!=e&&(o=t.lastIndexOf(o),-1<o&&(t=t.slice(0,o)));return t+r},Nt.unescape=function(n){return(n=u(n))&&pt.test(n)?n.replace(lt,m):n},Nt.uniqueId=function(n){var t=++Lu;return u(n)+t},Nt.words=hu,Nt.all=Re,Nt.any=$e,Nt.contains=Se,Nt.detect=Oe,Nt.foldl=Ne,Nt.foldr=Ue,Nt.head=me,Nt.include=Se,Nt.inject=Ne,mu(Nt,function(){var n={};
+return vr(Nt,function(t,r){Nt.prototype[r]||(n[r]=t)}),n}(),false),Nt.sample=Fe,Nt.prototype.sample=function(n){return this.__chain__||null!=n?this.thru(function(t){return Fe(t,n)}):Fe(this.value())},Nt.VERSION=x,Pt("bind bindKey curry curryRight partial partialRight".split(" "),function(n){Nt[n].placeholder=Nt}),Pt(["filter","map","takeWhile"],function(n,t){var r=t==F,e=t==$;Lt.prototype[n]=function(n,u){var o=this.clone(),i=o.__filtered__,f=o.__iteratees__||(o.__iteratees__=[]);return o.__filtered__=i||r||e&&0>o.__dir__,f.push({iteratee:ne(n,u,3),type:t}),o
+}}),Pt(["drop","take"],function(n,t){var r="__"+n+"Count__",e=n+"While";Lt.prototype[n]=function(e){e=null==e?1:oo(Ku(e)||0,0);var u=this.clone();if(u.__filtered__){var o=u[r];u[r]=t?io(o,e):o+e}else(u.__views__||(u.__views__=[])).push({size:e,type:n+(0>u.__dir__?"Right":"")});return u},Lt.prototype[n+"Right"]=function(t){return this.reverse()[n](t).reverse()},Lt.prototype[n+"RightWhile"]=function(n,t){return this.reverse()[e](n,t).reverse()}}),Pt(["first","last"],function(n,t){var r="take"+(t?"Right":"");
+Lt.prototype[n]=function(){return this[r](1).value()[0]}}),Pt(["initial","rest"],function(n,t){var r="drop"+(t?"":"Right");Lt.prototype[n]=function(){return this[r](1)}}),Pt(["pluck","where"],function(n,t){var r=t?"filter":"map",e=t?Ar:Er;Lt.prototype[n]=function(n){return this[r](e(n))}}),Lt.prototype.compact=function(){return this.filter(yu)},Lt.prototype.dropWhile=function(n,t){var r;return n=ne(n,t,3),this.filter(function(t,e,u){return r||(r=!n(t,e,u))})},Lt.prototype.reject=function(n,t){return n=ne(n,t,3),this.filter(function(t,r,e){return!n(t,r,e)
+})},Lt.prototype.slice=function(n,t){n=null==n?0:+n||0;var r=0>n?this.takeRight(-n):this.drop(n);return typeof t!="undefined"&&(t=+t||0,r=0>t?r.dropRight(-t):r.take(t-n)),r},Lt.prototype.toArray=function(){return this.drop(0)},vr(Lt.prototype,function(n,t){var r=Nt[t],e=/^(?:first|last)$/.test(t);Nt.prototype[t]=function(){function t(n){return n=[n],Yu.apply(n,o),r.apply(Nt,n)}var u=this.__wrapped__,o=arguments,i=this.__chain__,f=!!this.__actions__.length,a=u instanceof Lt,c=a&&!f;return e&&!i?c?n.call(u):r.call(Nt,this.value()):a||Wo(u)?(u=n.apply(c?u:new Lt(this),o),e||!f&&!u.__actions__||(u.__actions__||(u.__actions__=[])).push({func:Ee,args:[t],thisArg:Nt}),new Ft(u,i)):this.thru(t)
+}}),Pt("concat join pop push shift sort splice unshift".split(" "),function(n){var t=Tu[n],r=/^(?:push|sort|unshift)$/.test(n)?"tap":"thru",e=/^(?:join|pop|shift)$/.test(n);Nt.prototype[n]=function(){var n=arguments;return e&&!this.__chain__?t.apply(this.value(),n):this[r](function(r){return t.apply(r,n)})}}),Lt.prototype.clone=function(){var n=this.__actions__,t=this.__iteratees__,r=this.__views__,e=new Lt(this.__wrapped__);return e.__actions__=n?qt(n):null,e.__dir__=this.__dir__,e.__dropCount__=this.__dropCount__,e.__filtered__=this.__filtered__,e.__iteratees__=t?qt(t):null,e.__takeCount__=this.__takeCount__,e.__views__=r?qt(r):null,e
+},Lt.prototype.reverse=function(){if(this.__filtered__){var n=new Lt(this);n.__dir__=-1,n.__filtered__=true}else n=this.clone(),n.__dir__*=-1;return n},Lt.prototype.value=function(){var n=this.__wrapped__.value();if(!Wo(n))return Wr(n,this.__actions__);var t,r=this.__dir__,e=0>r;t=n.length;for(var u=this.__views__,o=0,i=-1,f=u?u.length:0;++i<f;){var a=u[i],c=a.size;switch(a.type){case"drop":o+=c;break;case"dropRight":t-=c;break;case"take":t=io(t,o+c);break;case"takeRight":o=oo(o,t-c)}}t={start:o,end:t},i=t.start,f=t.end,t=f-i,u=this.__dropCount__,o=io(t,this.__takeCount__),e=e?f:i-1,f=(i=this.__iteratees__)?i.length:0,a=0,c=[];
+n:for(;t--&&a<o;){for(var e=e+r,l=-1,s=n[e];++l<f;){var p=i[l],h=p.iteratee(s,e,n),p=p.type;if(p==L)s=h;else if(!h){if(p==F)continue n;break n}}u?u--:c[a++]=s}return c},Nt.prototype.chain=function(){return ke(this)},Nt.prototype.commit=function(){return new Ft(this.value(),this.__chain__)},Nt.prototype.plant=function(n){for(var t,r=this;r instanceof Ut;){var e=ge(r);t?u.__wrapped__=e:t=e;var u=e,r=r.__wrapped__}return u.__wrapped__=n,t},Nt.prototype.reverse=function(){var n=this.__wrapped__;return n instanceof Lt?(this.__actions__.length&&(n=new Lt(this)),new Ft(n.reverse(),this.__chain__)):this.thru(function(n){return n.reverse()
+})},Nt.prototype.toString=function(){return this.value()+""},Nt.prototype.run=Nt.prototype.toJSON=Nt.prototype.valueOf=Nt.prototype.value=function(){return Wr(this.__wrapped__,this.__actions__)},Nt.prototype.collect=Nt.prototype.map,Nt.prototype.head=Nt.prototype.first,Nt.prototype.select=Nt.prototype.filter,Nt.prototype.tail=Nt.prototype.rest,Nt}var b,x="3.3.0",A=1,j=2,k=4,E=8,R=16,I=32,O=64,C=128,T=256,S=30,W="...",N=150,U=16,F=0,L=1,$=2,B="Expected a function",z="__lodash_placeholder__",D="[object Arguments]",M="[object Array]",q="[object Boolean]",P="[object Date]",K="[object Error]",V="[object Function]",Y="[object Number]",Z="[object Object]",G="[object RegExp]",J="[object String]",X="[object ArrayBuffer]",H="[object Float32Array]",Q="[object Float64Array]",nt="[object Int8Array]",tt="[object Int16Array]",rt="[object Int32Array]",et="[object Uint8Array]",ut="[object Uint8ClampedArray]",ot="[object Uint16Array]",it="[object Uint32Array]",ft=/\b__p\+='';/g,at=/\b(__p\+=)''\+/g,ct=/(__e\(.*?\)|\b__t\))\+'';/g,lt=/&(?:amp|lt|gt|quot|#39|#96);/g,st=/[&<>"'`]/g,pt=RegExp(lt.source),ht=RegExp(st.source),_t=/<%-([\s\S]+?)%>/g,gt=/<%([\s\S]+?)%>/g,vt=/<%=([\s\S]+?)%>/g,yt=/\$\{([^\\}]*(?:\\.[^\\}]*)*)\}/g,dt=/\w*$/,mt=/^\s*function[ \n\r\t]+\w/,wt=/^0[xX]/,bt=/^\[object .+?Constructor\]$/,xt=/[\xc0-\xd6\xd8-\xde\xdf-\xf6\xf8-\xff]/g,At=/($^)/,jt=/[.*+?^${}()|[\]\/\\]/g,kt=RegExp(jt.source),Et=/\bthis\b/,Rt=/['\n\r\u2028\u2029\\]/g,It=RegExp("[A-Z\\xc0-\\xd6\\xd8-\\xde]{2,}(?=[A-Z\\xc0-\\xd6\\xd8-\\xde][a-z\\xdf-\\xf6\\xf8-\\xff]+)|[A-Z\\xc0-\\xd6\\xd8-\\xde]?[a-z\\xdf-\\xf6\\xf8-\\xff]+|[A-Z\\xc0-\\xd6\\xd8-\\xde]+|[0-9]+","g"),Ot=" \t\x0b\f\xa0\ufeff\n\r\u2028\u2029\u1680\u180e\u2000\u2001\u2002\u2003\u2004\u2005\u2006\u2007\u2008\u2009\u200a\u202f\u205f\u3000",Ct="Array ArrayBuffer Date Error Float32Array Float64Array Function Int8Array Int16Array Int32Array Math Number Object RegExp Set String _ clearTimeout document isFinite parseInt setTimeout TypeError Uint8Array Uint8ClampedArray Uint16Array Uint32Array WeakMap window WinRTError".split(" "),Tt={};
+Tt[H]=Tt[Q]=Tt[nt]=Tt[tt]=Tt[rt]=Tt[et]=Tt[ut]=Tt[ot]=Tt[it]=true,Tt[D]=Tt[M]=Tt[X]=Tt[q]=Tt[P]=Tt[K]=Tt[V]=Tt["[object Map]"]=Tt[Y]=Tt[Z]=Tt[G]=Tt["[object Set]"]=Tt[J]=Tt["[object WeakMap]"]=false;var St={};St[D]=St[M]=St[X]=St[q]=St[P]=St[H]=St[Q]=St[nt]=St[tt]=St[rt]=St[Y]=St[Z]=St[G]=St[J]=St[et]=St[ut]=St[ot]=St[it]=true,St[K]=St[V]=St["[object Map]"]=St["[object Set]"]=St["[object WeakMap]"]=false;var Wt={leading:false,maxWait:0,trailing:false},Nt={"\xc0":"A","\xc1":"A","\xc2":"A","\xc3":"A","\xc4":"A","\xc5":"A","\xe0":"a","\xe1":"a","\xe2":"a","\xe3":"a","\xe4":"a","\xe5":"a","\xc7":"C","\xe7":"c","\xd0":"D","\xf0":"d","\xc8":"E","\xc9":"E","\xca":"E","\xcb":"E","\xe8":"e","\xe9":"e","\xea":"e","\xeb":"e","\xcc":"I","\xcd":"I","\xce":"I","\xcf":"I","\xec":"i","\xed":"i","\xee":"i","\xef":"i","\xd1":"N","\xf1":"n","\xd2":"O","\xd3":"O","\xd4":"O","\xd5":"O","\xd6":"O","\xd8":"O","\xf2":"o","\xf3":"o","\xf4":"o","\xf5":"o","\xf6":"o","\xf8":"o","\xd9":"U","\xda":"U","\xdb":"U","\xdc":"U","\xf9":"u","\xfa":"u","\xfb":"u","\xfc":"u","\xdd":"Y","\xfd":"y","\xff":"y","\xc6":"Ae","\xe6":"ae","\xde":"Th","\xfe":"th","\xdf":"ss"},Ut={"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;","`":"&#96;"},Ft={"&amp;":"&","&lt;":"<","&gt;":">","&quot;":'"',"&#39;":"'","&#96;":"`"},Lt={"function":true,object:true},$t={"\\":"\\","'":"'","\n":"n","\r":"r","\u2028":"u2028","\u2029":"u2029"},Bt=Lt[typeof window]&&window!==(this&&this.window)?window:this,zt=Lt[typeof exports]&&exports&&!exports.nodeType&&exports,Lt=Lt[typeof module]&&module&&!module.nodeType&&module,Dt=zt&&Lt&&typeof global=="object"&&global;
+!Dt||Dt.global!==Dt&&Dt.window!==Dt&&Dt.self!==Dt||(Bt=Dt);var Dt=Lt&&Lt.exports===zt&&zt,Mt=w();typeof define=="function"&&typeof define.amd=="object"&&define.amd?(Bt._=Mt, define(function(){return Mt})):zt&&Lt?Dt?(Lt.exports=Mt)._=Mt:zt._=Mt:Bt._=Mt}).call(this);;
 
 
 (function() {
@@ -80873,19 +80961,20 @@ Polymer('paper-dialog');;
 
             created: function () {
                 this.record = {
-                    analyzerConfig: {}
+                    analyzer: {}
                 };
-                // sync this variable with options
-//                this.record = JSON.parse(JSON.stringify(
-//                    pojoviz.Inspector.DEFAULT_CONFIG
-//                ));
-                // default options for the search
-//                this.record.analyzerConfig.levels = 10;
-//                this.record.analyzerConfig.visitSimpleFunctions = false;
-//                this.record.analyzerConfig.visitConstructors = true;
             },
             getValues: function () {
                 return this.record;
+            },
+
+            setRecord: function (record) {
+                this.original = _.merge({}, record);
+                this.record = record;
+            },
+
+            isDirty: function () {
+                return this.dirty;
             }
         });
     ;
@@ -80901,15 +80990,9 @@ Polymer('paper-dialog');;
 
             created: function () {
                 this.results = [];
-
-                // sync this variable with options
-                this.options = JSON.parse(JSON.stringify(
-                    pojoviz.analyzer.Inspector.DEFAULT_CONFIG
-                ));
-                // default options for the search
-                this.options.analyzerConfig.levels = 10;
-                this.options.analyzerConfig.visitSimpleFunctions = false;
-                this.options.analyzerConfig.visitConstructors = true;
+                this.options = {
+                    analyzer: {}
+                };
             },
 
             ready: function () {
@@ -80934,6 +81017,15 @@ Polymer('paper-dialog');;
             },
 
             onIconClick: function (event, detail, el) {
+                // options is a copy of the default values
+                this.options = _.merge(
+                    {},
+                    pojoviz.Inspector.DEFAULT_CONFIG
+                );
+                this.options.analyzer = _.merge(
+                    {},
+                    pojoviz.ObjectAnalyzer.DEFAULT_CONFIG
+                );
                 this.$.searchPopup.toggle();
             },
             onSearch: function () {
@@ -80964,9 +81056,13 @@ Polymer('paper-dialog');;
                 pojoviz.utils.notification('added library ' + this.options.displayName +
                 '! Find it under the "Downloaded" accordion');
 
+                // the form saves analyzer instead of analyzerConfig
+                this.options.analyzerConfig = this.options.analyzer;
+                delete this.options.analyzer;
+
                 console.log('New inspector: ', JSON.stringify(this.options));
 
-                downloaded.push(JSON.parse(JSON.stringify(this.options)));
+                downloaded.push(this.options);
                 this.closeDialog();
             },
             closeDialog: function () {
@@ -81028,10 +81124,17464 @@ Polymer('paper-dialog');;
 			}
 		});
 	;
-require=function n(t,r,e){function o(u,a){if(!r[u]){if(!t[u]){var c="function"==typeof require&&require;if(!a&&c)return c(u,!0);if(i)return i(u,!0);var f=new Error("Cannot find module '"+u+"'");throw f.code="MODULE_NOT_FOUND",f}var s=r[u]={exports:{}};t[u][0].call(s.exports,function(n){var r=t[u][1][n];return o(r?r:n)},s,s.exports,n,t,r,e)}return r[u].exports}for(var i="function"==typeof require&&require,u=0;u<e.length;u++)o(e[u]);return o}({1:[function(){},{}],2:[function(n,t){function r(){if(!u){u=!0;for(var n,t=i.length;t;){n=i,i=[];for(var r=-1;++r<t;)n[r]();t=i.length}u=!1}}function e(){}var o=t.exports={},i=[],u=!1;o.nextTick=function(n){i.push(n),u||setTimeout(r,0)},o.title="browser",o.browser=!0,o.env={},o.argv=[],o.version="",o.on=e,o.addListener=e,o.once=e,o.off=e,o.removeListener=e,o.removeAllListeners=e,o.emit=e,o.binding=function(){throw new Error("process.binding is not supported")},o.cwd=function(){return"/"},o.chdir=function(){throw new Error("process.chdir is not supported")},o.umask=function(){return 0}},{}],3:[function(n,t,r){"use strict";var e=n("./util");r.dotOrdering=function(n){function t(r){var e=n.children(r);e.length?(o+="subgraph cluster_"+r+" {",o+='label="'+r+'";',e.forEach(function(n){t(n)}),o+="}"):(o+=r,n.node(r).dummy&&(o+=" [shape=diamond]"),o+=";")}var r=e.ordering(n.filterNodes(e.filterNonSubgraphs(n))),o="digraph {";return n.children(null).forEach(t),r.forEach(function(n){o+='subgraph { rank=same; edge [style="invis"];',o+=n.join("->"),o+="}"}),n.eachEdge(function(n,t,r){o+=t+"->"+r+";"}),o+="}"}},{"./util":18}],4:[function(n,t){"use strict";var r=n("./util"),e=n("./rank"),o=n("./order"),i=n("graphlib").CGraph,u=n("graphlib").CDigraph;t.exports=function(){function t(n){var t=new u;n.eachNode(function(n,r){void 0===r&&(r={}),t.addNode(n,{width:r.width,height:r.height}),r.hasOwnProperty("rank")&&(t.node(n).prefRank=r.rank)}),n.parent&&n.nodes().forEach(function(r){t.parent(r,n.parent(r))}),n.eachEdge(function(n,r,e,o){void 0===o&&(o={});var i={e:n,minLen:o.minLen||1,width:o.width||0,height:o.height||0,points:[]};t.addEdge(null,r,e,i)});var r=n.graph()||{};return t.graph({rankDir:r.rankDir||d.rankDir,orderRestarts:r.orderRestarts}),t}function a(n){var i,u=g.rankSep();try{return i=r.time("initLayoutGraph",t)(n),0===i.order()?i:(i.eachEdge(function(n,t,r,e){e.minLen*=2}),g.rankSep(u/2),r.time("rank.run",e.run)(i,d.rankSimplex),r.time("normalize",c)(i),r.time("order",o)(i,d.orderMaxSweeps),r.time("position",h.run)(i),r.time("undoNormalize",f)(i),r.time("fixupEdgePoints",s)(i),r.time("rank.restoreEdges",e.restoreEdges)(i),r.time("createFinalGraph",l)(i,n.isDirected()))}finally{g.rankSep(u)}}function c(n){var t=0;n.eachEdge(function(r,e,o,i){var u=n.node(e).rank,a=n.node(o).rank;if(a>u+1){for(var c=e,f=u+1,s=0;a>f;++f,++s){var l="_D"+ ++t,p={width:i.width,height:i.height,edge:{id:r,source:e,target:o,attrs:i},rank:f,dummy:!0};0===s?p.index=0:f+1===a&&(p.index=1),n.addNode(l,p),n.addEdge(null,c,l,{}),c=l}n.addEdge(null,c,o,{}),n.delEdge(r)}})}function f(n){n.eachNode(function(t,r){if(r.dummy){if("index"in r){var e=r.edge;n.hasEdge(e.id)||n.addEdge(e.id,e.source,e.target,e.attrs);var o=n.edge(e.id).points;o[r.index]={x:r.x,y:r.y,ul:r.ul,ur:r.ur,dl:r.dl,dr:r.dr}}n.delNode(t)}})}function s(n){n.eachEdge(function(n,t,r,e){e.reversed&&e.points.reverse()})}function l(n,t){var r=t?new u:new i;r.graph(n.graph()),n.eachNode(function(n,t){r.addNode(n,t)}),n.eachNode(function(t){r.parent(t,n.parent(t))}),n.eachEdge(function(n,t,e,o){r.addEdge(o.e,t,e,o)});var e=0,o=0;return n.eachNode(function(t,r){n.children(t).length||(e=Math.max(e,r.x+r.width/2),o=Math.max(o,r.y+r.height/2))}),n.eachEdge(function(n,t,r,i){var u=Math.max.apply(Math,i.points.map(function(n){return n.x})),a=Math.max.apply(Math,i.points.map(function(n){return n.y}));e=Math.max(e,u+i.width/2),o=Math.max(o,a+i.height/2)}),r.graph().width=e,r.graph().height=o,r}function p(n){return function(){return arguments.length?(n.apply(null,arguments),g):n()}}var d={debugLevel:0,orderMaxSweeps:o.DEFAULT_MAX_SWEEPS,rankSimplex:!1,rankDir:"TB"},h=n("./position")(),g={};return g.orderIters=r.propertyAccessor(g,d,"orderMaxSweeps"),g.rankSimplex=r.propertyAccessor(g,d,"rankSimplex"),g.nodeSep=p(h.nodeSep),g.edgeSep=p(h.edgeSep),g.universalSep=p(h.universalSep),g.rankSep=p(h.rankSep),g.rankDir=r.propertyAccessor(g,d,"rankDir"),g.debugAlignment=p(h.debugAlignment),g.debugLevel=r.propertyAccessor(g,d,"debugLevel",function(n){r.log.level=n,h.debugLevel(n)}),g.run=r.time("Total layout",a),g._normalize=c,g}},{"./order":5,"./position":10,"./rank":11,"./util":18,graphlib:25}],5:[function(n,t){"use strict";function r(n,t){function r(){n.eachNode(function(n,t){h[n]=t.order})}arguments.length<2&&(t=d);var e=n.graph().orderRestarts||0,o=s(n);o.forEach(function(t){t=t.filterNodes(function(t){return!n.children(t).length})});for(var u,a=0,p=Number.MAX_VALUE,h={},g=0;g<Number(e)+1&&0!==p;++g){u=Number.MAX_VALUE,l(n,e>0),c.log(2,"Order phase start cross count: "+n.graph().orderInitCC);var v,y,_;for(v=0,y=0;4>y&&t>v&&u>0;++v,++y,++a)i(n,o,v),_=f(n),u>_&&(y=0,u=_,p>_&&(r(),p=_)),c.log(3,"Order phase start "+g+" iter "+v+" cross count: "+_)}Object.keys(h).forEach(function(t){n.children&&n.children(t).length||(n.node(t).order=h[t])}),n.graph().orderCC=p,c.log(2,"Order iterations: "+a),c.log(2,"Order phase best cross count: "+n.graph().orderCC)}function e(n,t){var r={};return t.forEach(function(t){r[t]=n.inEdges(t).map(function(t){return n.node(n.source(t)).order})}),r}function o(n,t){var r={};return t.forEach(function(t){r[t]=n.outEdges(t).map(function(t){return n.node(n.target(t)).order})}),r}function i(n,t,r){r%2===0?u(n,t,r):a(n,t,r)}function u(n,t){for(var r,o=1;o<t.length;++o)r=p(t[o],r,e(n,t[o].nodes()))}function a(n,t){for(var r,e=t.length-2;e>=0;--e)p(t[e],r,o(n,t[e].nodes()))}var c=n("./util"),f=n("./order/crossCount"),s=n("./order/initLayerGraphs"),l=n("./order/initOrder"),p=n("./order/sortLayer");t.exports=r;var d=24;r.DEFAULT_MAX_SWEEPS=d},{"./order/crossCount":6,"./order/initLayerGraphs":7,"./order/initOrder":8,"./order/sortLayer":9,"./util":18}],6:[function(n,t){"use strict";function r(n){for(var t=0,r=o.ordering(n),i=1;i<r.length;++i)t+=e(n,r[i-1],r[i]);return t}function e(n,t,r){var e=[];t.forEach(function(t){var r=[];n.outEdges(t).forEach(function(t){r.push(n.node(n.target(t)).order)}),r.sort(function(n,t){return n-t}),e=e.concat(r)});for(var o=1;o<r.length;)o<<=1;var i=2*o-1;o-=1;for(var u=[],a=0;i>a;++a)u[a]=0;var c=0;return e.forEach(function(n){var t=n+o;for(++u[t];t>0;)t%2&&(c+=u[t+1]),t=t-1>>1,++u[t]}),c}var o=n("../util");t.exports=r},{"../util":18}],7:[function(n,t){"use strict";function r(n){function t(e){if(null===e)return void n.children(e).forEach(function(n){t(n)});var i=n.node(e);i.minRank="rank"in i?i.rank:Number.MAX_VALUE,i.maxRank="rank"in i?i.rank:Number.MIN_VALUE;var u=new o;return n.children(e).forEach(function(r){var e=t(r);u=o.union([u,e]),i.minRank=Math.min(i.minRank,n.node(r).minRank),i.maxRank=Math.max(i.maxRank,n.node(r).maxRank)}),"rank"in i&&u.add(i.rank),u.keys().forEach(function(n){n in r||(r[n]=[]),r[n].push(e)}),u}var r=[];t(null);var i=[];return r.forEach(function(t,r){i[r]=n.filterNodes(e(t))}),i}var e=n("graphlib").filter.nodesFromList,o=n("cp-data").Set;t.exports=r},{"cp-data":20,graphlib:25}],8:[function(n,t){"use strict";function r(n,t){var r=[];n.eachNode(function(t,e){var o=r[e.rank];n.children&&n.children(t).length>0||(o||(o=r[e.rank]=[]),o.push(t))}),r.forEach(function(r){t&&o.shuffle(r),r.forEach(function(t,r){n.node(t).order=r})});var i=e(n);n.graph().orderInitCC=i,n.graph().orderCC=Number.MAX_VALUE}var e=n("./crossCount"),o=n("../util");t.exports=r},{"../util":18,"./crossCount":6}],9:[function(n,t){"use strict";function r(n,t,r){r=c(n,r);var o=e(n,null,t,r);return o.list.forEach(function(t,r){n.node(t).order=r}),o.constraintGraph}function e(n,t,r,i){r=r?r.filterNodes(p(n.children(t))):new s;var a={};n.children(t).forEach(function(t){if(n.children(t).length)a[t]=e(n,t,r,i),a[t].firstSG=t,a[t].lastSG=t;else{var o=i[t];a[t]={degree:o.length,barycenter:f.sum(o)/o.length,order:n.node(t).order,orderCount:1,list:[t]}}}),u(n,r,a);var c=Object.keys(a);c.sort(function(n,t){return a[n].barycenter-a[t].barycenter||a[n].order-a[t].order});var l=c.map(function(n){return a[n]}).reduce(function(t,r){return o(n,t,r)});return l}function o(n,t,r){var e=i(t.constraintGraph,r.constraintGraph);return void 0!==t.lastSG&&void 0!==r.firstSG&&(void 0===e&&(e=new s),e.hasNode(t.lastSG)||e.addNode(t.lastSG),e.addNode(r.firstSG),e.addEdge(null,t.lastSG,r.firstSG)),{degree:t.degree+r.degree,barycenter:(t.barycenter*t.degree+r.barycenter*r.degree)/(t.degree+r.degree),order:(t.order*t.orderCount+r.order*r.orderCount)/(t.orderCount+r.orderCount),orderCount:t.orderCount+r.orderCount,list:t.list.concat(r.list),firstSG:void 0!==t.firstSG?t.firstSG:r.firstSG,lastSG:void 0!==r.lastSG?r.lastSG:t.lastSG,constraintGraph:e}}function i(n,t){return void 0===n?t:void 0===t?n:(n=n.copy(),t.nodes().forEach(function(t){n.addNode(t)}),t.edges().forEach(function(t,r,e){n.addEdge(null,r,e)}),n)}function u(n,t,r){function e(n,r,e){t.inEdges(n).forEach(function(n){t.delEdge(n),t.addEdge(null,t.source(n),e)}),t.outEdges(r).forEach(function(n){t.delEdge(n),t.addEdge(null,e,t.target(n))}),t.delNode(n),t.delNode(r)}for(var i;void 0!==(i=a(t,r));){for(var u,c=t.source(i),f=t.target(i);(u=t.addNode(null))&&n.hasNode(u);)t.delNode(u);r[u]=o(n,r[c],r[f]),delete r[c],delete r[f],e(c,f,u),0===t.incidentEdges(u).length&&t.delNode(u)}}function a(n,t){for(var r=l(n),e=0;e<r.length;++e)for(var o=r[e],i=n.inEdges(o),u=0;u<i.length;++u){var a=i[u];if(t[n.source(a)].barycenter>=t[o].barycenter)return a}}function c(n,t){var r=Number.MAX_VALUE,e=0,o={};n.eachNode(function(o){if(!n.children(o).length){var i=t[o];i.length&&(r=Math.min(r,f.min(i)),e=Math.max(e,f.max(i)))}});var i=e-r;return n.eachNode(function(e){if(!n.children(e).length){var u=t[e];o[e]=u.length?u.map(function(t){return i?(t-r)*(n.order()-1)/i:n.order()-.5}):[n.node(e).order]}}),o}var f=n("../util"),s=n("graphlib").Digraph,l=n("graphlib").alg.topsort,p=n("graphlib").filter.nodesFromList;t.exports=r},{"../util":18,graphlib:25}],10:[function(n,t){"use strict";var r=n("./util");t.exports=function(){function n(n){n=n.filterNodes(r.filterNonSubgraphs(n));var t=r.ordering(n),u=e(n,t),a={};["u","d"].forEach(function(r){"d"===r&&t.reverse(),["l","r"].forEach(function(e){"r"===e&&s(t);var c=r+e,l=o(n,t,u,"u"===r?"predecessors":"successors");a[c]=i(n,t,l.pos,l.root,l.align),_.debugLevel>=3&&y(r+e,n,t,a[c]),"r"===e&&f(a[c]),"r"===e&&s(t)}),"d"===r&&t.reverse()}),c(n,t,a),n.eachNode(function(t){var r=[];for(var e in a){var o=a[e][t];g(e,n,t,o),r.push(o)}r.sort(function(n,t){return n-t}),h(n,t,(r[1]+r[2])/2)});var d=0,m="BT"===n.graph().rankDir||"RL"===n.graph().rankDir;t.forEach(function(t){var e=r.max(t.map(function(t){return p(n,t)}));d+=e/2,t.forEach(function(t){v(n,t,m?-d:d)}),d+=e/2+_.rankSep});var E=r.min(n.nodes().map(function(t){return h(n,t)-l(n,t)/2})),w=r.min(n.nodes().map(function(t){return v(n,t)-p(n,t)/2}));n.eachNode(function(t){h(n,t,h(n,t)-E),v(n,t,v(n,t)-w)})}function t(n,t){return t>n?n.toString().length+":"+n+"-"+t:t.toString().length+":"+t+"-"+n}function e(n,r){function e(n){var r=s[n];(u>r||r>c)&&(f[t(i[a],n)]=!0)}var o,i,u,a,c,f={},s={};if(r.length<=2)return f;r[1].forEach(function(n,t){s[n]=t});for(var l=1;l<r.length-1;++l){o=r[l],i=r[l+1],u=0,a=0;for(var p=0;p<i.length;++p){var d=i[p];if(s[d]=p,c=void 0,n.node(d).dummy){var h=n.predecessors(d)[0];void 0!==h&&n.node(h).dummy&&(c=s[h])}if(void 0===c&&p===i.length-1&&(c=o.length-1),void 0!==c){for(;p>=a;++a)n.predecessors(i[a]).forEach(e);u=c}}}return f}function o(n,r,e,o){var i={},u={},a={};return r.forEach(function(n){n.forEach(function(n,t){u[n]=n,a[n]=n,i[n]=t})}),r.forEach(function(r){var c=-1;r.forEach(function(r){var f,s=n[o](r);s.length>0&&(s.sort(function(n,t){return i[n]-i[t]}),f=(s.length-1)/2,s.slice(Math.floor(f),Math.ceil(f)+1).forEach(function(n){a[r]===r&&!e[t(n,r)]&&c<i[n]&&(a[n]=r,a[r]=u[r]=u[n],c=i[n])}))})}),{pos:i,root:u,align:a}}function i(n,t,e,o,i){function u(n,t,r){f[n][t]=t in f[n]?Math.min(f[n][t],r):r}function a(t){if(!(t in p)){p[t]=0;var r=t;do{if(e[r]>0){var f=o[l[r]];a(f),c[t]===t&&(c[t]=c[f]);var s=d(n,l[r])+d(n,r);c[t]!==c[f]?u(c[f],c[t],p[t]-p[f]-s):p[t]=Math.max(p[t],p[f]+s)}r=i[r]}while(r!==t)}}var c={},f={},s={},l={},p={};return t.forEach(function(n){n.forEach(function(t,r){c[t]=t,f[t]={},r>0&&(l[t]=n[r-1])})}),r.values(o).forEach(function(n){a(n)}),t.forEach(function(n){n.forEach(function(n){if(p[n]=p[o[n]],n===o[n]&&n===c[n]){var t=0;n in f&&Object.keys(f[n]).length>0&&(t=r.min(Object.keys(f[n]).map(function(t){return f[n][t]+(t in s?s[t]:0)}))),s[n]=t}})}),t.forEach(function(n){n.forEach(function(n){p[n]+=s[c[o[n]]]||0})}),p}function u(n,t,e){return r.min(t.map(function(n){var t=n[0];return e[t]}))}function a(n,t,e){return r.max(t.map(function(n){var t=n[n.length-1];return e[t]}))}function c(n,t,r){function e(n){r[l][n]+=f[l]}var o,i={},c={},f={},s=Number.POSITIVE_INFINITY;for(var l in r){var p=r[l];i[l]=u(n,t,p),c[l]=a(n,t,p);var d=c[l]-i[l];s>d&&(s=d,o=l)}["u","d"].forEach(function(n){["l","r"].forEach(function(t){var r=n+t;f[r]="l"===t?i[o]-i[r]:c[o]-c[r]})});for(l in r)n.eachNode(e)}function f(n){for(var t in n)n[t]=-n[t]}function s(n){n.forEach(function(n){n.reverse()})}function l(n,t){switch(n.graph().rankDir){case"LR":return n.node(t).height;case"RL":return n.node(t).height;default:return n.node(t).width}}function p(n,t){switch(n.graph().rankDir){case"LR":return n.node(t).width;case"RL":return n.node(t).width;default:return n.node(t).height}}function d(n,t){if(null!==_.universalSep)return _.universalSep;var r=l(n,t),e=n.node(t).dummy?_.edgeSep:_.nodeSep;return(r+e)/2}function h(n,t,r){if("LR"===n.graph().rankDir||"RL"===n.graph().rankDir){if(arguments.length<3)return n.node(t).y;n.node(t).y=r}else{if(arguments.length<3)return n.node(t).x;n.node(t).x=r}}function g(n,t,r,e){if("LR"===t.graph().rankDir||"RL"===t.graph().rankDir){if(arguments.length<3)return t.node(r)[n];t.node(r)[n]=e}else{if(arguments.length<3)return t.node(r)[n];t.node(r)[n]=e}}function v(n,t,r){if("LR"===n.graph().rankDir||"RL"===n.graph().rankDir){if(arguments.length<3)return n.node(t).x;n.node(t).x=r}else{if(arguments.length<3)return n.node(t).y;n.node(t).y=r}}function y(n,t,r,e){r.forEach(function(r,o){var i,u;r.forEach(function(r){var a=e[r];if(i){var c=d(t,i)+d(t,r);c>a-u&&console.log("Position phase: sep violation. Align: "+n+". Layer: "+o+". U: "+i+" V: "+r+". Actual sep: "+(a-u)+" Expected sep: "+c)}i=r,u=a})})}var _={nodeSep:50,edgeSep:10,universalSep:null,rankSep:30},m={};return m.nodeSep=r.propertyAccessor(m,_,"nodeSep"),m.edgeSep=r.propertyAccessor(m,_,"edgeSep"),m.universalSep=r.propertyAccessor(m,_,"universalSep"),m.rankSep=r.propertyAccessor(m,_,"rankSep"),m.debugLevel=r.propertyAccessor(m,_,"debugLevel"),m.run=n,m}},{"./util":18}],11:[function(n,t,r){"use strict";function e(n,t){i(n),l.time("constraints.apply",g.apply)(n),u(n),l.time("acyclic",p)(n);var r=n.filterNodes(l.filterNonSubgraphs(n));d(r),y(r).forEach(function(n){var e=r.filterNodes(_.nodesFromList(n));f(e,t)}),l.time("constraints.relax",g.relax(n)),l.time("reorientEdges",c)(n)}function o(n){p.undo(n)}function i(n){n.eachEdge(function(t,r,e,o){if(r===e){var i=a(n,t,r,e,o,0,!1),u=a(n,t,r,e,o,1,!0),c=a(n,t,r,e,o,2,!1);n.addEdge(null,i,r,{minLen:1,selfLoop:!0}),n.addEdge(null,i,u,{minLen:1,selfLoop:!0}),n.addEdge(null,r,c,{minLen:1,selfLoop:!0}),n.addEdge(null,u,c,{minLen:1,selfLoop:!0}),n.delEdge(t)}})}function u(n){n.eachEdge(function(t,r,e,o){if(r===e){var i=o.originalEdge,u=a(n,i.e,i.u,i.v,i.value,0,!0);n.addEdge(null,r,u,{minLen:1}),n.addEdge(null,u,e,{minLen:1}),n.delEdge(t)}})}function a(n,t,r,e,o,i,u){return n.addNode(null,{width:u?o.width:0,height:u?o.height:0,edge:{id:t,source:r,target:e,attrs:o},dummy:!0,index:i})}function c(n){n.eachEdge(function(t,r,e,o){n.node(r).rank>n.node(e).rank&&(n.delEdge(t),o.reversed=!0,n.addEdge(t,e,r,o))})}function f(n,t){var r=h(n);t&&(l.log(1,"Using network simplex for ranking"),v(n,r)),s(n)}function s(n){var t=l.min(n.nodes().map(function(t){return n.node(t).rank}));n.eachNode(function(n,r){r.rank-=t})}var l=n("./util"),p=n("./rank/acyclic"),d=n("./rank/initRank"),h=n("./rank/feasibleTree"),g=n("./rank/constraints"),v=n("./rank/simplex"),y=n("graphlib").alg.components,_=n("graphlib").filter;r.run=e,r.restoreEdges=o},{"./rank/acyclic":12,"./rank/constraints":13,"./rank/feasibleTree":14,"./rank/initRank":15,"./rank/simplex":17,"./util":18,graphlib:25}],12:[function(n,t){"use strict";function r(n){function t(o){o in e||(e[o]=r[o]=!0,n.outEdges(o).forEach(function(e){var u,a=n.target(e);o===a?console.error('Warning: found self loop "'+e+'" for node "'+o+'"'):a in r?(u=n.edge(e),n.delEdge(e),u.reversed=!0,++i,n.addEdge(e,a,o,u)):t(a)}),delete r[o])}var r={},e={},i=0;return n.eachNode(function(n){t(n)}),o.log(2,"Acyclic Phase: reversed "+i+" edge(s)"),i}function e(n){n.eachEdge(function(t,r,e,o){o.reversed&&(delete o.reversed,n.delEdge(t),n.addEdge(t,e,r,o))})}var o=n("../util");t.exports=r,t.exports.undo=e},{"../util":18}],13:[function(n,t,r){"use strict";function e(n){return"min"!==n&&"max"!==n&&0!==n.indexOf("same_")?(console.error("Unsupported rank type: "+n),!1):!0}function o(n,t,r,e){n.inEdges(t).forEach(function(t){var o,i=n.edge(t);o=i.originalEdge?i:{originalEdge:{e:t,u:n.source(t),v:n.target(t),value:i},minLen:n.edge(t).minLen},i.selfLoop&&(e=!1),e?(n.addEdge(null,r,n.source(t),o),o.reversed=!0):n.addEdge(null,n.source(t),r,o)})}function i(n,t,r,e){n.outEdges(t).forEach(function(t){var o,i=n.edge(t);o=i.originalEdge?i:{originalEdge:{e:t,u:n.source(t),v:n.target(t),value:i},minLen:n.edge(t).minLen},i.selfLoop&&(e=!1),e?(n.addEdge(null,n.target(t),r,o),o.reversed=!0):n.addEdge(null,r,n.target(t),o)})}function u(n,t,r){void 0!==r&&n.children(t).forEach(function(t){t===r||n.outEdges(r,t).length||n.node(t).dummy||n.addEdge(null,r,t,{minLen:0})})}function a(n,t,r){void 0!==r&&n.children(t).forEach(function(t){t===r||n.outEdges(t,r).length||n.node(t).dummy||n.addEdge(null,t,r,{minLen:0})})}r.apply=function(n){function t(r){var c={};n.children(r).forEach(function(u){if(n.children(u).length)return void t(u);var a=n.node(u),f=a.prefRank;if(void 0!==f){if(!e(f))return;f in c?c.prefRank.push(u):c.prefRank=[u];var s=c[f];void 0===s&&(s=c[f]=n.addNode(null,{originalNodes:[]}),n.parent(s,r)),o(n,u,s,"min"===f),i(n,u,s,"max"===f),n.node(s).originalNodes.push({u:u,value:a,parent:r}),n.delNode(u)}}),u(n,r,c.min),a(n,r,c.max)}t(null)},r.relax=function(n){var t=[];n.eachEdge(function(n,r,e,o){var i=o.originalEdge;i&&t.push(i)}),n.eachNode(function(t,r){var e=r.originalNodes;e&&(e.forEach(function(t){t.value.rank=r.rank,n.addNode(t.u,t.value),n.parent(t.u,t.parent)}),n.delNode(t))}),t.forEach(function(t){n.addEdge(t.e,t.u,t.v,t.value)})}},{}],14:[function(n,t){"use strict";function r(n){function t(r){var o=!0;return n.predecessors(r).forEach(function(i){u.has(i)&&!e(n,i,r)&&(u.has(r)&&(a.addNode(r,{}),u.remove(r),a.graph({root:r})),a.addNode(i,{}),a.addEdge(null,i,r,{reversed:!0}),u.remove(i),t(i),o=!1)}),n.successors(r).forEach(function(i){u.has(i)&&!e(n,r,i)&&(u.has(r)&&(a.addNode(r,{}),u.remove(r),a.graph({root:r})),a.addNode(i,{}),a.addEdge(null,r,i,{}),u.remove(i),t(i),o=!1)}),o}function r(){var t=Number.MAX_VALUE;u.keys().forEach(function(r){n.predecessors(r).forEach(function(o){if(!u.has(o)){var i=e(n,o,r);Math.abs(i)<Math.abs(t)&&(t=-i)}}),n.successors(r).forEach(function(o){if(!u.has(o)){var i=e(n,r,o);Math.abs(i)<Math.abs(t)&&(t=i)}})}),a.eachNode(function(r){n.node(r).rank-=t})}var u=new o(n.nodes()),a=new i;if(1===u.size()){var c=n.nodes()[0];return a.addNode(c,{}),a.graph({root:c}),a}for(;u.size();){for(var f=a.order()?a.nodes():u.keys(),s=0,l=f.length;l>s&&t(f[s]);++s);u.size()&&r()}return a}function e(n,t,r){var e=n.node(r).rank-n.node(t).rank,o=u.max(n.outEdges(t,r).map(function(t){return n.edge(t).minLen}));return e-o}var o=n("cp-data").Set,i=n("graphlib").Digraph,u=n("../util");t.exports=r},{"../util":18,"cp-data":20,graphlib:25}],15:[function(n,t){"use strict";function r(n){var t=o(n);t.forEach(function(t){var r=n.inEdges(t);if(0===r.length)return void(n.node(t).rank=0);var o=r.map(function(t){return n.node(n.source(t)).rank+n.edge(t).minLen});n.node(t).rank=e.max(o)})}var e=n("../util"),o=n("graphlib").alg.topsort;t.exports=r},{"../util":18,graphlib:25}],16:[function(n,t){"use strict";function r(n,t,r,e){return Math.abs(n.node(t).rank-n.node(r).rank)-e}t.exports={slack:r}},{}],17:[function(n,t){"use strict";function r(n,t){for(e(n,t);;){var r=a(t);if(null===r)break;var o=c(n,t,r);f(n,t,r,o)}}function e(n,t){function r(e){var o=t.successors(e);for(var u in o){var a=o[u];r(a)}e!==t.graph().root&&i(n,t,e)}o(t),t.eachEdge(function(n,t,r,e){e.cutValue=0}),r(t.graph().root)}function o(n){function t(e){var o=n.successors(e),i=r;for(var u in o){var a=o[u];t(a),i=Math.min(i,n.node(a).low)}n.node(e).low=i,n.node(e).lim=r++}var r=0;t(n.graph().root)}function i(n,t,r){var e=t.inEdges(r)[0],o=[],i=t.outEdges(r);for(var a in i)o.push(t.target(i[a]));var c,f=0,s=0,l=0,p=0,d=0,h=n.outEdges(r);for(var g in h){var v=n.target(h[g]);for(c in o)u(t,v,o[c])&&s++;u(t,v,r)||p++}var y=n.inEdges(r);for(var _ in y){var m=n.source(y[_]);for(c in o)u(t,m,o[c])&&l++;u(t,m,r)||d++}var E=0;for(c in o){var w=t.edge(i[c]).cutValue;t.edge(i[c]).reversed?E-=w:E+=w}t.edge(e).reversed?f-=E-s+l-p+d:f+=E-s+l-p+d,t.edge(e).cutValue=f}function u(n,t,r){return n.node(r).low<=n.node(t).lim&&n.node(t).lim<=n.node(r).lim}function a(n){var t=n.edges();for(var r in t){var e=t[r],o=n.edge(e);if(o.cutValue<0)return e}return null}function c(n,t,r){var e,o=t.source(r),i=t.target(r),a=t.node(i).lim<t.node(o).lim?i:o,c=!t.edge(r).reversed,f=Number.POSITIVE_INFINITY;if(n.eachEdge(c?function(o,i,c,s){if(o!==r&&u(t,i,a)&&!u(t,c,a)){var l=d.slack(n,i,c,s.minLen);f>l&&(f=l,e=o)}}:function(o,i,c,s){if(o!==r&&!u(t,i,a)&&u(t,c,a)){var l=d.slack(n,i,c,s.minLen);f>l&&(f=l,e=o)}}),void 0===e){var s=[],l=[];throw n.eachNode(function(n){u(t,n,a)?l.push(n):s.push(n)}),new Error("No edge found from outside of tree to inside")}return e}function f(n,t,r,o){function i(n){var r=t.inEdges(n);for(var e in r){var o=r[e],u=t.source(o),a=t.edge(o);i(u),t.delEdge(o),a.reversed=!a.reversed,t.addEdge(o,n,u,a)}}t.delEdge(r);var u=n.source(o),a=n.target(o);i(a);for(var c=u,f=t.inEdges(c);f.length>0;)c=t.source(f[0]),f=t.inEdges(c);t.graph().root=c,t.addEdge(null,u,a,{cutValue:0}),e(n,t),s(n,t)}function s(n,t){function r(e){var o=t.successors(e);o.forEach(function(t){var o=l(n,e,t);n.node(t).rank=n.node(e).rank+o,r(t)})}r(t.graph().root)}function l(n,t,r){var e=n.outEdges(t,r);if(e.length>0)return p.max(e.map(function(t){return n.edge(t).minLen}));var o=n.inEdges(t,r);return o.length>0?-p.max(o.map(function(t){return n.edge(t).minLen})):void 0}var p=n("../util"),d=n("./rankUtil");t.exports=r},{"../util":18,"./rankUtil":16}],18:[function(n,t,r){"use strict";function e(n,t){return function(){var r=(new Date).getTime();try{return t.apply(null,arguments)}finally{o(1,n+" time: "+((new Date).getTime()-r)+"ms")}}}function o(n){o.level>=n&&console.log.apply(console,Array.prototype.slice.call(arguments,1))}r.min=function(n){return Math.min.apply(Math,n)},r.max=function(n){return Math.max.apply(Math,n)},r.all=function(n,t){for(var r=0;r<n.length;++r)if(!t(n[r]))return!1;return!0},r.sum=function(n){return n.reduce(function(n,t){return n+t},0)},r.values=function(n){return Object.keys(n).map(function(t){return n[t]})},r.shuffle=function(n){for(var t=n.length-1;t>0;--t){var r=Math.floor(Math.random()*(t+1)),e=n[r];n[r]=n[t],n[t]=e}},r.propertyAccessor=function(n,t,r,e){return function(o){return arguments.length?(t[r]=o,e&&e(o),n):t[r]}},r.ordering=function(n){var t=[];return n.eachNode(function(n,r){var e=t[r.rank]||(t[r.rank]=[]);e[r.order]=n}),t},r.filterNonSubgraphs=function(n){return function(t){return 0===n.children(t).length}},e.enabled=!1,r.time=e,o.level=0,r.log=o},{}],19:[function(n,t){t.exports="0.4.6"},{}],20:[function(n,t,r){r.Set=n("./lib/Set"),r.PriorityQueue=n("./lib/PriorityQueue"),r.version=n("./lib/version")},{"./lib/PriorityQueue":21,"./lib/Set":22,"./lib/version":24}],21:[function(n,t){function r(){this._arr=[],this._keyIndices={}}t.exports=r,r.prototype.size=function(){return this._arr.length},r.prototype.keys=function(){return this._arr.map(function(n){return n.key})},r.prototype.has=function(n){return n in this._keyIndices},r.prototype.priority=function(n){var t=this._keyIndices[n];return void 0!==t?this._arr[t].priority:void 0},r.prototype.min=function(){if(0===this.size())throw new Error("Queue underflow");return this._arr[0].key},r.prototype.add=function(n,t){var r=this._keyIndices;if(!(n in r)){var e=this._arr,o=e.length;return r[n]=o,e.push({key:n,priority:t}),this._decrease(o),!0}return!1},r.prototype.removeMin=function(){this._swap(0,this._arr.length-1);var n=this._arr.pop();return delete this._keyIndices[n.key],this._heapify(0),n.key},r.prototype.decrease=function(n,t){var r=this._keyIndices[n];if(t>this._arr[r].priority)throw new Error("New priority is greater than current priority. Key: "+n+" Old: "+this._arr[r].priority+" New: "+t);this._arr[r].priority=t,this._decrease(r)},r.prototype._heapify=function(n){var t=this._arr,r=2*n,e=r+1,o=n;r<t.length&&(o=t[r].priority<t[o].priority?r:o,e<t.length&&(o=t[e].priority<t[o].priority?e:o),o!==n&&(this._swap(n,o),this._heapify(o)))},r.prototype._decrease=function(n){for(var t,r=this._arr,e=r[n].priority;0!==n&&(t=n>>1,!(r[t].priority<e));)this._swap(n,t),n=t},r.prototype._swap=function(n,t){var r=this._arr,e=this._keyIndices,o=r[n],i=r[t];r[n]=i,r[t]=o,e[i.key]=n,e[o.key]=t}},{}],22:[function(n,t){function r(n){if(this._size=0,this._keys={},n)for(var t=0,r=n.length;r>t;++t)this.add(n[t])}function e(n){var t,r=Object.keys(n),e=r.length,o=new Array(e);for(t=0;e>t;++t)o[t]=n[r[t]];return o}var o=n("./util");t.exports=r,r.intersect=function(n){if(0===n.length)return new r;for(var t=new r(o.isArray(n[0])?n[0]:n[0].keys()),e=1,i=n.length;i>e;++e)for(var u=t.keys(),a=o.isArray(n[e])?new r(n[e]):n[e],c=0,f=u.length;f>c;++c){var s=u[c];a.has(s)||t.remove(s)}return t},r.union=function(n){for(var t=o.reduce(n,function(n,t){return n+(t.size?t.size():t.length)},0),e=new Array(t),i=0,u=0,a=n.length;a>u;++u)for(var c=n[u],f=o.isArray(c)?c:c.keys(),s=0,l=f.length;l>s;++s)e[i++]=f[s];return new r(e)},r.prototype.size=function(){return this._size},r.prototype.keys=function(){return e(this._keys)},r.prototype.has=function(n){return n in this._keys},r.prototype.add=function(n){return n in this._keys?!1:(this._keys[n]=n,++this._size,!0)},r.prototype.remove=function(n){return n in this._keys?(delete this._keys[n],--this._size,!0):!1}},{"./util":23}],23:[function(n,t,r){r.isArray=Array.isArray?Array.isArray:function(n){return"[object Array]"===Object.prototype.toString.call(n)},r.reduce="function"!=typeof Array.prototype.reduce?function(n,t,r){"use strict";if(null===n||"undefined"==typeof n)throw new TypeError("Array.prototype.reduce called on null or undefined");if("function"!=typeof t)throw new TypeError(t+" is not a function");var e,o,i=n.length>>>0,u=!1;for(1<arguments.length&&(o=r,u=!0),e=0;i>e;++e)n.hasOwnProperty(e)&&(u?o=t(o,n[e],e,n):(o=n[e],u=!0));if(!u)throw new TypeError("Reduce of empty array with no initial value");return o}:function(n,t,r){return n.reduce(t,r)}},{}],24:[function(n,t){t.exports="1.1.3"},{}],25:[function(n,t,r){r.Graph=n("./lib/Graph"),r.Digraph=n("./lib/Digraph"),r.CGraph=n("./lib/CGraph"),r.CDigraph=n("./lib/CDigraph"),n("./lib/graph-converters"),r.alg={isAcyclic:n("./lib/alg/isAcyclic"),components:n("./lib/alg/components"),dijkstra:n("./lib/alg/dijkstra"),dijkstraAll:n("./lib/alg/dijkstraAll"),findCycles:n("./lib/alg/findCycles"),floydWarshall:n("./lib/alg/floydWarshall"),postorder:n("./lib/alg/postorder"),preorder:n("./lib/alg/preorder"),prim:n("./lib/alg/prim"),tarjan:n("./lib/alg/tarjan"),topsort:n("./lib/alg/topsort")},r.converter={json:n("./lib/converter/json.js")};var e=n("./lib/filter");r.filter={all:e.all,nodesFromList:e.nodesFromList},r.version=n("./lib/version")},{"./lib/CDigraph":27,"./lib/CGraph":28,"./lib/Digraph":29,"./lib/Graph":30,"./lib/alg/components":31,"./lib/alg/dijkstra":32,"./lib/alg/dijkstraAll":33,"./lib/alg/findCycles":34,"./lib/alg/floydWarshall":35,"./lib/alg/isAcyclic":36,"./lib/alg/postorder":37,"./lib/alg/preorder":38,"./lib/alg/prim":39,"./lib/alg/tarjan":40,"./lib/alg/topsort":41,"./lib/converter/json.js":43,"./lib/filter":44,"./lib/graph-converters":45,"./lib/version":47}],26:[function(n,t){function r(){this._value=void 0,this._nodes={},this._edges={},this._nextId=0}function e(n,t,r){(n[t]||(n[t]=new i)).add(r)}function o(n,t,r){var e=n[t];e.remove(r),0===e.size()&&delete n[t]}var i=n("cp-data").Set;t.exports=r,r.prototype.order=function(){return Object.keys(this._nodes).length},r.prototype.size=function(){return Object.keys(this._edges).length},r.prototype.graph=function(n){return 0===arguments.length?this._value:void(this._value=n)},r.prototype.hasNode=function(n){return n in this._nodes},r.prototype.node=function(n,t){var r=this._strictGetNode(n);return 1===arguments.length?r.value:void(r.value=t)},r.prototype.nodes=function(){var n=[];return this.eachNode(function(t){n.push(t)}),n},r.prototype.eachNode=function(n){for(var t in this._nodes){var r=this._nodes[t];n(r.id,r.value)}},r.prototype.hasEdge=function(n){return n in this._edges},r.prototype.edge=function(n,t){var r=this._strictGetEdge(n);return 1===arguments.length?r.value:void(r.value=t)},r.prototype.edges=function(){var n=[];return this.eachEdge(function(t){n.push(t)}),n},r.prototype.eachEdge=function(n){for(var t in this._edges){var r=this._edges[t];n(r.id,r.u,r.v,r.value)}},r.prototype.incidentNodes=function(n){var t=this._strictGetEdge(n);return[t.u,t.v]},r.prototype.addNode=function(n,t){if(void 0===n||null===n){do n="_"+ ++this._nextId;while(this.hasNode(n))}else if(this.hasNode(n))throw new Error("Graph already has node '"+n+"'");return this._nodes[n]={id:n,value:t},n},r.prototype.delNode=function(n){this._strictGetNode(n),this.incidentEdges(n).forEach(function(n){this.delEdge(n)},this),delete this._nodes[n]},r.prototype._addEdge=function(n,t,r,o,i,u){if(this._strictGetNode(t),this._strictGetNode(r),void 0===n||null===n){do n="_"+ ++this._nextId;while(this.hasEdge(n))}else if(this.hasEdge(n))throw new Error("Graph already has edge '"+n+"'");return this._edges[n]={id:n,u:t,v:r,value:o},e(i[r],t,n),e(u[t],r,n),n},r.prototype._delEdge=function(n,t,r){var e=this._strictGetEdge(n);o(t[e.v],e.u,n),o(r[e.u],e.v,n),delete this._edges[n]},r.prototype.copy=function(){var n=new this.constructor;return n.graph(this.graph()),this.eachNode(function(t,r){n.addNode(t,r)}),this.eachEdge(function(t,r,e,o){n.addEdge(t,r,e,o)}),n._nextId=this._nextId,n},r.prototype.filterNodes=function(n){var t=new this.constructor;return t.graph(this.graph()),this.eachNode(function(r,e){n(r)&&t.addNode(r,e)}),this.eachEdge(function(n,r,e,o){t.hasNode(r)&&t.hasNode(e)&&t.addEdge(n,r,e,o)}),t},r.prototype._strictGetNode=function(n){var t=this._nodes[n];if(void 0===t)throw new Error("Node '"+n+"' is not in graph");return t},r.prototype._strictGetEdge=function(n){var t=this._edges[n];if(void 0===t)throw new Error("Edge '"+n+"' is not in graph");return t}},{"cp-data":20}],27:[function(n,t){var r=n("./Digraph"),e=n("./compoundify"),o=e(r);t.exports=o,o.fromDigraph=function(n){var t=new o,r=n.graph();return void 0!==r&&t.graph(r),n.eachNode(function(n,r){void 0===r?t.addNode(n):t.addNode(n,r)}),n.eachEdge(function(n,r,e,o){void 0===o?t.addEdge(null,r,e):t.addEdge(null,r,e,o)}),t},o.prototype.toString=function(){return"CDigraph "+JSON.stringify(this,null,2)}},{"./Digraph":29,"./compoundify":42}],28:[function(n,t){var r=n("./Graph"),e=n("./compoundify"),o=e(r);
-t.exports=o,o.fromGraph=function(n){var t=new o,r=n.graph();return void 0!==r&&t.graph(r),n.eachNode(function(n,r){void 0===r?t.addNode(n):t.addNode(n,r)}),n.eachEdge(function(n,r,e,o){void 0===o?t.addEdge(null,r,e):t.addEdge(null,r,e,o)}),t},o.prototype.toString=function(){return"CGraph "+JSON.stringify(this,null,2)}},{"./Graph":30,"./compoundify":42}],29:[function(n,t){function r(){o.call(this),this._inEdges={},this._outEdges={}}var e=n("./util"),o=n("./BaseGraph"),i=n("cp-data").Set;t.exports=r,r.prototype=new o,r.prototype.constructor=r,r.prototype.isDirected=function(){return!0},r.prototype.successors=function(n){return this._strictGetNode(n),Object.keys(this._outEdges[n]).map(function(n){return this._nodes[n].id},this)},r.prototype.predecessors=function(n){return this._strictGetNode(n),Object.keys(this._inEdges[n]).map(function(n){return this._nodes[n].id},this)},r.prototype.neighbors=function(n){return i.union([this.successors(n),this.predecessors(n)]).keys()},r.prototype.sources=function(){var n=this;return this._filterNodes(function(t){return 0===n.inEdges(t).length})},r.prototype.sinks=function(){var n=this;return this._filterNodes(function(t){return 0===n.outEdges(t).length})},r.prototype.source=function(n){return this._strictGetEdge(n).u},r.prototype.target=function(n){return this._strictGetEdge(n).v},r.prototype.inEdges=function(n,t){this._strictGetNode(n);var r=i.union(e.values(this._inEdges[n])).keys();return arguments.length>1&&(this._strictGetNode(t),r=r.filter(function(n){return this.source(n)===t},this)),r},r.prototype.outEdges=function(n,t){this._strictGetNode(n);var r=i.union(e.values(this._outEdges[n])).keys();return arguments.length>1&&(this._strictGetNode(t),r=r.filter(function(n){return this.target(n)===t},this)),r},r.prototype.incidentEdges=function(n,t){return arguments.length>1?i.union([this.outEdges(n,t),this.outEdges(t,n)]).keys():i.union([this.inEdges(n),this.outEdges(n)]).keys()},r.prototype.toString=function(){return"Digraph "+JSON.stringify(this,null,2)},r.prototype.addNode=function(n,t){return n=o.prototype.addNode.call(this,n,t),this._inEdges[n]={},this._outEdges[n]={},n},r.prototype.delNode=function(n){o.prototype.delNode.call(this,n),delete this._inEdges[n],delete this._outEdges[n]},r.prototype.addEdge=function(n,t,r,e){return o.prototype._addEdge.call(this,n,t,r,e,this._inEdges,this._outEdges)},r.prototype.delEdge=function(n){o.prototype._delEdge.call(this,n,this._inEdges,this._outEdges)},r.prototype._filterNodes=function(n){var t=[];return this.eachNode(function(r){n(r)&&t.push(r)}),t}},{"./BaseGraph":26,"./util":46,"cp-data":20}],30:[function(n,t){function r(){o.call(this),this._incidentEdges={}}var e=n("./util"),o=n("./BaseGraph"),i=n("cp-data").Set;t.exports=r,r.prototype=new o,r.prototype.constructor=r,r.prototype.isDirected=function(){return!1},r.prototype.neighbors=function(n){return this._strictGetNode(n),Object.keys(this._incidentEdges[n]).map(function(n){return this._nodes[n].id},this)},r.prototype.incidentEdges=function(n,t){return this._strictGetNode(n),arguments.length>1?(this._strictGetNode(t),t in this._incidentEdges[n]?this._incidentEdges[n][t].keys():[]):i.union(e.values(this._incidentEdges[n])).keys()},r.prototype.toString=function(){return"Graph "+JSON.stringify(this,null,2)},r.prototype.addNode=function(n,t){return n=o.prototype.addNode.call(this,n,t),this._incidentEdges[n]={},n},r.prototype.delNode=function(n){o.prototype.delNode.call(this,n),delete this._incidentEdges[n]},r.prototype.addEdge=function(n,t,r,e){return o.prototype._addEdge.call(this,n,t,r,e,this._incidentEdges,this._incidentEdges)},r.prototype.delEdge=function(n){o.prototype._delEdge.call(this,n,this._incidentEdges,this._incidentEdges)}},{"./BaseGraph":26,"./util":46,"cp-data":20}],31:[function(n,t){function r(n){function t(r,e){o.has(r)||(o.add(r),e.push(r),n.neighbors(r).forEach(function(n){t(n,e)}))}var r=[],o=new e;return n.nodes().forEach(function(n){var e=[];t(n,e),e.length>0&&r.push(e)}),r}var e=n("cp-data").Set;t.exports=r},{"cp-data":20}],32:[function(n,t){function r(n,t,r,o){function i(t){var e=n.incidentNodes(t),o=e[0]!==c?e[0]:e[1],i=u[o],s=r(t),l=f.distance+s;if(0>s)throw new Error("dijkstra does not allow negative edge weights. Bad edge: "+t+" Weight: "+s);l<i.distance&&(i.distance=l,i.predecessor=c,a.decrease(o,l))}var u={},a=new e;r=r||function(){return 1},o=o||(n.isDirected()?function(t){return n.outEdges(t)}:function(t){return n.incidentEdges(t)}),n.eachNode(function(n){var r=n===t?0:Number.POSITIVE_INFINITY;u[n]={distance:r},a.add(n,r)});for(var c,f;a.size()>0&&(c=a.removeMin(),f=u[c],f.distance!==Number.POSITIVE_INFINITY);)o(c).forEach(i);return u}var e=n("cp-data").PriorityQueue;t.exports=r},{"cp-data":20}],33:[function(n,t){function r(n,t,r){var o={};return n.eachNode(function(i){o[i]=e(n,i,t,r)}),o}var e=n("./dijkstra");t.exports=r},{"./dijkstra":32}],34:[function(n,t){function r(n){return e(n).filter(function(n){return n.length>1})}var e=n("./tarjan");t.exports=r},{"./tarjan":40}],35:[function(n,t){function r(n,t,r){var e={},o=n.nodes();return t=t||function(){return 1},r=r||(n.isDirected()?function(t){return n.outEdges(t)}:function(t){return n.incidentEdges(t)}),o.forEach(function(i){e[i]={},e[i][i]={distance:0},o.forEach(function(n){i!==n&&(e[i][n]={distance:Number.POSITIVE_INFINITY})}),r(i).forEach(function(r){var o=n.incidentNodes(r),u=o[0]!==i?o[0]:o[1],a=t(r);a<e[i][u].distance&&(e[i][u]={distance:a,predecessor:i})})}),o.forEach(function(n){var t=e[n];o.forEach(function(r){var i=e[r];o.forEach(function(r){var e=i[n],o=t[r],u=i[r],a=e.distance+o.distance;a<u.distance&&(u.distance=a,u.predecessor=o.predecessor)})})}),e}t.exports=r},{}],36:[function(n,t){function r(n){try{e(n)}catch(t){if(t instanceof e.CycleException)return!1;throw t}return!0}var e=n("./topsort");t.exports=r},{"./topsort":41}],37:[function(n,t){function r(n,t,r){function o(t,e){if(i.has(t))throw new Error("The input graph is not a tree: "+n);i.add(t),n.neighbors(t).forEach(function(n){n!==e&&o(n,t)}),r(t)}var i=new e;if(n.isDirected())throw new Error("This function only works for undirected graphs");o(t)}var e=n("cp-data").Set;t.exports=r},{"cp-data":20}],38:[function(n,t){function r(n,t,r){function o(t,e){if(i.has(t))throw new Error("The input graph is not a tree: "+n);i.add(t),r(t),n.neighbors(t).forEach(function(n){n!==e&&o(n,t)})}var i=new e;if(n.isDirected())throw new Error("This function only works for undirected graphs");o(t)}var e=n("cp-data").Set;t.exports=r},{"cp-data":20}],39:[function(n,t){function r(n,t){function r(r){var e=n.incidentNodes(r),o=e[0]!==i?e[0]:e[1],u=c.priority(o);if(void 0!==u){var f=t(r);u>f&&(a[o]=i,c.decrease(o,f))}}var i,u=new e,a={},c=new o;if(0===n.order())return u;n.eachNode(function(n){c.add(n,Number.POSITIVE_INFINITY),u.addNode(n)}),c.decrease(n.nodes()[0],0);for(var f=!1;c.size()>0;){if(i=c.removeMin(),i in a)u.addEdge(null,i,a[i]);else{if(f)throw new Error("Input graph is not connected: "+n);f=!0}n.incidentEdges(i).forEach(r)}return u}var e=n("../Graph"),o=n("cp-data").PriorityQueue;t.exports=r},{"../Graph":30,"cp-data":20}],40:[function(n,t){function r(n){function t(u){var a=o[u]={onStack:!0,lowlink:r,index:r++};if(e.push(u),n.successors(u).forEach(function(n){n in o?o[n].onStack&&(a.lowlink=Math.min(a.lowlink,o[n].index)):(t(n),a.lowlink=Math.min(a.lowlink,o[n].lowlink))}),a.lowlink===a.index){var c,f=[];do c=e.pop(),o[c].onStack=!1,f.push(c);while(u!==c);i.push(f)}}if(!n.isDirected())throw new Error("tarjan can only be applied to a directed graph. Bad input: "+n);var r=0,e=[],o={},i=[];return n.nodes().forEach(function(n){n in o||t(n)}),i}t.exports=r},{}],41:[function(n,t){function r(n){function t(u){if(u in o)throw new e;u in r||(o[u]=!0,r[u]=!0,n.predecessors(u).forEach(function(n){t(n)}),delete o[u],i.push(u))}if(!n.isDirected())throw new Error("topsort can only be applied to a directed graph. Bad input: "+n);var r={},o={},i=[],u=n.sinks();if(0!==n.order()&&0===u.length)throw new e;return n.sinks().forEach(function(n){t(n)}),i}function e(){}t.exports=r,r.CycleException=e,e.prototype.toString=function(){return"Graph has at least one cycle"}},{}],42:[function(n,t){function r(n){function t(){n.call(this),this._parents={},this._children={},this._children[null]=new e}return t.prototype=new n,t.prototype.constructor=t,t.prototype.parent=function(n,t){if(this._strictGetNode(n),arguments.length<2)return this._parents[n];if(n===t)throw new Error("Cannot make "+n+" a parent of itself");null!==t&&this._strictGetNode(t),this._children[this._parents[n]].remove(n),this._parents[n]=t,this._children[t].add(n)},t.prototype.children=function(n){return null!==n&&this._strictGetNode(n),this._children[n].keys()},t.prototype.addNode=function(t,r){return t=n.prototype.addNode.call(this,t,r),this._parents[t]=null,this._children[t]=new e,this._children[null].add(t),t},t.prototype.delNode=function(t){var r=this.parent(t);return this._children[t].keys().forEach(function(n){this.parent(n,r)},this),this._children[r].remove(t),delete this._parents[t],delete this._children[t],n.prototype.delNode.call(this,t)},t.prototype.copy=function(){var t=n.prototype.copy.call(this);return this.nodes().forEach(function(n){t.parent(n,this.parent(n))},this),t},t.prototype.filterNodes=function(t){function r(n){var t=e.parent(n);return null===t||o.hasNode(t)?(i[n]=t,t):t in i?i[t]:r(t)}var e=this,o=n.prototype.filterNodes.call(this,t),i={};return o.eachNode(function(n){o.parent(n,r(n))}),o},t}var e=n("cp-data").Set;t.exports=r},{"cp-data":20}],43:[function(n,t,r){function e(n){return Object.prototype.toString.call(n).slice(8,-1)}var o=n("../Graph"),i=n("../Digraph"),u=n("../CGraph"),a=n("../CDigraph");r.decode=function(n,t,r){if(r=r||i,"Array"!==e(n))throw new Error("nodes is not an Array");if("Array"!==e(t))throw new Error("edges is not an Array");if("string"==typeof r)switch(r){case"graph":r=o;break;case"digraph":r=i;break;case"cgraph":r=u;break;case"cdigraph":r=a;break;default:throw new Error("Unrecognized graph type: "+r)}var c=new r;return n.forEach(function(n){c.addNode(n.id,n.value)}),c.parent&&n.forEach(function(n){n.children&&n.children.forEach(function(t){c.parent(t,n.id)})}),t.forEach(function(n){c.addEdge(n.id,n.u,n.v,n.value)}),c},r.encode=function(n){var t=[],r=[];n.eachNode(function(r,e){var o={id:r,value:e};if(n.children){var i=n.children(r);i.length&&(o.children=i)}t.push(o)}),n.eachEdge(function(n,t,e,o){r.push({id:n,u:t,v:e,value:o})});var e;if(n instanceof a)e="cdigraph";else if(n instanceof u)e="cgraph";else if(n instanceof i)e="digraph";else{if(!(n instanceof o))throw new Error("Couldn't determine type of graph: "+n);e="graph"}return{nodes:t,edges:r,type:e}}},{"../CDigraph":27,"../CGraph":28,"../Digraph":29,"../Graph":30}],44:[function(n,t,r){var e=n("cp-data").Set;r.all=function(){return function(){return!0}},r.nodesFromList=function(n){var t=new e(n);return function(n){return t.has(n)}}},{"cp-data":20}],45:[function(n){var t=n("./Graph"),r=n("./Digraph");t.prototype.toDigraph=t.prototype.asDirected=function(){var n=new r;return this.eachNode(function(t,r){n.addNode(t,r)}),this.eachEdge(function(t,r,e,o){n.addEdge(null,r,e,o),n.addEdge(null,e,r,o)}),n},r.prototype.toGraph=r.prototype.asUndirected=function(){var n=new t;return this.eachNode(function(t,r){n.addNode(t,r)}),this.eachEdge(function(t,r,e,o){n.addEdge(t,r,e,o)}),n}},{"./Digraph":29,"./Graph":30}],46:[function(n,t,r){r.values=function(n){var t,r=Object.keys(n),e=r.length,o=new Array(e);for(t=0;e>t;++t)o[t]=n[r[t]];return o}},{}],47:[function(n,t){t.exports="0.7.4"},{}],dagre:[function(n,t,r){r.Digraph=n("graphlib").Digraph,r.Graph=n("graphlib").Graph,r.layout=n("./lib/layout"),r.version=n("./lib/version"),r.debug=n("./lib/debug")},{"./lib/debug":3,"./lib/layout":4,"./lib/version":19,graphlib:25}],lodash:[function(n,t,r){(function(n){(function(){function e(n,t){if(n!==t){var r=n===n,e=t===t;if(n>t||!r||"undefined"==typeof n&&e)return 1;if(t>n||!e||"undefined"==typeof t&&r)return-1}return 0}function o(n,t,r){if(t!==t)return g(n,r);for(var e=(r||0)-1,o=n.length;++e<o;)if(n[e]===t)return e;return-1}function i(n,t){var r=n.length;for(n.sort(t);r--;)n[r]=n[r].value;return n}function u(n){return"string"==typeof n?n:null==n?"":n+""}function a(n){return n.charCodeAt(0)}function c(n,t){for(var r=-1,e=n.length;++r<e&&t.indexOf(n.charAt(r))>-1;);return r}function f(n,t){for(var r=n.length;r--&&t.indexOf(n.charAt(r))>-1;);return r}function s(n,t){return e(n.criteria,t.criteria)||n.index-t.index}function l(n,t){for(var r=-1,o=n.criteria,i=t.criteria,u=o.length;++r<u;){var a=e(o[r],i[r]);if(a)return a}return n.index-t.index}function p(n){return zt[n]}function d(n){return Wt[n]}function h(n){return"\\"+$t[n]}function g(n,t,r){for(var e=n.length,o=r?t||e:(t||0)-1;r?o--:++o<e;){var i=n[o];if(i!==i)return o}return-1}function v(n){return n&&"object"==typeof n||!1}function y(n){return 160>=n&&n>=9&&13>=n||32==n||160==n||5760==n||6158==n||n>=8192&&(8202>=n||8232==n||8233==n||8239==n||8287==n||12288==n||65279==n)}function _(n,t){for(var r=-1,e=n.length,o=-1,i=[];++r<e;)n[r]===t&&(n[r]=V,i[++o]=r);return i}function m(n,t){for(var r,e=-1,o=n.length,i=-1,u=[];++e<o;){var a=n[e],c=t?t(a,e,n):a;e&&r===c||(r=c,u[++i]=a)}return u}function E(n){for(var t=-1,r=n.length;++t<r&&y(n.charCodeAt(t)););return t}function w(n){for(var t=n.length;t--&&y(n.charCodeAt(t)););return t}function b(n){return Vt[n]}function k(n){function t(n){if(v(n)&&!Qa(n)&&!(n instanceof y)){if(n instanceof r)return n;if(Hu.call(n,"__chain__")&&Hu.call(n,"__wrapped__"))return Ge(n)}return new r(n)}function r(n,t,r){this.__wrapped__=n,this.__actions__=r||[],this.__chain__=!!t}function y(n){this.__wrapped__=n,this.__actions__=null,this.__dir__=1,this.__dropCount__=0,this.__filtered__=!1,this.__iteratees__=null,this.__takeCount__=Ra,this.__views__=null}function J(){var n=this.__actions__,t=this.__iteratees__,r=this.__views__,e=new y(this.__wrapped__);return e.__actions__=n?Jt(n):null,e.__dir__=this.__dir__,e.__dropCount__=this.__dropCount__,e.__filtered__=this.__filtered__,e.__iteratees__=t?Jt(t):null,e.__takeCount__=this.__takeCount__,e.__views__=r?Jt(r):null,e}function nt(){if(this.__filtered__){var n=new y(this);n.__dir__=-1,n.__filtered__=!0}else n=this.clone(),n.__dir__*=-1;return n}function rt(){var n=this.__wrapped__.value();if(!Qa(n))return Xr(n,this.__actions__);var t=this.__dir__,r=0>t,e=ye(0,n.length,this.__views__),o=e.start,i=e.end,u=i-o,a=this.__dropCount__,c=ka(u,this.__takeCount__),f=r?i:o-1,s=this.__iteratees__,l=s?s.length:0,p=0,d=[];n:for(;u--&&c>p;){f+=t;for(var h=-1,g=n[f];++h<l;){var v=s[h],y=v.iteratee,_=y(g,f,n),m=v.type;if(m==P)g=_;else if(!_){if(m==F)continue n;break n}}a?a--:d[p++]=g}return d}function zt(){this.__data__={}}function Wt(n){return this.has(n)&&delete this.__data__[n]}function Vt(n){return"__proto__"==n?x:this.__data__[n]}function Bt(n){return"__proto__"!=n&&Hu.call(this.__data__,n)}function $t(n,t){return"__proto__"!=n&&(this.__data__[n]=t),this}function Yt(n){var t=n?n.length:0;for(this.data={hash:ma(null),set:new pa};t--;)this.push(n[t])}function Xt(n,t){var r=n.data,e="string"==typeof t||Si(t)?r.set.has(t):r.hash[t];return e?0:-1}function Qt(n){var t=this.data;"string"==typeof n||Si(n)?t.set.add(n):t.hash[n]=!0}function Jt(n,t){var r=-1,e=n.length;for(t||(t=Uu(e));++r<e;)t[r]=n[r];return t}function Zt(n,t){for(var r=-1,e=n.length;++r<e&&t(n[r],r,n)!==!1;);return n}function Ht(n,t){for(var r=n.length;r--&&t(n[r],r,n)!==!1;);return n}function nr(n,t){for(var r=-1,e=n.length;++r<e;)if(!t(n[r],r,n))return!1;return!0}function tr(n,t){for(var r=-1,e=n.length,o=-1,i=[];++r<e;){var u=n[r];t(u,r,n)&&(i[++o]=u)}return i}function rr(n,t){for(var r=-1,e=n.length,o=Uu(e);++r<e;)o[r]=t(n[r],r,n);return o}function er(n){for(var t=-1,r=n.length,e=Aa;++t<r;){var o=n[t];o>e&&(e=o)}return e}function or(n){for(var t=-1,r=n.length,e=Ra;++t<r;){var o=n[t];e>o&&(e=o)}return e}function ir(n,t,r,e){var o=-1,i=n.length;for(e&&i&&(r=n[++o]);++o<i;)r=t(r,n[o],o,n);return r}function ur(n,t,r,e){var o=n.length;for(e&&o&&(r=n[--o]);o--;)r=t(r,n[o],o,n);return r}function ar(n,t){for(var r=-1,e=n.length;++r<e;)if(t(n[r],r,n))return!0;return!1}function cr(n,t){return"undefined"==typeof n?t:n}function fr(n,t,r,e){return"undefined"!=typeof n&&Hu.call(e,r)?n:t}function sr(n,t,r){var e=Ha(t);if(!r)return pr(t,n,e);for(var o=-1,i=e.length;++o<i;){var u=e[o],a=n[u],c=r(a,t[u],u,n,t);(c===c?c===a:a!==a)&&("undefined"!=typeof a||u in n)||(n[u]=c)}return n}function lr(n,t){for(var r=-1,e=n.length,o=xe(e),i=t.length,u=Uu(i);++r<i;){var a=t[r];o?(a=parseFloat(a),u[r]=be(a,e)?n[a]:x):u[r]=n[a]}return u}function pr(n,t,r){r||(r=t,t={});for(var e=-1,o=r.length;++e<o;){var i=r[e];t[i]=n[i]}return t}function dr(n,t){for(var r=-1,e=t.length;++r<e;){var o=t[r];n[o]=se(n[o],j,n)}return n}function hr(n,t,r){var e=typeof n;return"function"==e?"undefined"!=typeof t&&we(n)?Kr(n,t,r):n:null==n?Su:"object"==e?Tr(n):"undefined"==typeof t?Pr(n+""):Mr(n+"",t)}function gr(n,t,r,e,o,i,u){var a;if(r&&(a=o?r(n,e,o):r(n)),"undefined"!=typeof a)return a;if(!Si(n))return n;var c=Qa(n);if(c){if(a=_e(n),!t)return Jt(n,a)}else{var f=ta.call(n),s=f==Q;if(f!=Z&&f!=B&&(!s||o))return Ft[f]?Ee(n,f,t):o?n:{};if(a=me(s?{}:n),!t)return pr(n,a,Ha(n))}i||(i=[]),u||(u=[]);for(var l=i.length;l--;)if(i[l]==n)return u[l];return i.push(n),u.push(a),(c?Zt:Ar)(n,function(e,o){a[o]=gr(e,t,r,o,n,i,u)}),a}function vr(n,t,r,e){if("function"!=typeof n)throw new Yu(W);return da(function(){n.apply(x,Br(r,e))},t)}function yr(n,t){var r=n?n.length:0,e=[];if(!r)return e;var i=-1,u=ve(),a=u==o,c=a&&t.length>=200&&Fa(t),f=t.length;c&&(u=Xt,a=!1,t=c);n:for(;++i<r;){var s=n[i];if(a&&s===s){for(var l=f;l--;)if(t[l]===s)continue n;e.push(s)}else u(t,s)<0&&e.push(s)}return e}function _r(n,t){var r=n?n.length:0;if(!xe(r))return Ar(n,t);for(var e=-1,o=Ce(n);++e<r&&t(o[e],e,o)!==!1;);return n}function mr(n,t){var r=n?n.length:0;if(!xe(r))return Rr(n,t);for(var e=Ce(n);r--&&t(e[r],r,e)!==!1;);return n}function Er(n,t){var r=!0;return _r(n,function(n,e,o){return r=!!t(n,e,o)}),r}function wr(n,t,r,e){var o=n.length;for(r=null==r?0:+r||0,0>r&&(r=-r>o?0:o+r),e="undefined"==typeof e||e>o?o:+e||0,0>e&&(e+=o),o=r>e?0:e>>>0,r>>>=0;o>r;)n[r++]=t;return n}function br(n,t){var r=[];return _r(n,function(n,e,o){t(n,e,o)&&r.push(n)}),r}function kr(n,t,r,e){var o;return r(n,function(n,r,i){return t(n,r,i)?(o=e?r:n,!1):void 0}),o}function xr(n,t,r,e){for(var o=(e||0)-1,i=n.length,u=-1,a=[];++o<i;){var c=n[o];if(v(c)&&xe(c.length)&&(Qa(c)||mi(c))){t&&(c=xr(c,t,r));var f=-1,s=c.length;for(a.length+=s;++f<s;)a[++u]=c[f]}else r||(a[++u]=c)}return a}function Nr(n,t,r){for(var e=-1,o=Ce(n),i=r(n),u=i.length;++e<u;){var a=i[e];if(t(o[a],a,o)===!1)break}return n}function jr(n,t,r){for(var e=Ce(n),o=r(n),i=o.length;i--;){var u=o[i];if(t(e[u],u,e)===!1)break}return n}function Sr(n,t){return Nr(n,t,Ji)}function Ar(n,t){return Nr(n,t,Ha)}function Rr(n,t){return jr(n,t,Ha)}function Ir(n,t){for(var r=-1,e=t.length,o=-1,i=[];++r<e;){var u=t[r];ji(n[u])&&(i[++o]=u)}return i}function Or(n,t,r){var e=-1,o="function"==typeof t,i=n?n.length:0,u=xe(i)?Uu(i):[];return _r(n,function(n){var i=o?t:null!=n&&n[t];u[++e]=i?i.apply(n,r):x}),u}function Lr(n,t,r,e,o,i){if(n===t)return 0!==n||1/n==1/t;var u=typeof n,a=typeof t;return"function"!=u&&"object"!=u&&"function"!=a&&"object"!=a||null==n||null==t?n!==n&&t!==t:Cr(n,t,Lr,r,e,o,i)}function Cr(n,t,r,e,o,i,u){var a=Qa(n),c=Qa(t),f=$,s=$;a||(f=ta.call(n),f==B?f=Z:f!=Z&&(a=Di(n))),c||(s=ta.call(t),s==B?s=Z:s!=Z&&(c=Di(t)));var l=f==Z,p=s==Z,d=f==s;if(d&&!a&&!l)return pe(n,t,f);var h=l&&Hu.call(n,"__wrapped__"),g=p&&Hu.call(t,"__wrapped__");if(h||g)return r(h?n.value():n,g?t.value():t,e,o,i,u);if(!d)return!1;i||(i=[]),u||(u=[]);for(var v=i.length;v--;)if(i[v]==n)return u[v]==t;i.push(n),u.push(t);var y=(a?le:de)(n,t,r,e,o,i,u);return i.pop(),u.pop(),y}function Gr(n,t,r,e,o){var i=t.length;if(null==n)return!i;for(var u=-1,a=!o;++u<i;)if(a&&e[u]?r[u]!==n[t[u]]:!Hu.call(n,t[u]))return!1;for(u=-1;++u<i;){var c=t[u];if(a&&e[u])var f=Hu.call(n,c);else{var s=n[c],l=r[u];f=o?o(s,l,c):x,"undefined"==typeof f&&(f=Lr(l,s,o,!0))}if(!f)return!1}return!0}function Dr(n,t){var r=[];return _r(n,function(n,e,o){r.push(t(n,e,o))}),r}function Tr(n){var t=Ha(n),r=t.length;if(1==r){var e=t[0],o=n[e];if(Ne(o))return function(n){return null!=n&&o===n[e]&&Hu.call(n,e)}}for(var i=Uu(r),u=Uu(r);r--;)o=n[t[r]],i[r]=o,u[r]=Ne(o);return function(n){return Gr(n,t,i,u)}}function Mr(n,t){return Ne(t)?function(r){return null!=r&&r[n]===t}:function(r){return null!=r&&Lr(t,r[n],null,!0)}}function Ur(n,t,r,e,o){var i=xe(t.length)&&(Qa(t)||Di(t));return(i?Zt:Ar)(t,function(t,u,a){if(v(t))return e||(e=[]),o||(o=[]),Fr(n,a,u,Ur,r,e,o);var c=n[u],f=r?r(c,t,u,n,a):x,s="undefined"==typeof f;s&&(f=t),!i&&"undefined"==typeof f||!s&&(f===f?f===c:c!==c)||(n[u]=f)}),n}function Fr(n,t,r,e,o,i,u){for(var a=i.length,c=t[r];a--;)if(i[a]==c)return void(n[r]=u[a]);var f=n[r],s=o?o(f,c,r,n,t):x,l="undefined"==typeof s;l&&(s=c,xe(c.length)&&(Qa(c)||Di(c))?s=Qa(f)?f:f?Jt(f):[]:Ka(c)||mi(c)?s=mi(f)?Ui(f):Ka(f)?f:{}:l=!1),i.push(c),u.push(s),l?n[r]=e(s,c,o,i,u):(s===s?s!==f:f===f)&&(n[r]=s)}function Pr(n){return function(t){return null==t?x:t[n]}}function zr(n,t){var r=t.length,o=lr(n,t);for(t.sort(e);r--;){var i=parseFloat(t[r]);if(i!=u&&be(i)){var u=i;ha.call(n,i,1)}}return o}function Wr(n,t){return n+ca(Sa()*(t-n+1))}function Vr(n,t,r,e,o){return o(n,function(n,o,i){r=e?(e=!1,n):t(r,n,o,i)}),r}function Br(n,t,r){var e=-1,o=n.length;t=null==t?0:+t||0,0>t&&(t=-t>o?0:o+t),r="undefined"==typeof r||r>o?o:+r||0,0>r&&(r+=o),o=t>r?0:r-t>>>0,t>>>=0;for(var i=Uu(o);++e<o;)i[e]=n[e+t];return i}function $r(n,t){var r;return _r(n,function(n,e,o){return r=t(n,e,o),!r}),!!r}function qr(n,t){var r=-1,e=ve(),i=n.length,u=e==o,a=u&&i>=200,c=a&&Fa(),f=[];c?(e=Xt,u=!1):(a=!1,c=t?[]:f);n:for(;++r<i;){var s=n[r],l=t?t(s,r,n):s;if(u&&s===s){for(var p=c.length;p--;)if(c[p]===l)continue n;t&&c.push(l),f.push(s)}else e(c,l)<0&&((t||a)&&c.push(l),f.push(s))}return f}function Yr(n,t){for(var r=-1,e=t.length,o=Uu(e);++r<e;)o[r]=n[t[r]];return o}function Xr(n,t){var r=n;r instanceof y&&(r=r.value());for(var e=-1,o=t.length;++e<o;){var i=[r],u=t[e];sa.apply(i,u.args),r=u.func.apply(u.thisArg,i)}return r}function Qr(n,t,r){var e=0,o=n?n.length:e;if("number"==typeof t&&t===t&&La>=o){for(;o>e;){var i=e+o>>>1,u=n[i];(r?t>=u:t>u)?e=i+1:o=i}return o}return Jr(n,t,Su,r)}function Jr(n,t,r,e){t=r(t);for(var o=0,i=n?n.length:0,u=t!==t,a="undefined"==typeof t;i>o;){var c=ca((o+i)/2),f=r(n[c]),s=f===f;if(u)var l=s||e;else l=a?s&&(e||"undefined"!=typeof f):e?t>=f:t>f;l?o=c+1:i=c}return ka(i,Oa)}function Kr(n,t,r){if("function"!=typeof n)return Su;if("undefined"==typeof t)return n;switch(r){case 1:return function(r){return n.call(t,r)};case 3:return function(r,e,o){return n.call(t,r,e,o)};case 4:return function(r,e,o,i){return n.call(t,r,e,o,i)};case 5:return function(r,e,o,i,u){return n.call(t,r,e,o,i,u)}}return function(){return n.apply(t,arguments)}}function Zr(n){return ia.call(n,0)}function Hr(n,t,r){for(var e=r.length,o=-1,i=ba(n.length-e,0),u=-1,a=t.length,c=Uu(i+a);++u<a;)c[u]=t[u];for(;++o<e;)c[r[o]]=n[o];for(;i--;)c[u++]=n[o++];return c}function ne(n,t,r){for(var e=-1,o=r.length,i=-1,u=ba(n.length-o,0),a=-1,c=t.length,f=Uu(u+c);++i<u;)f[i]=n[i];for(var s=i;++a<c;)f[s+a]=t[a];for(;++e<o;)f[s+r[e]]=n[i++];return f}function te(n,t){return function(r,e,o){var i=t?t():{};if(e=ge(e,o,3),Qa(r))for(var u=-1,a=r.length;++u<a;){var c=r[u];n(i,c,e(c,u,r),r)}else _r(r,function(t,r,o){n(i,t,e(t,r,o),o)});return i}}function re(n){return function(){var t=arguments.length,r=arguments[0];if(2>t||null==r)return r;if(t>3&&ke(arguments[1],arguments[2],arguments[3])&&(t=2),t>3&&"function"==typeof arguments[t-2])var e=Kr(arguments[--t-1],arguments[t--],5);else t>2&&"function"==typeof arguments[t-1]&&(e=arguments[--t]);for(var o=0;++o<t;){var i=arguments[o];i&&n(r,i,e)}return r}}function ee(n,t){function r(){return(this instanceof r?e:n).apply(t,arguments)}var e=ie(n);return r}function oe(n){return function(t){for(var r=-1,e=ku(au(t)),o=e.length,i="";++r<o;)i=n(i,e[r],r);return i}}function ie(n){return function(){var t=Ma(n.prototype),r=n.apply(t,arguments);return Si(r)?r:t}}function ue(n,t){return function(r,e,o){o&&ke(r,e,o)&&(e=null);var i=ge(),u=null==e;if(i===hr&&u||(u=!1,e=i(e,o,3)),u){var c=Qa(r);if(c||!Gi(r))return n(c?r:Le(r));e=a}return he(r,e,t)}}function ae(n,t,r,e,o,i,u,a,c,f){function s(){for(var E=arguments.length,w=E,b=Uu(E);w--;)b[w]=arguments[w];if(e&&(b=Hr(b,e,o)),i&&(b=ne(b,i,u)),h||v){var k=s.placeholder,x=_(b,k);if(E-=x.length,f>E){var N=a?Jt(a):null,A=ba(f-E,0),R=h?x:null,I=h?null:x,C=h?b:null,G=h?null:b;t|=h?O:L,t&=~(h?L:O),g||(t&=~(j|S));var D=ae(n,t,r,C,R,G,I,N,c,A);return D.placeholder=k,D}}var T=p?r:this;return d&&(n=T[m]),a&&(b=Re(b,a)),l&&c<b.length&&(b.length=c),(this instanceof s?y||ie(n):n).apply(T,b)}var l=t&G,p=t&j,d=t&S,h=t&R,g=t&A,v=t&I,y=!d&&ie(n),m=n;return s}function ce(n,t,r){var e=n.length;if(t=+t,e>=t||!Ea(t))return"";var o=t-e;return r=null==r?" ":r+"",gu(r,ua(o/r.length)).slice(0,o)}function fe(n,t,r,e){function o(){for(var t=-1,a=arguments.length,c=-1,f=e.length,s=Uu(a+f);++c<f;)s[c]=e[c];for(;a--;)s[c++]=arguments[++t];return(this instanceof o?u:n).apply(i?r:this,s)}var i=t&j,u=ie(n);return o}function se(n,t,r,e,o,i,u,a){var c=t&S;if(!c&&"function"!=typeof n)throw new Yu(W);var f=e?e.length:0;if(f||(t&=~(O|L),e=o=null),f-=o?o.length:0,t&L){var s=e,l=o;e=o=null}var p=!c&&Pa(n),d=[n,t,r,e,o,s,l,i,u,a];if(p&&p!==!0&&(je(d,p),t=d[1],a=d[9]),d[9]=null==a?c?0:n.length:ba(a-f,0)||0,t==j)var h=ee(d[0],d[2]);else h=t!=O&&t!=(j|O)||d[4].length?ae.apply(x,d):fe.apply(x,d);var g=p?Ua:za;return g(h,d)}function le(n,t,r,e,o,i,u){var a=-1,c=n.length,f=t.length,s=!0;if(c!=f&&!(o&&f>c))return!1;for(;s&&++a<c;){var l=n[a],p=t[a];if(s=x,e&&(s=o?e(p,l,a):e(l,p,a)),"undefined"==typeof s)if(o)for(var d=f;d--&&(p=t[d],!(s=l&&l===p||r(l,p,e,o,i,u))););else s=l&&l===p||r(l,p,e,o,i,u)}return!!s}function pe(n,t,r){switch(r){case q:case Y:return+n==+t;case X:return n.name==t.name&&n.message==t.message;case K:return n!=+n?t!=+t:0==n?1/n==1/t:n==+t;case H:case tt:return n==t+""}return!1}function de(n,t,r,e,o,i,u){var a=Ha(n),c=a.length,f=Ha(t),s=f.length;if(c!=s&&!o)return!1;for(var l,p=-1;++p<c;){var d=a[p],h=Hu.call(t,d);if(h){var g=n[d],v=t[d];h=x,e&&(h=o?e(v,g,d):e(g,v,d)),"undefined"==typeof h&&(h=g&&g===v||r(g,v,e,o,i,u))}if(!h)return!1;l||(l="constructor"==d)}if(!l){var y=n.constructor,_=t.constructor;if(y!=_&&"constructor"in n&&"constructor"in t&&!("function"==typeof y&&y instanceof y&&"function"==typeof _&&_ instanceof _))return!1}return!0}function he(n,t,r){var e=r?Ra:Aa,o=e,i=o;return _r(n,function(n,u,a){var c=t(n,u,a);((r?o>c:c>o)||c===e&&c===i)&&(o=c,i=n)}),i}function ge(n,r,e){var o=t.callback||Nu;return o=o===Nu?hr:o,e?o(n,r,e):o}function ve(n,r,e){var i=t.indexOf||Xe;return i=i===Xe?o:i,n?i(n,r,e):i}function ye(n,t,r){for(var e=-1,o=r?r.length:0;++e<o;){var i=r[e],u=i.size;switch(i.type){case"drop":n+=u;break;case"dropRight":t-=u;break;case"take":t=ka(t,n+u);break;case"takeRight":n=ba(n,t-u)}}return{start:n,end:t}}function _e(n){var t=n.length,r=new n.constructor(t);return t&&"string"==typeof n[0]&&Hu.call(n,"index")&&(r.index=n.index,r.input=n.input),r}function me(n){var t=n.constructor;return"function"==typeof t&&t instanceof t||(t=Bu),new t}function Ee(n,t,r){var e=n.constructor;switch(t){case et:return Zr(n);case q:case Y:return new e(+n);case ot:case it:case ut:case at:case ct:case ft:case st:case lt:case pt:var o=n.buffer;return new e(r?Zr(o):o,n.byteOffset,n.length);case K:case tt:return new e(n);case H:var i=new e(n.source,xt.exec(n));i.lastIndex=n.lastIndex}return i}function we(n){var r=t.support,e=!(r.funcNames?n.name:r.funcDecomp);if(!e){var o=Ku.call(n);r.funcNames||(e=!Nt.test(o)),e||(e=Lt.test(o)||Ii(n),Ua(n,e))}return e}function be(n,t){return n=+n,t=null==t?Ga:t,n>-1&&n%1==0&&t>n}function ke(n,t,r){if(!Si(r))return!1;var e=typeof t;if("number"==e)var o=r.length,i=xe(o)&&be(t,o);else i="string"==e&&t in r;return i&&r[t]===n}function xe(n){return"number"==typeof n&&n>-1&&n%1==0&&Ga>=n}function Ne(n){return n===n&&(0===n?1/n>0:!Si(n))}function je(n,t){var r=n[1],e=t[1],o=r|e,i=G|C,u=j|S,a=i|u|A|I,c=r&G&&!(e&G),f=r&C&&!(e&C),s=(f?n:t)[7],l=(c?n:t)[8],p=!(r>=C&&e>u||r>u&&e>=C),d=o>=i&&a>=o&&(C>r||(f||c)&&s.length<=l);if(!p&&!d)return n;e&j&&(n[2]=t[2],o|=r&j?0:A);var h=t[3];if(h){var g=n[3];n[3]=g?Hr(g,h,t[4]):Jt(h),n[4]=g?_(n[3],V):Jt(t[4])}return h=t[5],h&&(g=n[5],n[5]=g?ne(g,h,t[6]):Jt(h),n[6]=g?_(n[5],V):Jt(t[6])),h=t[7],h&&(n[7]=Jt(h)),e&G&&(n[8]=null==n[8]?t[8]:ka(n[8],t[8])),null==n[9]&&(n[9]=t[9]),n[0]=t[0],n[1]=o,n}function Se(n,t){n=Ce(n);for(var r=-1,e=t.length,o={};++r<e;){var i=t[r];i in n&&(o[i]=n[i])}return o}function Ae(n,t){var r={};return Sr(n,function(n,e,o){t(n,e,o)&&(r[e]=n)}),r}function Re(n,t){for(var r=n.length,e=ka(t.length,r),o=Jt(n);e--;){var i=t[e];n[e]=be(i,r)?o[i]:x}return n}function Ie(n){{var r;t.support}if(!v(n)||ta.call(n)!=Z||!Hu.call(n,"constructor")&&(r=n.constructor,"function"==typeof r&&!(r instanceof r)))return!1;var e;return Sr(n,function(n,t){e=t}),"undefined"==typeof e||Hu.call(n,e)}function Oe(n){for(var r=Ji(n),e=r.length,o=e&&n.length,i=t.support,u=o&&xe(o)&&(Qa(n)||i.nonEnumArgs&&mi(n)),a=-1,c=[];++a<e;){var f=r[a];(u&&be(f,o)||Hu.call(n,f))&&c.push(f)}return c}function Le(n){return null==n?[]:xe(n.length)?Si(n)?n:Bu(n):eu(n)}function Ce(n){return Si(n)?n:Bu(n)}function Ge(n){return n instanceof y?n.clone():new r(n.__wrapped__,n.__chain__,Jt(n.__actions__))}function De(n,t,r){t=(r?ke(n,t,r):null==t)?1:ba(+t||1,1);for(var e=0,o=n?n.length:0,i=-1,u=Uu(ua(o/t));o>e;)u[++i]=Br(n,e,e+=t);return u}function Te(n){for(var t=-1,r=n?n.length:0,e=-1,o=[];++t<r;){var i=n[t];i&&(o[++e]=i)}return o}function Me(){for(var n=-1,t=arguments.length;++n<t;){var r=arguments[n];if(Qa(r)||mi(r))break}return yr(r,xr(arguments,!1,!0,++n))}function Ue(n,t,r){var e=n?n.length:0;return e?((r?ke(n,t,r):null==t)&&(t=1),Br(n,0>t?0:t)):[]}function Fe(n,t,r){var e=n?n.length:0;return e?((r?ke(n,t,r):null==t)&&(t=1),t=e-(+t||0),Br(n,0,0>t?0:t)):[]}function Pe(n,t,r){var e=n?n.length:0;if(!e)return[];for(t=ge(t,r,3);e--&&t(n[e],e,n););return Br(n,0,e+1)}function ze(n,t,r){var e=n?n.length:0;if(!e)return[];var o=-1;for(t=ge(t,r,3);++o<e&&t(n[o],o,n););return Br(n,o)}function We(n,t,r,e){var o=n?n.length:0;return o?(r&&"number"!=typeof r&&ke(n,t,r)&&(r=0,e=o),wr(n,t,r,e)):[]}function Ve(n,t,r){var e=-1,o=n?n.length:0;for(t=ge(t,r,3);++e<o;)if(t(n[e],e,n))return e;return-1}function Be(n,t,r){var e=n?n.length:0;for(t=ge(t,r,3);e--;)if(t(n[e],e,n))return e;return-1}function $e(n){return n?n[0]:x}function qe(n,t,r){var e=n?n.length:0;return r&&ke(n,t,r)&&(t=!1),e?xr(n,t):[]}function Ye(n){var t=n?n.length:0;return t?xr(n,!0):[]}function Xe(n,t,r){var e=n?n.length:0;if(!e)return-1;if("number"==typeof r)r=0>r?ba(e+r,0):r||0;else if(r){var i=Qr(n,t),u=n[i];return(t===t?t===u:u!==u)?i:-1}return o(n,t,r)}function Qe(n){return Fe(n,1)}function Je(){for(var n=[],t=-1,r=arguments.length,e=[],i=ve(),u=i==o;++t<r;){var a=arguments[t];(Qa(a)||mi(a))&&(n.push(a),e.push(u&&a.length>=120&&Fa(t&&a)))}r=n.length;var c=n[0],f=-1,s=c?c.length:0,l=[],p=e[0];n:for(;++f<s;)if(a=c[f],(p?Xt(p,a):i(l,a))<0){for(t=r;--t;){var d=e[t];if((d?Xt(d,a):i(n[t],a))<0)continue n}p&&p.push(a),l.push(a)}return l}function Ke(n){var t=n?n.length:0;return t?n[t-1]:x}function Ze(n,t,r){var e=n?n.length:0;if(!e)return-1;var o=e;if("number"==typeof r)o=(0>r?ba(e+r,0):ka(r||0,e-1))+1;else if(r){o=Qr(n,t,!0)-1;var i=n[o];return(t===t?t===i:i!==i)?o:-1}if(t!==t)return g(n,o,!0);for(;o--;)if(n[o]===t)return o;return-1}function He(){var n=arguments[0];if(!n||!n.length)return n;for(var t=0,r=ve(),e=arguments.length;++t<e;)for(var o=0,i=arguments[t];(o=r(n,i,o))>-1;)ha.call(n,o,1);return n}function no(n){return zr(n||[],xr(arguments,!1,!1,1))
-}function to(n,t,r){var e=-1,o=n?n.length:0,i=[];for(t=ge(t,r,3);++e<o;){var u=n[e];t(u,e,n)&&(i.push(u),ha.call(n,e--,1),o--)}return i}function ro(n){return Ue(n,1)}function eo(n,t,r){var e=n?n.length:0;return e?(r&&"number"!=typeof r&&ke(n,t,r)&&(t=0,r=e),Br(n,t,r)):[]}function oo(n,t,r,e){var o=ge(r);return o===hr&&null==r?Qr(n,t):Jr(n,t,o(r,e,1))}function io(n,t,r,e){var o=ge(r);return o===hr&&null==r?Qr(n,t,!0):Jr(n,t,o(r,e,1),!0)}function uo(n,t,r){var e=n?n.length:0;return e?((r?ke(n,t,r):null==t)&&(t=1),Br(n,0,0>t?0:t)):[]}function ao(n,t,r){var e=n?n.length:0;return e?((r?ke(n,t,r):null==t)&&(t=1),t=e-(+t||0),Br(n,0>t?0:t)):[]}function co(n,t,r){var e=n?n.length:0;if(!e)return[];for(t=ge(t,r,3);e--&&t(n[e],e,n););return Br(n,e+1)}function fo(n,t,r){var e=n?n.length:0;if(!e)return[];var o=-1;for(t=ge(t,r,3);++o<e&&t(n[o],o,n););return Br(n,0,o)}function so(){return qr(xr(arguments,!1,!0))}function lo(n,t,r,e){var i=n?n.length:0;if(!i)return[];"boolean"!=typeof t&&null!=t&&(e=r,r=ke(n,t,e)?null:t,t=!1);var u=ge();return(u!==hr||null!=r)&&(r=u(r,e,3)),t&&ve()==o?m(n,r):qr(n,r)}function po(n){for(var t=-1,r=(n&&n.length&&er(rr(n,Zu)))>>>0,e=Uu(r);++t<r;)e[t]=rr(n,Pr(t));return e}function ho(n){return yr(n,Br(arguments,1))}function go(){for(var n=-1,t=arguments.length;++n<t;){var r=arguments[n];if(Qa(r)||mi(r))var e=e?yr(e,r).concat(yr(r,e)):r}return e?qr(e):[]}function vo(){for(var n=arguments.length,t=Uu(n);n--;)t[n]=arguments[n];return po(t)}function yo(n,t){var r=-1,e=n?n.length:0,o={};for(!e||t||Qa(n[0])||(t=[]);++r<e;){var i=n[r];t?o[i]=t[r]:i&&(o[i[0]]=i[1])}return o}function _o(n){var r=t(n);return r.__chain__=!0,r}function mo(n,t,r){return t.call(r,n),n}function Eo(n,t,r){return t.call(r,n)}function wo(){return _o(this)}function bo(){return new r(this.value(),this.__chain__)}function ko(n){for(var t,e=this;e instanceof r;){var o=Ge(e);t?i.__wrapped__=o:t=o;var i=o;e=e.__wrapped__}return i.__wrapped__=n,t}function xo(){var n=this.__wrapped__;return n instanceof y?(this.__actions__.length&&(n=new y(this)),new r(n.reverse(),this.__chain__)):this.thru(function(n){return n.reverse()})}function No(){return this.value()+""}function jo(){return Xr(this.__wrapped__,this.__actions__)}function So(n){var t=n?n.length:0;return xe(t)&&(n=Le(n)),lr(n,xr(arguments,!1,!1,1))}function Ao(n,t,r){var e=n?n.length:0;return xe(e)||(n=eu(n),e=n.length),e?(r="number"==typeof r?0>r?ba(e+r,0):r||0:0,"string"==typeof n||!Qa(n)&&Gi(n)?e>r&&n.indexOf(t,r)>-1:ve(n,t,r)>-1):!1}function Ro(n,t,r){var e=Qa(n)?nr:Er;return("function"!=typeof t||"undefined"!=typeof r)&&(t=ge(t,r,3)),e(n,t)}function Io(n,t,r){var e=Qa(n)?tr:br;return t=ge(t,r,3),e(n,t)}function Oo(n,t,r){if(Qa(n)){var e=Ve(n,t,r);return e>-1?n[e]:x}return t=ge(t,r,3),kr(n,t,_r)}function Lo(n,t,r){return t=ge(t,r,3),kr(n,t,mr)}function Co(n,t){return Oo(n,Tr(t))}function Go(n,t,r){return"function"==typeof t&&"undefined"==typeof r&&Qa(n)?Zt(n,t):_r(n,Kr(t,r,3))}function Do(n,t,r){return"function"==typeof t&&"undefined"==typeof r&&Qa(n)?Ht(n,t):mr(n,Kr(t,r,3))}function To(n,t){return Or(n,t,Br(arguments,2))}function Mo(n,t,r){var e=Qa(n)?rr:Dr;return t=ge(t,r,3),e(n,t)}function Uo(n,t){return Mo(n,Pr(t))}function Fo(n,t,r,e){var o=Qa(n)?ir:Vr;return o(n,ge(t,e,4),r,arguments.length<3,_r)}function Po(n,t,r,e){var o=Qa(n)?ur:Vr;return o(n,ge(t,e,4),r,arguments.length<3,mr)}function zo(n,t,r){var e=Qa(n)?tr:br;return t=ge(t,r,3),e(n,function(n,r,e){return!t(n,r,e)})}function Wo(n,t,r){if(r?ke(n,t,r):null==t){n=Le(n);var e=n.length;return e>0?n[Wr(0,e-1)]:x}var o=Vo(n);return o.length=ka(0>t?0:+t||0,o.length),o}function Vo(n){n=Le(n);for(var t=-1,r=n.length,e=Uu(r);++t<r;){var o=Wr(0,t);t!=o&&(e[t]=e[o]),e[o]=n[t]}return e}function Bo(n){var t=n?n.length:0;return xe(t)?t:Ha(n).length}function $o(n,t,r){var e=Qa(n)?ar:$r;return("function"!=typeof t||"undefined"!=typeof r)&&(t=ge(t,r,3)),e(n,t)}function qo(n,t,r){var e=-1,o=n?n.length:0,u=xe(o)?Uu(o):[];return r&&ke(n,t,r)&&(t=null),t=ge(t,r,3),_r(n,function(n,r,o){u[++e]={criteria:t(n,r,o),index:e,value:n}}),i(u,s)}function Yo(n){var t=arguments;t.length>3&&ke(t[1],t[2],t[3])&&(t=[n,t[1]]);var r=-1,e=n?n.length:0,o=xr(t,!1,!1,1),u=xe(e)?Uu(e):[];return _r(n,function(n){for(var t=o.length,e=Uu(t);t--;)e[t]=null==n?x:n[o[t]];u[++r]={criteria:e,index:r,value:n}}),i(u,l)}function Xo(n,t){return Io(n,Tr(t))}function Qo(n,t){if("function"!=typeof t){if("function"!=typeof n)throw new Yu(W);var r=n;n=t,t=r}return n=Ea(n=+n)?n:0,function(){return--n<1?t.apply(this,arguments):void 0}}function Jo(n,t,r){return r&&ke(n,t,r)&&(t=null),t=n&&null==t?n.length:ba(+t||0,0),se(n,G,null,null,null,null,t)}function Ko(n,t){var r;if("function"!=typeof t){if("function"!=typeof n)throw new Yu(W);var e=n;n=t,t=e}return function(){return--n>0?r=t.apply(this,arguments):t=null,r}}function Zo(n,t){var r=j;if(arguments.length>2){var e=Br(arguments,2),o=_(e,Zo.placeholder);r|=O}return se(n,r,t,e,o)}function Ho(n){return dr(n,arguments.length>1?xr(arguments,!1,!1,1):Yi(n))}function ni(n,t){var r=j|S;if(arguments.length>2){var e=Br(arguments,2),o=_(e,ni.placeholder);r|=O}return se(t,r,n,e,o)}function ti(n,t,r){r&&ke(n,t,r)&&(t=null);var e=se(n,R,null,null,null,null,null,t);return e.placeholder=ti.placeholder,e}function ri(n,t,r){r&&ke(n,t,r)&&(t=null);var e=se(n,I,null,null,null,null,null,t);return e.placeholder=ri.placeholder,e}function ei(n,t,r){function e(){p&&aa(p),c&&aa(c),c=p=d=x}function o(){var r=t-(Xa()-s);if(0>=r||r>t){c&&aa(c);var e=d;c=p=d=x,e&&(h=Xa(),f=n.apply(l,a),p||c||(a=l=null))}else p=da(o,r)}function i(){p&&aa(p),c=p=d=x,(v||g!==t)&&(h=Xa(),f=n.apply(l,a),p||c||(a=l=null))}function u(){if(a=arguments,s=Xa(),l=this,d=v&&(p||!y),g===!1)var r=y&&!p;else{c||y||(h=s);var e=g-(s-h),u=0>=e||e>g;u?(c&&(c=aa(c)),h=s,f=n.apply(l,a)):c||(c=da(i,e))}return u&&p?p=aa(p):p||t===g||(p=da(o,t)),r&&(u=!0,f=n.apply(l,a)),!u||p||c||(a=l=null),f}var a,c,f,s,l,p,d,h=0,g=!1,v=!0;if("function"!=typeof n)throw new Yu(W);if(t=0>t?0:t,r===!0){var y=!0;v=!1}else Si(r)&&(y=r.leading,g="maxWait"in r&&ba(+r.maxWait||0,t),v="trailing"in r?r.trailing:v);return u.cancel=e,u}function oi(n){return vr(n,1,arguments,1)}function ii(n,t){return vr(n,t,arguments,2)}function ui(){var n=arguments,t=n.length;if(!t)return function(){return arguments[0]};if(!nr(n,ji))throw new Yu(W);return function(){for(var r=0,e=n[r].apply(this,arguments);++r<t;)e=n[r].call(this,e);return e}}function ai(){var n=arguments,t=n.length-1;if(0>t)return function(){return arguments[0]};if(!nr(n,ji))throw new Yu(W);return function(){for(var r=t,e=n[r].apply(this,arguments);r--;)e=n[r].call(this,e);return e}}function ci(n,t){if("function"!=typeof n||t&&"function"!=typeof t)throw new Yu(W);var r=function(){var e=r.cache,o=t?t.apply(this,arguments):arguments[0];if(e.has(o))return e.get(o);var i=n.apply(this,arguments);return e.set(o,i),i};return r.cache=new ci.Cache,r}function fi(n){if("function"!=typeof n)throw new Yu(W);return function(){return!n.apply(this,arguments)}}function si(n){return Ko(n,2)}function li(n){var t=Br(arguments,1),r=_(t,li.placeholder);return se(n,O,null,t,r)}function pi(n){var t=Br(arguments,1),r=_(t,pi.placeholder);return se(n,L,null,t,r)}function di(n){var t=xr(arguments,!1,!1,1);return se(n,C,null,null,null,t)}function hi(n){if("function"!=typeof n)throw new Yu(W);return function(t){return n.apply(this,t)}}function gi(n,t,r){var e=!0,o=!0;if("function"!=typeof n)throw new Yu(W);return r===!1?e=!1:Si(r)&&(e="leading"in r?!!r.leading:e,o="trailing"in r?!!r.trailing:o),Pt.leading=e,Pt.maxWait=+t,Pt.trailing=o,ei(n,t,Pt)}function vi(n,t){return t=null==t?Su:t,se(t,O,null,[n],[])}function yi(n,t,r,e){return"boolean"!=typeof t&&null!=t&&(e=r,r=ke(n,t,e)?null:t,t=!1),r="function"==typeof r&&Kr(r,e,1),gr(n,t,r)}function _i(n,t,r){return t="function"==typeof t&&Kr(t,r,1),gr(n,!0,t)}function mi(n){var t=v(n)?n.length:x;return xe(t)&&ta.call(n)==B||!1}function Ei(n){return n===!0||n===!1||v(n)&&ta.call(n)==q||!1}function wi(n){return v(n)&&ta.call(n)==Y||!1}function bi(n){return n&&1===n.nodeType&&v(n)&&ta.call(n).indexOf("Element")>-1||!1}function ki(n){if(null==n)return!0;var t=n.length;return xe(t)&&(Qa(n)||Gi(n)||mi(n)||v(n)&&ji(n.splice))?!t:!Ha(n).length}function xi(n,t,r,e){if(r="function"==typeof r&&Kr(r,e,3),!r&&Ne(n)&&Ne(t))return n===t;var o=r?r(n,t):x;return"undefined"==typeof o?Lr(n,t,r):!!o}function Ni(n){return v(n)&&"string"==typeof n.message&&ta.call(n)==X||!1}function ji(n){return"function"==typeof n||!1}function Si(n){var t=typeof n;return"function"==t||n&&"object"==t||!1}function Ai(n,t,r,e){var o=Ha(t),i=o.length;if(r="function"==typeof r&&Kr(r,e,3),!r&&1==i){var u=o[0],a=t[u];if(Ne(a))return null!=n&&a===n[u]&&Hu.call(n,u)}for(var c=Uu(i),f=Uu(i);i--;)a=c[i]=t[o[i]],f[i]=Ne(a);return Gr(n,o,c,f,r)}function Ri(n){return Li(n)&&n!=+n}function Ii(n){return null==n?!1:ta.call(n)==Q?ea.test(Ku.call(n)):v(n)&&St.test(n)||!1}function Oi(n){return null===n}function Li(n){return"number"==typeof n||v(n)&&ta.call(n)==K||!1}function Ci(n){return v(n)&&ta.call(n)==H||!1}function Gi(n){return"string"==typeof n||v(n)&&ta.call(n)==tt||!1}function Di(n){return v(n)&&xe(n.length)&&Ut[ta.call(n)]||!1}function Ti(n){return"undefined"==typeof n}function Mi(n){var t=n?n.length:0;return xe(t)?t?Jt(n):[]:eu(n)}function Ui(n){return pr(n,Ji(n))}function Fi(n,t,r){var e=Ma(n);return r&&ke(n,t,r)&&(t=null),t?pr(t,e,Ha(t)):e}function Pi(n){if(null==n)return n;var t=Jt(arguments);return t.push(cr),Za.apply(x,t)}function zi(n,t,r){return t=ge(t,r,3),kr(n,t,Ar,!0)}function Wi(n,t,r){return t=ge(t,r,3),kr(n,t,Rr,!0)}function Vi(n,t,r){return("function"!=typeof t||"undefined"!=typeof r)&&(t=Kr(t,r,3)),Nr(n,t,Ji)}function Bi(n,t,r){return t=Kr(t,r,3),jr(n,t,Ji)}function $i(n,t,r){return("function"!=typeof t||"undefined"!=typeof r)&&(t=Kr(t,r,3)),Ar(n,t)}function qi(n,t,r){return t=Kr(t,r,3),jr(n,t,Ha)}function Yi(n){return Ir(n,Ji(n))}function Xi(n,t){return n?Hu.call(n,t):!1}function Qi(n,t,r){r&&ke(n,t,r)&&(t=null);for(var e=-1,o=Ha(n),i=o.length,u={};++e<i;){var a=o[e],c=n[a];t?Hu.call(u,c)?u[c].push(a):u[c]=[a]:u[c]=a}return u}function Ji(n){if(null==n)return[];Si(n)||(n=Bu(n));var t=n.length;t=t&&xe(t)&&(Qa(n)||Ta.nonEnumArgs&&mi(n))&&t||0;for(var r=n.constructor,e=-1,o="function"==typeof r&&r.prototype===n,i=Uu(t),u=t>0;++e<t;)i[e]=e+"";for(var a in n)u&&be(a,t)||"constructor"==a&&(o||!Hu.call(n,a))||i.push(a);return i}function Ki(n,t,r){var e={};return t=ge(t,r,3),Ar(n,function(n,r,o){e[r]=t(n,r,o)}),e}function Zi(n,t,r){if(null==n)return{};if("function"!=typeof t){var e=rr(xr(arguments,!1,!1,1),qu);return Se(n,yr(Ji(n),e))}return t=Kr(t,r,3),Ae(n,function(n,r,e){return!t(n,r,e)})}function Hi(n){for(var t=-1,r=Ha(n),e=r.length,o=Uu(e);++t<e;){var i=r[t];o[t]=[i,n[i]]}return o}function nu(n,t,r){return null==n?{}:"function"==typeof t?Ae(n,Kr(t,r,3)):Se(n,xr(arguments,!1,!1,1))}function tu(n,t,r){var e=null==n?x:n[t];return"undefined"==typeof e&&(e=r),ji(e)?e.call(n):e}function ru(n,t,r,e){var o=Qa(n)||Di(n);if(t=ge(t,e,4),null==r)if(o||Si(n)){var i=n.constructor;r=o?Qa(n)?new i:[]:Ma(ji(i)&&i.prototype)}else r={};return(o?Zt:Ar)(n,function(n,e,o){return t(r,n,e,o)}),r}function eu(n){return Yr(n,Ha(n))}function ou(n){return Yr(n,Ji(n))}function iu(n,t,r){r&&ke(n,t,r)&&(t=r=null);var e=null==n,o=null==t;if(null==r&&(o&&"boolean"==typeof n?(r=n,n=1):"boolean"==typeof t&&(r=t,o=!0)),e&&o&&(t=1,o=!1),n=+n||0,o?(t=n,n=0):t=+t||0,r||n%1||t%1){var i=Sa();return ka(n+i*(t-n+parseFloat("1e-"+((i+"").length-1))),t)}return Wr(n,t)}function uu(n){return n=u(n),n&&n.charAt(0).toUpperCase()+n.slice(1)}function au(n){return n=u(n),n&&n.replace(At,p)}function cu(n,t,r){n=u(n),t+="";var e=n.length;return r=("undefined"==typeof r?e:ka(0>r?0:+r||0,e))-t.length,r>=0&&n.indexOf(t,r)==r}function fu(n){return n=u(n),n&&mt.test(n)?n.replace(yt,d):n}function su(n){return n=u(n),n&&Ot.test(n)?n.replace(It,"\\$&"):n}function lu(n,t,r){n=u(n),t=+t;var e=n.length;if(e>=t||!Ea(t))return n;var o=(t-e)/2,i=ca(o),a=ua(o);return r=ce("",a,r),r.slice(0,i)+n+r}function pu(n,t,r){return n=u(n),n&&ce(n,t,r)+n}function du(n,t,r){return n=u(n),n&&n+ce(n,t,r)}function hu(n,t,r){return r&&ke(n,t,r)&&(t=0),ja(n,t)}function gu(n,t){var r="";if(n=u(n),t=+t,1>t||!n||!Ea(t))return r;do t%2&&(r+=n),t=ca(t/2),n+=n;while(t);return r}function vu(n,t,r){return n=u(n),r=null==r?0:ka(0>r?0:+r||0,n.length),n.lastIndexOf(t,r)==r}function yu(n,r,e){var o=t.templateSettings;e&&ke(n,r,e)&&(r=e=null),n=u(n),r=sr(sr({},e||r),o,fr);var i,a,c=sr(sr({},r.imports),o.imports,fr),f=Ha(c),s=Yr(c,f),l=0,p=r.interpolate||Rt,d="__p += '",g=$u((r.escape||Rt).source+"|"+p.source+"|"+(p===bt?kt:Rt).source+"|"+(r.evaluate||Rt).source+"|$","g"),v="//# sourceURL="+("sourceURL"in r?r.sourceURL:"lodash.templateSources["+ ++Mt+"]")+"\n";n.replace(g,function(t,r,e,o,u,c){return e||(e=o),d+=n.slice(l,c).replace(Ct,h),r&&(i=!0,d+="' +\n__e("+r+") +\n'"),u&&(a=!0,d+="';\n"+u+";\n__p += '"),e&&(d+="' +\n((__t = ("+e+")) == null ? '' : __t) +\n'"),l=c+t.length,t}),d+="';\n";var y=r.variable;y||(d="with (obj) {\n"+d+"\n}\n"),d=(a?d.replace(dt,""):d).replace(ht,"$1").replace(gt,"$1;"),d="function("+(y||"obj")+") {\n"+(y?"":"obj || (obj = {});\n")+"var __t, __p = ''"+(i?", __e = _.escape":"")+(a?", __j = Array.prototype.join;\nfunction print() { __p += __j.call(arguments, '') }\n":";\n")+d+"return __p\n}";var _=xu(function(){return zu(f,v+"return "+d).apply(x,s)});if(_.source=d,Ni(_))throw _;return _}function _u(n,t,r){var e=n;return(n=u(n))?(r?ke(e,t,r):null==t)?n.slice(E(n),w(n)+1):(t+="",n.slice(c(n,t),f(n,t)+1)):n}function mu(n,t,r){var e=n;return n=u(n),n?n.slice((r?ke(e,t,r):null==t)?E(n):c(n,t+"")):n}function Eu(n,t,r){var e=n;return n=u(n),n?(r?ke(e,t,r):null==t)?n.slice(0,w(n)+1):n.slice(0,f(n,t+"")+1):n}function wu(n,t,r){r&&ke(n,t,r)&&(t=null);var e=D,o=T;if(null!=t)if(Si(t)){var i="separator"in t?t.separator:i;e="length"in t?+t.length||0:e,o="omission"in t?u(t.omission):o}else e=+t||0;if(n=u(n),e>=n.length)return n;var a=e-o.length;if(1>a)return o;var c=n.slice(0,a);if(null==i)return c+o;if(Ci(i)){if(n.slice(a).search(i)){var f,s,l=n.slice(0,a);for(i.global||(i=$u(i.source,(xt.exec(i)||"")+"g")),i.lastIndex=0;f=i.exec(l);)s=f.index;c=c.slice(0,null==s?a:s)}}else if(n.indexOf(i,a)!=a){var p=c.lastIndexOf(i);p>-1&&(c=c.slice(0,p))}return c+o}function bu(n){return n=u(n),n&&_t.test(n)?n.replace(vt,b):n}function ku(n,t,r){return r&&ke(n,t,r)&&(t=null),n=u(n),n.match(t||Gt)||[]}function xu(n){try{return n.apply(x,Br(arguments,1))}catch(t){return Ni(t)?t:new Pu(t)}}function Nu(n,t,r){return r&&ke(n,t,r)&&(t=null),v(n)?Au(n):hr(n,t)}function ju(n){return function(){return n}}function Su(n){return n}function Au(n){return Tr(gr(n,!0))}function Ru(n,t){return Mr(n+"",gr(t,!0))}function Iu(n,t,r){if(null==r){var e=Si(t),o=e&&Ha(t),i=o&&o.length&&Ir(t,o);(i?i.length:e)||(i=!1,r=t,t=n,n=this)}i||(i=Ir(t,Ha(t)));var u=!0,a=-1,c=ji(n),f=i.length;r===!1?u=!1:Si(r)&&"chain"in r&&(u=r.chain);for(;++a<f;){var s=i[a],l=t[s];n[s]=l,c&&(n.prototype[s]=function(t){return function(){var r=this.__chain__;if(u||r){var e=n(this.__wrapped__);return(e.__actions__=Jt(this.__actions__)).push({func:t,args:arguments,thisArg:n}),e.__chain__=r,e}var o=[this.value()];return sa.apply(o,arguments),t.apply(n,o)}}(l))}return n}function Ou(){return n._=ra,this}function Lu(){}function Cu(n){return Pr(n+"")}function Gu(n){return function(t){return null==n?x:n[t]}}function Du(n,t,r){r&&ke(n,t,r)&&(t=r=null),n=+n||0,r=null==r?1:+r||0,null==t?(t=n,n=0):t=+t||0;for(var e=-1,o=ba(ua((t-n)/(r||1)),0),i=Uu(o);++e<o;)i[e]=n,n+=r;return i}function Tu(n,t,r){if(n=+n,1>n||!Ea(n))return[];var e=-1,o=Uu(ka(n,Ia));for(t=Kr(t,r,1);++e<n;)Ia>e?o[e]=t(e):t(e);return o}function Mu(n){var t=++na;return u(n)+t}n=n?Kt.defaults(qt.Object(),n,Kt.pick(qt,Tt)):qt;var Uu=n.Array,Fu=n.Date,Pu=n.Error,zu=n.Function,Wu=n.Math,Vu=n.Number,Bu=n.Object,$u=n.RegExp,qu=n.String,Yu=n.TypeError,Xu=Uu.prototype,Qu=Bu.prototype,Ju=(Ju=n.window)&&Ju.document,Ku=zu.prototype.toString,Zu=Pr("length"),Hu=Qu.hasOwnProperty,na=0,ta=Qu.toString,ra=n._,ea=$u("^"+su(ta).replace(/toString|(function).*?(?=\\\()| for .+?(?=\\\])/g,"$1.*?")+"$"),oa=Ii(oa=n.ArrayBuffer)&&oa,ia=Ii(ia=oa&&new oa(0).slice)&&ia,ua=Wu.ceil,aa=n.clearTimeout,ca=Wu.floor,fa=Ii(fa=Bu.getPrototypeOf)&&fa,sa=Xu.push,la=Qu.propertyIsEnumerable,pa=Ii(pa=n.Set)&&pa,da=n.setTimeout,ha=Xu.splice,ga=Ii(ga=n.Uint8Array)&&ga,va=Ii(va=n.WeakMap)&&va,ya=function(){try{var t=Ii(t=n.Float64Array)&&t,r=new t(new oa(10),0,1)&&t}catch(e){}return r}(),_a=Ii(_a=Uu.isArray)&&_a,ma=Ii(ma=Bu.create)&&ma,Ea=n.isFinite,wa=Ii(wa=Bu.keys)&&wa,ba=Wu.max,ka=Wu.min,xa=Ii(xa=Fu.now)&&xa,Na=Ii(Na=Vu.isFinite)&&Na,ja=n.parseInt,Sa=Wu.random,Aa=Vu.NEGATIVE_INFINITY,Ra=Vu.POSITIVE_INFINITY,Ia=Wu.pow(2,32)-1,Oa=Ia-1,La=Ia>>>1,Ca=ya?ya.BYTES_PER_ELEMENT:0,Ga=Wu.pow(2,53)-1,Da=va&&new va,Ta=t.support={};!function(){Ta.funcDecomp=!Ii(n.WinRTError)&&Lt.test(k),Ta.funcNames="string"==typeof zu.name;try{Ta.dom=11===Ju.createDocumentFragment().nodeType}catch(t){Ta.dom=!1}try{Ta.nonEnumArgs=!la.call(arguments,1)}catch(t){Ta.nonEnumArgs=!0}}(0,0),t.templateSettings={escape:Et,evaluate:wt,interpolate:bt,variable:"",imports:{_:t}};var Ma=function(){function t(){}return function(r){if(Si(r)){t.prototype=r;var e=new t;t.prototype=null}return e||n.Object()}}(),Ua=Da?function(n,t){return Da.set(n,t),n}:Su;ia||(Zr=oa&&ga?function(n){var t=n.byteLength,r=ya?ca(t/Ca):0,e=r*Ca,o=new oa(t);if(r){var i=new ya(o,0,r);i.set(new ya(n,0,r))}return t!=e&&(i=new ga(o,e),i.set(new ga(n,e))),o}:ju(null));var Fa=ma&&pa?function(n){return new Yt(n)}:ju(null),Pa=Da?function(n){return Da.get(n)}:Lu,za=function(){var n=0,t=0;return function(r,e){var o=Xa(),i=U-(o-t);if(t=o,i>0){if(++n>=M)return r}else n=0;return Ua(r,e)}}(),Wa=te(function(n,t,r){Hu.call(n,r)?++n[r]:n[r]=1}),Va=te(function(n,t,r){Hu.call(n,r)?n[r].push(t):n[r]=[t]}),Ba=te(function(n,t,r){n[r]=t}),$a=ue(er),qa=ue(or,!0),Ya=te(function(n,t,r){n[r?0:1].push(t)},function(){return[[],[]]}),Xa=xa||function(){return(new Fu).getTime()},Qa=_a||function(n){return v(n)&&xe(n.length)&&ta.call(n)==$||!1};Ta.dom||(bi=function(n){return n&&1===n.nodeType&&v(n)&&!Ka(n)||!1});var Ja=Na||function(n){return"number"==typeof n&&Ea(n)};(ji(/x/)||ga&&!ji(ga))&&(ji=function(n){return ta.call(n)==Q});var Ka=fa?function(n){if(!n||ta.call(n)!=Z)return!1;var t=n.valueOf,r=Ii(t)&&(r=fa(t))&&fa(r);return r?n==r||fa(n)==r:Ie(n)}:Ie,Za=re(sr),Ha=wa?function(n){if(n)var t=n.constructor,r=n.length;return"function"==typeof t&&t.prototype===n||"function"!=typeof n&&r&&xe(r)?Oe(n):Si(n)?wa(n):[]}:Oe,nc=re(Ur),tc=oe(function(n,t,r){return t=t.toLowerCase(),n+(r?t.charAt(0).toUpperCase()+t.slice(1):t)}),rc=oe(function(n,t,r){return n+(r?"-":"")+t.toLowerCase()});8!=ja(Dt+"08")&&(hu=function(n,t,r){return(r?ke(n,t,r):null==t)?t=0:t&&(t=+t),n=_u(n),ja(n,t||(jt.test(n)?16:10))});var ec=oe(function(n,t,r){return n+(r?"_":"")+t.toLowerCase()}),oc=oe(function(n,t,r){return n+(r?" ":"")+(t.charAt(0).toUpperCase()+t.slice(1))});return r.prototype=Ma(t.prototype),y.prototype=Ma(r.prototype),y.prototype.constructor=y,zt.prototype["delete"]=Wt,zt.prototype.get=Vt,zt.prototype.has=Bt,zt.prototype.set=$t,Yt.prototype.push=Qt,ci.Cache=zt,t.after=Qo,t.ary=Jo,t.assign=Za,t.at=So,t.before=Ko,t.bind=Zo,t.bindAll=Ho,t.bindKey=ni,t.callback=Nu,t.chain=_o,t.chunk=De,t.compact=Te,t.constant=ju,t.countBy=Wa,t.create=Fi,t.curry=ti,t.curryRight=ri,t.debounce=ei,t.defaults=Pi,t.defer=oi,t.delay=ii,t.difference=Me,t.drop=Ue,t.dropRight=Fe,t.dropRightWhile=Pe,t.dropWhile=ze,t.fill=We,t.filter=Io,t.flatten=qe,t.flattenDeep=Ye,t.flow=ui,t.flowRight=ai,t.forEach=Go,t.forEachRight=Do,t.forIn=Vi,t.forInRight=Bi,t.forOwn=$i,t.forOwnRight=qi,t.functions=Yi,t.groupBy=Va,t.indexBy=Ba,t.initial=Qe,t.intersection=Je,t.invert=Qi,t.invoke=To,t.keys=Ha,t.keysIn=Ji,t.map=Mo,t.mapValues=Ki,t.matches=Au,t.matchesProperty=Ru,t.memoize=ci,t.merge=nc,t.mixin=Iu,t.negate=fi,t.omit=Zi,t.once=si,t.pairs=Hi,t.partial=li,t.partialRight=pi,t.partition=Ya,t.pick=nu,t.pluck=Uo,t.property=Cu,t.propertyOf=Gu,t.pull=He,t.pullAt=no,t.range=Du,t.rearg=di,t.reject=zo,t.remove=to,t.rest=ro,t.shuffle=Vo,t.slice=eo,t.sortBy=qo,t.sortByAll=Yo,t.spread=hi,t.take=uo,t.takeRight=ao,t.takeRightWhile=co,t.takeWhile=fo,t.tap=mo,t.throttle=gi,t.thru=Eo,t.times=Tu,t.toArray=Mi,t.toPlainObject=Ui,t.transform=ru,t.union=so,t.uniq=lo,t.unzip=po,t.values=eu,t.valuesIn=ou,t.where=Xo,t.without=ho,t.wrap=vi,t.xor=go,t.zip=vo,t.zipObject=yo,t.backflow=ai,t.collect=Mo,t.compose=ai,t.each=Go,t.eachRight=Do,t.extend=Za,t.iteratee=Nu,t.methods=Yi,t.object=yo,t.select=Io,t.tail=ro,t.unique=lo,Iu(t,t),t.attempt=xu,t.camelCase=tc,t.capitalize=uu,t.clone=yi,t.cloneDeep=_i,t.deburr=au,t.endsWith=cu,t.escape=fu,t.escapeRegExp=su,t.every=Ro,t.find=Oo,t.findIndex=Ve,t.findKey=zi,t.findLast=Lo,t.findLastIndex=Be,t.findLastKey=Wi,t.findWhere=Co,t.first=$e,t.has=Xi,t.identity=Su,t.includes=Ao,t.indexOf=Xe,t.isArguments=mi,t.isArray=Qa,t.isBoolean=Ei,t.isDate=wi,t.isElement=bi,t.isEmpty=ki,t.isEqual=xi,t.isError=Ni,t.isFinite=Ja,t.isFunction=ji,t.isMatch=Ai,t.isNaN=Ri,t.isNative=Ii,t.isNull=Oi,t.isNumber=Li,t.isObject=Si,t.isPlainObject=Ka,t.isRegExp=Ci,t.isString=Gi,t.isTypedArray=Di,t.isUndefined=Ti,t.kebabCase=rc,t.last=Ke,t.lastIndexOf=Ze,t.max=$a,t.min=qa,t.noConflict=Ou,t.noop=Lu,t.now=Xa,t.pad=lu,t.padLeft=pu,t.padRight=du,t.parseInt=hu,t.random=iu,t.reduce=Fo,t.reduceRight=Po,t.repeat=gu,t.result=tu,t.runInContext=k,t.size=Bo,t.snakeCase=ec,t.some=$o,t.sortedIndex=oo,t.sortedLastIndex=io,t.startCase=oc,t.startsWith=vu,t.template=yu,t.trim=_u,t.trimLeft=mu,t.trimRight=Eu,t.trunc=wu,t.unescape=bu,t.uniqueId=Mu,t.words=ku,t.all=Ro,t.any=$o,t.contains=Ao,t.detect=Oo,t.foldl=Fo,t.foldr=Po,t.head=$e,t.include=Ao,t.inject=Fo,Iu(t,function(){var n={};return Ar(t,function(r,e){t.prototype[e]||(n[e]=r)}),n}(),!1),t.sample=Wo,t.prototype.sample=function(n){return this.__chain__||null!=n?this.thru(function(t){return Wo(t,n)}):Wo(this.value())},t.VERSION=N,Zt(["bind","bindKey","curry","curryRight","partial","partialRight"],function(n){t[n].placeholder=t}),Zt(["filter","map","takeWhile"],function(n,t){var r=t==F,e=t==z;y.prototype[n]=function(n,o){var i=this.clone(),u=i.__filtered__,a=i.__iteratees__||(i.__iteratees__=[]);return i.__filtered__=u||r||e&&i.__dir__<0,a.push({iteratee:ge(n,o,3),type:t}),i}}),Zt(["drop","take"],function(n,t){var r="__"+n+"Count__",e=n+"While";y.prototype[n]=function(e){e=null==e?1:ba(ca(e)||0,0);var o=this.clone();if(o.__filtered__){var i=o[r];o[r]=t?ka(i,e):i+e}else{var u=o.__views__||(o.__views__=[]);u.push({size:e,type:n+(o.__dir__<0?"Right":"")})}return o},y.prototype[n+"Right"]=function(t){return this.reverse()[n](t).reverse()},y.prototype[n+"RightWhile"]=function(n,t){return this.reverse()[e](n,t).reverse()}}),Zt(["first","last"],function(n,t){var r="take"+(t?"Right":"");y.prototype[n]=function(){return this[r](1).value()[0]}}),Zt(["initial","rest"],function(n,t){var r="drop"+(t?"":"Right");y.prototype[n]=function(){return this[r](1)}}),Zt(["pluck","where"],function(n,t){var r=t?"filter":"map",e=t?Tr:Pr;y.prototype[n]=function(n){return this[r](e(n))}}),y.prototype.compact=function(){return this.filter(Su)},y.prototype.dropWhile=function(n,t){var r;return n=ge(n,t,3),this.filter(function(t,e,o){return r||(r=!n(t,e,o))})},y.prototype.reject=function(n,t){return n=ge(n,t,3),this.filter(function(t,r,e){return!n(t,r,e)})},y.prototype.slice=function(n,t){n=null==n?0:+n||0;var r=0>n?this.takeRight(-n):this.drop(n);return"undefined"!=typeof t&&(t=+t||0,r=0>t?r.dropRight(-t):r.take(t-n)),r},y.prototype.toArray=function(){return this.drop(0)},Ar(y.prototype,function(n,e){var o=t[e],i=/^(?:first|last)$/.test(e);t.prototype[e]=function(){var e=this.__wrapped__,u=arguments,a=this.__chain__,c=!!this.__actions__.length,f=e instanceof y,s=f&&!c;if(i&&!a)return s?n.call(e):o.call(t,this.value());var l=function(n){var r=[n];return sa.apply(r,u),o.apply(t,r)};if(f||Qa(e)){var p=s?e:new y(this),d=n.apply(p,u);if(!i&&(c||d.__actions__)){var h=d.__actions__||(d.__actions__=[]);h.push({func:Eo,args:[l],thisArg:t})}return new r(d,a)}return this.thru(l)}}),Zt(["concat","join","pop","push","shift","sort","splice","unshift"],function(n){var r=Xu[n],e=/^(?:push|sort|unshift)$/.test(n)?"tap":"thru",o=/^(?:join|pop|shift)$/.test(n);t.prototype[n]=function(){var n=arguments;return o&&!this.__chain__?r.apply(this.value(),n):this[e](function(t){return r.apply(t,n)})}}),y.prototype.clone=J,y.prototype.reverse=nt,y.prototype.value=rt,t.prototype.chain=wo,t.prototype.commit=bo,t.prototype.plant=ko,t.prototype.reverse=xo,t.prototype.toString=No,t.prototype.run=t.prototype.toJSON=t.prototype.valueOf=t.prototype.value=jo,t.prototype.collect=t.prototype.map,t.prototype.head=t.prototype.first,t.prototype.select=t.prototype.filter,t.prototype.tail=t.prototype.rest,t}var x,N="3.2.0",j=1,S=2,A=4,R=8,I=16,O=32,L=64,C=128,G=256,D=30,T="...",M=150,U=16,F=0,P=1,z=2,W="Expected a function",V="__lodash_placeholder__",B="[object Arguments]",$="[object Array]",q="[object Boolean]",Y="[object Date]",X="[object Error]",Q="[object Function]",J="[object Map]",K="[object Number]",Z="[object Object]",H="[object RegExp]",nt="[object Set]",tt="[object String]",rt="[object WeakMap]",et="[object ArrayBuffer]",ot="[object Float32Array]",it="[object Float64Array]",ut="[object Int8Array]",at="[object Int16Array]",ct="[object Int32Array]",ft="[object Uint8Array]",st="[object Uint8ClampedArray]",lt="[object Uint16Array]",pt="[object Uint32Array]",dt=/\b__p \+= '';/g,ht=/\b(__p \+=) '' \+/g,gt=/(__e\(.*?\)|\b__t\)) \+\n'';/g,vt=/&(?:amp|lt|gt|quot|#39|#96);/g,yt=/[&<>"'`]/g,_t=RegExp(vt.source),mt=RegExp(yt.source),Et=/<%-([\s\S]+?)%>/g,wt=/<%([\s\S]+?)%>/g,bt=/<%=([\s\S]+?)%>/g,kt=/\$\{([^\\}]*(?:\\.[^\\}]*)*)\}/g,xt=/\w*$/,Nt=/^\s*function[ \n\r\t]+\w/,jt=/^0[xX]/,St=/^\[object .+?Constructor\]$/,At=/[\xc0-\xd6\xd8-\xde\xdf-\xf6\xf8-\xff]/g,Rt=/($^)/,It=/[.*+?^${}()|[\]\/\\]/g,Ot=RegExp(It.source),Lt=/\bthis\b/,Ct=/['\n\r\u2028\u2029\\]/g,Gt=function(){var n="[A-Z\\xc0-\\xd6\\xd8-\\xde]",t="[a-z\\xdf-\\xf6\\xf8-\\xff]+";return RegExp(n+"{2,}(?="+n+t+")|"+n+"?"+t+"|"+n+"+|[0-9]+","g")}(),Dt=" 	\f ﻿\n\r\u2028\u2029 ᠎             　",Tt=["Array","ArrayBuffer","Date","Error","Float32Array","Float64Array","Function","Int8Array","Int16Array","Int32Array","Math","Number","Object","RegExp","Set","String","_","clearTimeout","document","isFinite","parseInt","setTimeout","TypeError","Uint8Array","Uint8ClampedArray","Uint16Array","Uint32Array","WeakMap","window","WinRTError"],Mt=-1,Ut={};Ut[ot]=Ut[it]=Ut[ut]=Ut[at]=Ut[ct]=Ut[ft]=Ut[st]=Ut[lt]=Ut[pt]=!0,Ut[B]=Ut[$]=Ut[et]=Ut[q]=Ut[Y]=Ut[X]=Ut[Q]=Ut[J]=Ut[K]=Ut[Z]=Ut[H]=Ut[nt]=Ut[tt]=Ut[rt]=!1;var Ft={};Ft[B]=Ft[$]=Ft[et]=Ft[q]=Ft[Y]=Ft[ot]=Ft[it]=Ft[ut]=Ft[at]=Ft[ct]=Ft[K]=Ft[Z]=Ft[H]=Ft[tt]=Ft[ft]=Ft[st]=Ft[lt]=Ft[pt]=!0,Ft[X]=Ft[Q]=Ft[J]=Ft[nt]=Ft[rt]=!1;var Pt={leading:!1,maxWait:0,trailing:!1},zt={"À":"A","Á":"A","Â":"A","Ã":"A","Ä":"A","Å":"A","à":"a","á":"a","â":"a","ã":"a","ä":"a","å":"a","Ç":"C","ç":"c","Ð":"D","ð":"d","È":"E","É":"E","Ê":"E","Ë":"E","è":"e","é":"e","ê":"e","ë":"e","Ì":"I","Í":"I","Î":"I","Ï":"I","ì":"i","í":"i","î":"i","ï":"i","Ñ":"N","ñ":"n","Ò":"O","Ó":"O","Ô":"O","Õ":"O","Ö":"O","Ø":"O","ò":"o","ó":"o","ô":"o","õ":"o","ö":"o","ø":"o","Ù":"U","Ú":"U","Û":"U","Ü":"U","ù":"u","ú":"u","û":"u","ü":"u","Ý":"Y","ý":"y","ÿ":"y","Æ":"Ae","æ":"ae","Þ":"Th","þ":"th","ß":"ss"},Wt={"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;","`":"&#96;"},Vt={"&amp;":"&","&lt;":"<","&gt;":">","&quot;":'"',"&#39;":"'","&#96;":"`"},Bt={"function":!0,object:!0},$t={"\\":"\\","'":"'","\n":"n","\r":"r","\u2028":"u2028","\u2029":"u2029"},qt=Bt[typeof window]&&window!==(this&&this.window)?window:this,Yt=Bt[typeof r]&&r&&!r.nodeType&&r,Xt=Bt[typeof t]&&t&&!t.nodeType&&t,Qt=Yt&&Xt&&"object"==typeof n&&n;!Qt||Qt.global!==Qt&&Qt.window!==Qt&&Qt.self!==Qt||(qt=Qt);var Jt=Xt&&Xt.exports===Yt&&Yt,Kt=k();"function"==typeof define&&"object"==typeof define.amd&&define.amd?(qt._=Kt,define(function(){return Kt})):Yt&&Xt?Jt?(Xt.exports=Kt)._=Kt:Yt._=Kt:qt._=Kt}).call(this)}).call(this,"undefined"!=typeof global?global:"undefined"!=typeof self?self:"undefined"!=typeof window?window:{})},{}],q:[function(n,t,r){(function(n){!function(n){if("function"==typeof bootstrap)bootstrap("promise",n);else if("object"==typeof r)t.exports=n();else if("function"==typeof define&&define.amd)define(n);else if("undefined"!=typeof ses){if(!ses.ok())return;ses.makeQ=n}else Q=n()}(function(){"use strict";function t(n){return function(){return X.apply(n,arguments)}}function r(n){return n===Object(n)}function e(n){return"[object StopIteration]"===rt(n)||n instanceof B}function o(n,t){if(z&&t.stack&&"object"==typeof n&&null!==n&&n.stack&&-1===n.stack.indexOf(et)){for(var r=[],e=t;e;e=e.source)e.stack&&r.unshift(e.stack);r.unshift(n.stack);var o=r.join("\n"+et+"\n");n.stack=i(o)}}function i(n){for(var t=n.split("\n"),r=[],e=0;e<t.length;++e){var o=t[e];c(o)||u(o)||!o||r.push(o)}return r.join("\n")}function u(n){return-1!==n.indexOf("(module.js:")||-1!==n.indexOf("(node.js:")}function a(n){var t=/at .+ \((.+):(\d+):(?:\d+)\)$/.exec(n);if(t)return[t[1],Number(t[2])];var r=/at ([^ ]+):(\d+):(?:\d+)$/.exec(n);if(r)return[r[1],Number(r[2])];var e=/.*@(.+):(\d+)$/.exec(n);return e?[e[1],Number(e[2])]:void 0}function c(n){var t=a(n);if(!t)return!1;var r=t[0],e=t[1];return r===V&&e>=$&&at>=e}function f(){if(z)try{throw new Error}catch(n){var t=n.stack.split("\n"),r=t[0].indexOf("@")>0?t[1]:t[2],e=a(r);if(!e)return;return V=e[0],e[1]}}function s(n,t,r){return function(){return"undefined"!=typeof console&&"function"==typeof console.warn&&console.warn(t+" is deprecated, use "+r+" instead.",new Error("").stack),n.apply(n,arguments)}}function l(n){return _(n)?n:m(n)?A(n):S(n)}function p(){function n(n){t=n,i.source=n,J(r,function(t,r){Y(function(){n.promiseDispatch.apply(n,r)})},void 0),r=void 0,e=void 0}var t,r=[],e=[],o=H(p.prototype),i=H(g.prototype);if(i.promiseDispatch=function(n,o,i){var u=Q(arguments);r?(r.push(u),"when"===o&&i[1]&&e.push(i[1])):Y(function(){t.promiseDispatch.apply(t,u)})},i.valueOf=function(){if(r)return i;var n=y(t);return _(n)&&(t=n),n},i.inspect=function(){return t?t.inspect():{state:"pending"}},l.longStackSupport&&z)try{throw new Error}catch(u){i.stack=u.stack.substring(u.stack.indexOf("\n")+1)}return o.promise=i,o.resolve=function(r){t||n(l(r))},o.fulfill=function(r){t||n(S(r))},o.reject=function(r){t||n(j(r))},o.notify=function(n){t||J(e,function(t,r){Y(function(){r(n)})},void 0)},o}function d(n){if("function"!=typeof n)throw new TypeError("resolver must be a function.");var t=p();try{n(t.resolve,t.reject,t.notify)}catch(r){t.reject(r)}return t.promise}function h(n){return d(function(t,r){for(var e=0,o=n.length;o>e;e++)l(n[e]).then(t,r)})}function g(n,t,r){void 0===t&&(t=function(n){return j(new Error("Promise does not support operation: "+n))}),void 0===r&&(r=function(){return{state:"unknown"}});var e=H(g.prototype);if(e.promiseDispatch=function(r,o,i){var u;try{u=n[o]?n[o].apply(e,i):t.call(e,o,i)}catch(a){u=j(a)}r&&r(u)},e.inspect=r,r){var o=r();"rejected"===o.state&&(e.exception=o.reason),e.valueOf=function(){var n=r();return"pending"===n.state||"rejected"===n.state?e:n.value}}return e}function v(n,t,r,e){return l(n).then(t,r,e)}function y(n){if(_(n)){var t=n.inspect();if("fulfilled"===t.state)return t.value}return n}function _(n){return r(n)&&"function"==typeof n.promiseDispatch&&"function"==typeof n.inspect}function m(n){return r(n)&&"function"==typeof n.then}function E(n){return _(n)&&"pending"===n.inspect().state}function w(n){return!_(n)||"fulfilled"===n.inspect().state}function b(n){return _(n)&&"rejected"===n.inspect().state}function k(){ot.length=0,it.length=0,ut||(ut=!0)}function x(n,t){ut&&(it.push(n),ot.push(t&&"undefined"!=typeof t.stack?t.stack:"(no stack) "+t))}function N(n){if(ut){var t=K(it,n);
--1!==t&&(it.splice(t,1),ot.splice(t,1))}}function j(n){var t=g({when:function(t){return t&&N(this),t?t(n):this}},function(){return this},function(){return{state:"rejected",reason:n}});return x(t,n),t}function S(n){return g({when:function(){return n},get:function(t){return n[t]},set:function(t,r){n[t]=r},"delete":function(t){delete n[t]},post:function(t,r){return null===t||void 0===t?n.apply(void 0,r):n[t].apply(n,r)},apply:function(t,r){return n.apply(t,r)},keys:function(){return tt(n)}},void 0,function(){return{state:"fulfilled",value:n}})}function A(n){var t=p();return Y(function(){try{n.then(t.resolve,t.reject,t.notify)}catch(r){t.reject(r)}}),t.promise}function R(n){return g({isDef:function(){}},function(t,r){return D(n,t,r)},function(){return l(n).inspect()})}function I(n,t,r){return l(n).spread(t,r)}function O(n){return function(){function t(n,t){var u;if("undefined"==typeof StopIteration){try{u=r[n](t)}catch(a){return j(a)}return u.done?u.value:v(u.value,o,i)}try{u=r[n](t)}catch(a){return e(a)?a.value:j(a)}return v(u,o,i)}var r=n.apply(this,arguments),o=t.bind(t,"next"),i=t.bind(t,"throw");return o()}}function L(n){l.done(l.async(n)())}function C(n){throw new B(n)}function G(n){return function(){return I([this,T(arguments)],function(t,r){return n.apply(t,r)})}}function D(n,t,r){return l(n).dispatch(t,r)}function T(n){return v(n,function(n){var t=0,r=p();return J(n,function(e,o,i){var u;_(o)&&"fulfilled"===(u=o.inspect()).state?n[i]=u.value:(++t,v(o,function(e){n[i]=e,0===--t&&r.resolve(n)},r.reject,function(n){r.notify({index:i,value:n})}))},void 0),0===t&&r.resolve(n),r.promise})}function M(n){return v(n,function(n){return n=Z(n,l),v(T(Z(n,function(n){return v(n,q,q)})),function(){return n})})}function U(n){return l(n).allSettled()}function F(n,t){return l(n).then(void 0,void 0,t)}function P(n,t){return l(n).nodeify(t)}var z=!1;try{throw new Error}catch(W){z=!!W.stack}var V,B,$=f(),q=function(){},Y=function(){function t(){for(;r.next;){r=r.next;var n=r.task;r.task=void 0;var e=r.domain;e&&(r.domain=void 0,e.enter());try{n()}catch(i){if(u)throw e&&e.exit(),setTimeout(t,0),e&&e.enter(),i;setTimeout(function(){throw i},0)}e&&e.exit()}o=!1}var r={task:void 0,next:null},e=r,o=!1,i=void 0,u=!1;if(Y=function(t){e=e.next={task:t,domain:u&&n.domain,next:null},o||(o=!0,i())},"undefined"!=typeof n&&n.nextTick)u=!0,i=function(){n.nextTick(t)};else if("function"==typeof setImmediate)i="undefined"!=typeof window?setImmediate.bind(window,t):function(){setImmediate(t)};else if("undefined"!=typeof MessageChannel){var a=new MessageChannel;a.port1.onmessage=function(){i=c,a.port1.onmessage=t,t()};var c=function(){a.port2.postMessage(0)};i=function(){setTimeout(t,0),c()}}else i=function(){setTimeout(t,0)};return Y}(),X=Function.call,Q=t(Array.prototype.slice),J=t(Array.prototype.reduce||function(n,t){var r=0,e=this.length;if(1===arguments.length)for(;;){if(r in this){t=this[r++];break}if(++r>=e)throw new TypeError}for(;e>r;r++)r in this&&(t=n(t,this[r],r));return t}),K=t(Array.prototype.indexOf||function(n){for(var t=0;t<this.length;t++)if(this[t]===n)return t;return-1}),Z=t(Array.prototype.map||function(n,t){var r=this,e=[];return J(r,function(o,i,u){e.push(n.call(t,i,u,r))},void 0),e}),H=Object.create||function(n){function t(){}return t.prototype=n,new t},nt=t(Object.prototype.hasOwnProperty),tt=Object.keys||function(n){var t=[];for(var r in n)nt(n,r)&&t.push(r);return t},rt=t(Object.prototype.toString);B="undefined"!=typeof ReturnValue?ReturnValue:function(n){this.value=n};var et="From previous event:";l.resolve=l,l.nextTick=Y,l.longStackSupport=!1,l.defer=p,p.prototype.makeNodeResolver=function(){var n=this;return function(t,r){t?n.reject(t):n.resolve(arguments.length>2?Q(arguments,1):r)}},l.Promise=d,l.promise=d,d.race=h,d.all=T,d.reject=j,d.resolve=l,l.passByCopy=function(n){return n},g.prototype.passByCopy=function(){return this},l.join=function(n,t){return l(n).join(t)},g.prototype.join=function(n){return l([this,n]).spread(function(n,t){if(n===t)return n;throw new Error("Can't join: not the same: "+n+" "+t)})},l.race=h,g.prototype.race=function(){return this.then(l.race)},l.makePromise=g,g.prototype.toString=function(){return"[object Promise]"},g.prototype.then=function(n,t,r){function e(t){try{return"function"==typeof n?n(t):t}catch(r){return j(r)}}function i(n){if("function"==typeof t){o(n,a);try{return t(n)}catch(r){return j(r)}}return j(n)}function u(n){return"function"==typeof r?r(n):n}var a=this,c=p(),f=!1;return Y(function(){a.promiseDispatch(function(n){f||(f=!0,c.resolve(e(n)))},"when",[function(n){f||(f=!0,c.resolve(i(n)))}])}),a.promiseDispatch(void 0,"when",[void 0,function(n){var t,r=!1;try{t=u(n)}catch(e){if(r=!0,!l.onerror)throw e;l.onerror(e)}r||c.notify(t)}]),c.promise},l.when=v,g.prototype.thenResolve=function(n){return this.then(function(){return n})},l.thenResolve=function(n,t){return l(n).thenResolve(t)},g.prototype.thenReject=function(n){return this.then(function(){throw n})},l.thenReject=function(n,t){return l(n).thenReject(t)},l.nearer=y,l.isPromise=_,l.isPromiseAlike=m,l.isPending=E,g.prototype.isPending=function(){return"pending"===this.inspect().state},l.isFulfilled=w,g.prototype.isFulfilled=function(){return"fulfilled"===this.inspect().state},l.isRejected=b,g.prototype.isRejected=function(){return"rejected"===this.inspect().state};var ot=[],it=[],ut=!0;l.resetUnhandledRejections=k,l.getUnhandledReasons=function(){return ot.slice()},l.stopUnhandledRejectionTracking=function(){k(),ut=!1},k(),l.reject=j,l.fulfill=S,l.master=R,l.spread=I,g.prototype.spread=function(n,t){return this.all().then(function(t){return n.apply(void 0,t)},t)},l.async=O,l.spawn=L,l["return"]=C,l.promised=G,l.dispatch=D,g.prototype.dispatch=function(n,t){var r=this,e=p();return Y(function(){r.promiseDispatch(e.resolve,n,t)}),e.promise},l.get=function(n,t){return l(n).dispatch("get",[t])},g.prototype.get=function(n){return this.dispatch("get",[n])},l.set=function(n,t,r){return l(n).dispatch("set",[t,r])},g.prototype.set=function(n,t){return this.dispatch("set",[n,t])},l.del=l["delete"]=function(n,t){return l(n).dispatch("delete",[t])},g.prototype.del=g.prototype["delete"]=function(n){return this.dispatch("delete",[n])},l.mapply=l.post=function(n,t,r){return l(n).dispatch("post",[t,r])},g.prototype.mapply=g.prototype.post=function(n,t){return this.dispatch("post",[n,t])},l.send=l.mcall=l.invoke=function(n,t){return l(n).dispatch("post",[t,Q(arguments,2)])},g.prototype.send=g.prototype.mcall=g.prototype.invoke=function(n){return this.dispatch("post",[n,Q(arguments,1)])},l.fapply=function(n,t){return l(n).dispatch("apply",[void 0,t])},g.prototype.fapply=function(n){return this.dispatch("apply",[void 0,n])},l["try"]=l.fcall=function(n){return l(n).dispatch("apply",[void 0,Q(arguments,1)])},g.prototype.fcall=function(){return this.dispatch("apply",[void 0,Q(arguments)])},l.fbind=function(n){var t=l(n),r=Q(arguments,1);return function(){return t.dispatch("apply",[this,r.concat(Q(arguments))])}},g.prototype.fbind=function(){var n=this,t=Q(arguments);return function(){return n.dispatch("apply",[this,t.concat(Q(arguments))])}},l.keys=function(n){return l(n).dispatch("keys",[])},g.prototype.keys=function(){return this.dispatch("keys",[])},l.all=T,g.prototype.all=function(){return T(this)},l.allResolved=s(M,"allResolved","allSettled"),g.prototype.allResolved=function(){return M(this)},l.allSettled=U,g.prototype.allSettled=function(){return this.then(function(n){return T(Z(n,function(n){function t(){return n.inspect()}return n=l(n),n.then(t,t)}))})},l.fail=l["catch"]=function(n,t){return l(n).then(void 0,t)},g.prototype.fail=g.prototype["catch"]=function(n){return this.then(void 0,n)},l.progress=F,g.prototype.progress=function(n){return this.then(void 0,void 0,n)},l.fin=l["finally"]=function(n,t){return l(n)["finally"](t)},g.prototype.fin=g.prototype["finally"]=function(n){return n=l(n),this.then(function(t){return n.fcall().then(function(){return t})},function(t){return n.fcall().then(function(){throw t})})},l.done=function(n,t,r,e){return l(n).done(t,r,e)},g.prototype.done=function(t,r,e){var i=function(n){Y(function(){if(o(n,u),!l.onerror)throw n;l.onerror(n)})},u=t||r||e?this.then(t,r,e):this;"object"==typeof n&&n&&n.domain&&(i=n.domain.bind(i)),u.then(void 0,i)},l.timeout=function(n,t,r){return l(n).timeout(t,r)},g.prototype.timeout=function(n,t){var r=p(),e=setTimeout(function(){r.reject(new Error(t||"Timed out after "+n+" ms"))},n);return this.then(function(n){clearTimeout(e),r.resolve(n)},function(n){clearTimeout(e),r.reject(n)},r.notify),r.promise},l.delay=function(n,t){return void 0===t&&(t=n,n=void 0),l(n).delay(t)},g.prototype.delay=function(n){return this.then(function(t){var r=p();return setTimeout(function(){r.resolve(t)},n),r.promise})},l.nfapply=function(n,t){return l(n).nfapply(t)},g.prototype.nfapply=function(n){var t=p(),r=Q(n);return r.push(t.makeNodeResolver()),this.fapply(r).fail(t.reject),t.promise},l.nfcall=function(n){var t=Q(arguments,1);return l(n).nfapply(t)},g.prototype.nfcall=function(){var n=Q(arguments),t=p();return n.push(t.makeNodeResolver()),this.fapply(n).fail(t.reject),t.promise},l.nfbind=l.denodeify=function(n){var t=Q(arguments,1);return function(){var r=t.concat(Q(arguments)),e=p();return r.push(e.makeNodeResolver()),l(n).fapply(r).fail(e.reject),e.promise}},g.prototype.nfbind=g.prototype.denodeify=function(){var n=Q(arguments);return n.unshift(this),l.denodeify.apply(void 0,n)},l.nbind=function(n,t){var r=Q(arguments,2);return function(){function e(){return n.apply(t,arguments)}var o=r.concat(Q(arguments)),i=p();return o.push(i.makeNodeResolver()),l(e).fapply(o).fail(i.reject),i.promise}},g.prototype.nbind=function(){var n=Q(arguments,0);return n.unshift(this),l.nbind.apply(void 0,n)},l.nmapply=l.npost=function(n,t,r){return l(n).npost(t,r)},g.prototype.nmapply=g.prototype.npost=function(n,t){var r=Q(t||[]),e=p();return r.push(e.makeNodeResolver()),this.dispatch("post",[n,r]).fail(e.reject),e.promise},l.nsend=l.nmcall=l.ninvoke=function(n,t){var r=Q(arguments,2),e=p();return r.push(e.makeNodeResolver()),l(n).dispatch("post",[t,r]).fail(e.reject),e.promise},g.prototype.nsend=g.prototype.nmcall=g.prototype.ninvoke=function(n){var t=Q(arguments,1),r=p();return t.push(r.makeNodeResolver()),this.dispatch("post",[n,t]).fail(r.reject),r.promise},l.nodeify=P,g.prototype.nodeify=function(n){return n?void this.then(function(t){Y(function(){n(null,t)})},function(t){Y(function(){n(t)})}):this};var at=f();return l})}).call(this,n("_process"))},{_process:2}]},{},[1]);;
+
+        Polymer('pojoviz-app', {
+            created: function () {
+                var me = this;
+                window.onpopstate = history.onpushstate = function(e) {
+                    var command = e.state.command;
+                    if (~command.indexOf('render/')) {
+                        me.runLibrary(command.split('/')[1]);
+                        return;
+                    }
+                    me.$.pages.selected = command;
+                };
+
+                window.pushState = function (hash) {
+                  // if the hash doesn't start with render/
+                  if (hash.indexOf('render/') === -1) {
+                    // default to readme
+                    hash = 'readme';
+                  }
+                  me.changeHistory(hash);
+                };
+            },
+
+            ready: function () {
+                var me = this;
+                // fired from elements/libraryMenu.html
+                document
+                    .addEventListener('library-select', function (e) {
+                        me.changeHistory(e.detail);
+                    });
+
+                document
+                    .addEventListener('pojoviz-notification', function (e) {
+                        me.$.notification.text = e.detail;
+                        me.$.notification.show();
+                    });
+
+                // click listener to the elements in the toolbar
+                Array.prototype.slice.call(
+                    this.$.toolbar.querySelectorAll('.toolbar-page')
+                )
+                    .forEach(function (page) {
+                        page.addEventListener('click', function (e) {
+                            me.changeHistory(e.target.dataset.command);
+                        });
+                    });
+
+                // pojoviz render configurations
+                me.pojovizAppConfiguration();
+
+                // hash autorender check
+                setTimeout(function () {
+                    var hash = (history.state && history.state.command) ||
+                            location.hash.substr(1);
+                    window.pushState(hash);
+                }, 0);
+            },
+
+            onRuntimeConfigurationClick: function () {
+                var me = this;
+                var form = this.$.inspectorForm;
+                var popup = this.$.knownConfigurationPopup;
+                var hash = location.hash.substr(1);
+                var schema = pojoviz.schemas.find(hash.split('/')[1]);
+                if (schema) {
+                    pojoviz
+                        .run(schema)
+                        .then(function(inspector) {
+                            form.setRecord(inspector);
+                            popup.toggle();
+                        });
+                }
+            },
+
+            pojovizAppConfiguration: function () {
+                // update canvas
+                pojoviz.draw.getRenderer('d3').setCanvasEl(this.$.canvas);
+                pojoviz.draw.getRenderer('three').setCanvasEl('html /deep/ #canvas');
+
+                this.$.libraries.sections = [{
+                    icon: 'exit-to-app',
+                    label: 'Known Schemas',
+                    libraries: pojoviz.schemas.knownSchemas
+                }, {
+                    icon: 'favorite',
+                    label: 'Notable Libraries',
+                    libraries: pojoviz.schemas.notableLibraries
+                }, {
+                    icon: 'stars',
+                    label: 'My libraries',
+                    libraries: pojoviz.schemas.myLibraries
+                }, {
+                    icon: 'warning',
+                    label: 'Huge Schemas',
+                    libraries: pojoviz.schemas.hugeSchemas
+                }, {
+                    icon: 'cloud',
+                    label: 'Downloaded',
+                    libraries: pojoviz.schemas.downloaded
+                }];
+            },
+
+            /**
+             * Pushes a new token to the history stack
+             * @param {string} hash
+             */
+            changeHistory: function (hash) {
+                window.history.pushState(
+                    {command: hash},
+                    hash,
+                    '#' + hash
+                );
+            },
+
+            runLibrary: function (entry) {
+                // global name, data properties
+                var schema = pojoviz.schemas.find(entry);
+                pojoviz
+                    .run(schema)
+                    .then(function() {
+                        pojoviz.draw.render();
+                    })
+                    .fail(function (e) {
+                        pojoviz.utils.notification(e);
+                        throw e;
+                    })
+                    .done();
+                // pojoviz.render();
+                this.$.pages.selected = 'app';
+                this.$.scaffold.closeDrawer();
+            }
+        });
+    ;
+require=(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+/**
+ * Created by mauricio on 2/18/15.
+ */
+
+},{}],2:[function(require,module,exports){
+// shim for using process in browser
+
+var process = module.exports = {};
+var queue = [];
+var draining = false;
+
+function drainQueue() {
+    if (draining) {
+        return;
+    }
+    draining = true;
+    var currentQueue;
+    var len = queue.length;
+    while(len) {
+        currentQueue = queue;
+        queue = [];
+        var i = -1;
+        while (++i < len) {
+            currentQueue[i]();
+        }
+        len = queue.length;
+    }
+    draining = false;
+}
+process.nextTick = function (fun) {
+    queue.push(fun);
+    if (!draining) {
+        setTimeout(drainQueue, 0);
+    }
+};
+
+process.title = 'browser';
+process.browser = true;
+process.env = {};
+process.argv = [];
+process.version = ''; // empty string to avoid regexp issues
+
+function noop() {}
+
+process.on = noop;
+process.addListener = noop;
+process.once = noop;
+process.off = noop;
+process.removeListener = noop;
+process.removeAllListeners = noop;
+process.emit = noop;
+
+process.binding = function (name) {
+    throw new Error('process.binding is not supported');
+};
+
+// TODO(shtylman)
+process.cwd = function () { return '/' };
+process.chdir = function (dir) {
+    throw new Error('process.chdir is not supported');
+};
+process.umask = function() { return 0; };
+
+},{}],3:[function(require,module,exports){
+'use strict';
+
+var util = require('./util');
+
+/**
+ * Renders a graph in a stringified DOT format that indicates the ordering of
+ * nodes by layer. Circles represent normal nodes. Diamons represent dummy
+ * nodes. While we try to put nodes in clusters, it appears that graphviz
+ * does not respect this because we're later using subgraphs for ordering nodes
+ * in each layer.
+ */
+exports.dotOrdering = function(g) {
+  var ordering = util.ordering(g.filterNodes(util.filterNonSubgraphs(g)));
+  var result = 'digraph {';
+
+  function dfs(u) {
+    var children = g.children(u);
+    if (children.length) {
+      result += 'subgraph cluster_' + u + ' {';
+      result += 'label="' + u + '";';
+      children.forEach(function(v) {
+        dfs(v);
+      });
+      result += '}';
+    } else {
+      result += u;
+      if (g.node(u).dummy) {
+        result += ' [shape=diamond]';
+      }
+      result += ';';
+    }
+  }
+
+  g.children(null).forEach(dfs);
+
+  ordering.forEach(function(layer) {
+    result += 'subgraph { rank=same; edge [style="invis"];';
+    result += layer.join('->');
+    result += '}';
+  });
+
+  g.eachEdge(function(e, u, v) {
+    result += u + '->' + v + ';';
+  });
+
+  result += '}';
+
+  return result;
+};
+
+},{"./util":18}],4:[function(require,module,exports){
+'use strict';
+
+var util = require('./util'),
+    rank = require('./rank'),
+    order = require('./order'),
+    CGraph = require('graphlib').CGraph,
+    CDigraph = require('graphlib').CDigraph;
+
+module.exports = function() {
+  // External configuration
+  var config = {
+    // How much debug information to include?
+    debugLevel: 0,
+    // Max number of sweeps to perform in order phase
+    orderMaxSweeps: order.DEFAULT_MAX_SWEEPS,
+    // Use network simplex algorithm in ranking
+    rankSimplex: false,
+    // Rank direction. Valid values are (TB, LR)
+    rankDir: 'TB'
+  };
+
+  // Phase functions
+  var position = require('./position')();
+
+  // This layout object
+  var self = {};
+
+  self.orderIters = util.propertyAccessor(self, config, 'orderMaxSweeps');
+
+  self.rankSimplex = util.propertyAccessor(self, config, 'rankSimplex');
+
+  self.nodeSep = delegateProperty(position.nodeSep);
+  self.edgeSep = delegateProperty(position.edgeSep);
+  self.universalSep = delegateProperty(position.universalSep);
+  self.rankSep = delegateProperty(position.rankSep);
+  self.rankDir = util.propertyAccessor(self, config, 'rankDir');
+  self.debugAlignment = delegateProperty(position.debugAlignment);
+
+  self.debugLevel = util.propertyAccessor(self, config, 'debugLevel', function(x) {
+    util.log.level = x;
+    position.debugLevel(x);
+  });
+
+  self.run = util.time('Total layout', run);
+
+  self._normalize = normalize;
+
+  return self;
+
+  /*
+   * Constructs an adjacency graph using the nodes and edges specified through
+   * config. For each node and edge we add a property `dagre` that contains an
+   * object that will hold intermediate and final layout information. Some of
+   * the contents include:
+   *
+   *  1) A generated ID that uniquely identifies the object.
+   *  2) Dimension information for nodes (copied from the source node).
+   *  3) Optional dimension information for edges.
+   *
+   * After the adjacency graph is constructed the code no longer needs to use
+   * the original nodes and edges passed in via config.
+   */
+  function initLayoutGraph(inputGraph) {
+    var g = new CDigraph();
+
+    inputGraph.eachNode(function(u, value) {
+      if (value === undefined) value = {};
+      g.addNode(u, {
+        width: value.width,
+        height: value.height
+      });
+      if (value.hasOwnProperty('rank')) {
+        g.node(u).prefRank = value.rank;
+      }
+    });
+
+    // Set up subgraphs
+    if (inputGraph.parent) {
+      inputGraph.nodes().forEach(function(u) {
+        g.parent(u, inputGraph.parent(u));
+      });
+    }
+
+    inputGraph.eachEdge(function(e, u, v, value) {
+      if (value === undefined) value = {};
+      var newValue = {
+        e: e,
+        minLen: value.minLen || 1,
+        width: value.width || 0,
+        height: value.height || 0,
+        points: []
+      };
+
+      g.addEdge(null, u, v, newValue);
+    });
+
+    // Initial graph attributes
+    var graphValue = inputGraph.graph() || {};
+    g.graph({
+      rankDir: graphValue.rankDir || config.rankDir,
+      orderRestarts: graphValue.orderRestarts
+    });
+
+    return g;
+  }
+
+  function run(inputGraph) {
+    var rankSep = self.rankSep();
+    var g;
+    try {
+      // Build internal graph
+      g = util.time('initLayoutGraph', initLayoutGraph)(inputGraph);
+
+      if (g.order() === 0) {
+        return g;
+      }
+
+      // Make space for edge labels
+      g.eachEdge(function(e, s, t, a) {
+        a.minLen *= 2;
+      });
+      self.rankSep(rankSep / 2);
+
+      // Determine the rank for each node. Nodes with a lower rank will appear
+      // above nodes of higher rank.
+      util.time('rank.run', rank.run)(g, config.rankSimplex);
+
+      // Normalize the graph by ensuring that every edge is proper (each edge has
+      // a length of 1). We achieve this by adding dummy nodes to long edges,
+      // thus shortening them.
+      util.time('normalize', normalize)(g);
+
+      // Order the nodes so that edge crossings are minimized.
+      util.time('order', order)(g, config.orderMaxSweeps);
+
+      // Find the x and y coordinates for every node in the graph.
+      util.time('position', position.run)(g);
+
+      // De-normalize the graph by removing dummy nodes and augmenting the
+      // original long edges with coordinate information.
+      util.time('undoNormalize', undoNormalize)(g);
+
+      // Reverses points for edges that are in a reversed state.
+      util.time('fixupEdgePoints', fixupEdgePoints)(g);
+
+      // Restore delete edges and reverse edges that were reversed in the rank
+      // phase.
+      util.time('rank.restoreEdges', rank.restoreEdges)(g);
+
+      // Construct final result graph and return it
+      return util.time('createFinalGraph', createFinalGraph)(g, inputGraph.isDirected());
+    } finally {
+      self.rankSep(rankSep);
+    }
+  }
+
+  /*
+   * This function is responsible for 'normalizing' the graph. The process of
+   * normalization ensures that no edge in the graph has spans more than one
+   * rank. To do this it inserts dummy nodes as needed and links them by adding
+   * dummy edges. This function keeps enough information in the dummy nodes and
+   * edges to ensure that the original graph can be reconstructed later.
+   *
+   * This method assumes that the input graph is cycle free.
+   */
+  function normalize(g) {
+    var dummyCount = 0;
+    g.eachEdge(function(e, s, t, a) {
+      var sourceRank = g.node(s).rank;
+      var targetRank = g.node(t).rank;
+      if (sourceRank + 1 < targetRank) {
+        for (var u = s, rank = sourceRank + 1, i = 0; rank < targetRank; ++rank, ++i) {
+          var v = '_D' + (++dummyCount);
+          var node = {
+            width: a.width,
+            height: a.height,
+            edge: { id: e, source: s, target: t, attrs: a },
+            rank: rank,
+            dummy: true
+          };
+
+          // If this node represents a bend then we will use it as a control
+          // point. For edges with 2 segments this will be the center dummy
+          // node. For edges with more than two segments, this will be the
+          // first and last dummy node.
+          if (i === 0) node.index = 0;
+          else if (rank + 1 === targetRank) node.index = 1;
+
+          g.addNode(v, node);
+          g.addEdge(null, u, v, {});
+          u = v;
+        }
+        g.addEdge(null, u, t, {});
+        g.delEdge(e);
+      }
+    });
+  }
+
+  /*
+   * Reconstructs the graph as it was before normalization. The positions of
+   * dummy nodes are used to build an array of points for the original 'long'
+   * edge. Dummy nodes and edges are removed.
+   */
+  function undoNormalize(g) {
+    g.eachNode(function(u, a) {
+      if (a.dummy) {
+        if ('index' in a) {
+          var edge = a.edge;
+          if (!g.hasEdge(edge.id)) {
+            g.addEdge(edge.id, edge.source, edge.target, edge.attrs);
+          }
+          var points = g.edge(edge.id).points;
+          points[a.index] = { x: a.x, y: a.y, ul: a.ul, ur: a.ur, dl: a.dl, dr: a.dr };
+        }
+        g.delNode(u);
+      }
+    });
+  }
+
+  /*
+   * For each edge that was reversed during the `acyclic` step, reverse its
+   * array of points.
+   */
+  function fixupEdgePoints(g) {
+    g.eachEdge(function(e, s, t, a) { if (a.reversed) a.points.reverse(); });
+  }
+
+  function createFinalGraph(g, isDirected) {
+    var out = isDirected ? new CDigraph() : new CGraph();
+    out.graph(g.graph());
+    g.eachNode(function(u, value) { out.addNode(u, value); });
+    g.eachNode(function(u) { out.parent(u, g.parent(u)); });
+    g.eachEdge(function(e, u, v, value) {
+      out.addEdge(value.e, u, v, value);
+    });
+
+    // Attach bounding box information
+    var maxX = 0, maxY = 0;
+    g.eachNode(function(u, value) {
+      if (!g.children(u).length) {
+        maxX = Math.max(maxX, value.x + value.width / 2);
+        maxY = Math.max(maxY, value.y + value.height / 2);
+      }
+    });
+    g.eachEdge(function(e, u, v, value) {
+      var maxXPoints = Math.max.apply(Math, value.points.map(function(p) { return p.x; }));
+      var maxYPoints = Math.max.apply(Math, value.points.map(function(p) { return p.y; }));
+      maxX = Math.max(maxX, maxXPoints + value.width / 2);
+      maxY = Math.max(maxY, maxYPoints + value.height / 2);
+    });
+    out.graph().width = maxX;
+    out.graph().height = maxY;
+
+    return out;
+  }
+
+  /*
+   * Given a function, a new function is returned that invokes the given
+   * function. The return value from the function is always the `self` object.
+   */
+  function delegateProperty(f) {
+    return function() {
+      if (!arguments.length) return f();
+      f.apply(null, arguments);
+      return self;
+    };
+  }
+};
+
+
+},{"./order":5,"./position":10,"./rank":11,"./util":18,"graphlib":25}],5:[function(require,module,exports){
+'use strict';
+
+var util = require('./util'),
+    crossCount = require('./order/crossCount'),
+    initLayerGraphs = require('./order/initLayerGraphs'),
+    initOrder = require('./order/initOrder'),
+    sortLayer = require('./order/sortLayer');
+
+module.exports = order;
+
+// The maximum number of sweeps to perform before finishing the order phase.
+var DEFAULT_MAX_SWEEPS = 24;
+order.DEFAULT_MAX_SWEEPS = DEFAULT_MAX_SWEEPS;
+
+/*
+ * Runs the order phase with the specified `graph, `maxSweeps`, and
+ * `debugLevel`. If `maxSweeps` is not specified we use `DEFAULT_MAX_SWEEPS`.
+ * If `debugLevel` is not set we assume 0.
+ */
+function order(g, maxSweeps) {
+  if (arguments.length < 2) {
+    maxSweeps = DEFAULT_MAX_SWEEPS;
+  }
+
+  var restarts = g.graph().orderRestarts || 0;
+
+  var layerGraphs = initLayerGraphs(g);
+  // TODO: remove this when we add back support for ordering clusters
+  layerGraphs.forEach(function(lg) {
+    lg = lg.filterNodes(function(u) { return !g.children(u).length; });
+  });
+
+  var iters = 0,
+      currentBestCC,
+      allTimeBestCC = Number.MAX_VALUE,
+      allTimeBest = {};
+
+  function saveAllTimeBest() {
+    g.eachNode(function(u, value) { allTimeBest[u] = value.order; });
+  }
+
+  for (var j = 0; j < Number(restarts) + 1 && allTimeBestCC !== 0; ++j) {
+    currentBestCC = Number.MAX_VALUE;
+    initOrder(g, restarts > 0);
+
+    util.log(2, 'Order phase start cross count: ' + g.graph().orderInitCC);
+
+    var i, lastBest, cc;
+    for (i = 0, lastBest = 0; lastBest < 4 && i < maxSweeps && currentBestCC > 0; ++i, ++lastBest, ++iters) {
+      sweep(g, layerGraphs, i);
+      cc = crossCount(g);
+      if (cc < currentBestCC) {
+        lastBest = 0;
+        currentBestCC = cc;
+        if (cc < allTimeBestCC) {
+          saveAllTimeBest();
+          allTimeBestCC = cc;
+        }
+      }
+      util.log(3, 'Order phase start ' + j + ' iter ' + i + ' cross count: ' + cc);
+    }
+  }
+
+  Object.keys(allTimeBest).forEach(function(u) {
+    if (!g.children || !g.children(u).length) {
+      g.node(u).order = allTimeBest[u];
+    }
+  });
+  g.graph().orderCC = allTimeBestCC;
+
+  util.log(2, 'Order iterations: ' + iters);
+  util.log(2, 'Order phase best cross count: ' + g.graph().orderCC);
+}
+
+function predecessorWeights(g, nodes) {
+  var weights = {};
+  nodes.forEach(function(u) {
+    weights[u] = g.inEdges(u).map(function(e) {
+      return g.node(g.source(e)).order;
+    });
+  });
+  return weights;
+}
+
+function successorWeights(g, nodes) {
+  var weights = {};
+  nodes.forEach(function(u) {
+    weights[u] = g.outEdges(u).map(function(e) {
+      return g.node(g.target(e)).order;
+    });
+  });
+  return weights;
+}
+
+function sweep(g, layerGraphs, iter) {
+  if (iter % 2 === 0) {
+    sweepDown(g, layerGraphs, iter);
+  } else {
+    sweepUp(g, layerGraphs, iter);
+  }
+}
+
+function sweepDown(g, layerGraphs) {
+  var cg;
+  for (var i = 1; i < layerGraphs.length; ++i) {
+    cg = sortLayer(layerGraphs[i], cg, predecessorWeights(g, layerGraphs[i].nodes()));
+  }
+}
+
+function sweepUp(g, layerGraphs) {
+  var cg;
+  for (var i = layerGraphs.length - 2; i >= 0; --i) {
+    sortLayer(layerGraphs[i], cg, successorWeights(g, layerGraphs[i].nodes()));
+  }
+}
+
+},{"./order/crossCount":6,"./order/initLayerGraphs":7,"./order/initOrder":8,"./order/sortLayer":9,"./util":18}],6:[function(require,module,exports){
+'use strict';
+
+var util = require('../util');
+
+module.exports = crossCount;
+
+/*
+ * Returns the cross count for the given graph.
+ */
+function crossCount(g) {
+  var cc = 0;
+  var ordering = util.ordering(g);
+  for (var i = 1; i < ordering.length; ++i) {
+    cc += twoLayerCrossCount(g, ordering[i-1], ordering[i]);
+  }
+  return cc;
+}
+
+/*
+ * This function searches through a ranked and ordered graph and counts the
+ * number of edges that cross. This algorithm is derived from:
+ *
+ *    W. Barth et al., Bilayer Cross Counting, JGAA, 8(2) 179–194 (2004)
+ */
+function twoLayerCrossCount(g, layer1, layer2) {
+  var indices = [];
+  layer1.forEach(function(u) {
+    var nodeIndices = [];
+    g.outEdges(u).forEach(function(e) { nodeIndices.push(g.node(g.target(e)).order); });
+    nodeIndices.sort(function(x, y) { return x - y; });
+    indices = indices.concat(nodeIndices);
+  });
+
+  var firstIndex = 1;
+  while (firstIndex < layer2.length) firstIndex <<= 1;
+
+  var treeSize = 2 * firstIndex - 1;
+  firstIndex -= 1;
+
+  var tree = [];
+  for (var i = 0; i < treeSize; ++i) { tree[i] = 0; }
+
+  var cc = 0;
+  indices.forEach(function(i) {
+    var treeIndex = i + firstIndex;
+    ++tree[treeIndex];
+    while (treeIndex > 0) {
+      if (treeIndex % 2) {
+        cc += tree[treeIndex + 1];
+      }
+      treeIndex = (treeIndex - 1) >> 1;
+      ++tree[treeIndex];
+    }
+  });
+
+  return cc;
+}
+
+},{"../util":18}],7:[function(require,module,exports){
+'use strict';
+
+var nodesFromList = require('graphlib').filter.nodesFromList,
+    /* jshint -W079 */
+    Set = require('cp-data').Set;
+
+module.exports = initLayerGraphs;
+
+/*
+ * This function takes a compound layered graph, g, and produces an array of
+ * layer graphs. Each entry in the array represents a subgraph of nodes
+ * relevant for performing crossing reduction on that layer.
+ */
+function initLayerGraphs(g) {
+  var ranks = [];
+
+  function dfs(u) {
+    if (u === null) {
+      g.children(u).forEach(function(v) { dfs(v); });
+      return;
+    }
+
+    var value = g.node(u);
+    value.minRank = ('rank' in value) ? value.rank : Number.MAX_VALUE;
+    value.maxRank = ('rank' in value) ? value.rank : Number.MIN_VALUE;
+    var uRanks = new Set();
+    g.children(u).forEach(function(v) {
+      var rs = dfs(v);
+      uRanks = Set.union([uRanks, rs]);
+      value.minRank = Math.min(value.minRank, g.node(v).minRank);
+      value.maxRank = Math.max(value.maxRank, g.node(v).maxRank);
+    });
+
+    if ('rank' in value) uRanks.add(value.rank);
+
+    uRanks.keys().forEach(function(r) {
+      if (!(r in ranks)) ranks[r] = [];
+      ranks[r].push(u);
+    });
+
+    return uRanks;
+  }
+  dfs(null);
+
+  var layerGraphs = [];
+  ranks.forEach(function(us, rank) {
+    layerGraphs[rank] = g.filterNodes(nodesFromList(us));
+  });
+
+  return layerGraphs;
+}
+
+},{"cp-data":20,"graphlib":25}],8:[function(require,module,exports){
+'use strict';
+
+var crossCount = require('./crossCount'),
+    util = require('../util');
+
+module.exports = initOrder;
+
+/*
+ * Given a graph with a set of layered nodes (i.e. nodes that have a `rank`
+ * attribute) this function attaches an `order` attribute that uniquely
+ * arranges each node of each rank. If no constraint graph is provided the
+ * order of the nodes in each rank is entirely arbitrary.
+ */
+function initOrder(g, random) {
+  var layers = [];
+
+  g.eachNode(function(u, value) {
+    var layer = layers[value.rank];
+    if (g.children && g.children(u).length > 0) return;
+    if (!layer) {
+      layer = layers[value.rank] = [];
+    }
+    layer.push(u);
+  });
+
+  layers.forEach(function(layer) {
+    if (random) {
+      util.shuffle(layer);
+    }
+    layer.forEach(function(u, i) {
+      g.node(u).order = i;
+    });
+  });
+
+  var cc = crossCount(g);
+  g.graph().orderInitCC = cc;
+  g.graph().orderCC = Number.MAX_VALUE;
+}
+
+},{"../util":18,"./crossCount":6}],9:[function(require,module,exports){
+'use strict';
+
+var util = require('../util'),
+    Digraph = require('graphlib').Digraph,
+    topsort = require('graphlib').alg.topsort,
+    nodesFromList = require('graphlib').filter.nodesFromList;
+
+module.exports = sortLayer;
+
+function sortLayer(g, cg, weights) {
+  weights = adjustWeights(g, weights);
+  var result = sortLayerSubgraph(g, null, cg, weights);
+
+  result.list.forEach(function(u, i) {
+    g.node(u).order = i;
+  });
+  return result.constraintGraph;
+}
+
+function sortLayerSubgraph(g, sg, cg, weights) {
+  cg = cg ? cg.filterNodes(nodesFromList(g.children(sg))) : new Digraph();
+
+  var nodeData = {};
+  g.children(sg).forEach(function(u) {
+    if (g.children(u).length) {
+      nodeData[u] = sortLayerSubgraph(g, u, cg, weights);
+      nodeData[u].firstSG = u;
+      nodeData[u].lastSG = u;
+    } else {
+      var ws = weights[u];
+      nodeData[u] = {
+        degree: ws.length,
+        barycenter: util.sum(ws) / ws.length,
+        order: g.node(u).order,
+        orderCount: 1,
+        list: [u]
+      };
+    }
+  });
+
+  resolveViolatedConstraints(g, cg, nodeData);
+
+  var keys = Object.keys(nodeData);
+  keys.sort(function(x, y) {
+    return nodeData[x].barycenter - nodeData[y].barycenter ||
+           nodeData[x].order - nodeData[y].order;
+  });
+
+  var result =  keys.map(function(u) { return nodeData[u]; })
+                    .reduce(function(lhs, rhs) { return mergeNodeData(g, lhs, rhs); });
+  return result;
+}
+
+function mergeNodeData(g, lhs, rhs) {
+  var cg = mergeDigraphs(lhs.constraintGraph, rhs.constraintGraph);
+
+  if (lhs.lastSG !== undefined && rhs.firstSG !== undefined) {
+    if (cg === undefined) {
+      cg = new Digraph();
+    }
+    if (!cg.hasNode(lhs.lastSG)) { cg.addNode(lhs.lastSG); }
+    cg.addNode(rhs.firstSG);
+    cg.addEdge(null, lhs.lastSG, rhs.firstSG);
+  }
+
+  return {
+    degree: lhs.degree + rhs.degree,
+    barycenter: (lhs.barycenter * lhs.degree + rhs.barycenter * rhs.degree) /
+                (lhs.degree + rhs.degree),
+    order: (lhs.order * lhs.orderCount + rhs.order * rhs.orderCount) /
+           (lhs.orderCount + rhs.orderCount),
+    orderCount: lhs.orderCount + rhs.orderCount,
+    list: lhs.list.concat(rhs.list),
+    firstSG: lhs.firstSG !== undefined ? lhs.firstSG : rhs.firstSG,
+    lastSG: rhs.lastSG !== undefined ? rhs.lastSG : lhs.lastSG,
+    constraintGraph: cg
+  };
+}
+
+function mergeDigraphs(lhs, rhs) {
+  if (lhs === undefined) return rhs;
+  if (rhs === undefined) return lhs;
+
+  lhs = lhs.copy();
+  rhs.nodes().forEach(function(u) { lhs.addNode(u); });
+  rhs.edges().forEach(function(e, u, v) { lhs.addEdge(null, u, v); });
+  return lhs;
+}
+
+function resolveViolatedConstraints(g, cg, nodeData) {
+  // Removes nodes `u` and `v` from `cg` and makes any edges incident on them
+  // incident on `w` instead.
+  function collapseNodes(u, v, w) {
+    // TODO original paper removes self loops, but it is not obvious when this would happen
+    cg.inEdges(u).forEach(function(e) {
+      cg.delEdge(e);
+      cg.addEdge(null, cg.source(e), w);
+    });
+
+    cg.outEdges(v).forEach(function(e) {
+      cg.delEdge(e);
+      cg.addEdge(null, w, cg.target(e));
+    });
+
+    cg.delNode(u);
+    cg.delNode(v);
+  }
+
+  var violated;
+  while ((violated = findViolatedConstraint(cg, nodeData)) !== undefined) {
+    var source = cg.source(violated),
+        target = cg.target(violated);
+
+    var v;
+    while ((v = cg.addNode(null)) && g.hasNode(v)) {
+      cg.delNode(v);
+    }
+
+    // Collapse barycenter and list
+    nodeData[v] = mergeNodeData(g, nodeData[source], nodeData[target]);
+    delete nodeData[source];
+    delete nodeData[target];
+
+    collapseNodes(source, target, v);
+    if (cg.incidentEdges(v).length === 0) { cg.delNode(v); }
+  }
+}
+
+function findViolatedConstraint(cg, nodeData) {
+  var us = topsort(cg);
+  for (var i = 0; i < us.length; ++i) {
+    var u = us[i];
+    var inEdges = cg.inEdges(u);
+    for (var j = 0; j < inEdges.length; ++j) {
+      var e = inEdges[j];
+      if (nodeData[cg.source(e)].barycenter >= nodeData[u].barycenter) {
+        return e;
+      }
+    }
+  }
+}
+
+// Adjust weights so that they fall in the range of 0..|N|-1. If a node has no
+// weight assigned then set its adjusted weight to its current position. This
+// allows us to better retain the origiinal position of nodes without neighbors.
+function adjustWeights(g, weights) {
+  var minW = Number.MAX_VALUE,
+      maxW = 0,
+      adjusted = {};
+  g.eachNode(function(u) {
+    if (g.children(u).length) return;
+
+    var ws = weights[u];
+    if (ws.length) {
+      minW = Math.min(minW, util.min(ws));
+      maxW = Math.max(maxW, util.max(ws));
+    }
+  });
+
+  var rangeW = (maxW - minW);
+  g.eachNode(function(u) {
+    if (g.children(u).length) return;
+
+    var ws = weights[u];
+    if (!ws.length) {
+      adjusted[u] = [g.node(u).order];
+    } else {
+      adjusted[u] = ws.map(function(w) {
+        if (rangeW) {
+          return (w - minW) * (g.order() - 1) / rangeW;
+        } else {
+          return g.order() - 1 / 2;
+        }
+      });
+    }
+  });
+
+  return adjusted;
+}
+
+},{"../util":18,"graphlib":25}],10:[function(require,module,exports){
+'use strict';
+
+var util = require('./util');
+
+/*
+ * The algorithms here are based on Brandes and Köpf, "Fast and Simple
+ * Horizontal Coordinate Assignment".
+ */
+module.exports = function() {
+  // External configuration
+  var config = {
+    nodeSep: 50,
+    edgeSep: 10,
+    universalSep: null,
+    rankSep: 30
+  };
+
+  var self = {};
+
+  self.nodeSep = util.propertyAccessor(self, config, 'nodeSep');
+  self.edgeSep = util.propertyAccessor(self, config, 'edgeSep');
+  // If not null this separation value is used for all nodes and edges
+  // regardless of their widths. `nodeSep` and `edgeSep` are ignored with this
+  // option.
+  self.universalSep = util.propertyAccessor(self, config, 'universalSep');
+  self.rankSep = util.propertyAccessor(self, config, 'rankSep');
+  self.debugLevel = util.propertyAccessor(self, config, 'debugLevel');
+
+  self.run = run;
+
+  return self;
+
+  function run(g) {
+    g = g.filterNodes(util.filterNonSubgraphs(g));
+
+    var layering = util.ordering(g);
+
+    var conflicts = findConflicts(g, layering);
+
+    var xss = {};
+    ['u', 'd'].forEach(function(vertDir) {
+      if (vertDir === 'd') layering.reverse();
+
+      ['l', 'r'].forEach(function(horizDir) {
+        if (horizDir === 'r') reverseInnerOrder(layering);
+
+        var dir = vertDir + horizDir;
+        var align = verticalAlignment(g, layering, conflicts, vertDir === 'u' ? 'predecessors' : 'successors');
+        xss[dir]= horizontalCompaction(g, layering, align.pos, align.root, align.align);
+
+        if (config.debugLevel >= 3)
+          debugPositioning(vertDir + horizDir, g, layering, xss[dir]);
+
+        if (horizDir === 'r') flipHorizontally(xss[dir]);
+
+        if (horizDir === 'r') reverseInnerOrder(layering);
+      });
+
+      if (vertDir === 'd') layering.reverse();
+    });
+
+    balance(g, layering, xss);
+
+    g.eachNode(function(v) {
+      var xs = [];
+      for (var alignment in xss) {
+        var alignmentX = xss[alignment][v];
+        posXDebug(alignment, g, v, alignmentX);
+        xs.push(alignmentX);
+      }
+      xs.sort(function(x, y) { return x - y; });
+      posX(g, v, (xs[1] + xs[2]) / 2);
+    });
+
+    // Align y coordinates with ranks
+    var y = 0, reverseY = g.graph().rankDir === 'BT' || g.graph().rankDir === 'RL';
+    layering.forEach(function(layer) {
+      var maxHeight = util.max(layer.map(function(u) { return height(g, u); }));
+      y += maxHeight / 2;
+      layer.forEach(function(u) {
+        posY(g, u, reverseY ? -y : y);
+      });
+      y += maxHeight / 2 + config.rankSep;
+    });
+
+    // Translate layout so that top left corner of bounding rectangle has
+    // coordinate (0, 0).
+    var minX = util.min(g.nodes().map(function(u) { return posX(g, u) - width(g, u) / 2; }));
+    var minY = util.min(g.nodes().map(function(u) { return posY(g, u) - height(g, u) / 2; }));
+    g.eachNode(function(u) {
+      posX(g, u, posX(g, u) - minX);
+      posY(g, u, posY(g, u) - minY);
+    });
+  }
+
+  /*
+   * Generate an ID that can be used to represent any undirected edge that is
+   * incident on `u` and `v`.
+   */
+  function undirEdgeId(u, v) {
+    return u < v
+      ? u.toString().length + ':' + u + '-' + v
+      : v.toString().length + ':' + v + '-' + u;
+  }
+
+  function findConflicts(g, layering) {
+    var conflicts = {}, // Set of conflicting edge ids
+        pos = {},       // Position of node in its layer
+        prevLayer,
+        currLayer,
+        k0,     // Position of the last inner segment in the previous layer
+        l,      // Current position in the current layer (for iteration up to `l1`)
+        k1;     // Position of the next inner segment in the previous layer or
+                // the position of the last element in the previous layer
+
+    if (layering.length <= 2) return conflicts;
+
+    function updateConflicts(v) {
+      var k = pos[v];
+      if (k < k0 || k > k1) {
+        conflicts[undirEdgeId(currLayer[l], v)] = true;
+      }
+    }
+
+    layering[1].forEach(function(u, i) { pos[u] = i; });
+    for (var i = 1; i < layering.length - 1; ++i) {
+      prevLayer = layering[i];
+      currLayer = layering[i+1];
+      k0 = 0;
+      l = 0;
+
+      // Scan current layer for next node that is incident to an inner segement
+      // between layering[i+1] and layering[i].
+      for (var l1 = 0; l1 < currLayer.length; ++l1) {
+        var u = currLayer[l1]; // Next inner segment in the current layer or
+                               // last node in the current layer
+        pos[u] = l1;
+        k1 = undefined;
+
+        if (g.node(u).dummy) {
+          var uPred = g.predecessors(u)[0];
+          // Note: In the case of self loops and sideways edges it is possible
+          // for a dummy not to have a predecessor.
+          if (uPred !== undefined && g.node(uPred).dummy)
+            k1 = pos[uPred];
+        }
+        if (k1 === undefined && l1 === currLayer.length - 1)
+          k1 = prevLayer.length - 1;
+
+        if (k1 !== undefined) {
+          for (; l <= l1; ++l) {
+            g.predecessors(currLayer[l]).forEach(updateConflicts);
+          }
+          k0 = k1;
+        }
+      }
+    }
+
+    return conflicts;
+  }
+
+  function verticalAlignment(g, layering, conflicts, relationship) {
+    var pos = {},   // Position for a node in its layer
+        root = {},  // Root of the block that the node participates in
+        align = {}; // Points to the next node in the block or, if the last
+                    // element in the block, points to the first block's root
+
+    layering.forEach(function(layer) {
+      layer.forEach(function(u, i) {
+        root[u] = u;
+        align[u] = u;
+        pos[u] = i;
+      });
+    });
+
+    layering.forEach(function(layer) {
+      var prevIdx = -1;
+      layer.forEach(function(v) {
+        var related = g[relationship](v), // Adjacent nodes from the previous layer
+            mid;                          // The mid point in the related array
+
+        if (related.length > 0) {
+          related.sort(function(x, y) { return pos[x] - pos[y]; });
+          mid = (related.length - 1) / 2;
+          related.slice(Math.floor(mid), Math.ceil(mid) + 1).forEach(function(u) {
+            if (align[v] === v) {
+              if (!conflicts[undirEdgeId(u, v)] && prevIdx < pos[u]) {
+                align[u] = v;
+                align[v] = root[v] = root[u];
+                prevIdx = pos[u];
+              }
+            }
+          });
+        }
+      });
+    });
+
+    return { pos: pos, root: root, align: align };
+  }
+
+  // This function deviates from the standard BK algorithm in two ways. First
+  // it takes into account the size of the nodes. Second it includes a fix to
+  // the original algorithm that is described in Carstens, "Node and Label
+  // Placement in a Layered Layout Algorithm".
+  function horizontalCompaction(g, layering, pos, root, align) {
+    var sink = {},       // Mapping of node id -> sink node id for class
+        maybeShift = {}, // Mapping of sink node id -> { class node id, min shift }
+        shift = {},      // Mapping of sink node id -> shift
+        pred = {},       // Mapping of node id -> predecessor node (or null)
+        xs = {};         // Calculated X positions
+
+    layering.forEach(function(layer) {
+      layer.forEach(function(u, i) {
+        sink[u] = u;
+        maybeShift[u] = {};
+        if (i > 0)
+          pred[u] = layer[i - 1];
+      });
+    });
+
+    function updateShift(toShift, neighbor, delta) {
+      if (!(neighbor in maybeShift[toShift])) {
+        maybeShift[toShift][neighbor] = delta;
+      } else {
+        maybeShift[toShift][neighbor] = Math.min(maybeShift[toShift][neighbor], delta);
+      }
+    }
+
+    function placeBlock(v) {
+      if (!(v in xs)) {
+        xs[v] = 0;
+        var w = v;
+        do {
+          if (pos[w] > 0) {
+            var u = root[pred[w]];
+            placeBlock(u);
+            if (sink[v] === v) {
+              sink[v] = sink[u];
+            }
+            var delta = sep(g, pred[w]) + sep(g, w);
+            if (sink[v] !== sink[u]) {
+              updateShift(sink[u], sink[v], xs[v] - xs[u] - delta);
+            } else {
+              xs[v] = Math.max(xs[v], xs[u] + delta);
+            }
+          }
+          w = align[w];
+        } while (w !== v);
+      }
+    }
+
+    // Root coordinates relative to sink
+    util.values(root).forEach(function(v) {
+      placeBlock(v);
+    });
+
+    // Absolute coordinates
+    // There is an assumption here that we've resolved shifts for any classes
+    // that begin at an earlier layer. We guarantee this by visiting layers in
+    // order.
+    layering.forEach(function(layer) {
+      layer.forEach(function(v) {
+        xs[v] = xs[root[v]];
+        if (v === root[v] && v === sink[v]) {
+          var minShift = 0;
+          if (v in maybeShift && Object.keys(maybeShift[v]).length > 0) {
+            minShift = util.min(Object.keys(maybeShift[v])
+                                 .map(function(u) {
+                                      return maybeShift[v][u] + (u in shift ? shift[u] : 0);
+                                      }
+                                 ));
+          }
+          shift[v] = minShift;
+        }
+      });
+    });
+
+    layering.forEach(function(layer) {
+      layer.forEach(function(v) {
+        xs[v] += shift[sink[root[v]]] || 0;
+      });
+    });
+
+    return xs;
+  }
+
+  function findMinCoord(g, layering, xs) {
+    return util.min(layering.map(function(layer) {
+      var u = layer[0];
+      return xs[u];
+    }));
+  }
+
+  function findMaxCoord(g, layering, xs) {
+    return util.max(layering.map(function(layer) {
+      var u = layer[layer.length - 1];
+      return xs[u];
+    }));
+  }
+
+  function balance(g, layering, xss) {
+    var min = {},                            // Min coordinate for the alignment
+        max = {},                            // Max coordinate for the alginment
+        smallestAlignment,
+        shift = {};                          // Amount to shift a given alignment
+
+    function updateAlignment(v) {
+      xss[alignment][v] += shift[alignment];
+    }
+
+    var smallest = Number.POSITIVE_INFINITY;
+    for (var alignment in xss) {
+      var xs = xss[alignment];
+      min[alignment] = findMinCoord(g, layering, xs);
+      max[alignment] = findMaxCoord(g, layering, xs);
+      var w = max[alignment] - min[alignment];
+      if (w < smallest) {
+        smallest = w;
+        smallestAlignment = alignment;
+      }
+    }
+
+    // Determine how much to adjust positioning for each alignment
+    ['u', 'd'].forEach(function(vertDir) {
+      ['l', 'r'].forEach(function(horizDir) {
+        var alignment = vertDir + horizDir;
+        shift[alignment] = horizDir === 'l'
+            ? min[smallestAlignment] - min[alignment]
+            : max[smallestAlignment] - max[alignment];
+      });
+    });
+
+    // Find average of medians for xss array
+    for (alignment in xss) {
+      g.eachNode(updateAlignment);
+    }
+  }
+
+  function flipHorizontally(xs) {
+    for (var u in xs) {
+      xs[u] = -xs[u];
+    }
+  }
+
+  function reverseInnerOrder(layering) {
+    layering.forEach(function(layer) {
+      layer.reverse();
+    });
+  }
+
+  function width(g, u) {
+    switch (g.graph().rankDir) {
+      case 'LR': return g.node(u).height;
+      case 'RL': return g.node(u).height;
+      default:   return g.node(u).width;
+    }
+  }
+
+  function height(g, u) {
+    switch(g.graph().rankDir) {
+      case 'LR': return g.node(u).width;
+      case 'RL': return g.node(u).width;
+      default:   return g.node(u).height;
+    }
+  }
+
+  function sep(g, u) {
+    if (config.universalSep !== null) {
+      return config.universalSep;
+    }
+    var w = width(g, u);
+    var s = g.node(u).dummy ? config.edgeSep : config.nodeSep;
+    return (w + s) / 2;
+  }
+
+  function posX(g, u, x) {
+    if (g.graph().rankDir === 'LR' || g.graph().rankDir === 'RL') {
+      if (arguments.length < 3) {
+        return g.node(u).y;
+      } else {
+        g.node(u).y = x;
+      }
+    } else {
+      if (arguments.length < 3) {
+        return g.node(u).x;
+      } else {
+        g.node(u).x = x;
+      }
+    }
+  }
+
+  function posXDebug(name, g, u, x) {
+    if (g.graph().rankDir === 'LR' || g.graph().rankDir === 'RL') {
+      if (arguments.length < 3) {
+        return g.node(u)[name];
+      } else {
+        g.node(u)[name] = x;
+      }
+    } else {
+      if (arguments.length < 3) {
+        return g.node(u)[name];
+      } else {
+        g.node(u)[name] = x;
+      }
+    }
+  }
+
+  function posY(g, u, y) {
+    if (g.graph().rankDir === 'LR' || g.graph().rankDir === 'RL') {
+      if (arguments.length < 3) {
+        return g.node(u).x;
+      } else {
+        g.node(u).x = y;
+      }
+    } else {
+      if (arguments.length < 3) {
+        return g.node(u).y;
+      } else {
+        g.node(u).y = y;
+      }
+    }
+  }
+
+  function debugPositioning(align, g, layering, xs) {
+    layering.forEach(function(l, li) {
+      var u, xU;
+      l.forEach(function(v) {
+        var xV = xs[v];
+        if (u) {
+          var s = sep(g, u) + sep(g, v);
+          if (xV - xU < s)
+            console.log('Position phase: sep violation. Align: ' + align + '. Layer: ' + li + '. ' +
+              'U: ' + u + ' V: ' + v + '. Actual sep: ' + (xV - xU) + ' Expected sep: ' + s);
+        }
+        u = v;
+        xU = xV;
+      });
+    });
+  }
+};
+
+},{"./util":18}],11:[function(require,module,exports){
+'use strict';
+
+var util = require('./util'),
+    acyclic = require('./rank/acyclic'),
+    initRank = require('./rank/initRank'),
+    feasibleTree = require('./rank/feasibleTree'),
+    constraints = require('./rank/constraints'),
+    simplex = require('./rank/simplex'),
+    components = require('graphlib').alg.components,
+    filter = require('graphlib').filter;
+
+exports.run = run;
+exports.restoreEdges = restoreEdges;
+
+/*
+ * Heuristic function that assigns a rank to each node of the input graph with
+ * the intent of minimizing edge lengths, while respecting the `minLen`
+ * attribute of incident edges.
+ *
+ * Prerequisites:
+ *
+ *  * Each edge in the input graph must have an assigned 'minLen' attribute
+ */
+function run(g, useSimplex) {
+  expandSelfLoops(g);
+
+  // If there are rank constraints on nodes, then build a new graph that
+  // encodes the constraints.
+  util.time('constraints.apply', constraints.apply)(g);
+
+  expandSidewaysEdges(g);
+
+  // Reverse edges to get an acyclic graph, we keep the graph in an acyclic
+  // state until the very end.
+  util.time('acyclic', acyclic)(g);
+
+  // Convert the graph into a flat graph for ranking
+  var flatGraph = g.filterNodes(util.filterNonSubgraphs(g));
+
+  // Assign an initial ranking using DFS.
+  initRank(flatGraph);
+
+  // For each component improve the assigned ranks.
+  components(flatGraph).forEach(function(cmpt) {
+    var subgraph = flatGraph.filterNodes(filter.nodesFromList(cmpt));
+    rankComponent(subgraph, useSimplex);
+  });
+
+  // Relax original constraints
+  util.time('constraints.relax', constraints.relax(g));
+
+  // When handling nodes with constrained ranks it is possible to end up with
+  // edges that point to previous ranks. Most of the subsequent algorithms assume
+  // that edges are pointing to successive ranks only. Here we reverse any "back
+  // edges" and mark them as such. The acyclic algorithm will reverse them as a
+  // post processing step.
+  util.time('reorientEdges', reorientEdges)(g);
+}
+
+function restoreEdges(g) {
+  acyclic.undo(g);
+}
+
+/*
+ * Expand self loops into three dummy nodes. One will sit above the incident
+ * node, one will be at the same level, and one below. The result looks like:
+ *
+ *         /--<--x--->--\
+ *     node              y
+ *         \--<--z--->--/
+ *
+ * Dummy nodes x, y, z give us the shape of a loop and node y is where we place
+ * the label.
+ *
+ * TODO: consolidate knowledge of dummy node construction.
+ * TODO: support minLen = 2
+ */
+function expandSelfLoops(g) {
+  g.eachEdge(function(e, u, v, a) {
+    if (u === v) {
+      var x = addDummyNode(g, e, u, v, a, 0, false),
+          y = addDummyNode(g, e, u, v, a, 1, true),
+          z = addDummyNode(g, e, u, v, a, 2, false);
+      g.addEdge(null, x, u, {minLen: 1, selfLoop: true});
+      g.addEdge(null, x, y, {minLen: 1, selfLoop: true});
+      g.addEdge(null, u, z, {minLen: 1, selfLoop: true});
+      g.addEdge(null, y, z, {minLen: 1, selfLoop: true});
+      g.delEdge(e);
+    }
+  });
+}
+
+function expandSidewaysEdges(g) {
+  g.eachEdge(function(e, u, v, a) {
+    if (u === v) {
+      var origEdge = a.originalEdge,
+          dummy = addDummyNode(g, origEdge.e, origEdge.u, origEdge.v, origEdge.value, 0, true);
+      g.addEdge(null, u, dummy, {minLen: 1});
+      g.addEdge(null, dummy, v, {minLen: 1});
+      g.delEdge(e);
+    }
+  });
+}
+
+function addDummyNode(g, e, u, v, a, index, isLabel) {
+  return g.addNode(null, {
+    width: isLabel ? a.width : 0,
+    height: isLabel ? a.height : 0,
+    edge: { id: e, source: u, target: v, attrs: a },
+    dummy: true,
+    index: index
+  });
+}
+
+function reorientEdges(g) {
+  g.eachEdge(function(e, u, v, value) {
+    if (g.node(u).rank > g.node(v).rank) {
+      g.delEdge(e);
+      value.reversed = true;
+      g.addEdge(e, v, u, value);
+    }
+  });
+}
+
+function rankComponent(subgraph, useSimplex) {
+  var spanningTree = feasibleTree(subgraph);
+
+  if (useSimplex) {
+    util.log(1, 'Using network simplex for ranking');
+    simplex(subgraph, spanningTree);
+  }
+  normalize(subgraph);
+}
+
+function normalize(g) {
+  var m = util.min(g.nodes().map(function(u) { return g.node(u).rank; }));
+  g.eachNode(function(u, node) { node.rank -= m; });
+}
+
+},{"./rank/acyclic":12,"./rank/constraints":13,"./rank/feasibleTree":14,"./rank/initRank":15,"./rank/simplex":17,"./util":18,"graphlib":25}],12:[function(require,module,exports){
+'use strict';
+
+var util = require('../util');
+
+module.exports = acyclic;
+module.exports.undo = undo;
+
+/*
+ * This function takes a directed graph that may have cycles and reverses edges
+ * as appropriate to break these cycles. Each reversed edge is assigned a
+ * `reversed` attribute with the value `true`.
+ *
+ * There should be no self loops in the graph.
+ */
+function acyclic(g) {
+  var onStack = {},
+      visited = {},
+      reverseCount = 0;
+  
+  function dfs(u) {
+    if (u in visited) return;
+    visited[u] = onStack[u] = true;
+    g.outEdges(u).forEach(function(e) {
+      var t = g.target(e),
+          value;
+
+      if (u === t) {
+        console.error('Warning: found self loop "' + e + '" for node "' + u + '"');
+      } else if (t in onStack) {
+        value = g.edge(e);
+        g.delEdge(e);
+        value.reversed = true;
+        ++reverseCount;
+        g.addEdge(e, t, u, value);
+      } else {
+        dfs(t);
+      }
+    });
+
+    delete onStack[u];
+  }
+
+  g.eachNode(function(u) { dfs(u); });
+
+  util.log(2, 'Acyclic Phase: reversed ' + reverseCount + ' edge(s)');
+
+  return reverseCount;
+}
+
+/*
+ * Given a graph that has had the acyclic operation applied, this function
+ * undoes that operation. More specifically, any edge with the `reversed`
+ * attribute is again reversed to restore the original direction of the edge.
+ */
+function undo(g) {
+  g.eachEdge(function(e, s, t, a) {
+    if (a.reversed) {
+      delete a.reversed;
+      g.delEdge(e);
+      g.addEdge(e, t, s, a);
+    }
+  });
+}
+
+},{"../util":18}],13:[function(require,module,exports){
+'use strict';
+
+exports.apply = function(g) {
+  function dfs(sg) {
+    var rankSets = {};
+    g.children(sg).forEach(function(u) {
+      if (g.children(u).length) {
+        dfs(u);
+        return;
+      }
+
+      var value = g.node(u),
+          prefRank = value.prefRank;
+      if (prefRank !== undefined) {
+        if (!checkSupportedPrefRank(prefRank)) { return; }
+
+        if (!(prefRank in rankSets)) {
+          rankSets.prefRank = [u];
+        } else {
+          rankSets.prefRank.push(u);
+        }
+
+        var newU = rankSets[prefRank];
+        if (newU === undefined) {
+          newU = rankSets[prefRank] = g.addNode(null, { originalNodes: [] });
+          g.parent(newU, sg);
+        }
+
+        redirectInEdges(g, u, newU, prefRank === 'min');
+        redirectOutEdges(g, u, newU, prefRank === 'max');
+
+        // Save original node and remove it from reduced graph
+        g.node(newU).originalNodes.push({ u: u, value: value, parent: sg });
+        g.delNode(u);
+      }
+    });
+
+    addLightEdgesFromMinNode(g, sg, rankSets.min);
+    addLightEdgesToMaxNode(g, sg, rankSets.max);
+  }
+
+  dfs(null);
+};
+
+function checkSupportedPrefRank(prefRank) {
+  if (prefRank !== 'min' && prefRank !== 'max' && prefRank.indexOf('same_') !== 0) {
+    console.error('Unsupported rank type: ' + prefRank);
+    return false;
+  }
+  return true;
+}
+
+function redirectInEdges(g, u, newU, reverse) {
+  g.inEdges(u).forEach(function(e) {
+    var origValue = g.edge(e),
+        value;
+    if (origValue.originalEdge) {
+      value = origValue;
+    } else {
+      value =  {
+        originalEdge: { e: e, u: g.source(e), v: g.target(e), value: origValue },
+        minLen: g.edge(e).minLen
+      };
+    }
+
+    // Do not reverse edges for self-loops.
+    if (origValue.selfLoop) {
+      reverse = false;
+    }
+
+    if (reverse) {
+      // Ensure that all edges to min are reversed
+      g.addEdge(null, newU, g.source(e), value);
+      value.reversed = true;
+    } else {
+      g.addEdge(null, g.source(e), newU, value);
+    }
+  });
+}
+
+function redirectOutEdges(g, u, newU, reverse) {
+  g.outEdges(u).forEach(function(e) {
+    var origValue = g.edge(e),
+        value;
+    if (origValue.originalEdge) {
+      value = origValue;
+    } else {
+      value =  {
+        originalEdge: { e: e, u: g.source(e), v: g.target(e), value: origValue },
+        minLen: g.edge(e).minLen
+      };
+    }
+
+    // Do not reverse edges for self-loops.
+    if (origValue.selfLoop) {
+      reverse = false;
+    }
+
+    if (reverse) {
+      // Ensure that all edges from max are reversed
+      g.addEdge(null, g.target(e), newU, value);
+      value.reversed = true;
+    } else {
+      g.addEdge(null, newU, g.target(e), value);
+    }
+  });
+}
+
+function addLightEdgesFromMinNode(g, sg, minNode) {
+  if (minNode !== undefined) {
+    g.children(sg).forEach(function(u) {
+      // The dummy check ensures we don't add an edge if the node is involved
+      // in a self loop or sideways edge.
+      if (u !== minNode && !g.outEdges(minNode, u).length && !g.node(u).dummy) {
+        g.addEdge(null, minNode, u, { minLen: 0 });
+      }
+    });
+  }
+}
+
+function addLightEdgesToMaxNode(g, sg, maxNode) {
+  if (maxNode !== undefined) {
+    g.children(sg).forEach(function(u) {
+      // The dummy check ensures we don't add an edge if the node is involved
+      // in a self loop or sideways edge.
+      if (u !== maxNode && !g.outEdges(u, maxNode).length && !g.node(u).dummy) {
+        g.addEdge(null, u, maxNode, { minLen: 0 });
+      }
+    });
+  }
+}
+
+/*
+ * This function "relaxes" the constraints applied previously by the "apply"
+ * function. It expands any nodes that were collapsed and assigns the rank of
+ * the collapsed node to each of the expanded nodes. It also restores the
+ * original edges and removes any dummy edges pointing at the collapsed nodes.
+ *
+ * Note that the process of removing collapsed nodes also removes dummy edges
+ * automatically.
+ */
+exports.relax = function(g) {
+  // Save original edges
+  var originalEdges = [];
+  g.eachEdge(function(e, u, v, value) {
+    var originalEdge = value.originalEdge;
+    if (originalEdge) {
+      originalEdges.push(originalEdge);
+    }
+  });
+
+  // Expand collapsed nodes
+  g.eachNode(function(u, value) {
+    var originalNodes = value.originalNodes;
+    if (originalNodes) {
+      originalNodes.forEach(function(originalNode) {
+        originalNode.value.rank = value.rank;
+        g.addNode(originalNode.u, originalNode.value);
+        g.parent(originalNode.u, originalNode.parent);
+      });
+      g.delNode(u);
+    }
+  });
+
+  // Restore original edges
+  originalEdges.forEach(function(edge) {
+    g.addEdge(edge.e, edge.u, edge.v, edge.value);
+  });
+};
+
+},{}],14:[function(require,module,exports){
+'use strict';
+
+/* jshint -W079 */
+var Set = require('cp-data').Set,
+/* jshint +W079 */
+    Digraph = require('graphlib').Digraph,
+    util = require('../util');
+
+module.exports = feasibleTree;
+
+/*
+ * Given an acyclic graph with each node assigned a `rank` attribute, this
+ * function constructs and returns a spanning tree. This function may reduce
+ * the length of some edges from the initial rank assignment while maintaining
+ * the `minLen` specified by each edge.
+ *
+ * Prerequisites:
+ *
+ * * The input graph is acyclic
+ * * Each node in the input graph has an assigned `rank` attribute
+ * * Each edge in the input graph has an assigned `minLen` attribute
+ *
+ * Outputs:
+ *
+ * A feasible spanning tree for the input graph (i.e. a spanning tree that
+ * respects each graph edge's `minLen` attribute) represented as a Digraph with
+ * a `root` attribute on graph.
+ *
+ * Nodes have the same id and value as that in the input graph.
+ *
+ * Edges in the tree have arbitrarily assigned ids. The attributes for edges
+ * include `reversed`. `reversed` indicates that the edge is a
+ * back edge in the input graph.
+ */
+function feasibleTree(g) {
+  var remaining = new Set(g.nodes()),
+      tree = new Digraph();
+
+  if (remaining.size() === 1) {
+    var root = g.nodes()[0];
+    tree.addNode(root, {});
+    tree.graph({ root: root });
+    return tree;
+  }
+
+  function addTightEdges(v) {
+    var continueToScan = true;
+    g.predecessors(v).forEach(function(u) {
+      if (remaining.has(u) && !slack(g, u, v)) {
+        if (remaining.has(v)) {
+          tree.addNode(v, {});
+          remaining.remove(v);
+          tree.graph({ root: v });
+        }
+
+        tree.addNode(u, {});
+        tree.addEdge(null, u, v, { reversed: true });
+        remaining.remove(u);
+        addTightEdges(u);
+        continueToScan = false;
+      }
+    });
+
+    g.successors(v).forEach(function(w)  {
+      if (remaining.has(w) && !slack(g, v, w)) {
+        if (remaining.has(v)) {
+          tree.addNode(v, {});
+          remaining.remove(v);
+          tree.graph({ root: v });
+        }
+
+        tree.addNode(w, {});
+        tree.addEdge(null, v, w, {});
+        remaining.remove(w);
+        addTightEdges(w);
+        continueToScan = false;
+      }
+    });
+    return continueToScan;
+  }
+
+  function createTightEdge() {
+    var minSlack = Number.MAX_VALUE;
+    remaining.keys().forEach(function(v) {
+      g.predecessors(v).forEach(function(u) {
+        if (!remaining.has(u)) {
+          var edgeSlack = slack(g, u, v);
+          if (Math.abs(edgeSlack) < Math.abs(minSlack)) {
+            minSlack = -edgeSlack;
+          }
+        }
+      });
+
+      g.successors(v).forEach(function(w) {
+        if (!remaining.has(w)) {
+          var edgeSlack = slack(g, v, w);
+          if (Math.abs(edgeSlack) < Math.abs(minSlack)) {
+            minSlack = edgeSlack;
+          }
+        }
+      });
+    });
+
+    tree.eachNode(function(u) { g.node(u).rank -= minSlack; });
+  }
+
+  while (remaining.size()) {
+    var nodesToSearch = !tree.order() ? remaining.keys() : tree.nodes();
+    for (var i = 0, il = nodesToSearch.length;
+         i < il && addTightEdges(nodesToSearch[i]);
+         ++i);
+    if (remaining.size()) {
+      createTightEdge();
+    }
+  }
+
+  return tree;
+}
+
+function slack(g, u, v) {
+  var rankDiff = g.node(v).rank - g.node(u).rank;
+  var maxMinLen = util.max(g.outEdges(u, v)
+                            .map(function(e) { return g.edge(e).minLen; }));
+  return rankDiff - maxMinLen;
+}
+
+},{"../util":18,"cp-data":20,"graphlib":25}],15:[function(require,module,exports){
+'use strict';
+
+var util = require('../util'),
+    topsort = require('graphlib').alg.topsort;
+
+module.exports = initRank;
+
+/*
+ * Assigns a `rank` attribute to each node in the input graph and ensures that
+ * this rank respects the `minLen` attribute of incident edges.
+ *
+ * Prerequisites:
+ *
+ *  * The input graph must be acyclic
+ *  * Each edge in the input graph must have an assigned 'minLen' attribute
+ */
+function initRank(g) {
+  var sorted = topsort(g);
+
+  sorted.forEach(function(u) {
+    var inEdges = g.inEdges(u);
+    if (inEdges.length === 0) {
+      g.node(u).rank = 0;
+      return;
+    }
+
+    var minLens = inEdges.map(function(e) {
+      return g.node(g.source(e)).rank + g.edge(e).minLen;
+    });
+    g.node(u).rank = util.max(minLens);
+  });
+}
+
+},{"../util":18,"graphlib":25}],16:[function(require,module,exports){
+'use strict';
+
+module.exports = {
+  slack: slack
+};
+
+/*
+ * A helper to calculate the slack between two nodes (`u` and `v`) given a
+ * `minLen` constraint. The slack represents how much the distance between `u`
+ * and `v` could shrink while maintaining the `minLen` constraint. If the value
+ * is negative then the constraint is currently violated.
+ *
+  This function requires that `u` and `v` are in `graph` and they both have a
+  `rank` attribute.
+ */
+function slack(graph, u, v, minLen) {
+  return Math.abs(graph.node(u).rank - graph.node(v).rank) - minLen;
+}
+
+},{}],17:[function(require,module,exports){
+'use strict';
+
+var util = require('../util'),
+    rankUtil = require('./rankUtil');
+
+module.exports = simplex;
+
+function simplex(graph, spanningTree) {
+  // The network simplex algorithm repeatedly replaces edges of
+  // the spanning tree with negative cut values until no such
+  // edge exists.
+  initCutValues(graph, spanningTree);
+  while (true) {
+    var e = leaveEdge(spanningTree);
+    if (e === null) break;
+    var f = enterEdge(graph, spanningTree, e);
+    exchange(graph, spanningTree, e, f);
+  }
+}
+
+/*
+ * Set the cut values of edges in the spanning tree by a depth-first
+ * postorder traversal.  The cut value corresponds to the cost, in
+ * terms of a ranking's edge length sum, of lengthening an edge.
+ * Negative cut values typically indicate edges that would yield a
+ * smaller edge length sum if they were lengthened.
+ */
+function initCutValues(graph, spanningTree) {
+  computeLowLim(spanningTree);
+
+  spanningTree.eachEdge(function(id, u, v, treeValue) {
+    treeValue.cutValue = 0;
+  });
+
+  // Propagate cut values up the tree.
+  function dfs(n) {
+    var children = spanningTree.successors(n);
+    for (var c in children) {
+      var child = children[c];
+      dfs(child);
+    }
+    if (n !== spanningTree.graph().root) {
+      setCutValue(graph, spanningTree, n);
+    }
+  }
+  dfs(spanningTree.graph().root);
+}
+
+/*
+ * Perform a DFS postorder traversal, labeling each node v with
+ * its traversal order 'lim(v)' and the minimum traversal number
+ * of any of its descendants 'low(v)'.  This provides an efficient
+ * way to test whether u is an ancestor of v since
+ * low(u) <= lim(v) <= lim(u) if and only if u is an ancestor.
+ */
+function computeLowLim(tree) {
+  var postOrderNum = 0;
+  
+  function dfs(n) {
+    var children = tree.successors(n);
+    var low = postOrderNum;
+    for (var c in children) {
+      var child = children[c];
+      dfs(child);
+      low = Math.min(low, tree.node(child).low);
+    }
+    tree.node(n).low = low;
+    tree.node(n).lim = postOrderNum++;
+  }
+
+  dfs(tree.graph().root);
+}
+
+/*
+ * To compute the cut value of the edge parent -> child, we consider
+ * it and any other graph edges to or from the child.
+ *          parent
+ *             |
+ *           child
+ *          /      \
+ *         u        v
+ */
+function setCutValue(graph, tree, child) {
+  var parentEdge = tree.inEdges(child)[0];
+
+  // List of child's children in the spanning tree.
+  var grandchildren = [];
+  var grandchildEdges = tree.outEdges(child);
+  for (var gce in grandchildEdges) {
+    grandchildren.push(tree.target(grandchildEdges[gce]));
+  }
+
+  var cutValue = 0;
+
+  // TODO: Replace unit increment/decrement with edge weights.
+  var E = 0;    // Edges from child to grandchild's subtree.
+  var F = 0;    // Edges to child from grandchild's subtree.
+  var G = 0;    // Edges from child to nodes outside of child's subtree.
+  var H = 0;    // Edges from nodes outside of child's subtree to child.
+
+  // Consider all graph edges from child.
+  var outEdges = graph.outEdges(child);
+  var gc;
+  for (var oe in outEdges) {
+    var succ = graph.target(outEdges[oe]);
+    for (gc in grandchildren) {
+      if (inSubtree(tree, succ, grandchildren[gc])) {
+        E++;
+      }
+    }
+    if (!inSubtree(tree, succ, child)) {
+      G++;
+    }
+  }
+
+  // Consider all graph edges to child.
+  var inEdges = graph.inEdges(child);
+  for (var ie in inEdges) {
+    var pred = graph.source(inEdges[ie]);
+    for (gc in grandchildren) {
+      if (inSubtree(tree, pred, grandchildren[gc])) {
+        F++;
+      }
+    }
+    if (!inSubtree(tree, pred, child)) {
+      H++;
+    }
+  }
+
+  // Contributions depend on the alignment of the parent -> child edge
+  // and the child -> u or v edges.
+  var grandchildCutSum = 0;
+  for (gc in grandchildren) {
+    var cv = tree.edge(grandchildEdges[gc]).cutValue;
+    if (!tree.edge(grandchildEdges[gc]).reversed) {
+      grandchildCutSum += cv;
+    } else {
+      grandchildCutSum -= cv;
+    }
+  }
+
+  if (!tree.edge(parentEdge).reversed) {
+    cutValue += grandchildCutSum - E + F - G + H;
+  } else {
+    cutValue -= grandchildCutSum - E + F - G + H;
+  }
+
+  tree.edge(parentEdge).cutValue = cutValue;
+}
+
+/*
+ * Return whether n is a node in the subtree with the given
+ * root.
+ */
+function inSubtree(tree, n, root) {
+  return (tree.node(root).low <= tree.node(n).lim &&
+          tree.node(n).lim <= tree.node(root).lim);
+}
+
+/*
+ * Return an edge from the tree with a negative cut value, or null if there
+ * is none.
+ */
+function leaveEdge(tree) {
+  var edges = tree.edges();
+  for (var n in edges) {
+    var e = edges[n];
+    var treeValue = tree.edge(e);
+    if (treeValue.cutValue < 0) {
+      return e;
+    }
+  }
+  return null;
+}
+
+/*
+ * The edge e should be an edge in the tree, with an underlying edge
+ * in the graph, with a negative cut value.  Of the two nodes incident
+ * on the edge, take the lower one.  enterEdge returns an edge with
+ * minimum slack going from outside of that node's subtree to inside
+ * of that node's subtree.
+ */
+function enterEdge(graph, tree, e) {
+  var source = tree.source(e);
+  var target = tree.target(e);
+  var lower = tree.node(target).lim < tree.node(source).lim ? target : source;
+
+  // Is the tree edge aligned with the graph edge?
+  var aligned = !tree.edge(e).reversed;
+
+  var minSlack = Number.POSITIVE_INFINITY;
+  var minSlackEdge;
+  if (aligned) {
+    graph.eachEdge(function(id, u, v, value) {
+      if (id !== e && inSubtree(tree, u, lower) && !inSubtree(tree, v, lower)) {
+        var slack = rankUtil.slack(graph, u, v, value.minLen);
+        if (slack < minSlack) {
+          minSlack = slack;
+          minSlackEdge = id;
+        }
+      }
+    });
+  } else {
+    graph.eachEdge(function(id, u, v, value) {
+      if (id !== e && !inSubtree(tree, u, lower) && inSubtree(tree, v, lower)) {
+        var slack = rankUtil.slack(graph, u, v, value.minLen);
+        if (slack < minSlack) {
+          minSlack = slack;
+          minSlackEdge = id;
+        }
+      }
+    });
+  }
+
+  if (minSlackEdge === undefined) {
+    var outside = [];
+    var inside = [];
+    graph.eachNode(function(id) {
+      if (!inSubtree(tree, id, lower)) {
+        outside.push(id);
+      } else {
+        inside.push(id);
+      }
+    });
+    throw new Error('No edge found from outside of tree to inside');
+  }
+
+  return minSlackEdge;
+}
+
+/*
+ * Replace edge e with edge f in the tree, recalculating the tree root,
+ * the nodes' low and lim properties and the edges' cut values.
+ */
+function exchange(graph, tree, e, f) {
+  tree.delEdge(e);
+  var source = graph.source(f);
+  var target = graph.target(f);
+
+  // Redirect edges so that target is the root of its subtree.
+  function redirect(v) {
+    var edges = tree.inEdges(v);
+    for (var i in edges) {
+      var e = edges[i];
+      var u = tree.source(e);
+      var value = tree.edge(e);
+      redirect(u);
+      tree.delEdge(e);
+      value.reversed = !value.reversed;
+      tree.addEdge(e, v, u, value);
+    }
+  }
+
+  redirect(target);
+
+  var root = source;
+  var edges = tree.inEdges(root);
+  while (edges.length > 0) {
+    root = tree.source(edges[0]);
+    edges = tree.inEdges(root);
+  }
+
+  tree.graph().root = root;
+
+  tree.addEdge(null, source, target, {cutValue: 0});
+
+  initCutValues(graph, tree);
+
+  adjustRanks(graph, tree);
+}
+
+/*
+ * Reset the ranks of all nodes based on the current spanning tree.
+ * The rank of the tree's root remains unchanged, while all other
+ * nodes are set to the sum of minimum length constraints along
+ * the path from the root.
+ */
+function adjustRanks(graph, tree) {
+  function dfs(p) {
+    var children = tree.successors(p);
+    children.forEach(function(c) {
+      var minLen = minimumLength(graph, p, c);
+      graph.node(c).rank = graph.node(p).rank + minLen;
+      dfs(c);
+    });
+  }
+
+  dfs(tree.graph().root);
+}
+
+/*
+ * If u and v are connected by some edges in the graph, return the
+ * minimum length of those edges, as a positive number if v succeeds
+ * u and as a negative number if v precedes u.
+ */
+function minimumLength(graph, u, v) {
+  var outEdges = graph.outEdges(u, v);
+  if (outEdges.length > 0) {
+    return util.max(outEdges.map(function(e) {
+      return graph.edge(e).minLen;
+    }));
+  }
+
+  var inEdges = graph.inEdges(u, v);
+  if (inEdges.length > 0) {
+    return -util.max(inEdges.map(function(e) {
+      return graph.edge(e).minLen;
+    }));
+  }
+}
+
+},{"../util":18,"./rankUtil":16}],18:[function(require,module,exports){
+'use strict';
+
+/*
+ * Returns the smallest value in the array.
+ */
+exports.min = function(values) {
+  return Math.min.apply(Math, values);
+};
+
+/*
+ * Returns the largest value in the array.
+ */
+exports.max = function(values) {
+  return Math.max.apply(Math, values);
+};
+
+/*
+ * Returns `true` only if `f(x)` is `true` for all `x` in `xs`. Otherwise
+ * returns `false`. This function will return immediately if it finds a
+ * case where `f(x)` does not hold.
+ */
+exports.all = function(xs, f) {
+  for (var i = 0; i < xs.length; ++i) {
+    if (!f(xs[i])) {
+      return false;
+    }
+  }
+  return true;
+};
+
+/*
+ * Accumulates the sum of elements in the given array using the `+` operator.
+ */
+exports.sum = function(values) {
+  return values.reduce(function(acc, x) { return acc + x; }, 0);
+};
+
+/*
+ * Returns an array of all values in the given object.
+ */
+exports.values = function(obj) {
+  return Object.keys(obj).map(function(k) { return obj[k]; });
+};
+
+exports.shuffle = function(array) {
+  for (var i = array.length - 1; i > 0; --i) {
+    var j = Math.floor(Math.random() * (i + 1));
+    var aj = array[j];
+    array[j] = array[i];
+    array[i] = aj;
+  }
+};
+
+exports.propertyAccessor = function(self, config, field, setHook) {
+  return function(x) {
+    if (!arguments.length) return config[field];
+    config[field] = x;
+    if (setHook) setHook(x);
+    return self;
+  };
+};
+
+/*
+ * Given a layered, directed graph with `rank` and `order` node attributes,
+ * this function returns an array of ordered ranks. Each rank contains an array
+ * of the ids of the nodes in that rank in the order specified by the `order`
+ * attribute.
+ */
+exports.ordering = function(g) {
+  var ordering = [];
+  g.eachNode(function(u, value) {
+    var rank = ordering[value.rank] || (ordering[value.rank] = []);
+    rank[value.order] = u;
+  });
+  return ordering;
+};
+
+/*
+ * A filter that can be used with `filterNodes` to get a graph that only
+ * includes nodes that do not contain others nodes.
+ */
+exports.filterNonSubgraphs = function(g) {
+  return function(u) {
+    return g.children(u).length === 0;
+  };
+};
+
+/*
+ * Returns a new function that wraps `func` with a timer. The wrapper logs the
+ * time it takes to execute the function.
+ *
+ * The timer will be enabled provided `log.level >= 1`.
+ */
+function time(name, func) {
+  return function() {
+    var start = new Date().getTime();
+    try {
+      return func.apply(null, arguments);
+    } finally {
+      log(1, name + ' time: ' + (new Date().getTime() - start) + 'ms');
+    }
+  };
+}
+time.enabled = false;
+
+exports.time = time;
+
+/*
+ * A global logger with the specification `log(level, message, ...)` that
+ * will log a message to the console if `log.level >= level`.
+ */
+function log(level) {
+  if (log.level >= level) {
+    console.log.apply(console, Array.prototype.slice.call(arguments, 1));
+  }
+}
+log.level = 0;
+
+exports.log = log;
+
+},{}],19:[function(require,module,exports){
+module.exports = '0.4.6';
+
+},{}],20:[function(require,module,exports){
+exports.Set = require('./lib/Set');
+exports.PriorityQueue = require('./lib/PriorityQueue');
+exports.version = require('./lib/version');
+
+},{"./lib/PriorityQueue":21,"./lib/Set":22,"./lib/version":24}],21:[function(require,module,exports){
+module.exports = PriorityQueue;
+
+/**
+ * A min-priority queue data structure. This algorithm is derived from Cormen,
+ * et al., "Introduction to Algorithms". The basic idea of a min-priority
+ * queue is that you can efficiently (in O(1) time) get the smallest key in
+ * the queue. Adding and removing elements takes O(log n) time. A key can
+ * have its priority decreased in O(log n) time.
+ */
+function PriorityQueue() {
+  this._arr = [];
+  this._keyIndices = {};
+}
+
+/**
+ * Returns the number of elements in the queue. Takes `O(1)` time.
+ */
+PriorityQueue.prototype.size = function() {
+  return this._arr.length;
+};
+
+/**
+ * Returns the keys that are in the queue. Takes `O(n)` time.
+ */
+PriorityQueue.prototype.keys = function() {
+  return this._arr.map(function(x) { return x.key; });
+};
+
+/**
+ * Returns `true` if **key** is in the queue and `false` if not.
+ */
+PriorityQueue.prototype.has = function(key) {
+  return key in this._keyIndices;
+};
+
+/**
+ * Returns the priority for **key**. If **key** is not present in the queue
+ * then this function returns `undefined`. Takes `O(1)` time.
+ *
+ * @param {Object} key
+ */
+PriorityQueue.prototype.priority = function(key) {
+  var index = this._keyIndices[key];
+  if (index !== undefined) {
+    return this._arr[index].priority;
+  }
+};
+
+/**
+ * Returns the key for the minimum element in this queue. If the queue is
+ * empty this function throws an Error. Takes `O(1)` time.
+ */
+PriorityQueue.prototype.min = function() {
+  if (this.size() === 0) {
+    throw new Error("Queue underflow");
+  }
+  return this._arr[0].key;
+};
+
+/**
+ * Inserts a new key into the priority queue. If the key already exists in
+ * the queue this function returns `false`; otherwise it will return `true`.
+ * Takes `O(n)` time.
+ *
+ * @param {Object} key the key to add
+ * @param {Number} priority the initial priority for the key
+ */
+PriorityQueue.prototype.add = function(key, priority) {
+  var keyIndices = this._keyIndices;
+  if (!(key in keyIndices)) {
+    var arr = this._arr;
+    var index = arr.length;
+    keyIndices[key] = index;
+    arr.push({key: key, priority: priority});
+    this._decrease(index);
+    return true;
+  }
+  return false;
+};
+
+/**
+ * Removes and returns the smallest key in the queue. Takes `O(log n)` time.
+ */
+PriorityQueue.prototype.removeMin = function() {
+  this._swap(0, this._arr.length - 1);
+  var min = this._arr.pop();
+  delete this._keyIndices[min.key];
+  this._heapify(0);
+  return min.key;
+};
+
+/**
+ * Decreases the priority for **key** to **priority**. If the new priority is
+ * greater than the previous priority, this function will throw an Error.
+ *
+ * @param {Object} key the key for which to raise priority
+ * @param {Number} priority the new priority for the key
+ */
+PriorityQueue.prototype.decrease = function(key, priority) {
+  var index = this._keyIndices[key];
+  if (priority > this._arr[index].priority) {
+    throw new Error("New priority is greater than current priority. " +
+        "Key: " + key + " Old: " + this._arr[index].priority + " New: " + priority);
+  }
+  this._arr[index].priority = priority;
+  this._decrease(index);
+};
+
+PriorityQueue.prototype._heapify = function(i) {
+  var arr = this._arr;
+  var l = 2 * i,
+      r = l + 1,
+      largest = i;
+  if (l < arr.length) {
+    largest = arr[l].priority < arr[largest].priority ? l : largest;
+    if (r < arr.length) {
+      largest = arr[r].priority < arr[largest].priority ? r : largest;
+    }
+    if (largest !== i) {
+      this._swap(i, largest);
+      this._heapify(largest);
+    }
+  }
+};
+
+PriorityQueue.prototype._decrease = function(index) {
+  var arr = this._arr;
+  var priority = arr[index].priority;
+  var parent;
+  while (index !== 0) {
+    parent = index >> 1;
+    if (arr[parent].priority < priority) {
+      break;
+    }
+    this._swap(index, parent);
+    index = parent;
+  }
+};
+
+PriorityQueue.prototype._swap = function(i, j) {
+  var arr = this._arr;
+  var keyIndices = this._keyIndices;
+  var origArrI = arr[i];
+  var origArrJ = arr[j];
+  arr[i] = origArrJ;
+  arr[j] = origArrI;
+  keyIndices[origArrJ.key] = i;
+  keyIndices[origArrI.key] = j;
+};
+
+},{}],22:[function(require,module,exports){
+var util = require('./util');
+
+module.exports = Set;
+
+/**
+ * Constructs a new Set with an optional set of `initialKeys`.
+ *
+ * It is important to note that keys are coerced to String for most purposes
+ * with this object, similar to the behavior of JavaScript's Object. For
+ * example, the following will add only one key:
+ *
+ *     var s = new Set();
+ *     s.add(1);
+ *     s.add("1");
+ *
+ * However, the type of the key is preserved internally so that `keys` returns
+ * the original key set uncoerced. For the above example, `keys` would return
+ * `[1]`.
+ */
+function Set(initialKeys) {
+  this._size = 0;
+  this._keys = {};
+
+  if (initialKeys) {
+    for (var i = 0, il = initialKeys.length; i < il; ++i) {
+      this.add(initialKeys[i]);
+    }
+  }
+}
+
+/**
+ * Returns a new Set that represents the set intersection of the array of given
+ * sets.
+ */
+Set.intersect = function(sets) {
+  if (sets.length === 0) {
+    return new Set();
+  }
+
+  var result = new Set(!util.isArray(sets[0]) ? sets[0].keys() : sets[0]);
+  for (var i = 1, il = sets.length; i < il; ++i) {
+    var resultKeys = result.keys(),
+        other = !util.isArray(sets[i]) ? sets[i] : new Set(sets[i]);
+    for (var j = 0, jl = resultKeys.length; j < jl; ++j) {
+      var key = resultKeys[j];
+      if (!other.has(key)) {
+        result.remove(key);
+      }
+    }
+  }
+
+  return result;
+};
+
+/**
+ * Returns a new Set that represents the set union of the array of given sets.
+ */
+Set.union = function(sets) {
+  var totalElems = util.reduce(sets, function(lhs, rhs) {
+    return lhs + (rhs.size ? rhs.size() : rhs.length);
+  }, 0);
+  var arr = new Array(totalElems);
+
+  var k = 0;
+  for (var i = 0, il = sets.length; i < il; ++i) {
+    var cur = sets[i],
+        keys = !util.isArray(cur) ? cur.keys() : cur;
+    for (var j = 0, jl = keys.length; j < jl; ++j) {
+      arr[k++] = keys[j];
+    }
+  }
+
+  return new Set(arr);
+};
+
+/**
+ * Returns the size of this set in `O(1)` time.
+ */
+Set.prototype.size = function() {
+  return this._size;
+};
+
+/**
+ * Returns the keys in this set. Takes `O(n)` time.
+ */
+Set.prototype.keys = function() {
+  return values(this._keys);
+};
+
+/**
+ * Tests if a key is present in this Set. Returns `true` if it is and `false`
+ * if not. Takes `O(1)` time.
+ */
+Set.prototype.has = function(key) {
+  return key in this._keys;
+};
+
+/**
+ * Adds a new key to this Set if it is not already present. Returns `true` if
+ * the key was added and `false` if it was already present. Takes `O(1)` time.
+ */
+Set.prototype.add = function(key) {
+  if (!(key in this._keys)) {
+    this._keys[key] = key;
+    ++this._size;
+    return true;
+  }
+  return false;
+};
+
+/**
+ * Removes a key from this Set. If the key was removed this function returns
+ * `true`. If not, it returns `false`. Takes `O(1)` time.
+ */
+Set.prototype.remove = function(key) {
+  if (key in this._keys) {
+    delete this._keys[key];
+    --this._size;
+    return true;
+  }
+  return false;
+};
+
+/*
+ * Returns an array of all values for properties of **o**.
+ */
+function values(o) {
+  var ks = Object.keys(o),
+      len = ks.length,
+      result = new Array(len),
+      i;
+  for (i = 0; i < len; ++i) {
+    result[i] = o[ks[i]];
+  }
+  return result;
+}
+
+},{"./util":23}],23:[function(require,module,exports){
+/*
+ * This polyfill comes from
+ * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray
+ */
+if(!Array.isArray) {
+  exports.isArray = function (vArg) {
+    return Object.prototype.toString.call(vArg) === '[object Array]';
+  };
+} else {
+  exports.isArray = Array.isArray;
+}
+
+/*
+ * Slightly adapted polyfill from
+ * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce
+ */
+if ('function' !== typeof Array.prototype.reduce) {
+  exports.reduce = function(array, callback, opt_initialValue) {
+    'use strict';
+    if (null === array || 'undefined' === typeof array) {
+      // At the moment all modern browsers, that support strict mode, have
+      // native implementation of Array.prototype.reduce. For instance, IE8
+      // does not support strict mode, so this check is actually useless.
+      throw new TypeError(
+          'Array.prototype.reduce called on null or undefined');
+    }
+    if ('function' !== typeof callback) {
+      throw new TypeError(callback + ' is not a function');
+    }
+    var index, value,
+        length = array.length >>> 0,
+        isValueSet = false;
+    if (1 < arguments.length) {
+      value = opt_initialValue;
+      isValueSet = true;
+    }
+    for (index = 0; length > index; ++index) {
+      if (array.hasOwnProperty(index)) {
+        if (isValueSet) {
+          value = callback(value, array[index], index, array);
+        }
+        else {
+          value = array[index];
+          isValueSet = true;
+        }
+      }
+    }
+    if (!isValueSet) {
+      throw new TypeError('Reduce of empty array with no initial value');
+    }
+    return value;
+  };
+} else {
+  exports.reduce = function(array, callback, opt_initialValue) {
+    return array.reduce(callback, opt_initialValue);
+  };
+}
+
+},{}],24:[function(require,module,exports){
+module.exports = '1.1.3';
+
+},{}],25:[function(require,module,exports){
+exports.Graph = require("./lib/Graph");
+exports.Digraph = require("./lib/Digraph");
+exports.CGraph = require("./lib/CGraph");
+exports.CDigraph = require("./lib/CDigraph");
+require("./lib/graph-converters");
+
+exports.alg = {
+  isAcyclic: require("./lib/alg/isAcyclic"),
+  components: require("./lib/alg/components"),
+  dijkstra: require("./lib/alg/dijkstra"),
+  dijkstraAll: require("./lib/alg/dijkstraAll"),
+  findCycles: require("./lib/alg/findCycles"),
+  floydWarshall: require("./lib/alg/floydWarshall"),
+  postorder: require("./lib/alg/postorder"),
+  preorder: require("./lib/alg/preorder"),
+  prim: require("./lib/alg/prim"),
+  tarjan: require("./lib/alg/tarjan"),
+  topsort: require("./lib/alg/topsort")
+};
+
+exports.converter = {
+  json: require("./lib/converter/json.js")
+};
+
+var filter = require("./lib/filter");
+exports.filter = {
+  all: filter.all,
+  nodesFromList: filter.nodesFromList
+};
+
+exports.version = require("./lib/version");
+
+},{"./lib/CDigraph":27,"./lib/CGraph":28,"./lib/Digraph":29,"./lib/Graph":30,"./lib/alg/components":31,"./lib/alg/dijkstra":32,"./lib/alg/dijkstraAll":33,"./lib/alg/findCycles":34,"./lib/alg/floydWarshall":35,"./lib/alg/isAcyclic":36,"./lib/alg/postorder":37,"./lib/alg/preorder":38,"./lib/alg/prim":39,"./lib/alg/tarjan":40,"./lib/alg/topsort":41,"./lib/converter/json.js":43,"./lib/filter":44,"./lib/graph-converters":45,"./lib/version":47}],26:[function(require,module,exports){
+/* jshint -W079 */
+var Set = require("cp-data").Set;
+/* jshint +W079 */
+
+module.exports = BaseGraph;
+
+function BaseGraph() {
+  // The value assigned to the graph itself.
+  this._value = undefined;
+
+  // Map of node id -> { id, value }
+  this._nodes = {};
+
+  // Map of edge id -> { id, u, v, value }
+  this._edges = {};
+
+  // Used to generate a unique id in the graph
+  this._nextId = 0;
+}
+
+// Number of nodes
+BaseGraph.prototype.order = function() {
+  return Object.keys(this._nodes).length;
+};
+
+// Number of edges
+BaseGraph.prototype.size = function() {
+  return Object.keys(this._edges).length;
+};
+
+// Accessor for graph level value
+BaseGraph.prototype.graph = function(value) {
+  if (arguments.length === 0) {
+    return this._value;
+  }
+  this._value = value;
+};
+
+BaseGraph.prototype.hasNode = function(u) {
+  return u in this._nodes;
+};
+
+BaseGraph.prototype.node = function(u, value) {
+  var node = this._strictGetNode(u);
+  if (arguments.length === 1) {
+    return node.value;
+  }
+  node.value = value;
+};
+
+BaseGraph.prototype.nodes = function() {
+  var nodes = [];
+  this.eachNode(function(id) { nodes.push(id); });
+  return nodes;
+};
+
+BaseGraph.prototype.eachNode = function(func) {
+  for (var k in this._nodes) {
+    var node = this._nodes[k];
+    func(node.id, node.value);
+  }
+};
+
+BaseGraph.prototype.hasEdge = function(e) {
+  return e in this._edges;
+};
+
+BaseGraph.prototype.edge = function(e, value) {
+  var edge = this._strictGetEdge(e);
+  if (arguments.length === 1) {
+    return edge.value;
+  }
+  edge.value = value;
+};
+
+BaseGraph.prototype.edges = function() {
+  var es = [];
+  this.eachEdge(function(id) { es.push(id); });
+  return es;
+};
+
+BaseGraph.prototype.eachEdge = function(func) {
+  for (var k in this._edges) {
+    var edge = this._edges[k];
+    func(edge.id, edge.u, edge.v, edge.value);
+  }
+};
+
+BaseGraph.prototype.incidentNodes = function(e) {
+  var edge = this._strictGetEdge(e);
+  return [edge.u, edge.v];
+};
+
+BaseGraph.prototype.addNode = function(u, value) {
+  if (u === undefined || u === null) {
+    do {
+      u = "_" + (++this._nextId);
+    } while (this.hasNode(u));
+  } else if (this.hasNode(u)) {
+    throw new Error("Graph already has node '" + u + "'");
+  }
+  this._nodes[u] = { id: u, value: value };
+  return u;
+};
+
+BaseGraph.prototype.delNode = function(u) {
+  this._strictGetNode(u);
+  this.incidentEdges(u).forEach(function(e) { this.delEdge(e); }, this);
+  delete this._nodes[u];
+};
+
+// inMap and outMap are opposite sides of an incidence map. For example, for
+// Graph these would both come from the _incidentEdges map, while for Digraph
+// they would come from _inEdges and _outEdges.
+BaseGraph.prototype._addEdge = function(e, u, v, value, inMap, outMap) {
+  this._strictGetNode(u);
+  this._strictGetNode(v);
+
+  if (e === undefined || e === null) {
+    do {
+      e = "_" + (++this._nextId);
+    } while (this.hasEdge(e));
+  }
+  else if (this.hasEdge(e)) {
+    throw new Error("Graph already has edge '" + e + "'");
+  }
+
+  this._edges[e] = { id: e, u: u, v: v, value: value };
+  addEdgeToMap(inMap[v], u, e);
+  addEdgeToMap(outMap[u], v, e);
+
+  return e;
+};
+
+// See note for _addEdge regarding inMap and outMap.
+BaseGraph.prototype._delEdge = function(e, inMap, outMap) {
+  var edge = this._strictGetEdge(e);
+  delEdgeFromMap(inMap[edge.v], edge.u, e);
+  delEdgeFromMap(outMap[edge.u], edge.v, e);
+  delete this._edges[e];
+};
+
+BaseGraph.prototype.copy = function() {
+  var copy = new this.constructor();
+  copy.graph(this.graph());
+  this.eachNode(function(u, value) { copy.addNode(u, value); });
+  this.eachEdge(function(e, u, v, value) { copy.addEdge(e, u, v, value); });
+  copy._nextId = this._nextId;
+  return copy;
+};
+
+BaseGraph.prototype.filterNodes = function(filter) {
+  var copy = new this.constructor();
+  copy.graph(this.graph());
+  this.eachNode(function(u, value) {
+    if (filter(u)) {
+      copy.addNode(u, value);
+    }
+  });
+  this.eachEdge(function(e, u, v, value) {
+    if (copy.hasNode(u) && copy.hasNode(v)) {
+      copy.addEdge(e, u, v, value);
+    }
+  });
+  return copy;
+};
+
+BaseGraph.prototype._strictGetNode = function(u) {
+  var node = this._nodes[u];
+  if (node === undefined) {
+    throw new Error("Node '" + u + "' is not in graph");
+  }
+  return node;
+};
+
+BaseGraph.prototype._strictGetEdge = function(e) {
+  var edge = this._edges[e];
+  if (edge === undefined) {
+    throw new Error("Edge '" + e + "' is not in graph");
+  }
+  return edge;
+};
+
+function addEdgeToMap(map, v, e) {
+  (map[v] || (map[v] = new Set())).add(e);
+}
+
+function delEdgeFromMap(map, v, e) {
+  var vEntry = map[v];
+  vEntry.remove(e);
+  if (vEntry.size() === 0) {
+    delete map[v];
+  }
+}
+
+
+},{"cp-data":20}],27:[function(require,module,exports){
+var Digraph = require("./Digraph"),
+    compoundify = require("./compoundify");
+
+var CDigraph = compoundify(Digraph);
+
+module.exports = CDigraph;
+
+CDigraph.fromDigraph = function(src) {
+  var g = new CDigraph(),
+      graphValue = src.graph();
+
+  if (graphValue !== undefined) {
+    g.graph(graphValue);
+  }
+
+  src.eachNode(function(u, value) {
+    if (value === undefined) {
+      g.addNode(u);
+    } else {
+      g.addNode(u, value);
+    }
+  });
+  src.eachEdge(function(e, u, v, value) {
+    if (value === undefined) {
+      g.addEdge(null, u, v);
+    } else {
+      g.addEdge(null, u, v, value);
+    }
+  });
+  return g;
+};
+
+CDigraph.prototype.toString = function() {
+  return "CDigraph " + JSON.stringify(this, null, 2);
+};
+
+},{"./Digraph":29,"./compoundify":42}],28:[function(require,module,exports){
+var Graph = require("./Graph"),
+    compoundify = require("./compoundify");
+
+var CGraph = compoundify(Graph);
+
+module.exports = CGraph;
+
+CGraph.fromGraph = function(src) {
+  var g = new CGraph(),
+      graphValue = src.graph();
+
+  if (graphValue !== undefined) {
+    g.graph(graphValue);
+  }
+
+  src.eachNode(function(u, value) {
+    if (value === undefined) {
+      g.addNode(u);
+    } else {
+      g.addNode(u, value);
+    }
+  });
+  src.eachEdge(function(e, u, v, value) {
+    if (value === undefined) {
+      g.addEdge(null, u, v);
+    } else {
+      g.addEdge(null, u, v, value);
+    }
+  });
+  return g;
+};
+
+CGraph.prototype.toString = function() {
+  return "CGraph " + JSON.stringify(this, null, 2);
+};
+
+},{"./Graph":30,"./compoundify":42}],29:[function(require,module,exports){
+/*
+ * This file is organized with in the following order:
+ *
+ * Exports
+ * Graph constructors
+ * Graph queries (e.g. nodes(), edges()
+ * Graph mutators
+ * Helper functions
+ */
+
+var util = require("./util"),
+    BaseGraph = require("./BaseGraph"),
+/* jshint -W079 */
+    Set = require("cp-data").Set;
+/* jshint +W079 */
+
+module.exports = Digraph;
+
+/*
+ * Constructor to create a new directed multi-graph.
+ */
+function Digraph() {
+  BaseGraph.call(this);
+
+  /*! Map of sourceId -> {targetId -> Set of edge ids} */
+  this._inEdges = {};
+
+  /*! Map of targetId -> {sourceId -> Set of edge ids} */
+  this._outEdges = {};
+}
+
+Digraph.prototype = new BaseGraph();
+Digraph.prototype.constructor = Digraph;
+
+/*
+ * Always returns `true`.
+ */
+Digraph.prototype.isDirected = function() {
+  return true;
+};
+
+/*
+ * Returns all successors of the node with the id `u`. That is, all nodes
+ * that have the node `u` as their source are returned.
+ * 
+ * If no node `u` exists in the graph this function throws an Error.
+ *
+ * @param {String} u a node id
+ */
+Digraph.prototype.successors = function(u) {
+  this._strictGetNode(u);
+  return Object.keys(this._outEdges[u])
+               .map(function(v) { return this._nodes[v].id; }, this);
+};
+
+/*
+ * Returns all predecessors of the node with the id `u`. That is, all nodes
+ * that have the node `u` as their target are returned.
+ * 
+ * If no node `u` exists in the graph this function throws an Error.
+ *
+ * @param {String} u a node id
+ */
+Digraph.prototype.predecessors = function(u) {
+  this._strictGetNode(u);
+  return Object.keys(this._inEdges[u])
+               .map(function(v) { return this._nodes[v].id; }, this);
+};
+
+/*
+ * Returns all nodes that are adjacent to the node with the id `u`. In other
+ * words, this function returns the set of all successors and predecessors of
+ * node `u`.
+ *
+ * @param {String} u a node id
+ */
+Digraph.prototype.neighbors = function(u) {
+  return Set.union([this.successors(u), this.predecessors(u)]).keys();
+};
+
+/*
+ * Returns all nodes in the graph that have no in-edges.
+ */
+Digraph.prototype.sources = function() {
+  var self = this;
+  return this._filterNodes(function(u) {
+    // This could have better space characteristics if we had an inDegree function.
+    return self.inEdges(u).length === 0;
+  });
+};
+
+/*
+ * Returns all nodes in the graph that have no out-edges.
+ */
+Digraph.prototype.sinks = function() {
+  var self = this;
+  return this._filterNodes(function(u) {
+    // This could have better space characteristics if we have an outDegree function.
+    return self.outEdges(u).length === 0;
+  });
+};
+
+/*
+ * Returns the source node incident on the edge identified by the id `e`. If no
+ * such edge exists in the graph this function throws an Error.
+ *
+ * @param {String} e an edge id
+ */
+Digraph.prototype.source = function(e) {
+  return this._strictGetEdge(e).u;
+};
+
+/*
+ * Returns the target node incident on the edge identified by the id `e`. If no
+ * such edge exists in the graph this function throws an Error.
+ *
+ * @param {String} e an edge id
+ */
+Digraph.prototype.target = function(e) {
+  return this._strictGetEdge(e).v;
+};
+
+/*
+ * Returns an array of ids for all edges in the graph that have the node
+ * `target` as their target. If the node `target` is not in the graph this
+ * function raises an Error.
+ *
+ * Optionally a `source` node can also be specified. This causes the results
+ * to be filtered such that only edges from `source` to `target` are included.
+ * If the node `source` is specified but is not in the graph then this function
+ * raises an Error.
+ *
+ * @param {String} target the target node id
+ * @param {String} [source] an optional source node id
+ */
+Digraph.prototype.inEdges = function(target, source) {
+  this._strictGetNode(target);
+  var results = Set.union(util.values(this._inEdges[target])).keys();
+  if (arguments.length > 1) {
+    this._strictGetNode(source);
+    results = results.filter(function(e) { return this.source(e) === source; }, this);
+  }
+  return results;
+};
+
+/*
+ * Returns an array of ids for all edges in the graph that have the node
+ * `source` as their source. If the node `source` is not in the graph this
+ * function raises an Error.
+ *
+ * Optionally a `target` node may also be specified. This causes the results
+ * to be filtered such that only edges from `source` to `target` are included.
+ * If the node `target` is specified but is not in the graph then this function
+ * raises an Error.
+ *
+ * @param {String} source the source node id
+ * @param {String} [target] an optional target node id
+ */
+Digraph.prototype.outEdges = function(source, target) {
+  this._strictGetNode(source);
+  var results = Set.union(util.values(this._outEdges[source])).keys();
+  if (arguments.length > 1) {
+    this._strictGetNode(target);
+    results = results.filter(function(e) { return this.target(e) === target; }, this);
+  }
+  return results;
+};
+
+/*
+ * Returns an array of ids for all edges in the graph that have the `u` as
+ * their source or their target. If the node `u` is not in the graph this
+ * function raises an Error.
+ *
+ * Optionally a `v` node may also be specified. This causes the results to be
+ * filtered such that only edges between `u` and `v` - in either direction -
+ * are included. IF the node `v` is specified but not in the graph then this
+ * function raises an Error.
+ *
+ * @param {String} u the node for which to find incident edges
+ * @param {String} [v] option node that must be adjacent to `u`
+ */
+Digraph.prototype.incidentEdges = function(u, v) {
+  if (arguments.length > 1) {
+    return Set.union([this.outEdges(u, v), this.outEdges(v, u)]).keys();
+  } else {
+    return Set.union([this.inEdges(u), this.outEdges(u)]).keys();
+  }
+};
+
+/*
+ * Returns a string representation of this graph.
+ */
+Digraph.prototype.toString = function() {
+  return "Digraph " + JSON.stringify(this, null, 2);
+};
+
+/*
+ * Adds a new node with the id `u` to the graph and assigns it the value
+ * `value`. If a node with the id is already a part of the graph this function
+ * throws an Error.
+ *
+ * @param {String} u a node id
+ * @param {Object} [value] an optional value to attach to the node
+ */
+Digraph.prototype.addNode = function(u, value) {
+  u = BaseGraph.prototype.addNode.call(this, u, value);
+  this._inEdges[u] = {};
+  this._outEdges[u] = {};
+  return u;
+};
+
+/*
+ * Removes a node from the graph that has the id `u`. Any edges incident on the
+ * node are also removed. If the graph does not contain a node with the id this
+ * function will throw an Error.
+ *
+ * @param {String} u a node id
+ */
+Digraph.prototype.delNode = function(u) {
+  BaseGraph.prototype.delNode.call(this, u);
+  delete this._inEdges[u];
+  delete this._outEdges[u];
+};
+
+/*
+ * Adds a new edge to the graph with the id `e` from a node with the id `source`
+ * to a node with an id `target` and assigns it the value `value`. This graph
+ * allows more than one edge from `source` to `target` as long as the id `e`
+ * is unique in the set of edges. If `e` is `null` the graph will assign a
+ * unique identifier to the edge.
+ *
+ * If `source` or `target` are not present in the graph this function will
+ * throw an Error.
+ *
+ * @param {String} [e] an edge id
+ * @param {String} source the source node id
+ * @param {String} target the target node id
+ * @param {Object} [value] an optional value to attach to the edge
+ */
+Digraph.prototype.addEdge = function(e, source, target, value) {
+  return BaseGraph.prototype._addEdge.call(this, e, source, target, value,
+                                           this._inEdges, this._outEdges);
+};
+
+/*
+ * Removes an edge in the graph with the id `e`. If no edge in the graph has
+ * the id `e` this function will throw an Error.
+ *
+ * @param {String} e an edge id
+ */
+Digraph.prototype.delEdge = function(e) {
+  BaseGraph.prototype._delEdge.call(this, e, this._inEdges, this._outEdges);
+};
+
+// Unlike BaseGraph.filterNodes, this helper just returns nodes that
+// satisfy a predicate.
+Digraph.prototype._filterNodes = function(pred) {
+  var filtered = [];
+  this.eachNode(function(u) {
+    if (pred(u)) {
+      filtered.push(u);
+    }
+  });
+  return filtered;
+};
+
+
+},{"./BaseGraph":26,"./util":46,"cp-data":20}],30:[function(require,module,exports){
+/*
+ * This file is organized with in the following order:
+ *
+ * Exports
+ * Graph constructors
+ * Graph queries (e.g. nodes(), edges()
+ * Graph mutators
+ * Helper functions
+ */
+
+var util = require("./util"),
+    BaseGraph = require("./BaseGraph"),
+/* jshint -W079 */
+    Set = require("cp-data").Set;
+/* jshint +W079 */
+
+module.exports = Graph;
+
+/*
+ * Constructor to create a new undirected multi-graph.
+ */
+function Graph() {
+  BaseGraph.call(this);
+
+  /*! Map of nodeId -> { otherNodeId -> Set of edge ids } */
+  this._incidentEdges = {};
+}
+
+Graph.prototype = new BaseGraph();
+Graph.prototype.constructor = Graph;
+
+/*
+ * Always returns `false`.
+ */
+Graph.prototype.isDirected = function() {
+  return false;
+};
+
+/*
+ * Returns all nodes that are adjacent to the node with the id `u`.
+ *
+ * @param {String} u a node id
+ */
+Graph.prototype.neighbors = function(u) {
+  this._strictGetNode(u);
+  return Object.keys(this._incidentEdges[u])
+               .map(function(v) { return this._nodes[v].id; }, this);
+};
+
+/*
+ * Returns an array of ids for all edges in the graph that are incident on `u`.
+ * If the node `u` is not in the graph this function raises an Error.
+ *
+ * Optionally a `v` node may also be specified. This causes the results to be
+ * filtered such that only edges between `u` and `v` are included. If the node
+ * `v` is specified but not in the graph then this function raises an Error.
+ *
+ * @param {String} u the node for which to find incident edges
+ * @param {String} [v] option node that must be adjacent to `u`
+ */
+Graph.prototype.incidentEdges = function(u, v) {
+  this._strictGetNode(u);
+  if (arguments.length > 1) {
+    this._strictGetNode(v);
+    return v in this._incidentEdges[u] ? this._incidentEdges[u][v].keys() : [];
+  } else {
+    return Set.union(util.values(this._incidentEdges[u])).keys();
+  }
+};
+
+/*
+ * Returns a string representation of this graph.
+ */
+Graph.prototype.toString = function() {
+  return "Graph " + JSON.stringify(this, null, 2);
+};
+
+/*
+ * Adds a new node with the id `u` to the graph and assigns it the value
+ * `value`. If a node with the id is already a part of the graph this function
+ * throws an Error.
+ *
+ * @param {String} u a node id
+ * @param {Object} [value] an optional value to attach to the node
+ */
+Graph.prototype.addNode = function(u, value) {
+  u = BaseGraph.prototype.addNode.call(this, u, value);
+  this._incidentEdges[u] = {};
+  return u;
+};
+
+/*
+ * Removes a node from the graph that has the id `u`. Any edges incident on the
+ * node are also removed. If the graph does not contain a node with the id this
+ * function will throw an Error.
+ *
+ * @param {String} u a node id
+ */
+Graph.prototype.delNode = function(u) {
+  BaseGraph.prototype.delNode.call(this, u);
+  delete this._incidentEdges[u];
+};
+
+/*
+ * Adds a new edge to the graph with the id `e` between a node with the id `u`
+ * and a node with an id `v` and assigns it the value `value`. This graph
+ * allows more than one edge between `u` and `v` as long as the id `e`
+ * is unique in the set of edges. If `e` is `null` the graph will assign a
+ * unique identifier to the edge.
+ *
+ * If `u` or `v` are not present in the graph this function will throw an
+ * Error.
+ *
+ * @param {String} [e] an edge id
+ * @param {String} u the node id of one of the adjacent nodes
+ * @param {String} v the node id of the other adjacent node
+ * @param {Object} [value] an optional value to attach to the edge
+ */
+Graph.prototype.addEdge = function(e, u, v, value) {
+  return BaseGraph.prototype._addEdge.call(this, e, u, v, value,
+                                           this._incidentEdges, this._incidentEdges);
+};
+
+/*
+ * Removes an edge in the graph with the id `e`. If no edge in the graph has
+ * the id `e` this function will throw an Error.
+ *
+ * @param {String} e an edge id
+ */
+Graph.prototype.delEdge = function(e) {
+  BaseGraph.prototype._delEdge.call(this, e, this._incidentEdges, this._incidentEdges);
+};
+
+
+},{"./BaseGraph":26,"./util":46,"cp-data":20}],31:[function(require,module,exports){
+/* jshint -W079 */
+var Set = require("cp-data").Set;
+/* jshint +W079 */
+
+module.exports = components;
+
+/**
+ * Finds all [connected components][] in a graph and returns an array of these
+ * components. Each component is itself an array that contains the ids of nodes
+ * in the component.
+ *
+ * This function only works with undirected Graphs.
+ *
+ * [connected components]: http://en.wikipedia.org/wiki/Connected_component_(graph_theory)
+ *
+ * @param {Graph} g the graph to search for components
+ */
+function components(g) {
+  var results = [];
+  var visited = new Set();
+
+  function dfs(v, component) {
+    if (!visited.has(v)) {
+      visited.add(v);
+      component.push(v);
+      g.neighbors(v).forEach(function(w) {
+        dfs(w, component);
+      });
+    }
+  }
+
+  g.nodes().forEach(function(v) {
+    var component = [];
+    dfs(v, component);
+    if (component.length > 0) {
+      results.push(component);
+    }
+  });
+
+  return results;
+}
+
+},{"cp-data":20}],32:[function(require,module,exports){
+var PriorityQueue = require("cp-data").PriorityQueue;
+
+module.exports = dijkstra;
+
+/**
+ * This function is an implementation of [Dijkstra's algorithm][] which finds
+ * the shortest path from **source** to all other nodes in **g**. This
+ * function returns a map of `u -> { distance, predecessor }`. The distance
+ * property holds the sum of the weights from **source** to `u` along the
+ * shortest path or `Number.POSITIVE_INFINITY` if there is no path from
+ * **source**. The predecessor property can be used to walk the individual
+ * elements of the path from **source** to **u** in reverse order.
+ *
+ * This function takes an optional `weightFunc(e)` which returns the
+ * weight of the edge `e`. If no weightFunc is supplied then each edge is
+ * assumed to have a weight of 1. This function throws an Error if any of
+ * the traversed edges have a negative edge weight.
+ *
+ * This function takes an optional `incidentFunc(u)` which returns the ids of
+ * all edges incident to the node `u` for the purposes of shortest path
+ * traversal. By default this function uses the `g.outEdges` for Digraphs and
+ * `g.incidentEdges` for Graphs.
+ *
+ * This function takes `O((|E| + |V|) * log |V|)` time.
+ *
+ * [Dijkstra's algorithm]: http://en.wikipedia.org/wiki/Dijkstra%27s_algorithm
+ *
+ * @param {Graph} g the graph to search for shortest paths from **source**
+ * @param {Object} source the source from which to start the search
+ * @param {Function} [weightFunc] optional weight function
+ * @param {Function} [incidentFunc] optional incident function
+ */
+function dijkstra(g, source, weightFunc, incidentFunc) {
+  var results = {},
+      pq = new PriorityQueue();
+
+  function updateNeighbors(e) {
+    var incidentNodes = g.incidentNodes(e),
+        v = incidentNodes[0] !== u ? incidentNodes[0] : incidentNodes[1],
+        vEntry = results[v],
+        weight = weightFunc(e),
+        distance = uEntry.distance + weight;
+
+    if (weight < 0) {
+      throw new Error("dijkstra does not allow negative edge weights. Bad edge: " + e + " Weight: " + weight);
+    }
+
+    if (distance < vEntry.distance) {
+      vEntry.distance = distance;
+      vEntry.predecessor = u;
+      pq.decrease(v, distance);
+    }
+  }
+
+  weightFunc = weightFunc || function() { return 1; };
+  incidentFunc = incidentFunc || (g.isDirected()
+      ? function(u) { return g.outEdges(u); }
+      : function(u) { return g.incidentEdges(u); });
+
+  g.eachNode(function(u) {
+    var distance = u === source ? 0 : Number.POSITIVE_INFINITY;
+    results[u] = { distance: distance };
+    pq.add(u, distance);
+  });
+
+  var u, uEntry;
+  while (pq.size() > 0) {
+    u = pq.removeMin();
+    uEntry = results[u];
+    if (uEntry.distance === Number.POSITIVE_INFINITY) {
+      break;
+    }
+
+    incidentFunc(u).forEach(updateNeighbors);
+  }
+
+  return results;
+}
+
+},{"cp-data":20}],33:[function(require,module,exports){
+var dijkstra = require("./dijkstra");
+
+module.exports = dijkstraAll;
+
+/**
+ * This function finds the shortest path from each node to every other
+ * reachable node in the graph. It is similar to [alg.dijkstra][], but
+ * instead of returning a single-source array, it returns a mapping of
+ * of `source -> alg.dijksta(g, source, weightFunc, incidentFunc)`.
+ *
+ * This function takes an optional `weightFunc(e)` which returns the
+ * weight of the edge `e`. If no weightFunc is supplied then each edge is
+ * assumed to have a weight of 1. This function throws an Error if any of
+ * the traversed edges have a negative edge weight.
+ *
+ * This function takes an optional `incidentFunc(u)` which returns the ids of
+ * all edges incident to the node `u` for the purposes of shortest path
+ * traversal. By default this function uses the `outEdges` function on the
+ * supplied graph.
+ *
+ * This function takes `O(|V| * (|E| + |V|) * log |V|)` time.
+ *
+ * [alg.dijkstra]: dijkstra.js.html#dijkstra
+ *
+ * @param {Graph} g the graph to search for shortest paths from **source**
+ * @param {Function} [weightFunc] optional weight function
+ * @param {Function} [incidentFunc] optional incident function
+ */
+function dijkstraAll(g, weightFunc, incidentFunc) {
+  var results = {};
+  g.eachNode(function(u) {
+    results[u] = dijkstra(g, u, weightFunc, incidentFunc);
+  });
+  return results;
+}
+
+},{"./dijkstra":32}],34:[function(require,module,exports){
+var tarjan = require("./tarjan");
+
+module.exports = findCycles;
+
+/*
+ * Given a Digraph **g** this function returns all nodes that are part of a
+ * cycle. Since there may be more than one cycle in a graph this function
+ * returns an array of these cycles, where each cycle is itself represented
+ * by an array of ids for each node involved in that cycle.
+ *
+ * [alg.isAcyclic][] is more efficient if you only need to determine whether
+ * a graph has a cycle or not.
+ *
+ * [alg.isAcyclic]: isAcyclic.js.html#isAcyclic
+ *
+ * @param {Digraph} g the graph to search for cycles.
+ */
+function findCycles(g) {
+  return tarjan(g).filter(function(cmpt) { return cmpt.length > 1; });
+}
+
+},{"./tarjan":40}],35:[function(require,module,exports){
+module.exports = floydWarshall;
+
+/**
+ * This function is an implementation of the [Floyd-Warshall algorithm][],
+ * which finds the shortest path from each node to every other reachable node
+ * in the graph. It is similar to [alg.dijkstraAll][], but it handles negative
+ * edge weights and is more efficient for some types of graphs. This function
+ * returns a map of `source -> { target -> { distance, predecessor }`. The
+ * distance property holds the sum of the weights from `source` to `target`
+ * along the shortest path of `Number.POSITIVE_INFINITY` if there is no path
+ * from `source`. The predecessor property can be used to walk the individual
+ * elements of the path from `source` to `target` in reverse order.
+ *
+ * This function takes an optional `weightFunc(e)` which returns the
+ * weight of the edge `e`. If no weightFunc is supplied then each edge is
+ * assumed to have a weight of 1.
+ *
+ * This function takes an optional `incidentFunc(u)` which returns the ids of
+ * all edges incident to the node `u` for the purposes of shortest path
+ * traversal. By default this function uses the `outEdges` function on the
+ * supplied graph.
+ *
+ * This algorithm takes O(|V|^3) time.
+ *
+ * [Floyd-Warshall algorithm]: https://en.wikipedia.org/wiki/Floyd-Warshall_algorithm
+ * [alg.dijkstraAll]: dijkstraAll.js.html#dijkstraAll
+ *
+ * @param {Graph} g the graph to search for shortest paths from **source**
+ * @param {Function} [weightFunc] optional weight function
+ * @param {Function} [incidentFunc] optional incident function
+ */
+function floydWarshall(g, weightFunc, incidentFunc) {
+  var results = {},
+      nodes = g.nodes();
+
+  weightFunc = weightFunc || function() { return 1; };
+  incidentFunc = incidentFunc || (g.isDirected()
+      ? function(u) { return g.outEdges(u); }
+      : function(u) { return g.incidentEdges(u); });
+
+  nodes.forEach(function(u) {
+    results[u] = {};
+    results[u][u] = { distance: 0 };
+    nodes.forEach(function(v) {
+      if (u !== v) {
+        results[u][v] = { distance: Number.POSITIVE_INFINITY };
+      }
+    });
+    incidentFunc(u).forEach(function(e) {
+      var incidentNodes = g.incidentNodes(e),
+          v = incidentNodes[0] !== u ? incidentNodes[0] : incidentNodes[1],
+          d = weightFunc(e);
+      if (d < results[u][v].distance) {
+        results[u][v] = { distance: d, predecessor: u };
+      }
+    });
+  });
+
+  nodes.forEach(function(k) {
+    var rowK = results[k];
+    nodes.forEach(function(i) {
+      var rowI = results[i];
+      nodes.forEach(function(j) {
+        var ik = rowI[k];
+        var kj = rowK[j];
+        var ij = rowI[j];
+        var altDistance = ik.distance + kj.distance;
+        if (altDistance < ij.distance) {
+          ij.distance = altDistance;
+          ij.predecessor = kj.predecessor;
+        }
+      });
+    });
+  });
+
+  return results;
+}
+
+},{}],36:[function(require,module,exports){
+var topsort = require("./topsort");
+
+module.exports = isAcyclic;
+
+/*
+ * Given a Digraph **g** this function returns `true` if the graph has no
+ * cycles and returns `false` if it does. This algorithm returns as soon as it
+ * detects the first cycle.
+ *
+ * Use [alg.findCycles][] if you need the actual list of cycles in a graph.
+ *
+ * [alg.findCycles]: findCycles.js.html#findCycles
+ *
+ * @param {Digraph} g the graph to test for cycles
+ */
+function isAcyclic(g) {
+  try {
+    topsort(g);
+  } catch (e) {
+    if (e instanceof topsort.CycleException) return false;
+    throw e;
+  }
+  return true;
+}
+
+},{"./topsort":41}],37:[function(require,module,exports){
+/* jshint -W079 */
+var Set = require("cp-data").Set;
+/* jshint +W079 */
+
+module.exports = postorder;
+
+// Postorder traversal of g, calling f for each visited node. Assumes the graph
+// is a tree.
+function postorder(g, root, f) {
+  var visited = new Set();
+  if (g.isDirected()) {
+    throw new Error("This function only works for undirected graphs");
+  }
+  function dfs(u, prev) {
+    if (visited.has(u)) {
+      throw new Error("The input graph is not a tree: " + g);
+    }
+    visited.add(u);
+    g.neighbors(u).forEach(function(v) {
+      if (v !== prev) dfs(v, u);
+    });
+    f(u);
+  }
+  dfs(root);
+}
+
+},{"cp-data":20}],38:[function(require,module,exports){
+/* jshint -W079 */
+var Set = require("cp-data").Set;
+/* jshint +W079 */
+
+module.exports = preorder;
+
+// Preorder traversal of g, calling f for each visited node. Assumes the graph
+// is a tree.
+function preorder(g, root, f) {
+  var visited = new Set();
+  if (g.isDirected()) {
+    throw new Error("This function only works for undirected graphs");
+  }
+  function dfs(u, prev) {
+    if (visited.has(u)) {
+      throw new Error("The input graph is not a tree: " + g);
+    }
+    visited.add(u);
+    f(u);
+    g.neighbors(u).forEach(function(v) {
+      if (v !== prev) dfs(v, u);
+    });
+  }
+  dfs(root);
+}
+
+},{"cp-data":20}],39:[function(require,module,exports){
+var Graph = require("../Graph"),
+    PriorityQueue = require("cp-data").PriorityQueue;
+
+module.exports = prim;
+
+/**
+ * [Prim's algorithm][] takes a connected undirected graph and generates a
+ * [minimum spanning tree][]. This function returns the minimum spanning
+ * tree as an undirected graph. This algorithm is derived from the description
+ * in "Introduction to Algorithms", Third Edition, Cormen, et al., Pg 634.
+ *
+ * This function takes a `weightFunc(e)` which returns the weight of the edge
+ * `e`. It throws an Error if the graph is not connected.
+ *
+ * This function takes `O(|E| log |V|)` time.
+ *
+ * [Prim's algorithm]: https://en.wikipedia.org/wiki/Prim's_algorithm
+ * [minimum spanning tree]: https://en.wikipedia.org/wiki/Minimum_spanning_tree
+ *
+ * @param {Graph} g the graph used to generate the minimum spanning tree
+ * @param {Function} weightFunc the weight function to use
+ */
+function prim(g, weightFunc) {
+  var result = new Graph(),
+      parents = {},
+      pq = new PriorityQueue(),
+      u;
+
+  function updateNeighbors(e) {
+    var incidentNodes = g.incidentNodes(e),
+        v = incidentNodes[0] !== u ? incidentNodes[0] : incidentNodes[1],
+        pri = pq.priority(v);
+    if (pri !== undefined) {
+      var edgeWeight = weightFunc(e);
+      if (edgeWeight < pri) {
+        parents[v] = u;
+        pq.decrease(v, edgeWeight);
+      }
+    }
+  }
+
+  if (g.order() === 0) {
+    return result;
+  }
+
+  g.eachNode(function(u) {
+    pq.add(u, Number.POSITIVE_INFINITY);
+    result.addNode(u);
+  });
+
+  // Start from an arbitrary node
+  pq.decrease(g.nodes()[0], 0);
+
+  var init = false;
+  while (pq.size() > 0) {
+    u = pq.removeMin();
+    if (u in parents) {
+      result.addEdge(null, u, parents[u]);
+    } else if (init) {
+      throw new Error("Input graph is not connected: " + g);
+    } else {
+      init = true;
+    }
+
+    g.incidentEdges(u).forEach(updateNeighbors);
+  }
+
+  return result;
+}
+
+},{"../Graph":30,"cp-data":20}],40:[function(require,module,exports){
+module.exports = tarjan;
+
+/**
+ * This function is an implementation of [Tarjan's algorithm][] which finds
+ * all [strongly connected components][] in the directed graph **g**. Each
+ * strongly connected component is composed of nodes that can reach all other
+ * nodes in the component via directed edges. A strongly connected component
+ * can consist of a single node if that node cannot both reach and be reached
+ * by any other specific node in the graph. Components of more than one node
+ * are guaranteed to have at least one cycle.
+ *
+ * This function returns an array of components. Each component is itself an
+ * array that contains the ids of all nodes in the component.
+ *
+ * [Tarjan's algorithm]: http://en.wikipedia.org/wiki/Tarjan's_strongly_connected_components_algorithm
+ * [strongly connected components]: http://en.wikipedia.org/wiki/Strongly_connected_component
+ *
+ * @param {Digraph} g the graph to search for strongly connected components
+ */
+function tarjan(g) {
+  if (!g.isDirected()) {
+    throw new Error("tarjan can only be applied to a directed graph. Bad input: " + g);
+  }
+
+  var index = 0,
+      stack = [],
+      visited = {}, // node id -> { onStack, lowlink, index }
+      results = [];
+
+  function dfs(u) {
+    var entry = visited[u] = {
+      onStack: true,
+      lowlink: index,
+      index: index++
+    };
+    stack.push(u);
+
+    g.successors(u).forEach(function(v) {
+      if (!(v in visited)) {
+        dfs(v);
+        entry.lowlink = Math.min(entry.lowlink, visited[v].lowlink);
+      } else if (visited[v].onStack) {
+        entry.lowlink = Math.min(entry.lowlink, visited[v].index);
+      }
+    });
+
+    if (entry.lowlink === entry.index) {
+      var cmpt = [],
+          v;
+      do {
+        v = stack.pop();
+        visited[v].onStack = false;
+        cmpt.push(v);
+      } while (u !== v);
+      results.push(cmpt);
+    }
+  }
+
+  g.nodes().forEach(function(u) {
+    if (!(u in visited)) {
+      dfs(u);
+    }
+  });
+
+  return results;
+}
+
+},{}],41:[function(require,module,exports){
+module.exports = topsort;
+topsort.CycleException = CycleException;
+
+/*
+ * Given a graph **g**, this function returns an ordered list of nodes such
+ * that for each edge `u -> v`, `u` appears before `v` in the list. If the
+ * graph has a cycle it is impossible to generate such a list and
+ * **CycleException** is thrown.
+ *
+ * See [topological sorting](https://en.wikipedia.org/wiki/Topological_sorting)
+ * for more details about how this algorithm works.
+ *
+ * @param {Digraph} g the graph to sort
+ */
+function topsort(g) {
+  if (!g.isDirected()) {
+    throw new Error("topsort can only be applied to a directed graph. Bad input: " + g);
+  }
+
+  var visited = {};
+  var stack = {};
+  var results = [];
+
+  function visit(node) {
+    if (node in stack) {
+      throw new CycleException();
+    }
+
+    if (!(node in visited)) {
+      stack[node] = true;
+      visited[node] = true;
+      g.predecessors(node).forEach(function(pred) {
+        visit(pred);
+      });
+      delete stack[node];
+      results.push(node);
+    }
+  }
+
+  var sinks = g.sinks();
+  if (g.order() !== 0 && sinks.length === 0) {
+    throw new CycleException();
+  }
+
+  g.sinks().forEach(function(sink) {
+    visit(sink);
+  });
+
+  return results;
+}
+
+function CycleException() {}
+
+CycleException.prototype.toString = function() {
+  return "Graph has at least one cycle";
+};
+
+},{}],42:[function(require,module,exports){
+// This file provides a helper function that mixes-in Dot behavior to an
+// existing graph prototype.
+
+/* jshint -W079 */
+var Set = require("cp-data").Set;
+/* jshint +W079 */
+
+module.exports = compoundify;
+
+// Extends the given SuperConstructor with the ability for nodes to contain
+// other nodes. A special node id `null` is used to indicate the root graph.
+function compoundify(SuperConstructor) {
+  function Constructor() {
+    SuperConstructor.call(this);
+
+    // Map of object id -> parent id (or null for root graph)
+    this._parents = {};
+
+    // Map of id (or null) -> children set
+    this._children = {};
+    this._children[null] = new Set();
+  }
+
+  Constructor.prototype = new SuperConstructor();
+  Constructor.prototype.constructor = Constructor;
+
+  Constructor.prototype.parent = function(u, parent) {
+    this._strictGetNode(u);
+
+    if (arguments.length < 2) {
+      return this._parents[u];
+    }
+
+    if (u === parent) {
+      throw new Error("Cannot make " + u + " a parent of itself");
+    }
+    if (parent !== null) {
+      this._strictGetNode(parent);
+    }
+
+    this._children[this._parents[u]].remove(u);
+    this._parents[u] = parent;
+    this._children[parent].add(u);
+  };
+
+  Constructor.prototype.children = function(u) {
+    if (u !== null) {
+      this._strictGetNode(u);
+    }
+    return this._children[u].keys();
+  };
+
+  Constructor.prototype.addNode = function(u, value) {
+    u = SuperConstructor.prototype.addNode.call(this, u, value);
+    this._parents[u] = null;
+    this._children[u] = new Set();
+    this._children[null].add(u);
+    return u;
+  };
+
+  Constructor.prototype.delNode = function(u) {
+    // Promote all children to the parent of the subgraph
+    var parent = this.parent(u);
+    this._children[u].keys().forEach(function(child) {
+      this.parent(child, parent);
+    }, this);
+
+    this._children[parent].remove(u);
+    delete this._parents[u];
+    delete this._children[u];
+
+    return SuperConstructor.prototype.delNode.call(this, u);
+  };
+
+  Constructor.prototype.copy = function() {
+    var copy = SuperConstructor.prototype.copy.call(this);
+    this.nodes().forEach(function(u) {
+      copy.parent(u, this.parent(u));
+    }, this);
+    return copy;
+  };
+
+  Constructor.prototype.filterNodes = function(filter) {
+    var self = this,
+        copy = SuperConstructor.prototype.filterNodes.call(this, filter);
+
+    var parents = {};
+    function findParent(u) {
+      var parent = self.parent(u);
+      if (parent === null || copy.hasNode(parent)) {
+        parents[u] = parent;
+        return parent;
+      } else if (parent in parents) {
+        return parents[parent];
+      } else {
+        return findParent(parent);
+      }
+    }
+
+    copy.eachNode(function(u) { copy.parent(u, findParent(u)); });
+
+    return copy;
+  };
+
+  return Constructor;
+}
+
+},{"cp-data":20}],43:[function(require,module,exports){
+var Graph = require("../Graph"),
+    Digraph = require("../Digraph"),
+    CGraph = require("../CGraph"),
+    CDigraph = require("../CDigraph");
+
+exports.decode = function(nodes, edges, Ctor) {
+  Ctor = Ctor || Digraph;
+
+  if (typeOf(nodes) !== "Array") {
+    throw new Error("nodes is not an Array");
+  }
+
+  if (typeOf(edges) !== "Array") {
+    throw new Error("edges is not an Array");
+  }
+
+  if (typeof Ctor === "string") {
+    switch(Ctor) {
+      case "graph": Ctor = Graph; break;
+      case "digraph": Ctor = Digraph; break;
+      case "cgraph": Ctor = CGraph; break;
+      case "cdigraph": Ctor = CDigraph; break;
+      default: throw new Error("Unrecognized graph type: " + Ctor);
+    }
+  }
+
+  var graph = new Ctor();
+
+  nodes.forEach(function(u) {
+    graph.addNode(u.id, u.value);
+  });
+
+  // If the graph is compound, set up children...
+  if (graph.parent) {
+    nodes.forEach(function(u) {
+      if (u.children) {
+        u.children.forEach(function(v) {
+          graph.parent(v, u.id);
+        });
+      }
+    });
+  }
+
+  edges.forEach(function(e) {
+    graph.addEdge(e.id, e.u, e.v, e.value);
+  });
+
+  return graph;
+};
+
+exports.encode = function(graph) {
+  var nodes = [];
+  var edges = [];
+
+  graph.eachNode(function(u, value) {
+    var node = {id: u, value: value};
+    if (graph.children) {
+      var children = graph.children(u);
+      if (children.length) {
+        node.children = children;
+      }
+    }
+    nodes.push(node);
+  });
+
+  graph.eachEdge(function(e, u, v, value) {
+    edges.push({id: e, u: u, v: v, value: value});
+  });
+
+  var type;
+  if (graph instanceof CDigraph) {
+    type = "cdigraph";
+  } else if (graph instanceof CGraph) {
+    type = "cgraph";
+  } else if (graph instanceof Digraph) {
+    type = "digraph";
+  } else if (graph instanceof Graph) {
+    type = "graph";
+  } else {
+    throw new Error("Couldn't determine type of graph: " + graph);
+  }
+
+  return { nodes: nodes, edges: edges, type: type };
+};
+
+function typeOf(obj) {
+  return Object.prototype.toString.call(obj).slice(8, -1);
+}
+
+},{"../CDigraph":27,"../CGraph":28,"../Digraph":29,"../Graph":30}],44:[function(require,module,exports){
+/* jshint -W079 */
+var Set = require("cp-data").Set;
+/* jshint +W079 */
+
+exports.all = function() {
+  return function() { return true; };
+};
+
+exports.nodesFromList = function(nodes) {
+  var set = new Set(nodes);
+  return function(u) {
+    return set.has(u);
+  };
+};
+
+},{"cp-data":20}],45:[function(require,module,exports){
+var Graph = require("./Graph"),
+    Digraph = require("./Digraph");
+
+// Side-effect based changes are lousy, but node doesn't seem to resolve the
+// requires cycle.
+
+/**
+ * Returns a new directed graph using the nodes and edges from this graph. The
+ * new graph will have the same nodes, but will have twice the number of edges:
+ * each edge is split into two edges with opposite directions. Edge ids,
+ * consequently, are not preserved by this transformation.
+ */
+Graph.prototype.toDigraph =
+Graph.prototype.asDirected = function() {
+  var g = new Digraph();
+  this.eachNode(function(u, value) { g.addNode(u, value); });
+  this.eachEdge(function(e, u, v, value) {
+    g.addEdge(null, u, v, value);
+    g.addEdge(null, v, u, value);
+  });
+  return g;
+};
+
+/**
+ * Returns a new undirected graph using the nodes and edges from this graph.
+ * The new graph will have the same nodes, but the edges will be made
+ * undirected. Edge ids are preserved in this transformation.
+ */
+Digraph.prototype.toGraph =
+Digraph.prototype.asUndirected = function() {
+  var g = new Graph();
+  this.eachNode(function(u, value) { g.addNode(u, value); });
+  this.eachEdge(function(e, u, v, value) {
+    g.addEdge(e, u, v, value);
+  });
+  return g;
+};
+
+},{"./Digraph":29,"./Graph":30}],46:[function(require,module,exports){
+// Returns an array of all values for properties of **o**.
+exports.values = function(o) {
+  var ks = Object.keys(o),
+      len = ks.length,
+      result = new Array(len),
+      i;
+  for (i = 0; i < len; ++i) {
+    result[i] = o[ks[i]];
+  }
+  return result;
+};
+
+},{}],47:[function(require,module,exports){
+module.exports = '0.7.4';
+
+},{}],"dagre":[function(require,module,exports){
+/*
+Copyright (c) 2012-2013 Chris Pettitt
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+*/
+exports.Digraph = require("graphlib").Digraph;
+exports.Graph = require("graphlib").Graph;
+exports.layout = require("./lib/layout");
+exports.version = require("./lib/version");
+exports.debug = require("./lib/debug");
+
+},{"./lib/debug":3,"./lib/layout":4,"./lib/version":19,"graphlib":25}],"lodash":[function(require,module,exports){
+(function (global){
+/**
+ * @license
+ * lodash 3.2.0 (Custom Build) <https://lodash.com/>
+ * Build: `lodash modern -d -o ./index.js`
+ * Copyright 2012-2015 The Dojo Foundation <http://dojofoundation.org/>
+ * Based on Underscore.js 1.7.0 <http://underscorejs.org/LICENSE>
+ * Copyright 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+ * Available under MIT license <https://lodash.com/license>
+ */
+;(function() {
+
+  /** Used as a safe reference for `undefined` in pre-ES5 environments. */
+  var undefined;
+
+  /** Used as the semantic version number. */
+  var VERSION = '3.2.0';
+
+  /** Used to compose bitmasks for wrapper metadata. */
+  var BIND_FLAG = 1,
+      BIND_KEY_FLAG = 2,
+      CURRY_BOUND_FLAG = 4,
+      CURRY_FLAG = 8,
+      CURRY_RIGHT_FLAG = 16,
+      PARTIAL_FLAG = 32,
+      PARTIAL_RIGHT_FLAG = 64,
+      REARG_FLAG = 128,
+      ARY_FLAG = 256;
+
+  /** Used as default options for `_.trunc`. */
+  var DEFAULT_TRUNC_LENGTH = 30,
+      DEFAULT_TRUNC_OMISSION = '...';
+
+  /** Used to detect when a function becomes hot. */
+  var HOT_COUNT = 150,
+      HOT_SPAN = 16;
+
+  /** Used to indicate the type of lazy iteratees. */
+  var LAZY_FILTER_FLAG = 0,
+      LAZY_MAP_FLAG = 1,
+      LAZY_WHILE_FLAG = 2;
+
+  /** Used as the `TypeError` message for "Functions" methods. */
+  var FUNC_ERROR_TEXT = 'Expected a function';
+
+  /** Used as the internal argument placeholder. */
+  var PLACEHOLDER = '__lodash_placeholder__';
+
+  /** `Object#toString` result references. */
+  var argsTag = '[object Arguments]',
+      arrayTag = '[object Array]',
+      boolTag = '[object Boolean]',
+      dateTag = '[object Date]',
+      errorTag = '[object Error]',
+      funcTag = '[object Function]',
+      mapTag = '[object Map]',
+      numberTag = '[object Number]',
+      objectTag = '[object Object]',
+      regexpTag = '[object RegExp]',
+      setTag = '[object Set]',
+      stringTag = '[object String]',
+      weakMapTag = '[object WeakMap]';
+
+  var arrayBufferTag = '[object ArrayBuffer]',
+      float32Tag = '[object Float32Array]',
+      float64Tag = '[object Float64Array]',
+      int8Tag = '[object Int8Array]',
+      int16Tag = '[object Int16Array]',
+      int32Tag = '[object Int32Array]',
+      uint8Tag = '[object Uint8Array]',
+      uint8ClampedTag = '[object Uint8ClampedArray]',
+      uint16Tag = '[object Uint16Array]',
+      uint32Tag = '[object Uint32Array]';
+
+  /** Used to match empty string literals in compiled template source. */
+  var reEmptyStringLeading = /\b__p \+= '';/g,
+      reEmptyStringMiddle = /\b(__p \+=) '' \+/g,
+      reEmptyStringTrailing = /(__e\(.*?\)|\b__t\)) \+\n'';/g;
+
+  /** Used to match HTML entities and HTML characters. */
+  var reEscapedHtml = /&(?:amp|lt|gt|quot|#39|#96);/g,
+      reUnescapedHtml = /[&<>"'`]/g,
+      reHasEscapedHtml = RegExp(reEscapedHtml.source),
+      reHasUnescapedHtml = RegExp(reUnescapedHtml.source);
+
+  /** Used to match template delimiters. */
+  var reEscape = /<%-([\s\S]+?)%>/g,
+      reEvaluate = /<%([\s\S]+?)%>/g,
+      reInterpolate = /<%=([\s\S]+?)%>/g;
+
+  /**
+   * Used to match ES template delimiters.
+   * See the [ES spec](https://people.mozilla.org/~jorendorff/es6-draft.html#sec-template-literal-lexical-components)
+   * for more details.
+   */
+  var reEsTemplate = /\$\{([^\\}]*(?:\\.[^\\}]*)*)\}/g;
+
+  /** Used to match `RegExp` flags from their coerced string values. */
+  var reFlags = /\w*$/;
+
+  /** Used to detect named functions. */
+  var reFuncName = /^\s*function[ \n\r\t]+\w/;
+
+  /** Used to detect hexadecimal string values. */
+  var reHexPrefix = /^0[xX]/;
+
+  /** Used to detect host constructors (Safari > 5). */
+  var reHostCtor = /^\[object .+?Constructor\]$/;
+
+  /** Used to match latin-1 supplementary letters (excluding mathematical operators). */
+  var reLatin1 = /[\xc0-\xd6\xd8-\xde\xdf-\xf6\xf8-\xff]/g;
+
+  /** Used to ensure capturing order of template delimiters. */
+  var reNoMatch = /($^)/;
+
+  /**
+   * Used to match `RegExp` special characters.
+   * See this [article on `RegExp` characters](http://www.regular-expressions.info/characters.html#special)
+   * for more details.
+   */
+  var reRegExpChars = /[.*+?^${}()|[\]\/\\]/g,
+      reHasRegExpChars = RegExp(reRegExpChars.source);
+
+  /** Used to detect functions containing a `this` reference. */
+  var reThis = /\bthis\b/;
+
+  /** Used to match unescaped characters in compiled string literals. */
+  var reUnescapedString = /['\n\r\u2028\u2029\\]/g;
+
+  /** Used to match words to create compound words. */
+  var reWords = (function() {
+    var upper = '[A-Z\\xc0-\\xd6\\xd8-\\xde]',
+        lower = '[a-z\\xdf-\\xf6\\xf8-\\xff]+';
+
+    return RegExp(upper + '{2,}(?=' + upper + lower + ')|' + upper + '?' + lower + '|' + upper + '+|[0-9]+', 'g');
+  }());
+
+  /** Used to detect and test for whitespace. */
+  var whitespace = (
+    // Basic whitespace characters.
+    ' \t\x0b\f\xa0\ufeff' +
+
+    // Line terminators.
+    '\n\r\u2028\u2029' +
+
+    // Unicode category "Zs" space separators.
+    '\u1680\u180e\u2000\u2001\u2002\u2003\u2004\u2005\u2006\u2007\u2008\u2009\u200a\u202f\u205f\u3000'
+  );
+
+  /** Used to assign default `context` object properties. */
+  var contextProps = [
+    'Array', 'ArrayBuffer', 'Date', 'Error', 'Float32Array', 'Float64Array',
+    'Function', 'Int8Array', 'Int16Array', 'Int32Array', 'Math', 'Number',
+    'Object', 'RegExp', 'Set', 'String', '_', 'clearTimeout', 'document',
+    'isFinite', 'parseInt', 'setTimeout', 'TypeError', 'Uint8Array',
+    'Uint8ClampedArray', 'Uint16Array', 'Uint32Array', 'WeakMap',
+    'window', 'WinRTError'
+  ];
+
+  /** Used to make template sourceURLs easier to identify. */
+  var templateCounter = -1;
+
+  /** Used to identify `toStringTag` values of typed arrays. */
+  var typedArrayTags = {};
+  typedArrayTags[float32Tag] = typedArrayTags[float64Tag] =
+  typedArrayTags[int8Tag] = typedArrayTags[int16Tag] =
+  typedArrayTags[int32Tag] = typedArrayTags[uint8Tag] =
+  typedArrayTags[uint8ClampedTag] = typedArrayTags[uint16Tag] =
+  typedArrayTags[uint32Tag] = true;
+  typedArrayTags[argsTag] = typedArrayTags[arrayTag] =
+  typedArrayTags[arrayBufferTag] = typedArrayTags[boolTag] =
+  typedArrayTags[dateTag] = typedArrayTags[errorTag] =
+  typedArrayTags[funcTag] = typedArrayTags[mapTag] =
+  typedArrayTags[numberTag] = typedArrayTags[objectTag] =
+  typedArrayTags[regexpTag] = typedArrayTags[setTag] =
+  typedArrayTags[stringTag] = typedArrayTags[weakMapTag] = false;
+
+  /** Used to identify `toStringTag` values supported by `_.clone`. */
+  var cloneableTags = {};
+  cloneableTags[argsTag] = cloneableTags[arrayTag] =
+  cloneableTags[arrayBufferTag] = cloneableTags[boolTag] =
+  cloneableTags[dateTag] = cloneableTags[float32Tag] =
+  cloneableTags[float64Tag] = cloneableTags[int8Tag] =
+  cloneableTags[int16Tag] = cloneableTags[int32Tag] =
+  cloneableTags[numberTag] = cloneableTags[objectTag] =
+  cloneableTags[regexpTag] = cloneableTags[stringTag] =
+  cloneableTags[uint8Tag] = cloneableTags[uint8ClampedTag] =
+  cloneableTags[uint16Tag] = cloneableTags[uint32Tag] = true;
+  cloneableTags[errorTag] = cloneableTags[funcTag] =
+  cloneableTags[mapTag] = cloneableTags[setTag] =
+  cloneableTags[weakMapTag] = false;
+
+  /** Used as an internal `_.debounce` options object by `_.throttle`. */
+  var debounceOptions = {
+    'leading': false,
+    'maxWait': 0,
+    'trailing': false
+  };
+
+  /** Used to map latin-1 supplementary letters to basic latin letters. */
+  var deburredLetters = {
+    '\xc0': 'A',  '\xc1': 'A', '\xc2': 'A', '\xc3': 'A', '\xc4': 'A', '\xc5': 'A',
+    '\xe0': 'a',  '\xe1': 'a', '\xe2': 'a', '\xe3': 'a', '\xe4': 'a', '\xe5': 'a',
+    '\xc7': 'C',  '\xe7': 'c',
+    '\xd0': 'D',  '\xf0': 'd',
+    '\xc8': 'E',  '\xc9': 'E', '\xca': 'E', '\xcb': 'E',
+    '\xe8': 'e',  '\xe9': 'e', '\xea': 'e', '\xeb': 'e',
+    '\xcC': 'I',  '\xcd': 'I', '\xce': 'I', '\xcf': 'I',
+    '\xeC': 'i',  '\xed': 'i', '\xee': 'i', '\xef': 'i',
+    '\xd1': 'N',  '\xf1': 'n',
+    '\xd2': 'O',  '\xd3': 'O', '\xd4': 'O', '\xd5': 'O', '\xd6': 'O', '\xd8': 'O',
+    '\xf2': 'o',  '\xf3': 'o', '\xf4': 'o', '\xf5': 'o', '\xf6': 'o', '\xf8': 'o',
+    '\xd9': 'U',  '\xda': 'U', '\xdb': 'U', '\xdc': 'U',
+    '\xf9': 'u',  '\xfa': 'u', '\xfb': 'u', '\xfc': 'u',
+    '\xdd': 'Y',  '\xfd': 'y', '\xff': 'y',
+    '\xc6': 'Ae', '\xe6': 'ae',
+    '\xde': 'Th', '\xfe': 'th',
+    '\xdf': 'ss'
+  };
+
+  /** Used to map characters to HTML entities. */
+  var htmlEscapes = {
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#39;',
+    '`': '&#96;'
+  };
+
+  /** Used to map HTML entities to characters. */
+  var htmlUnescapes = {
+    '&amp;': '&',
+    '&lt;': '<',
+    '&gt;': '>',
+    '&quot;': '"',
+    '&#39;': "'",
+    '&#96;': '`'
+  };
+
+  /** Used to determine if values are of the language type `Object`. */
+  var objectTypes = {
+    'function': true,
+    'object': true
+  };
+
+  /** Used to escape characters for inclusion in compiled string literals. */
+  var stringEscapes = {
+    '\\': '\\',
+    "'": "'",
+    '\n': 'n',
+    '\r': 'r',
+    '\u2028': 'u2028',
+    '\u2029': 'u2029'
+  };
+
+  /**
+   * Used as a reference to the global object.
+   *
+   * The `this` value is used if it is the global object to avoid Greasemonkey's
+   * restricted `window` object, otherwise the `window` object is used.
+   */
+  var root = (objectTypes[typeof window] && window !== (this && this.window)) ? window : this;
+
+  /** Detect free variable `exports`. */
+  var freeExports = objectTypes[typeof exports] && exports && !exports.nodeType && exports;
+
+  /** Detect free variable `module`. */
+  var freeModule = objectTypes[typeof module] && module && !module.nodeType && module;
+
+  /** Detect free variable `global` from Node.js or Browserified code and use it as `root`. */
+  var freeGlobal = freeExports && freeModule && typeof global == 'object' && global;
+  if (freeGlobal && (freeGlobal.global === freeGlobal || freeGlobal.window === freeGlobal || freeGlobal.self === freeGlobal)) {
+    root = freeGlobal;
+  }
+
+  /** Detect the popular CommonJS extension `module.exports`. */
+  var moduleExports = freeModule && freeModule.exports === freeExports && freeExports;
+
+  /*--------------------------------------------------------------------------*/
+
+  /**
+   * The base implementation of `compareAscending` which compares values and
+   * sorts them in ascending order without guaranteeing a stable sort.
+   *
+   * @private
+   * @param {*} value The value to compare to `other`.
+   * @param {*} other The value to compare to `value`.
+   * @returns {number} Returns the sort order indicator for `value`.
+   */
+  function baseCompareAscending(value, other) {
+    if (value !== other) {
+      var valIsReflexive = value === value,
+          othIsReflexive = other === other;
+
+      if (value > other || !valIsReflexive || (typeof value == 'undefined' && othIsReflexive)) {
+        return 1;
+      }
+      if (value < other || !othIsReflexive || (typeof other == 'undefined' && valIsReflexive)) {
+        return -1;
+      }
+    }
+    return 0;
+  }
+
+  /**
+   * The base implementation of `_.indexOf` without support for binary searches.
+   *
+   * @private
+   * @param {Array} array The array to search.
+   * @param {*} value The value to search for.
+   * @param {number} [fromIndex=0] The index to search from.
+   * @returns {number} Returns the index of the matched value, else `-1`.
+   */
+  function baseIndexOf(array, value, fromIndex) {
+    if (value !== value) {
+      return indexOfNaN(array, fromIndex);
+    }
+    var index = (fromIndex || 0) - 1,
+        length = array.length;
+
+    while (++index < length) {
+      if (array[index] === value) {
+        return index;
+      }
+    }
+    return -1;
+  }
+
+  /**
+   * The base implementation of `_.sortBy` and `_.sortByAll` which uses `comparer`
+   * to define the sort order of `array` and replaces criteria objects with their
+   * corresponding values.
+   *
+   * @private
+   * @param {Array} array The array to sort.
+   * @param {Function} comparer The function to define sort order.
+   * @returns {Array} Returns `array`.
+   */
+  function baseSortBy(array, comparer) {
+    var length = array.length;
+
+    array.sort(comparer);
+    while (length--) {
+      array[length] = array[length].value;
+    }
+    return array;
+  }
+
+  /**
+   * Converts `value` to a string if it is not one. An empty string is returned
+   * for `null` or `undefined` values.
+   *
+   * @private
+   * @param {*} value The value to process.
+   * @returns {string} Returns the string.
+   */
+  function baseToString(value) {
+    if (typeof value == 'string') {
+      return value;
+    }
+    return value == null ? '' : (value + '');
+  }
+
+  /**
+   * Used by `_.max` and `_.min` as the default callback for string values.
+   *
+   * @private
+   * @param {string} string The string to inspect.
+   * @returns {number} Returns the code unit of the first character of the string.
+   */
+  function charAtCallback(string) {
+    return string.charCodeAt(0);
+  }
+
+  /**
+   * Used by `_.trim` and `_.trimLeft` to get the index of the first character
+   * of `string` that is not found in `chars`.
+   *
+   * @private
+   * @param {string} string The string to inspect.
+   * @param {string} chars The characters to find.
+   * @returns {number} Returns the index of the first character not found in `chars`.
+   */
+  function charsLeftIndex(string, chars) {
+    var index = -1,
+        length = string.length;
+
+    while (++index < length && chars.indexOf(string.charAt(index)) > -1) {}
+    return index;
+  }
+
+  /**
+   * Used by `_.trim` and `_.trimRight` to get the index of the last character
+   * of `string` that is not found in `chars`.
+   *
+   * @private
+   * @param {string} string The string to inspect.
+   * @param {string} chars The characters to find.
+   * @returns {number} Returns the index of the last character not found in `chars`.
+   */
+  function charsRightIndex(string, chars) {
+    var index = string.length;
+
+    while (index-- && chars.indexOf(string.charAt(index)) > -1) {}
+    return index;
+  }
+
+  /**
+   * Used by `_.sortBy` to compare transformed elements of a collection and stable
+   * sort them in ascending order.
+   *
+   * @private
+   * @param {Object} object The object to compare to `other`.
+   * @param {Object} other The object to compare to `object`.
+   * @returns {number} Returns the sort order indicator for `object`.
+   */
+  function compareAscending(object, other) {
+    return baseCompareAscending(object.criteria, other.criteria) || (object.index - other.index);
+  }
+
+  /**
+   * Used by `_.sortByAll` to compare multiple properties of each element
+   * in a collection and stable sort them in ascending order.
+   *
+   * @private
+   * @param {Object} object The object to compare to `other`.
+   * @param {Object} other The object to compare to `object`.
+   * @returns {number} Returns the sort order indicator for `object`.
+   */
+  function compareMultipleAscending(object, other) {
+    var index = -1,
+        objCriteria = object.criteria,
+        othCriteria = other.criteria,
+        length = objCriteria.length;
+
+    while (++index < length) {
+      var result = baseCompareAscending(objCriteria[index], othCriteria[index]);
+      if (result) {
+        return result;
+      }
+    }
+    // Fixes an `Array#sort` bug in the JS engine embedded in Adobe applications
+    // that causes it, under certain circumstances, to provide the same value for
+    // `object` and `other`. See https://github.com/jashkenas/underscore/pull/1247
+    // for more details.
+    //
+    // This also ensures a stable sort in V8 and other engines.
+    // See https://code.google.com/p/v8/issues/detail?id=90 for more details.
+    return object.index - other.index;
+  }
+
+  /**
+   * Used by `_.deburr` to convert latin-1 supplementary letters to basic latin letters.
+   *
+   * @private
+   * @param {string} letter The matched letter to deburr.
+   * @returns {string} Returns the deburred letter.
+   */
+  function deburrLetter(letter) {
+    return deburredLetters[letter];
+  }
+
+  /**
+   * Used by `_.escape` to convert characters to HTML entities.
+   *
+   * @private
+   * @param {string} chr The matched character to escape.
+   * @returns {string} Returns the escaped character.
+   */
+  function escapeHtmlChar(chr) {
+    return htmlEscapes[chr];
+  }
+
+  /**
+   * Used by `_.template` to escape characters for inclusion in compiled
+   * string literals.
+   *
+   * @private
+   * @param {string} chr The matched character to escape.
+   * @returns {string} Returns the escaped character.
+   */
+  function escapeStringChar(chr) {
+    return '\\' + stringEscapes[chr];
+  }
+
+  /**
+   * Gets the index at which the first occurrence of `NaN` is found in `array`.
+   * If `fromRight` is provided elements of `array` are iterated from right to left.
+   *
+   * @private
+   * @param {Array} array The array to search.
+   * @param {number} [fromIndex] The index to search from.
+   * @param {boolean} [fromRight] Specify iterating from right to left.
+   * @returns {number} Returns the index of the matched `NaN`, else `-1`.
+   */
+  function indexOfNaN(array, fromIndex, fromRight) {
+    var length = array.length,
+        index = fromRight ? (fromIndex || length) : ((fromIndex || 0) - 1);
+
+    while ((fromRight ? index-- : ++index < length)) {
+      var other = array[index];
+      if (other !== other) {
+        return index;
+      }
+    }
+    return -1;
+  }
+
+  /**
+   * Checks if `value` is object-like.
+   *
+   * @private
+   * @param {*} value The value to check.
+   * @returns {boolean} Returns `true` if `value` is object-like, else `false`.
+   */
+  function isObjectLike(value) {
+    return (value && typeof value == 'object') || false;
+  }
+
+  /**
+   * Used by `trimmedLeftIndex` and `trimmedRightIndex` to determine if a
+   * character code is whitespace.
+   *
+   * @private
+   * @param {number} charCode The character code to inspect.
+   * @returns {boolean} Returns `true` if `charCode` is whitespace, else `false`.
+   */
+  function isSpace(charCode) {
+    return ((charCode <= 160 && (charCode >= 9 && charCode <= 13) || charCode == 32 || charCode == 160) || charCode == 5760 || charCode == 6158 ||
+      (charCode >= 8192 && (charCode <= 8202 || charCode == 8232 || charCode == 8233 || charCode == 8239 || charCode == 8287 || charCode == 12288 || charCode == 65279)));
+  }
+
+  /**
+   * Replaces all `placeholder` elements in `array` with an internal placeholder
+   * and returns an array of their indexes.
+   *
+   * @private
+   * @param {Array} array The array to modify.
+   * @param {*} placeholder The placeholder to replace.
+   * @returns {Array} Returns the new array of placeholder indexes.
+   */
+  function replaceHolders(array, placeholder) {
+    var index = -1,
+        length = array.length,
+        resIndex = -1,
+        result = [];
+
+    while (++index < length) {
+      if (array[index] === placeholder) {
+        array[index] = PLACEHOLDER;
+        result[++resIndex] = index;
+      }
+    }
+    return result;
+  }
+
+  /**
+   * An implementation of `_.uniq` optimized for sorted arrays without support
+   * for callback shorthands and `this` binding.
+   *
+   * @private
+   * @param {Array} array The array to inspect.
+   * @param {Function} [iteratee] The function invoked per iteration.
+   * @returns {Array} Returns the new duplicate-value-free array.
+   */
+  function sortedUniq(array, iteratee) {
+    var seen,
+        index = -1,
+        length = array.length,
+        resIndex = -1,
+        result = [];
+
+    while (++index < length) {
+      var value = array[index],
+          computed = iteratee ? iteratee(value, index, array) : value;
+
+      if (!index || seen !== computed) {
+        seen = computed;
+        result[++resIndex] = value;
+      }
+    }
+    return result;
+  }
+
+  /**
+   * Used by `_.trim` and `_.trimLeft` to get the index of the first non-whitespace
+   * character of `string`.
+   *
+   * @private
+   * @param {string} string The string to inspect.
+   * @returns {number} Returns the index of the first non-whitespace character.
+   */
+  function trimmedLeftIndex(string) {
+    var index = -1,
+        length = string.length;
+
+    while (++index < length && isSpace(string.charCodeAt(index))) {}
+    return index;
+  }
+
+  /**
+   * Used by `_.trim` and `_.trimRight` to get the index of the last non-whitespace
+   * character of `string`.
+   *
+   * @private
+   * @param {string} string The string to inspect.
+   * @returns {number} Returns the index of the last non-whitespace character.
+   */
+  function trimmedRightIndex(string) {
+    var index = string.length;
+
+    while (index-- && isSpace(string.charCodeAt(index))) {}
+    return index;
+  }
+
+  /**
+   * Used by `_.unescape` to convert HTML entities to characters.
+   *
+   * @private
+   * @param {string} chr The matched character to unescape.
+   * @returns {string} Returns the unescaped character.
+   */
+  function unescapeHtmlChar(chr) {
+    return htmlUnescapes[chr];
+  }
+
+  /*--------------------------------------------------------------------------*/
+
+  /**
+   * Create a new pristine `lodash` function using the given `context` object.
+   *
+   * @static
+   * @memberOf _
+   * @category Utility
+   * @param {Object} [context=root] The context object.
+   * @returns {Function} Returns a new `lodash` function.
+   * @example
+   *
+   * _.mixin({ 'add': function(a, b) { return a + b; } });
+   *
+   * var lodash = _.runInContext();
+   * lodash.mixin({ 'sub': function(a, b) { return a - b; } });
+   *
+   * _.isFunction(_.add);
+   * // => true
+   * _.isFunction(_.sub);
+   * // => false
+   *
+   * lodash.isFunction(lodash.add);
+   * // => false
+   * lodash.isFunction(lodash.sub);
+   * // => true
+   *
+   * // using `context` to mock `Date#getTime` use in `_.now`
+   * var mock = _.runInContext({
+   *   'Date': function() {
+   *     return { 'getTime': getTimeMock };
+   *   }
+   * });
+   *
+   * // or creating a suped-up `defer` in Node.js
+   * var defer = _.runInContext({ 'setTimeout': setImmediate }).defer;
+   */
+  function runInContext(context) {
+    // Avoid issues with some ES3 environments that attempt to use values, named
+    // after built-in constructors like `Object`, for the creation of literals.
+    // ES5 clears this up by stating that literals must use built-in constructors.
+    // See https://es5.github.io/#x11.1.5 for more details.
+    context = context ? _.defaults(root.Object(), context, _.pick(root, contextProps)) : root;
+
+    /** Native constructor references. */
+    var Array = context.Array,
+        Date = context.Date,
+        Error = context.Error,
+        Function = context.Function,
+        Math = context.Math,
+        Number = context.Number,
+        Object = context.Object,
+        RegExp = context.RegExp,
+        String = context.String,
+        TypeError = context.TypeError;
+
+    /** Used for native method references. */
+    var arrayProto = Array.prototype,
+        objectProto = Object.prototype;
+
+    /** Used to detect DOM support. */
+    var document = (document = context.window) && document.document;
+
+    /** Used to resolve the decompiled source of functions. */
+    var fnToString = Function.prototype.toString;
+
+    /** Used to the length of n-tuples for `_.unzip`. */
+    var getLength = baseProperty('length');
+
+    /** Used to check objects for own properties. */
+    var hasOwnProperty = objectProto.hasOwnProperty;
+
+    /** Used to generate unique IDs. */
+    var idCounter = 0;
+
+    /**
+     * Used to resolve the `toStringTag` of values.
+     * See the [ES spec](https://people.mozilla.org/~jorendorff/es6-draft.html#sec-object.prototype.tostring)
+     * for more details.
+     */
+    var objToString = objectProto.toString;
+
+    /** Used to restore the original `_` reference in `_.noConflict`. */
+    var oldDash = context._;
+
+    /** Used to detect if a method is native. */
+    var reNative = RegExp('^' +
+      escapeRegExp(objToString)
+      .replace(/toString|(function).*?(?=\\\()| for .+?(?=\\\])/g, '$1.*?') + '$'
+    );
+
+    /** Native method references. */
+    var ArrayBuffer = isNative(ArrayBuffer = context.ArrayBuffer) && ArrayBuffer,
+        bufferSlice = isNative(bufferSlice = ArrayBuffer && new ArrayBuffer(0).slice) && bufferSlice,
+        ceil = Math.ceil,
+        clearTimeout = context.clearTimeout,
+        floor = Math.floor,
+        getPrototypeOf = isNative(getPrototypeOf = Object.getPrototypeOf) && getPrototypeOf,
+        push = arrayProto.push,
+        propertyIsEnumerable = objectProto.propertyIsEnumerable,
+        Set = isNative(Set = context.Set) && Set,
+        setTimeout = context.setTimeout,
+        splice = arrayProto.splice,
+        Uint8Array = isNative(Uint8Array = context.Uint8Array) && Uint8Array,
+        WeakMap = isNative(WeakMap = context.WeakMap) && WeakMap;
+
+    /** Used to clone array buffers. */
+    var Float64Array = (function() {
+      // Safari 5 errors when using an array buffer to initialize a typed array
+      // where the array buffer's `byteLength` is not a multiple of the typed
+      // array's `BYTES_PER_ELEMENT`.
+      try {
+        var func = isNative(func = context.Float64Array) && func,
+            result = new func(new ArrayBuffer(10), 0, 1) && func;
+      } catch(e) {}
+      return result;
+    }());
+
+    /* Native method references for those with the same name as other `lodash` methods. */
+    var nativeIsArray = isNative(nativeIsArray = Array.isArray) && nativeIsArray,
+        nativeCreate = isNative(nativeCreate = Object.create) && nativeCreate,
+        nativeIsFinite = context.isFinite,
+        nativeKeys = isNative(nativeKeys = Object.keys) && nativeKeys,
+        nativeMax = Math.max,
+        nativeMin = Math.min,
+        nativeNow = isNative(nativeNow = Date.now) && nativeNow,
+        nativeNumIsFinite = isNative(nativeNumIsFinite = Number.isFinite) && nativeNumIsFinite,
+        nativeParseInt = context.parseInt,
+        nativeRandom = Math.random;
+
+    /** Used as references for `-Infinity` and `Infinity`. */
+    var NEGATIVE_INFINITY = Number.NEGATIVE_INFINITY,
+        POSITIVE_INFINITY = Number.POSITIVE_INFINITY;
+
+    /** Used as references for the maximum length and index of an array. */
+    var MAX_ARRAY_LENGTH = Math.pow(2, 32) - 1,
+        MAX_ARRAY_INDEX =  MAX_ARRAY_LENGTH - 1,
+        HALF_MAX_ARRAY_LENGTH = MAX_ARRAY_LENGTH >>> 1;
+
+    /** Used as the size, in bytes, of each `Float64Array` element. */
+    var FLOAT64_BYTES_PER_ELEMENT = Float64Array ? Float64Array.BYTES_PER_ELEMENT : 0;
+
+    /**
+     * Used as the maximum length of an array-like value.
+     * See the [ES spec](https://people.mozilla.org/~jorendorff/es6-draft.html#sec-number.max_safe_integer)
+     * for more details.
+     */
+    var MAX_SAFE_INTEGER = Math.pow(2, 53) - 1;
+
+    /** Used to store function metadata. */
+    var metaMap = WeakMap && new WeakMap;
+
+    /*------------------------------------------------------------------------*/
+
+    /**
+     * Creates a `lodash` object which wraps `value` to enable implicit chaining.
+     * Methods that operate on and return arrays, collections, and functions can
+     * be chained together. Methods that return a boolean or single value will
+     * automatically end the chain returning the unwrapped value. Explicit chaining
+     * may be enabled using `_.chain`. The execution of chained methods is lazy,
+     * that is, execution is deferred until `_#value` is implicitly or explicitly
+     * called.
+     *
+     * Lazy evaluation allows several methods to support shortcut fusion. Shortcut
+     * fusion is an optimization that merges iteratees to avoid creating intermediate
+     * arrays and reduce the number of iteratee executions.
+     *
+     * Chaining is supported in custom builds as long as the `_#value` method is
+     * directly or indirectly included in the build.
+     *
+     * In addition to lodash methods, wrappers also have the following `Array` methods:
+     * `concat`, `join`, `pop`, `push`, `reverse`, `shift`, `slice`, `sort`, `splice`,
+     * and `unshift`
+     *
+     * The wrapper methods that support shortcut fusion are:
+     * `compact`, `drop`, `dropRight`, `dropRightWhile`, `dropWhile`, `filter`,
+     * `first`, `initial`, `last`, `map`, `pluck`, `reject`, `rest`, `reverse`,
+     * `slice`, `take`, `takeRight`, `takeRightWhile`, `takeWhile`, `toArray`,
+     * and `where`
+     *
+     * The chainable wrapper methods are:
+     * `after`, `ary`, `assign`, `at`, `before`, `bind`, `bindAll`, `bindKey`,
+     * `callback`, `chain`, `chunk`, `commit`, `compact`, `concat`, `constant`,
+     * `countBy`, `create`, `curry`, `debounce`, `defaults`, `defer`, `delay`,
+     * `difference`, `drop`, `dropRight`, `dropRightWhile`, `dropWhile`, `fill`,
+     * `filter`, `flatten`, `flattenDeep`, `flow`, `flowRight`, `forEach`,
+     * `forEachRight`, `forIn`, `forInRight`, `forOwn`, `forOwnRight`, `functions`,
+     * `groupBy`, `indexBy`, `initial`, `intersection`, `invert`, `invoke`, `keys`,
+     * `keysIn`, `map`, `mapValues`, `matches`, `memoize`, `merge`, `mixin`,
+     * `negate`, `noop`, `omit`, `once`, `pairs`, `partial`, `partialRight`,
+     * `partition`, `pick`, `plant`, `pluck`, `property`, `propertyOf`, `pull`,
+     * `pullAt`, `push`, `range`, `rearg`, `reject`, `remove`, `rest`, `reverse`,
+     * `shuffle`, `slice`, `sort`, `sortBy`, `sortByAll`, `splice`, `spread`,
+     * `take`, `takeRight`, `takeRightWhile`, `takeWhile`, `tap`, `throttle`,
+     * `thru`, `times`, `toArray`, `toPlainObject`, `transform`, `union`, `uniq`,
+     * `unshift`, `unzip`, `values`, `valuesIn`, `where`, `without`, `wrap`, `xor`,
+     * `zip`, and `zipObject`
+     *
+     * The wrapper methods that are **not** chainable by default are:
+     * `attempt`, `camelCase`, `capitalize`, `clone`, `cloneDeep`, `deburr`,
+     * `endsWith`, `escape`, `escapeRegExp`, `every`, `find`, `findIndex`, `findKey`,
+     * `findLast`, `findLastIndex`, `findLastKey`, `findWhere`, `first`, `has`,
+     * `identity`, `includes`, `indexOf`, `isArguments`, `isArray`, `isBoolean`,
+     * `isDate`, `isElement`, `isEmpty`, `isEqual`, `isError`, `isFinite`,
+     * `isFunction`, `isMatch`, `isNative`, `isNaN`, `isNull`, `isNumber`,
+     * `isObject`, `isPlainObject`, `isRegExp`, `isString`, `isUndefined`,
+     * `isTypedArray`, `join`, `kebabCase`, `last`, `lastIndexOf`, `max`, `min`,
+     * `noConflict`, `now`, `pad`, `padLeft`, `padRight`, `parseInt`, `pop`,
+     * `random`, `reduce`, `reduceRight`, `repeat`, `result`, `runInContext`,
+     * `shift`, `size`, `snakeCase`, `some`, `sortedIndex`, `sortedLastIndex`,
+     * `startCase`, `startsWith`, `template`, `trim`, `trimLeft`, `trimRight`,
+     * `trunc`, `unescape`, `uniqueId`, `value`, and `words`
+     *
+     * The wrapper method `sample` will return a wrapped value when `n` is provided,
+     * otherwise an unwrapped value is returned.
+     *
+     * @name _
+     * @constructor
+     * @category Chain
+     * @param {*} value The value to wrap in a `lodash` instance.
+     * @returns {Object} Returns the new `lodash` wrapper instance.
+     * @example
+     *
+     * var wrapped = _([1, 2, 3]);
+     *
+     * // returns an unwrapped value
+     * wrapped.reduce(function(sum, n) { return sum + n; });
+     * // => 6
+     *
+     * // returns a wrapped value
+     * var squares = wrapped.map(function(n) { return n * n; });
+     *
+     * _.isArray(squares);
+     * // => false
+     *
+     * _.isArray(squares.value());
+     * // => true
+     */
+    function lodash(value) {
+      if (isObjectLike(value) && !isArray(value) && !(value instanceof LazyWrapper)) {
+        if (value instanceof LodashWrapper) {
+          return value;
+        }
+        if (hasOwnProperty.call(value, '__chain__') && hasOwnProperty.call(value, '__wrapped__')) {
+          return wrapperClone(value);
+        }
+      }
+      return new LodashWrapper(value);
+    }
+
+    /**
+     * The base constructor for creating `lodash` wrapper objects.
+     *
+     * @private
+     * @param {*} value The value to wrap.
+     * @param {boolean} [chainAll] Enable chaining for all wrapper methods.
+     * @param {Array} [actions=[]] Actions to peform to resolve the unwrapped value.
+     */
+    function LodashWrapper(value, chainAll, actions) {
+      this.__wrapped__ = value;
+      this.__actions__ = actions || [];
+      this.__chain__ = !!chainAll;
+    }
+
+    /**
+     * An object environment feature flags.
+     *
+     * @static
+     * @memberOf _
+     * @type Object
+     */
+    var support = lodash.support = {};
+
+    (function(x) {
+
+      /**
+       * Detect if functions can be decompiled by `Function#toString`
+       * (all but Firefox OS certified apps, older Opera mobile browsers, and
+       * the PlayStation 3; forced `false` for Windows 8 apps).
+       *
+       * @memberOf _.support
+       * @type boolean
+       */
+      support.funcDecomp = !isNative(context.WinRTError) && reThis.test(runInContext);
+
+      /**
+       * Detect if `Function#name` is supported (all but IE).
+       *
+       * @memberOf _.support
+       * @type boolean
+       */
+      support.funcNames = typeof Function.name == 'string';
+
+      /**
+       * Detect if the DOM is supported.
+       *
+       * @memberOf _.support
+       * @type boolean
+       */
+      try {
+        support.dom = document.createDocumentFragment().nodeType === 11;
+      } catch(e) {
+        support.dom = false;
+      }
+
+      /**
+       * Detect if `arguments` object indexes are non-enumerable.
+       *
+       * In Firefox < 4, IE < 9, PhantomJS, and Safari < 5.1 `arguments` object
+       * indexes are non-enumerable. Chrome < 25 and Node.js < 0.11.0 treat
+       * `arguments` object indexes as non-enumerable and fail `hasOwnProperty`
+       * checks for indexes that exceed their function's formal parameters with
+       * associated values of `0`.
+       *
+       * @memberOf _.support
+       * @type boolean
+       */
+      try {
+        support.nonEnumArgs = !propertyIsEnumerable.call(arguments, 1);
+      } catch(e) {
+        support.nonEnumArgs = true;
+      }
+    }(0, 0));
+
+    /**
+     * By default, the template delimiters used by lodash are like those in
+     * embedded Ruby (ERB). Change the following template settings to use
+     * alternative delimiters.
+     *
+     * @static
+     * @memberOf _
+     * @type Object
+     */
+    lodash.templateSettings = {
+
+      /**
+       * Used to detect `data` property values to be HTML-escaped.
+       *
+       * @memberOf _.templateSettings
+       * @type RegExp
+       */
+      'escape': reEscape,
+
+      /**
+       * Used to detect code to be evaluated.
+       *
+       * @memberOf _.templateSettings
+       * @type RegExp
+       */
+      'evaluate': reEvaluate,
+
+      /**
+       * Used to detect `data` property values to inject.
+       *
+       * @memberOf _.templateSettings
+       * @type RegExp
+       */
+      'interpolate': reInterpolate,
+
+      /**
+       * Used to reference the data object in the template text.
+       *
+       * @memberOf _.templateSettings
+       * @type string
+       */
+      'variable': '',
+
+      /**
+       * Used to import variables into the compiled template.
+       *
+       * @memberOf _.templateSettings
+       * @type Object
+       */
+      'imports': {
+
+        /**
+         * A reference to the `lodash` function.
+         *
+         * @memberOf _.templateSettings.imports
+         * @type Function
+         */
+        '_': lodash
+      }
+    };
+
+    /*------------------------------------------------------------------------*/
+
+    /**
+     * Creates a lazy wrapper object which wraps `value` to enable lazy evaluation.
+     *
+     * @private
+     * @param {*} value The value to wrap.
+     */
+    function LazyWrapper(value) {
+      this.__wrapped__ = value;
+      this.__actions__ = null;
+      this.__dir__ = 1;
+      this.__dropCount__ = 0;
+      this.__filtered__ = false;
+      this.__iteratees__ = null;
+      this.__takeCount__ = POSITIVE_INFINITY;
+      this.__views__ = null;
+    }
+
+    /**
+     * Creates a clone of the lazy wrapper object.
+     *
+     * @private
+     * @name clone
+     * @memberOf LazyWrapper
+     * @returns {Object} Returns the cloned `LazyWrapper` object.
+     */
+    function lazyClone() {
+      var actions = this.__actions__,
+          iteratees = this.__iteratees__,
+          views = this.__views__,
+          result = new LazyWrapper(this.__wrapped__);
+
+      result.__actions__ = actions ? arrayCopy(actions) : null;
+      result.__dir__ = this.__dir__;
+      result.__dropCount__ = this.__dropCount__;
+      result.__filtered__ = this.__filtered__;
+      result.__iteratees__ = iteratees ? arrayCopy(iteratees) : null;
+      result.__takeCount__ = this.__takeCount__;
+      result.__views__ = views ? arrayCopy(views) : null;
+      return result;
+    }
+
+    /**
+     * Reverses the direction of lazy iteration.
+     *
+     * @private
+     * @name reverse
+     * @memberOf LazyWrapper
+     * @returns {Object} Returns the new reversed `LazyWrapper` object.
+     */
+    function lazyReverse() {
+      if (this.__filtered__) {
+        var result = new LazyWrapper(this);
+        result.__dir__ = -1;
+        result.__filtered__ = true;
+      } else {
+        result = this.clone();
+        result.__dir__ *= -1;
+      }
+      return result;
+    }
+
+    /**
+     * Extracts the unwrapped value from its lazy wrapper.
+     *
+     * @private
+     * @name value
+     * @memberOf LazyWrapper
+     * @returns {*} Returns the unwrapped value.
+     */
+    function lazyValue() {
+      var array = this.__wrapped__.value();
+      if (!isArray(array)) {
+        return baseWrapperValue(array, this.__actions__);
+      }
+      var dir = this.__dir__,
+          isRight = dir < 0,
+          view = getView(0, array.length, this.__views__),
+          start = view.start,
+          end = view.end,
+          length = end - start,
+          dropCount = this.__dropCount__,
+          takeCount = nativeMin(length, this.__takeCount__),
+          index = isRight ? end : start - 1,
+          iteratees = this.__iteratees__,
+          iterLength = iteratees ? iteratees.length : 0,
+          resIndex = 0,
+          result = [];
+
+      outer:
+      while (length-- && resIndex < takeCount) {
+        index += dir;
+
+        var iterIndex = -1,
+            value = array[index];
+
+        while (++iterIndex < iterLength) {
+          var data = iteratees[iterIndex],
+              iteratee = data.iteratee,
+              computed = iteratee(value, index, array),
+              type = data.type;
+
+          if (type == LAZY_MAP_FLAG) {
+            value = computed;
+          } else if (!computed) {
+            if (type == LAZY_FILTER_FLAG) {
+              continue outer;
+            } else {
+              break outer;
+            }
+          }
+        }
+        if (dropCount) {
+          dropCount--;
+        } else {
+          result[resIndex++] = value;
+        }
+      }
+      return result;
+    }
+
+    /*------------------------------------------------------------------------*/
+
+    /**
+     * Creates a cache object to store key/value pairs.
+     *
+     * @private
+     * @static
+     * @name Cache
+     * @memberOf _.memoize
+     */
+    function MapCache() {
+      this.__data__ = {};
+    }
+
+    /**
+     * Removes `key` and its value from the cache.
+     *
+     * @private
+     * @name delete
+     * @memberOf _.memoize.Cache
+     * @param {string} key The key of the value to remove.
+     * @returns {boolean} Returns `true` if the entry was removed successfully, else `false`.
+     */
+    function mapDelete(key) {
+      return this.has(key) && delete this.__data__[key];
+    }
+
+    /**
+     * Gets the cached value for `key`.
+     *
+     * @private
+     * @name get
+     * @memberOf _.memoize.Cache
+     * @param {string} key The key of the value to get.
+     * @returns {*} Returns the cached value.
+     */
+    function mapGet(key) {
+      return key == '__proto__' ? undefined : this.__data__[key];
+    }
+
+    /**
+     * Checks if a cached value for `key` exists.
+     *
+     * @private
+     * @name has
+     * @memberOf _.memoize.Cache
+     * @param {string} key The key of the entry to check.
+     * @returns {boolean} Returns `true` if an entry for `key` exists, else `false`.
+     */
+    function mapHas(key) {
+      return key != '__proto__' && hasOwnProperty.call(this.__data__, key);
+    }
+
+    /**
+     * Adds `value` to `key` of the cache.
+     *
+     * @private
+     * @name set
+     * @memberOf _.memoize.Cache
+     * @param {string} key The key of the value to cache.
+     * @param {*} value The value to cache.
+     * @returns {Object} Returns the cache object.
+     */
+    function mapSet(key, value) {
+      if (key != '__proto__') {
+        this.__data__[key] = value;
+      }
+      return this;
+    }
+
+    /*------------------------------------------------------------------------*/
+
+    /**
+     *
+     * Creates a cache object to store unique values.
+     *
+     * @private
+     * @param {Array} [values] The values to cache.
+     */
+    function SetCache(values) {
+      var length = values ? values.length : 0;
+
+      this.data = { 'hash': nativeCreate(null), 'set': new Set };
+      while (length--) {
+        this.push(values[length]);
+      }
+    }
+
+    /**
+     * Checks if `value` is in `cache` mimicking the return signature of
+     * `_.indexOf` by returning `0` if the value is found, else `-1`.
+     *
+     * @private
+     * @param {Object} cache The cache to search.
+     * @param {*} value The value to search for.
+     * @returns {number} Returns `0` if `value` is found, else `-1`.
+     */
+    function cacheIndexOf(cache, value) {
+      var data = cache.data,
+          result = (typeof value == 'string' || isObject(value)) ? data.set.has(value) : data.hash[value];
+
+      return result ? 0 : -1;
+    }
+
+    /**
+     * Adds `value` to the cache.
+     *
+     * @private
+     * @name push
+     * @memberOf SetCache
+     * @param {*} value The value to cache.
+     */
+    function cachePush(value) {
+      var data = this.data;
+      if (typeof value == 'string' || isObject(value)) {
+        data.set.add(value);
+      } else {
+        data.hash[value] = true;
+      }
+    }
+
+    /*------------------------------------------------------------------------*/
+
+    /**
+     * Copies the values of `source` to `array`.
+     *
+     * @private
+     * @param {Array} source The array to copy values from.
+     * @param {Array} [array=[]] The array to copy values to.
+     * @returns {Array} Returns `array`.
+     */
+    function arrayCopy(source, array) {
+      var index = -1,
+          length = source.length;
+
+      array || (array = Array(length));
+      while (++index < length) {
+        array[index] = source[index];
+      }
+      return array;
+    }
+
+    /**
+     * A specialized version of `_.forEach` for arrays without support for callback
+     * shorthands or `this` binding.
+     *
+     * @private
+     * @param {Array} array The array to iterate over.
+     * @param {Function} iteratee The function invoked per iteration.
+     * @returns {Array} Returns `array`.
+     */
+    function arrayEach(array, iteratee) {
+      var index = -1,
+          length = array.length;
+
+      while (++index < length) {
+        if (iteratee(array[index], index, array) === false) {
+          break;
+        }
+      }
+      return array;
+    }
+
+    /**
+     * A specialized version of `_.forEachRight` for arrays without support for
+     * callback shorthands or `this` binding.
+     *
+     * @private
+     * @param {Array} array The array to iterate over.
+     * @param {Function} iteratee The function invoked per iteration.
+     * @returns {Array} Returns `array`.
+     */
+    function arrayEachRight(array, iteratee) {
+      var length = array.length;
+
+      while (length--) {
+        if (iteratee(array[length], length, array) === false) {
+          break;
+        }
+      }
+      return array;
+    }
+
+    /**
+     * A specialized version of `_.every` for arrays without support for callback
+     * shorthands or `this` binding.
+     *
+     * @private
+     * @param {Array} array The array to iterate over.
+     * @param {Function} predicate The function invoked per iteration.
+     * @returns {boolean} Returns `true` if all elements pass the predicate check,
+     *  else `false`.
+     */
+    function arrayEvery(array, predicate) {
+      var index = -1,
+          length = array.length;
+
+      while (++index < length) {
+        if (!predicate(array[index], index, array)) {
+          return false;
+        }
+      }
+      return true;
+    }
+
+    /**
+     * A specialized version of `_.filter` for arrays without support for callback
+     * shorthands or `this` binding.
+     *
+     * @private
+     * @param {Array} array The array to iterate over.
+     * @param {Function} predicate The function invoked per iteration.
+     * @returns {Array} Returns the new filtered array.
+     */
+    function arrayFilter(array, predicate) {
+      var index = -1,
+          length = array.length,
+          resIndex = -1,
+          result = [];
+
+      while (++index < length) {
+        var value = array[index];
+        if (predicate(value, index, array)) {
+          result[++resIndex] = value;
+        }
+      }
+      return result;
+    }
+
+    /**
+     * A specialized version of `_.map` for arrays without support for callback
+     * shorthands or `this` binding.
+     *
+     * @private
+     * @param {Array} array The array to iterate over.
+     * @param {Function} iteratee The function invoked per iteration.
+     * @returns {Array} Returns the new mapped array.
+     */
+    function arrayMap(array, iteratee) {
+      var index = -1,
+          length = array.length,
+          result = Array(length);
+
+      while (++index < length) {
+        result[index] = iteratee(array[index], index, array);
+      }
+      return result;
+    }
+
+    /**
+     * A specialized version of `_.max` for arrays without support for iteratees.
+     *
+     * @private
+     * @param {Array} array The array to iterate over.
+     * @returns {*} Returns the maximum value.
+     */
+    function arrayMax(array) {
+      var index = -1,
+          length = array.length,
+          result = NEGATIVE_INFINITY;
+
+      while (++index < length) {
+        var value = array[index];
+        if (value > result) {
+          result = value;
+        }
+      }
+      return result;
+    }
+
+    /**
+     * A specialized version of `_.min` for arrays without support for iteratees.
+     *
+     * @private
+     * @param {Array} array The array to iterate over.
+     * @returns {*} Returns the minimum value.
+     */
+    function arrayMin(array) {
+      var index = -1,
+          length = array.length,
+          result = POSITIVE_INFINITY;
+
+      while (++index < length) {
+        var value = array[index];
+        if (value < result) {
+          result = value;
+        }
+      }
+      return result;
+    }
+
+    /**
+     * A specialized version of `_.reduce` for arrays without support for callback
+     * shorthands or `this` binding.
+     *
+     * @private
+     * @param {Array} array The array to iterate over.
+     * @param {Function} iteratee The function invoked per iteration.
+     * @param {*} [accumulator] The initial value.
+     * @param {boolean} [initFromArray] Specify using the first element of `array`
+     *  as the initial value.
+     * @returns {*} Returns the accumulated value.
+     */
+    function arrayReduce(array, iteratee, accumulator, initFromArray) {
+      var index = -1,
+          length = array.length;
+
+      if (initFromArray && length) {
+        accumulator = array[++index];
+      }
+      while (++index < length) {
+        accumulator = iteratee(accumulator, array[index], index, array);
+      }
+      return accumulator;
+    }
+
+    /**
+     * A specialized version of `_.reduceRight` for arrays without support for
+     * callback shorthands or `this` binding.
+     *
+     * @private
+     * @param {Array} array The array to iterate over.
+     * @param {Function} iteratee The function invoked per iteration.
+     * @param {*} [accumulator] The initial value.
+     * @param {boolean} [initFromArray] Specify using the last element of `array`
+     *  as the initial value.
+     * @returns {*} Returns the accumulated value.
+     */
+    function arrayReduceRight(array, iteratee, accumulator, initFromArray) {
+      var length = array.length;
+      if (initFromArray && length) {
+        accumulator = array[--length];
+      }
+      while (length--) {
+        accumulator = iteratee(accumulator, array[length], length, array);
+      }
+      return accumulator;
+    }
+
+    /**
+     * A specialized version of `_.some` for arrays without support for callback
+     * shorthands or `this` binding.
+     *
+     * @private
+     * @param {Array} array The array to iterate over.
+     * @param {Function} predicate The function invoked per iteration.
+     * @returns {boolean} Returns `true` if any element passes the predicate check,
+     *  else `false`.
+     */
+    function arraySome(array, predicate) {
+      var index = -1,
+          length = array.length;
+
+      while (++index < length) {
+        if (predicate(array[index], index, array)) {
+          return true;
+        }
+      }
+      return false;
+    }
+
+    /**
+     * Used by `_.defaults` to customize its `_.assign` use.
+     *
+     * @private
+     * @param {*} objectValue The destination object property value.
+     * @param {*} sourceValue The source object property value.
+     * @returns {*} Returns the value to assign to the destination object.
+     */
+    function assignDefaults(objectValue, sourceValue) {
+      return typeof objectValue == 'undefined' ? sourceValue : objectValue;
+    }
+
+    /**
+     * Used by `_.template` to customize its `_.assign` use.
+     *
+     * **Note:** This method is like `assignDefaults` except that it ignores
+     * inherited property values when checking if a property is `undefined`.
+     *
+     * @private
+     * @param {*} objectValue The destination object property value.
+     * @param {*} sourceValue The source object property value.
+     * @param {string} key The key associated with the object and source values.
+     * @param {Object} object The destination object.
+     * @returns {*} Returns the value to assign to the destination object.
+     */
+    function assignOwnDefaults(objectValue, sourceValue, key, object) {
+      return (typeof objectValue == 'undefined' || !hasOwnProperty.call(object, key))
+        ? sourceValue
+        : objectValue;
+    }
+
+    /**
+     * The base implementation of `_.assign` without support for argument juggling,
+     * multiple sources, and `this` binding `customizer` functions.
+     *
+     * @private
+     * @param {Object} object The destination object.
+     * @param {Object} source The source object.
+     * @param {Function} [customizer] The function to customize assigning values.
+     * @returns {Object} Returns the destination object.
+     */
+    function baseAssign(object, source, customizer) {
+      var props = keys(source);
+      if (!customizer) {
+        return baseCopy(source, object, props);
+      }
+      var index = -1,
+          length = props.length;
+
+      while (++index < length) {
+        var key = props[index],
+            value = object[key],
+            result = customizer(value, source[key], key, object, source);
+
+        if ((result === result ? result !== value : value === value) ||
+            (typeof value == 'undefined' && !(key in object))) {
+          object[key] = result;
+        }
+      }
+      return object;
+    }
+
+    /**
+     * The base implementation of `_.at` without support for strings and individual
+     * key arguments.
+     *
+     * @private
+     * @param {Array|Object} collection The collection to iterate over.
+     * @param {number[]|string[]} [props] The property names or indexes of elements to pick.
+     * @returns {Array} Returns the new array of picked elements.
+     */
+    function baseAt(collection, props) {
+      var index = -1,
+          length = collection.length,
+          isArr = isLength(length),
+          propsLength = props.length,
+          result = Array(propsLength);
+
+      while(++index < propsLength) {
+        var key = props[index];
+        if (isArr) {
+          key = parseFloat(key);
+          result[index] = isIndex(key, length) ? collection[key] : undefined;
+        } else {
+          result[index] = collection[key];
+        }
+      }
+      return result;
+    }
+
+    /**
+     * Copies the properties of `source` to `object`.
+     *
+     * @private
+     * @param {Object} source The object to copy properties from.
+     * @param {Object} [object={}] The object to copy properties to.
+     * @param {Array} props The property names to copy.
+     * @returns {Object} Returns `object`.
+     */
+    function baseCopy(source, object, props) {
+      if (!props) {
+        props = object;
+        object = {};
+      }
+      var index = -1,
+          length = props.length;
+
+      while (++index < length) {
+        var key = props[index];
+        object[key] = source[key];
+      }
+      return object;
+    }
+
+    /**
+     * The base implementation of `_.bindAll` without support for individual
+     * method name arguments.
+     *
+     * @private
+     * @param {Object} object The object to bind and assign the bound methods to.
+     * @param {string[]} methodNames The object method names to bind.
+     * @returns {Object} Returns `object`.
+     */
+    function baseBindAll(object, methodNames) {
+      var index = -1,
+          length = methodNames.length;
+
+      while (++index < length) {
+        var key = methodNames[index];
+        object[key] = createWrapper(object[key], BIND_FLAG, object);
+      }
+      return object;
+    }
+
+    /**
+     * The base implementation of `_.callback` which supports specifying the
+     * number of arguments to provide to `func`.
+     *
+     * @private
+     * @param {*} [func=_.identity] The value to convert to a callback.
+     * @param {*} [thisArg] The `this` binding of `func`.
+     * @param {number} [argCount] The number of arguments to provide to `func`.
+     * @returns {Function} Returns the callback.
+     */
+    function baseCallback(func, thisArg, argCount) {
+      var type = typeof func;
+      if (type == 'function') {
+        return (typeof thisArg != 'undefined' && isBindable(func))
+          ? bindCallback(func, thisArg, argCount)
+          : func;
+      }
+      if (func == null) {
+        return identity;
+      }
+      if (type == 'object') {
+        return baseMatches(func);
+      }
+      return typeof thisArg == 'undefined'
+        ? baseProperty(func + '')
+        : baseMatchesProperty(func + '', thisArg);
+    }
+
+    /**
+     * The base implementation of `_.clone` without support for argument juggling
+     * and `this` binding `customizer` functions.
+     *
+     * @private
+     * @param {*} value The value to clone.
+     * @param {boolean} [isDeep] Specify a deep clone.
+     * @param {Function} [customizer] The function to customize cloning values.
+     * @param {string} [key] The key of `value`.
+     * @param {Object} [object] The object `value` belongs to.
+     * @param {Array} [stackA=[]] Tracks traversed source objects.
+     * @param {Array} [stackB=[]] Associates clones with source counterparts.
+     * @returns {*} Returns the cloned value.
+     */
+    function baseClone(value, isDeep, customizer, key, object, stackA, stackB) {
+      var result;
+      if (customizer) {
+        result = object ? customizer(value, key, object) : customizer(value);
+      }
+      if (typeof result != 'undefined') {
+        return result;
+      }
+      if (!isObject(value)) {
+        return value;
+      }
+      var isArr = isArray(value);
+      if (isArr) {
+        result = initCloneArray(value);
+        if (!isDeep) {
+          return arrayCopy(value, result);
+        }
+      } else {
+        var tag = objToString.call(value),
+            isFunc = tag == funcTag;
+
+        if (tag == objectTag || tag == argsTag || (isFunc && !object)) {
+          result = initCloneObject(isFunc ? {} : value);
+          if (!isDeep) {
+            return baseCopy(value, result, keys(value));
+          }
+        } else {
+          return cloneableTags[tag]
+            ? initCloneByTag(value, tag, isDeep)
+            : (object ? value : {});
+        }
+      }
+      // Check for circular references and return corresponding clone.
+      stackA || (stackA = []);
+      stackB || (stackB = []);
+
+      var length = stackA.length;
+      while (length--) {
+        if (stackA[length] == value) {
+          return stackB[length];
+        }
+      }
+      // Add the source value to the stack of traversed objects and associate it with its clone.
+      stackA.push(value);
+      stackB.push(result);
+
+      // Recursively populate clone (susceptible to call stack limits).
+      (isArr ? arrayEach : baseForOwn)(value, function(subValue, key) {
+        result[key] = baseClone(subValue, isDeep, customizer, key, value, stackA, stackB);
+      });
+      return result;
+    }
+
+    /**
+     * The base implementation of `_.create` without support for assigning
+     * properties to the created object.
+     *
+     * @private
+     * @param {Object} prototype The object to inherit from.
+     * @returns {Object} Returns the new object.
+     */
+    var baseCreate = (function() {
+      function Object() {}
+      return function(prototype) {
+        if (isObject(prototype)) {
+          Object.prototype = prototype;
+          var result = new Object;
+          Object.prototype = null;
+        }
+        return result || context.Object();
+      };
+    }());
+
+    /**
+     * The base implementation of `_.delay` and `_.defer` which accepts an index
+     * of where to slice the arguments to provide to `func`.
+     *
+     * @private
+     * @param {Function} func The function to delay.
+     * @param {number} wait The number of milliseconds to delay invocation.
+     * @param {Object} args The `arguments` object to slice and provide to `func`.
+     * @returns {number} Returns the timer id.
+     */
+    function baseDelay(func, wait, args, fromIndex) {
+      if (typeof func != 'function') {
+        throw new TypeError(FUNC_ERROR_TEXT);
+      }
+      return setTimeout(function() { func.apply(undefined, baseSlice(args, fromIndex)); }, wait);
+    }
+
+    /**
+     * The base implementation of `_.difference` which accepts a single array
+     * of values to exclude.
+     *
+     * @private
+     * @param {Array} array The array to inspect.
+     * @param {Array} values The values to exclude.
+     * @returns {Array} Returns the new array of filtered values.
+     */
+    function baseDifference(array, values) {
+      var length = array ? array.length : 0,
+          result = [];
+
+      if (!length) {
+        return result;
+      }
+      var index = -1,
+          indexOf = getIndexOf(),
+          isCommon = indexOf == baseIndexOf,
+          cache = isCommon && values.length >= 200 && createCache(values),
+          valuesLength = values.length;
+
+      if (cache) {
+        indexOf = cacheIndexOf;
+        isCommon = false;
+        values = cache;
+      }
+      outer:
+      while (++index < length) {
+        var value = array[index];
+
+        if (isCommon && value === value) {
+          var valuesIndex = valuesLength;
+          while (valuesIndex--) {
+            if (values[valuesIndex] === value) {
+              continue outer;
+            }
+          }
+          result.push(value);
+        }
+        else if (indexOf(values, value) < 0) {
+          result.push(value);
+        }
+      }
+      return result;
+    }
+
+    /**
+     * The base implementation of `_.forEach` without support for callback
+     * shorthands and `this` binding.
+     *
+     * @private
+     * @param {Array|Object|string} collection The collection to iterate over.
+     * @param {Function} iteratee The function invoked per iteration.
+     * @returns {Array|Object|string} Returns `collection`.
+     */
+    function baseEach(collection, iteratee) {
+      var length = collection ? collection.length : 0;
+      if (!isLength(length)) {
+        return baseForOwn(collection, iteratee);
+      }
+      var index = -1,
+          iterable = toObject(collection);
+
+      while (++index < length) {
+        if (iteratee(iterable[index], index, iterable) === false) {
+          break;
+        }
+      }
+      return collection;
+    }
+
+    /**
+     * The base implementation of `_.forEachRight` without support for callback
+     * shorthands and `this` binding.
+     *
+     * @private
+     * @param {Array|Object|string} collection The collection to iterate over.
+     * @param {Function} iteratee The function invoked per iteration.
+     * @returns {Array|Object|string} Returns `collection`.
+     */
+    function baseEachRight(collection, iteratee) {
+      var length = collection ? collection.length : 0;
+      if (!isLength(length)) {
+        return baseForOwnRight(collection, iteratee);
+      }
+      var iterable = toObject(collection);
+      while (length--) {
+        if (iteratee(iterable[length], length, iterable) === false) {
+          break;
+        }
+      }
+      return collection;
+    }
+
+    /**
+     * The base implementation of `_.every` without support for callback
+     * shorthands or `this` binding.
+     *
+     * @private
+     * @param {Array|Object|string} collection The collection to iterate over.
+     * @param {Function} predicate The function invoked per iteration.
+     * @returns {boolean} Returns `true` if all elements pass the predicate check,
+     *  else `false`
+     */
+    function baseEvery(collection, predicate) {
+      var result = true;
+      baseEach(collection, function(value, index, collection) {
+        result = !!predicate(value, index, collection);
+        return result;
+      });
+      return result;
+    }
+
+    /**
+     * The base implementation of `_.fill` without an iteratee call guard.
+     *
+     * @private
+     * @param {Array} array The array to fill.
+     * @param {*} value The value to fill `array` with.
+     * @param {number} [start=0] The start position.
+     * @param {number} [end=array.length] The end position.
+     * @returns {Array} Returns `array`.
+     */
+    function baseFill(array, value, start, end) {
+      var length = array.length;
+
+      start = start == null ? 0 : (+start || 0);
+      if (start < 0) {
+        start = -start > length ? 0 : (length + start);
+      }
+      end = (typeof end == 'undefined' || end > length) ? length : (+end || 0);
+      if (end < 0) {
+        end += length;
+      }
+      length = start > end ? 0 : end >>> 0;
+      start >>>= 0;
+
+      while (start < length) {
+        array[start++] = value;
+      }
+      return array;
+    }
+
+    /**
+     * The base implementation of `_.filter` without support for callback
+     * shorthands or `this` binding.
+     *
+     * @private
+     * @param {Array|Object|string} collection The collection to iterate over.
+     * @param {Function} predicate The function invoked per iteration.
+     * @returns {Array} Returns the new filtered array.
+     */
+    function baseFilter(collection, predicate) {
+      var result = [];
+      baseEach(collection, function(value, index, collection) {
+        if (predicate(value, index, collection)) {
+          result.push(value);
+        }
+      });
+      return result;
+    }
+
+    /**
+     * The base implementation of `_.find`, `_.findLast`, `_.findKey`, and `_.findLastKey`,
+     * without support for callback shorthands and `this` binding, which iterates
+     * over `collection` using the provided `eachFunc`.
+     *
+     * @private
+     * @param {Array|Object|string} collection The collection to search.
+     * @param {Function} predicate The function invoked per iteration.
+     * @param {Function} eachFunc The function to iterate over `collection`.
+     * @param {boolean} [retKey] Specify returning the key of the found element
+     *  instead of the element itself.
+     * @returns {*} Returns the found element or its key, else `undefined`.
+     */
+    function baseFind(collection, predicate, eachFunc, retKey) {
+      var result;
+      eachFunc(collection, function(value, key, collection) {
+        if (predicate(value, key, collection)) {
+          result = retKey ? key : value;
+          return false;
+        }
+      });
+      return result;
+    }
+
+    /**
+     * The base implementation of `_.flatten` with added support for restricting
+     * flattening and specifying the start index.
+     *
+     * @private
+     * @param {Array} array The array to flatten.
+     * @param {boolean} [isDeep] Specify a deep flatten.
+     * @param {boolean} [isStrict] Restrict flattening to arrays and `arguments` objects.
+     * @param {number} [fromIndex=0] The index to start from.
+     * @returns {Array} Returns the new flattened array.
+     */
+    function baseFlatten(array, isDeep, isStrict, fromIndex) {
+      var index = (fromIndex || 0) - 1,
+          length = array.length,
+          resIndex = -1,
+          result = [];
+
+      while (++index < length) {
+        var value = array[index];
+
+        if (isObjectLike(value) && isLength(value.length) && (isArray(value) || isArguments(value))) {
+          if (isDeep) {
+            // Recursively flatten arrays (susceptible to call stack limits).
+            value = baseFlatten(value, isDeep, isStrict);
+          }
+          var valIndex = -1,
+              valLength = value.length;
+
+          result.length += valLength;
+          while (++valIndex < valLength) {
+            result[++resIndex] = value[valIndex];
+          }
+        } else if (!isStrict) {
+          result[++resIndex] = value;
+        }
+      }
+      return result;
+    }
+
+    /**
+     * The base implementation of `baseForIn` and `baseForOwn` which iterates
+     * over `object` properties returned by `keysFunc` invoking `iteratee` for
+     * each property. Iterator functions may exit iteration early by explicitly
+     * returning `false`.
+     *
+     * @private
+     * @param {Object} object The object to iterate over.
+     * @param {Function} iteratee The function invoked per iteration.
+     * @param {Function} keysFunc The function to get the keys of `object`.
+     * @returns {Object} Returns `object`.
+     */
+    function baseFor(object, iteratee, keysFunc) {
+      var index = -1,
+          iterable = toObject(object),
+          props = keysFunc(object),
+          length = props.length;
+
+      while (++index < length) {
+        var key = props[index];
+        if (iteratee(iterable[key], key, iterable) === false) {
+          break;
+        }
+      }
+      return object;
+    }
+
+    /**
+     * This function is like `baseFor` except that it iterates over properties
+     * in the opposite order.
+     *
+     * @private
+     * @param {Object} object The object to iterate over.
+     * @param {Function} iteratee The function invoked per iteration.
+     * @param {Function} keysFunc The function to get the keys of `object`.
+     * @returns {Object} Returns `object`.
+     */
+    function baseForRight(object, iteratee, keysFunc) {
+      var iterable = toObject(object),
+          props = keysFunc(object),
+          length = props.length;
+
+      while (length--) {
+        var key = props[length];
+        if (iteratee(iterable[key], key, iterable) === false) {
+          break;
+        }
+      }
+      return object;
+    }
+
+    /**
+     * The base implementation of `_.forIn` without support for callback
+     * shorthands and `this` binding.
+     *
+     * @private
+     * @param {Object} object The object to iterate over.
+     * @param {Function} iteratee The function invoked per iteration.
+     * @returns {Object} Returns `object`.
+     */
+    function baseForIn(object, iteratee) {
+      return baseFor(object, iteratee, keysIn);
+    }
+
+    /**
+     * The base implementation of `_.forOwn` without support for callback
+     * shorthands and `this` binding.
+     *
+     * @private
+     * @param {Object} object The object to iterate over.
+     * @param {Function} iteratee The function invoked per iteration.
+     * @returns {Object} Returns `object`.
+     */
+    function baseForOwn(object, iteratee) {
+      return baseFor(object, iteratee, keys);
+    }
+
+    /**
+     * The base implementation of `_.forOwnRight` without support for callback
+     * shorthands and `this` binding.
+     *
+     * @private
+     * @param {Object} object The object to iterate over.
+     * @param {Function} iteratee The function invoked per iteration.
+     * @returns {Object} Returns `object`.
+     */
+    function baseForOwnRight(object, iteratee) {
+      return baseForRight(object, iteratee, keys);
+    }
+
+    /**
+     * The base implementation of `_.functions` which creates an array of
+     * `object` function property names filtered from those provided.
+     *
+     * @private
+     * @param {Object} object The object to inspect.
+     * @param {Array} props The property names to filter.
+     * @returns {Array} Returns the new array of filtered property names.
+     */
+    function baseFunctions(object, props) {
+      var index = -1,
+          length = props.length,
+          resIndex = -1,
+          result = [];
+
+      while (++index < length) {
+        var key = props[index];
+        if (isFunction(object[key])) {
+          result[++resIndex] = key;
+        }
+      }
+      return result;
+    }
+
+    /**
+     * The base implementation of `_.invoke` which requires additional arguments
+     * to be provided as an array of arguments rather than individually.
+     *
+     * @private
+     * @param {Array|Object|string} collection The collection to iterate over.
+     * @param {Function|string} methodName The name of the method to invoke or
+     *  the function invoked per iteration.
+     * @param {Array} [args] The arguments to invoke the method with.
+     * @returns {Array} Returns the array of results.
+     */
+    function baseInvoke(collection, methodName, args) {
+      var index = -1,
+          isFunc = typeof methodName == 'function',
+          length = collection ? collection.length : 0,
+          result = isLength(length) ? Array(length) : [];
+
+      baseEach(collection, function(value) {
+        var func = isFunc ? methodName : (value != null && value[methodName]);
+        result[++index] = func ? func.apply(value, args) : undefined;
+      });
+      return result;
+    }
+
+    /**
+     * The base implementation of `_.isEqual` without support for `this` binding
+     * `customizer` functions.
+     *
+     * @private
+     * @param {*} value The value to compare.
+     * @param {*} other The other value to compare.
+     * @param {Function} [customizer] The function to customize comparing values.
+     * @param {boolean} [isWhere] Specify performing partial comparisons.
+     * @param {Array} [stackA] Tracks traversed `value` objects.
+     * @param {Array} [stackB] Tracks traversed `other` objects.
+     * @returns {boolean} Returns `true` if the values are equivalent, else `false`.
+     */
+    function baseIsEqual(value, other, customizer, isWhere, stackA, stackB) {
+      // Exit early for identical values.
+      if (value === other) {
+        // Treat `+0` vs. `-0` as not equal.
+        return value !== 0 || (1 / value == 1 / other);
+      }
+      var valType = typeof value,
+          othType = typeof other;
+
+      // Exit early for unlike primitive values.
+      if ((valType != 'function' && valType != 'object' && othType != 'function' && othType != 'object') ||
+          value == null || other == null) {
+        // Return `false` unless both values are `NaN`.
+        return value !== value && other !== other;
+      }
+      return baseIsEqualDeep(value, other, baseIsEqual, customizer, isWhere, stackA, stackB);
+    }
+
+    /**
+     * A specialized version of `baseIsEqual` for arrays and objects which performs
+     * deep comparisons and tracks traversed objects enabling objects with circular
+     * references to be compared.
+     *
+     * @private
+     * @param {Object} object The object to compare.
+     * @param {Object} other The other object to compare.
+     * @param {Function} equalFunc The function to determine equivalents of values.
+     * @param {Function} [customizer] The function to customize comparing objects.
+     * @param {boolean} [isWhere] Specify performing partial comparisons.
+     * @param {Array} [stackA=[]] Tracks traversed `value` objects.
+     * @param {Array} [stackB=[]] Tracks traversed `other` objects.
+     * @returns {boolean} Returns `true` if the objects are equivalent, else `false`.
+     */
+    function baseIsEqualDeep(object, other, equalFunc, customizer, isWhere, stackA, stackB) {
+      var objIsArr = isArray(object),
+          othIsArr = isArray(other),
+          objTag = arrayTag,
+          othTag = arrayTag;
+
+      if (!objIsArr) {
+        objTag = objToString.call(object);
+        if (objTag == argsTag) {
+          objTag = objectTag;
+        } else if (objTag != objectTag) {
+          objIsArr = isTypedArray(object);
+        }
+      }
+      if (!othIsArr) {
+        othTag = objToString.call(other);
+        if (othTag == argsTag) {
+          othTag = objectTag;
+        } else if (othTag != objectTag) {
+          othIsArr = isTypedArray(other);
+        }
+      }
+      var objIsObj = objTag == objectTag,
+          othIsObj = othTag == objectTag,
+          isSameTag = objTag == othTag;
+
+      if (isSameTag && !(objIsArr || objIsObj)) {
+        return equalByTag(object, other, objTag);
+      }
+      var valWrapped = objIsObj && hasOwnProperty.call(object, '__wrapped__'),
+          othWrapped = othIsObj && hasOwnProperty.call(other, '__wrapped__');
+
+      if (valWrapped || othWrapped) {
+        return equalFunc(valWrapped ? object.value() : object, othWrapped ? other.value() : other, customizer, isWhere, stackA, stackB);
+      }
+      if (!isSameTag) {
+        return false;
+      }
+      // Assume cyclic values are equal.
+      // For more information on detecting circular references see https://es5.github.io/#JO.
+      stackA || (stackA = []);
+      stackB || (stackB = []);
+
+      var length = stackA.length;
+      while (length--) {
+        if (stackA[length] == object) {
+          return stackB[length] == other;
+        }
+      }
+      // Add `object` and `other` to the stack of traversed objects.
+      stackA.push(object);
+      stackB.push(other);
+
+      var result = (objIsArr ? equalArrays : equalObjects)(object, other, equalFunc, customizer, isWhere, stackA, stackB);
+
+      stackA.pop();
+      stackB.pop();
+
+      return result;
+    }
+
+    /**
+     * The base implementation of `_.isMatch` without support for callback
+     * shorthands or `this` binding.
+     *
+     * @private
+     * @param {Object} object The object to inspect.
+     * @param {Array} props The source property names to match.
+     * @param {Array} values The source values to match.
+     * @param {Array} strictCompareFlags Strict comparison flags for source values.
+     * @param {Function} [customizer] The function to customize comparing objects.
+     * @returns {boolean} Returns `true` if `object` is a match, else `false`.
+     */
+    function baseIsMatch(object, props, values, strictCompareFlags, customizer) {
+      var length = props.length;
+      if (object == null) {
+        return !length;
+      }
+      var index = -1,
+          noCustomizer = !customizer;
+
+      while (++index < length) {
+        if ((noCustomizer && strictCompareFlags[index])
+              ? values[index] !== object[props[index]]
+              : !hasOwnProperty.call(object, props[index])
+            ) {
+          return false;
+        }
+      }
+      index = -1;
+      while (++index < length) {
+        var key = props[index];
+        if (noCustomizer && strictCompareFlags[index]) {
+          var result = hasOwnProperty.call(object, key);
+        } else {
+          var objValue = object[key],
+              srcValue = values[index];
+
+          result = customizer ? customizer(objValue, srcValue, key) : undefined;
+          if (typeof result == 'undefined') {
+            result = baseIsEqual(srcValue, objValue, customizer, true);
+          }
+        }
+        if (!result) {
+          return false;
+        }
+      }
+      return true;
+    }
+
+    /**
+     * The base implementation of `_.map` without support for callback shorthands
+     * or `this` binding.
+     *
+     * @private
+     * @param {Array|Object|string} collection The collection to iterate over.
+     * @param {Function} iteratee The function invoked per iteration.
+     * @returns {Array} Returns the new mapped array.
+     */
+    function baseMap(collection, iteratee) {
+      var result = [];
+      baseEach(collection, function(value, key, collection) {
+        result.push(iteratee(value, key, collection));
+      });
+      return result;
+    }
+
+    /**
+     * The base implementation of `_.matches` which does not clone `source`.
+     *
+     * @private
+     * @param {Object} source The object of property values to match.
+     * @returns {Function} Returns the new function.
+     */
+    function baseMatches(source) {
+      var props = keys(source),
+          length = props.length;
+
+      if (length == 1) {
+        var key = props[0],
+            value = source[key];
+
+        if (isStrictComparable(value)) {
+          return function(object) {
+            return object != null && value === object[key] && hasOwnProperty.call(object, key);
+          };
+        }
+      }
+      var values = Array(length),
+          strictCompareFlags = Array(length);
+
+      while (length--) {
+        value = source[props[length]];
+        values[length] = value;
+        strictCompareFlags[length] = isStrictComparable(value);
+      }
+      return function(object) {
+        return baseIsMatch(object, props, values, strictCompareFlags);
+      };
+    }
+
+    /**
+     * The base implementation of `_.matchesProperty` which does not coerce `key`
+     * to a string.
+     *
+     * @private
+     * @param {string} key The key of the property to get.
+     * @param {*} value The value to compare.
+     * @returns {Function} Returns the new function.
+     */
+    function baseMatchesProperty(key, value) {
+      if (isStrictComparable(value)) {
+        return function(object) {
+          return object != null && object[key] === value;
+        };
+      }
+      return function(object) {
+        return object != null && baseIsEqual(value, object[key], null, true);
+      };
+    }
+
+    /**
+     * The base implementation of `_.merge` without support for argument juggling,
+     * multiple sources, and `this` binding `customizer` functions.
+     *
+     * @private
+     * @param {Object} object The destination object.
+     * @param {Object} source The source object.
+     * @param {Function} [customizer] The function to customize merging properties.
+     * @param {Array} [stackA=[]] Tracks traversed source objects.
+     * @param {Array} [stackB=[]] Associates values with source counterparts.
+     * @returns {Object} Returns the destination object.
+     */
+    function baseMerge(object, source, customizer, stackA, stackB) {
+      var isSrcArr = isLength(source.length) && (isArray(source) || isTypedArray(source));
+
+      (isSrcArr ? arrayEach : baseForOwn)(source, function(srcValue, key, source) {
+        if (isObjectLike(srcValue)) {
+          stackA || (stackA = []);
+          stackB || (stackB = []);
+          return baseMergeDeep(object, source, key, baseMerge, customizer, stackA, stackB);
+        }
+        var value = object[key],
+            result = customizer ? customizer(value, srcValue, key, object, source) : undefined,
+            isCommon = typeof result == 'undefined';
+
+        if (isCommon) {
+          result = srcValue;
+        }
+        if ((isSrcArr || typeof result != 'undefined') &&
+            (isCommon || (result === result ? result !== value : value === value))) {
+          object[key] = result;
+        }
+      });
+      return object;
+    }
+
+    /**
+     * A specialized version of `baseMerge` for arrays and objects which performs
+     * deep merges and tracks traversed objects enabling objects with circular
+     * references to be merged.
+     *
+     * @private
+     * @param {Object} object The destination object.
+     * @param {Object} source The source object.
+     * @param {string} key The key of the value to merge.
+     * @param {Function} mergeFunc The function to merge values.
+     * @param {Function} [customizer] The function to customize merging properties.
+     * @param {Array} [stackA=[]] Tracks traversed source objects.
+     * @param {Array} [stackB=[]] Associates values with source counterparts.
+     * @returns {boolean} Returns `true` if the objects are equivalent, else `false`.
+     */
+    function baseMergeDeep(object, source, key, mergeFunc, customizer, stackA, stackB) {
+      var length = stackA.length,
+          srcValue = source[key];
+
+      while (length--) {
+        if (stackA[length] == srcValue) {
+          object[key] = stackB[length];
+          return;
+        }
+      }
+      var value = object[key],
+          result = customizer ? customizer(value, srcValue, key, object, source) : undefined,
+          isCommon = typeof result == 'undefined';
+
+      if (isCommon) {
+        result = srcValue;
+        if (isLength(srcValue.length) && (isArray(srcValue) || isTypedArray(srcValue))) {
+          result = isArray(value)
+            ? value
+            : (value ? arrayCopy(value) : []);
+        }
+        else if (isPlainObject(srcValue) || isArguments(srcValue)) {
+          result = isArguments(value)
+            ? toPlainObject(value)
+            : (isPlainObject(value) ? value : {});
+        }
+        else {
+          isCommon = false;
+        }
+      }
+      // Add the source value to the stack of traversed objects and associate
+      // it with its merged value.
+      stackA.push(srcValue);
+      stackB.push(result);
+
+      if (isCommon) {
+        // Recursively merge objects and arrays (susceptible to call stack limits).
+        object[key] = mergeFunc(result, srcValue, customizer, stackA, stackB);
+      } else if (result === result ? result !== value : value === value) {
+        object[key] = result;
+      }
+    }
+
+    /**
+     * The base implementation of `_.property` which does not coerce `key` to a string.
+     *
+     * @private
+     * @param {string} key The key of the property to get.
+     * @returns {Function} Returns the new function.
+     */
+    function baseProperty(key) {
+      return function(object) {
+        return object == null ? undefined : object[key];
+      };
+    }
+
+    /**
+     * The base implementation of `_.pullAt` without support for individual
+     * index arguments.
+     *
+     * @private
+     * @param {Array} array The array to modify.
+     * @param {number[]} indexes The indexes of elements to remove.
+     * @returns {Array} Returns the new array of removed elements.
+     */
+    function basePullAt(array, indexes) {
+      var length = indexes.length,
+          result = baseAt(array, indexes);
+
+      indexes.sort(baseCompareAscending);
+      while (length--) {
+        var index = parseFloat(indexes[length]);
+        if (index != previous && isIndex(index)) {
+          var previous = index;
+          splice.call(array, index, 1);
+        }
+      }
+      return result;
+    }
+
+    /**
+     * The base implementation of `_.random` without support for argument juggling
+     * and returning floating-point numbers.
+     *
+     * @private
+     * @param {number} min The minimum possible value.
+     * @param {number} max The maximum possible value.
+     * @returns {number} Returns the random number.
+     */
+    function baseRandom(min, max) {
+      return min + floor(nativeRandom() * (max - min + 1));
+    }
+
+    /**
+     * The base implementation of `_.reduce` and `_.reduceRight` without support
+     * for callback shorthands or `this` binding, which iterates over `collection`
+     * using the provided `eachFunc`.
+     *
+     * @private
+     * @param {Array|Object|string} collection The collection to iterate over.
+     * @param {Function} iteratee The function invoked per iteration.
+     * @param {*} accumulator The initial value.
+     * @param {boolean} initFromCollection Specify using the first or last element
+     *  of `collection` as the initial value.
+     * @param {Function} eachFunc The function to iterate over `collection`.
+     * @returns {*} Returns the accumulated value.
+     */
+    function baseReduce(collection, iteratee, accumulator, initFromCollection, eachFunc) {
+      eachFunc(collection, function(value, index, collection) {
+        accumulator = initFromCollection
+          ? (initFromCollection = false, value)
+          : iteratee(accumulator, value, index, collection);
+      });
+      return accumulator;
+    }
+
+    /**
+     * The base implementation of `setData` without support for hot loop detection.
+     *
+     * @private
+     * @param {Function} func The function to associate metadata with.
+     * @param {*} data The metadata.
+     * @returns {Function} Returns `func`.
+     */
+    var baseSetData = !metaMap ? identity : function(func, data) {
+      metaMap.set(func, data);
+      return func;
+    };
+
+    /**
+     * The base implementation of `_.slice` without an iteratee call guard.
+     *
+     * @private
+     * @param {Array} array The array to slice.
+     * @param {number} [start=0] The start position.
+     * @param {number} [end=array.length] The end position.
+     * @returns {Array} Returns the slice of `array`.
+     */
+    function baseSlice(array, start, end) {
+      var index = -1,
+          length = array.length;
+
+      start = start == null ? 0 : (+start || 0);
+      if (start < 0) {
+        start = -start > length ? 0 : (length + start);
+      }
+      end = (typeof end == 'undefined' || end > length) ? length : (+end || 0);
+      if (end < 0) {
+        end += length;
+      }
+      length = start > end ? 0 : (end - start) >>> 0;
+      start >>>= 0;
+
+      var result = Array(length);
+      while (++index < length) {
+        result[index] = array[index + start];
+      }
+      return result;
+    }
+
+    /**
+     * The base implementation of `_.some` without support for callback shorthands
+     * or `this` binding.
+     *
+     * @private
+     * @param {Array|Object|string} collection The collection to iterate over.
+     * @param {Function} predicate The function invoked per iteration.
+     * @returns {boolean} Returns `true` if any element passes the predicate check,
+     *  else `false`.
+     */
+    function baseSome(collection, predicate) {
+      var result;
+
+      baseEach(collection, function(value, index, collection) {
+        result = predicate(value, index, collection);
+        return !result;
+      });
+      return !!result;
+    }
+
+    /**
+     * The base implementation of `_.uniq` without support for callback shorthands
+     * and `this` binding.
+     *
+     * @private
+     * @param {Array} array The array to inspect.
+     * @param {Function} [iteratee] The function invoked per iteration.
+     * @returns {Array} Returns the new duplicate-value-free array.
+     */
+    function baseUniq(array, iteratee) {
+      var index = -1,
+          indexOf = getIndexOf(),
+          length = array.length,
+          isCommon = indexOf == baseIndexOf,
+          isLarge = isCommon && length >= 200,
+          seen = isLarge && createCache(),
+          result = [];
+
+      if (seen) {
+        indexOf = cacheIndexOf;
+        isCommon = false;
+      } else {
+        isLarge = false;
+        seen = iteratee ? [] : result;
+      }
+      outer:
+      while (++index < length) {
+        var value = array[index],
+            computed = iteratee ? iteratee(value, index, array) : value;
+
+        if (isCommon && value === value) {
+          var seenIndex = seen.length;
+          while (seenIndex--) {
+            if (seen[seenIndex] === computed) {
+              continue outer;
+            }
+          }
+          if (iteratee) {
+            seen.push(computed);
+          }
+          result.push(value);
+        }
+        else if (indexOf(seen, computed) < 0) {
+          if (iteratee || isLarge) {
+            seen.push(computed);
+          }
+          result.push(value);
+        }
+      }
+      return result;
+    }
+
+    /**
+     * The base implementation of `_.values` and `_.valuesIn` which creates an
+     * array of `object` property values corresponding to the property names
+     * returned by `keysFunc`.
+     *
+     * @private
+     * @param {Object} object The object to query.
+     * @param {Array} props The property names to get values for.
+     * @returns {Object} Returns the array of property values.
+     */
+    function baseValues(object, props) {
+      var index = -1,
+          length = props.length,
+          result = Array(length);
+
+      while (++index < length) {
+        result[index] = object[props[index]];
+      }
+      return result;
+    }
+
+    /**
+     * The base implementation of `wrapperValue` which returns the result of
+     * performing a sequence of actions on the unwrapped `value`, where each
+     * successive action is supplied the return value of the previous.
+     *
+     * @private
+     * @param {*} value The unwrapped value.
+     * @param {Array} actions Actions to peform to resolve the unwrapped value.
+     * @returns {*} Returns the resolved unwrapped value.
+     */
+    function baseWrapperValue(value, actions) {
+      var result = value;
+      if (result instanceof LazyWrapper) {
+        result = result.value();
+      }
+      var index = -1,
+          length = actions.length;
+
+      while (++index < length) {
+        var args = [result],
+            action = actions[index];
+
+        push.apply(args, action.args);
+        result = action.func.apply(action.thisArg, args);
+      }
+      return result;
+    }
+
+    /**
+     * Performs a binary search of `array` to determine the index at which `value`
+     * should be inserted into `array` in order to maintain its sort order.
+     *
+     * @private
+     * @param {Array} array The sorted array to inspect.
+     * @param {*} value The value to evaluate.
+     * @param {boolean} [retHighest] Specify returning the highest, instead
+     *  of the lowest, index at which a value should be inserted into `array`.
+     * @returns {number} Returns the index at which `value` should be inserted
+     *  into `array`.
+     */
+    function binaryIndex(array, value, retHighest) {
+      var low = 0,
+          high = array ? array.length : low;
+
+      if (typeof value == 'number' && value === value && high <= HALF_MAX_ARRAY_LENGTH) {
+        while (low < high) {
+          var mid = (low + high) >>> 1,
+              computed = array[mid];
+
+          if (retHighest ? (computed <= value) : (computed < value)) {
+            low = mid + 1;
+          } else {
+            high = mid;
+          }
+        }
+        return high;
+      }
+      return binaryIndexBy(array, value, identity, retHighest);
+    }
+
+    /**
+     * This function is like `binaryIndex` except that it invokes `iteratee` for
+     * `value` and each element of `array` to compute their sort ranking. The
+     * iteratee is invoked with one argument; (value).
+     *
+     * @private
+     * @param {Array} array The sorted array to inspect.
+     * @param {*} value The value to evaluate.
+     * @param {Function} iteratee The function invoked per iteration.
+     * @param {boolean} [retHighest] Specify returning the highest, instead
+     *  of the lowest, index at which a value should be inserted into `array`.
+     * @returns {number} Returns the index at which `value` should be inserted
+     *  into `array`.
+     */
+    function binaryIndexBy(array, value, iteratee, retHighest) {
+      value = iteratee(value);
+
+      var low = 0,
+          high = array ? array.length : 0,
+          valIsNaN = value !== value,
+          valIsUndef = typeof value == 'undefined';
+
+      while (low < high) {
+        var mid = floor((low + high) / 2),
+            computed = iteratee(array[mid]),
+            isReflexive = computed === computed;
+
+        if (valIsNaN) {
+          var setLow = isReflexive || retHighest;
+        } else if (valIsUndef) {
+          setLow = isReflexive && (retHighest || typeof computed != 'undefined');
+        } else {
+          setLow = retHighest ? (computed <= value) : (computed < value);
+        }
+        if (setLow) {
+          low = mid + 1;
+        } else {
+          high = mid;
+        }
+      }
+      return nativeMin(high, MAX_ARRAY_INDEX);
+    }
+
+    /**
+     * A specialized version of `baseCallback` which only supports `this` binding
+     * and specifying the number of arguments to provide to `func`.
+     *
+     * @private
+     * @param {Function} func The function to bind.
+     * @param {*} thisArg The `this` binding of `func`.
+     * @param {number} [argCount] The number of arguments to provide to `func`.
+     * @returns {Function} Returns the callback.
+     */
+    function bindCallback(func, thisArg, argCount) {
+      if (typeof func != 'function') {
+        return identity;
+      }
+      if (typeof thisArg == 'undefined') {
+        return func;
+      }
+      switch (argCount) {
+        case 1: return function(value) {
+          return func.call(thisArg, value);
+        };
+        case 3: return function(value, index, collection) {
+          return func.call(thisArg, value, index, collection);
+        };
+        case 4: return function(accumulator, value, index, collection) {
+          return func.call(thisArg, accumulator, value, index, collection);
+        };
+        case 5: return function(value, other, key, object, source) {
+          return func.call(thisArg, value, other, key, object, source);
+        };
+      }
+      return function() {
+        return func.apply(thisArg, arguments);
+      };
+    }
+
+    /**
+     * Creates a clone of the given array buffer.
+     *
+     * @private
+     * @param {ArrayBuffer} buffer The array buffer to clone.
+     * @returns {ArrayBuffer} Returns the cloned array buffer.
+     */
+    function bufferClone(buffer) {
+      return bufferSlice.call(buffer, 0);
+    }
+    if (!bufferSlice) {
+      // PhantomJS has `ArrayBuffer` and `Uint8Array` but not `Float64Array`.
+      bufferClone = !(ArrayBuffer && Uint8Array) ? constant(null) : function(buffer) {
+        var byteLength = buffer.byteLength,
+            floatLength = Float64Array ? floor(byteLength / FLOAT64_BYTES_PER_ELEMENT) : 0,
+            offset = floatLength * FLOAT64_BYTES_PER_ELEMENT,
+            result = new ArrayBuffer(byteLength);
+
+        if (floatLength) {
+          var view = new Float64Array(result, 0, floatLength);
+          view.set(new Float64Array(buffer, 0, floatLength));
+        }
+        if (byteLength != offset) {
+          view = new Uint8Array(result, offset);
+          view.set(new Uint8Array(buffer, offset));
+        }
+        return result;
+      };
+    }
+
+    /**
+     * Creates an array that is the composition of partially applied arguments,
+     * placeholders, and provided arguments into a single array of arguments.
+     *
+     * @private
+     * @param {Array|Object} args The provided arguments.
+     * @param {Array} partials The arguments to prepend to those provided.
+     * @param {Array} holders The `partials` placeholder indexes.
+     * @returns {Array} Returns the new array of composed arguments.
+     */
+    function composeArgs(args, partials, holders) {
+      var holdersLength = holders.length,
+          argsIndex = -1,
+          argsLength = nativeMax(args.length - holdersLength, 0),
+          leftIndex = -1,
+          leftLength = partials.length,
+          result = Array(argsLength + leftLength);
+
+      while (++leftIndex < leftLength) {
+        result[leftIndex] = partials[leftIndex];
+      }
+      while (++argsIndex < holdersLength) {
+        result[holders[argsIndex]] = args[argsIndex];
+      }
+      while (argsLength--) {
+        result[leftIndex++] = args[argsIndex++];
+      }
+      return result;
+    }
+
+    /**
+     * This function is like `composeArgs` except that the arguments composition
+     * is tailored for `_.partialRight`.
+     *
+     * @private
+     * @param {Array|Object} args The provided arguments.
+     * @param {Array} partials The arguments to append to those provided.
+     * @param {Array} holders The `partials` placeholder indexes.
+     * @returns {Array} Returns the new array of composed arguments.
+     */
+    function composeArgsRight(args, partials, holders) {
+      var holdersIndex = -1,
+          holdersLength = holders.length,
+          argsIndex = -1,
+          argsLength = nativeMax(args.length - holdersLength, 0),
+          rightIndex = -1,
+          rightLength = partials.length,
+          result = Array(argsLength + rightLength);
+
+      while (++argsIndex < argsLength) {
+        result[argsIndex] = args[argsIndex];
+      }
+      var pad = argsIndex;
+      while (++rightIndex < rightLength) {
+        result[pad + rightIndex] = partials[rightIndex];
+      }
+      while (++holdersIndex < holdersLength) {
+        result[pad + holders[holdersIndex]] = args[argsIndex++];
+      }
+      return result;
+    }
+
+    /**
+     * Creates a function that aggregates a collection, creating an accumulator
+     * object composed from the results of running each element in the collection
+     * through an iteratee.
+     *
+     * @private
+     * @param {Function} setter The function to set keys and values of the accumulator object.
+     * @param {Function} [initializer] The function to initialize the accumulator object.
+     * @returns {Function} Returns the new aggregator function.
+     */
+    function createAggregator(setter, initializer) {
+      return function(collection, iteratee, thisArg) {
+        var result = initializer ? initializer() : {};
+        iteratee = getCallback(iteratee, thisArg, 3);
+
+        if (isArray(collection)) {
+          var index = -1,
+              length = collection.length;
+
+          while (++index < length) {
+            var value = collection[index];
+            setter(result, value, iteratee(value, index, collection), collection);
+          }
+        } else {
+          baseEach(collection, function(value, key, collection) {
+            setter(result, value, iteratee(value, key, collection), collection);
+          });
+        }
+        return result;
+      };
+    }
+
+    /**
+     * Creates a function that assigns properties of source object(s) to a given
+     * destination object.
+     *
+     * @private
+     * @param {Function} assigner The function to assign values.
+     * @returns {Function} Returns the new assigner function.
+     */
+    function createAssigner(assigner) {
+      return function() {
+        var length = arguments.length,
+            object = arguments[0];
+
+        if (length < 2 || object == null) {
+          return object;
+        }
+        if (length > 3 && isIterateeCall(arguments[1], arguments[2], arguments[3])) {
+          length = 2;
+        }
+        // Juggle arguments.
+        if (length > 3 && typeof arguments[length - 2] == 'function') {
+          var customizer = bindCallback(arguments[--length - 1], arguments[length--], 5);
+        } else if (length > 2 && typeof arguments[length - 1] == 'function') {
+          customizer = arguments[--length];
+        }
+        var index = 0;
+        while (++index < length) {
+          var source = arguments[index];
+          if (source) {
+            assigner(object, source, customizer);
+          }
+        }
+        return object;
+      };
+    }
+
+    /**
+     * Creates a function that wraps `func` and invokes it with the `this`
+     * binding of `thisArg`.
+     *
+     * @private
+     * @param {Function} func The function to bind.
+     * @param {*} [thisArg] The `this` binding of `func`.
+     * @returns {Function} Returns the new bound function.
+     */
+    function createBindWrapper(func, thisArg) {
+      var Ctor = createCtorWrapper(func);
+
+      function wrapper() {
+        return (this instanceof wrapper ? Ctor : func).apply(thisArg, arguments);
+      }
+      return wrapper;
+    }
+
+    /**
+     * Creates a `Set` cache object to optimize linear searches of large arrays.
+     *
+     * @private
+     * @param {Array} [values] The values to cache.
+     * @returns {null|Object} Returns the new cache object if `Set` is supported, else `null`.
+     */
+    var createCache = !(nativeCreate && Set) ? constant(null) : function(values) {
+      return new SetCache(values);
+    };
+
+    /**
+     * Creates a function that produces compound words out of the words in a
+     * given string.
+     *
+     * @private
+     * @param {Function} callback The function to combine each word.
+     * @returns {Function} Returns the new compounder function.
+     */
+    function createCompounder(callback) {
+      return function(string) {
+        var index = -1,
+            array = words(deburr(string)),
+            length = array.length,
+            result = '';
+
+        while (++index < length) {
+          result = callback(result, array[index], index);
+        }
+        return result;
+      };
+    }
+
+    /**
+     * Creates a function that produces an instance of `Ctor` regardless of
+     * whether it was invoked as part of a `new` expression or by `call` or `apply`.
+     *
+     * @private
+     * @param {Function} Ctor The constructor to wrap.
+     * @returns {Function} Returns the new wrapped function.
+     */
+    function createCtorWrapper(Ctor) {
+      return function() {
+        var thisBinding = baseCreate(Ctor.prototype),
+            result = Ctor.apply(thisBinding, arguments);
+
+        // Mimic the constructor's `return` behavior.
+        // See https://es5.github.io/#x13.2.2 for more details.
+        return isObject(result) ? result : thisBinding;
+      };
+    }
+
+    /**
+     * Creates a function that gets the extremum value of a collection.
+     *
+     * @private
+     * @param {Function} arrayFunc The function to get the extremum value from an array.
+     * @param {boolean} [isMin] Specify returning the minimum, instead of the maximum,
+     *  extremum value.
+     * @returns {Function} Returns the new extremum function.
+     */
+    function createExtremum(arrayFunc, isMin) {
+      return function(collection, iteratee, thisArg) {
+        if (thisArg && isIterateeCall(collection, iteratee, thisArg)) {
+          iteratee = null;
+        }
+        var func = getCallback(),
+            noIteratee = iteratee == null;
+
+        if (!(func === baseCallback && noIteratee)) {
+          noIteratee = false;
+          iteratee = func(iteratee, thisArg, 3);
+        }
+        if (noIteratee) {
+          var isArr = isArray(collection);
+          if (!isArr && isString(collection)) {
+            iteratee = charAtCallback;
+          } else {
+            return arrayFunc(isArr ? collection : toIterable(collection));
+          }
+        }
+        return extremumBy(collection, iteratee, isMin);
+      };
+    }
+
+    /**
+     * Creates a function that wraps `func` and invokes it with optional `this`
+     * binding of, partial application, and currying.
+     *
+     * @private
+     * @param {Function|string} func The function or method name to reference.
+     * @param {number} bitmask The bitmask of flags. See `createWrapper` for more details.
+     * @param {*} [thisArg] The `this` binding of `func`.
+     * @param {Array} [partials] The arguments to prepend to those provided to the new function.
+     * @param {Array} [holders] The `partials` placeholder indexes.
+     * @param {Array} [partialsRight] The arguments to append to those provided to the new function.
+     * @param {Array} [holdersRight] The `partialsRight` placeholder indexes.
+     * @param {Array} [argPos] The argument positions of the new function.
+     * @param {number} [ary] The arity cap of `func`.
+     * @param {number} [arity] The arity of `func`.
+     * @returns {Function} Returns the new wrapped function.
+     */
+    function createHybridWrapper(func, bitmask, thisArg, partials, holders, partialsRight, holdersRight, argPos, ary, arity) {
+      var isAry = bitmask & ARY_FLAG,
+          isBind = bitmask & BIND_FLAG,
+          isBindKey = bitmask & BIND_KEY_FLAG,
+          isCurry = bitmask & CURRY_FLAG,
+          isCurryBound = bitmask & CURRY_BOUND_FLAG,
+          isCurryRight = bitmask & CURRY_RIGHT_FLAG;
+
+      var Ctor = !isBindKey && createCtorWrapper(func),
+          key = func;
+
+      function wrapper() {
+        // Avoid `arguments` object use disqualifying optimizations by
+        // converting it to an array before providing it to other functions.
+        var length = arguments.length,
+            index = length,
+            args = Array(length);
+
+        while (index--) {
+          args[index] = arguments[index];
+        }
+        if (partials) {
+          args = composeArgs(args, partials, holders);
+        }
+        if (partialsRight) {
+          args = composeArgsRight(args, partialsRight, holdersRight);
+        }
+        if (isCurry || isCurryRight) {
+          var placeholder = wrapper.placeholder,
+              argsHolders = replaceHolders(args, placeholder);
+
+          length -= argsHolders.length;
+          if (length < arity) {
+            var newArgPos = argPos ? arrayCopy(argPos) : null,
+                newArity = nativeMax(arity - length, 0),
+                newsHolders = isCurry ? argsHolders : null,
+                newHoldersRight = isCurry ? null : argsHolders,
+                newPartials = isCurry ? args : null,
+                newPartialsRight = isCurry ? null : args;
+
+            bitmask |= (isCurry ? PARTIAL_FLAG : PARTIAL_RIGHT_FLAG);
+            bitmask &= ~(isCurry ? PARTIAL_RIGHT_FLAG : PARTIAL_FLAG);
+
+            if (!isCurryBound) {
+              bitmask &= ~(BIND_FLAG | BIND_KEY_FLAG);
+            }
+            var result = createHybridWrapper(func, bitmask, thisArg, newPartials, newsHolders, newPartialsRight, newHoldersRight, newArgPos, ary, newArity);
+            result.placeholder = placeholder;
+            return result;
+          }
+        }
+        var thisBinding = isBind ? thisArg : this;
+        if (isBindKey) {
+          func = thisBinding[key];
+        }
+        if (argPos) {
+          args = reorder(args, argPos);
+        }
+        if (isAry && ary < args.length) {
+          args.length = ary;
+        }
+        return (this instanceof wrapper ? (Ctor || createCtorWrapper(func)) : func).apply(thisBinding, args);
+      }
+      return wrapper;
+    }
+
+    /**
+     * Creates the pad required for `string` based on the given padding length.
+     * The `chars` string may be truncated if the number of padding characters
+     * exceeds the padding length.
+     *
+     * @private
+     * @param {string} string The string to create padding for.
+     * @param {number} [length=0] The padding length.
+     * @param {string} [chars=' '] The string used as padding.
+     * @returns {string} Returns the pad for `string`.
+     */
+    function createPad(string, length, chars) {
+      var strLength = string.length;
+      length = +length;
+
+      if (strLength >= length || !nativeIsFinite(length)) {
+        return '';
+      }
+      var padLength = length - strLength;
+      chars = chars == null ? ' ' : (chars + '');
+      return repeat(chars, ceil(padLength / chars.length)).slice(0, padLength);
+    }
+
+    /**
+     * Creates a function that wraps `func` and invokes it with the optional `this`
+     * binding of `thisArg` and the `partials` prepended to those provided to
+     * the wrapper.
+     *
+     * @private
+     * @param {Function} func The function to partially apply arguments to.
+     * @param {number} bitmask The bitmask of flags. See `createWrapper` for more details.
+     * @param {*} thisArg The `this` binding of `func`.
+     * @param {Array} partials The arguments to prepend to those provided to the new function.
+     * @returns {Function} Returns the new bound function.
+     */
+    function createPartialWrapper(func, bitmask, thisArg, partials) {
+      var isBind = bitmask & BIND_FLAG,
+          Ctor = createCtorWrapper(func);
+
+      function wrapper() {
+        // Avoid `arguments` object use disqualifying optimizations by
+        // converting it to an array before providing it `func`.
+        var argsIndex = -1,
+            argsLength = arguments.length,
+            leftIndex = -1,
+            leftLength = partials.length,
+            args = Array(argsLength + leftLength);
+
+        while (++leftIndex < leftLength) {
+          args[leftIndex] = partials[leftIndex];
+        }
+        while (argsLength--) {
+          args[leftIndex++] = arguments[++argsIndex];
+        }
+        return (this instanceof wrapper ? Ctor : func).apply(isBind ? thisArg : this, args);
+      }
+      return wrapper;
+    }
+
+    /**
+     * Creates a function that either curries or invokes `func` with optional
+     * `this` binding and partially applied arguments.
+     *
+     * @private
+     * @param {Function|string} func The function or method name to reference.
+     * @param {number} bitmask The bitmask of flags.
+     *  The bitmask may be composed of the following flags:
+     *     1 - `_.bind`
+     *     2 - `_.bindKey`
+     *     4 - `_.curry` or `_.curryRight` of a bound function
+     *     8 - `_.curry`
+     *    16 - `_.curryRight`
+     *    32 - `_.partial`
+     *    64 - `_.partialRight`
+     *   128 - `_.rearg`
+     *   256 - `_.ary`
+     * @param {*} [thisArg] The `this` binding of `func`.
+     * @param {Array} [partials] The arguments to be partially applied.
+     * @param {Array} [holders] The `partials` placeholder indexes.
+     * @param {Array} [argPos] The argument positions of the new function.
+     * @param {number} [ary] The arity cap of `func`.
+     * @param {number} [arity] The arity of `func`.
+     * @returns {Function} Returns the new wrapped function.
+     */
+    function createWrapper(func, bitmask, thisArg, partials, holders, argPos, ary, arity) {
+      var isBindKey = bitmask & BIND_KEY_FLAG;
+      if (!isBindKey && typeof func != 'function') {
+        throw new TypeError(FUNC_ERROR_TEXT);
+      }
+      var length = partials ? partials.length : 0;
+      if (!length) {
+        bitmask &= ~(PARTIAL_FLAG | PARTIAL_RIGHT_FLAG);
+        partials = holders = null;
+      }
+      length -= (holders ? holders.length : 0);
+      if (bitmask & PARTIAL_RIGHT_FLAG) {
+        var partialsRight = partials,
+            holdersRight = holders;
+
+        partials = holders = null;
+      }
+      var data = !isBindKey && getData(func),
+          newData = [func, bitmask, thisArg, partials, holders, partialsRight, holdersRight, argPos, ary, arity];
+
+      if (data && data !== true) {
+        mergeData(newData, data);
+        bitmask = newData[1];
+        arity = newData[9];
+      }
+      newData[9] = arity == null
+        ? (isBindKey ? 0 : func.length)
+        : (nativeMax(arity - length, 0) || 0);
+
+      if (bitmask == BIND_FLAG) {
+        var result = createBindWrapper(newData[0], newData[2]);
+      } else if ((bitmask == PARTIAL_FLAG || bitmask == (BIND_FLAG | PARTIAL_FLAG)) && !newData[4].length) {
+        result = createPartialWrapper.apply(undefined, newData);
+      } else {
+        result = createHybridWrapper.apply(undefined, newData);
+      }
+      var setter = data ? baseSetData : setData;
+      return setter(result, newData);
+    }
+
+    /**
+     * A specialized version of `baseIsEqualDeep` for arrays with support for
+     * partial deep comparisons.
+     *
+     * @private
+     * @param {Array} array The array to compare.
+     * @param {Array} other The other array to compare.
+     * @param {Function} equalFunc The function to determine equivalents of values.
+     * @param {Function} [customizer] The function to customize comparing arrays.
+     * @param {boolean} [isWhere] Specify performing partial comparisons.
+     * @param {Array} [stackA] Tracks traversed `value` objects.
+     * @param {Array} [stackB] Tracks traversed `other` objects.
+     * @returns {boolean} Returns `true` if the arrays are equivalent, else `false`.
+     */
+    function equalArrays(array, other, equalFunc, customizer, isWhere, stackA, stackB) {
+      var index = -1,
+          arrLength = array.length,
+          othLength = other.length,
+          result = true;
+
+      if (arrLength != othLength && !(isWhere && othLength > arrLength)) {
+        return false;
+      }
+      // Deep compare the contents, ignoring non-numeric properties.
+      while (result && ++index < arrLength) {
+        var arrValue = array[index],
+            othValue = other[index];
+
+        result = undefined;
+        if (customizer) {
+          result = isWhere
+            ? customizer(othValue, arrValue, index)
+            : customizer(arrValue, othValue, index);
+        }
+        if (typeof result == 'undefined') {
+          // Recursively compare arrays (susceptible to call stack limits).
+          if (isWhere) {
+            var othIndex = othLength;
+            while (othIndex--) {
+              othValue = other[othIndex];
+              result = (arrValue && arrValue === othValue) || equalFunc(arrValue, othValue, customizer, isWhere, stackA, stackB);
+              if (result) {
+                break;
+              }
+            }
+          } else {
+            result = (arrValue && arrValue === othValue) || equalFunc(arrValue, othValue, customizer, isWhere, stackA, stackB);
+          }
+        }
+      }
+      return !!result;
+    }
+
+    /**
+     * A specialized version of `baseIsEqualDeep` for comparing objects of
+     * the same `toStringTag`.
+     *
+     * **Note:** This function only supports comparing values with tags of
+     * `Boolean`, `Date`, `Error`, `Number`, `RegExp`, or `String`.
+     *
+     * @private
+     * @param {Object} value The object to compare.
+     * @param {Object} other The other object to compare.
+     * @param {string} tag The `toStringTag` of the objects to compare.
+     * @returns {boolean} Returns `true` if the objects are equivalent, else `false`.
+     */
+    function equalByTag(object, other, tag) {
+      switch (tag) {
+        case boolTag:
+        case dateTag:
+          // Coerce dates and booleans to numbers, dates to milliseconds and booleans
+          // to `1` or `0` treating invalid dates coerced to `NaN` as not equal.
+          return +object == +other;
+
+        case errorTag:
+          return object.name == other.name && object.message == other.message;
+
+        case numberTag:
+          // Treat `NaN` vs. `NaN` as equal.
+          return (object != +object)
+            ? other != +other
+            // But, treat `-0` vs. `+0` as not equal.
+            : (object == 0 ? ((1 / object) == (1 / other)) : object == +other);
+
+        case regexpTag:
+        case stringTag:
+          // Coerce regexes to strings and treat strings primitives and string
+          // objects as equal. See https://es5.github.io/#x15.10.6.4 for more details.
+          return object == (other + '');
+      }
+      return false;
+    }
+
+    /**
+     * A specialized version of `baseIsEqualDeep` for objects with support for
+     * partial deep comparisons.
+     *
+     * @private
+     * @param {Object} object The object to compare.
+     * @param {Object} other The other object to compare.
+     * @param {Function} equalFunc The function to determine equivalents of values.
+     * @param {Function} [customizer] The function to customize comparing values.
+     * @param {boolean} [isWhere] Specify performing partial comparisons.
+     * @param {Array} [stackA] Tracks traversed `value` objects.
+     * @param {Array} [stackB] Tracks traversed `other` objects.
+     * @returns {boolean} Returns `true` if the objects are equivalent, else `false`.
+     */
+    function equalObjects(object, other, equalFunc, customizer, isWhere, stackA, stackB) {
+      var objProps = keys(object),
+          objLength = objProps.length,
+          othProps = keys(other),
+          othLength = othProps.length;
+
+      if (objLength != othLength && !isWhere) {
+        return false;
+      }
+      var hasCtor,
+          index = -1;
+
+      while (++index < objLength) {
+        var key = objProps[index],
+            result = hasOwnProperty.call(other, key);
+
+        if (result) {
+          var objValue = object[key],
+              othValue = other[key];
+
+          result = undefined;
+          if (customizer) {
+            result = isWhere
+              ? customizer(othValue, objValue, key)
+              : customizer(objValue, othValue, key);
+          }
+          if (typeof result == 'undefined') {
+            // Recursively compare objects (susceptible to call stack limits).
+            result = (objValue && objValue === othValue) || equalFunc(objValue, othValue, customizer, isWhere, stackA, stackB);
+          }
+        }
+        if (!result) {
+          return false;
+        }
+        hasCtor || (hasCtor = key == 'constructor');
+      }
+      if (!hasCtor) {
+        var objCtor = object.constructor,
+            othCtor = other.constructor;
+
+        // Non `Object` object instances with different constructors are not equal.
+        if (objCtor != othCtor && ('constructor' in object && 'constructor' in other) &&
+            !(typeof objCtor == 'function' && objCtor instanceof objCtor && typeof othCtor == 'function' && othCtor instanceof othCtor)) {
+          return false;
+        }
+      }
+      return true;
+    }
+
+    /**
+     * Gets the extremum value of `collection` invoking `iteratee` for each value
+     * in `collection` to generate the criterion by which the value is ranked.
+     * The `iteratee` is invoked with three arguments; (value, index, collection).
+     *
+     * @private
+     * @param {Array|Object|string} collection The collection to iterate over.
+     * @param {Function} iteratee The function invoked per iteration.
+     * @param {boolean} [isMin] Specify returning the minimum, instead of the
+     *  maximum, extremum value.
+     * @returns {*} Returns the extremum value.
+     */
+    function extremumBy(collection, iteratee, isMin) {
+      var exValue = isMin ? POSITIVE_INFINITY : NEGATIVE_INFINITY,
+          computed = exValue,
+          result = computed;
+
+      baseEach(collection, function(value, index, collection) {
+        var current = iteratee(value, index, collection);
+        if ((isMin ? current < computed : current > computed) || (current === exValue && current === result)) {
+          computed = current;
+          result = value;
+        }
+      });
+      return result;
+    }
+
+    /**
+     * Gets the appropriate "callback" function. If the `_.callback` method is
+     * customized this function returns the custom method, otherwise it returns
+     * the `baseCallback` function. If arguments are provided the chosen function
+     * is invoked with them and its result is returned.
+     *
+     * @private
+     * @returns {Function} Returns the chosen function or its result.
+     */
+    function getCallback(func, thisArg, argCount) {
+      var result = lodash.callback || callback;
+      result = result === callback ? baseCallback : result;
+      return argCount ? result(func, thisArg, argCount) : result;
+    }
+
+    /**
+     * Gets metadata for `func`.
+     *
+     * @private
+     * @param {Function} func The function to query.
+     * @returns {*} Returns the metadata for `func`.
+     */
+    var getData = !metaMap ? noop : function(func) {
+      return metaMap.get(func);
+    };
+
+    /**
+     * Gets the appropriate "indexOf" function. If the `_.indexOf` method is
+     * customized this function returns the custom method, otherwise it returns
+     * the `baseIndexOf` function. If arguments are provided the chosen function
+     * is invoked with them and its result is returned.
+     *
+     * @private
+     * @returns {Function|number} Returns the chosen function or its result.
+     */
+    function getIndexOf(collection, target, fromIndex) {
+      var result = lodash.indexOf || indexOf;
+      result = result === indexOf ? baseIndexOf : result;
+      return collection ? result(collection, target, fromIndex) : result;
+    }
+
+    /**
+     * Gets the view, applying any `transforms` to the `start` and `end` positions.
+     *
+     * @private
+     * @param {number} start The start of the view.
+     * @param {number} end The end of the view.
+     * @param {Array} [transforms] The transformations to apply to the view.
+     * @returns {Object} Returns an object containing the `start` and `end`
+     *  positions of the view.
+     */
+    function getView(start, end, transforms) {
+      var index = -1,
+          length = transforms ? transforms.length : 0;
+
+      while (++index < length) {
+        var data = transforms[index],
+            size = data.size;
+
+        switch (data.type) {
+          case 'drop':      start += size; break;
+          case 'dropRight': end -= size; break;
+          case 'take':      end = nativeMin(end, start + size); break;
+          case 'takeRight': start = nativeMax(start, end - size); break;
+        }
+      }
+      return { 'start': start, 'end': end };
+    }
+
+    /**
+     * Initializes an array clone.
+     *
+     * @private
+     * @param {Array} array The array to clone.
+     * @returns {Array} Returns the initialized clone.
+     */
+    function initCloneArray(array) {
+      var length = array.length,
+          result = new array.constructor(length);
+
+      // Add array properties assigned by `RegExp#exec`.
+      if (length && typeof array[0] == 'string' && hasOwnProperty.call(array, 'index')) {
+        result.index = array.index;
+        result.input = array.input;
+      }
+      return result;
+    }
+
+    /**
+     * Initializes an object clone.
+     *
+     * @private
+     * @param {Object} object The object to clone.
+     * @returns {Object} Returns the initialized clone.
+     */
+    function initCloneObject(object) {
+      var Ctor = object.constructor;
+      if (!(typeof Ctor == 'function' && Ctor instanceof Ctor)) {
+        Ctor = Object;
+      }
+      return new Ctor;
+    }
+
+    /**
+     * Initializes an object clone based on its `toStringTag`.
+     *
+     * **Note:** This function only supports cloning values with tags of
+     * `Boolean`, `Date`, `Error`, `Number`, `RegExp`, or `String`.
+     *
+     *
+     * @private
+     * @param {Object} object The object to clone.
+     * @param {string} tag The `toStringTag` of the object to clone.
+     * @param {boolean} [isDeep] Specify a deep clone.
+     * @returns {Object} Returns the initialized clone.
+     */
+    function initCloneByTag(object, tag, isDeep) {
+      var Ctor = object.constructor;
+      switch (tag) {
+        case arrayBufferTag:
+          return bufferClone(object);
+
+        case boolTag:
+        case dateTag:
+          return new Ctor(+object);
+
+        case float32Tag: case float64Tag:
+        case int8Tag: case int16Tag: case int32Tag:
+        case uint8Tag: case uint8ClampedTag: case uint16Tag: case uint32Tag:
+          var buffer = object.buffer;
+          return new Ctor(isDeep ? bufferClone(buffer) : buffer, object.byteOffset, object.length);
+
+        case numberTag:
+        case stringTag:
+          return new Ctor(object);
+
+        case regexpTag:
+          var result = new Ctor(object.source, reFlags.exec(object));
+          result.lastIndex = object.lastIndex;
+      }
+      return result;
+    }
+
+    /**
+     * Checks if `func` is eligible for `this` binding.
+     *
+     * @private
+     * @param {Function} func The function to check.
+     * @returns {boolean} Returns `true` if `func` is eligible, else `false`.
+     */
+    function isBindable(func) {
+      var support = lodash.support,
+          result = !(support.funcNames ? func.name : support.funcDecomp);
+
+      if (!result) {
+        var source = fnToString.call(func);
+        if (!support.funcNames) {
+          result = !reFuncName.test(source);
+        }
+        if (!result) {
+          // Check if `func` references the `this` keyword and store the result.
+          result = reThis.test(source) || isNative(func);
+          baseSetData(func, result);
+        }
+      }
+      return result;
+    }
+
+    /**
+     * Checks if `value` is a valid array-like index.
+     *
+     * @private
+     * @param {*} value The value to check.
+     * @param {number} [length=MAX_SAFE_INTEGER] The upper bounds of a valid index.
+     * @returns {boolean} Returns `true` if `value` is a valid index, else `false`.
+     */
+    function isIndex(value, length) {
+      value = +value;
+      length = length == null ? MAX_SAFE_INTEGER : length;
+      return value > -1 && value % 1 == 0 && value < length;
+    }
+
+    /**
+     * Checks if the provided arguments are from an iteratee call.
+     *
+     * @private
+     * @param {*} value The potential iteratee value argument.
+     * @param {*} index The potential iteratee index or key argument.
+     * @param {*} object The potential iteratee object argument.
+     * @returns {boolean} Returns `true` if the arguments are from an iteratee call, else `false`.
+     */
+    function isIterateeCall(value, index, object) {
+      if (!isObject(object)) {
+        return false;
+      }
+      var type = typeof index;
+      if (type == 'number') {
+        var length = object.length,
+            prereq = isLength(length) && isIndex(index, length);
+      } else {
+        prereq = type == 'string' && index in object;
+      }
+      return prereq && object[index] === value;
+    }
+
+    /**
+     * Checks if `value` is a valid array-like length.
+     *
+     * **Note:** This function is based on ES `ToLength`. See the
+     * [ES spec](https://people.mozilla.org/~jorendorff/es6-draft.html#sec-tolength)
+     * for more details.
+     *
+     * @private
+     * @param {*} value The value to check.
+     * @returns {boolean} Returns `true` if `value` is a valid length, else `false`.
+     */
+    function isLength(value) {
+      return typeof value == 'number' && value > -1 && value % 1 == 0 && value <= MAX_SAFE_INTEGER;
+    }
+
+    /**
+     * Checks if `value` is suitable for strict equality comparisons, i.e. `===`.
+     *
+     * @private
+     * @param {*} value The value to check.
+     * @returns {boolean} Returns `true` if `value` if suitable for strict
+     *  equality comparisons, else `false`.
+     */
+    function isStrictComparable(value) {
+      return value === value && (value === 0 ? ((1 / value) > 0) : !isObject(value));
+    }
+
+    /**
+     * Merges the function metadata of `source` into `data`.
+     *
+     * Merging metadata reduces the number of wrappers required to invoke a function.
+     * This is possible because methods like `_.bind`, `_.curry`, and `_.partial`
+     * may be applied regardless of execution order. Methods like `_.ary` and `_.rearg`
+     * augment function arguments, making the order in which they are executed important,
+     * preventing the merging of metadata. However, we make an exception for a safe
+     * common case where curried functions have `_.ary` and or `_.rearg` applied.
+     *
+     * @private
+     * @param {Array} data The destination metadata.
+     * @param {Array} source The source metadata.
+     * @returns {Array} Returns `data`.
+     */
+    function mergeData(data, source) {
+      var bitmask = data[1],
+          srcBitmask = source[1],
+          newBitmask = bitmask | srcBitmask;
+
+      var arityFlags = ARY_FLAG | REARG_FLAG,
+          bindFlags = BIND_FLAG | BIND_KEY_FLAG,
+          comboFlags = arityFlags | bindFlags | CURRY_BOUND_FLAG | CURRY_RIGHT_FLAG;
+
+      var isAry = bitmask & ARY_FLAG && !(srcBitmask & ARY_FLAG),
+          isRearg = bitmask & REARG_FLAG && !(srcBitmask & REARG_FLAG),
+          argPos = (isRearg ? data : source)[7],
+          ary = (isAry ? data : source)[8];
+
+      var isCommon = !(bitmask >= REARG_FLAG && srcBitmask > bindFlags) &&
+        !(bitmask > bindFlags && srcBitmask >= REARG_FLAG);
+
+      var isCombo = (newBitmask >= arityFlags && newBitmask <= comboFlags) &&
+        (bitmask < REARG_FLAG || ((isRearg || isAry) && argPos.length <= ary));
+
+      // Exit early if metadata can't be merged.
+      if (!(isCommon || isCombo)) {
+        return data;
+      }
+      // Use source `thisArg` if available.
+      if (srcBitmask & BIND_FLAG) {
+        data[2] = source[2];
+        // Set when currying a bound function.
+        newBitmask |= (bitmask & BIND_FLAG) ? 0 : CURRY_BOUND_FLAG;
+      }
+      // Compose partial arguments.
+      var value = source[3];
+      if (value) {
+        var partials = data[3];
+        data[3] = partials ? composeArgs(partials, value, source[4]) : arrayCopy(value);
+        data[4] = partials ? replaceHolders(data[3], PLACEHOLDER) : arrayCopy(source[4]);
+      }
+      // Compose partial right arguments.
+      value = source[5];
+      if (value) {
+        partials = data[5];
+        data[5] = partials ? composeArgsRight(partials, value, source[6]) : arrayCopy(value);
+        data[6] = partials ? replaceHolders(data[5], PLACEHOLDER) : arrayCopy(source[6]);
+      }
+      // Use source `argPos` if available.
+      value = source[7];
+      if (value) {
+        data[7] = arrayCopy(value);
+      }
+      // Use source `ary` if it's smaller.
+      if (srcBitmask & ARY_FLAG) {
+        data[8] = data[8] == null ? source[8] : nativeMin(data[8], source[8]);
+      }
+      // Use source `arity` if one is not provided.
+      if (data[9] == null) {
+        data[9] = source[9];
+      }
+      // Use source `func` and merge bitmasks.
+      data[0] = source[0];
+      data[1] = newBitmask;
+
+      return data;
+    }
+
+    /**
+     * A specialized version of `_.pick` that picks `object` properties specified
+     * by the `props` array.
+     *
+     * @private
+     * @param {Object} object The source object.
+     * @param {string[]} props The property names to pick.
+     * @returns {Object} Returns the new object.
+     */
+    function pickByArray(object, props) {
+      object = toObject(object);
+
+      var index = -1,
+          length = props.length,
+          result = {};
+
+      while (++index < length) {
+        var key = props[index];
+        if (key in object) {
+          result[key] = object[key];
+        }
+      }
+      return result;
+    }
+
+    /**
+     * A specialized version of `_.pick` that picks `object` properties `predicate`
+     * returns truthy for.
+     *
+     * @private
+     * @param {Object} object The source object.
+     * @param {Function} predicate The function invoked per iteration.
+     * @returns {Object} Returns the new object.
+     */
+    function pickByCallback(object, predicate) {
+      var result = {};
+      baseForIn(object, function(value, key, object) {
+        if (predicate(value, key, object)) {
+          result[key] = value;
+        }
+      });
+      return result;
+    }
+
+    /**
+     * Reorder `array` according to the specified indexes where the element at
+     * the first index is assigned as the first element, the element at
+     * the second index is assigned as the second element, and so on.
+     *
+     * @private
+     * @param {Array} array The array to reorder.
+     * @param {Array} indexes The arranged array indexes.
+     * @returns {Array} Returns `array`.
+     */
+    function reorder(array, indexes) {
+      var arrLength = array.length,
+          length = nativeMin(indexes.length, arrLength),
+          oldArray = arrayCopy(array);
+
+      while (length--) {
+        var index = indexes[length];
+        array[length] = isIndex(index, arrLength) ? oldArray[index] : undefined;
+      }
+      return array;
+    }
+
+    /**
+     * Sets metadata for `func`.
+     *
+     * **Note:** If this function becomes hot, i.e. is invoked a lot in a short
+     * period of time, it will trip its breaker and transition to an identity function
+     * to avoid garbage collection pauses in V8. See [V8 issue 2070](https://code.google.com/p/v8/issues/detail?id=2070)
+     * for more details.
+     *
+     * @private
+     * @param {Function} func The function to associate metadata with.
+     * @param {*} data The metadata.
+     * @returns {Function} Returns `func`.
+     */
+    var setData = (function() {
+      var count = 0,
+          lastCalled = 0;
+
+      return function(key, value) {
+        var stamp = now(),
+            remaining = HOT_SPAN - (stamp - lastCalled);
+
+        lastCalled = stamp;
+        if (remaining > 0) {
+          if (++count >= HOT_COUNT) {
+            return key;
+          }
+        } else {
+          count = 0;
+        }
+        return baseSetData(key, value);
+      };
+    }());
+
+    /**
+     * A fallback implementation of `_.isPlainObject` which checks if `value`
+     * is an object created by the `Object` constructor or has a `[[Prototype]]`
+     * of `null`.
+     *
+     * @private
+     * @param {*} value The value to check.
+     * @returns {boolean} Returns `true` if `value` is a plain object, else `false`.
+     */
+    function shimIsPlainObject(value) {
+      var Ctor,
+          support = lodash.support;
+
+      // Exit early for non `Object` objects.
+      if (!(isObjectLike(value) && objToString.call(value) == objectTag) ||
+          (!hasOwnProperty.call(value, 'constructor') &&
+            (Ctor = value.constructor, typeof Ctor == 'function' && !(Ctor instanceof Ctor)))) {
+        return false;
+      }
+      // IE < 9 iterates inherited properties before own properties. If the first
+      // iterated property is an object's own property then there are no inherited
+      // enumerable properties.
+      var result;
+      // In most environments an object's own properties are iterated before
+      // its inherited properties. If the last iterated property is an object's
+      // own property then there are no inherited enumerable properties.
+      baseForIn(value, function(subValue, key) {
+        result = key;
+      });
+      return typeof result == 'undefined' || hasOwnProperty.call(value, result);
+    }
+
+    /**
+     * A fallback implementation of `Object.keys` which creates an array of the
+     * own enumerable property names of `object`.
+     *
+     * @private
+     * @param {Object} object The object to inspect.
+     * @returns {Array} Returns the array of property names.
+     */
+    function shimKeys(object) {
+      var props = keysIn(object),
+          propsLength = props.length,
+          length = propsLength && object.length,
+          support = lodash.support;
+
+      var allowIndexes = length && isLength(length) &&
+        (isArray(object) || (support.nonEnumArgs && isArguments(object)));
+
+      var index = -1,
+          result = [];
+
+      while (++index < propsLength) {
+        var key = props[index];
+        if ((allowIndexes && isIndex(key, length)) || hasOwnProperty.call(object, key)) {
+          result.push(key);
+        }
+      }
+      return result;
+    }
+
+    /**
+     * Converts `value` to an array-like object if it is not one.
+     *
+     * @private
+     * @param {*} value The value to process.
+     * @returns {Array|Object} Returns the array-like object.
+     */
+    function toIterable(value) {
+      if (value == null) {
+        return [];
+      }
+      if (!isLength(value.length)) {
+        return values(value);
+      }
+      return isObject(value) ? value : Object(value);
+    }
+
+    /**
+     * Converts `value` to an object if it is not one.
+     *
+     * @private
+     * @param {*} value The value to process.
+     * @returns {Object} Returns the object.
+     */
+    function toObject(value) {
+      return isObject(value) ? value : Object(value);
+    }
+
+    /**
+     * Creates a clone of `wrapper`.
+     *
+     * @private
+     * @param {Object} wrapper The wrapper to clone.
+     * @returns {Object} Returns the cloned wrapper.
+     */
+    function wrapperClone(wrapper) {
+      return wrapper instanceof LazyWrapper
+        ? wrapper.clone()
+        : new LodashWrapper(wrapper.__wrapped__, wrapper.__chain__, arrayCopy(wrapper.__actions__));
+    }
+
+    /*------------------------------------------------------------------------*/
+
+    /**
+     * Creates an array of elements split into groups the length of `size`.
+     * If `collection` can't be split evenly, the final chunk will be the remaining
+     * elements.
+     *
+     * @static
+     * @memberOf _
+     * @category Array
+     * @param {Array} array The array to process.
+     * @param {number} [size=1] The length of each chunk.
+     * @param- {Object} [guard] Enables use as a callback for functions like `_.map`.
+     * @returns {Array} Returns the new array containing chunks.
+     * @example
+     *
+     * _.chunk(['a', 'b', 'c', 'd'], 2);
+     * // => [['a', 'b'], ['c', 'd']]
+     *
+     * _.chunk(['a', 'b', 'c', 'd'], 3);
+     * // => [['a', 'b', 'c'], ['d']]
+     */
+    function chunk(array, size, guard) {
+      if (guard ? isIterateeCall(array, size, guard) : size == null) {
+        size = 1;
+      } else {
+        size = nativeMax(+size || 1, 1);
+      }
+      var index = 0,
+          length = array ? array.length : 0,
+          resIndex = -1,
+          result = Array(ceil(length / size));
+
+      while (index < length) {
+        result[++resIndex] = baseSlice(array, index, (index += size));
+      }
+      return result;
+    }
+
+    /**
+     * Creates an array with all falsey values removed. The values `false`, `null`,
+     * `0`, `""`, `undefined`, and `NaN` are falsey.
+     *
+     * @static
+     * @memberOf _
+     * @category Array
+     * @param {Array} array The array to compact.
+     * @returns {Array} Returns the new array of filtered values.
+     * @example
+     *
+     * _.compact([0, 1, false, 2, '', 3]);
+     * // => [1, 2, 3]
+     */
+    function compact(array) {
+      var index = -1,
+          length = array ? array.length : 0,
+          resIndex = -1,
+          result = [];
+
+      while (++index < length) {
+        var value = array[index];
+        if (value) {
+          result[++resIndex] = value;
+        }
+      }
+      return result;
+    }
+
+    /**
+     * Creates an array excluding all values of the provided arrays using
+     * `SameValueZero` for equality comparisons.
+     *
+     * **Note:** `SameValueZero` comparisons are like strict equality comparisons,
+     * e.g. `===`, except that `NaN` matches `NaN`. See the
+     * [ES spec](https://people.mozilla.org/~jorendorff/es6-draft.html#sec-samevaluezero)
+     * for more details.
+     *
+     * @static
+     * @memberOf _
+     * @category Array
+     * @param {Array} array The array to inspect.
+     * @param {...Array} [values] The arrays of values to exclude.
+     * @returns {Array} Returns the new array of filtered values.
+     * @example
+     *
+     * _.difference([1, 2, 3], [5, 2, 10]);
+     * // => [1, 3]
+     */
+    function difference() {
+      var index = -1,
+          length = arguments.length;
+
+      while (++index < length) {
+        var value = arguments[index];
+        if (isArray(value) || isArguments(value)) {
+          break;
+        }
+      }
+      return baseDifference(value, baseFlatten(arguments, false, true, ++index));
+    }
+
+    /**
+     * Creates a slice of `array` with `n` elements dropped from the beginning.
+     *
+     * @static
+     * @memberOf _
+     * @category Array
+     * @param {Array} array The array to query.
+     * @param {number} [n=1] The number of elements to drop.
+     * @param- {Object} [guard] Enables use as a callback for functions like `_.map`.
+     * @returns {Array} Returns the slice of `array`.
+     * @example
+     *
+     * _.drop([1, 2, 3]);
+     * // => [2, 3]
+     *
+     * _.drop([1, 2, 3], 2);
+     * // => [3]
+     *
+     * _.drop([1, 2, 3], 5);
+     * // => []
+     *
+     * _.drop([1, 2, 3], 0);
+     * // => [1, 2, 3]
+     */
+    function drop(array, n, guard) {
+      var length = array ? array.length : 0;
+      if (!length) {
+        return [];
+      }
+      if (guard ? isIterateeCall(array, n, guard) : n == null) {
+        n = 1;
+      }
+      return baseSlice(array, n < 0 ? 0 : n);
+    }
+
+    /**
+     * Creates a slice of `array` with `n` elements dropped from the end.
+     *
+     * @static
+     * @memberOf _
+     * @category Array
+     * @param {Array} array The array to query.
+     * @param {number} [n=1] The number of elements to drop.
+     * @param- {Object} [guard] Enables use as a callback for functions like `_.map`.
+     * @returns {Array} Returns the slice of `array`.
+     * @example
+     *
+     * _.dropRight([1, 2, 3]);
+     * // => [1, 2]
+     *
+     * _.dropRight([1, 2, 3], 2);
+     * // => [1]
+     *
+     * _.dropRight([1, 2, 3], 5);
+     * // => []
+     *
+     * _.dropRight([1, 2, 3], 0);
+     * // => [1, 2, 3]
+     */
+    function dropRight(array, n, guard) {
+      var length = array ? array.length : 0;
+      if (!length) {
+        return [];
+      }
+      if (guard ? isIterateeCall(array, n, guard) : n == null) {
+        n = 1;
+      }
+      n = length - (+n || 0);
+      return baseSlice(array, 0, n < 0 ? 0 : n);
+    }
+
+    /**
+     * Creates a slice of `array` excluding elements dropped from the end.
+     * Elements are dropped until `predicate` returns falsey. The predicate is
+     * bound to `thisArg` and invoked with three arguments; (value, index, array).
+     *
+     * If a property name is provided for `predicate` the created "_.property"
+     * style callback returns the property value of the given element.
+     *
+     * If value is also provided for `thisArg` the created "_.matchesProperty"
+     * style callback returns `true` for elements that have a matching property
+     * value, else `false`.
+     *
+     * If an object is provided for `predicate` the created "_.matches" style
+     * callback returns `true` for elements that match the properties of the given
+     * object, else `false`.
+     *
+     * @static
+     * @memberOf _
+     * @category Array
+     * @param {Array} array The array to query.
+     * @param {Function|Object|string} [predicate=_.identity] The function invoked
+     *  per element.
+     * @param {*} [thisArg] The `this` binding of `predicate`.
+     * @returns {Array} Returns the slice of `array`.
+     * @example
+     *
+     * _.dropRightWhile([1, 2, 3], function(n) { return n > 1; });
+     * // => [1]
+     *
+     * var users = [
+     *   { 'user': 'barney',  'age': 36, 'active': true },
+     *   { 'user': 'fred',    'age': 40, 'active': false },
+     *   { 'user': 'pebbles', 'age': 1,  'active': false }
+     * ];
+     *
+     * // using the "_.matches" callback shorthand
+     * _.pluck(_.dropRightWhile(users, { 'age': 1, 'active': false }), 'user');
+     * // => ['barney', 'fred']
+     *
+     * // using the "_.matchesProperty" callback shorthand
+     * _.pluck(_.dropRightWhile(users, 'active', false), 'user');
+     * // => ['barney']
+     *
+     * // using the "_.property" callback shorthand
+     * _.pluck(_.dropRightWhile(users, 'active'), 'user');
+     * // => ['barney', 'fred', 'pebbles']
+     */
+    function dropRightWhile(array, predicate, thisArg) {
+      var length = array ? array.length : 0;
+      if (!length) {
+        return [];
+      }
+      predicate = getCallback(predicate, thisArg, 3);
+      while (length-- && predicate(array[length], length, array)) {}
+      return baseSlice(array, 0, length + 1);
+    }
+
+    /**
+     * Creates a slice of `array` excluding elements dropped from the beginning.
+     * Elements are dropped until `predicate` returns falsey. The predicate is
+     * bound to `thisArg` and invoked with three arguments; (value, index, array).
+     *
+     * If a property name is provided for `predicate` the created "_.property"
+     * style callback returns the property value of the given element.
+     *
+     * If value is also provided for `thisArg` the created "_.matchesProperty"
+     * style callback returns `true` for elements that have a matching property
+     * value, else `false`.
+     *
+     * If an object is provided for `predicate` the created "_.matches" style
+     * callback returns `true` for elements that have the properties of the given
+     * object, else `false`.
+     *
+     * @static
+     * @memberOf _
+     * @category Array
+     * @param {Array} array The array to query.
+     * @param {Function|Object|string} [predicate=_.identity] The function invoked
+     *  per element.
+     * @param {*} [thisArg] The `this` binding of `predicate`.
+     * @returns {Array} Returns the slice of `array`.
+     * @example
+     *
+     * _.dropWhile([1, 2, 3], function(n) { return n < 3; });
+     * // => [3]
+     *
+     * var users = [
+     *   { 'user': 'barney',  'age': 36, 'active': false },
+     *   { 'user': 'fred',    'age': 40, 'active': false },
+     *   { 'user': 'pebbles', 'age': 1,  'active': true }
+     * ];
+     *
+     * // using the "_.matches" callback shorthand
+     * _.pluck(_.dropWhile(users, { 'age': 36, 'active': false }), 'user');
+     * // => ['fred', 'pebbles']
+     *
+     * // using the "_.matchesProperty" callback shorthand
+     * _.pluck(_.dropWhile(users, 'active', false), 'user');
+     * // => ['pebbles']
+     *
+     * // using the "_.property" callback shorthand
+     * _.pluck(_.dropWhile(users, 'active'), 'user');
+     * // => ['barney', 'fred', 'pebbles']
+     */
+    function dropWhile(array, predicate, thisArg) {
+      var length = array ? array.length : 0;
+      if (!length) {
+        return [];
+      }
+      var index = -1;
+      predicate = getCallback(predicate, thisArg, 3);
+      while (++index < length && predicate(array[index], index, array)) {}
+      return baseSlice(array, index);
+    }
+
+    /**
+     * Fills elements of `array` with `value` from `start` up to, but not
+     * including, `end`.
+     *
+     * **Note:** This method mutates `array`.
+     *
+     * @private
+     * @param {Array} array The array to fill.
+     * @param {*} value The value to fill `array` with.
+     * @param {number} [start=0] The start position.
+     * @param {number} [end=array.length] The end position.
+     * @returns {Array} Returns `array`.
+     */
+    function fill(array, value, start, end) {
+      var length = array ? array.length : 0;
+      if (!length) {
+        return [];
+      }
+      if (start && typeof start != 'number' && isIterateeCall(array, value, start)) {
+        start = 0;
+        end = length;
+      }
+      return baseFill(array, value, start, end);
+    }
+
+    /**
+     * This method is like `_.find` except that it returns the index of the first
+     * element `predicate` returns truthy for, instead of the element itself.
+     *
+     * If a property name is provided for `predicate` the created "_.property"
+     * style callback returns the property value of the given element.
+     *
+     * If value is also provided for `thisArg` the created "_.matchesProperty"
+     * style callback returns `true` for elements that have a matching property
+     * value, else `false`.
+     *
+     * If an object is provided for `predicate` the created "_.matches" style
+     * callback returns `true` for elements that have the properties of the given
+     * object, else `false`.
+     *
+     * @static
+     * @memberOf _
+     * @category Array
+     * @param {Array} array The array to search.
+     * @param {Function|Object|string} [predicate=_.identity] The function invoked
+     *  per iteration. If a property name or object is provided it is used to
+     *  create a "_.property" or "_.matches" style callback respectively.
+     * @param {*} [thisArg] The `this` binding of `predicate`.
+     * @returns {number} Returns the index of the found element, else `-1`.
+     * @example
+     *
+     * var users = [
+     *   { 'user': 'barney',  'age': 36, 'active': false },
+     *   { 'user': 'fred',    'age': 40, 'active': true },
+     *   { 'user': 'pebbles', 'age': 1,  'active': false }
+     * ];
+     *
+     * _.findIndex(users, function(chr) { return chr.age < 40; });
+     * // => 0
+     *
+     * // using the "_.matches" callback shorthand
+     * _.findIndex(users, { 'age': 40, 'active': true });
+     * // => 1
+     *
+     * // using the "_.matchesProperty" callback shorthand
+     * _.findIndex(users, 'age', 1);
+     * // => 2
+     *
+     * // using the "_.property" callback shorthand
+     * _.findIndex(users, 'active');
+     * // => 1
+     */
+    function findIndex(array, predicate, thisArg) {
+      var index = -1,
+          length = array ? array.length : 0;
+
+      predicate = getCallback(predicate, thisArg, 3);
+      while (++index < length) {
+        if (predicate(array[index], index, array)) {
+          return index;
+        }
+      }
+      return -1;
+    }
+
+    /**
+     * This method is like `_.findIndex` except that it iterates over elements
+     * of `collection` from right to left.
+     *
+     * If a property name is provided for `predicate` the created "_.property"
+     * style callback returns the property value of the given element.
+     *
+     * If value is also provided for `thisArg` the created "_.matchesProperty"
+     * style callback returns `true` for elements that have a matching property
+     * value, else `false`.
+     *
+     * If an object is provided for `predicate` the created "_.matches" style
+     * callback returns `true` for elements that have the properties of the given
+     * object, else `false`.
+     *
+     * @static
+     * @memberOf _
+     * @category Array
+     * @param {Array} array The array to search.
+     * @param {Function|Object|string} [predicate=_.identity] The function invoked
+     *  per iteration. If a property name or object is provided it is used to
+     *  create a "_.property" or "_.matches" style callback respectively.
+     * @param {*} [thisArg] The `this` binding of `predicate`.
+     * @returns {number} Returns the index of the found element, else `-1`.
+     * @example
+     *
+     * var users = [
+     *   { 'user': 'barney',  'age': 36, 'active': true },
+     *   { 'user': 'fred',    'age': 40, 'active': false },
+     *   { 'user': 'pebbles', 'age': 1,  'active': false }
+     * ];
+     *
+     * _.findLastIndex(users, function(chr) { return chr.age < 40; });
+     * // => 2
+     *
+     * // using the "_.matches" callback shorthand
+     * _.findLastIndex(users, { 'age': 36, 'active': true });
+     * // => 0
+     *
+     * // using the "_.matchesProperty" callback shorthand
+     * _.findLastIndex(users, 'age', 40);
+     * // => 1
+     *
+     * // using the "_.property" callback shorthand
+     * _.findLastIndex(users, 'active');
+     * // => 0
+     */
+    function findLastIndex(array, predicate, thisArg) {
+      var length = array ? array.length : 0;
+      predicate = getCallback(predicate, thisArg, 3);
+      while (length--) {
+        if (predicate(array[length], length, array)) {
+          return length;
+        }
+      }
+      return -1;
+    }
+
+    /**
+     * Gets the first element of `array`.
+     *
+     * @static
+     * @memberOf _
+     * @alias head
+     * @category Array
+     * @param {Array} array The array to query.
+     * @returns {*} Returns the first element of `array`.
+     * @example
+     *
+     * _.first([1, 2, 3]);
+     * // => 1
+     *
+     * _.first([]);
+     * // => undefined
+     */
+    function first(array) {
+      return array ? array[0] : undefined;
+    }
+
+    /**
+     * Flattens a nested array. If `isDeep` is `true` the array is recursively
+     * flattened, otherwise it is only flattened a single level.
+     *
+     * @static
+     * @memberOf _
+     * @category Array
+     * @param {Array} array The array to flatten.
+     * @param {boolean} [isDeep] Specify a deep flatten.
+     * @param- {Object} [guard] Enables use as a callback for functions like `_.map`.
+     * @returns {Array} Returns the new flattened array.
+     * @example
+     *
+     * _.flatten([1, [2], [3, [[4]]]]);
+     * // => [1, 2, 3, [[4]]];
+     *
+     * // using `isDeep`
+     * _.flatten([1, [2], [3, [[4]]]], true);
+     * // => [1, 2, 3, 4];
+     */
+    function flatten(array, isDeep, guard) {
+      var length = array ? array.length : 0;
+      if (guard && isIterateeCall(array, isDeep, guard)) {
+        isDeep = false;
+      }
+      return length ? baseFlatten(array, isDeep) : [];
+    }
+
+    /**
+     * Recursively flattens a nested array.
+     *
+     * @static
+     * @memberOf _
+     * @category Array
+     * @param {Array} array The array to recursively flatten.
+     * @returns {Array} Returns the new flattened array.
+     * @example
+     *
+     * _.flattenDeep([1, [2], [3, [[4]]]]);
+     * // => [1, 2, 3, 4];
+     */
+    function flattenDeep(array) {
+      var length = array ? array.length : 0;
+      return length ? baseFlatten(array, true) : [];
+    }
+
+    /**
+     * Gets the index at which the first occurrence of `value` is found in `array`
+     * using `SameValueZero` for equality comparisons. If `fromIndex` is negative,
+     * it is used as the offset from the end of `array`. If `array` is sorted
+     * providing `true` for `fromIndex` performs a faster binary search.
+     *
+     * **Note:** `SameValueZero` comparisons are like strict equality comparisons,
+     * e.g. `===`, except that `NaN` matches `NaN`. See the
+     * [ES spec](https://people.mozilla.org/~jorendorff/es6-draft.html#sec-samevaluezero)
+     * for more details.
+     *
+     * @static
+     * @memberOf _
+     * @category Array
+     * @param {Array} array The array to search.
+     * @param {*} value The value to search for.
+     * @param {boolean|number} [fromIndex=0] The index to search from or `true`
+     *  to perform a binary search on a sorted array.
+     * @returns {number} Returns the index of the matched value, else `-1`.
+     * @example
+     *
+     * _.indexOf([1, 2, 3, 1, 2, 3], 2);
+     * // => 1
+     *
+     * // using `fromIndex`
+     * _.indexOf([1, 2, 3, 1, 2, 3], 2, 3);
+     * // => 4
+     *
+     * // performing a binary search
+     * _.indexOf([4, 4, 5, 5, 6, 6], 5, true);
+     * // => 2
+     */
+    function indexOf(array, value, fromIndex) {
+      var length = array ? array.length : 0;
+      if (!length) {
+        return -1;
+      }
+      if (typeof fromIndex == 'number') {
+        fromIndex = fromIndex < 0 ? nativeMax(length + fromIndex, 0) : (fromIndex || 0);
+      } else if (fromIndex) {
+        var index = binaryIndex(array, value),
+            other = array[index];
+
+        return (value === value ? value === other : other !== other) ? index : -1;
+      }
+      return baseIndexOf(array, value, fromIndex);
+    }
+
+    /**
+     * Gets all but the last element of `array`.
+     *
+     * @static
+     * @memberOf _
+     * @category Array
+     * @param {Array} array The array to query.
+     * @returns {Array} Returns the slice of `array`.
+     * @example
+     *
+     * _.initial([1, 2, 3]);
+     * // => [1, 2]
+     */
+    function initial(array) {
+      return dropRight(array, 1);
+    }
+
+    /**
+     * Creates an array of unique values in all provided arrays using `SameValueZero`
+     * for equality comparisons.
+     *
+     * **Note:** `SameValueZero` comparisons are like strict equality comparisons,
+     * e.g. `===`, except that `NaN` matches `NaN`. See the
+     * [ES spec](https://people.mozilla.org/~jorendorff/es6-draft.html#sec-samevaluezero)
+     * for more details.
+     *
+     * @static
+     * @memberOf _
+     * @category Array
+     * @param {...Array} [arrays] The arrays to inspect.
+     * @returns {Array} Returns the new array of shared values.
+     * @example
+     *
+     * _.intersection([1, 2, 3], [5, 2, 1, 4], [2, 1]);
+     * // => [1, 2]
+     */
+    function intersection() {
+      var args = [],
+          argsIndex = -1,
+          argsLength = arguments.length,
+          caches = [],
+          indexOf = getIndexOf(),
+          isCommon = indexOf == baseIndexOf;
+
+      while (++argsIndex < argsLength) {
+        var value = arguments[argsIndex];
+        if (isArray(value) || isArguments(value)) {
+          args.push(value);
+          caches.push(isCommon && value.length >= 120 && createCache(argsIndex && value));
+        }
+      }
+      argsLength = args.length;
+      var array = args[0],
+          index = -1,
+          length = array ? array.length : 0,
+          result = [],
+          seen = caches[0];
+
+      outer:
+      while (++index < length) {
+        value = array[index];
+        if ((seen ? cacheIndexOf(seen, value) : indexOf(result, value)) < 0) {
+          argsIndex = argsLength;
+          while (--argsIndex) {
+            var cache = caches[argsIndex];
+            if ((cache ? cacheIndexOf(cache, value) : indexOf(args[argsIndex], value)) < 0) {
+              continue outer;
+            }
+          }
+          if (seen) {
+            seen.push(value);
+          }
+          result.push(value);
+        }
+      }
+      return result;
+    }
+
+    /**
+     * Gets the last element of `array`.
+     *
+     * @static
+     * @memberOf _
+     * @category Array
+     * @param {Array} array The array to query.
+     * @returns {*} Returns the last element of `array`.
+     * @example
+     *
+     * _.last([1, 2, 3]);
+     * // => 3
+     */
+    function last(array) {
+      var length = array ? array.length : 0;
+      return length ? array[length - 1] : undefined;
+    }
+
+    /**
+     * This method is like `_.indexOf` except that it iterates over elements of
+     * `array` from right to left.
+     *
+     * @static
+     * @memberOf _
+     * @category Array
+     * @param {Array} array The array to search.
+     * @param {*} value The value to search for.
+     * @param {boolean|number} [fromIndex=array.length-1] The index to search from
+     *  or `true` to perform a binary search on a sorted array.
+     * @returns {number} Returns the index of the matched value, else `-1`.
+     * @example
+     *
+     * _.lastIndexOf([1, 2, 3, 1, 2, 3], 2);
+     * // => 4
+     *
+     * // using `fromIndex`
+     * _.lastIndexOf([1, 2, 3, 1, 2, 3], 2, 3);
+     * // => 1
+     *
+     * // performing a binary search
+     * _.lastIndexOf([4, 4, 5, 5, 6, 6], 5, true);
+     * // => 3
+     */
+    function lastIndexOf(array, value, fromIndex) {
+      var length = array ? array.length : 0;
+      if (!length) {
+        return -1;
+      }
+      var index = length;
+      if (typeof fromIndex == 'number') {
+        index = (fromIndex < 0 ? nativeMax(length + fromIndex, 0) : nativeMin(fromIndex || 0, length - 1)) + 1;
+      } else if (fromIndex) {
+        index = binaryIndex(array, value, true) - 1;
+        var other = array[index];
+        return (value === value ? value === other : other !== other) ? index : -1;
+      }
+      if (value !== value) {
+        return indexOfNaN(array, index, true);
+      }
+      while (index--) {
+        if (array[index] === value) {
+          return index;
+        }
+      }
+      return -1;
+    }
+
+    /**
+     * Removes all provided values from `array` using `SameValueZero` for equality
+     * comparisons.
+     *
+     * **Notes:**
+     *  - Unlike `_.without`, this method mutates `array`.
+     *  - `SameValueZero` comparisons are like strict equality comparisons, e.g. `===`,
+     *    except that `NaN` matches `NaN`. See the [ES spec](https://people.mozilla.org/~jorendorff/es6-draft.html#sec-samevaluezero)
+     *    for more details.
+     *
+     * @static
+     * @memberOf _
+     * @category Array
+     * @param {Array} array The array to modify.
+     * @param {...*} [values] The values to remove.
+     * @returns {Array} Returns `array`.
+     * @example
+     *
+     * var array = [1, 2, 3, 1, 2, 3];
+     * _.pull(array, 2, 3);
+     * console.log(array);
+     * // => [1, 1]
+     */
+    function pull() {
+      var array = arguments[0];
+      if (!(array && array.length)) {
+        return array;
+      }
+      var index = 0,
+          indexOf = getIndexOf(),
+          length = arguments.length;
+
+      while (++index < length) {
+        var fromIndex = 0,
+            value = arguments[index];
+
+        while ((fromIndex = indexOf(array, value, fromIndex)) > -1) {
+          splice.call(array, fromIndex, 1);
+        }
+      }
+      return array;
+    }
+
+    /**
+     * Removes elements from `array` corresponding to the given indexes and returns
+     * an array of the removed elements. Indexes may be specified as an array of
+     * indexes or as individual arguments.
+     *
+     * **Note:** Unlike `_.at`, this method mutates `array`.
+     *
+     * @static
+     * @memberOf _
+     * @category Array
+     * @param {Array} array The array to modify.
+     * @param {...(number|number[])} [indexes] The indexes of elements to remove,
+     *  specified as individual indexes or arrays of indexes.
+     * @returns {Array} Returns the new array of removed elements.
+     * @example
+     *
+     * var array = [5, 10, 15, 20];
+     * var evens = _.pullAt(array, [1, 3]);
+     *
+     * console.log(array);
+     * // => [5, 15]
+     *
+     * console.log(evens);
+     * // => [10, 20]
+     */
+    function pullAt(array) {
+      return basePullAt(array || [], baseFlatten(arguments, false, false, 1));
+    }
+
+    /**
+     * Removes all elements from `array` that `predicate` returns truthy for
+     * and returns an array of the removed elements. The predicate is bound to
+     * `thisArg` and invoked with three arguments; (value, index, array).
+     *
+     * If a property name is provided for `predicate` the created "_.property"
+     * style callback returns the property value of the given element.
+     *
+     * If value is also provided for `thisArg` the created "_.matchesProperty"
+     * style callback returns `true` for elements that have a matching property
+     * value, else `false`.
+     *
+     * If an object is provided for `predicate` the created "_.matches" style
+     * callback returns `true` for elements that have the properties of the given
+     * object, else `false`.
+     *
+     * **Note:** Unlike `_.filter`, this method mutates `array`.
+     *
+     * @static
+     * @memberOf _
+     * @category Array
+     * @param {Array} array The array to modify.
+     * @param {Function|Object|string} [predicate=_.identity] The function invoked
+     *  per iteration. If a property name or object is provided it is used to
+     *  create a "_.property" or "_.matches" style callback respectively.
+     * @param {*} [thisArg] The `this` binding of `predicate`.
+     * @returns {Array} Returns the new array of removed elements.
+     * @example
+     *
+     * var array = [1, 2, 3, 4];
+     * var evens = _.remove(array, function(n) { return n % 2 == 0; });
+     *
+     * console.log(array);
+     * // => [1, 3]
+     *
+     * console.log(evens);
+     * // => [2, 4]
+     */
+    function remove(array, predicate, thisArg) {
+      var index = -1,
+          length = array ? array.length : 0,
+          result = [];
+
+      predicate = getCallback(predicate, thisArg, 3);
+      while (++index < length) {
+        var value = array[index];
+        if (predicate(value, index, array)) {
+          result.push(value);
+          splice.call(array, index--, 1);
+          length--;
+        }
+      }
+      return result;
+    }
+
+    /**
+     * Gets all but the first element of `array`.
+     *
+     * @static
+     * @memberOf _
+     * @alias tail
+     * @category Array
+     * @param {Array} array The array to query.
+     * @returns {Array} Returns the slice of `array`.
+     * @example
+     *
+     * _.rest([1, 2, 3]);
+     * // => [2, 3]
+     */
+    function rest(array) {
+      return drop(array, 1);
+    }
+
+    /**
+     * Creates a slice of `array` from `start` up to, but not including, `end`.
+     *
+     * **Note:** This function is used instead of `Array#slice` to support node
+     * lists in IE < 9 and to ensure dense arrays are returned.
+     *
+     * @static
+     * @memberOf _
+     * @category Array
+     * @param {Array} array The array to slice.
+     * @param {number} [start=0] The start position.
+     * @param {number} [end=array.length] The end position.
+     * @returns {Array} Returns the slice of `array`.
+     */
+    function slice(array, start, end) {
+      var length = array ? array.length : 0;
+      if (!length) {
+        return [];
+      }
+      if (end && typeof end != 'number' && isIterateeCall(array, start, end)) {
+        start = 0;
+        end = length;
+      }
+      return baseSlice(array, start, end);
+    }
+
+    /**
+     * Uses a binary search to determine the lowest index at which `value` should
+     * be inserted into `array` in order to maintain its sort order. If an iteratee
+     * function is provided it is invoked for `value` and each element of `array`
+     * to compute their sort ranking. The iteratee is bound to `thisArg` and
+     * invoked with one argument; (value).
+     *
+     * If a property name is provided for `predicate` the created "_.property"
+     * style callback returns the property value of the given element.
+     *
+     * If value is also provided for `thisArg` the created "_.matchesProperty"
+     * style callback returns `true` for elements that have a matching property
+     * value, else `false`.
+     *
+     * If an object is provided for `predicate` the created "_.matches" style
+     * callback returns `true` for elements that have the properties of the given
+     * object, else `false`.
+     *
+     * @static
+     * @memberOf _
+     * @category Array
+     * @param {Array} array The sorted array to inspect.
+     * @param {*} value The value to evaluate.
+     * @param {Function|Object|string} [iteratee=_.identity] The function invoked
+     *  per iteration. If a property name or object is provided it is used to
+     *  create a "_.property" or "_.matches" style callback respectively.
+     * @param {*} [thisArg] The `this` binding of `iteratee`.
+     * @returns {number} Returns the index at which `value` should be inserted
+     *  into `array`.
+     * @example
+     *
+     * _.sortedIndex([30, 50], 40);
+     * // => 1
+     *
+     * _.sortedIndex([4, 4, 5, 5, 6, 6], 5);
+     * // => 2
+     *
+     * var dict = { 'data': { 'thirty': 30, 'forty': 40, 'fifty': 50 } };
+     *
+     * // using an iteratee function
+     * _.sortedIndex(['thirty', 'fifty'], 'forty', function(word) {
+     *   return this.data[word];
+     * }, dict);
+     * // => 1
+     *
+     * // using the "_.property" callback shorthand
+     * _.sortedIndex([{ 'x': 30 }, { 'x': 50 }], { 'x': 40 }, 'x');
+     * // => 1
+     */
+    function sortedIndex(array, value, iteratee, thisArg) {
+      var func = getCallback(iteratee);
+      return (func === baseCallback && iteratee == null)
+        ? binaryIndex(array, value)
+        : binaryIndexBy(array, value, func(iteratee, thisArg, 1));
+    }
+
+    /**
+     * This method is like `_.sortedIndex` except that it returns the highest
+     * index at which `value` should be inserted into `array` in order to
+     * maintain its sort order.
+     *
+     * @static
+     * @memberOf _
+     * @category Array
+     * @param {Array} array The sorted array to inspect.
+     * @param {*} value The value to evaluate.
+     * @param {Function|Object|string} [iteratee=_.identity] The function invoked
+     *  per iteration. If a property name or object is provided it is used to
+     *  create a "_.property" or "_.matches" style callback respectively.
+     * @param {*} [thisArg] The `this` binding of `iteratee`.
+     * @returns {number} Returns the index at which `value` should be inserted
+     *  into `array`.
+     * @example
+     *
+     * _.sortedLastIndex([4, 4, 5, 5, 6, 6], 5);
+     * // => 4
+     */
+    function sortedLastIndex(array, value, iteratee, thisArg) {
+      var func = getCallback(iteratee);
+      return (func === baseCallback && iteratee == null)
+        ? binaryIndex(array, value, true)
+        : binaryIndexBy(array, value, func(iteratee, thisArg, 1), true);
+    }
+
+    /**
+     * Creates a slice of `array` with `n` elements taken from the beginning.
+     *
+     * @static
+     * @memberOf _
+     * @category Array
+     * @param {Array} array The array to query.
+     * @param {number} [n=1] The number of elements to take.
+     * @param- {Object} [guard] Enables use as a callback for functions like `_.map`.
+     * @returns {Array} Returns the slice of `array`.
+     * @example
+     *
+     * _.take([1, 2, 3]);
+     * // => [1]
+     *
+     * _.take([1, 2, 3], 2);
+     * // => [1, 2]
+     *
+     * _.take([1, 2, 3], 5);
+     * // => [1, 2, 3]
+     *
+     * _.take([1, 2, 3], 0);
+     * // => []
+     */
+    function take(array, n, guard) {
+      var length = array ? array.length : 0;
+      if (!length) {
+        return [];
+      }
+      if (guard ? isIterateeCall(array, n, guard) : n == null) {
+        n = 1;
+      }
+      return baseSlice(array, 0, n < 0 ? 0 : n);
+    }
+
+    /**
+     * Creates a slice of `array` with `n` elements taken from the end.
+     *
+     * @static
+     * @memberOf _
+     * @category Array
+     * @param {Array} array The array to query.
+     * @param {number} [n=1] The number of elements to take.
+     * @param- {Object} [guard] Enables use as a callback for functions like `_.map`.
+     * @returns {Array} Returns the slice of `array`.
+     * @example
+     *
+     * _.takeRight([1, 2, 3]);
+     * // => [3]
+     *
+     * _.takeRight([1, 2, 3], 2);
+     * // => [2, 3]
+     *
+     * _.takeRight([1, 2, 3], 5);
+     * // => [1, 2, 3]
+     *
+     * _.takeRight([1, 2, 3], 0);
+     * // => []
+     */
+    function takeRight(array, n, guard) {
+      var length = array ? array.length : 0;
+      if (!length) {
+        return [];
+      }
+      if (guard ? isIterateeCall(array, n, guard) : n == null) {
+        n = 1;
+      }
+      n = length - (+n || 0);
+      return baseSlice(array, n < 0 ? 0 : n);
+    }
+
+    /**
+     * Creates a slice of `array` with elements taken from the end. Elements are
+     * taken until `predicate` returns falsey. The predicate is bound to `thisArg`
+     * and invoked with three arguments; (value, index, array).
+     *
+     * If a property name is provided for `predicate` the created "_.property"
+     * style callback returns the property value of the given element.
+     *
+     * If value is also provided for `thisArg` the created "_.matchesProperty"
+     * style callback returns `true` for elements that have a matching property
+     * value, else `false`.
+     *
+     * If an object is provided for `predicate` the created "_.matches" style
+     * callback returns `true` for elements that have the properties of the given
+     * object, else `false`.
+     *
+     * @static
+     * @memberOf _
+     * @category Array
+     * @param {Array} array The array to query.
+     * @param {Function|Object|string} [predicate=_.identity] The function invoked
+     *  per element.
+     * @param {*} [thisArg] The `this` binding of `predicate`.
+     * @returns {Array} Returns the slice of `array`.
+     * @example
+     *
+     * _.takeRightWhile([1, 2, 3], function(n) { return n > 1; });
+     * // => [2, 3]
+     *
+     * var users = [
+     *   { 'user': 'barney',  'age': 36, 'active': true },
+     *   { 'user': 'fred',    'age': 40, 'active': false },
+     *   { 'user': 'pebbles', 'age': 1,  'active': false }
+     * ];
+     *
+     * // using the "_.matches" callback shorthand
+     * _.pluck(_.takeRightWhile(users, { 'age': 1, 'active': true }), 'user');
+     * // => ['pebbles']
+     *
+     * // using the "_.matchesProperty" callback shorthand
+     * _.pluck(_.takeRightWhile(users, 'active', false), 'user');
+     * // => ['fred', 'pebbles']
+     *
+     * // using the "_.property" callback shorthand
+     * _.pluck(_.takeRightWhile(users, 'active'), 'user');
+     * // => []
+     */
+    function takeRightWhile(array, predicate, thisArg) {
+      var length = array ? array.length : 0;
+      if (!length) {
+        return [];
+      }
+      predicate = getCallback(predicate, thisArg, 3);
+      while (length-- && predicate(array[length], length, array)) {}
+      return baseSlice(array, length + 1);
+    }
+
+    /**
+     * Creates a slice of `array` with elements taken from the beginning. Elements
+     * are taken until `predicate` returns falsey. The predicate is bound to
+     * `thisArg` and invoked with three arguments; (value, index, array).
+     *
+     * If a property name is provided for `predicate` the created "_.property"
+     * style callback returns the property value of the given element.
+     *
+     * If value is also provided for `thisArg` the created "_.matchesProperty"
+     * style callback returns `true` for elements that have a matching property
+     * value, else `false`.
+     *
+     * If an object is provided for `predicate` the created "_.matches" style
+     * callback returns `true` for elements that have the properties of the given
+     * object, else `false`.
+     *
+     * @static
+     * @memberOf _
+     * @category Array
+     * @param {Array} array The array to query.
+     * @param {Function|Object|string} [predicate=_.identity] The function invoked
+     *  per element.
+     * @param {*} [thisArg] The `this` binding of `predicate`.
+     * @returns {Array} Returns the slice of `array`.
+     * @example
+     *
+     * _.takeWhile([1, 2, 3], function(n) { return n < 3; });
+     * // => [1, 2]
+     *
+     * var users = [
+     *   { 'user': 'barney',  'age': 36, 'active': false },
+     *   { 'user': 'fred',    'age': 40, 'active': false },
+     *   { 'user': 'pebbles', 'age': 1,  'active': true }
+     * ];
+     *
+     * // using the "_.matches" callback shorthand
+     * _.pluck(_.takeWhile(users, { 'age': 36, 'active': true }), 'user');
+     * // => ['barney']
+     *
+     * // using the "_.matchesProperty" callback shorthand
+     * _.pluck(_.takeWhile(users, 'active', false), 'user');
+     * // => ['barney', 'fred']
+     *
+     * // using the "_.property" callback shorthand
+     * _.pluck(_.takeWhile(users, 'active'), 'user');
+     * // => []
+     */
+    function takeWhile(array, predicate, thisArg) {
+      var length = array ? array.length : 0;
+      if (!length) {
+        return [];
+      }
+      var index = -1;
+      predicate = getCallback(predicate, thisArg, 3);
+      while (++index < length && predicate(array[index], index, array)) {}
+      return baseSlice(array, 0, index);
+    }
+
+    /**
+     * Creates an array of unique values, in order, of the provided arrays using
+     * `SameValueZero` for equality comparisons.
+     *
+     * **Note:** `SameValueZero` comparisons are like strict equality comparisons,
+     * e.g. `===`, except that `NaN` matches `NaN`. See the
+     * [ES spec](https://people.mozilla.org/~jorendorff/es6-draft.html#sec-samevaluezero)
+     * for more details.
+     *
+     * @static
+     * @memberOf _
+     * @category Array
+     * @param {...Array} [arrays] The arrays to inspect.
+     * @returns {Array} Returns the new array of combined values.
+     * @example
+     *
+     * _.union([1, 2, 3], [5, 2, 1, 4], [2, 1]);
+     * // => [1, 2, 3, 5, 4]
+     */
+    function union() {
+      return baseUniq(baseFlatten(arguments, false, true));
+    }
+
+    /**
+     * Creates a duplicate-value-free version of an array using `SameValueZero`
+     * for equality comparisons. Providing `true` for `isSorted` performs a faster
+     * search algorithm for sorted arrays. If an iteratee function is provided it
+     * is invoked for each value in the array to generate the criterion by which
+     * uniqueness is computed. The `iteratee` is bound to `thisArg` and invoked
+     * with three arguments; (value, index, array).
+     *
+     * If a property name is provided for `predicate` the created "_.property"
+     * style callback returns the property value of the given element.
+     *
+     * If value is also provided for `thisArg` the created "_.matchesProperty"
+     * style callback returns `true` for elements that have a matching property
+     * value, else `false`.
+     *
+     * If an object is provided for `predicate` the created "_.matches" style
+     * callback returns `true` for elements that have the properties of the given
+     * object, else `false`.
+     *
+     * **Note:** `SameValueZero` comparisons are like strict equality comparisons,
+     * e.g. `===`, except that `NaN` matches `NaN`. See the
+     * [ES spec](https://people.mozilla.org/~jorendorff/es6-draft.html#sec-samevaluezero)
+     * for more details.
+     *
+     * @static
+     * @memberOf _
+     * @alias unique
+     * @category Array
+     * @param {Array} array The array to inspect.
+     * @param {boolean} [isSorted] Specify the array is sorted.
+     * @param {Function|Object|string} [iteratee] The function invoked per iteration.
+     *  If a property name or object is provided it is used to create a "_.property"
+     *  or "_.matches" style callback respectively.
+     * @param {*} [thisArg] The `this` binding of `iteratee`.
+     * @returns {Array} Returns the new duplicate-value-free array.
+     * @example
+     *
+     * _.uniq([1, 2, 1]);
+     * // => [1, 2]
+     *
+     * // using `isSorted`
+     * _.uniq([1, 1, 2], true);
+     * // => [1, 2]
+     *
+     * // using an iteratee function
+     * _.uniq([1, 2.5, 1.5, 2], function(n) { return this.floor(n); }, Math);
+     * // => [1, 2.5]
+     *
+     * // using the "_.property" callback shorthand
+     * _.uniq([{ 'x': 1 }, { 'x': 2 }, { 'x': 1 }], 'x');
+     * // => [{ 'x': 1 }, { 'x': 2 }]
+     */
+    function uniq(array, isSorted, iteratee, thisArg) {
+      var length = array ? array.length : 0;
+      if (!length) {
+        return [];
+      }
+      // Juggle arguments.
+      if (typeof isSorted != 'boolean' && isSorted != null) {
+        thisArg = iteratee;
+        iteratee = isIterateeCall(array, isSorted, thisArg) ? null : isSorted;
+        isSorted = false;
+      }
+      var func = getCallback();
+      if (!(func === baseCallback && iteratee == null)) {
+        iteratee = func(iteratee, thisArg, 3);
+      }
+      return (isSorted && getIndexOf() == baseIndexOf)
+        ? sortedUniq(array, iteratee)
+        : baseUniq(array, iteratee);
+    }
+
+    /**
+     * This method is like `_.zip` except that it accepts an array of grouped
+     * elements and creates an array regrouping the elements to their pre-`_.zip`
+     * configuration.
+     *
+     * @static
+     * @memberOf _
+     * @category Array
+     * @param {Array} array The array of grouped elements to process.
+     * @returns {Array} Returns the new array of regrouped elements.
+     * @example
+     *
+     * var zipped = _.zip(['fred', 'barney'], [30, 40], [true, false]);
+     * // => [['fred', 30, true], ['barney', 40, false]]
+     *
+     * _.unzip(zipped);
+     * // => [['fred', 'barney'], [30, 40], [true, false]]
+     */
+    function unzip(array) {
+      var index = -1,
+          length = (array && array.length && arrayMax(arrayMap(array, getLength))) >>> 0,
+          result = Array(length);
+
+      while (++index < length) {
+        result[index] = arrayMap(array, baseProperty(index));
+      }
+      return result;
+    }
+
+    /**
+     * Creates an array excluding all provided values using `SameValueZero` for
+     * equality comparisons.
+     *
+     * **Note:** `SameValueZero` comparisons are like strict equality comparisons,
+     * e.g. `===`, except that `NaN` matches `NaN`. See the
+     * [ES spec](https://people.mozilla.org/~jorendorff/es6-draft.html#sec-samevaluezero)
+     * for more details.
+     *
+     * @static
+     * @memberOf _
+     * @category Array
+     * @param {Array} array The array to filter.
+     * @param {...*} [values] The values to exclude.
+     * @returns {Array} Returns the new array of filtered values.
+     * @example
+     *
+     * _.without([1, 2, 1, 0, 3, 1, 4], 0, 1);
+     * // => [2, 3, 4]
+     */
+    function without(array) {
+      return baseDifference(array, baseSlice(arguments, 1));
+    }
+
+    /**
+     * Creates an array that is the symmetric difference of the provided arrays.
+     * See [Wikipedia](https://en.wikipedia.org/wiki/Symmetric_difference) for
+     * more details.
+     *
+     * @static
+     * @memberOf _
+     * @category Array
+     * @param {...Array} [arrays] The arrays to inspect.
+     * @returns {Array} Returns the new array of values.
+     * @example
+     *
+     * _.xor([1, 2, 3], [5, 2, 1, 4]);
+     * // => [3, 5, 4]
+     *
+     * _.xor([1, 2, 5], [2, 3, 5], [3, 4, 5]);
+     * // => [1, 4, 5]
+     */
+    function xor() {
+      var index = -1,
+          length = arguments.length;
+
+      while (++index < length) {
+        var array = arguments[index];
+        if (isArray(array) || isArguments(array)) {
+          var result = result
+            ? baseDifference(result, array).concat(baseDifference(array, result))
+            : array;
+        }
+      }
+      return result ? baseUniq(result) : [];
+    }
+
+    /**
+     * Creates an array of grouped elements, the first of which contains the first
+     * elements of the given arrays, the second of which contains the second elements
+     * of the given arrays, and so on.
+     *
+     * @static
+     * @memberOf _
+     * @category Array
+     * @param {...Array} [arrays] The arrays to process.
+     * @returns {Array} Returns the new array of grouped elements.
+     * @example
+     *
+     * _.zip(['fred', 'barney'], [30, 40], [true, false]);
+     * // => [['fred', 30, true], ['barney', 40, false]]
+     */
+    function zip() {
+      var length = arguments.length,
+          array = Array(length);
+
+      while (length--) {
+        array[length] = arguments[length];
+      }
+      return unzip(array);
+    }
+
+    /**
+     * Creates an object composed from arrays of property names and values. Provide
+     * either a single two dimensional array, e.g. `[[key1, value1], [key2, value2]]`
+     * or two arrays, one of property names and one of corresponding values.
+     *
+     * @static
+     * @memberOf _
+     * @alias object
+     * @category Array
+     * @param {Array} props The property names.
+     * @param {Array} [values=[]] The property values.
+     * @returns {Object} Returns the new object.
+     * @example
+     *
+     * _.zipObject(['fred', 'barney'], [30, 40]);
+     * // => { 'fred': 30, 'barney': 40 }
+     */
+    function zipObject(props, values) {
+      var index = -1,
+          length = props ? props.length : 0,
+          result = {};
+
+      if (length && !values && !isArray(props[0])) {
+        values = [];
+      }
+      while (++index < length) {
+        var key = props[index];
+        if (values) {
+          result[key] = values[index];
+        } else if (key) {
+          result[key[0]] = key[1];
+        }
+      }
+      return result;
+    }
+
+    /*------------------------------------------------------------------------*/
+
+    /**
+     * Creates a `lodash` object that wraps `value` with explicit method
+     * chaining enabled.
+     *
+     * @static
+     * @memberOf _
+     * @category Chain
+     * @param {*} value The value to wrap.
+     * @returns {Object} Returns the new `lodash` wrapper instance.
+     * @example
+     *
+     * var users = [
+     *   { 'user': 'barney',  'age': 36 },
+     *   { 'user': 'fred',    'age': 40 },
+     *   { 'user': 'pebbles', 'age': 1 }
+     * ];
+     *
+     * var youngest = _.chain(users)
+     *   .sortBy('age')
+     *   .map(function(chr) { return chr.user + ' is ' + chr.age; })
+     *   .first()
+     *   .value();
+     * // => 'pebbles is 1'
+     */
+    function chain(value) {
+      var result = lodash(value);
+      result.__chain__ = true;
+      return result;
+    }
+
+    /**
+     * This method invokes `interceptor` and returns `value`. The interceptor is
+     * bound to `thisArg` and invoked with one argument; (value). The purpose of
+     * this method is to "tap into" a method chain in order to perform operations
+     * on intermediate results within the chain.
+     *
+     * @static
+     * @memberOf _
+     * @category Chain
+     * @param {*} value The value to provide to `interceptor`.
+     * @param {Function} interceptor The function to invoke.
+     * @param {*} [thisArg] The `this` binding of `interceptor`.
+     * @returns {*} Returns `value`.
+     * @example
+     *
+     * _([1, 2, 3])
+     *  .tap(function(array) { array.pop(); })
+     *  .reverse()
+     *  .value();
+     * // => [2, 1]
+     */
+    function tap(value, interceptor, thisArg) {
+      interceptor.call(thisArg, value);
+      return value;
+    }
+
+    /**
+     * This method is like `_.tap` except that it returns the result of `interceptor`.
+     *
+     * @static
+     * @memberOf _
+     * @category Chain
+     * @param {*} value The value to provide to `interceptor`.
+     * @param {Function} interceptor The function to invoke.
+     * @param {*} [thisArg] The `this` binding of `interceptor`.
+     * @returns {*} Returns the result of `interceptor`.
+     * @example
+     *
+     * _([1, 2, 3])
+     *  .last()
+     *  .thru(function(value) { return [value]; })
+     *  .value();
+     * // => [3]
+     */
+    function thru(value, interceptor, thisArg) {
+      return interceptor.call(thisArg, value);
+    }
+
+    /**
+     * Enables explicit method chaining on the wrapper object.
+     *
+     * @name chain
+     * @memberOf _
+     * @category Chain
+     * @returns {Object} Returns the new `lodash` wrapper instance.
+     * @example
+     *
+     * var users = [
+     *   { 'user': 'barney', 'age': 36 },
+     *   { 'user': 'fred',   'age': 40 }
+     * ];
+     *
+     * // without explicit chaining
+     * _(users).first();
+     * // => { 'user': 'barney', 'age': 36 }
+     *
+     * // with explicit chaining
+     * _(users).chain()
+     *   .first()
+     *   .pick('user')
+     *   .value();
+     * // => { 'user': 'barney' }
+     */
+    function wrapperChain() {
+      return chain(this);
+    }
+
+    /**
+     * Executes the chained sequence and returns the wrapped result.
+     *
+     * @name commit
+     * @memberOf _
+     * @category Chain
+     * @returns {Object} Returns the new `lodash` wrapper instance.
+     * @example
+     *
+     * var array = [1, 2];
+     * var wrapper = _(array).push(3);
+     *
+     * console.log(array);
+     * // => [1, 2]
+     *
+     * wrapper = wrapper.commit();
+     * console.log(array);
+     * // => [1, 2, 3]
+     *
+     * wrapper.last();
+     * // => 3
+     *
+     * console.log(array);
+     * // => [1, 2, 3]
+     */
+    function wrapperCommit() {
+      return new LodashWrapper(this.value(), this.__chain__);
+    }
+
+    /**
+     * Creates a clone of the chained sequence planting `value` as the wrapped value.
+     *
+     * @name plant
+     * @memberOf _
+     * @category Chain
+     * @returns {Object} Returns the new `lodash` wrapper instance.
+     * @example
+     *
+     * var array = [1, 2];
+     * var wrapper = _(array).map(_.partial(Math.pow, _, 2));
+     *
+     * var other = [3, 4];
+     * var otherWrapper = wrapper.plant(other);
+     *
+     * otherWrapper.value();
+     * // => [9, 16]
+     *
+     * wrapper.value();
+     * // => [1, 4]
+     */
+    function wrapperPlant(value) {
+      var result,
+          parent = this;
+
+      while (parent instanceof LodashWrapper) {
+        var clone = wrapperClone(parent);
+        if (result) {
+          previous.__wrapped__ = clone;
+        } else {
+          result = clone;
+        }
+        var previous = clone;
+        parent = parent.__wrapped__;
+      }
+      previous.__wrapped__ = value;
+      return result;
+    }
+
+    /**
+     * Reverses the wrapped array so the first element becomes the last, the
+     * second element becomes the second to last, and so on.
+     *
+     * **Note:** This method mutates the wrapped array.
+     *
+     * @name reverse
+     * @memberOf _
+     * @category Chain
+     * @returns {Object} Returns the new reversed `lodash` wrapper instance.
+     * @example
+     *
+     * var array = [1, 2, 3];
+     *
+     * _(array).reverse().value()
+     * // => [3, 2, 1]
+     *
+     * console.log(array);
+     * // => [3, 2, 1]
+     */
+    function wrapperReverse() {
+      var value = this.__wrapped__;
+      if (value instanceof LazyWrapper) {
+        if (this.__actions__.length) {
+          value = new LazyWrapper(this);
+        }
+        return new LodashWrapper(value.reverse(), this.__chain__);
+      }
+      return this.thru(function(value) {
+        return value.reverse();
+      });
+    }
+
+    /**
+     * Produces the result of coercing the unwrapped value to a string.
+     *
+     * @name toString
+     * @memberOf _
+     * @category Chain
+     * @returns {string} Returns the coerced string value.
+     * @example
+     *
+     * _([1, 2, 3]).toString();
+     * // => '1,2,3'
+     */
+    function wrapperToString() {
+      return (this.value() + '');
+    }
+
+    /**
+     * Executes the chained sequence to extract the unwrapped value.
+     *
+     * @name value
+     * @memberOf _
+     * @alias run, toJSON, valueOf
+     * @category Chain
+     * @returns {*} Returns the resolved unwrapped value.
+     * @example
+     *
+     * _([1, 2, 3]).value();
+     * // => [1, 2, 3]
+     */
+    function wrapperValue() {
+      return baseWrapperValue(this.__wrapped__, this.__actions__);
+    }
+
+    /*------------------------------------------------------------------------*/
+
+    /**
+     * Creates an array of elements corresponding to the given keys, or indexes,
+     * of `collection`. Keys may be specified as individual arguments or as arrays
+     * of keys.
+     *
+     * @static
+     * @memberOf _
+     * @category Collection
+     * @param {Array|Object|string} collection The collection to iterate over.
+     * @param {...(number|number[]|string|string[])} [props] The property names
+     *  or indexes of elements to pick, specified individually or in arrays.
+     * @returns {Array} Returns the new array of picked elements.
+     * @example
+     *
+     * _.at(['a', 'b', 'c', 'd', 'e'], [0, 2, 4]);
+     * // => ['a', 'c', 'e']
+     *
+     * _.at(['fred', 'barney', 'pebbles'], 0, 2);
+     * // => ['fred', 'pebbles']
+     */
+    function at(collection) {
+      var length = collection ? collection.length : 0;
+      if (isLength(length)) {
+        collection = toIterable(collection);
+      }
+      return baseAt(collection, baseFlatten(arguments, false, false, 1));
+    }
+
+    /**
+     * Checks if `value` is in `collection` using `SameValueZero` for equality
+     * comparisons. If `fromIndex` is negative, it is used as the offset from
+     * the end of `collection`.
+     *
+     * **Note:** `SameValueZero` comparisons are like strict equality comparisons,
+     * e.g. `===`, except that `NaN` matches `NaN`. See the
+     * [ES spec](https://people.mozilla.org/~jorendorff/es6-draft.html#sec-samevaluezero)
+     * for more details.
+     *
+     * @static
+     * @memberOf _
+     * @alias contains, include
+     * @category Collection
+     * @param {Array|Object|string} collection The collection to search.
+     * @param {*} target The value to search for.
+     * @param {number} [fromIndex=0] The index to search from.
+     * @returns {boolean} Returns `true` if a matching element is found, else `false`.
+     * @example
+     *
+     * _.includes([1, 2, 3], 1);
+     * // => true
+     *
+     * _.includes([1, 2, 3], 1, 2);
+     * // => false
+     *
+     * _.includes({ 'user': 'fred', 'age': 40 }, 'fred');
+     * // => true
+     *
+     * _.includes('pebbles', 'eb');
+     * // => true
+     */
+    function includes(collection, target, fromIndex) {
+      var length = collection ? collection.length : 0;
+      if (!isLength(length)) {
+        collection = values(collection);
+        length = collection.length;
+      }
+      if (!length) {
+        return false;
+      }
+      if (typeof fromIndex == 'number') {
+        fromIndex = fromIndex < 0 ? nativeMax(length + fromIndex, 0) : (fromIndex || 0);
+      } else {
+        fromIndex = 0;
+      }
+      return (typeof collection == 'string' || !isArray(collection) && isString(collection))
+        ? (fromIndex < length && collection.indexOf(target, fromIndex) > -1)
+        : (getIndexOf(collection, target, fromIndex) > -1);
+    }
+
+    /**
+     * Creates an object composed of keys generated from the results of running
+     * each element of `collection` through `iteratee`. The corresponding value
+     * of each key is the number of times the key was returned by `iteratee`.
+     * The `iteratee` is bound to `thisArg` and invoked with three arguments;
+     * (value, index|key, collection).
+     *
+     * If a property name is provided for `predicate` the created "_.property"
+     * style callback returns the property value of the given element.
+     *
+     * If value is also provided for `thisArg` the created "_.matchesProperty"
+     * style callback returns `true` for elements that have a matching property
+     * value, else `false`.
+     *
+     * If an object is provided for `predicate` the created "_.matches" style
+     * callback returns `true` for elements that have the properties of the given
+     * object, else `false`.
+     *
+     * @static
+     * @memberOf _
+     * @category Collection
+     * @param {Array|Object|string} collection The collection to iterate over.
+     * @param {Function|Object|string} [iteratee=_.identity] The function invoked
+     *  per iteration. If a property name or object is provided it is used to
+     *  create a "_.property" or "_.matches" style callback respectively.
+     * @param {*} [thisArg] The `this` binding of `iteratee`.
+     * @returns {Object} Returns the composed aggregate object.
+     * @example
+     *
+     * _.countBy([4.3, 6.1, 6.4], function(n) { return Math.floor(n); });
+     * // => { '4': 1, '6': 2 }
+     *
+     * _.countBy([4.3, 6.1, 6.4], function(n) { return this.floor(n); }, Math);
+     * // => { '4': 1, '6': 2 }
+     *
+     * _.countBy(['one', 'two', 'three'], 'length');
+     * // => { '3': 2, '5': 1 }
+     */
+    var countBy = createAggregator(function(result, value, key) {
+      hasOwnProperty.call(result, key) ? ++result[key] : (result[key] = 1);
+    });
+
+    /**
+     * Checks if `predicate` returns truthy for **all** elements of `collection`.
+     * The predicate is bound to `thisArg` and invoked with three arguments;
+     * (value, index|key, collection).
+     *
+     * If a property name is provided for `predicate` the created "_.property"
+     * style callback returns the property value of the given element.
+     *
+     * If value is also provided for `thisArg` the created "_.matchesProperty"
+     * style callback returns `true` for elements that have a matching property
+     * value, else `false`.
+     *
+     * If an object is provided for `predicate` the created "_.matches" style
+     * callback returns `true` for elements that have the properties of the given
+     * object, else `false`.
+     *
+     * @static
+     * @memberOf _
+     * @alias all
+     * @category Collection
+     * @param {Array|Object|string} collection The collection to iterate over.
+     * @param {Function|Object|string} [predicate=_.identity] The function invoked
+     *  per iteration. If a property name or object is provided it is used to
+     *  create a "_.property" or "_.matches" style callback respectively.
+     * @param {*} [thisArg] The `this` binding of `predicate`.
+     * @returns {boolean} Returns `true` if all elements pass the predicate check,
+     *  else `false`.
+     * @example
+     *
+     * _.every([true, 1, null, 'yes']);
+     * // => false
+     *
+     * var users = [
+     *   { 'user': 'barney', 'age': 36, 'active': false },
+     *   { 'user': 'fred',   'age': 40, 'active': false }
+     * ];
+     *
+     * // using the "_.matches" callback shorthand
+     * _.every(users, { 'age': 36, 'active': false });
+     * // => false
+     *
+     * // using the "_.matchesProperty" callback shorthand
+     * _.every(users, 'active', false);
+     * // => true
+     *
+     * // using the "_.property" callback shorthand
+     * _.every(users, 'active');
+     * // => false
+     */
+    function every(collection, predicate, thisArg) {
+      var func = isArray(collection) ? arrayEvery : baseEvery;
+      if (typeof predicate != 'function' || typeof thisArg != 'undefined') {
+        predicate = getCallback(predicate, thisArg, 3);
+      }
+      return func(collection, predicate);
+    }
+
+    /**
+     * Iterates over elements of `collection`, returning an array of all elements
+     * `predicate` returns truthy for. The predicate is bound to `thisArg` and
+     * invoked with three arguments; (value, index|key, collection).
+     *
+     * If a property name is provided for `predicate` the created "_.property"
+     * style callback returns the property value of the given element.
+     *
+     * If value is also provided for `thisArg` the created "_.matchesProperty"
+     * style callback returns `true` for elements that have a matching property
+     * value, else `false`.
+     *
+     * If an object is provided for `predicate` the created "_.matches" style
+     * callback returns `true` for elements that have the properties of the given
+     * object, else `false`.
+     *
+     * @static
+     * @memberOf _
+     * @alias select
+     * @category Collection
+     * @param {Array|Object|string} collection The collection to iterate over.
+     * @param {Function|Object|string} [predicate=_.identity] The function invoked
+     *  per iteration. If a property name or object is provided it is used to
+     *  create a "_.property" or "_.matches" style callback respectively.
+     * @param {*} [thisArg] The `this` binding of `predicate`.
+     * @returns {Array} Returns the new filtered array.
+     * @example
+     *
+     * var evens = _.filter([1, 2, 3, 4], function(n) { return n % 2 == 0; });
+     * // => [2, 4]
+     *
+     * var users = [
+     *   { 'user': 'barney', 'age': 36, 'active': true },
+     *   { 'user': 'fred',   'age': 40, 'active': false }
+     * ];
+     *
+     * // using the "_.matches" callback shorthand
+     * _.pluck(_.filter(users, { 'age': 36, 'active': true }), 'user');
+     * // => ['barney']
+     *
+     * // using the "_.matchesProperty" callback shorthand
+     * _.pluck(_.filter(users, 'active', false), 'user');
+     * // => ['fred']
+     *
+     * // using the "_.property" callback shorthand
+     * _.pluck(_.filter(users, 'active'), 'user');
+     * // => ['barney']
+     */
+    function filter(collection, predicate, thisArg) {
+      var func = isArray(collection) ? arrayFilter : baseFilter;
+      predicate = getCallback(predicate, thisArg, 3);
+      return func(collection, predicate);
+    }
+
+    /**
+     * Iterates over elements of `collection`, returning the first element
+     * `predicate` returns truthy for. The predicate is bound to `thisArg` and
+     * invoked with three arguments; (value, index|key, collection).
+     *
+     * If a property name is provided for `predicate` the created "_.property"
+     * style callback returns the property value of the given element.
+     *
+     * If value is also provided for `thisArg` the created "_.matchesProperty"
+     * style callback returns `true` for elements that have a matching property
+     * value, else `false`.
+     *
+     * If an object is provided for `predicate` the created "_.matches" style
+     * callback returns `true` for elements that have the properties of the given
+     * object, else `false`.
+     *
+     * @static
+     * @memberOf _
+     * @alias detect
+     * @category Collection
+     * @param {Array|Object|string} collection The collection to search.
+     * @param {Function|Object|string} [predicate=_.identity] The function invoked
+     *  per iteration. If a property name or object is provided it is used to
+     *  create a "_.property" or "_.matches" style callback respectively.
+     * @param {*} [thisArg] The `this` binding of `predicate`.
+     * @returns {*} Returns the matched element, else `undefined`.
+     * @example
+     *
+     * var users = [
+     *   { 'user': 'barney',  'age': 36, 'active': true },
+     *   { 'user': 'fred',    'age': 40, 'active': false },
+     *   { 'user': 'pebbles', 'age': 1,  'active': true }
+     * ];
+     *
+     * _.result(_.find(users, function(chr) { return chr.age < 40; }), 'user');
+     * // => 'barney'
+     *
+     * // using the "_.matches" callback shorthand
+     * _.result(_.find(users, { 'age': 1, 'active': true }), 'user');
+     * // => 'pebbles'
+     *
+     * // using the "_.matchesProperty" callback shorthand
+     * _.result(_.find(users, 'active', false), 'user');
+     * // => 'fred'
+     *
+     * // using the "_.property" callback shorthand
+     * _.result(_.find(users, 'active'), 'user');
+     * // => 'barney'
+     */
+    function find(collection, predicate, thisArg) {
+      if (isArray(collection)) {
+        var index = findIndex(collection, predicate, thisArg);
+        return index > -1 ? collection[index] : undefined;
+      }
+      predicate = getCallback(predicate, thisArg, 3);
+      return baseFind(collection, predicate, baseEach);
+    }
+
+    /**
+     * This method is like `_.find` except that it iterates over elements of
+     * `collection` from right to left.
+     *
+     * @static
+     * @memberOf _
+     * @category Collection
+     * @param {Array|Object|string} collection The collection to search.
+     * @param {Function|Object|string} [predicate=_.identity] The function invoked
+     *  per iteration. If a property name or object is provided it is used to
+     *  create a "_.property" or "_.matches" style callback respectively.
+     * @param {*} [thisArg] The `this` binding of `predicate`.
+     * @returns {*} Returns the matched element, else `undefined`.
+     * @example
+     *
+     * _.findLast([1, 2, 3, 4], function(n) { return n % 2 == 1; });
+     * // => 3
+     */
+    function findLast(collection, predicate, thisArg) {
+      predicate = getCallback(predicate, thisArg, 3);
+      return baseFind(collection, predicate, baseEachRight);
+    }
+
+    /**
+     * Performs a deep comparison between each element in `collection` and the
+     * source object, returning the first element that has equivalent property
+     * values.
+     *
+     * **Note:** This method supports comparing arrays, booleans, `Date` objects,
+     * numbers, `Object` objects, regexes, and strings. Objects are compared by
+     * their own, not inherited, enumerable properties. For comparing a single
+     * own or inherited property value see `_.matchesProperty`.
+     *
+     * @static
+     * @memberOf _
+     * @category Collection
+     * @param {Array|Object|string} collection The collection to search.
+     * @param {Object} source The object of property values to match.
+     * @returns {*} Returns the matched element, else `undefined`.
+     * @example
+     *
+     * var users = [
+     *   { 'user': 'barney', 'age': 36, 'active': true },
+     *   { 'user': 'fred',   'age': 40, 'active': false }
+     * ];
+     *
+     * _.result(_.findWhere(users, { 'age': 36, 'active': true }), 'user');
+     * // => 'barney'
+     *
+     * _.result(_.findWhere(users, { 'age': 40, 'active': false }), 'user');
+     * // => 'fred'
+     */
+    function findWhere(collection, source) {
+      return find(collection, baseMatches(source));
+    }
+
+    /**
+     * Iterates over elements of `collection` invoking `iteratee` for each element.
+     * The `iteratee` is bound to `thisArg` and invoked with three arguments;
+     * (value, index|key, collection). Iterator functions may exit iteration early
+     * by explicitly returning `false`.
+     *
+     * **Note:** As with other "Collections" methods, objects with a `length` property
+     * are iterated like arrays. To avoid this behavior `_.forIn` or `_.forOwn`
+     * may be used for object iteration.
+     *
+     * @static
+     * @memberOf _
+     * @alias each
+     * @category Collection
+     * @param {Array|Object|string} collection The collection to iterate over.
+     * @param {Function} [iteratee=_.identity] The function invoked per iteration.
+     * @param {*} [thisArg] The `this` binding of `iteratee`.
+     * @returns {Array|Object|string} Returns `collection`.
+     * @example
+     *
+     * _([1, 2, 3]).forEach(function(n) { console.log(n); }).value();
+     * // => logs each value from left to right and returns the array
+     *
+     * _.forEach({ 'one': 1, 'two': 2, 'three': 3 }, function(n, key) { console.log(n, key); });
+     * // => logs each value-key pair and returns the object (iteration order is not guaranteed)
+     */
+    function forEach(collection, iteratee, thisArg) {
+      return (typeof iteratee == 'function' && typeof thisArg == 'undefined' && isArray(collection))
+        ? arrayEach(collection, iteratee)
+        : baseEach(collection, bindCallback(iteratee, thisArg, 3));
+    }
+
+    /**
+     * This method is like `_.forEach` except that it iterates over elements of
+     * `collection` from right to left.
+     *
+     * @static
+     * @memberOf _
+     * @alias eachRight
+     * @category Collection
+     * @param {Array|Object|string} collection The collection to iterate over.
+     * @param {Function} [iteratee=_.identity] The function invoked per iteration.
+     * @param {*} [thisArg] The `this` binding of `iteratee`.
+     * @returns {Array|Object|string} Returns `collection`.
+     * @example
+     *
+     * _([1, 2, 3]).forEachRight(function(n) { console.log(n); }).join(',');
+     * // => logs each value from right to left and returns the array
+     */
+    function forEachRight(collection, iteratee, thisArg) {
+      return (typeof iteratee == 'function' && typeof thisArg == 'undefined' && isArray(collection))
+        ? arrayEachRight(collection, iteratee)
+        : baseEachRight(collection, bindCallback(iteratee, thisArg, 3));
+    }
+
+    /**
+     * Creates an object composed of keys generated from the results of running
+     * each element of `collection` through `iteratee`. The corresponding value
+     * of each key is an array of the elements responsible for generating the key.
+     * The `iteratee` is bound to `thisArg` and invoked with three arguments;
+     * (value, index|key, collection).
+     *
+     * If a property name is provided for `predicate` the created "_.property"
+     * style callback returns the property value of the given element.
+     *
+     * If value is also provided for `thisArg` the created "_.matchesProperty"
+     * style callback returns `true` for elements that have a matching property
+     * value, else `false`.
+     *
+     * If an object is provided for `predicate` the created "_.matches" style
+     * callback returns `true` for elements that have the properties of the given
+     * object, else `false`.
+     *
+     * @static
+     * @memberOf _
+     * @category Collection
+     * @param {Array|Object|string} collection The collection to iterate over.
+     * @param {Function|Object|string} [iteratee=_.identity] The function invoked
+     *  per iteration. If a property name or object is provided it is used to
+     *  create a "_.property" or "_.matches" style callback respectively.
+     * @param {*} [thisArg] The `this` binding of `iteratee`.
+     * @returns {Object} Returns the composed aggregate object.
+     * @example
+     *
+     * _.groupBy([4.2, 6.1, 6.4], function(n) { return Math.floor(n); });
+     * // => { '4': [4.2], '6': [6.1, 6.4] }
+     *
+     * _.groupBy([4.2, 6.1, 6.4], function(n) { return this.floor(n); }, Math);
+     * // => { '4': [4.2], '6': [6.1, 6.4] }
+     *
+     * // using the "_.property" callback shorthand
+     * _.groupBy(['one', 'two', 'three'], 'length');
+     * // => { '3': ['one', 'two'], '5': ['three'] }
+     */
+    var groupBy = createAggregator(function(result, value, key) {
+      if (hasOwnProperty.call(result, key)) {
+        result[key].push(value);
+      } else {
+        result[key] = [value];
+      }
+    });
+
+    /**
+     * Creates an object composed of keys generated from the results of running
+     * each element of `collection` through `iteratee`. The corresponding value
+     * of each key is the last element responsible for generating the key. The
+     * iteratee function is bound to `thisArg` and invoked with three arguments;
+     * (value, index|key, collection).
+     *
+     * If a property name is provided for `predicate` the created "_.property"
+     * style callback returns the property value of the given element.
+     *
+     * If value is also provided for `thisArg` the created "_.matchesProperty"
+     * style callback returns `true` for elements that have a matching property
+     * value, else `false`.
+     *
+     * If an object is provided for `predicate` the created "_.matches" style
+     * callback returns `true` for elements that have the properties of the given
+     * object, else `false`.
+     *
+     * @static
+     * @memberOf _
+     * @category Collection
+     * @param {Array|Object|string} collection The collection to iterate over.
+     * @param {Function|Object|string} [iteratee=_.identity] The function invoked
+     *  per iteration. If a property name or object is provided it is used to
+     *  create a "_.property" or "_.matches" style callback respectively.
+     * @param {*} [thisArg] The `this` binding of `iteratee`.
+     * @returns {Object} Returns the composed aggregate object.
+     * @example
+     *
+     * var keyData = [
+     *   { 'dir': 'left', 'code': 97 },
+     *   { 'dir': 'right', 'code': 100 }
+     * ];
+     *
+     * _.indexBy(keyData, 'dir');
+     * // => { 'left': { 'dir': 'left', 'code': 97 }, 'right': { 'dir': 'right', 'code': 100 } }
+     *
+     * _.indexBy(keyData, function(object) { return String.fromCharCode(object.code); });
+     * // => { 'a': { 'dir': 'left', 'code': 97 }, 'd': { 'dir': 'right', 'code': 100 } }
+     *
+     * _.indexBy(keyData, function(object) { return this.fromCharCode(object.code); }, String);
+     * // => { 'a': { 'dir': 'left', 'code': 97 }, 'd': { 'dir': 'right', 'code': 100 } }
+     */
+    var indexBy = createAggregator(function(result, value, key) {
+      result[key] = value;
+    });
+
+    /**
+     * Invokes the method named by `methodName` on each element in `collection`,
+     * returning an array of the results of each invoked method. Any additional
+     * arguments are provided to each invoked method. If `methodName` is a function
+     * it is invoked for, and `this` bound to, each element in `collection`.
+     *
+     * @static
+     * @memberOf _
+     * @category Collection
+     * @param {Array|Object|string} collection The collection to iterate over.
+     * @param {Function|string} methodName The name of the method to invoke or
+     *  the function invoked per iteration.
+     * @param {...*} [args] The arguments to invoke the method with.
+     * @returns {Array} Returns the array of results.
+     * @example
+     *
+     * _.invoke([[5, 1, 7], [3, 2, 1]], 'sort');
+     * // => [[1, 5, 7], [1, 2, 3]]
+     *
+     * _.invoke([123, 456], String.prototype.split, '');
+     * // => [['1', '2', '3'], ['4', '5', '6']]
+     */
+    function invoke(collection, methodName) {
+      return baseInvoke(collection, methodName, baseSlice(arguments, 2));
+    }
+
+    /**
+     * Creates an array of values by running each element in `collection` through
+     * `iteratee`. The `iteratee` is bound to `thisArg` and invoked with three
+     * arguments; (value, index|key, collection).
+     *
+     * If a property name is provided for `predicate` the created "_.property"
+     * style callback returns the property value of the given element.
+     *
+     * If value is also provided for `thisArg` the created "_.matchesProperty"
+     * style callback returns `true` for elements that have a matching property
+     * value, else `false`.
+     *
+     * If an object is provided for `predicate` the created "_.matches" style
+     * callback returns `true` for elements that have the properties of the given
+     * object, else `false`.
+     *
+     * Many lodash methods are guarded to work as interatees for methods like
+     * `_.every`, `_.filter`, `_.map`, `_.mapValues`, `_.reject`, and `_.some`.
+     *
+     * The guarded methods are:
+     * `ary`, `callback`, `chunk`, `clone`, `create`, `curry`, `curryRight`, `drop`,
+     * `dropRight`, `fill`, `flatten`, `invert`, `max`, `min`, `parseInt`, `slice`,
+     * `sortBy`, `take`, `takeRight`, `template`, `trim`, `trimLeft`, `trimRight`,
+     * `trunc`, `random`, `range`, `sample`, `uniq`, and `words`
+     *
+     * @static
+     * @memberOf _
+     * @alias collect
+     * @category Collection
+     * @param {Array|Object|string} collection The collection to iterate over.
+     * @param {Function|Object|string} [iteratee=_.identity] The function invoked
+     *  per iteration. If a property name or object is provided it is used to
+     *  create a "_.property" or "_.matches" style callback respectively.
+     * @param {*} [thisArg] The `this` binding of `iteratee`.
+     * @returns {Array} Returns the new mapped array.
+     * @example
+     *
+     * _.map([1, 2, 3], function(n) { return n * 3; });
+     * // => [3, 6, 9]
+     *
+     * _.map({ 'one': 1, 'two': 2, 'three': 3 }, function(n) { return n * 3; });
+     * // => [3, 6, 9] (iteration order is not guaranteed)
+     *
+     * var users = [
+     *   { 'user': 'barney' },
+     *   { 'user': 'fred' }
+     * ];
+     *
+     * // using the "_.property" callback shorthand
+     * _.map(users, 'user');
+     * // => ['barney', 'fred']
+     */
+    function map(collection, iteratee, thisArg) {
+      var func = isArray(collection) ? arrayMap : baseMap;
+      iteratee = getCallback(iteratee, thisArg, 3);
+      return func(collection, iteratee);
+    }
+
+    /**
+     * Gets the maximum value of `collection`. If `collection` is empty or falsey
+     * `-Infinity` is returned. If an iteratee function is provided it is invoked
+     * for each value in `collection` to generate the criterion by which the value
+     * is ranked. The `iteratee` is bound to `thisArg` and invoked with three
+     * arguments; (value, index, collection).
+     *
+     * If a property name is provided for `predicate` the created "_.property"
+     * style callback returns the property value of the given element.
+     *
+     * If value is also provided for `thisArg` the created "_.matchesProperty"
+     * style callback returns `true` for elements that have a matching property
+     * value, else `false`.
+     *
+     * If an object is provided for `predicate` the created "_.matches" style
+     * callback returns `true` for elements that have the properties of the given
+     * object, else `false`.
+     *
+     * @static
+     * @memberOf _
+     * @category Collection
+     * @param {Array|Object|string} collection The collection to iterate over.
+     * @param {Function|Object|string} [iteratee] The function invoked per iteration.
+     *  If a property name or object is provided it is used to create a "_.property"
+     *  or "_.matches" style callback respectively.
+     * @param {*} [thisArg] The `this` binding of `iteratee`.
+     * @returns {*} Returns the maximum value.
+     * @example
+     *
+     * _.max([4, 2, 8, 6]);
+     * // => 8
+     *
+     * _.max([]);
+     * // => -Infinity
+     *
+     * var users = [
+     *   { 'user': 'barney', 'age': 36 },
+     *   { 'user': 'fred',   'age': 40 }
+     * ];
+     *
+     * _.max(users, function(chr) { return chr.age; });
+     * // => { 'user': 'fred', 'age': 40 };
+     *
+     * // using the "_.property" callback shorthand
+     * _.max(users, 'age');
+     * // => { 'user': 'fred', 'age': 40 };
+     */
+    var max = createExtremum(arrayMax);
+
+    /**
+     * Gets the minimum value of `collection`. If `collection` is empty or falsey
+     * `Infinity` is returned. If an iteratee function is provided it is invoked
+     * for each value in `collection` to generate the criterion by which the value
+     * is ranked. The `iteratee` is bound to `thisArg` and invoked with three
+     * arguments; (value, index, collection).
+     *
+     * If a property name is provided for `predicate` the created "_.property"
+     * style callback returns the property value of the given element.
+     *
+     * If value is also provided for `thisArg` the created "_.matchesProperty"
+     * style callback returns `true` for elements that have a matching property
+     * value, else `false`.
+     *
+     * If an object is provided for `predicate` the created "_.matches" style
+     * callback returns `true` for elements that have the properties of the given
+     * object, else `false`.
+     *
+     * @static
+     * @memberOf _
+     * @category Collection
+     * @param {Array|Object|string} collection The collection to iterate over.
+     * @param {Function|Object|string} [iteratee] The function invoked per iteration.
+     *  If a property name or object is provided it is used to create a "_.property"
+     *  or "_.matches" style callback respectively.
+     * @param {*} [thisArg] The `this` binding of `iteratee`.
+     * @returns {*} Returns the minimum value.
+     * @example
+     *
+     * _.min([4, 2, 8, 6]);
+     * // => 2
+     *
+     * _.min([]);
+     * // => Infinity
+     *
+     * var users = [
+     *   { 'user': 'barney', 'age': 36 },
+     *   { 'user': 'fred',   'age': 40 }
+     * ];
+     *
+     * _.min(users, function(chr) { return chr.age; });
+     * // => { 'user': 'barney', 'age': 36 };
+     *
+     * // using the "_.property" callback shorthand
+     * _.min(users, 'age');
+     * // => { 'user': 'barney', 'age': 36 };
+     */
+    var min = createExtremum(arrayMin, true);
+
+    /**
+     * Creates an array of elements split into two groups, the first of which
+     * contains elements `predicate` returns truthy for, while the second of which
+     * contains elements `predicate` returns falsey for. The predicate is bound
+     * to `thisArg` and invoked with three arguments; (value, index|key, collection).
+     *
+     * If a property name is provided for `predicate` the created "_.property"
+     * style callback returns the property value of the given element.
+     *
+     * If value is also provided for `thisArg` the created "_.matchesProperty"
+     * style callback returns `true` for elements that have a matching property
+     * value, else `false`.
+     *
+     * If an object is provided for `predicate` the created "_.matches" style
+     * callback returns `true` for elements that have the properties of the given
+     * object, else `false`.
+     *
+     * @static
+     * @memberOf _
+     * @category Collection
+     * @param {Array|Object|string} collection The collection to iterate over.
+     * @param {Function|Object|string} [predicate=_.identity] The function invoked
+     *  per iteration. If a property name or object is provided it is used to
+     *  create a "_.property" or "_.matches" style callback respectively.
+     * @param {*} [thisArg] The `this` binding of `predicate`.
+     * @returns {Array} Returns the array of grouped elements.
+     * @example
+     *
+     * _.partition([1, 2, 3], function(n) { return n % 2; });
+     * // => [[1, 3], [2]]
+     *
+     * _.partition([1.2, 2.3, 3.4], function(n) { return this.floor(n) % 2; }, Math);
+     * // => [[1, 3], [2]]
+     *
+     * var users = [
+     *   { 'user': 'barney',  'age': 36, 'active': false },
+     *   { 'user': 'fred',    'age': 40, 'active': true },
+     *   { 'user': 'pebbles', 'age': 1,  'active': false }
+     * ];
+     *
+     * var mapper = function(array) { return _.pluck(array, 'user'); };
+     *
+     * // using the "_.matches" callback shorthand
+     * _.map(_.partition(users, { 'age': 1, 'active': false }), mapper);
+     * // => [['pebbles'], ['barney', 'fred']]
+     *
+     * // using the "_.matchesProperty" callback shorthand
+     * _.map(_.partition(users, 'active', false), mapper);
+     * // => [['barney', 'pebbles'], ['fred']]
+     *
+     * // using the "_.property" callback shorthand
+     * _.map(_.partition(users, 'active'), mapper);
+     * // => [['fred'], ['barney', 'pebbles']]
+     */
+    var partition = createAggregator(function(result, value, key) {
+      result[key ? 0 : 1].push(value);
+    }, function() { return [[], []]; });
+
+    /**
+     * Gets the value of `key` from all elements in `collection`.
+     *
+     * @static
+     * @memberOf _
+     * @category Collection
+     * @param {Array|Object|string} collection The collection to iterate over.
+     * @param {string} key The key of the property to pluck.
+     * @returns {Array} Returns the property values.
+     * @example
+     *
+     * var users = [
+     *   { 'user': 'barney', 'age': 36 },
+     *   { 'user': 'fred',   'age': 40 }
+     * ];
+     *
+     * _.pluck(users, 'user');
+     * // => ['barney', 'fred']
+     *
+     * var userIndex = _.indexBy(users, 'user');
+     * _.pluck(userIndex, 'age');
+     * // => [36, 40] (iteration order is not guaranteed)
+     */
+    function pluck(collection, key) {
+      return map(collection, baseProperty(key));
+    }
+
+    /**
+     * Reduces `collection` to a value which is the accumulated result of running
+     * each element in `collection` through `iteratee`, where each successive
+     * invocation is supplied the return value of the previous. If `accumulator`
+     * is not provided the first element of `collection` is used as the initial
+     * value. The `iteratee` is bound to `thisArg`and invoked with four arguments;
+     * (accumulator, value, index|key, collection).
+     *
+     * Many lodash methods are guarded to work as interatees for methods like
+     * `_.reduce`, `_.reduceRight`, and `_.transform`.
+     *
+     * The guarded methods are:
+     * `assign`, `defaults`, `merge`, and `sortAllBy`
+     *
+     * @static
+     * @memberOf _
+     * @alias foldl, inject
+     * @category Collection
+     * @param {Array|Object|string} collection The collection to iterate over.
+     * @param {Function} [iteratee=_.identity] The function invoked per iteration.
+     * @param {*} [accumulator] The initial value.
+     * @param {*} [thisArg] The `this` binding of `iteratee`.
+     * @returns {*} Returns the accumulated value.
+     * @example
+     *
+     * var sum = _.reduce([1, 2, 3], function(sum, n) { return sum + n; });
+     * // => 6
+     *
+     * var mapped = _.reduce({ 'a': 1, 'b': 2, 'c': 3 }, function(result, n, key) {
+     *   result[key] = n * 3;
+     *   return result;
+     * }, {});
+     * // => { 'a': 3, 'b': 6, 'c': 9 } (iteration order is not guaranteed)
+     */
+    function reduce(collection, iteratee, accumulator, thisArg) {
+      var func = isArray(collection) ? arrayReduce : baseReduce;
+      return func(collection, getCallback(iteratee, thisArg, 4), accumulator, arguments.length < 3, baseEach);
+    }
+
+    /**
+     * This method is like `_.reduce` except that it iterates over elements of
+     * `collection` from right to left.
+     *
+     * @static
+     * @memberOf _
+     * @alias foldr
+     * @category Collection
+     * @param {Array|Object|string} collection The collection to iterate over.
+     * @param {Function} [iteratee=_.identity] The function invoked per iteration.
+     * @param {*} [accumulator] The initial value.
+     * @param {*} [thisArg] The `this` binding of `iteratee`.
+     * @returns {*} Returns the accumulated value.
+     * @example
+     *
+     * var array = [[0, 1], [2, 3], [4, 5]];
+     * _.reduceRight(array, function(flattened, other) { return flattened.concat(other); }, []);
+     * // => [4, 5, 2, 3, 0, 1]
+     */
+    function reduceRight(collection, iteratee, accumulator, thisArg) {
+      var func = isArray(collection) ? arrayReduceRight : baseReduce;
+      return func(collection, getCallback(iteratee, thisArg, 4), accumulator, arguments.length < 3, baseEachRight);
+    }
+
+    /**
+     * The opposite of `_.filter`; this method returns the elements of `collection`
+     * that `predicate` does **not** return truthy for.
+     *
+     * If a property name is provided for `predicate` the created "_.property"
+     * style callback returns the property value of the given element.
+     *
+     * If value is also provided for `thisArg` the created "_.matchesProperty"
+     * style callback returns `true` for elements that have a matching property
+     * value, else `false`.
+     *
+     * If an object is provided for `predicate` the created "_.matches" style
+     * callback returns `true` for elements that have the properties of the given
+     * object, else `false`.
+     *
+     * @static
+     * @memberOf _
+     * @category Collection
+     * @param {Array|Object|string} collection The collection to iterate over.
+     * @param {Function|Object|string} [predicate=_.identity] The function invoked
+     *  per iteration. If a property name or object is provided it is used to
+     *  create a "_.property" or "_.matches" style callback respectively.
+     * @param {*} [thisArg] The `this` binding of `predicate`.
+     * @returns {Array} Returns the new filtered array.
+     * @example
+     *
+     * var odds = _.reject([1, 2, 3, 4], function(n) { return n % 2 == 0; });
+     * // => [1, 3]
+     *
+     * var users = [
+     *   { 'user': 'barney', 'age': 36, 'active': false },
+     *   { 'user': 'fred',   'age': 40, 'active': true }
+     * ];
+     *
+     * // using the "_.matches" callback shorthand
+     * _.pluck(_.reject(users, { 'age': 40, 'active': true }), 'user');
+     * // => ['barney']
+     *
+     * // using the "_.matchesProperty" callback shorthand
+     * _.pluck(_.reject(users, 'active', false), 'user');
+     * // => ['fred']
+     *
+     * // using the "_.property" callback shorthand
+     * _.pluck(_.reject(users, 'active'), 'user');
+     * // => ['barney']
+     */
+    function reject(collection, predicate, thisArg) {
+      var func = isArray(collection) ? arrayFilter : baseFilter;
+      predicate = getCallback(predicate, thisArg, 3);
+      return func(collection, function(value, index, collection) {
+        return !predicate(value, index, collection);
+      });
+    }
+
+    /**
+     * Gets a random element or `n` random elements from a collection.
+     *
+     * @static
+     * @memberOf _
+     * @category Collection
+     * @param {Array|Object|string} collection The collection to sample.
+     * @param {number} [n] The number of elements to sample.
+     * @param- {Object} [guard] Enables use as a callback for functions like `_.map`.
+     * @returns {*} Returns the random sample(s).
+     * @example
+     *
+     * _.sample([1, 2, 3, 4]);
+     * // => 2
+     *
+     * _.sample([1, 2, 3, 4], 2);
+     * // => [3, 1]
+     */
+    function sample(collection, n, guard) {
+      if (guard ? isIterateeCall(collection, n, guard) : n == null) {
+        collection = toIterable(collection);
+        var length = collection.length;
+        return length > 0 ? collection[baseRandom(0, length - 1)] : undefined;
+      }
+      var result = shuffle(collection);
+      result.length = nativeMin(n < 0 ? 0 : (+n || 0), result.length);
+      return result;
+    }
+
+    /**
+     * Creates an array of shuffled values, using a version of the Fisher-Yates
+     * shuffle. See [Wikipedia](https://en.wikipedia.org/wiki/Fisher-Yates_shuffle)
+     * for more details.
+     *
+     * @static
+     * @memberOf _
+     * @category Collection
+     * @param {Array|Object|string} collection The collection to shuffle.
+     * @returns {Array} Returns the new shuffled array.
+     * @example
+     *
+     * _.shuffle([1, 2, 3, 4]);
+     * // => [4, 1, 3, 2]
+     */
+    function shuffle(collection) {
+      collection = toIterable(collection);
+
+      var index = -1,
+          length = collection.length,
+          result = Array(length);
+
+      while (++index < length) {
+        var rand = baseRandom(0, index);
+        if (index != rand) {
+          result[index] = result[rand];
+        }
+        result[rand] = collection[index];
+      }
+      return result;
+    }
+
+    /**
+     * Gets the size of `collection` by returning `collection.length` for
+     * array-like values or the number of own enumerable properties for objects.
+     *
+     * @static
+     * @memberOf _
+     * @category Collection
+     * @param {Array|Object|string} collection The collection to inspect.
+     * @returns {number} Returns the size of `collection`.
+     * @example
+     *
+     * _.size([1, 2]);
+     * // => 2
+     *
+     * _.size({ 'one': 1, 'two': 2, 'three': 3 });
+     * // => 3
+     *
+     * _.size('pebbles');
+     * // => 7
+     */
+    function size(collection) {
+      var length = collection ? collection.length : 0;
+      return isLength(length) ? length : keys(collection).length;
+    }
+
+    /**
+     * Checks if `predicate` returns truthy for **any** element of `collection`.
+     * The function returns as soon as it finds a passing value and does not iterate
+     * over the entire collection. The predicate is bound to `thisArg` and invoked
+     * with three arguments; (value, index|key, collection).
+     *
+     * If a property name is provided for `predicate` the created "_.property"
+     * style callback returns the property value of the given element.
+     *
+     * If value is also provided for `thisArg` the created "_.matchesProperty"
+     * style callback returns `true` for elements that have a matching property
+     * value, else `false`.
+     *
+     * If an object is provided for `predicate` the created "_.matches" style
+     * callback returns `true` for elements that have the properties of the given
+     * object, else `false`.
+     *
+     * @static
+     * @memberOf _
+     * @alias any
+     * @category Collection
+     * @param {Array|Object|string} collection The collection to iterate over.
+     * @param {Function|Object|string} [predicate=_.identity] The function invoked
+     *  per iteration. If a property name or object is provided it is used to
+     *  create a "_.property" or "_.matches" style callback respectively.
+     * @param {*} [thisArg] The `this` binding of `predicate`.
+     * @returns {boolean} Returns `true` if any element passes the predicate check,
+     *  else `false`.
+     * @example
+     *
+     * _.some([null, 0, 'yes', false], Boolean);
+     * // => true
+     *
+     * var users = [
+     *   { 'user': 'barney', 'age': 36, 'active': false },
+     *   { 'user': 'fred',   'age': 40, 'active': true }
+     * ];
+     *
+     * // using the "_.matches" callback shorthand
+     * _.some(users, { 'age': 1, 'active': true });
+     * // => false
+     *
+     * // using the "_.matchesProperty" callback shorthand
+     * _.some(users, 'active', false);
+     * // => true
+     *
+     * // using the "_.property" callback shorthand
+     * _.some(users, 'active');
+     * // => true
+     */
+    function some(collection, predicate, thisArg) {
+      var func = isArray(collection) ? arraySome : baseSome;
+      if (typeof predicate != 'function' || typeof thisArg != 'undefined') {
+        predicate = getCallback(predicate, thisArg, 3);
+      }
+      return func(collection, predicate);
+    }
+
+    /**
+     * Creates an array of elements, sorted in ascending order by the results of
+     * running each element in a collection through `iteratee`. This method performs
+     * a stable sort, that is, it preserves the original sort order of equal elements.
+     * The `iteratee` is bound to `thisArg` and invoked with three arguments;
+     * (value, index|key, collection).
+     *
+     * If a property name is provided for `predicate` the created "_.property"
+     * style callback returns the property value of the given element.
+     *
+     * If value is also provided for `thisArg` the created "_.matchesProperty"
+     * style callback returns `true` for elements that have a matching property
+     * value, else `false`.
+     *
+     * If an object is provided for `predicate` the created "_.matches" style
+     * callback returns `true` for elements that have the properties of the given
+     * object, else `false`.
+     *
+     * @static
+     * @memberOf _
+     * @category Collection
+     * @param {Array|Object|string} collection The collection to iterate over.
+     * @param {Array|Function|Object|string} [iteratee=_.identity] The function
+     *  invoked per iteration. If a property name or an object is provided it is
+     *  used to create a "_.property" or "_.matches" style callback respectively.
+     * @param {*} [thisArg] The `this` binding of `iteratee`.
+     * @returns {Array} Returns the new sorted array.
+     * @example
+     *
+     * _.sortBy([1, 2, 3], function(n) { return Math.sin(n); });
+     * // => [3, 1, 2]
+     *
+     * _.sortBy([1, 2, 3], function(n) { return this.sin(n); }, Math);
+     * // => [3, 1, 2]
+     *
+     * var users = [
+     *   { 'user': 'fred' },
+     *   { 'user': 'pebbles' },
+     *   { 'user': 'barney' }
+     * ];
+     *
+     * // using the "_.property" callback shorthand
+     * _.pluck(_.sortBy(users, 'user'), 'user');
+     * // => ['barney', 'fred', 'pebbles']
+     */
+    function sortBy(collection, iteratee, thisArg) {
+      var index = -1,
+          length = collection ? collection.length : 0,
+          result = isLength(length) ? Array(length) : [];
+
+      if (thisArg && isIterateeCall(collection, iteratee, thisArg)) {
+        iteratee = null;
+      }
+      iteratee = getCallback(iteratee, thisArg, 3);
+      baseEach(collection, function(value, key, collection) {
+        result[++index] = { 'criteria': iteratee(value, key, collection), 'index': index, 'value': value };
+      });
+      return baseSortBy(result, compareAscending);
+    }
+
+    /**
+     * This method is like `_.sortBy` except that it sorts by property names
+     * instead of an iteratee function.
+     *
+     * @static
+     * @memberOf _
+     * @category Collection
+     * @param {Array|Object|string} collection The collection to iterate over.
+     * @param {...(string|string[])} props The property names to sort by,
+     *  specified as individual property names or arrays of property names.
+     * @returns {Array} Returns the new sorted array.
+     * @example
+     *
+     * var users = [
+     *   { 'user': 'barney', 'age': 36 },
+     *   { 'user': 'fred',   'age': 40 },
+     *   { 'user': 'barney', 'age': 26 },
+     *   { 'user': 'fred',   'age': 30 }
+     * ];
+     *
+     * _.map(_.sortByAll(users, ['user', 'age']), _.values);
+     * // => [['barney', 26], ['barney', 36], ['fred', 30], ['fred', 40]]
+     */
+    function sortByAll(collection) {
+      var args = arguments;
+      if (args.length > 3 && isIterateeCall(args[1], args[2], args[3])) {
+        args = [collection, args[1]];
+      }
+      var index = -1,
+          length = collection ? collection.length : 0,
+          props = baseFlatten(args, false, false, 1),
+          result = isLength(length) ? Array(length) : [];
+
+      baseEach(collection, function(value) {
+        var length = props.length,
+            criteria = Array(length);
+
+        while (length--) {
+          criteria[length] = value == null ? undefined : value[props[length]];
+        }
+        result[++index] = { 'criteria': criteria, 'index': index, 'value': value };
+      });
+      return baseSortBy(result, compareMultipleAscending);
+    }
+
+    /**
+     * Performs a deep comparison between each element in `collection` and the
+     * source object, returning an array of all elements that have equivalent
+     * property values.
+     *
+     * **Note:** This method supports comparing arrays, booleans, `Date` objects,
+     * numbers, `Object` objects, regexes, and strings. Objects are compared by
+     * their own, not inherited, enumerable properties. For comparing a single
+     * own or inherited property value see `_.matchesProperty`.
+     *
+     * @static
+     * @memberOf _
+     * @category Collection
+     * @param {Array|Object|string} collection The collection to search.
+     * @param {Object} source The object of property values to match.
+     * @returns {Array} Returns the new filtered array.
+     * @example
+     *
+     * var users = [
+     *   { 'user': 'barney', 'age': 36, 'active': false, 'pets': ['hoppy'] },
+     *   { 'user': 'fred',   'age': 40, 'active': true, 'pets': ['baby puss', 'dino'] }
+     * ];
+     *
+     * _.pluck(_.where(users, { 'age': 36, 'active': false }), 'user');
+     * // => ['barney']
+     *
+     * _.pluck(_.where(users, { 'pets': ['dino'] }), 'user');
+     * // => ['fred']
+     */
+    function where(collection, source) {
+      return filter(collection, baseMatches(source));
+    }
+
+    /*------------------------------------------------------------------------*/
+
+    /**
+     * Gets the number of milliseconds that have elapsed since the Unix epoch
+     * (1 January 1970 00:00:00 UTC).
+     *
+     * @static
+     * @memberOf _
+     * @category Date
+     * @example
+     *
+     * _.defer(function(stamp) { console.log(_.now() - stamp); }, _.now());
+     * // => logs the number of milliseconds it took for the deferred function to be invoked
+     */
+    var now = nativeNow || function() {
+      return new Date().getTime();
+    };
+
+    /*------------------------------------------------------------------------*/
+
+    /**
+     * The opposite of `_.before`; this method creates a function that invokes
+     * `func` once it is called `n` or more times.
+     *
+     * @static
+     * @memberOf _
+     * @category Function
+     * @param {number} n The number of calls before `func` is invoked.
+     * @param {Function} func The function to restrict.
+     * @returns {Function} Returns the new restricted function.
+     * @example
+     *
+     * var saves = ['profile', 'settings'];
+     *
+     * var done = _.after(saves.length, function() {
+     *   console.log('done saving!');
+     * });
+     *
+     * _.forEach(saves, function(type) {
+     *   asyncSave({ 'type': type, 'complete': done });
+     * });
+     * // => logs 'done saving!' after the two async saves have completed
+     */
+    function after(n, func) {
+      if (typeof func != 'function') {
+        if (typeof n == 'function') {
+          var temp = n;
+          n = func;
+          func = temp;
+        } else {
+          throw new TypeError(FUNC_ERROR_TEXT);
+        }
+      }
+      n = nativeIsFinite(n = +n) ? n : 0;
+      return function() {
+        if (--n < 1) {
+          return func.apply(this, arguments);
+        }
+      };
+    }
+
+    /**
+     * Creates a function that accepts up to `n` arguments ignoring any
+     * additional arguments.
+     *
+     * @static
+     * @memberOf _
+     * @category Function
+     * @param {Function} func The function to cap arguments for.
+     * @param {number} [n=func.length] The arity cap.
+     * @param- {Object} [guard] Enables use as a callback for functions like `_.map`.
+     * @returns {Function} Returns the new function.
+     * @example
+     *
+     * _.map(['6', '8', '10'], _.ary(parseInt, 1));
+     * // => [6, 8, 10]
+     */
+    function ary(func, n, guard) {
+      if (guard && isIterateeCall(func, n, guard)) {
+        n = null;
+      }
+      n = (func && n == null) ? func.length : nativeMax(+n || 0, 0);
+      return createWrapper(func, ARY_FLAG, null, null, null, null, n);
+    }
+
+    /**
+     * Creates a function that invokes `func`, with the `this` binding and arguments
+     * of the created function, while it is called less than `n` times. Subsequent
+     * calls to the created function return the result of the last `func` invocation.
+     *
+     * @static
+     * @memberOf _
+     * @category Function
+     * @param {number} n The number of calls at which `func` is no longer invoked.
+     * @param {Function} func The function to restrict.
+     * @returns {Function} Returns the new restricted function.
+     * @example
+     *
+     * jQuery('#add').on('click', _.before(5, addContactToList));
+     * // => allows adding up to 4 contacts to the list
+     */
+    function before(n, func) {
+      var result;
+      if (typeof func != 'function') {
+        if (typeof n == 'function') {
+          var temp = n;
+          n = func;
+          func = temp;
+        } else {
+          throw new TypeError(FUNC_ERROR_TEXT);
+        }
+      }
+      return function() {
+        if (--n > 0) {
+          result = func.apply(this, arguments);
+        } else {
+          func = null;
+        }
+        return result;
+      };
+    }
+
+    /**
+     * Creates a function that invokes `func` with the `this` binding of `thisArg`
+     * and prepends any additional `_.bind` arguments to those provided to the
+     * bound function.
+     *
+     * The `_.bind.placeholder` value, which defaults to `_` in monolithic builds,
+     * may be used as a placeholder for partially applied arguments.
+     *
+     * **Note:** Unlike native `Function#bind` this method does not set the `length`
+     * property of bound functions.
+     *
+     * @static
+     * @memberOf _
+     * @category Function
+     * @param {Function} func The function to bind.
+     * @param {*} thisArg The `this` binding of `func`.
+     * @param {...*} [args] The arguments to be partially applied.
+     * @returns {Function} Returns the new bound function.
+     * @example
+     *
+     * var greet = function(greeting, punctuation) {
+     *   return greeting + ' ' + this.user + punctuation;
+     * };
+     *
+     * var object = { 'user': 'fred' };
+     *
+     * var bound = _.bind(greet, object, 'hi');
+     * bound('!');
+     * // => 'hi fred!'
+     *
+     * // using placeholders
+     * var bound = _.bind(greet, object, _, '!');
+     * bound('hi');
+     * // => 'hi fred!'
+     */
+    function bind(func, thisArg) {
+      var bitmask = BIND_FLAG;
+      if (arguments.length > 2) {
+        var partials = baseSlice(arguments, 2),
+            holders = replaceHolders(partials, bind.placeholder);
+
+        bitmask |= PARTIAL_FLAG;
+      }
+      return createWrapper(func, bitmask, thisArg, partials, holders);
+    }
+
+    /**
+     * Binds methods of an object to the object itself, overwriting the existing
+     * method. Method names may be specified as individual arguments or as arrays
+     * of method names. If no method names are provided all enumerable function
+     * properties, own and inherited, of `object` are bound.
+     *
+     * **Note:** This method does not set the `length` property of bound functions.
+     *
+     * @static
+     * @memberOf _
+     * @category Function
+     * @param {Object} object The object to bind and assign the bound methods to.
+     * @param {...(string|string[])} [methodNames] The object method names to bind,
+     *  specified as individual method names or arrays of method names.
+     * @returns {Object} Returns `object`.
+     * @example
+     *
+     * var view = {
+     *   'label': 'docs',
+     *   'onClick': function() { console.log('clicked ' + this.label); }
+     * };
+     *
+     * _.bindAll(view);
+     * jQuery('#docs').on('click', view.onClick);
+     * // => logs 'clicked docs' when the element is clicked
+     */
+    function bindAll(object) {
+      return baseBindAll(object,
+        arguments.length > 1
+          ? baseFlatten(arguments, false, false, 1)
+          : functions(object)
+      );
+    }
+
+    /**
+     * Creates a function that invokes the method at `object[key]` and prepends
+     * any additional `_.bindKey` arguments to those provided to the bound function.
+     *
+     * This method differs from `_.bind` by allowing bound functions to reference
+     * methods that may be redefined or don't yet exist.
+     * See [Peter Michaux's article](http://michaux.ca/articles/lazy-function-definition-pattern)
+     * for more details.
+     *
+     * The `_.bindKey.placeholder` value, which defaults to `_` in monolithic
+     * builds, may be used as a placeholder for partially applied arguments.
+     *
+     * @static
+     * @memberOf _
+     * @category Function
+     * @param {Object} object The object the method belongs to.
+     * @param {string} key The key of the method.
+     * @param {...*} [args] The arguments to be partially applied.
+     * @returns {Function} Returns the new bound function.
+     * @example
+     *
+     * var object = {
+     *   'user': 'fred',
+     *   'greet': function(greeting, punctuation) {
+     *     return greeting + ' ' + this.user + punctuation;
+     *   }
+     * };
+     *
+     * var bound = _.bindKey(object, 'greet', 'hi');
+     * bound('!');
+     * // => 'hi fred!'
+     *
+     * object.greet = function(greeting, punctuation) {
+     *   return greeting + 'ya ' + this.user + punctuation;
+     * };
+     *
+     * bound('!');
+     * // => 'hiya fred!'
+     *
+     * // using placeholders
+     * var bound = _.bindKey(object, 'greet', _, '!');
+     * bound('hi');
+     * // => 'hiya fred!'
+     */
+    function bindKey(object, key) {
+      var bitmask = BIND_FLAG | BIND_KEY_FLAG;
+      if (arguments.length > 2) {
+        var partials = baseSlice(arguments, 2),
+            holders = replaceHolders(partials, bindKey.placeholder);
+
+        bitmask |= PARTIAL_FLAG;
+      }
+      return createWrapper(key, bitmask, object, partials, holders);
+    }
+
+    /**
+     * Creates a function that accepts one or more arguments of `func` that when
+     * called either invokes `func` returning its result, if all `func` arguments
+     * have been provided, or returns a function that accepts one or more of the
+     * remaining `func` arguments, and so on. The arity of `func` may be specified
+     * if `func.length` is not sufficient.
+     *
+     * The `_.curry.placeholder` value, which defaults to `_` in monolithic builds,
+     * may be used as a placeholder for provided arguments.
+     *
+     * **Note:** This method does not set the `length` property of curried functions.
+     *
+     * @static
+     * @memberOf _
+     * @category Function
+     * @param {Function} func The function to curry.
+     * @param {number} [arity=func.length] The arity of `func`.
+     * @param- {Object} [guard] Enables use as a callback for functions like `_.map`.
+     * @returns {Function} Returns the new curried function.
+     * @example
+     *
+     * var abc = function(a, b, c) {
+     *   return [a, b, c];
+     * };
+     *
+     * var curried = _.curry(abc);
+     *
+     * curried(1)(2)(3);
+     * // => [1, 2, 3]
+     *
+     * curried(1, 2)(3);
+     * // => [1, 2, 3]
+     *
+     * curried(1, 2, 3);
+     * // => [1, 2, 3]
+     *
+     * // using placeholders
+     * curried(1)(_, 3)(2);
+     * // => [1, 2, 3]
+     */
+    function curry(func, arity, guard) {
+      if (guard && isIterateeCall(func, arity, guard)) {
+        arity = null;
+      }
+      var result = createWrapper(func, CURRY_FLAG, null, null, null, null, null, arity);
+      result.placeholder = curry.placeholder;
+      return result;
+    }
+
+    /**
+     * This method is like `_.curry` except that arguments are applied to `func`
+     * in the manner of `_.partialRight` instead of `_.partial`.
+     *
+     * The `_.curryRight.placeholder` value, which defaults to `_` in monolithic
+     * builds, may be used as a placeholder for provided arguments.
+     *
+     * **Note:** This method does not set the `length` property of curried functions.
+     *
+     * @static
+     * @memberOf _
+     * @category Function
+     * @param {Function} func The function to curry.
+     * @param {number} [arity=func.length] The arity of `func`.
+     * @param- {Object} [guard] Enables use as a callback for functions like `_.map`.
+     * @returns {Function} Returns the new curried function.
+     * @example
+     *
+     * var abc = function(a, b, c) {
+     *   return [a, b, c];
+     * };
+     *
+     * var curried = _.curryRight(abc);
+     *
+     * curried(3)(2)(1);
+     * // => [1, 2, 3]
+     *
+     * curried(2, 3)(1);
+     * // => [1, 2, 3]
+     *
+     * curried(1, 2, 3);
+     * // => [1, 2, 3]
+     *
+     * // using placeholders
+     * curried(3)(1, _)(2);
+     * // => [1, 2, 3]
+     */
+    function curryRight(func, arity, guard) {
+      if (guard && isIterateeCall(func, arity, guard)) {
+        arity = null;
+      }
+      var result = createWrapper(func, CURRY_RIGHT_FLAG, null, null, null, null, null, arity);
+      result.placeholder = curryRight.placeholder;
+      return result;
+    }
+
+    /**
+     * Creates a function that delays invoking `func` until after `wait` milliseconds
+     * have elapsed since the last time it was invoked. The created function comes
+     * with a `cancel` method to cancel delayed invocations. Provide an options
+     * object to indicate that `func` should be invoked on the leading and/or
+     * trailing edge of the `wait` timeout. Subsequent calls to the debounced
+     * function return the result of the last `func` invocation.
+     *
+     * **Note:** If `leading` and `trailing` options are `true`, `func` is invoked
+     * on the trailing edge of the timeout only if the the debounced function is
+     * invoked more than once during the `wait` timeout.
+     *
+     * See [David Corbacho's article](http://drupalmotion.com/article/debounce-and-throttle-visual-explanation)
+     * for details over the differences between `_.debounce` and `_.throttle`.
+     *
+     * @static
+     * @memberOf _
+     * @category Function
+     * @param {Function} func The function to debounce.
+     * @param {number} wait The number of milliseconds to delay.
+     * @param {Object} [options] The options object.
+     * @param {boolean} [options.leading=false] Specify invoking on the leading
+     *  edge of the timeout.
+     * @param {number} [options.maxWait] The maximum time `func` is allowed to be
+     *  delayed before it is invoked.
+     * @param {boolean} [options.trailing=true] Specify invoking on the trailing
+     *  edge of the timeout.
+     * @returns {Function} Returns the new debounced function.
+     * @example
+     *
+     * // avoid costly calculations while the window size is in flux
+     * jQuery(window).on('resize', _.debounce(calculateLayout, 150));
+     *
+     * // invoke `sendMail` when the click event is fired, debouncing subsequent calls
+     * jQuery('#postbox').on('click', _.debounce(sendMail, 300, {
+     *   'leading': true,
+     *   'trailing': false
+     * }));
+     *
+     * // ensure `batchLog` is invoked once after 1 second of debounced calls
+     * var source = new EventSource('/stream');
+     * jQuery(source).on('message', _.debounce(batchLog, 250, {
+     *   'maxWait': 1000
+     * }));
+     *
+     * // cancel a debounced call
+     * var todoChanges = _.debounce(batchLog, 1000);
+     * Object.observe(models.todo, todoChanges);
+     *
+     * Object.observe(models, function(changes) {
+     *   if (_.find(changes, { 'user': 'todo', 'type': 'delete'})) {
+     *     todoChanges.cancel();
+     *   }
+     * }, ['delete']);
+     *
+     * // ...at some point `models.todo` is changed
+     * models.todo.completed = true;
+     *
+     * // ...before 1 second has passed `models.todo` is deleted
+     * // which cancels the debounced `todoChanges` call
+     * delete models.todo;
+     */
+    function debounce(func, wait, options) {
+      var args,
+          maxTimeoutId,
+          result,
+          stamp,
+          thisArg,
+          timeoutId,
+          trailingCall,
+          lastCalled = 0,
+          maxWait = false,
+          trailing = true;
+
+      if (typeof func != 'function') {
+        throw new TypeError(FUNC_ERROR_TEXT);
+      }
+      wait = wait < 0 ? 0 : wait;
+      if (options === true) {
+        var leading = true;
+        trailing = false;
+      } else if (isObject(options)) {
+        leading = options.leading;
+        maxWait = 'maxWait' in options && nativeMax(+options.maxWait || 0, wait);
+        trailing = 'trailing' in options ? options.trailing : trailing;
+      }
+
+      function cancel() {
+        if (timeoutId) {
+          clearTimeout(timeoutId);
+        }
+        if (maxTimeoutId) {
+          clearTimeout(maxTimeoutId);
+        }
+        maxTimeoutId = timeoutId = trailingCall = undefined;
+      }
+
+      function delayed() {
+        var remaining = wait - (now() - stamp);
+        if (remaining <= 0 || remaining > wait) {
+          if (maxTimeoutId) {
+            clearTimeout(maxTimeoutId);
+          }
+          var isCalled = trailingCall;
+          maxTimeoutId = timeoutId = trailingCall = undefined;
+          if (isCalled) {
+            lastCalled = now();
+            result = func.apply(thisArg, args);
+            if (!timeoutId && !maxTimeoutId) {
+              args = thisArg = null;
+            }
+          }
+        } else {
+          timeoutId = setTimeout(delayed, remaining);
+        }
+      }
+
+      function maxDelayed() {
+        if (timeoutId) {
+          clearTimeout(timeoutId);
+        }
+        maxTimeoutId = timeoutId = trailingCall = undefined;
+        if (trailing || (maxWait !== wait)) {
+          lastCalled = now();
+          result = func.apply(thisArg, args);
+          if (!timeoutId && !maxTimeoutId) {
+            args = thisArg = null;
+          }
+        }
+      }
+
+      function debounced() {
+        args = arguments;
+        stamp = now();
+        thisArg = this;
+        trailingCall = trailing && (timeoutId || !leading);
+
+        if (maxWait === false) {
+          var leadingCall = leading && !timeoutId;
+        } else {
+          if (!maxTimeoutId && !leading) {
+            lastCalled = stamp;
+          }
+          var remaining = maxWait - (stamp - lastCalled),
+              isCalled = remaining <= 0 || remaining > maxWait;
+
+          if (isCalled) {
+            if (maxTimeoutId) {
+              maxTimeoutId = clearTimeout(maxTimeoutId);
+            }
+            lastCalled = stamp;
+            result = func.apply(thisArg, args);
+          }
+          else if (!maxTimeoutId) {
+            maxTimeoutId = setTimeout(maxDelayed, remaining);
+          }
+        }
+        if (isCalled && timeoutId) {
+          timeoutId = clearTimeout(timeoutId);
+        }
+        else if (!timeoutId && wait !== maxWait) {
+          timeoutId = setTimeout(delayed, wait);
+        }
+        if (leadingCall) {
+          isCalled = true;
+          result = func.apply(thisArg, args);
+        }
+        if (isCalled && !timeoutId && !maxTimeoutId) {
+          args = thisArg = null;
+        }
+        return result;
+      }
+      debounced.cancel = cancel;
+      return debounced;
+    }
+
+    /**
+     * Defers invoking the `func` until the current call stack has cleared. Any
+     * additional arguments are provided to `func` when it is invoked.
+     *
+     * @static
+     * @memberOf _
+     * @category Function
+     * @param {Function} func The function to defer.
+     * @param {...*} [args] The arguments to invoke the function with.
+     * @returns {number} Returns the timer id.
+     * @example
+     *
+     * _.defer(function(text) { console.log(text); }, 'deferred');
+     * // logs 'deferred' after one or more milliseconds
+     */
+    function defer(func) {
+      return baseDelay(func, 1, arguments, 1);
+    }
+
+    /**
+     * Invokes `func` after `wait` milliseconds. Any additional arguments are
+     * provided to `func` when it is invoked.
+     *
+     * @static
+     * @memberOf _
+     * @category Function
+     * @param {Function} func The function to delay.
+     * @param {number} wait The number of milliseconds to delay invocation.
+     * @param {...*} [args] The arguments to invoke the function with.
+     * @returns {number} Returns the timer id.
+     * @example
+     *
+     * _.delay(function(text) { console.log(text); }, 1000, 'later');
+     * // => logs 'later' after one second
+     */
+    function delay(func, wait) {
+      return baseDelay(func, wait, arguments, 2);
+    }
+
+    /**
+     * Creates a function that returns the result of invoking the provided
+     * functions with the `this` binding of the created function, where each
+     * successive invocation is supplied the return value of the previous.
+     *
+     * @static
+     * @memberOf _
+     * @category Function
+     * @param {...Function} [funcs] Functions to invoke.
+     * @returns {Function} Returns the new function.
+     * @example
+     *
+     * function add(x, y) {
+     *   return x + y;
+     * }
+     *
+     * function square(n) {
+     *   return n * n;
+     * }
+     *
+     * var addSquare = _.flow(add, square);
+     * addSquare(1, 2);
+     * // => 9
+     */
+    function flow() {
+      var funcs = arguments,
+          length = funcs.length;
+
+      if (!length) {
+        return function() { return arguments[0]; };
+      }
+      if (!arrayEvery(funcs, isFunction)) {
+        throw new TypeError(FUNC_ERROR_TEXT);
+      }
+      return function() {
+        var index = 0,
+            result = funcs[index].apply(this, arguments);
+
+        while (++index < length) {
+          result = funcs[index].call(this, result);
+        }
+        return result;
+      };
+    }
+
+    /**
+     * This method is like `_.flow` except that it creates a function that
+     * invokes the provided functions from right to left.
+     *
+     * @static
+     * @memberOf _
+     * @alias backflow, compose
+     * @category Function
+     * @param {...Function} [funcs] Functions to invoke.
+     * @returns {Function} Returns the new function.
+     * @example
+     *
+     * function add(x, y) {
+     *   return x + y;
+     * }
+     *
+     * function square(n) {
+     *   return n * n;
+     * }
+     *
+     * var addSquare = _.flowRight(square, add);
+     * addSquare(1, 2);
+     * // => 9
+     */
+    function flowRight() {
+      var funcs = arguments,
+          fromIndex = funcs.length - 1;
+
+      if (fromIndex < 0) {
+        return function() { return arguments[0]; };
+      }
+      if (!arrayEvery(funcs, isFunction)) {
+        throw new TypeError(FUNC_ERROR_TEXT);
+      }
+      return function() {
+        var index = fromIndex,
+            result = funcs[index].apply(this, arguments);
+
+        while (index--) {
+          result = funcs[index].call(this, result);
+        }
+        return result;
+      };
+    }
+
+    /**
+     * Creates a function that memoizes the result of `func`. If `resolver` is
+     * provided it determines the cache key for storing the result based on the
+     * arguments provided to the memoized function. By default, the first argument
+     * provided to the memoized function is coerced to a string and used as the
+     * cache key. The `func` is invoked with the `this` binding of the memoized
+     * function.
+     *
+     * **Note:** The cache is exposed as the `cache` property on the memoized
+     * function. Its creation may be customized by replacing the `_.memoize.Cache`
+     * constructor with one whose instances implement the ES `Map` method interface
+     * of `get`, `has`, and `set`. See the
+     * [ES spec](https://people.mozilla.org/~jorendorff/es6-draft.html#sec-properties-of-the-map-prototype-object)
+     * for more details.
+     *
+     * @static
+     * @memberOf _
+     * @category Function
+     * @param {Function} func The function to have its output memoized.
+     * @param {Function} [resolver] The function to resolve the cache key.
+     * @returns {Function} Returns the new memoizing function.
+     * @example
+     *
+     * var upperCase = _.memoize(function(string) {
+     *   return string.toUpperCase();
+     * });
+     *
+     * upperCase('fred');
+     * // => 'FRED'
+     *
+     * // modifying the result cache
+     * upperCase.cache.set('fred', 'BARNEY');
+     * upperCase('fred');
+     * // => 'BARNEY'
+     *
+     * // replacing `_.memoize.Cache`
+     * var object = { 'user': 'fred' };
+     * var other = { 'user': 'barney' };
+     * var identity = _.memoize(_.identity);
+     *
+     * identity(object);
+     * // => { 'user': 'fred' }
+     * identity(other);
+     * // => { 'user': 'fred' }
+     *
+     * _.memoize.Cache = WeakMap;
+     * var identity = _.memoize(_.identity);
+     *
+     * identity(object);
+     * // => { 'user': 'fred' }
+     * identity(other);
+     * // => { 'user': 'barney' }
+     */
+    function memoize(func, resolver) {
+      if (typeof func != 'function' || (resolver && typeof resolver != 'function')) {
+        throw new TypeError(FUNC_ERROR_TEXT);
+      }
+      var memoized = function() {
+        var cache = memoized.cache,
+            key = resolver ? resolver.apply(this, arguments) : arguments[0];
+
+        if (cache.has(key)) {
+          return cache.get(key);
+        }
+        var result = func.apply(this, arguments);
+        cache.set(key, result);
+        return result;
+      };
+      memoized.cache = new memoize.Cache;
+      return memoized;
+    }
+
+    /**
+     * Creates a function that negates the result of the predicate `func`. The
+     * `func` predicate is invoked with the `this` binding and arguments of the
+     * created function.
+     *
+     * @static
+     * @memberOf _
+     * @category Function
+     * @param {Function} predicate The predicate to negate.
+     * @returns {Function} Returns the new function.
+     * @example
+     *
+     * function isEven(n) {
+     *   return n % 2 == 0;
+     * }
+     *
+     * _.filter([1, 2, 3, 4, 5, 6], _.negate(isEven));
+     * // => [1, 3, 5]
+     */
+    function negate(predicate) {
+      if (typeof predicate != 'function') {
+        throw new TypeError(FUNC_ERROR_TEXT);
+      }
+      return function() {
+        return !predicate.apply(this, arguments);
+      };
+    }
+
+    /**
+     * Creates a function that is restricted to invoking `func` once. Repeat calls
+     * to the function return the value of the first call. The `func` is invoked
+     * with the `this` binding of the created function.
+     *
+     * @static
+     * @memberOf _
+     * @category Function
+     * @param {Function} func The function to restrict.
+     * @returns {Function} Returns the new restricted function.
+     * @example
+     *
+     * var initialize = _.once(createApplication);
+     * initialize();
+     * initialize();
+     * // `initialize` invokes `createApplication` once
+     */
+    function once(func) {
+      return before(func, 2);
+    }
+
+    /**
+     * Creates a function that invokes `func` with `partial` arguments prepended
+     * to those provided to the new function. This method is like `_.bind` except
+     * it does **not** alter the `this` binding.
+     *
+     * The `_.partial.placeholder` value, which defaults to `_` in monolithic
+     * builds, may be used as a placeholder for partially applied arguments.
+     *
+     * **Note:** This method does not set the `length` property of partially
+     * applied functions.
+     *
+     * @static
+     * @memberOf _
+     * @category Function
+     * @param {Function} func The function to partially apply arguments to.
+     * @param {...*} [args] The arguments to be partially applied.
+     * @returns {Function} Returns the new partially applied function.
+     * @example
+     *
+     * var greet = function(greeting, name) {
+     *   return greeting + ' ' + name;
+     * };
+     *
+     * var sayHelloTo = _.partial(greet, 'hello');
+     * sayHelloTo('fred');
+     * // => 'hello fred'
+     *
+     * // using placeholders
+     * var greetFred = _.partial(greet, _, 'fred');
+     * greetFred('hi');
+     * // => 'hi fred'
+     */
+    function partial(func) {
+      var partials = baseSlice(arguments, 1),
+          holders = replaceHolders(partials, partial.placeholder);
+
+      return createWrapper(func, PARTIAL_FLAG, null, partials, holders);
+    }
+
+    /**
+     * This method is like `_.partial` except that partially applied arguments
+     * are appended to those provided to the new function.
+     *
+     * The `_.partialRight.placeholder` value, which defaults to `_` in monolithic
+     * builds, may be used as a placeholder for partially applied arguments.
+     *
+     * **Note:** This method does not set the `length` property of partially
+     * applied functions.
+     *
+     * @static
+     * @memberOf _
+     * @category Function
+     * @param {Function} func The function to partially apply arguments to.
+     * @param {...*} [args] The arguments to be partially applied.
+     * @returns {Function} Returns the new partially applied function.
+     * @example
+     *
+     * var greet = function(greeting, name) {
+     *   return greeting + ' ' + name;
+     * };
+     *
+     * var greetFred = _.partialRight(greet, 'fred');
+     * greetFred('hi');
+     * // => 'hi fred'
+     *
+     * // using placeholders
+     * var sayHelloTo = _.partialRight(greet, 'hello', _);
+     * sayHelloTo('fred');
+     * // => 'hello fred'
+     */
+    function partialRight(func) {
+      var partials = baseSlice(arguments, 1),
+          holders = replaceHolders(partials, partialRight.placeholder);
+
+      return createWrapper(func, PARTIAL_RIGHT_FLAG, null, partials, holders);
+    }
+
+    /**
+     * Creates a function that invokes `func` with arguments arranged according
+     * to the specified indexes where the argument value at the first index is
+     * provided as the first argument, the argument value at the second index is
+     * provided as the second argument, and so on.
+     *
+     * @static
+     * @memberOf _
+     * @category Function
+     * @param {Function} func The function to rearrange arguments for.
+     * @param {...(number|number[])} indexes The arranged argument indexes,
+     *  specified as individual indexes or arrays of indexes.
+     * @returns {Function} Returns the new function.
+     * @example
+     *
+     * var rearged = _.rearg(function(a, b, c) {
+     *   return [a, b, c];
+     * }, 2, 0, 1);
+     *
+     * rearged('b', 'c', 'a')
+     * // => ['a', 'b', 'c']
+     *
+     * var map = _.rearg(_.map, [1, 0]);
+     * map(function(n) { return n * 3; }, [1, 2, 3]);
+     * // => [3, 6, 9]
+     */
+    function rearg(func) {
+      var indexes = baseFlatten(arguments, false, false, 1);
+      return createWrapper(func, REARG_FLAG, null, null, null, indexes);
+    }
+
+    /**
+     * Creates a function that invokes `func` with the `this` binding of the
+     * created function and the array of arguments provided to the created
+     * function much like [Function#apply](http://es5.github.io/#x15.3.4.3).
+     *
+     * @static
+     * @memberOf _
+     * @category Function
+     * @param {Function} func The function to spread arguments over.
+     * @returns {*} Returns the new function.
+     * @example
+     *
+     * var spread = _.spread(function(who, what) {
+     *   return who + ' says ' + what;
+     * });
+     *
+     * spread(['Fred', 'hello']);
+     * // => 'Fred says hello'
+     *
+     * // with a Promise
+     * var numbers = Promise.all([
+     *   Promise.resolve(40),
+     *   Promise.resolve(36)
+     * ]);
+     *
+     * var add = function(x, y) {
+     *   return x + y;
+     * };
+     *
+     * numbers.then(_.spread(add));
+     * // => a Promise of 76
+     */
+    function spread(func) {
+      if (typeof func != 'function') {
+        throw new TypeError(FUNC_ERROR_TEXT);
+      }
+      return function(array) {
+        return func.apply(this, array);
+      };
+    }
+
+    /**
+     * Creates a function that only invokes `func` at most once per every `wait`
+     * milliseconds. The created function comes with a `cancel` method to cancel
+     * delayed invocations. Provide an options object to indicate that `func`
+     * should be invoked on the leading and/or trailing edge of the `wait` timeout.
+     * Subsequent calls to the throttled function return the result of the last
+     * `func` call.
+     *
+     * **Note:** If `leading` and `trailing` options are `true`, `func` is invoked
+     * on the trailing edge of the timeout only if the the throttled function is
+     * invoked more than once during the `wait` timeout.
+     *
+     * See [David Corbacho's article](http://drupalmotion.com/article/debounce-and-throttle-visual-explanation)
+     * for details over the differences between `_.throttle` and `_.debounce`.
+     *
+     * @static
+     * @memberOf _
+     * @category Function
+     * @param {Function} func The function to throttle.
+     * @param {number} wait The number of milliseconds to throttle invocations to.
+     * @param {Object} [options] The options object.
+     * @param {boolean} [options.leading=true] Specify invoking on the leading
+     *  edge of the timeout.
+     * @param {boolean} [options.trailing=true] Specify invoking on the trailing
+     *  edge of the timeout.
+     * @returns {Function} Returns the new throttled function.
+     * @example
+     *
+     * // avoid excessively updating the position while scrolling
+     * jQuery(window).on('scroll', _.throttle(updatePosition, 100));
+     *
+     * // invoke `renewToken` when the click event is fired, but not more than once every 5 minutes
+     * var throttled =  _.throttle(renewToken, 300000, { 'trailing': false })
+     * jQuery('.interactive').on('click', throttled);
+     *
+     * // cancel a trailing throttled call
+     * jQuery(window).on('popstate', throttled.cancel);
+     */
+    function throttle(func, wait, options) {
+      var leading = true,
+          trailing = true;
+
+      if (typeof func != 'function') {
+        throw new TypeError(FUNC_ERROR_TEXT);
+      }
+      if (options === false) {
+        leading = false;
+      } else if (isObject(options)) {
+        leading = 'leading' in options ? !!options.leading : leading;
+        trailing = 'trailing' in options ? !!options.trailing : trailing;
+      }
+      debounceOptions.leading = leading;
+      debounceOptions.maxWait = +wait;
+      debounceOptions.trailing = trailing;
+      return debounce(func, wait, debounceOptions);
+    }
+
+    /**
+     * Creates a function that provides `value` to the wrapper function as its
+     * first argument. Any additional arguments provided to the function are
+     * appended to those provided to the wrapper function. The wrapper is invoked
+     * with the `this` binding of the created function.
+     *
+     * @static
+     * @memberOf _
+     * @category Function
+     * @param {*} value The value to wrap.
+     * @param {Function} wrapper The wrapper function.
+     * @returns {Function} Returns the new function.
+     * @example
+     *
+     * var p = _.wrap(_.escape, function(func, text) {
+     *   return '<p>' + func(text) + '</p>';
+     * });
+     *
+     * p('fred, barney, & pebbles');
+     * // => '<p>fred, barney, &amp; pebbles</p>'
+     */
+    function wrap(value, wrapper) {
+      wrapper = wrapper == null ? identity : wrapper;
+      return createWrapper(wrapper, PARTIAL_FLAG, null, [value], []);
+    }
+
+    /*------------------------------------------------------------------------*/
+
+    /**
+     * Creates a clone of `value`. If `isDeep` is `true` nested objects are cloned,
+     * otherwise they are assigned by reference. If `customizer` is provided it is
+     * invoked to produce the cloned values. If `customizer` returns `undefined`
+     * cloning is handled by the method instead. The `customizer` is bound to
+     * `thisArg` and invoked with two argument; (value [, index|key, object]).
+     *
+     * **Note:** This method is loosely based on the structured clone algorithm.
+     * The enumerable properties of `arguments` objects and objects created by
+     * constructors other than `Object` are cloned to plain `Object` objects. An
+     * empty object is returned for uncloneable values such as functions, DOM nodes,
+     * Maps, Sets, and WeakMaps. See the [HTML5 specification](http://www.w3.org/TR/html5/infrastructure.html#internal-structured-cloning-algorithm)
+     * for more details.
+     *
+     * @static
+     * @memberOf _
+     * @category Lang
+     * @param {*} value The value to clone.
+     * @param {boolean} [isDeep] Specify a deep clone.
+     * @param {Function} [customizer] The function to customize cloning values.
+     * @param {*} [thisArg] The `this` binding of `customizer`.
+     * @returns {*} Returns the cloned value.
+     * @example
+     *
+     * var users = [
+     *   { 'user': 'barney' },
+     *   { 'user': 'fred' }
+     * ];
+     *
+     * var shallow = _.clone(users);
+     * shallow[0] === users[0];
+     * // => true
+     *
+     * var deep = _.clone(users, true);
+     * deep[0] === users[0];
+     * // => false
+     *
+     * // using a customizer callback
+     * var body = _.clone(document.body, function(value) {
+     *   return _.isElement(value) ? value.cloneNode(false) : undefined;
+     * });
+     *
+     * body === document.body
+     * // => false
+     * body.nodeName
+     * // => BODY
+     * body.childNodes.length;
+     * // => 0
+     */
+    function clone(value, isDeep, customizer, thisArg) {
+      // Juggle arguments.
+      if (typeof isDeep != 'boolean' && isDeep != null) {
+        thisArg = customizer;
+        customizer = isIterateeCall(value, isDeep, thisArg) ? null : isDeep;
+        isDeep = false;
+      }
+      customizer = typeof customizer == 'function' && bindCallback(customizer, thisArg, 1);
+      return baseClone(value, isDeep, customizer);
+    }
+
+    /**
+     * Creates a deep clone of `value`. If `customizer` is provided it is invoked
+     * to produce the cloned values. If `customizer` returns `undefined` cloning
+     * is handled by the method instead. The `customizer` is bound to `thisArg`
+     * and invoked with two argument; (value [, index|key, object]).
+     *
+     * **Note:** This method is loosely based on the structured clone algorithm.
+     * The enumerable properties of `arguments` objects and objects created by
+     * constructors other than `Object` are cloned to plain `Object` objects. An
+     * empty object is returned for uncloneable values such as functions, DOM nodes,
+     * Maps, Sets, and WeakMaps. See the [HTML5 specification](http://www.w3.org/TR/html5/infrastructure.html#internal-structured-cloning-algorithm)
+     * for more details.
+     *
+     * @static
+     * @memberOf _
+     * @category Lang
+     * @param {*} value The value to deep clone.
+     * @param {Function} [customizer] The function to customize cloning values.
+     * @param {*} [thisArg] The `this` binding of `customizer`.
+     * @returns {*} Returns the deep cloned value.
+     * @example
+     *
+     * var users = [
+     *   { 'user': 'barney' },
+     *   { 'user': 'fred' }
+     * ];
+     *
+     * var deep = _.cloneDeep(users);
+     * deep[0] === users[0];
+     * // => false
+     *
+     * // using a customizer callback
+     * var el = _.cloneDeep(document.body, function(value) {
+     *   return _.isElement(value) ? value.cloneNode(true) : undefined;
+     * });
+     *
+     * body === document.body
+     * // => false
+     * body.nodeName
+     * // => BODY
+     * body.childNodes.length;
+     * // => 20
+     */
+    function cloneDeep(value, customizer, thisArg) {
+      customizer = typeof customizer == 'function' && bindCallback(customizer, thisArg, 1);
+      return baseClone(value, true, customizer);
+    }
+
+    /**
+     * Checks if `value` is classified as an `arguments` object.
+     *
+     * @static
+     * @memberOf _
+     * @category Lang
+     * @param {*} value The value to check.
+     * @returns {boolean} Returns `true` if `value` is correctly classified, else `false`.
+     * @example
+     *
+     * (function() { return _.isArguments(arguments); })();
+     * // => true
+     *
+     * _.isArguments([1, 2, 3]);
+     * // => false
+     */
+    function isArguments(value) {
+      var length = isObjectLike(value) ? value.length : undefined;
+      return (isLength(length) && objToString.call(value) == argsTag) || false;
+    }
+
+    /**
+     * Checks if `value` is classified as an `Array` object.
+     *
+     * @static
+     * @memberOf _
+     * @category Lang
+     * @param {*} value The value to check.
+     * @returns {boolean} Returns `true` if `value` is correctly classified, else `false`.
+     * @example
+     *
+     * _.isArray([1, 2, 3]);
+     * // => true
+     *
+     * (function() { return _.isArray(arguments); })();
+     * // => false
+     */
+    var isArray = nativeIsArray || function(value) {
+      return (isObjectLike(value) && isLength(value.length) && objToString.call(value) == arrayTag) || false;
+    };
+
+    /**
+     * Checks if `value` is classified as a boolean primitive or object.
+     *
+     * @static
+     * @memberOf _
+     * @category Lang
+     * @param {*} value The value to check.
+     * @returns {boolean} Returns `true` if `value` is correctly classified, else `false`.
+     * @example
+     *
+     * _.isBoolean(false);
+     * // => true
+     *
+     * _.isBoolean(null);
+     * // => false
+     */
+    function isBoolean(value) {
+      return (value === true || value === false || isObjectLike(value) && objToString.call(value) == boolTag) || false;
+    }
+
+    /**
+     * Checks if `value` is classified as a `Date` object.
+     *
+     * @static
+     * @memberOf _
+     * @category Lang
+     * @param {*} value The value to check.
+     * @returns {boolean} Returns `true` if `value` is correctly classified, else `false`.
+     * @example
+     *
+     * _.isDate(new Date);
+     * // => true
+     *
+     * _.isDate('Mon April 23 2012');
+     * // => false
+     */
+    function isDate(value) {
+      return (isObjectLike(value) && objToString.call(value) == dateTag) || false;
+    }
+
+    /**
+     * Checks if `value` is a DOM element.
+     *
+     * @static
+     * @memberOf _
+     * @category Lang
+     * @param {*} value The value to check.
+     * @returns {boolean} Returns `true` if `value` is a DOM element, else `false`.
+     * @example
+     *
+     * _.isElement(document.body);
+     * // => true
+     *
+     * _.isElement('<body>');
+     * // => false
+     */
+    function isElement(value) {
+      return (value && value.nodeType === 1 && isObjectLike(value) &&
+        objToString.call(value).indexOf('Element') > -1) || false;
+    }
+    // Fallback for environments without DOM support.
+    if (!support.dom) {
+      isElement = function(value) {
+        return (value && value.nodeType === 1 && isObjectLike(value) && !isPlainObject(value)) || false;
+      };
+    }
+
+    /**
+     * Checks if a value is empty. A value is considered empty unless it is an
+     * `arguments` object, array, string, or jQuery-like collection with a length
+     * greater than `0` or an object with own enumerable properties.
+     *
+     * @static
+     * @memberOf _
+     * @category Lang
+     * @param {Array|Object|string} value The value to inspect.
+     * @returns {boolean} Returns `true` if `value` is empty, else `false`.
+     * @example
+     *
+     * _.isEmpty(null);
+     * // => true
+     *
+     * _.isEmpty(true);
+     * // => true
+     *
+     * _.isEmpty(1);
+     * // => true
+     *
+     * _.isEmpty([1, 2, 3]);
+     * // => false
+     *
+     * _.isEmpty({ 'a': 1 });
+     * // => false
+     */
+    function isEmpty(value) {
+      if (value == null) {
+        return true;
+      }
+      var length = value.length;
+      if (isLength(length) && (isArray(value) || isString(value) || isArguments(value) ||
+          (isObjectLike(value) && isFunction(value.splice)))) {
+        return !length;
+      }
+      return !keys(value).length;
+    }
+
+    /**
+     * Performs a deep comparison between two values to determine if they are
+     * equivalent. If `customizer` is provided it is invoked to compare values.
+     * If `customizer` returns `undefined` comparisons are handled by the method
+     * instead. The `customizer` is bound to `thisArg` and invoked with three
+     * arguments; (value, other [, index|key]).
+     *
+     * **Note:** This method supports comparing arrays, booleans, `Date` objects,
+     * numbers, `Object` objects, regexes, and strings. Objects are compared by
+     * their own, not inherited, enumerable properties. Functions and DOM nodes
+     * are **not** supported. Provide a customizer function to extend support
+     * for comparing other values.
+     *
+     * @static
+     * @memberOf _
+     * @category Lang
+     * @param {*} value The value to compare.
+     * @param {*} other The other value to compare.
+     * @param {Function} [customizer] The function to customize comparing values.
+     * @param {*} [thisArg] The `this` binding of `customizer`.
+     * @returns {boolean} Returns `true` if the values are equivalent, else `false`.
+     * @example
+     *
+     * var object = { 'user': 'fred' };
+     * var other = { 'user': 'fred' };
+     *
+     * object == other;
+     * // => false
+     *
+     * _.isEqual(object, other);
+     * // => true
+     *
+     * // using a customizer callback
+     * var array = ['hello', 'goodbye'];
+     * var other = ['hi', 'goodbye'];
+     *
+     * _.isEqual(array, other, function(value, other) {
+     *   return _.every([value, other], RegExp.prototype.test, /^h(?:i|ello)$/) || undefined;
+     * });
+     * // => true
+     */
+    function isEqual(value, other, customizer, thisArg) {
+      customizer = typeof customizer == 'function' && bindCallback(customizer, thisArg, 3);
+      if (!customizer && isStrictComparable(value) && isStrictComparable(other)) {
+        return value === other;
+      }
+      var result = customizer ? customizer(value, other) : undefined;
+      return typeof result == 'undefined' ? baseIsEqual(value, other, customizer) : !!result;
+    }
+
+    /**
+     * Checks if `value` is an `Error`, `EvalError`, `RangeError`, `ReferenceError`,
+     * `SyntaxError`, `TypeError`, or `URIError` object.
+     *
+     * @static
+     * @memberOf _
+     * @category Lang
+     * @param {*} value The value to check.
+     * @returns {boolean} Returns `true` if `value` is an error object, else `false`.
+     * @example
+     *
+     * _.isError(new Error);
+     * // => true
+     *
+     * _.isError(Error);
+     * // => false
+     */
+    function isError(value) {
+      return (isObjectLike(value) && typeof value.message == 'string' && objToString.call(value) == errorTag) || false;
+    }
+
+    /**
+     * Checks if `value` is a finite primitive number.
+     *
+     * **Note:** This method is based on ES `Number.isFinite`. See the
+     * [ES spec](https://people.mozilla.org/~jorendorff/es6-draft.html#sec-number.isfinite)
+     * for more details.
+     *
+     * @static
+     * @memberOf _
+     * @category Lang
+     * @param {*} value The value to check.
+     * @returns {boolean} Returns `true` if `value` is a finite number, else `false`.
+     * @example
+     *
+     * _.isFinite(10);
+     * // => true
+     *
+     * _.isFinite('10');
+     * // => false
+     *
+     * _.isFinite(true);
+     * // => false
+     *
+     * _.isFinite(Object(10));
+     * // => false
+     *
+     * _.isFinite(Infinity);
+     * // => false
+     */
+    var isFinite = nativeNumIsFinite || function(value) {
+      return typeof value == 'number' && nativeIsFinite(value);
+    };
+
+    /**
+     * Checks if `value` is classified as a `Function` object.
+     *
+     * @static
+     * @memberOf _
+     * @category Lang
+     * @param {*} value The value to check.
+     * @returns {boolean} Returns `true` if `value` is correctly classified, else `false`.
+     * @example
+     *
+     * _.isFunction(_);
+     * // => true
+     *
+     * _.isFunction(/abc/);
+     * // => false
+     */
+    function isFunction(value) {
+      // Avoid a Chakra JIT bug in compatibility modes of IE 11.
+      // See https://github.com/jashkenas/underscore/issues/1621 for more details.
+      return typeof value == 'function' || false;
+    }
+    // Fallback for environments that return incorrect `typeof` operator results.
+    if (isFunction(/x/) || (Uint8Array && !isFunction(Uint8Array))) {
+      isFunction = function(value) {
+        // The use of `Object#toString` avoids issues with the `typeof` operator
+        // in older versions of Chrome and Safari which return 'function' for regexes
+        // and Safari 8 equivalents which return 'object' for typed array constructors.
+        return objToString.call(value) == funcTag;
+      };
+    }
+
+    /**
+     * Checks if `value` is the language type of `Object`.
+     * (e.g. arrays, functions, objects, regexes, `new Number(0)`, and `new String('')`)
+     *
+     * **Note:** See the [ES5 spec](https://es5.github.io/#x8) for more details.
+     *
+     * @static
+     * @memberOf _
+     * @category Lang
+     * @param {*} value The value to check.
+     * @returns {boolean} Returns `true` if `value` is an object, else `false`.
+     * @example
+     *
+     * _.isObject({});
+     * // => true
+     *
+     * _.isObject([1, 2, 3]);
+     * // => true
+     *
+     * _.isObject(1);
+     * // => false
+     */
+    function isObject(value) {
+      // Avoid a V8 JIT bug in Chrome 19-20.
+      // See https://code.google.com/p/v8/issues/detail?id=2291 for more details.
+      var type = typeof value;
+      return type == 'function' || (value && type == 'object') || false;
+    }
+
+    /**
+     * Performs a deep comparison between `object` and `source` to determine if
+     * `object` contains equivalent property values. If `customizer` is provided
+     * it is invoked to compare values. If `customizer` returns `undefined`
+     * comparisons are handled by the method instead. The `customizer` is bound
+     * to `thisArg` and invoked with three arguments; (value, other, index|key).
+     *
+     * **Note:** This method supports comparing properties of arrays, booleans,
+     * `Date` objects, numbers, `Object` objects, regexes, and strings. Functions
+     * and DOM nodes are **not** supported. Provide a customizer function to extend
+     * support for comparing other values.
+     *
+     * @static
+     * @memberOf _
+     * @category Lang
+     * @param {Object} object The object to inspect.
+     * @param {Object} source The object of property values to match.
+     * @param {Function} [customizer] The function to customize comparing values.
+     * @param {*} [thisArg] The `this` binding of `customizer`.
+     * @returns {boolean} Returns `true` if `object` is a match, else `false`.
+     * @example
+     *
+     * var object = { 'user': 'fred', 'age': 40 };
+     *
+     * _.isMatch(object, { 'age': 40 });
+     * // => true
+     *
+     * _.isMatch(object, { 'age': 36 });
+     * // => false
+     *
+     * // using a customizer callback
+     * var object = { 'greeting': 'hello' };
+     * var source = { 'greeting': 'hi' };
+     *
+     * _.isMatch(object, source, function(value, other) {
+     *   return _.every([value, other], RegExp.prototype.test, /^h(?:i|ello)$/) || undefined;
+     * });
+     * // => true
+     */
+    function isMatch(object, source, customizer, thisArg) {
+      var props = keys(source),
+          length = props.length;
+
+      customizer = typeof customizer == 'function' && bindCallback(customizer, thisArg, 3);
+      if (!customizer && length == 1) {
+        var key = props[0],
+            value = source[key];
+
+        if (isStrictComparable(value)) {
+          return object != null && value === object[key] && hasOwnProperty.call(object, key);
+        }
+      }
+      var values = Array(length),
+          strictCompareFlags = Array(length);
+
+      while (length--) {
+        value = values[length] = source[props[length]];
+        strictCompareFlags[length] = isStrictComparable(value);
+      }
+      return baseIsMatch(object, props, values, strictCompareFlags, customizer);
+    }
+
+    /**
+     * Checks if `value` is `NaN`.
+     *
+     * **Note:** This method is not the same as native `isNaN` which returns `true`
+     * for `undefined` and other non-numeric values. See the [ES5 spec](https://es5.github.io/#x15.1.2.4)
+     * for more details.
+     *
+     * @static
+     * @memberOf _
+     * @category Lang
+     * @param {*} value The value to check.
+     * @returns {boolean} Returns `true` if `value` is `NaN`, else `false`.
+     * @example
+     *
+     * _.isNaN(NaN);
+     * // => true
+     *
+     * _.isNaN(new Number(NaN));
+     * // => true
+     *
+     * isNaN(undefined);
+     * // => true
+     *
+     * _.isNaN(undefined);
+     * // => false
+     */
+    function isNaN(value) {
+      // An `NaN` primitive is the only value that is not equal to itself.
+      // Perform the `toStringTag` check first to avoid errors with some host objects in IE.
+      return isNumber(value) && value != +value;
+    }
+
+    /**
+     * Checks if `value` is a native function.
+     *
+     * @static
+     * @memberOf _
+     * @category Lang
+     * @param {*} value The value to check.
+     * @returns {boolean} Returns `true` if `value` is a native function, else `false`.
+     * @example
+     *
+     * _.isNative(Array.prototype.push);
+     * // => true
+     *
+     * _.isNative(_);
+     * // => false
+     */
+    function isNative(value) {
+      if (value == null) {
+        return false;
+      }
+      if (objToString.call(value) == funcTag) {
+        return reNative.test(fnToString.call(value));
+      }
+      return (isObjectLike(value) && reHostCtor.test(value)) || false;
+    }
+
+    /**
+     * Checks if `value` is `null`.
+     *
+     * @static
+     * @memberOf _
+     * @category Lang
+     * @param {*} value The value to check.
+     * @returns {boolean} Returns `true` if `value` is `null`, else `false`.
+     * @example
+     *
+     * _.isNull(null);
+     * // => true
+     *
+     * _.isNull(void 0);
+     * // => false
+     */
+    function isNull(value) {
+      return value === null;
+    }
+
+    /**
+     * Checks if `value` is classified as a `Number` primitive or object.
+     *
+     * **Note:** To exclude `Infinity`, `-Infinity`, and `NaN`, which are classified
+     * as numbers, use the `_.isFinite` method.
+     *
+     * @static
+     * @memberOf _
+     * @category Lang
+     * @param {*} value The value to check.
+     * @returns {boolean} Returns `true` if `value` is correctly classified, else `false`.
+     * @example
+     *
+     * _.isNumber(8.4);
+     * // => true
+     *
+     * _.isNumber(NaN);
+     * // => true
+     *
+     * _.isNumber('8.4');
+     * // => false
+     */
+    function isNumber(value) {
+      return typeof value == 'number' || (isObjectLike(value) && objToString.call(value) == numberTag) || false;
+    }
+
+    /**
+     * Checks if `value` is a plain object, that is, an object created by the
+     * `Object` constructor or one with a `[[Prototype]]` of `null`.
+     *
+     * **Note:** This method assumes objects created by the `Object` constructor
+     * have no inherited enumerable properties.
+     *
+     * @static
+     * @memberOf _
+     * @category Lang
+     * @param {*} value The value to check.
+     * @returns {boolean} Returns `true` if `value` is a plain object, else `false`.
+     * @example
+     *
+     * function Foo() {
+     *   this.a = 1;
+     * }
+     *
+     * _.isPlainObject(new Foo);
+     * // => false
+     *
+     * _.isPlainObject([1, 2, 3]);
+     * // => false
+     *
+     * _.isPlainObject({ 'x': 0, 'y': 0 });
+     * // => true
+     *
+     * _.isPlainObject(Object.create(null));
+     * // => true
+     */
+    var isPlainObject = !getPrototypeOf ? shimIsPlainObject : function(value) {
+      if (!(value && objToString.call(value) == objectTag)) {
+        return false;
+      }
+      var valueOf = value.valueOf,
+          objProto = isNative(valueOf) && (objProto = getPrototypeOf(valueOf)) && getPrototypeOf(objProto);
+
+      return objProto
+        ? (value == objProto || getPrototypeOf(value) == objProto)
+        : shimIsPlainObject(value);
+    };
+
+    /**
+     * Checks if `value` is classified as a `RegExp` object.
+     *
+     * @static
+     * @memberOf _
+     * @category Lang
+     * @param {*} value The value to check.
+     * @returns {boolean} Returns `true` if `value` is correctly classified, else `false`.
+     * @example
+     *
+     * _.isRegExp(/abc/);
+     * // => true
+     *
+     * _.isRegExp('/abc/');
+     * // => false
+     */
+    function isRegExp(value) {
+      return (isObjectLike(value) && objToString.call(value) == regexpTag) || false;
+    }
+
+    /**
+     * Checks if `value` is classified as a `String` primitive or object.
+     *
+     * @static
+     * @memberOf _
+     * @category Lang
+     * @param {*} value The value to check.
+     * @returns {boolean} Returns `true` if `value` is correctly classified, else `false`.
+     * @example
+     *
+     * _.isString('abc');
+     * // => true
+     *
+     * _.isString(1);
+     * // => false
+     */
+    function isString(value) {
+      return typeof value == 'string' || (isObjectLike(value) && objToString.call(value) == stringTag) || false;
+    }
+
+    /**
+     * Checks if `value` is classified as a typed array.
+     *
+     * @static
+     * @memberOf _
+     * @category Lang
+     * @param {*} value The value to check.
+     * @returns {boolean} Returns `true` if `value` is correctly classified, else `false`.
+     * @example
+     *
+     * _.isTypedArray(new Uint8Array);
+     * // => true
+     *
+     * _.isTypedArray([]);
+     * // => false
+     */
+    function isTypedArray(value) {
+      return (isObjectLike(value) && isLength(value.length) && typedArrayTags[objToString.call(value)]) || false;
+    }
+
+    /**
+     * Checks if `value` is `undefined`.
+     *
+     * @static
+     * @memberOf _
+     * @category Lang
+     * @param {*} value The value to check.
+     * @returns {boolean} Returns `true` if `value` is `undefined`, else `false`.
+     * @example
+     *
+     * _.isUndefined(void 0);
+     * // => true
+     *
+     * _.isUndefined(null);
+     * // => false
+     */
+    function isUndefined(value) {
+      return typeof value == 'undefined';
+    }
+
+    /**
+     * Converts `value` to an array.
+     *
+     * @static
+     * @memberOf _
+     * @category Lang
+     * @param {*} value The value to convert.
+     * @returns {Array} Returns the converted array.
+     * @example
+     *
+     * (function() { return _.toArray(arguments).slice(1); })(1, 2, 3);
+     * // => [2, 3]
+     */
+    function toArray(value) {
+      var length = value ? value.length : 0;
+      if (!isLength(length)) {
+        return values(value);
+      }
+      if (!length) {
+        return [];
+      }
+      return arrayCopy(value);
+    }
+
+    /**
+     * Converts `value` to a plain object flattening inherited enumerable
+     * properties of `value` to own properties of the plain object.
+     *
+     * @static
+     * @memberOf _
+     * @category Lang
+     * @param {*} value The value to convert.
+     * @returns {Object} Returns the converted plain object.
+     * @example
+     *
+     * function Foo() {
+     *   this.b = 2;
+     * }
+     *
+     * Foo.prototype.c = 3;
+     *
+     * _.assign({ 'a': 1 }, new Foo);
+     * // => { 'a': 1, 'b': 2 }
+     *
+     * _.assign({ 'a': 1 }, _.toPlainObject(new Foo));
+     * // => { 'a': 1, 'b': 2, 'c': 3 }
+     */
+    function toPlainObject(value) {
+      return baseCopy(value, keysIn(value));
+    }
+
+    /*------------------------------------------------------------------------*/
+
+    /**
+     * Assigns own enumerable properties of source object(s) to the destination
+     * object. Subsequent sources overwrite property assignments of previous sources.
+     * If `customizer` is provided it is invoked to produce the assigned values.
+     * The `customizer` is bound to `thisArg` and invoked with five arguments;
+     * (objectValue, sourceValue, key, object, source).
+     *
+     * @static
+     * @memberOf _
+     * @alias extend
+     * @category Object
+     * @param {Object} object The destination object.
+     * @param {...Object} [sources] The source objects.
+     * @param {Function} [customizer] The function to customize assigning values.
+     * @param {*} [thisArg] The `this` binding of `customizer`.
+     * @returns {Object} Returns `object`.
+     * @example
+     *
+     * _.assign({ 'user': 'barney' }, { 'age': 40 }, { 'user': 'fred' });
+     * // => { 'user': 'fred', 'age': 40 }
+     *
+     * // using a customizer callback
+     * var defaults = _.partialRight(_.assign, function(value, other) {
+     *   return typeof value == 'undefined' ? other : value;
+     * });
+     *
+     * defaults({ 'user': 'barney' }, { 'age': 36 }, { 'user': 'fred' });
+     * // => { 'user': 'barney', 'age': 36 }
+     */
+    var assign = createAssigner(baseAssign);
+
+    /**
+     * Creates an object that inherits from the given `prototype` object. If a
+     * `properties` object is provided its own enumerable properties are assigned
+     * to the created object.
+     *
+     * @static
+     * @memberOf _
+     * @category Object
+     * @param {Object} prototype The object to inherit from.
+     * @param {Object} [properties] The properties to assign to the object.
+     * @param- {Object} [guard] Enables use as a callback for functions like `_.map`.
+     * @returns {Object} Returns the new object.
+     * @example
+     *
+     * function Shape() {
+     *   this.x = 0;
+     *   this.y = 0;
+     * }
+     *
+     * function Circle() {
+     *   Shape.call(this);
+     * }
+     *
+     * Circle.prototype = _.create(Shape.prototype, { 'constructor': Circle });
+     *
+     * var circle = new Circle;
+     * circle instanceof Circle;
+     * // => true
+     *
+     * circle instanceof Shape;
+     * // => true
+     */
+    function create(prototype, properties, guard) {
+      var result = baseCreate(prototype);
+      if (guard && isIterateeCall(prototype, properties, guard)) {
+        properties = null;
+      }
+      return properties ? baseCopy(properties, result, keys(properties)) : result;
+    }
+
+    /**
+     * Assigns own enumerable properties of source object(s) to the destination
+     * object for all destination properties that resolve to `undefined`. Once a
+     * property is set, additional defaults of the same property are ignored.
+     *
+     * @static
+     * @memberOf _
+     * @category Object
+     * @param {Object} object The destination object.
+     * @param {...Object} [sources] The source objects.
+     * @returns {Object} Returns `object`.
+     * @example
+     *
+     * _.defaults({ 'user': 'barney' }, { 'age': 36 }, { 'user': 'fred' });
+     * // => { 'user': 'barney', 'age': 36 }
+     */
+    function defaults(object) {
+      if (object == null) {
+        return object;
+      }
+      var args = arrayCopy(arguments);
+      args.push(assignDefaults);
+      return assign.apply(undefined, args);
+    }
+
+    /**
+     * This method is like `_.findIndex` except that it returns the key of the
+     * first element `predicate` returns truthy for, instead of the element itself.
+     *
+     * If a property name is provided for `predicate` the created "_.property"
+     * style callback returns the property value of the given element.
+     *
+     * If value is also provided for `thisArg` the created "_.matchesProperty"
+     * style callback returns `true` for elements that have a matching property
+     * value, else `false`.
+     *
+     * If an object is provided for `predicate` the created "_.matches" style
+     * callback returns `true` for elements that have the properties of the given
+     * object, else `false`.
+     *
+     * @static
+     * @memberOf _
+     * @category Object
+     * @param {Object} object The object to search.
+     * @param {Function|Object|string} [predicate=_.identity] The function invoked
+     *  per iteration. If a property name or object is provided it is used to
+     *  create a "_.property" or "_.matches" style callback respectively.
+     * @param {*} [thisArg] The `this` binding of `predicate`.
+     * @returns {string|undefined} Returns the key of the matched element, else `undefined`.
+     * @example
+     *
+     * var users = {
+     *   'barney':  { 'age': 36, 'active': true },
+     *   'fred':    { 'age': 40, 'active': false },
+     *   'pebbles': { 'age': 1,  'active': true }
+     * };
+     *
+     * _.findKey(users, function(chr) { return chr.age < 40; });
+     * // => 'barney' (iteration order is not guaranteed)
+     *
+     * // using the "_.matches" callback shorthand
+     * _.findKey(users, { 'age': 1, 'active': true });
+     * // => 'pebbles'
+     *
+     * // using the "_.matchesProperty" callback shorthand
+     * _.findKey(users, 'active', false);
+     * // => 'fred'
+     *
+     * // using the "_.property" callback shorthand
+     * _.findKey(users, 'active');
+     * // => 'barney'
+     */
+    function findKey(object, predicate, thisArg) {
+      predicate = getCallback(predicate, thisArg, 3);
+      return baseFind(object, predicate, baseForOwn, true);
+    }
+
+    /**
+     * This method is like `_.findKey` except that it iterates over elements of
+     * a collection in the opposite order.
+     *
+     * If a property name is provided for `predicate` the created "_.property"
+     * style callback returns the property value of the given element.
+     *
+     * If value is also provided for `thisArg` the created "_.matchesProperty"
+     * style callback returns `true` for elements that have a matching property
+     * value, else `false`.
+     *
+     * If an object is provided for `predicate` the created "_.matches" style
+     * callback returns `true` for elements that have the properties of the given
+     * object, else `false`.
+     *
+     * @static
+     * @memberOf _
+     * @category Object
+     * @param {Object} object The object to search.
+     * @param {Function|Object|string} [predicate=_.identity] The function invoked
+     *  per iteration. If a property name or object is provided it is used to
+     *  create a "_.property" or "_.matches" style callback respectively.
+     * @param {*} [thisArg] The `this` binding of `predicate`.
+     * @returns {string|undefined} Returns the key of the matched element, else `undefined`.
+     * @example
+     *
+     * var users = {
+     *   'barney':  { 'age': 36, 'active': true },
+     *   'fred':    { 'age': 40, 'active': false },
+     *   'pebbles': { 'age': 1,  'active': true }
+     * };
+     *
+     * _.findLastKey(users, function(chr) { return chr.age < 40; });
+     * // => returns `pebbles` assuming `_.findKey` returns `barney`
+     *
+     * // using the "_.matches" callback shorthand
+     * _.findLastKey(users, { 'age': 36, 'active': true });
+     * // => 'barney'
+     *
+     * // using the "_.matchesProperty" callback shorthand
+     * _.findLastKey(users, 'active', false);
+     * // => 'fred'
+     *
+     * // using the "_.property" callback shorthand
+     * _.findLastKey(users, 'active');
+     * // => 'pebbles'
+     */
+    function findLastKey(object, predicate, thisArg) {
+      predicate = getCallback(predicate, thisArg, 3);
+      return baseFind(object, predicate, baseForOwnRight, true);
+    }
+
+    /**
+     * Iterates over own and inherited enumerable properties of an object invoking
+     * `iteratee` for each property. The `iteratee` is bound to `thisArg` and invoked
+     * with three arguments; (value, key, object). Iterator functions may exit
+     * iteration early by explicitly returning `false`.
+     *
+     * @static
+     * @memberOf _
+     * @category Object
+     * @param {Object} object The object to iterate over.
+     * @param {Function} [iteratee=_.identity] The function invoked per iteration.
+     * @param {*} [thisArg] The `this` binding of `iteratee`.
+     * @returns {Object} Returns `object`.
+     * @example
+     *
+     * function Foo() {
+     *   this.a = 1;
+     *   this.b = 2;
+     * }
+     *
+     * Foo.prototype.c = 3;
+     *
+     * _.forIn(new Foo, function(value, key) {
+     *   console.log(key);
+     * });
+     * // => logs 'a', 'b', and 'c' (iteration order is not guaranteed)
+     */
+    function forIn(object, iteratee, thisArg) {
+      if (typeof iteratee != 'function' || typeof thisArg != 'undefined') {
+        iteratee = bindCallback(iteratee, thisArg, 3);
+      }
+      return baseFor(object, iteratee, keysIn);
+    }
+
+    /**
+     * This method is like `_.forIn` except that it iterates over properties of
+     * `object` in the opposite order.
+     *
+     * @static
+     * @memberOf _
+     * @category Object
+     * @param {Object} object The object to iterate over.
+     * @param {Function} [iteratee=_.identity] The function invoked per iteration.
+     * @param {*} [thisArg] The `this` binding of `iteratee`.
+     * @returns {Object} Returns `object`.
+     * @example
+     *
+     * function Foo() {
+     *   this.a = 1;
+     *   this.b = 2;
+     * }
+     *
+     * Foo.prototype.c = 3;
+     *
+     * _.forInRight(new Foo, function(value, key) {
+     *   console.log(key);
+     * });
+     * // => logs 'c', 'b', and 'a' assuming `_.forIn ` logs 'a', 'b', and 'c'
+     */
+    function forInRight(object, iteratee, thisArg) {
+      iteratee = bindCallback(iteratee, thisArg, 3);
+      return baseForRight(object, iteratee, keysIn);
+    }
+
+    /**
+     * Iterates over own enumerable properties of an object invoking `iteratee`
+     * for each property. The `iteratee` is bound to `thisArg` and invoked with
+     * three arguments; (value, key, object). Iterator functions may exit iteration
+     * early by explicitly returning `false`.
+     *
+     * @static
+     * @memberOf _
+     * @category Object
+     * @param {Object} object The object to iterate over.
+     * @param {Function} [iteratee=_.identity] The function invoked per iteration.
+     * @param {*} [thisArg] The `this` binding of `iteratee`.
+     * @returns {Object} Returns `object`.
+     * @example
+     *
+     * _.forOwn({ '0': 'zero', '1': 'one', 'length': 2 }, function(n, key) {
+     *   console.log(key);
+     * });
+     * // => logs '0', '1', and 'length' (iteration order is not guaranteed)
+     */
+    function forOwn(object, iteratee, thisArg) {
+      if (typeof iteratee != 'function' || typeof thisArg != 'undefined') {
+        iteratee = bindCallback(iteratee, thisArg, 3);
+      }
+      return baseForOwn(object, iteratee);
+    }
+
+    /**
+     * This method is like `_.forOwn` except that it iterates over properties of
+     * `object` in the opposite order.
+     *
+     * @static
+     * @memberOf _
+     * @category Object
+     * @param {Object} object The object to iterate over.
+     * @param {Function} [iteratee=_.identity] The function invoked per iteration.
+     * @param {*} [thisArg] The `this` binding of `iteratee`.
+     * @returns {Object} Returns `object`.
+     * @example
+     *
+     * _.forOwnRight({ '0': 'zero', '1': 'one', 'length': 2 }, function(n, key) {
+     *   console.log(key);
+     * });
+     * // => logs 'length', '1', and '0' assuming `_.forOwn` logs '0', '1', and 'length'
+     */
+    function forOwnRight(object, iteratee, thisArg) {
+      iteratee = bindCallback(iteratee, thisArg, 3);
+      return baseForRight(object, iteratee, keys);
+    }
+
+    /**
+     * Creates an array of function property names from all enumerable properties,
+     * own and inherited, of `object`.
+     *
+     * @static
+     * @memberOf _
+     * @alias methods
+     * @category Object
+     * @param {Object} object The object to inspect.
+     * @returns {Array} Returns the new array of property names.
+     * @example
+     *
+     * _.functions(_);
+     * // => ['all', 'any', 'bind', ...]
+     */
+    function functions(object) {
+      return baseFunctions(object, keysIn(object));
+    }
+
+    /**
+     * Checks if `key` exists as a direct property of `object` instead of an
+     * inherited property.
+     *
+     * @static
+     * @memberOf _
+     * @category Object
+     * @param {Object} object The object to inspect.
+     * @param {string} key The key to check.
+     * @returns {boolean} Returns `true` if `key` is a direct property, else `false`.
+     * @example
+     *
+     * _.has({ 'a': 1, 'b': 2, 'c': 3 }, 'b');
+     * // => true
+     */
+    function has(object, key) {
+      return object ? hasOwnProperty.call(object, key) : false;
+    }
+
+    /**
+     * Creates an object composed of the inverted keys and values of `object`.
+     * If `object` contains duplicate values, subsequent values overwrite property
+     * assignments of previous values unless `multiValue` is `true`.
+     *
+     * @static
+     * @memberOf _
+     * @category Object
+     * @param {Object} object The object to invert.
+     * @param {boolean} [multiValue] Allow multiple values per key.
+     * @param- {Object} [guard] Enables use as a callback for functions like `_.map`.
+     * @returns {Object} Returns the new inverted object.
+     * @example
+     *
+     * _.invert({ 'first': 'fred', 'second': 'barney' });
+     * // => { 'fred': 'first', 'barney': 'second' }
+     *
+     * // without `multiValue`
+     * _.invert({ 'first': 'fred', 'second': 'barney', 'third': 'fred' });
+     * // => { 'fred': 'third', 'barney': 'second' }
+     *
+     * // with `multiValue`
+     * _.invert({ 'first': 'fred', 'second': 'barney', 'third': 'fred' }, true);
+     * // => { 'fred': ['first', 'third'], 'barney': ['second'] }
+     */
+    function invert(object, multiValue, guard) {
+      if (guard && isIterateeCall(object, multiValue, guard)) {
+        multiValue = null;
+      }
+      var index = -1,
+          props = keys(object),
+          length = props.length,
+          result = {};
+
+      while (++index < length) {
+        var key = props[index],
+            value = object[key];
+
+        if (multiValue) {
+          if (hasOwnProperty.call(result, value)) {
+            result[value].push(key);
+          } else {
+            result[value] = [key];
+          }
+        }
+        else {
+          result[value] = key;
+        }
+      }
+      return result;
+    }
+
+    /**
+     * Creates an array of the own enumerable property names of `object`.
+     *
+     * **Note:** Non-object values are coerced to objects. See the
+     * [ES spec](https://people.mozilla.org/~jorendorff/es6-draft.html#sec-object.keys)
+     * for more details.
+     *
+     * @static
+     * @memberOf _
+     * @category Object
+     * @param {Object} object The object to inspect.
+     * @returns {Array} Returns the array of property names.
+     * @example
+     *
+     * function Foo() {
+     *   this.a = 1;
+     *   this.b = 2;
+     * }
+     *
+     * Foo.prototype.c = 3;
+     *
+     * _.keys(new Foo);
+     * // => ['a', 'b'] (iteration order is not guaranteed)
+     *
+     * _.keys('hi');
+     * // => ['0', '1']
+     */
+    var keys = !nativeKeys ? shimKeys : function(object) {
+      if (object) {
+        var Ctor = object.constructor,
+            length = object.length;
+      }
+      if ((typeof Ctor == 'function' && Ctor.prototype === object) ||
+         (typeof object != 'function' && (length && isLength(length)))) {
+        return shimKeys(object);
+      }
+      return isObject(object) ? nativeKeys(object) : [];
+    };
+
+    /**
+     * Creates an array of the own and inherited enumerable property names of `object`.
+     *
+     * **Note:** Non-object values are coerced to objects.
+     *
+     * @static
+     * @memberOf _
+     * @category Object
+     * @param {Object} object The object to inspect.
+     * @returns {Array} Returns the array of property names.
+     * @example
+     *
+     * function Foo() {
+     *   this.a = 1;
+     *   this.b = 2;
+     * }
+     *
+     * Foo.prototype.c = 3;
+     *
+     * _.keysIn(new Foo);
+     * // => ['a', 'b', 'c'] (iteration order is not guaranteed)
+     */
+    function keysIn(object) {
+      if (object == null) {
+        return [];
+      }
+      if (!isObject(object)) {
+        object = Object(object);
+      }
+      var length = object.length;
+      length = (length && isLength(length) &&
+        (isArray(object) || (support.nonEnumArgs && isArguments(object))) && length) || 0;
+
+      var Ctor = object.constructor,
+          index = -1,
+          isProto = typeof Ctor == 'function' && Ctor.prototype === object,
+          result = Array(length),
+          skipIndexes = length > 0;
+
+      while (++index < length) {
+        result[index] = (index + '');
+      }
+      for (var key in object) {
+        if (!(skipIndexes && isIndex(key, length)) &&
+            !(key == 'constructor' && (isProto || !hasOwnProperty.call(object, key)))) {
+          result.push(key);
+        }
+      }
+      return result;
+    }
+
+    /**
+     * Creates an object with the same keys as `object` and values generated by
+     * running each own enumerable property of `object` through `iteratee`. The
+     * iteratee function is bound to `thisArg` and invoked with three arguments;
+     * (value, key, object).
+     *
+     * If a property name is provided for `iteratee` the created "_.property"
+     * style callback returns the property value of the given element.
+     *
+     * If value is also provided for `thisArg` the created "_.matchesProperty"
+     * style callback returns `true` for elements that have a matching property
+     * value, else `false`.
+     *
+     * If an object is provided for `iteratee` the created "_.matches" style
+     * callback returns `true` for elements that have the properties of the given
+     * object, else `false`.
+     *
+     * @static
+     * @memberOf _
+     * @category Object
+     * @param {Object} object The object to iterate over.
+     * @param {Function|Object|string} [iteratee=_.identity] The function invoked
+     *  per iteration. If a property name or object is provided it is used to
+     *  create a "_.property" or "_.matches" style callback respectively.
+     * @param {*} [thisArg] The `this` binding of `iteratee`.
+     * @returns {Object} Returns the new mapped object.
+     * @example
+     *
+     * _.mapValues({ 'a': 1, 'b': 2, 'c': 3} , function(n) { return n * 3; });
+     * // => { 'a': 3, 'b': 6, 'c': 9 }
+     *
+     * var users = {
+     *   'fred':    { 'user': 'fred',    'age': 40 },
+     *   'pebbles': { 'user': 'pebbles', 'age': 1 }
+     * };
+     *
+     * // using the "_.property" callback shorthand
+     * _.mapValues(users, 'age');
+     * // => { 'fred': 40, 'pebbles': 1 } (iteration order is not guaranteed)
+     */
+    function mapValues(object, iteratee, thisArg) {
+      var result = {};
+      iteratee = getCallback(iteratee, thisArg, 3);
+
+      baseForOwn(object, function(value, key, object) {
+        result[key] = iteratee(value, key, object);
+      });
+      return result;
+    }
+
+    /**
+     * Recursively merges own enumerable properties of the source object(s), that
+     * don't resolve to `undefined` into the destination object. Subsequent sources
+     * overwrite property assignments of previous sources. If `customizer` is
+     * provided it is invoked to produce the merged values of the destination and
+     * source properties. If `customizer` returns `undefined` merging is handled
+     * by the method instead. The `customizer` is bound to `thisArg` and invoked
+     * with five arguments; (objectValue, sourceValue, key, object, source).
+     *
+     * @static
+     * @memberOf _
+     * @category Object
+     * @param {Object} object The destination object.
+     * @param {...Object} [sources] The source objects.
+     * @param {Function} [customizer] The function to customize merging properties.
+     * @param {*} [thisArg] The `this` binding of `customizer`.
+     * @returns {Object} Returns `object`.
+     * @example
+     *
+     * var users = {
+     *   'data': [{ 'user': 'barney' }, { 'user': 'fred' }]
+     * };
+     *
+     * var ages = {
+     *   'data': [{ 'age': 36 }, { 'age': 40 }]
+     * };
+     *
+     * _.merge(users, ages);
+     * // => { 'data': [{ 'user': 'barney', 'age': 36 }, { 'user': 'fred', 'age': 40 }] }
+     *
+     * // using a customizer callback
+     * var object = {
+     *   'fruits': ['apple'],
+     *   'vegetables': ['beet']
+     * };
+     *
+     * var other = {
+     *   'fruits': ['banana'],
+     *   'vegetables': ['carrot']
+     * };
+     *
+     * _.merge(object, other, function(a, b) {
+     *   return _.isArray(a) ? a.concat(b) : undefined;
+     * });
+     * // => { 'fruits': ['apple', 'banana'], 'vegetables': ['beet', 'carrot'] }
+     */
+    var merge = createAssigner(baseMerge);
+
+    /**
+     * The opposite of `_.pick`; this method creates an object composed of the
+     * own and inherited enumerable properties of `object` that are not omitted.
+     * Property names may be specified as individual arguments or as arrays of
+     * property names. If `predicate` is provided it is invoked for each property
+     * of `object` omitting the properties `predicate` returns truthy for. The
+     * predicate is bound to `thisArg` and invoked with three arguments;
+     * (value, key, object).
+     *
+     * @static
+     * @memberOf _
+     * @category Object
+     * @param {Object} object The source object.
+     * @param {Function|...(string|string[])} [predicate] The function invoked per
+     *  iteration or property names to omit, specified as individual property
+     *  names or arrays of property names.
+     * @param {*} [thisArg] The `this` binding of `predicate`.
+     * @returns {Object} Returns the new object.
+     * @example
+     *
+     * var object = { 'user': 'fred', 'age': 40 };
+     *
+     * _.omit(object, 'age');
+     * // => { 'user': 'fred' }
+     *
+     * _.omit(object, _.isNumber);
+     * // => { 'user': 'fred' }
+     */
+    function omit(object, predicate, thisArg) {
+      if (object == null) {
+        return {};
+      }
+      if (typeof predicate != 'function') {
+        var props = arrayMap(baseFlatten(arguments, false, false, 1), String);
+        return pickByArray(object, baseDifference(keysIn(object), props));
+      }
+      predicate = bindCallback(predicate, thisArg, 3);
+      return pickByCallback(object, function(value, key, object) {
+        return !predicate(value, key, object);
+      });
+    }
+
+    /**
+     * Creates a two dimensional array of the key-value pairs for `object`,
+     * e.g. `[[key1, value1], [key2, value2]]`.
+     *
+     * @static
+     * @memberOf _
+     * @category Object
+     * @param {Object} object The object to inspect.
+     * @returns {Array} Returns the new array of key-value pairs.
+     * @example
+     *
+     * _.pairs({ 'barney': 36, 'fred': 40 });
+     * // => [['barney', 36], ['fred', 40]] (iteration order is not guaranteed)
+     */
+    function pairs(object) {
+      var index = -1,
+          props = keys(object),
+          length = props.length,
+          result = Array(length);
+
+      while (++index < length) {
+        var key = props[index];
+        result[index] = [key, object[key]];
+      }
+      return result;
+    }
+
+    /**
+     * Creates an object composed of the picked `object` properties. Property
+     * names may be specified as individual arguments or as arrays of property
+     * names. If `predicate` is provided it is invoked for each property of `object`
+     * picking the properties `predicate` returns truthy for. The predicate is
+     * bound to `thisArg` and invoked with three arguments; (value, key, object).
+     *
+     * @static
+     * @memberOf _
+     * @category Object
+     * @param {Object} object The source object.
+     * @param {Function|...(string|string[])} [predicate] The function invoked per
+     *  iteration or property names to pick, specified as individual property
+     *  names or arrays of property names.
+     * @param {*} [thisArg] The `this` binding of `predicate`.
+     * @returns {Object} Returns the new object.
+     * @example
+     *
+     * var object = { 'user': 'fred', 'age': 40 };
+     *
+     * _.pick(object, 'user');
+     * // => { 'user': 'fred' }
+     *
+     * _.pick(object, _.isString);
+     * // => { 'user': 'fred' }
+     */
+    function pick(object, predicate, thisArg) {
+      if (object == null) {
+        return {};
+      }
+      return typeof predicate == 'function'
+        ? pickByCallback(object, bindCallback(predicate, thisArg, 3))
+        : pickByArray(object, baseFlatten(arguments, false, false, 1));
+    }
+
+    /**
+     * Resolves the value of property `key` on `object`. If the value of `key` is
+     * a function it is invoked with the `this` binding of `object` and its result
+     * is returned, else the property value is returned. If the property value is
+     * `undefined` the `defaultValue` is used in its place.
+     *
+     * @static
+     * @memberOf _
+     * @category Object
+     * @param {Object} object The object to query.
+     * @param {string} key The key of the property to resolve.
+     * @param {*} [defaultValue] The value returned if the property value
+     *  resolves to `undefined`.
+     * @returns {*} Returns the resolved value.
+     * @example
+     *
+     * var object = { 'user': 'fred', 'age': _.constant(40) };
+     *
+     * _.result(object, 'user');
+     * // => 'fred'
+     *
+     * _.result(object, 'age');
+     * // => 40
+     *
+     * _.result(object, 'status', 'busy');
+     * // => 'busy'
+     *
+     * _.result(object, 'status', _.constant('busy'));
+     * // => 'busy'
+     */
+    function result(object, key, defaultValue) {
+      var value = object == null ? undefined : object[key];
+      if (typeof value == 'undefined') {
+        value = defaultValue;
+      }
+      return isFunction(value) ? value.call(object) : value;
+    }
+
+    /**
+     * An alternative to `_.reduce`; this method transforms `object` to a new
+     * `accumulator` object which is the result of running each of its own enumerable
+     * properties through `iteratee`, with each invocation potentially mutating
+     * the `accumulator` object. The `iteratee` is bound to `thisArg` and invoked
+     * with four arguments; (accumulator, value, key, object). Iterator functions
+     * may exit iteration early by explicitly returning `false`.
+     *
+     * @static
+     * @memberOf _
+     * @category Object
+     * @param {Array|Object} object The object to iterate over.
+     * @param {Function} [iteratee=_.identity] The function invoked per iteration.
+     * @param {*} [accumulator] The custom accumulator value.
+     * @param {*} [thisArg] The `this` binding of `iteratee`.
+     * @returns {*} Returns the accumulated value.
+     * @example
+     *
+     * var squares = _.transform([1, 2, 3, 4, 5, 6], function(result, n) {
+     *   n *= n;
+     *   if (n % 2) {
+     *     return result.push(n) < 3;
+     *   }
+     * });
+     * // => [1, 9, 25]
+     *
+     * var mapped = _.transform({ 'a': 1, 'b': 2, 'c': 3 }, function(result, n, key) {
+     *   result[key] = n * 3;
+     * });
+     * // => { 'a': 3, 'b': 6, 'c': 9 }
+     */
+    function transform(object, iteratee, accumulator, thisArg) {
+      var isArr = isArray(object) || isTypedArray(object);
+      iteratee = getCallback(iteratee, thisArg, 4);
+
+      if (accumulator == null) {
+        if (isArr || isObject(object)) {
+          var Ctor = object.constructor;
+          if (isArr) {
+            accumulator = isArray(object) ? new Ctor : [];
+          } else {
+            accumulator = baseCreate(isFunction(Ctor) && Ctor.prototype);
+          }
+        } else {
+          accumulator = {};
+        }
+      }
+      (isArr ? arrayEach : baseForOwn)(object, function(value, index, object) {
+        return iteratee(accumulator, value, index, object);
+      });
+      return accumulator;
+    }
+
+    /**
+     * Creates an array of the own enumerable property values of `object`.
+     *
+     * **Note:** Non-object values are coerced to objects.
+     *
+     * @static
+     * @memberOf _
+     * @category Object
+     * @param {Object} object The object to query.
+     * @returns {Array} Returns the array of property values.
+     * @example
+     *
+     * function Foo() {
+     *   this.a = 1;
+     *   this.b = 2;
+     * }
+     *
+     * Foo.prototype.c = 3;
+     *
+     * _.values(new Foo);
+     * // => [1, 2] (iteration order is not guaranteed)
+     *
+     * _.values('hi');
+     * // => ['h', 'i']
+     */
+    function values(object) {
+      return baseValues(object, keys(object));
+    }
+
+    /**
+     * Creates an array of the own and inherited enumerable property values
+     * of `object`.
+     *
+     * **Note:** Non-object values are coerced to objects.
+     *
+     * @static
+     * @memberOf _
+     * @category Object
+     * @param {Object} object The object to query.
+     * @returns {Array} Returns the array of property values.
+     * @example
+     *
+     * function Foo() {
+     *   this.a = 1;
+     *   this.b = 2;
+     * }
+     *
+     * Foo.prototype.c = 3;
+     *
+     * _.valuesIn(new Foo);
+     * // => [1, 2, 3] (iteration order is not guaranteed)
+     */
+    function valuesIn(object) {
+      return baseValues(object, keysIn(object));
+    }
+
+    /*------------------------------------------------------------------------*/
+
+    /**
+     * Produces a random number between `min` and `max` (inclusive). If only one
+     * argument is provided a number between `0` and the given number is returned.
+     * If `floating` is `true`, or either `min` or `max` are floats, a floating-point
+     * number is returned instead of an integer.
+     *
+     * @static
+     * @memberOf _
+     * @category Number
+     * @param {number} [min=0] The minimum possible value.
+     * @param {number} [max=1] The maximum possible value.
+     * @param {boolean} [floating] Specify returning a floating-point number.
+     * @returns {number} Returns the random number.
+     * @example
+     *
+     * _.random(0, 5);
+     * // => an integer between 0 and 5
+     *
+     * _.random(5);
+     * // => also an integer between 0 and 5
+     *
+     * _.random(5, true);
+     * // => a floating-point number between 0 and 5
+     *
+     * _.random(1.2, 5.2);
+     * // => a floating-point number between 1.2 and 5.2
+     */
+    function random(min, max, floating) {
+      if (floating && isIterateeCall(min, max, floating)) {
+        max = floating = null;
+      }
+      var noMin = min == null,
+          noMax = max == null;
+
+      if (floating == null) {
+        if (noMax && typeof min == 'boolean') {
+          floating = min;
+          min = 1;
+        }
+        else if (typeof max == 'boolean') {
+          floating = max;
+          noMax = true;
+        }
+      }
+      if (noMin && noMax) {
+        max = 1;
+        noMax = false;
+      }
+      min = +min || 0;
+      if (noMax) {
+        max = min;
+        min = 0;
+      } else {
+        max = +max || 0;
+      }
+      if (floating || min % 1 || max % 1) {
+        var rand = nativeRandom();
+        return nativeMin(min + (rand * (max - min + parseFloat('1e-' + ((rand + '').length - 1)))), max);
+      }
+      return baseRandom(min, max);
+    }
+
+    /*------------------------------------------------------------------------*/
+
+    /**
+     * Converts `string` to camel case.
+     * See [Wikipedia](https://en.wikipedia.org/wiki/CamelCase) for more details.
+     *
+     * @static
+     * @memberOf _
+     * @category String
+     * @param {string} [string=''] The string to convert.
+     * @returns {string} Returns the camel cased string.
+     * @example
+     *
+     * _.camelCase('Foo Bar');
+     * // => 'fooBar'
+     *
+     * _.camelCase('--foo-bar');
+     * // => 'fooBar'
+     *
+     * _.camelCase('__foo_bar__');
+     * // => 'fooBar'
+     */
+    var camelCase = createCompounder(function(result, word, index) {
+      word = word.toLowerCase();
+      return result + (index ? (word.charAt(0).toUpperCase() + word.slice(1)) : word);
+    });
+
+    /**
+     * Capitalizes the first character of `string`.
+     *
+     * @static
+     * @memberOf _
+     * @category String
+     * @param {string} [string=''] The string to capitalize.
+     * @returns {string} Returns the capitalized string.
+     * @example
+     *
+     * _.capitalize('fred');
+     * // => 'Fred'
+     */
+    function capitalize(string) {
+      string = baseToString(string);
+      return string && (string.charAt(0).toUpperCase() + string.slice(1));
+    }
+
+    /**
+     * Deburrs `string` by converting latin-1 supplementary letters to basic latin letters.
+     * See [Wikipedia](https://en.wikipedia.org/wiki/Latin-1_Supplement_(Unicode_block)#Character_table)
+     * for more details.
+     *
+     * @static
+     * @memberOf _
+     * @category String
+     * @param {string} [string=''] The string to deburr.
+     * @returns {string} Returns the deburred string.
+     * @example
+     *
+     * _.deburr('déjà vu');
+     * // => 'deja vu'
+     */
+    function deburr(string) {
+      string = baseToString(string);
+      return string && string.replace(reLatin1, deburrLetter);
+    }
+
+    /**
+     * Checks if `string` ends with the given target string.
+     *
+     * @static
+     * @memberOf _
+     * @category String
+     * @param {string} [string=''] The string to search.
+     * @param {string} [target] The string to search for.
+     * @param {number} [position=string.length] The position to search from.
+     * @returns {boolean} Returns `true` if `string` ends with `target`, else `false`.
+     * @example
+     *
+     * _.endsWith('abc', 'c');
+     * // => true
+     *
+     * _.endsWith('abc', 'b');
+     * // => false
+     *
+     * _.endsWith('abc', 'b', 2);
+     * // => true
+     */
+    function endsWith(string, target, position) {
+      string = baseToString(string);
+      target = (target + '');
+
+      var length = string.length;
+      position = (typeof position == 'undefined' ? length : nativeMin(position < 0 ? 0 : (+position || 0), length)) - target.length;
+      return position >= 0 && string.indexOf(target, position) == position;
+    }
+
+    /**
+     * Converts the characters "&", "<", ">", '"', "'", and '`', in `string` to
+     * their corresponding HTML entities.
+     *
+     * **Note:** No other characters are escaped. To escape additional characters
+     * use a third-party library like [_he_](https://mths.be/he).
+     *
+     * Though the ">" character is escaped for symmetry, characters like
+     * ">" and "/" don't require escaping in HTML and have no special meaning
+     * unless they're part of a tag or unquoted attribute value.
+     * See [Mathias Bynens's article](https://mathiasbynens.be/notes/ambiguous-ampersands)
+     * (under "semi-related fun fact") for more details.
+     *
+     * Backticks are escaped because in Internet Explorer < 9, they can break out
+     * of attribute values or HTML comments. See [#102](https://html5sec.org/#102),
+     * [#108](https://html5sec.org/#108), and [#133](https://html5sec.org/#133) of
+     * the [HTML5 Security Cheatsheet](https://html5sec.org/) for more details.
+     *
+     * When working with HTML you should always quote attribute values to reduce
+     * XSS vectors. See [Ryan Grove's article](http://wonko.com/post/html-escaping)
+     * for more details.
+     *
+     * @static
+     * @memberOf _
+     * @category String
+     * @param {string} [string=''] The string to escape.
+     * @returns {string} Returns the escaped string.
+     * @example
+     *
+     * _.escape('fred, barney, & pebbles');
+     * // => 'fred, barney, &amp; pebbles'
+     */
+    function escape(string) {
+      // Reset `lastIndex` because in IE < 9 `String#replace` does not.
+      string = baseToString(string);
+      return (string && reHasUnescapedHtml.test(string))
+        ? string.replace(reUnescapedHtml, escapeHtmlChar)
+        : string;
+    }
+
+    /**
+     * Escapes the `RegExp` special characters "\", "^", "$", ".", "|", "?", "*",
+     * "+", "(", ")", "[", "]", "{" and "}" in `string`.
+     *
+     * @static
+     * @memberOf _
+     * @category String
+     * @param {string} [string=''] The string to escape.
+     * @returns {string} Returns the escaped string.
+     * @example
+     *
+     * _.escapeRegExp('[lodash](https://lodash.com/)');
+     * // => '\[lodash\]\(https://lodash\.com/\)'
+     */
+    function escapeRegExp(string) {
+      string = baseToString(string);
+      return (string && reHasRegExpChars.test(string))
+        ? string.replace(reRegExpChars, '\\$&')
+        : string;
+    }
+
+    /**
+     * Converts `string` to kebab case (a.k.a. spinal case).
+     * See [Wikipedia](https://en.wikipedia.org/wiki/Letter_case#Special_case_styles) for
+     * more details.
+     *
+     * @static
+     * @memberOf _
+     * @category String
+     * @param {string} [string=''] The string to convert.
+     * @returns {string} Returns the kebab cased string.
+     * @example
+     *
+     * _.kebabCase('Foo Bar');
+     * // => 'foo-bar'
+     *
+     * _.kebabCase('fooBar');
+     * // => 'foo-bar'
+     *
+     * _.kebabCase('__foo_bar__');
+     * // => 'foo-bar'
+     */
+    var kebabCase = createCompounder(function(result, word, index) {
+      return result + (index ? '-' : '') + word.toLowerCase();
+    });
+
+    /**
+     * Pads `string` on the left and right sides if it is shorter then the given
+     * padding length. The `chars` string may be truncated if the number of padding
+     * characters can't be evenly divided by the padding length.
+     *
+     * @static
+     * @memberOf _
+     * @category String
+     * @param {string} [string=''] The string to pad.
+     * @param {number} [length=0] The padding length.
+     * @param {string} [chars=' '] The string used as padding.
+     * @returns {string} Returns the padded string.
+     * @example
+     *
+     * _.pad('abc', 8);
+     * // => '  abc   '
+     *
+     * _.pad('abc', 8, '_-');
+     * // => '_-abc_-_'
+     *
+     * _.pad('abc', 3);
+     * // => 'abc'
+     */
+    function pad(string, length, chars) {
+      string = baseToString(string);
+      length = +length;
+
+      var strLength = string.length;
+      if (strLength >= length || !nativeIsFinite(length)) {
+        return string;
+      }
+      var mid = (length - strLength) / 2,
+          leftLength = floor(mid),
+          rightLength = ceil(mid);
+
+      chars = createPad('', rightLength, chars);
+      return chars.slice(0, leftLength) + string + chars;
+    }
+
+    /**
+     * Pads `string` on the left side if it is shorter then the given padding
+     * length. The `chars` string may be truncated if the number of padding
+     * characters exceeds the padding length.
+     *
+     * @static
+     * @memberOf _
+     * @category String
+     * @param {string} [string=''] The string to pad.
+     * @param {number} [length=0] The padding length.
+     * @param {string} [chars=' '] The string used as padding.
+     * @returns {string} Returns the padded string.
+     * @example
+     *
+     * _.padLeft('abc', 6);
+     * // => '   abc'
+     *
+     * _.padLeft('abc', 6, '_-');
+     * // => '_-_abc'
+     *
+     * _.padLeft('abc', 3);
+     * // => 'abc'
+     */
+    function padLeft(string, length, chars) {
+      string = baseToString(string);
+      return string && (createPad(string, length, chars) + string);
+    }
+
+    /**
+     * Pads `string` on the right side if it is shorter then the given padding
+     * length. The `chars` string may be truncated if the number of padding
+     * characters exceeds the padding length.
+     *
+     * @static
+     * @memberOf _
+     * @category String
+     * @param {string} [string=''] The string to pad.
+     * @param {number} [length=0] The padding length.
+     * @param {string} [chars=' '] The string used as padding.
+     * @returns {string} Returns the padded string.
+     * @example
+     *
+     * _.padRight('abc', 6);
+     * // => 'abc   '
+     *
+     * _.padRight('abc', 6, '_-');
+     * // => 'abc_-_'
+     *
+     * _.padRight('abc', 3);
+     * // => 'abc'
+     */
+    function padRight(string, length, chars) {
+      string = baseToString(string);
+      return string && (string + createPad(string, length, chars));
+    }
+
+    /**
+     * Converts `string` to an integer of the specified radix. If `radix` is
+     * `undefined` or `0`, a `radix` of `10` is used unless `value` is a hexadecimal,
+     * in which case a `radix` of `16` is used.
+     *
+     * **Note:** This method aligns with the ES5 implementation of `parseInt`.
+     * See the [ES5 spec](https://es5.github.io/#E) for more details.
+     *
+     * @static
+     * @memberOf _
+     * @category String
+     * @param {string} string The string to convert.
+     * @param {number} [radix] The radix to interpret `value` by.
+     * @param- {Object} [guard] Enables use as a callback for functions like `_.map`.
+     * @returns {number} Returns the converted integer.
+     * @example
+     *
+     * _.parseInt('08');
+     * // => 8
+     *
+     * _.map(['6', '08', '10'], _.parseInt);
+     * // => [6, 8, 10]
+     */
+    function parseInt(string, radix, guard) {
+      if (guard && isIterateeCall(string, radix, guard)) {
+        radix = 0;
+      }
+      return nativeParseInt(string, radix);
+    }
+    // Fallback for environments with pre-ES5 implementations.
+    if (nativeParseInt(whitespace + '08') != 8) {
+      parseInt = function(string, radix, guard) {
+        // Firefox < 21 and Opera < 15 follow ES3 for `parseInt`.
+        // Chrome fails to trim leading <BOM> whitespace characters.
+        // See https://code.google.com/p/v8/issues/detail?id=3109 for more details.
+        if (guard ? isIterateeCall(string, radix, guard) : radix == null) {
+          radix = 0;
+        } else if (radix) {
+          radix = +radix;
+        }
+        string = trim(string);
+        return nativeParseInt(string, radix || (reHexPrefix.test(string) ? 16 : 10));
+      };
+    }
+
+    /**
+     * Repeats the given string `n` times.
+     *
+     * @static
+     * @memberOf _
+     * @category String
+     * @param {string} [string=''] The string to repeat.
+     * @param {number} [n=0] The number of times to repeat the string.
+     * @returns {string} Returns the repeated string.
+     * @example
+     *
+     * _.repeat('*', 3);
+     * // => '***'
+     *
+     * _.repeat('abc', 2);
+     * // => 'abcabc'
+     *
+     * _.repeat('abc', 0);
+     * // => ''
+     */
+    function repeat(string, n) {
+      var result = '';
+      string = baseToString(string);
+      n = +n;
+      if (n < 1 || !string || !nativeIsFinite(n)) {
+        return result;
+      }
+      // Leverage the exponentiation by squaring algorithm for a faster repeat.
+      // See https://en.wikipedia.org/wiki/Exponentiation_by_squaring for more details.
+      do {
+        if (n % 2) {
+          result += string;
+        }
+        n = floor(n / 2);
+        string += string;
+      } while (n);
+
+      return result;
+    }
+
+    /**
+     * Converts `string` to snake case.
+     * See [Wikipedia](https://en.wikipedia.org/wiki/Snake_case) for more details.
+     *
+     * @static
+     * @memberOf _
+     * @category String
+     * @param {string} [string=''] The string to convert.
+     * @returns {string} Returns the snake cased string.
+     * @example
+     *
+     * _.snakeCase('Foo Bar');
+     * // => 'foo_bar'
+     *
+     * _.snakeCase('fooBar');
+     * // => 'foo_bar'
+     *
+     * _.snakeCase('--foo-bar');
+     * // => 'foo_bar'
+     */
+    var snakeCase = createCompounder(function(result, word, index) {
+      return result + (index ? '_' : '') + word.toLowerCase();
+    });
+
+    /**
+     * Converts `string` to start case.
+     * See [Wikipedia](https://en.wikipedia.org/wiki/Letter_case#Stylistic_or_specialised_usage)
+     * for more details.
+     *
+     * @static
+     * @memberOf _
+     * @category String
+     * @param {string} [string=''] The string to convert.
+     * @returns {string} Returns the start cased string.
+     * @example
+     *
+     * _.startCase('--foo-bar');
+     * // => 'Foo Bar'
+     *
+     * _.startCase('fooBar');
+     * // => 'Foo Bar'
+     *
+     * _.startCase('__foo_bar__');
+     * // => 'Foo Bar'
+     */
+    var startCase = createCompounder(function(result, word, index) {
+      return result + (index ? ' ' : '') + (word.charAt(0).toUpperCase() + word.slice(1));
+    });
+
+    /**
+     * Checks if `string` starts with the given target string.
+     *
+     * @static
+     * @memberOf _
+     * @category String
+     * @param {string} [string=''] The string to search.
+     * @param {string} [target] The string to search for.
+     * @param {number} [position=0] The position to search from.
+     * @returns {boolean} Returns `true` if `string` starts with `target`, else `false`.
+     * @example
+     *
+     * _.startsWith('abc', 'a');
+     * // => true
+     *
+     * _.startsWith('abc', 'b');
+     * // => false
+     *
+     * _.startsWith('abc', 'b', 1);
+     * // => true
+     */
+    function startsWith(string, target, position) {
+      string = baseToString(string);
+      position = position == null ? 0 : nativeMin(position < 0 ? 0 : (+position || 0), string.length);
+      return string.lastIndexOf(target, position) == position;
+    }
+
+    /**
+     * Creates a compiled template function that can interpolate data properties
+     * in "interpolate" delimiters, HTML-escape interpolated data properties in
+     * "escape" delimiters, and execute JavaScript in "evaluate" delimiters. Data
+     * properties may be accessed as free variables in the template. If a setting
+     * object is provided it takes precedence over `_.templateSettings` values.
+     *
+     * **Note:** In the development build `_.template` utilizes sourceURLs for easier debugging.
+     * See the [HTML5 Rocks article on sourcemaps](http://www.html5rocks.com/en/tutorials/developertools/sourcemaps/#toc-sourceurl)
+     * for more details.
+     *
+     * For more information on precompiling templates see
+     * [lodash's custom builds documentation](https://lodash.com/custom-builds).
+     *
+     * For more information on Chrome extension sandboxes see
+     * [Chrome's extensions documentation](https://developer.chrome.com/extensions/sandboxingEval).
+     *
+     * @static
+     * @memberOf _
+     * @category String
+     * @param {string} [string=''] The template string.
+     * @param {Object} [options] The options object.
+     * @param {RegExp} [options.escape] The HTML "escape" delimiter.
+     * @param {RegExp} [options.evaluate] The "evaluate" delimiter.
+     * @param {Object} [options.imports] An object to import into the template as free variables.
+     * @param {RegExp} [options.interpolate] The "interpolate" delimiter.
+     * @param {string} [options.sourceURL] The sourceURL of the template's compiled source.
+     * @param {string} [options.variable] The data object variable name.
+     * @param- {Object} [otherOptions] Enables the legacy `options` param signature.
+     * @returns {Function} Returns the compiled template function.
+     * @example
+     *
+     * // using the "interpolate" delimiter to create a compiled template
+     * var compiled = _.template('hello <%= user %>!');
+     * compiled({ 'user': 'fred' });
+     * // => 'hello fred!'
+     *
+     * // using the HTML "escape" delimiter to escape data property values
+     * var compiled = _.template('<b><%- value %></b>');
+     * compiled({ 'value': '<script>' });
+     * // => '<b>&lt;script&gt;</b>'
+     *
+     * // using the "evaluate" delimiter to execute JavaScript and generate HTML
+     * var compiled = _.template('<% _.forEach(users, function(user) { %><li><%- user %></li><% }); %>');
+     * compiled({ 'users': ['fred', 'barney'] });
+     * // => '<li>fred</li><li>barney</li>'
+     *
+     * // using the internal `print` function in "evaluate" delimiters
+     * var compiled = _.template('<% print("hello " + user); %>!');
+     * compiled({ 'user': 'barney' });
+     * // => 'hello barney!'
+     *
+     * // using the ES delimiter as an alternative to the default "interpolate" delimiter
+     * var compiled = _.template('hello ${ user }!');
+     * compiled({ 'user': 'pebbles' });
+     * // => 'hello pebbles!'
+     *
+     * // using custom template delimiters
+     * _.templateSettings.interpolate = /{{([\s\S]+?)}}/g;
+     * var compiled = _.template('hello {{ user }}!');
+     * compiled({ 'user': 'mustache' });
+     * // => 'hello mustache!'
+     *
+     * // using backslashes to treat delimiters as plain text
+     * var compiled = _.template('<%= "\\<%- value %\\>" %>');
+     * compiled({ 'value': 'ignored' });
+     * // => '<%- value %>'
+     *
+     * // using the `imports` option to import `jQuery` as `jq`
+     * var text = '<% jq.each(users, function(user) { %><li><%- user %></li><% }); %>';
+     * var compiled = _.template(text, { 'imports': { 'jq': jQuery } });
+     * compiled({ 'users': ['fred', 'barney'] });
+     * // => '<li>fred</li><li>barney</li>'
+     *
+     * // using the `sourceURL` option to specify a custom sourceURL for the template
+     * var compiled = _.template('hello <%= user %>!', { 'sourceURL': '/basic/greeting.jst' });
+     * compiled(data);
+     * // => find the source of "greeting.jst" under the Sources tab or Resources panel of the web inspector
+     *
+     * // using the `variable` option to ensure a with-statement isn't used in the compiled template
+     * var compiled = _.template('hi <%= data.user %>!', { 'variable': 'data' });
+     * compiled.source;
+     * // => function(data) {
+     *   var __t, __p = '';
+     *   __p += 'hi ' + ((__t = ( data.user )) == null ? '' : __t) + '!';
+     *   return __p;
+     * }
+     *
+     * // using the `source` property to inline compiled templates for meaningful
+     * // line numbers in error messages and a stack trace
+     * fs.writeFileSync(path.join(cwd, 'jst.js'), '\
+     *   var JST = {\
+     *     "main": ' + _.template(mainText).source + '\
+     *   };\
+     * ');
+     */
+    function template(string, options, otherOptions) {
+      // Based on John Resig's `tmpl` implementation (http://ejohn.org/blog/javascript-micro-templating/)
+      // and Laura Doktorova's doT.js (https://github.com/olado/doT).
+      var settings = lodash.templateSettings;
+
+      if (otherOptions && isIterateeCall(string, options, otherOptions)) {
+        options = otherOptions = null;
+      }
+      string = baseToString(string);
+      options = baseAssign(baseAssign({}, otherOptions || options), settings, assignOwnDefaults);
+
+      var imports = baseAssign(baseAssign({}, options.imports), settings.imports, assignOwnDefaults),
+          importsKeys = keys(imports),
+          importsValues = baseValues(imports, importsKeys);
+
+      var isEscaping,
+          isEvaluating,
+          index = 0,
+          interpolate = options.interpolate || reNoMatch,
+          source = "__p += '";
+
+      // Compile the regexp to match each delimiter.
+      var reDelimiters = RegExp(
+        (options.escape || reNoMatch).source + '|' +
+        interpolate.source + '|' +
+        (interpolate === reInterpolate ? reEsTemplate : reNoMatch).source + '|' +
+        (options.evaluate || reNoMatch).source + '|$'
+      , 'g');
+
+      // Use a sourceURL for easier debugging.
+      var sourceURL = '//# sourceURL=' +
+        ('sourceURL' in options
+          ? options.sourceURL
+          : ('lodash.templateSources[' + (++templateCounter) + ']')
+        ) + '\n';
+
+      string.replace(reDelimiters, function(match, escapeValue, interpolateValue, esTemplateValue, evaluateValue, offset) {
+        interpolateValue || (interpolateValue = esTemplateValue);
+
+        // Escape characters that can't be included in string literals.
+        source += string.slice(index, offset).replace(reUnescapedString, escapeStringChar);
+
+        // Replace delimiters with snippets.
+        if (escapeValue) {
+          isEscaping = true;
+          source += "' +\n__e(" + escapeValue + ") +\n'";
+        }
+        if (evaluateValue) {
+          isEvaluating = true;
+          source += "';\n" + evaluateValue + ";\n__p += '";
+        }
+        if (interpolateValue) {
+          source += "' +\n((__t = (" + interpolateValue + ")) == null ? '' : __t) +\n'";
+        }
+        index = offset + match.length;
+
+        // The JS engine embedded in Adobe products requires returning the `match`
+        // string in order to produce the correct `offset` value.
+        return match;
+      });
+
+      source += "';\n";
+
+      // If `variable` is not specified wrap a with-statement around the generated
+      // code to add the data object to the top of the scope chain.
+      var variable = options.variable;
+      if (!variable) {
+        source = 'with (obj) {\n' + source + '\n}\n';
+      }
+      // Cleanup code by stripping empty strings.
+      source = (isEvaluating ? source.replace(reEmptyStringLeading, '') : source)
+        .replace(reEmptyStringMiddle, '$1')
+        .replace(reEmptyStringTrailing, '$1;');
+
+      // Frame code as the function body.
+      source = 'function(' + (variable || 'obj') + ') {\n' +
+        (variable
+          ? ''
+          : 'obj || (obj = {});\n'
+        ) +
+        "var __t, __p = ''" +
+        (isEscaping
+           ? ', __e = _.escape'
+           : ''
+        ) +
+        (isEvaluating
+          ? ', __j = Array.prototype.join;\n' +
+            "function print() { __p += __j.call(arguments, '') }\n"
+          : ';\n'
+        ) +
+        source +
+        'return __p\n}';
+
+      var result = attempt(function() {
+        return Function(importsKeys, sourceURL + 'return ' + source).apply(undefined, importsValues);
+      });
+
+      // Provide the compiled function's source by its `toString` method or
+      // the `source` property as a convenience for inlining compiled templates.
+      result.source = source;
+      if (isError(result)) {
+        throw result;
+      }
+      return result;
+    }
+
+    /**
+     * Removes leading and trailing whitespace or specified characters from `string`.
+     *
+     * @static
+     * @memberOf _
+     * @category String
+     * @param {string} [string=''] The string to trim.
+     * @param {string} [chars=whitespace] The characters to trim.
+     * @param- {Object} [guard] Enables use as a callback for functions like `_.map`.
+     * @returns {string} Returns the trimmed string.
+     * @example
+     *
+     * _.trim('  abc  ');
+     * // => 'abc'
+     *
+     * _.trim('-_-abc-_-', '_-');
+     * // => 'abc'
+     *
+     * _.map(['  foo  ', '  bar  '], _.trim);
+     * // => ['foo', 'bar]
+     */
+    function trim(string, chars, guard) {
+      var value = string;
+      string = baseToString(string);
+      if (!string) {
+        return string;
+      }
+      if (guard ? isIterateeCall(value, chars, guard) : chars == null) {
+        return string.slice(trimmedLeftIndex(string), trimmedRightIndex(string) + 1);
+      }
+      chars = (chars + '');
+      return string.slice(charsLeftIndex(string, chars), charsRightIndex(string, chars) + 1);
+    }
+
+    /**
+     * Removes leading whitespace or specified characters from `string`.
+     *
+     * @static
+     * @memberOf _
+     * @category String
+     * @param {string} [string=''] The string to trim.
+     * @param {string} [chars=whitespace] The characters to trim.
+     * @param- {Object} [guard] Enables use as a callback for functions like `_.map`.
+     * @returns {string} Returns the trimmed string.
+     * @example
+     *
+     * _.trimLeft('  abc  ');
+     * // => 'abc  '
+     *
+     * _.trimLeft('-_-abc-_-', '_-');
+     * // => 'abc-_-'
+     */
+    function trimLeft(string, chars, guard) {
+      var value = string;
+      string = baseToString(string);
+      if (!string) {
+        return string;
+      }
+      if (guard ? isIterateeCall(value, chars, guard) : chars == null) {
+        return string.slice(trimmedLeftIndex(string));
+      }
+      return string.slice(charsLeftIndex(string, (chars + '')));
+    }
+
+    /**
+     * Removes trailing whitespace or specified characters from `string`.
+     *
+     * @static
+     * @memberOf _
+     * @category String
+     * @param {string} [string=''] The string to trim.
+     * @param {string} [chars=whitespace] The characters to trim.
+     * @param- {Object} [guard] Enables use as a callback for functions like `_.map`.
+     * @returns {string} Returns the trimmed string.
+     * @example
+     *
+     * _.trimRight('  abc  ');
+     * // => '  abc'
+     *
+     * _.trimRight('-_-abc-_-', '_-');
+     * // => '-_-abc'
+     */
+    function trimRight(string, chars, guard) {
+      var value = string;
+      string = baseToString(string);
+      if (!string) {
+        return string;
+      }
+      if (guard ? isIterateeCall(value, chars, guard) : chars == null) {
+        return string.slice(0, trimmedRightIndex(string) + 1);
+      }
+      return string.slice(0, charsRightIndex(string, (chars + '')) + 1);
+    }
+
+    /**
+     * Truncates `string` if it is longer than the given maximum string length.
+     * The last characters of the truncated string are replaced with the omission
+     * string which defaults to "...".
+     *
+     * @static
+     * @memberOf _
+     * @category String
+     * @param {string} [string=''] The string to truncate.
+     * @param {Object|number} [options] The options object or maximum string length.
+     * @param {number} [options.length=30] The maximum string length.
+     * @param {string} [options.omission='...'] The string to indicate text is omitted.
+     * @param {RegExp|string} [options.separator] The separator pattern to truncate to.
+     * @param- {Object} [guard] Enables use as a callback for functions like `_.map`.
+     * @returns {string} Returns the truncated string.
+     * @example
+     *
+     * _.trunc('hi-diddly-ho there, neighborino');
+     * // => 'hi-diddly-ho there, neighbo...'
+     *
+     * _.trunc('hi-diddly-ho there, neighborino', 24);
+     * // => 'hi-diddly-ho there, n...'
+     *
+     * _.trunc('hi-diddly-ho there, neighborino', { 'length': 24, 'separator': ' ' });
+     * // => 'hi-diddly-ho there,...'
+     *
+     * _.trunc('hi-diddly-ho there, neighborino', { 'length': 24, 'separator': /,? +/ });
+     * //=> 'hi-diddly-ho there...'
+     *
+     * _.trunc('hi-diddly-ho there, neighborino', { 'omission': ' [...]' });
+     * // => 'hi-diddly-ho there, neig [...]'
+     */
+    function trunc(string, options, guard) {
+      if (guard && isIterateeCall(string, options, guard)) {
+        options = null;
+      }
+      var length = DEFAULT_TRUNC_LENGTH,
+          omission = DEFAULT_TRUNC_OMISSION;
+
+      if (options != null) {
+        if (isObject(options)) {
+          var separator = 'separator' in options ? options.separator : separator;
+          length = 'length' in options ? +options.length || 0 : length;
+          omission = 'omission' in options ? baseToString(options.omission) : omission;
+        } else {
+          length = +options || 0;
+        }
+      }
+      string = baseToString(string);
+      if (length >= string.length) {
+        return string;
+      }
+      var end = length - omission.length;
+      if (end < 1) {
+        return omission;
+      }
+      var result = string.slice(0, end);
+      if (separator == null) {
+        return result + omission;
+      }
+      if (isRegExp(separator)) {
+        if (string.slice(end).search(separator)) {
+          var match,
+              newEnd,
+              substring = string.slice(0, end);
+
+          if (!separator.global) {
+            separator = RegExp(separator.source, (reFlags.exec(separator) || '') + 'g');
+          }
+          separator.lastIndex = 0;
+          while ((match = separator.exec(substring))) {
+            newEnd = match.index;
+          }
+          result = result.slice(0, newEnd == null ? end : newEnd);
+        }
+      } else if (string.indexOf(separator, end) != end) {
+        var index = result.lastIndexOf(separator);
+        if (index > -1) {
+          result = result.slice(0, index);
+        }
+      }
+      return result + omission;
+    }
+
+    /**
+     * The inverse of `_.escape`; this method converts the HTML entities
+     * `&amp;`, `&lt;`, `&gt;`, `&quot;`, `&#39;`, and `&#96;` in `string` to their
+     * corresponding characters.
+     *
+     * **Note:** No other HTML entities are unescaped. To unescape additional HTML
+     * entities use a third-party library like [_he_](https://mths.be/he).
+     *
+     * @static
+     * @memberOf _
+     * @category String
+     * @param {string} [string=''] The string to unescape.
+     * @returns {string} Returns the unescaped string.
+     * @example
+     *
+     * _.unescape('fred, barney, &amp; pebbles');
+     * // => 'fred, barney, & pebbles'
+     */
+    function unescape(string) {
+      string = baseToString(string);
+      return (string && reHasEscapedHtml.test(string))
+        ? string.replace(reEscapedHtml, unescapeHtmlChar)
+        : string;
+    }
+
+    /**
+     * Splits `string` into an array of its words.
+     *
+     * @static
+     * @memberOf _
+     * @category String
+     * @param {string} [string=''] The string to inspect.
+     * @param {RegExp|string} [pattern] The pattern to match words.
+     * @param- {Object} [guard] Enables use as a callback for functions like `_.map`.
+     * @returns {Array} Returns the words of `string`.
+     * @example
+     *
+     * _.words('fred, barney, & pebbles');
+     * // => ['fred', 'barney', 'pebbles']
+     *
+     * _.words('fred, barney, & pebbles', /[^, ]+/g);
+     * // => ['fred', 'barney', '&', 'pebbles']
+     */
+    function words(string, pattern, guard) {
+      if (guard && isIterateeCall(string, pattern, guard)) {
+        pattern = null;
+      }
+      string = baseToString(string);
+      return string.match(pattern || reWords) || [];
+    }
+
+    /*------------------------------------------------------------------------*/
+
+    /**
+     * Attempts to invoke `func`, returning either the result or the caught error
+     * object. Any additional arguments are provided to `func` when it is invoked.
+     *
+     * @static
+     * @memberOf _
+     * @category Utility
+     * @param {*} func The function to attempt.
+     * @returns {*} Returns the `func` result or error object.
+     * @example
+     *
+     * // avoid throwing errors for invalid selectors
+     * var elements = _.attempt(function(selector) {
+     *   return document.querySelectorAll(selector);
+     * }, '>_>');
+     *
+     * if (_.isError(elements)) {
+     *   elements = [];
+     * }
+     */
+    function attempt(func) {
+      try {
+        return func.apply(undefined, baseSlice(arguments, 1));
+      } catch(e) {
+        return isError(e) ? e : new Error(e);
+      }
+    }
+
+    /**
+     * Creates a function that invokes `func` with the `this` binding of `thisArg`
+     * and arguments of the created function. If `func` is a property name the
+     * created callback returns the property value for a given element. If `func`
+     * is an object the created callback returns `true` for elements that contain
+     * the equivalent object properties, otherwise it returns `false`.
+     *
+     * @static
+     * @memberOf _
+     * @alias iteratee
+     * @category Utility
+     * @param {*} [func=_.identity] The value to convert to a callback.
+     * @param {*} [thisArg] The `this` binding of `func`.
+     * @param- {Object} [guard] Enables use as a callback for functions like `_.map`.
+     * @returns {Function} Returns the callback.
+     * @example
+     *
+     * var users = [
+     *   { 'user': 'barney', 'age': 36 },
+     *   { 'user': 'fred',   'age': 40 }
+     * ];
+     *
+     * // wrap to create custom callback shorthands
+     * _.callback = _.wrap(_.callback, function(callback, func, thisArg) {
+     *   var match = /^(.+?)__([gl]t)(.+)$/.exec(func);
+     *   if (!match) {
+     *     return callback(func, thisArg);
+     *   }
+     *   return function(object) {
+     *     return match[2] == 'gt' ? object[match[1]] > match[3] : object[match[1]] < match[3];
+     *   };
+     * });
+     *
+     * _.filter(users, 'age__gt36');
+     * // => [{ 'user': 'fred', 'age': 40 }]
+     */
+    function callback(func, thisArg, guard) {
+      if (guard && isIterateeCall(func, thisArg, guard)) {
+        thisArg = null;
+      }
+      return isObjectLike(func)
+        ? matches(func)
+        : baseCallback(func, thisArg);
+    }
+
+    /**
+     * Creates a function that returns `value`.
+     *
+     * @static
+     * @memberOf _
+     * @category Utility
+     * @param {*} value The value to return from the new function.
+     * @returns {Function} Returns the new function.
+     * @example
+     *
+     * var object = { 'user': 'fred' };
+     * var getter = _.constant(object);
+     * getter() === object;
+     * // => true
+     */
+    function constant(value) {
+      return function() {
+        return value;
+      };
+    }
+
+    /**
+     * This method returns the first argument provided to it.
+     *
+     * @static
+     * @memberOf _
+     * @category Utility
+     * @param {*} value Any value.
+     * @returns {*} Returns `value`.
+     * @example
+     *
+     * var object = { 'user': 'fred' };
+     * _.identity(object) === object;
+     * // => true
+     */
+    function identity(value) {
+      return value;
+    }
+
+    /**
+     * Creates a function which performs a deep comparison between a given object
+     * and `source`, returning `true` if the given object has equivalent property
+     * values, else `false`.
+     *
+     * **Note:** This method supports comparing arrays, booleans, `Date` objects,
+     * numbers, `Object` objects, regexes, and strings. Objects are compared by
+     * their own, not inherited, enumerable properties. For comparing a single
+     * own or inherited property value see `_.matchesProperty`.
+     *
+     * @static
+     * @memberOf _
+     * @category Utility
+     * @param {Object} source The object of property values to match.
+     * @returns {Function} Returns the new function.
+     * @example
+     *
+     * var users = [
+     *   { 'user': 'barney', 'age': 36, 'active': true },
+     *   { 'user': 'fred',   'age': 40, 'active': false }
+     * ];
+     *
+     * _.filter(users, _.matches({ 'age': 40, 'active': false }));
+     * // => [{ 'user': 'fred', 'age': 40, 'active': false }]
+     */
+    function matches(source) {
+      return baseMatches(baseClone(source, true));
+    }
+
+    /**
+     * Creates a function which compares the property value of `key` on a given
+     * object to `value`.
+     *
+     * **Note:** This method supports comparing arrays, booleans, `Date` objects,
+     * numbers, `Object` objects, regexes, and strings. Objects are compared by
+     * their own, not inherited, enumerable properties.
+     *
+     * @static
+     * @memberOf _
+     * @category Utility
+     * @param {string} key The key of the property to get.
+     * @param {*} value The value to compare.
+     * @returns {Function} Returns the new function.
+     * @example
+     *
+     * var users = [
+     *   { 'user': 'barney',  'age': 36 },
+     *   { 'user': 'fred',    'age': 40 },
+     *   { 'user': 'pebbles', 'age': 1 }
+     * ];
+     *
+     * var matchFred = _.matchesProperty('user', 'fred');
+     *
+     * _.find(users, matchFred);
+     * // => { 'user': 'fred', 'age': 40 }
+     */
+    function matchesProperty(key, value) {
+      return baseMatchesProperty(key + '', baseClone(value, true));
+    }
+
+    /**
+     * Adds all own enumerable function properties of a source object to the
+     * destination object. If `object` is a function then methods are added to
+     * its prototype as well.
+     *
+     * @static
+     * @memberOf _
+     * @category Utility
+     * @param {Function|Object} [object=this] object The destination object.
+     * @param {Object} source The object of functions to add.
+     * @param {Object} [options] The options object.
+     * @param {boolean} [options.chain=true] Specify whether the functions added
+     *  are chainable.
+     * @returns {Function|Object} Returns `object`.
+     * @example
+     *
+     * function vowels(string) {
+     *   return _.filter(string, function(v) {
+     *     return /[aeiou]/i.test(v);
+     *   });
+     * }
+     *
+     * // use `_.runInContext` to avoid potential conflicts (esp. in Node.js)
+     * var _ = require('lodash').runInContext();
+     *
+     * _.mixin({ 'vowels': vowels });
+     * _.vowels('fred');
+     * // => ['e']
+     *
+     * _('fred').vowels().value();
+     * // => ['e']
+     *
+     * _.mixin({ 'vowels': vowels }, { 'chain': false });
+     * _('fred').vowels();
+     * // => ['e']
+     */
+    function mixin(object, source, options) {
+      if (options == null) {
+        var isObj = isObject(source),
+            props = isObj && keys(source),
+            methodNames = props && props.length && baseFunctions(source, props);
+
+        if (!(methodNames ? methodNames.length : isObj)) {
+          methodNames = false;
+          options = source;
+          source = object;
+          object = this;
+        }
+      }
+      if (!methodNames) {
+        methodNames = baseFunctions(source, keys(source));
+      }
+      var chain = true,
+          index = -1,
+          isFunc = isFunction(object),
+          length = methodNames.length;
+
+      if (options === false) {
+        chain = false;
+      } else if (isObject(options) && 'chain' in options) {
+        chain = options.chain;
+      }
+      while (++index < length) {
+        var methodName = methodNames[index],
+            func = source[methodName];
+
+        object[methodName] = func;
+        if (isFunc) {
+          object.prototype[methodName] = (function(func) {
+            return function() {
+              var chainAll = this.__chain__;
+              if (chain || chainAll) {
+                var result = object(this.__wrapped__);
+                (result.__actions__ = arrayCopy(this.__actions__)).push({ 'func': func, 'args': arguments, 'thisArg': object });
+                result.__chain__ = chainAll;
+                return result;
+              }
+              var args = [this.value()];
+              push.apply(args, arguments);
+              return func.apply(object, args);
+            };
+          }(func));
+        }
+      }
+      return object;
+    }
+
+    /**
+     * Reverts the `_` variable to its previous value and returns a reference to
+     * the `lodash` function.
+     *
+     * @static
+     * @memberOf _
+     * @category Utility
+     * @returns {Function} Returns the `lodash` function.
+     * @example
+     *
+     * var lodash = _.noConflict();
+     */
+    function noConflict() {
+      context._ = oldDash;
+      return this;
+    }
+
+    /**
+     * A no-operation function.
+     *
+     * @static
+     * @memberOf _
+     * @category Utility
+     * @example
+     *
+     * var object = { 'user': 'fred' };
+     * _.noop(object) === undefined;
+     * // => true
+     */
+    function noop() {
+      // No operation performed.
+    }
+
+    /**
+     * Creates a function which returns the property value of `key` on a given object.
+     *
+     * @static
+     * @memberOf _
+     * @category Utility
+     * @param {string} key The key of the property to get.
+     * @returns {Function} Returns the new function.
+     * @example
+     *
+     * var users = [
+     *   { 'user': 'fred' },
+     *   { 'user': 'barney' }
+     * ];
+     *
+     * var getName = _.property('user');
+     *
+     * _.map(users, getName);
+     * // => ['fred', barney']
+     *
+     * _.pluck(_.sortBy(users, getName), 'user');
+     * // => ['barney', 'fred']
+     */
+    function property(key) {
+      return baseProperty(key + '');
+    }
+
+    /**
+     * The inverse of `_.property`; this method creates a function which returns
+     * the property value of a given key on `object`.
+     *
+     * @static
+     * @memberOf _
+     * @category Utility
+     * @param {Object} object The object to inspect.
+     * @returns {Function} Returns the new function.
+     * @example
+     *
+     * var object = { 'user': 'fred', 'age': 40, 'active': true };
+     * _.map(['active', 'user'], _.propertyOf(object));
+     * // => [true, 'fred']
+     *
+     * var object = { 'a': 3, 'b': 1, 'c': 2 };
+     * _.sortBy(['a', 'b', 'c'], _.propertyOf(object));
+     * // => ['b', 'c', 'a']
+     */
+    function propertyOf(object) {
+      return function(key) {
+        return object == null ? undefined : object[key];
+      };
+    }
+
+    /**
+     * Creates an array of numbers (positive and/or negative) progressing from
+     * `start` up to, but not including, `end`. If `start` is less than `end` a
+     * zero-length range is created unless a negative `step` is specified.
+     *
+     * @static
+     * @memberOf _
+     * @category Utility
+     * @param {number} [start=0] The start of the range.
+     * @param {number} end The end of the range.
+     * @param {number} [step=1] The value to increment or decrement by.
+     * @returns {Array} Returns the new array of numbers.
+     * @example
+     *
+     * _.range(4);
+     * // => [0, 1, 2, 3]
+     *
+     * _.range(1, 5);
+     * // => [1, 2, 3, 4]
+     *
+     * _.range(0, 20, 5);
+     * // => [0, 5, 10, 15]
+     *
+     * _.range(0, -4, -1);
+     * // => [0, -1, -2, -3]
+     *
+     * _.range(1, 4, 0);
+     * // => [1, 1, 1]
+     *
+     * _.range(0);
+     * // => []
+     */
+    function range(start, end, step) {
+      if (step && isIterateeCall(start, end, step)) {
+        end = step = null;
+      }
+      start = +start || 0;
+      step = step == null ? 1 : (+step || 0);
+
+      if (end == null) {
+        end = start;
+        start = 0;
+      } else {
+        end = +end || 0;
+      }
+      // Use `Array(length)` so engines like Chakra and V8 avoid slower modes.
+      // See https://youtu.be/XAqIpGU8ZZk#t=17m25s for more details.
+      var index = -1,
+          length = nativeMax(ceil((end - start) / (step || 1)), 0),
+          result = Array(length);
+
+      while (++index < length) {
+        result[index] = start;
+        start += step;
+      }
+      return result;
+    }
+
+    /**
+     * Invokes the iteratee function `n` times, returning an array of the results
+     * of each invocation. The `iteratee` is bound to `thisArg` and invoked with
+     * one argument; (index).
+     *
+     * @static
+     * @memberOf _
+     * @category Utility
+     * @param {number} n The number of times to invoke `iteratee`.
+     * @param {Function} [iteratee=_.identity] The function invoked per iteration.
+     * @param {*} [thisArg] The `this` binding of `iteratee`.
+     * @returns {Array} Returns the array of results.
+     * @example
+     *
+     * var diceRolls = _.times(3, _.partial(_.random, 1, 6, false));
+     * // => [3, 6, 4]
+     *
+     * _.times(3, function(n) { mage.castSpell(n); });
+     * // => invokes `mage.castSpell(n)` three times with `n` of `0`, `1`, and `2` respectively
+     *
+     * _.times(3, function(n) { this.cast(n); }, mage);
+     * // => also invokes `mage.castSpell(n)` three times
+     */
+    function times(n, iteratee, thisArg) {
+      n = +n;
+
+      // Exit early to avoid a JSC JIT bug in Safari 8
+      // where `Array(0)` is treated as `Array(1)`.
+      if (n < 1 || !nativeIsFinite(n)) {
+        return [];
+      }
+      var index = -1,
+          result = Array(nativeMin(n, MAX_ARRAY_LENGTH));
+
+      iteratee = bindCallback(iteratee, thisArg, 1);
+      while (++index < n) {
+        if (index < MAX_ARRAY_LENGTH) {
+          result[index] = iteratee(index);
+        } else {
+          iteratee(index);
+        }
+      }
+      return result;
+    }
+
+    /**
+     * Generates a unique ID. If `prefix` is provided the ID is appended to it.
+     *
+     * @static
+     * @memberOf _
+     * @category Utility
+     * @param {string} [prefix] The value to prefix the ID with.
+     * @returns {string} Returns the unique ID.
+     * @example
+     *
+     * _.uniqueId('contact_');
+     * // => 'contact_104'
+     *
+     * _.uniqueId();
+     * // => '105'
+     */
+    function uniqueId(prefix) {
+      var id = ++idCounter;
+      return baseToString(prefix) + id;
+    }
+
+    /*------------------------------------------------------------------------*/
+
+    // Ensure `new LodashWrapper` is an instance of `lodash`.
+    LodashWrapper.prototype = baseCreate(lodash.prototype);
+
+    // Ensure `new LazyWraper` is an instance of `LodashWrapper`
+    LazyWrapper.prototype = baseCreate(LodashWrapper.prototype);
+    LazyWrapper.prototype.constructor = LazyWrapper;
+
+    // Add functions to the `Map` cache.
+    MapCache.prototype['delete'] = mapDelete;
+    MapCache.prototype.get = mapGet;
+    MapCache.prototype.has = mapHas;
+    MapCache.prototype.set = mapSet;
+
+    // Add functions to the `Set` cache.
+    SetCache.prototype.push = cachePush;
+
+    // Assign cache to `_.memoize`.
+    memoize.Cache = MapCache;
+
+    // Add functions that return wrapped values when chaining.
+    lodash.after = after;
+    lodash.ary = ary;
+    lodash.assign = assign;
+    lodash.at = at;
+    lodash.before = before;
+    lodash.bind = bind;
+    lodash.bindAll = bindAll;
+    lodash.bindKey = bindKey;
+    lodash.callback = callback;
+    lodash.chain = chain;
+    lodash.chunk = chunk;
+    lodash.compact = compact;
+    lodash.constant = constant;
+    lodash.countBy = countBy;
+    lodash.create = create;
+    lodash.curry = curry;
+    lodash.curryRight = curryRight;
+    lodash.debounce = debounce;
+    lodash.defaults = defaults;
+    lodash.defer = defer;
+    lodash.delay = delay;
+    lodash.difference = difference;
+    lodash.drop = drop;
+    lodash.dropRight = dropRight;
+    lodash.dropRightWhile = dropRightWhile;
+    lodash.dropWhile = dropWhile;
+    lodash.fill = fill;
+    lodash.filter = filter;
+    lodash.flatten = flatten;
+    lodash.flattenDeep = flattenDeep;
+    lodash.flow = flow;
+    lodash.flowRight = flowRight;
+    lodash.forEach = forEach;
+    lodash.forEachRight = forEachRight;
+    lodash.forIn = forIn;
+    lodash.forInRight = forInRight;
+    lodash.forOwn = forOwn;
+    lodash.forOwnRight = forOwnRight;
+    lodash.functions = functions;
+    lodash.groupBy = groupBy;
+    lodash.indexBy = indexBy;
+    lodash.initial = initial;
+    lodash.intersection = intersection;
+    lodash.invert = invert;
+    lodash.invoke = invoke;
+    lodash.keys = keys;
+    lodash.keysIn = keysIn;
+    lodash.map = map;
+    lodash.mapValues = mapValues;
+    lodash.matches = matches;
+    lodash.matchesProperty = matchesProperty;
+    lodash.memoize = memoize;
+    lodash.merge = merge;
+    lodash.mixin = mixin;
+    lodash.negate = negate;
+    lodash.omit = omit;
+    lodash.once = once;
+    lodash.pairs = pairs;
+    lodash.partial = partial;
+    lodash.partialRight = partialRight;
+    lodash.partition = partition;
+    lodash.pick = pick;
+    lodash.pluck = pluck;
+    lodash.property = property;
+    lodash.propertyOf = propertyOf;
+    lodash.pull = pull;
+    lodash.pullAt = pullAt;
+    lodash.range = range;
+    lodash.rearg = rearg;
+    lodash.reject = reject;
+    lodash.remove = remove;
+    lodash.rest = rest;
+    lodash.shuffle = shuffle;
+    lodash.slice = slice;
+    lodash.sortBy = sortBy;
+    lodash.sortByAll = sortByAll;
+    lodash.spread = spread;
+    lodash.take = take;
+    lodash.takeRight = takeRight;
+    lodash.takeRightWhile = takeRightWhile;
+    lodash.takeWhile = takeWhile;
+    lodash.tap = tap;
+    lodash.throttle = throttle;
+    lodash.thru = thru;
+    lodash.times = times;
+    lodash.toArray = toArray;
+    lodash.toPlainObject = toPlainObject;
+    lodash.transform = transform;
+    lodash.union = union;
+    lodash.uniq = uniq;
+    lodash.unzip = unzip;
+    lodash.values = values;
+    lodash.valuesIn = valuesIn;
+    lodash.where = where;
+    lodash.without = without;
+    lodash.wrap = wrap;
+    lodash.xor = xor;
+    lodash.zip = zip;
+    lodash.zipObject = zipObject;
+
+    // Add aliases.
+    lodash.backflow = flowRight;
+    lodash.collect = map;
+    lodash.compose = flowRight;
+    lodash.each = forEach;
+    lodash.eachRight = forEachRight;
+    lodash.extend = assign;
+    lodash.iteratee = callback;
+    lodash.methods = functions;
+    lodash.object = zipObject;
+    lodash.select = filter;
+    lodash.tail = rest;
+    lodash.unique = uniq;
+
+    // Add functions to `lodash.prototype`.
+    mixin(lodash, lodash);
+
+    /*------------------------------------------------------------------------*/
+
+    // Add functions that return unwrapped values when chaining.
+    lodash.attempt = attempt;
+    lodash.camelCase = camelCase;
+    lodash.capitalize = capitalize;
+    lodash.clone = clone;
+    lodash.cloneDeep = cloneDeep;
+    lodash.deburr = deburr;
+    lodash.endsWith = endsWith;
+    lodash.escape = escape;
+    lodash.escapeRegExp = escapeRegExp;
+    lodash.every = every;
+    lodash.find = find;
+    lodash.findIndex = findIndex;
+    lodash.findKey = findKey;
+    lodash.findLast = findLast;
+    lodash.findLastIndex = findLastIndex;
+    lodash.findLastKey = findLastKey;
+    lodash.findWhere = findWhere;
+    lodash.first = first;
+    lodash.has = has;
+    lodash.identity = identity;
+    lodash.includes = includes;
+    lodash.indexOf = indexOf;
+    lodash.isArguments = isArguments;
+    lodash.isArray = isArray;
+    lodash.isBoolean = isBoolean;
+    lodash.isDate = isDate;
+    lodash.isElement = isElement;
+    lodash.isEmpty = isEmpty;
+    lodash.isEqual = isEqual;
+    lodash.isError = isError;
+    lodash.isFinite = isFinite;
+    lodash.isFunction = isFunction;
+    lodash.isMatch = isMatch;
+    lodash.isNaN = isNaN;
+    lodash.isNative = isNative;
+    lodash.isNull = isNull;
+    lodash.isNumber = isNumber;
+    lodash.isObject = isObject;
+    lodash.isPlainObject = isPlainObject;
+    lodash.isRegExp = isRegExp;
+    lodash.isString = isString;
+    lodash.isTypedArray = isTypedArray;
+    lodash.isUndefined = isUndefined;
+    lodash.kebabCase = kebabCase;
+    lodash.last = last;
+    lodash.lastIndexOf = lastIndexOf;
+    lodash.max = max;
+    lodash.min = min;
+    lodash.noConflict = noConflict;
+    lodash.noop = noop;
+    lodash.now = now;
+    lodash.pad = pad;
+    lodash.padLeft = padLeft;
+    lodash.padRight = padRight;
+    lodash.parseInt = parseInt;
+    lodash.random = random;
+    lodash.reduce = reduce;
+    lodash.reduceRight = reduceRight;
+    lodash.repeat = repeat;
+    lodash.result = result;
+    lodash.runInContext = runInContext;
+    lodash.size = size;
+    lodash.snakeCase = snakeCase;
+    lodash.some = some;
+    lodash.sortedIndex = sortedIndex;
+    lodash.sortedLastIndex = sortedLastIndex;
+    lodash.startCase = startCase;
+    lodash.startsWith = startsWith;
+    lodash.template = template;
+    lodash.trim = trim;
+    lodash.trimLeft = trimLeft;
+    lodash.trimRight = trimRight;
+    lodash.trunc = trunc;
+    lodash.unescape = unescape;
+    lodash.uniqueId = uniqueId;
+    lodash.words = words;
+
+    // Add aliases.
+    lodash.all = every;
+    lodash.any = some;
+    lodash.contains = includes;
+    lodash.detect = find;
+    lodash.foldl = reduce;
+    lodash.foldr = reduceRight;
+    lodash.head = first;
+    lodash.include = includes;
+    lodash.inject = reduce;
+
+    mixin(lodash, (function() {
+      var source = {};
+      baseForOwn(lodash, function(func, methodName) {
+        if (!lodash.prototype[methodName]) {
+          source[methodName] = func;
+        }
+      });
+      return source;
+    }()), false);
+
+    /*------------------------------------------------------------------------*/
+
+    // Add functions capable of returning wrapped and unwrapped values when chaining.
+    lodash.sample = sample;
+
+    lodash.prototype.sample = function(n) {
+      if (!this.__chain__ && n == null) {
+        return sample(this.value());
+      }
+      return this.thru(function(value) {
+        return sample(value, n);
+      });
+    };
+
+    /*------------------------------------------------------------------------*/
+
+    /**
+     * The semantic version number.
+     *
+     * @static
+     * @memberOf _
+     * @type string
+     */
+    lodash.VERSION = VERSION;
+
+    // Assign default placeholders.
+    arrayEach(['bind', 'bindKey', 'curry', 'curryRight', 'partial', 'partialRight'], function(methodName) {
+      lodash[methodName].placeholder = lodash;
+    });
+
+    // Add `LazyWrapper` methods that accept an `iteratee` value.
+    arrayEach(['filter', 'map', 'takeWhile'], function(methodName, index) {
+      var isFilter = index == LAZY_FILTER_FLAG,
+          isWhile = index == LAZY_WHILE_FLAG;
+
+      LazyWrapper.prototype[methodName] = function(iteratee, thisArg) {
+        var result = this.clone(),
+            filtered = result.__filtered__,
+            iteratees = result.__iteratees__ || (result.__iteratees__ = []);
+
+        result.__filtered__ = filtered || isFilter || (isWhile && result.__dir__ < 0);
+        iteratees.push({ 'iteratee': getCallback(iteratee, thisArg, 3), 'type': index });
+        return result;
+      };
+    });
+
+    // Add `LazyWrapper` methods for `_.drop` and `_.take` variants.
+    arrayEach(['drop', 'take'], function(methodName, index) {
+      var countName = '__' + methodName + 'Count__',
+          whileName = methodName + 'While';
+
+      LazyWrapper.prototype[methodName] = function(n) {
+        n = n == null ? 1 : nativeMax(floor(n) || 0, 0);
+
+        var result = this.clone();
+        if (result.__filtered__) {
+          var value = result[countName];
+          result[countName] = index ? nativeMin(value, n) : (value + n);
+        } else {
+          var views = result.__views__ || (result.__views__ = []);
+          views.push({ 'size': n, 'type': methodName + (result.__dir__ < 0 ? 'Right' : '') });
+        }
+        return result;
+      };
+
+      LazyWrapper.prototype[methodName + 'Right'] = function(n) {
+        return this.reverse()[methodName](n).reverse();
+      };
+
+      LazyWrapper.prototype[methodName + 'RightWhile'] = function(predicate, thisArg) {
+        return this.reverse()[whileName](predicate, thisArg).reverse();
+      };
+    });
+
+    // Add `LazyWrapper` methods for `_.first` and `_.last`.
+    arrayEach(['first', 'last'], function(methodName, index) {
+      var takeName = 'take' + (index ? 'Right' : '');
+
+      LazyWrapper.prototype[methodName] = function() {
+        return this[takeName](1).value()[0];
+      };
+    });
+
+    // Add `LazyWrapper` methods for `_.initial` and `_.rest`.
+    arrayEach(['initial', 'rest'], function(methodName, index) {
+      var dropName = 'drop' + (index ? '' : 'Right');
+
+      LazyWrapper.prototype[methodName] = function() {
+        return this[dropName](1);
+      };
+    });
+
+    // Add `LazyWrapper` methods for `_.pluck` and `_.where`.
+    arrayEach(['pluck', 'where'], function(methodName, index) {
+      var operationName = index ? 'filter' : 'map',
+          createCallback = index ? baseMatches : baseProperty;
+
+      LazyWrapper.prototype[methodName] = function(value) {
+        return this[operationName](createCallback(value));
+      };
+    });
+
+    LazyWrapper.prototype.compact = function() {
+      return this.filter(identity);
+    };
+
+    LazyWrapper.prototype.dropWhile = function(iteratee, thisArg) {
+      var done;
+      iteratee = getCallback(iteratee, thisArg, 3);
+      return this.filter(function(value, index, array) {
+        return done || (done = !iteratee(value, index, array));
+      });
+    };
+
+    LazyWrapper.prototype.reject = function(iteratee, thisArg) {
+      iteratee = getCallback(iteratee, thisArg, 3);
+      return this.filter(function(value, index, array) {
+        return !iteratee(value, index, array);
+      });
+    };
+
+    LazyWrapper.prototype.slice = function(start, end) {
+      start = start == null ? 0 : (+start || 0);
+      var result = start < 0 ? this.takeRight(-start) : this.drop(start);
+
+      if (typeof end != 'undefined') {
+        end = (+end || 0);
+        result = end < 0 ? result.dropRight(-end) : result.take(end - start);
+      }
+      return result;
+    };
+
+    LazyWrapper.prototype.toArray = function() {
+      return this.drop(0);
+    };
+
+    // Add `LazyWrapper` methods to `lodash.prototype`.
+    baseForOwn(LazyWrapper.prototype, function(func, methodName) {
+      var lodashFunc = lodash[methodName],
+          retUnwrapped = /^(?:first|last)$/.test(methodName);
+
+      lodash.prototype[methodName] = function() {
+        var value = this.__wrapped__,
+            args = arguments,
+            chainAll = this.__chain__,
+            isHybrid = !!this.__actions__.length,
+            isLazy = value instanceof LazyWrapper,
+            onlyLazy = isLazy && !isHybrid;
+
+        if (retUnwrapped && !chainAll) {
+          return onlyLazy
+            ? func.call(value)
+            : lodashFunc.call(lodash, this.value());
+        }
+        var interceptor = function(value) {
+          var otherArgs = [value];
+          push.apply(otherArgs, args);
+          return lodashFunc.apply(lodash, otherArgs);
+        };
+        if (isLazy || isArray(value)) {
+          var wrapper = onlyLazy ? value : new LazyWrapper(this),
+              result = func.apply(wrapper, args);
+
+          if (!retUnwrapped && (isHybrid || result.__actions__)) {
+            var actions = result.__actions__ || (result.__actions__ = []);
+            actions.push({ 'func': thru, 'args': [interceptor], 'thisArg': lodash });
+          }
+          return new LodashWrapper(result, chainAll);
+        }
+        return this.thru(interceptor);
+      };
+    });
+
+    // Add `Array.prototype` functions to `lodash.prototype`.
+    arrayEach(['concat', 'join', 'pop', 'push', 'shift', 'sort', 'splice', 'unshift'], function(methodName) {
+      var func = arrayProto[methodName],
+          chainName = /^(?:push|sort|unshift)$/.test(methodName) ? 'tap' : 'thru',
+          retUnwrapped = /^(?:join|pop|shift)$/.test(methodName);
+
+      lodash.prototype[methodName] = function() {
+        var args = arguments;
+        if (retUnwrapped && !this.__chain__) {
+          return func.apply(this.value(), args);
+        }
+        return this[chainName](function(value) {
+          return func.apply(value, args);
+        });
+      };
+    });
+
+    // Add functions to the lazy wrapper.
+    LazyWrapper.prototype.clone = lazyClone;
+    LazyWrapper.prototype.reverse = lazyReverse;
+    LazyWrapper.prototype.value = lazyValue;
+
+    // Add chaining functions to the lodash wrapper.
+    lodash.prototype.chain = wrapperChain;
+    lodash.prototype.commit = wrapperCommit;
+    lodash.prototype.plant = wrapperPlant;
+    lodash.prototype.reverse = wrapperReverse;
+    lodash.prototype.toString = wrapperToString;
+    lodash.prototype.run = lodash.prototype.toJSON = lodash.prototype.valueOf = lodash.prototype.value = wrapperValue;
+
+    // Add function aliases to the lodash wrapper.
+    lodash.prototype.collect = lodash.prototype.map;
+    lodash.prototype.head = lodash.prototype.first;
+    lodash.prototype.select = lodash.prototype.filter;
+    lodash.prototype.tail = lodash.prototype.rest;
+
+    return lodash;
+  }
+
+  /*--------------------------------------------------------------------------*/
+
+  // Export lodash.
+  var _ = runInContext();
+
+  // Some AMD build optimizers like r.js check for condition patterns like the following:
+  if (typeof define == 'function' && typeof define.amd == 'object' && define.amd) {
+    // Expose lodash to the global object when an AMD loader is present to avoid
+    // errors in cases where lodash is loaded by a script tag and not intended
+    // as an AMD module. See http://requirejs.org/docs/errors.html#mismatch for
+    // more details.
+    root._ = _;
+
+    // Define as an anonymous module so, through path mapping, it can be
+    // referenced as the "underscore" module.
+    define(function() {
+      return _;
+    });
+  }
+  // Check for `exports` after `define` in case a build optimizer adds an `exports` object.
+  else if (freeExports && freeModule) {
+    // Export for Node.js or RingoJS.
+    if (moduleExports) {
+      (freeModule.exports = _)._ = _;
+    }
+    // Export for Narwhal or Rhino -require.
+    else {
+      freeExports._ = _;
+    }
+  }
+  else {
+    // Export for a browser or Rhino.
+    root._ = _;
+  }
+}.call(this));
+
+}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+},{}],"q":[function(require,module,exports){
+(function (process){
+// vim:ts=4:sts=4:sw=4:
+/*!
+ *
+ * Copyright 2009-2012 Kris Kowal under the terms of the MIT
+ * license found at http://github.com/kriskowal/q/raw/master/LICENSE
+ *
+ * With parts by Tyler Close
+ * Copyright 2007-2009 Tyler Close under the terms of the MIT X license found
+ * at http://www.opensource.org/licenses/mit-license.html
+ * Forked at ref_send.js version: 2009-05-11
+ *
+ * With parts by Mark Miller
+ * Copyright (C) 2011 Google Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ */
+
+(function (definition) {
+    // Turn off strict mode for this function so we can assign to global.Q
+    /* jshint strict: false */
+
+    // This file will function properly as a <script> tag, or a module
+    // using CommonJS and NodeJS or RequireJS module formats.  In
+    // Common/Node/RequireJS, the module exports the Q API and when
+    // executed as a simple <script>, it creates a Q global instead.
+
+    // Montage Require
+    if (typeof bootstrap === "function") {
+        bootstrap("promise", definition);
+
+    // CommonJS
+    } else if (typeof exports === "object") {
+        module.exports = definition();
+
+    // RequireJS
+    } else if (typeof define === "function" && define.amd) {
+        define(definition);
+
+    // SES (Secure EcmaScript)
+    } else if (typeof ses !== "undefined") {
+        if (!ses.ok()) {
+            return;
+        } else {
+            ses.makeQ = definition;
+        }
+
+    // <script>
+    } else {
+        Q = definition();
+    }
+
+})(function () {
+"use strict";
+
+var hasStacks = false;
+try {
+    throw new Error();
+} catch (e) {
+    hasStacks = !!e.stack;
+}
+
+// All code after this point will be filtered from stack traces reported
+// by Q.
+var qStartingLine = captureLine();
+var qFileName;
+
+// shims
+
+// used for fallback in "allResolved"
+var noop = function () {};
+
+// Use the fastest possible means to execute a task in a future turn
+// of the event loop.
+var nextTick =(function () {
+    // linked list of tasks (single, with head node)
+    var head = {task: void 0, next: null};
+    var tail = head;
+    var flushing = false;
+    var requestTick = void 0;
+    var isNodeJS = false;
+
+    function flush() {
+        /* jshint loopfunc: true */
+
+        while (head.next) {
+            head = head.next;
+            var task = head.task;
+            head.task = void 0;
+            var domain = head.domain;
+
+            if (domain) {
+                head.domain = void 0;
+                domain.enter();
+            }
+
+            try {
+                task();
+
+            } catch (e) {
+                if (isNodeJS) {
+                    // In node, uncaught exceptions are considered fatal errors.
+                    // Re-throw them synchronously to interrupt flushing!
+
+                    // Ensure continuation if the uncaught exception is suppressed
+                    // listening "uncaughtException" events (as domains does).
+                    // Continue in next event to avoid tick recursion.
+                    if (domain) {
+                        domain.exit();
+                    }
+                    setTimeout(flush, 0);
+                    if (domain) {
+                        domain.enter();
+                    }
+
+                    throw e;
+
+                } else {
+                    // In browsers, uncaught exceptions are not fatal.
+                    // Re-throw them asynchronously to avoid slow-downs.
+                    setTimeout(function() {
+                       throw e;
+                    }, 0);
+                }
+            }
+
+            if (domain) {
+                domain.exit();
+            }
+        }
+
+        flushing = false;
+    }
+
+    nextTick = function (task) {
+        tail = tail.next = {
+            task: task,
+            domain: isNodeJS && process.domain,
+            next: null
+        };
+
+        if (!flushing) {
+            flushing = true;
+            requestTick();
+        }
+    };
+
+    if (typeof process !== "undefined" && process.nextTick) {
+        // Node.js before 0.9. Note that some fake-Node environments, like the
+        // Mocha test runner, introduce a `process` global without a `nextTick`.
+        isNodeJS = true;
+
+        requestTick = function () {
+            process.nextTick(flush);
+        };
+
+    } else if (typeof setImmediate === "function") {
+        // In IE10, Node.js 0.9+, or https://github.com/NobleJS/setImmediate
+        if (typeof window !== "undefined") {
+            requestTick = setImmediate.bind(window, flush);
+        } else {
+            requestTick = function () {
+                setImmediate(flush);
+            };
+        }
+
+    } else if (typeof MessageChannel !== "undefined") {
+        // modern browsers
+        // http://www.nonblocking.io/2011/06/windownexttick.html
+        var channel = new MessageChannel();
+        // At least Safari Version 6.0.5 (8536.30.1) intermittently cannot create
+        // working message ports the first time a page loads.
+        channel.port1.onmessage = function () {
+            requestTick = requestPortTick;
+            channel.port1.onmessage = flush;
+            flush();
+        };
+        var requestPortTick = function () {
+            // Opera requires us to provide a message payload, regardless of
+            // whether we use it.
+            channel.port2.postMessage(0);
+        };
+        requestTick = function () {
+            setTimeout(flush, 0);
+            requestPortTick();
+        };
+
+    } else {
+        // old browsers
+        requestTick = function () {
+            setTimeout(flush, 0);
+        };
+    }
+
+    return nextTick;
+})();
+
+// Attempt to make generics safe in the face of downstream
+// modifications.
+// There is no situation where this is necessary.
+// If you need a security guarantee, these primordials need to be
+// deeply frozen anyway, and if you don’t need a security guarantee,
+// this is just plain paranoid.
+// However, this **might** have the nice side-effect of reducing the size of
+// the minified code by reducing x.call() to merely x()
+// See Mark Miller’s explanation of what this does.
+// http://wiki.ecmascript.org/doku.php?id=conventions:safe_meta_programming
+var call = Function.call;
+function uncurryThis(f) {
+    return function () {
+        return call.apply(f, arguments);
+    };
+}
+// This is equivalent, but slower:
+// uncurryThis = Function_bind.bind(Function_bind.call);
+// http://jsperf.com/uncurrythis
+
+var array_slice = uncurryThis(Array.prototype.slice);
+
+var array_reduce = uncurryThis(
+    Array.prototype.reduce || function (callback, basis) {
+        var index = 0,
+            length = this.length;
+        // concerning the initial value, if one is not provided
+        if (arguments.length === 1) {
+            // seek to the first value in the array, accounting
+            // for the possibility that is is a sparse array
+            do {
+                if (index in this) {
+                    basis = this[index++];
+                    break;
+                }
+                if (++index >= length) {
+                    throw new TypeError();
+                }
+            } while (1);
+        }
+        // reduce
+        for (; index < length; index++) {
+            // account for the possibility that the array is sparse
+            if (index in this) {
+                basis = callback(basis, this[index], index);
+            }
+        }
+        return basis;
+    }
+);
+
+var array_indexOf = uncurryThis(
+    Array.prototype.indexOf || function (value) {
+        // not a very good shim, but good enough for our one use of it
+        for (var i = 0; i < this.length; i++) {
+            if (this[i] === value) {
+                return i;
+            }
+        }
+        return -1;
+    }
+);
+
+var array_map = uncurryThis(
+    Array.prototype.map || function (callback, thisp) {
+        var self = this;
+        var collect = [];
+        array_reduce(self, function (undefined, value, index) {
+            collect.push(callback.call(thisp, value, index, self));
+        }, void 0);
+        return collect;
+    }
+);
+
+var object_create = Object.create || function (prototype) {
+    function Type() { }
+    Type.prototype = prototype;
+    return new Type();
+};
+
+var object_hasOwnProperty = uncurryThis(Object.prototype.hasOwnProperty);
+
+var object_keys = Object.keys || function (object) {
+    var keys = [];
+    for (var key in object) {
+        if (object_hasOwnProperty(object, key)) {
+            keys.push(key);
+        }
+    }
+    return keys;
+};
+
+var object_toString = uncurryThis(Object.prototype.toString);
+
+function isObject(value) {
+    return value === Object(value);
+}
+
+// generator related shims
+
+// FIXME: Remove this function once ES6 generators are in SpiderMonkey.
+function isStopIteration(exception) {
+    return (
+        object_toString(exception) === "[object StopIteration]" ||
+        exception instanceof QReturnValue
+    );
+}
+
+// FIXME: Remove this helper and Q.return once ES6 generators are in
+// SpiderMonkey.
+var QReturnValue;
+if (typeof ReturnValue !== "undefined") {
+    QReturnValue = ReturnValue;
+} else {
+    QReturnValue = function (value) {
+        this.value = value;
+    };
+}
+
+// long stack traces
+
+var STACK_JUMP_SEPARATOR = "From previous event:";
+
+function makeStackTraceLong(error, promise) {
+    // If possible, transform the error stack trace by removing Node and Q
+    // cruft, then concatenating with the stack trace of `promise`. See #57.
+    if (hasStacks &&
+        promise.stack &&
+        typeof error === "object" &&
+        error !== null &&
+        error.stack &&
+        error.stack.indexOf(STACK_JUMP_SEPARATOR) === -1
+    ) {
+        var stacks = [];
+        for (var p = promise; !!p; p = p.source) {
+            if (p.stack) {
+                stacks.unshift(p.stack);
+            }
+        }
+        stacks.unshift(error.stack);
+
+        var concatedStacks = stacks.join("\n" + STACK_JUMP_SEPARATOR + "\n");
+        error.stack = filterStackString(concatedStacks);
+    }
+}
+
+function filterStackString(stackString) {
+    var lines = stackString.split("\n");
+    var desiredLines = [];
+    for (var i = 0; i < lines.length; ++i) {
+        var line = lines[i];
+
+        if (!isInternalFrame(line) && !isNodeFrame(line) && line) {
+            desiredLines.push(line);
+        }
+    }
+    return desiredLines.join("\n");
+}
+
+function isNodeFrame(stackLine) {
+    return stackLine.indexOf("(module.js:") !== -1 ||
+           stackLine.indexOf("(node.js:") !== -1;
+}
+
+function getFileNameAndLineNumber(stackLine) {
+    // Named functions: "at functionName (filename:lineNumber:columnNumber)"
+    // In IE10 function name can have spaces ("Anonymous function") O_o
+    var attempt1 = /at .+ \((.+):(\d+):(?:\d+)\)$/.exec(stackLine);
+    if (attempt1) {
+        return [attempt1[1], Number(attempt1[2])];
+    }
+
+    // Anonymous functions: "at filename:lineNumber:columnNumber"
+    var attempt2 = /at ([^ ]+):(\d+):(?:\d+)$/.exec(stackLine);
+    if (attempt2) {
+        return [attempt2[1], Number(attempt2[2])];
+    }
+
+    // Firefox style: "function@filename:lineNumber or @filename:lineNumber"
+    var attempt3 = /.*@(.+):(\d+)$/.exec(stackLine);
+    if (attempt3) {
+        return [attempt3[1], Number(attempt3[2])];
+    }
+}
+
+function isInternalFrame(stackLine) {
+    var fileNameAndLineNumber = getFileNameAndLineNumber(stackLine);
+
+    if (!fileNameAndLineNumber) {
+        return false;
+    }
+
+    var fileName = fileNameAndLineNumber[0];
+    var lineNumber = fileNameAndLineNumber[1];
+
+    return fileName === qFileName &&
+        lineNumber >= qStartingLine &&
+        lineNumber <= qEndingLine;
+}
+
+// discover own file name and line number range for filtering stack
+// traces
+function captureLine() {
+    if (!hasStacks) {
+        return;
+    }
+
+    try {
+        throw new Error();
+    } catch (e) {
+        var lines = e.stack.split("\n");
+        var firstLine = lines[0].indexOf("@") > 0 ? lines[1] : lines[2];
+        var fileNameAndLineNumber = getFileNameAndLineNumber(firstLine);
+        if (!fileNameAndLineNumber) {
+            return;
+        }
+
+        qFileName = fileNameAndLineNumber[0];
+        return fileNameAndLineNumber[1];
+    }
+}
+
+function deprecate(callback, name, alternative) {
+    return function () {
+        if (typeof console !== "undefined" &&
+            typeof console.warn === "function") {
+            console.warn(name + " is deprecated, use " + alternative +
+                         " instead.", new Error("").stack);
+        }
+        return callback.apply(callback, arguments);
+    };
+}
+
+// end of shims
+// beginning of real work
+
+/**
+ * Constructs a promise for an immediate reference, passes promises through, or
+ * coerces promises from different systems.
+ * @param value immediate reference or promise
+ */
+function Q(value) {
+    // If the object is already a Promise, return it directly.  This enables
+    // the resolve function to both be used to created references from objects,
+    // but to tolerably coerce non-promises to promises.
+    if (isPromise(value)) {
+        return value;
+    }
+
+    // assimilate thenables
+    if (isPromiseAlike(value)) {
+        return coerce(value);
+    } else {
+        return fulfill(value);
+    }
+}
+Q.resolve = Q;
+
+/**
+ * Performs a task in a future turn of the event loop.
+ * @param {Function} task
+ */
+Q.nextTick = nextTick;
+
+/**
+ * Controls whether or not long stack traces will be on
+ */
+Q.longStackSupport = false;
+
+/**
+ * Constructs a {promise, resolve, reject} object.
+ *
+ * `resolve` is a callback to invoke with a more resolved value for the
+ * promise. To fulfill the promise, invoke `resolve` with any value that is
+ * not a thenable. To reject the promise, invoke `resolve` with a rejected
+ * thenable, or invoke `reject` with the reason directly. To resolve the
+ * promise to another thenable, thus putting it in the same state, invoke
+ * `resolve` with that other thenable.
+ */
+Q.defer = defer;
+function defer() {
+    // if "messages" is an "Array", that indicates that the promise has not yet
+    // been resolved.  If it is "undefined", it has been resolved.  Each
+    // element of the messages array is itself an array of complete arguments to
+    // forward to the resolved promise.  We coerce the resolution value to a
+    // promise using the `resolve` function because it handles both fully
+    // non-thenable values and other thenables gracefully.
+    var messages = [], progressListeners = [], resolvedPromise;
+
+    var deferred = object_create(defer.prototype);
+    var promise = object_create(Promise.prototype);
+
+    promise.promiseDispatch = function (resolve, op, operands) {
+        var args = array_slice(arguments);
+        if (messages) {
+            messages.push(args);
+            if (op === "when" && operands[1]) { // progress operand
+                progressListeners.push(operands[1]);
+            }
+        } else {
+            nextTick(function () {
+                resolvedPromise.promiseDispatch.apply(resolvedPromise, args);
+            });
+        }
+    };
+
+    // XXX deprecated
+    promise.valueOf = function () {
+        if (messages) {
+            return promise;
+        }
+        var nearerValue = nearer(resolvedPromise);
+        if (isPromise(nearerValue)) {
+            resolvedPromise = nearerValue; // shorten chain
+        }
+        return nearerValue;
+    };
+
+    promise.inspect = function () {
+        if (!resolvedPromise) {
+            return { state: "pending" };
+        }
+        return resolvedPromise.inspect();
+    };
+
+    if (Q.longStackSupport && hasStacks) {
+        try {
+            throw new Error();
+        } catch (e) {
+            // NOTE: don't try to use `Error.captureStackTrace` or transfer the
+            // accessor around; that causes memory leaks as per GH-111. Just
+            // reify the stack trace as a string ASAP.
+            //
+            // At the same time, cut off the first line; it's always just
+            // "[object Promise]\n", as per the `toString`.
+            promise.stack = e.stack.substring(e.stack.indexOf("\n") + 1);
+        }
+    }
+
+    // NOTE: we do the checks for `resolvedPromise` in each method, instead of
+    // consolidating them into `become`, since otherwise we'd create new
+    // promises with the lines `become(whatever(value))`. See e.g. GH-252.
+
+    function become(newPromise) {
+        resolvedPromise = newPromise;
+        promise.source = newPromise;
+
+        array_reduce(messages, function (undefined, message) {
+            nextTick(function () {
+                newPromise.promiseDispatch.apply(newPromise, message);
+            });
+        }, void 0);
+
+        messages = void 0;
+        progressListeners = void 0;
+    }
+
+    deferred.promise = promise;
+    deferred.resolve = function (value) {
+        if (resolvedPromise) {
+            return;
+        }
+
+        become(Q(value));
+    };
+
+    deferred.fulfill = function (value) {
+        if (resolvedPromise) {
+            return;
+        }
+
+        become(fulfill(value));
+    };
+    deferred.reject = function (reason) {
+        if (resolvedPromise) {
+            return;
+        }
+
+        become(reject(reason));
+    };
+    deferred.notify = function (progress) {
+        if (resolvedPromise) {
+            return;
+        }
+
+        array_reduce(progressListeners, function (undefined, progressListener) {
+            nextTick(function () {
+                progressListener(progress);
+            });
+        }, void 0);
+    };
+
+    return deferred;
+}
+
+/**
+ * Creates a Node-style callback that will resolve or reject the deferred
+ * promise.
+ * @returns a nodeback
+ */
+defer.prototype.makeNodeResolver = function () {
+    var self = this;
+    return function (error, value) {
+        if (error) {
+            self.reject(error);
+        } else if (arguments.length > 2) {
+            self.resolve(array_slice(arguments, 1));
+        } else {
+            self.resolve(value);
+        }
+    };
+};
+
+/**
+ * @param resolver {Function} a function that returns nothing and accepts
+ * the resolve, reject, and notify functions for a deferred.
+ * @returns a promise that may be resolved with the given resolve and reject
+ * functions, or rejected by a thrown exception in resolver
+ */
+Q.Promise = promise; // ES6
+Q.promise = promise;
+function promise(resolver) {
+    if (typeof resolver !== "function") {
+        throw new TypeError("resolver must be a function.");
+    }
+    var deferred = defer();
+    try {
+        resolver(deferred.resolve, deferred.reject, deferred.notify);
+    } catch (reason) {
+        deferred.reject(reason);
+    }
+    return deferred.promise;
+}
+
+promise.race = race; // ES6
+promise.all = all; // ES6
+promise.reject = reject; // ES6
+promise.resolve = Q; // ES6
+
+// XXX experimental.  This method is a way to denote that a local value is
+// serializable and should be immediately dispatched to a remote upon request,
+// instead of passing a reference.
+Q.passByCopy = function (object) {
+    //freeze(object);
+    //passByCopies.set(object, true);
+    return object;
+};
+
+Promise.prototype.passByCopy = function () {
+    //freeze(object);
+    //passByCopies.set(object, true);
+    return this;
+};
+
+/**
+ * If two promises eventually fulfill to the same value, promises that value,
+ * but otherwise rejects.
+ * @param x {Any*}
+ * @param y {Any*}
+ * @returns {Any*} a promise for x and y if they are the same, but a rejection
+ * otherwise.
+ *
+ */
+Q.join = function (x, y) {
+    return Q(x).join(y);
+};
+
+Promise.prototype.join = function (that) {
+    return Q([this, that]).spread(function (x, y) {
+        if (x === y) {
+            // TODO: "===" should be Object.is or equiv
+            return x;
+        } else {
+            throw new Error("Can't join: not the same: " + x + " " + y);
+        }
+    });
+};
+
+/**
+ * Returns a promise for the first of an array of promises to become fulfilled.
+ * @param answers {Array[Any*]} promises to race
+ * @returns {Any*} the first promise to be fulfilled
+ */
+Q.race = race;
+function race(answerPs) {
+    return promise(function(resolve, reject) {
+        // Switch to this once we can assume at least ES5
+        // answerPs.forEach(function(answerP) {
+        //     Q(answerP).then(resolve, reject);
+        // });
+        // Use this in the meantime
+        for (var i = 0, len = answerPs.length; i < len; i++) {
+            Q(answerPs[i]).then(resolve, reject);
+        }
+    });
+}
+
+Promise.prototype.race = function () {
+    return this.then(Q.race);
+};
+
+/**
+ * Constructs a Promise with a promise descriptor object and optional fallback
+ * function.  The descriptor contains methods like when(rejected), get(name),
+ * set(name, value), post(name, args), and delete(name), which all
+ * return either a value, a promise for a value, or a rejection.  The fallback
+ * accepts the operation name, a resolver, and any further arguments that would
+ * have been forwarded to the appropriate method above had a method been
+ * provided with the proper name.  The API makes no guarantees about the nature
+ * of the returned object, apart from that it is usable whereever promises are
+ * bought and sold.
+ */
+Q.makePromise = Promise;
+function Promise(descriptor, fallback, inspect) {
+    if (fallback === void 0) {
+        fallback = function (op) {
+            return reject(new Error(
+                "Promise does not support operation: " + op
+            ));
+        };
+    }
+    if (inspect === void 0) {
+        inspect = function () {
+            return {state: "unknown"};
+        };
+    }
+
+    var promise = object_create(Promise.prototype);
+
+    promise.promiseDispatch = function (resolve, op, args) {
+        var result;
+        try {
+            if (descriptor[op]) {
+                result = descriptor[op].apply(promise, args);
+            } else {
+                result = fallback.call(promise, op, args);
+            }
+        } catch (exception) {
+            result = reject(exception);
+        }
+        if (resolve) {
+            resolve(result);
+        }
+    };
+
+    promise.inspect = inspect;
+
+    // XXX deprecated `valueOf` and `exception` support
+    if (inspect) {
+        var inspected = inspect();
+        if (inspected.state === "rejected") {
+            promise.exception = inspected.reason;
+        }
+
+        promise.valueOf = function () {
+            var inspected = inspect();
+            if (inspected.state === "pending" ||
+                inspected.state === "rejected") {
+                return promise;
+            }
+            return inspected.value;
+        };
+    }
+
+    return promise;
+}
+
+Promise.prototype.toString = function () {
+    return "[object Promise]";
+};
+
+Promise.prototype.then = function (fulfilled, rejected, progressed) {
+    var self = this;
+    var deferred = defer();
+    var done = false;   // ensure the untrusted promise makes at most a
+                        // single call to one of the callbacks
+
+    function _fulfilled(value) {
+        try {
+            return typeof fulfilled === "function" ? fulfilled(value) : value;
+        } catch (exception) {
+            return reject(exception);
+        }
+    }
+
+    function _rejected(exception) {
+        if (typeof rejected === "function") {
+            makeStackTraceLong(exception, self);
+            try {
+                return rejected(exception);
+            } catch (newException) {
+                return reject(newException);
+            }
+        }
+        return reject(exception);
+    }
+
+    function _progressed(value) {
+        return typeof progressed === "function" ? progressed(value) : value;
+    }
+
+    nextTick(function () {
+        self.promiseDispatch(function (value) {
+            if (done) {
+                return;
+            }
+            done = true;
+
+            deferred.resolve(_fulfilled(value));
+        }, "when", [function (exception) {
+            if (done) {
+                return;
+            }
+            done = true;
+
+            deferred.resolve(_rejected(exception));
+        }]);
+    });
+
+    // Progress propagator need to be attached in the current tick.
+    self.promiseDispatch(void 0, "when", [void 0, function (value) {
+        var newValue;
+        var threw = false;
+        try {
+            newValue = _progressed(value);
+        } catch (e) {
+            threw = true;
+            if (Q.onerror) {
+                Q.onerror(e);
+            } else {
+                throw e;
+            }
+        }
+
+        if (!threw) {
+            deferred.notify(newValue);
+        }
+    }]);
+
+    return deferred.promise;
+};
+
+/**
+ * Registers an observer on a promise.
+ *
+ * Guarantees:
+ *
+ * 1. that fulfilled and rejected will be called only once.
+ * 2. that either the fulfilled callback or the rejected callback will be
+ *    called, but not both.
+ * 3. that fulfilled and rejected will not be called in this turn.
+ *
+ * @param value      promise or immediate reference to observe
+ * @param fulfilled  function to be called with the fulfilled value
+ * @param rejected   function to be called with the rejection exception
+ * @param progressed function to be called on any progress notifications
+ * @return promise for the return value from the invoked callback
+ */
+Q.when = when;
+function when(value, fulfilled, rejected, progressed) {
+    return Q(value).then(fulfilled, rejected, progressed);
+}
+
+Promise.prototype.thenResolve = function (value) {
+    return this.then(function () { return value; });
+};
+
+Q.thenResolve = function (promise, value) {
+    return Q(promise).thenResolve(value);
+};
+
+Promise.prototype.thenReject = function (reason) {
+    return this.then(function () { throw reason; });
+};
+
+Q.thenReject = function (promise, reason) {
+    return Q(promise).thenReject(reason);
+};
+
+/**
+ * If an object is not a promise, it is as "near" as possible.
+ * If a promise is rejected, it is as "near" as possible too.
+ * If it’s a fulfilled promise, the fulfillment value is nearer.
+ * If it’s a deferred promise and the deferred has been resolved, the
+ * resolution is "nearer".
+ * @param object
+ * @returns most resolved (nearest) form of the object
+ */
+
+// XXX should we re-do this?
+Q.nearer = nearer;
+function nearer(value) {
+    if (isPromise(value)) {
+        var inspected = value.inspect();
+        if (inspected.state === "fulfilled") {
+            return inspected.value;
+        }
+    }
+    return value;
+}
+
+/**
+ * @returns whether the given object is a promise.
+ * Otherwise it is a fulfilled value.
+ */
+Q.isPromise = isPromise;
+function isPromise(object) {
+    return isObject(object) &&
+        typeof object.promiseDispatch === "function" &&
+        typeof object.inspect === "function";
+}
+
+Q.isPromiseAlike = isPromiseAlike;
+function isPromiseAlike(object) {
+    return isObject(object) && typeof object.then === "function";
+}
+
+/**
+ * @returns whether the given object is a pending promise, meaning not
+ * fulfilled or rejected.
+ */
+Q.isPending = isPending;
+function isPending(object) {
+    return isPromise(object) && object.inspect().state === "pending";
+}
+
+Promise.prototype.isPending = function () {
+    return this.inspect().state === "pending";
+};
+
+/**
+ * @returns whether the given object is a value or fulfilled
+ * promise.
+ */
+Q.isFulfilled = isFulfilled;
+function isFulfilled(object) {
+    return !isPromise(object) || object.inspect().state === "fulfilled";
+}
+
+Promise.prototype.isFulfilled = function () {
+    return this.inspect().state === "fulfilled";
+};
+
+/**
+ * @returns whether the given object is a rejected promise.
+ */
+Q.isRejected = isRejected;
+function isRejected(object) {
+    return isPromise(object) && object.inspect().state === "rejected";
+}
+
+Promise.prototype.isRejected = function () {
+    return this.inspect().state === "rejected";
+};
+
+//// BEGIN UNHANDLED REJECTION TRACKING
+
+// This promise library consumes exceptions thrown in handlers so they can be
+// handled by a subsequent promise.  The exceptions get added to this array when
+// they are created, and removed when they are handled.  Note that in ES6 or
+// shimmed environments, this would naturally be a `Set`.
+var unhandledReasons = [];
+var unhandledRejections = [];
+var trackUnhandledRejections = true;
+
+function resetUnhandledRejections() {
+    unhandledReasons.length = 0;
+    unhandledRejections.length = 0;
+
+    if (!trackUnhandledRejections) {
+        trackUnhandledRejections = true;
+    }
+}
+
+function trackRejection(promise, reason) {
+    if (!trackUnhandledRejections) {
+        return;
+    }
+
+    unhandledRejections.push(promise);
+    if (reason && typeof reason.stack !== "undefined") {
+        unhandledReasons.push(reason.stack);
+    } else {
+        unhandledReasons.push("(no stack) " + reason);
+    }
+}
+
+function untrackRejection(promise) {
+    if (!trackUnhandledRejections) {
+        return;
+    }
+
+    var at = array_indexOf(unhandledRejections, promise);
+    if (at !== -1) {
+        unhandledRejections.splice(at, 1);
+        unhandledReasons.splice(at, 1);
+    }
+}
+
+Q.resetUnhandledRejections = resetUnhandledRejections;
+
+Q.getUnhandledReasons = function () {
+    // Make a copy so that consumers can't interfere with our internal state.
+    return unhandledReasons.slice();
+};
+
+Q.stopUnhandledRejectionTracking = function () {
+    resetUnhandledRejections();
+    trackUnhandledRejections = false;
+};
+
+resetUnhandledRejections();
+
+//// END UNHANDLED REJECTION TRACKING
+
+/**
+ * Constructs a rejected promise.
+ * @param reason value describing the failure
+ */
+Q.reject = reject;
+function reject(reason) {
+    var rejection = Promise({
+        "when": function (rejected) {
+            // note that the error has been handled
+            if (rejected) {
+                untrackRejection(this);
+            }
+            return rejected ? rejected(reason) : this;
+        }
+    }, function fallback() {
+        return this;
+    }, function inspect() {
+        return { state: "rejected", reason: reason };
+    });
+
+    // Note that the reason has not been handled.
+    trackRejection(rejection, reason);
+
+    return rejection;
+}
+
+/**
+ * Constructs a fulfilled promise for an immediate reference.
+ * @param value immediate reference
+ */
+Q.fulfill = fulfill;
+function fulfill(value) {
+    return Promise({
+        "when": function () {
+            return value;
+        },
+        "get": function (name) {
+            return value[name];
+        },
+        "set": function (name, rhs) {
+            value[name] = rhs;
+        },
+        "delete": function (name) {
+            delete value[name];
+        },
+        "post": function (name, args) {
+            // Mark Miller proposes that post with no name should apply a
+            // promised function.
+            if (name === null || name === void 0) {
+                return value.apply(void 0, args);
+            } else {
+                return value[name].apply(value, args);
+            }
+        },
+        "apply": function (thisp, args) {
+            return value.apply(thisp, args);
+        },
+        "keys": function () {
+            return object_keys(value);
+        }
+    }, void 0, function inspect() {
+        return { state: "fulfilled", value: value };
+    });
+}
+
+/**
+ * Converts thenables to Q promises.
+ * @param promise thenable promise
+ * @returns a Q promise
+ */
+function coerce(promise) {
+    var deferred = defer();
+    nextTick(function () {
+        try {
+            promise.then(deferred.resolve, deferred.reject, deferred.notify);
+        } catch (exception) {
+            deferred.reject(exception);
+        }
+    });
+    return deferred.promise;
+}
+
+/**
+ * Annotates an object such that it will never be
+ * transferred away from this process over any promise
+ * communication channel.
+ * @param object
+ * @returns promise a wrapping of that object that
+ * additionally responds to the "isDef" message
+ * without a rejection.
+ */
+Q.master = master;
+function master(object) {
+    return Promise({
+        "isDef": function () {}
+    }, function fallback(op, args) {
+        return dispatch(object, op, args);
+    }, function () {
+        return Q(object).inspect();
+    });
+}
+
+/**
+ * Spreads the values of a promised array of arguments into the
+ * fulfillment callback.
+ * @param fulfilled callback that receives variadic arguments from the
+ * promised array
+ * @param rejected callback that receives the exception if the promise
+ * is rejected.
+ * @returns a promise for the return value or thrown exception of
+ * either callback.
+ */
+Q.spread = spread;
+function spread(value, fulfilled, rejected) {
+    return Q(value).spread(fulfilled, rejected);
+}
+
+Promise.prototype.spread = function (fulfilled, rejected) {
+    return this.all().then(function (array) {
+        return fulfilled.apply(void 0, array);
+    }, rejected);
+};
+
+/**
+ * The async function is a decorator for generator functions, turning
+ * them into asynchronous generators.  Although generators are only part
+ * of the newest ECMAScript 6 drafts, this code does not cause syntax
+ * errors in older engines.  This code should continue to work and will
+ * in fact improve over time as the language improves.
+ *
+ * ES6 generators are currently part of V8 version 3.19 with the
+ * --harmony-generators runtime flag enabled.  SpiderMonkey has had them
+ * for longer, but under an older Python-inspired form.  This function
+ * works on both kinds of generators.
+ *
+ * Decorates a generator function such that:
+ *  - it may yield promises
+ *  - execution will continue when that promise is fulfilled
+ *  - the value of the yield expression will be the fulfilled value
+ *  - it returns a promise for the return value (when the generator
+ *    stops iterating)
+ *  - the decorated function returns a promise for the return value
+ *    of the generator or the first rejected promise among those
+ *    yielded.
+ *  - if an error is thrown in the generator, it propagates through
+ *    every following yield until it is caught, or until it escapes
+ *    the generator function altogether, and is translated into a
+ *    rejection for the promise returned by the decorated generator.
+ */
+Q.async = async;
+function async(makeGenerator) {
+    return function () {
+        // when verb is "send", arg is a value
+        // when verb is "throw", arg is an exception
+        function continuer(verb, arg) {
+            var result;
+
+            // Until V8 3.19 / Chromium 29 is released, SpiderMonkey is the only
+            // engine that has a deployed base of browsers that support generators.
+            // However, SM's generators use the Python-inspired semantics of
+            // outdated ES6 drafts.  We would like to support ES6, but we'd also
+            // like to make it possible to use generators in deployed browsers, so
+            // we also support Python-style generators.  At some point we can remove
+            // this block.
+
+            if (typeof StopIteration === "undefined") {
+                // ES6 Generators
+                try {
+                    result = generator[verb](arg);
+                } catch (exception) {
+                    return reject(exception);
+                }
+                if (result.done) {
+                    return result.value;
+                } else {
+                    return when(result.value, callback, errback);
+                }
+            } else {
+                // SpiderMonkey Generators
+                // FIXME: Remove this case when SM does ES6 generators.
+                try {
+                    result = generator[verb](arg);
+                } catch (exception) {
+                    if (isStopIteration(exception)) {
+                        return exception.value;
+                    } else {
+                        return reject(exception);
+                    }
+                }
+                return when(result, callback, errback);
+            }
+        }
+        var generator = makeGenerator.apply(this, arguments);
+        var callback = continuer.bind(continuer, "next");
+        var errback = continuer.bind(continuer, "throw");
+        return callback();
+    };
+}
+
+/**
+ * The spawn function is a small wrapper around async that immediately
+ * calls the generator and also ends the promise chain, so that any
+ * unhandled errors are thrown instead of forwarded to the error
+ * handler. This is useful because it's extremely common to run
+ * generators at the top-level to work with libraries.
+ */
+Q.spawn = spawn;
+function spawn(makeGenerator) {
+    Q.done(Q.async(makeGenerator)());
+}
+
+// FIXME: Remove this interface once ES6 generators are in SpiderMonkey.
+/**
+ * Throws a ReturnValue exception to stop an asynchronous generator.
+ *
+ * This interface is a stop-gap measure to support generator return
+ * values in older Firefox/SpiderMonkey.  In browsers that support ES6
+ * generators like Chromium 29, just use "return" in your generator
+ * functions.
+ *
+ * @param value the return value for the surrounding generator
+ * @throws ReturnValue exception with the value.
+ * @example
+ * // ES6 style
+ * Q.async(function* () {
+ *      var foo = yield getFooPromise();
+ *      var bar = yield getBarPromise();
+ *      return foo + bar;
+ * })
+ * // Older SpiderMonkey style
+ * Q.async(function () {
+ *      var foo = yield getFooPromise();
+ *      var bar = yield getBarPromise();
+ *      Q.return(foo + bar);
+ * })
+ */
+Q["return"] = _return;
+function _return(value) {
+    throw new QReturnValue(value);
+}
+
+/**
+ * The promised function decorator ensures that any promise arguments
+ * are settled and passed as values (`this` is also settled and passed
+ * as a value).  It will also ensure that the result of a function is
+ * always a promise.
+ *
+ * @example
+ * var add = Q.promised(function (a, b) {
+ *     return a + b;
+ * });
+ * add(Q(a), Q(B));
+ *
+ * @param {function} callback The function to decorate
+ * @returns {function} a function that has been decorated.
+ */
+Q.promised = promised;
+function promised(callback) {
+    return function () {
+        return spread([this, all(arguments)], function (self, args) {
+            return callback.apply(self, args);
+        });
+    };
+}
+
+/**
+ * sends a message to a value in a future turn
+ * @param object* the recipient
+ * @param op the name of the message operation, e.g., "when",
+ * @param args further arguments to be forwarded to the operation
+ * @returns result {Promise} a promise for the result of the operation
+ */
+Q.dispatch = dispatch;
+function dispatch(object, op, args) {
+    return Q(object).dispatch(op, args);
+}
+
+Promise.prototype.dispatch = function (op, args) {
+    var self = this;
+    var deferred = defer();
+    nextTick(function () {
+        self.promiseDispatch(deferred.resolve, op, args);
+    });
+    return deferred.promise;
+};
+
+/**
+ * Gets the value of a property in a future turn.
+ * @param object    promise or immediate reference for target object
+ * @param name      name of property to get
+ * @return promise for the property value
+ */
+Q.get = function (object, key) {
+    return Q(object).dispatch("get", [key]);
+};
+
+Promise.prototype.get = function (key) {
+    return this.dispatch("get", [key]);
+};
+
+/**
+ * Sets the value of a property in a future turn.
+ * @param object    promise or immediate reference for object object
+ * @param name      name of property to set
+ * @param value     new value of property
+ * @return promise for the return value
+ */
+Q.set = function (object, key, value) {
+    return Q(object).dispatch("set", [key, value]);
+};
+
+Promise.prototype.set = function (key, value) {
+    return this.dispatch("set", [key, value]);
+};
+
+/**
+ * Deletes a property in a future turn.
+ * @param object    promise or immediate reference for target object
+ * @param name      name of property to delete
+ * @return promise for the return value
+ */
+Q.del = // XXX legacy
+Q["delete"] = function (object, key) {
+    return Q(object).dispatch("delete", [key]);
+};
+
+Promise.prototype.del = // XXX legacy
+Promise.prototype["delete"] = function (key) {
+    return this.dispatch("delete", [key]);
+};
+
+/**
+ * Invokes a method in a future turn.
+ * @param object    promise or immediate reference for target object
+ * @param name      name of method to invoke
+ * @param value     a value to post, typically an array of
+ *                  invocation arguments for promises that
+ *                  are ultimately backed with `resolve` values,
+ *                  as opposed to those backed with URLs
+ *                  wherein the posted value can be any
+ *                  JSON serializable object.
+ * @return promise for the return value
+ */
+// bound locally because it is used by other methods
+Q.mapply = // XXX As proposed by "Redsandro"
+Q.post = function (object, name, args) {
+    return Q(object).dispatch("post", [name, args]);
+};
+
+Promise.prototype.mapply = // XXX As proposed by "Redsandro"
+Promise.prototype.post = function (name, args) {
+    return this.dispatch("post", [name, args]);
+};
+
+/**
+ * Invokes a method in a future turn.
+ * @param object    promise or immediate reference for target object
+ * @param name      name of method to invoke
+ * @param ...args   array of invocation arguments
+ * @return promise for the return value
+ */
+Q.send = // XXX Mark Miller's proposed parlance
+Q.mcall = // XXX As proposed by "Redsandro"
+Q.invoke = function (object, name /*...args*/) {
+    return Q(object).dispatch("post", [name, array_slice(arguments, 2)]);
+};
+
+Promise.prototype.send = // XXX Mark Miller's proposed parlance
+Promise.prototype.mcall = // XXX As proposed by "Redsandro"
+Promise.prototype.invoke = function (name /*...args*/) {
+    return this.dispatch("post", [name, array_slice(arguments, 1)]);
+};
+
+/**
+ * Applies the promised function in a future turn.
+ * @param object    promise or immediate reference for target function
+ * @param args      array of application arguments
+ */
+Q.fapply = function (object, args) {
+    return Q(object).dispatch("apply", [void 0, args]);
+};
+
+Promise.prototype.fapply = function (args) {
+    return this.dispatch("apply", [void 0, args]);
+};
+
+/**
+ * Calls the promised function in a future turn.
+ * @param object    promise or immediate reference for target function
+ * @param ...args   array of application arguments
+ */
+Q["try"] =
+Q.fcall = function (object /* ...args*/) {
+    return Q(object).dispatch("apply", [void 0, array_slice(arguments, 1)]);
+};
+
+Promise.prototype.fcall = function (/*...args*/) {
+    return this.dispatch("apply", [void 0, array_slice(arguments)]);
+};
+
+/**
+ * Binds the promised function, transforming return values into a fulfilled
+ * promise and thrown errors into a rejected one.
+ * @param object    promise or immediate reference for target function
+ * @param ...args   array of application arguments
+ */
+Q.fbind = function (object /*...args*/) {
+    var promise = Q(object);
+    var args = array_slice(arguments, 1);
+    return function fbound() {
+        return promise.dispatch("apply", [
+            this,
+            args.concat(array_slice(arguments))
+        ]);
+    };
+};
+Promise.prototype.fbind = function (/*...args*/) {
+    var promise = this;
+    var args = array_slice(arguments);
+    return function fbound() {
+        return promise.dispatch("apply", [
+            this,
+            args.concat(array_slice(arguments))
+        ]);
+    };
+};
+
+/**
+ * Requests the names of the owned properties of a promised
+ * object in a future turn.
+ * @param object    promise or immediate reference for target object
+ * @return promise for the keys of the eventually settled object
+ */
+Q.keys = function (object) {
+    return Q(object).dispatch("keys", []);
+};
+
+Promise.prototype.keys = function () {
+    return this.dispatch("keys", []);
+};
+
+/**
+ * Turns an array of promises into a promise for an array.  If any of
+ * the promises gets rejected, the whole array is rejected immediately.
+ * @param {Array*} an array (or promise for an array) of values (or
+ * promises for values)
+ * @returns a promise for an array of the corresponding values
+ */
+// By Mark Miller
+// http://wiki.ecmascript.org/doku.php?id=strawman:concurrency&rev=1308776521#allfulfilled
+Q.all = all;
+function all(promises) {
+    return when(promises, function (promises) {
+        var countDown = 0;
+        var deferred = defer();
+        array_reduce(promises, function (undefined, promise, index) {
+            var snapshot;
+            if (
+                isPromise(promise) &&
+                (snapshot = promise.inspect()).state === "fulfilled"
+            ) {
+                promises[index] = snapshot.value;
+            } else {
+                ++countDown;
+                when(
+                    promise,
+                    function (value) {
+                        promises[index] = value;
+                        if (--countDown === 0) {
+                            deferred.resolve(promises);
+                        }
+                    },
+                    deferred.reject,
+                    function (progress) {
+                        deferred.notify({ index: index, value: progress });
+                    }
+                );
+            }
+        }, void 0);
+        if (countDown === 0) {
+            deferred.resolve(promises);
+        }
+        return deferred.promise;
+    });
+}
+
+Promise.prototype.all = function () {
+    return all(this);
+};
+
+/**
+ * Waits for all promises to be settled, either fulfilled or
+ * rejected.  This is distinct from `all` since that would stop
+ * waiting at the first rejection.  The promise returned by
+ * `allResolved` will never be rejected.
+ * @param promises a promise for an array (or an array) of promises
+ * (or values)
+ * @return a promise for an array of promises
+ */
+Q.allResolved = deprecate(allResolved, "allResolved", "allSettled");
+function allResolved(promises) {
+    return when(promises, function (promises) {
+        promises = array_map(promises, Q);
+        return when(all(array_map(promises, function (promise) {
+            return when(promise, noop, noop);
+        })), function () {
+            return promises;
+        });
+    });
+}
+
+Promise.prototype.allResolved = function () {
+    return allResolved(this);
+};
+
+/**
+ * @see Promise#allSettled
+ */
+Q.allSettled = allSettled;
+function allSettled(promises) {
+    return Q(promises).allSettled();
+}
+
+/**
+ * Turns an array of promises into a promise for an array of their states (as
+ * returned by `inspect`) when they have all settled.
+ * @param {Array[Any*]} values an array (or promise for an array) of values (or
+ * promises for values)
+ * @returns {Array[State]} an array of states for the respective values.
+ */
+Promise.prototype.allSettled = function () {
+    return this.then(function (promises) {
+        return all(array_map(promises, function (promise) {
+            promise = Q(promise);
+            function regardless() {
+                return promise.inspect();
+            }
+            return promise.then(regardless, regardless);
+        }));
+    });
+};
+
+/**
+ * Captures the failure of a promise, giving an oportunity to recover
+ * with a callback.  If the given promise is fulfilled, the returned
+ * promise is fulfilled.
+ * @param {Any*} promise for something
+ * @param {Function} callback to fulfill the returned promise if the
+ * given promise is rejected
+ * @returns a promise for the return value of the callback
+ */
+Q.fail = // XXX legacy
+Q["catch"] = function (object, rejected) {
+    return Q(object).then(void 0, rejected);
+};
+
+Promise.prototype.fail = // XXX legacy
+Promise.prototype["catch"] = function (rejected) {
+    return this.then(void 0, rejected);
+};
+
+/**
+ * Attaches a listener that can respond to progress notifications from a
+ * promise's originating deferred. This listener receives the exact arguments
+ * passed to ``deferred.notify``.
+ * @param {Any*} promise for something
+ * @param {Function} callback to receive any progress notifications
+ * @returns the given promise, unchanged
+ */
+Q.progress = progress;
+function progress(object, progressed) {
+    return Q(object).then(void 0, void 0, progressed);
+}
+
+Promise.prototype.progress = function (progressed) {
+    return this.then(void 0, void 0, progressed);
+};
+
+/**
+ * Provides an opportunity to observe the settling of a promise,
+ * regardless of whether the promise is fulfilled or rejected.  Forwards
+ * the resolution to the returned promise when the callback is done.
+ * The callback can return a promise to defer completion.
+ * @param {Any*} promise
+ * @param {Function} callback to observe the resolution of the given
+ * promise, takes no arguments.
+ * @returns a promise for the resolution of the given promise when
+ * ``fin`` is done.
+ */
+Q.fin = // XXX legacy
+Q["finally"] = function (object, callback) {
+    return Q(object)["finally"](callback);
+};
+
+Promise.prototype.fin = // XXX legacy
+Promise.prototype["finally"] = function (callback) {
+    callback = Q(callback);
+    return this.then(function (value) {
+        return callback.fcall().then(function () {
+            return value;
+        });
+    }, function (reason) {
+        // TODO attempt to recycle the rejection with "this".
+        return callback.fcall().then(function () {
+            throw reason;
+        });
+    });
+};
+
+/**
+ * Terminates a chain of promises, forcing rejections to be
+ * thrown as exceptions.
+ * @param {Any*} promise at the end of a chain of promises
+ * @returns nothing
+ */
+Q.done = function (object, fulfilled, rejected, progress) {
+    return Q(object).done(fulfilled, rejected, progress);
+};
+
+Promise.prototype.done = function (fulfilled, rejected, progress) {
+    var onUnhandledError = function (error) {
+        // forward to a future turn so that ``when``
+        // does not catch it and turn it into a rejection.
+        nextTick(function () {
+            makeStackTraceLong(error, promise);
+            if (Q.onerror) {
+                Q.onerror(error);
+            } else {
+                throw error;
+            }
+        });
+    };
+
+    // Avoid unnecessary `nextTick`ing via an unnecessary `when`.
+    var promise = fulfilled || rejected || progress ?
+        this.then(fulfilled, rejected, progress) :
+        this;
+
+    if (typeof process === "object" && process && process.domain) {
+        onUnhandledError = process.domain.bind(onUnhandledError);
+    }
+
+    promise.then(void 0, onUnhandledError);
+};
+
+/**
+ * Causes a promise to be rejected if it does not get fulfilled before
+ * some milliseconds time out.
+ * @param {Any*} promise
+ * @param {Number} milliseconds timeout
+ * @param {String} custom error message (optional)
+ * @returns a promise for the resolution of the given promise if it is
+ * fulfilled before the timeout, otherwise rejected.
+ */
+Q.timeout = function (object, ms, message) {
+    return Q(object).timeout(ms, message);
+};
+
+Promise.prototype.timeout = function (ms, message) {
+    var deferred = defer();
+    var timeoutId = setTimeout(function () {
+        deferred.reject(new Error(message || "Timed out after " + ms + " ms"));
+    }, ms);
+
+    this.then(function (value) {
+        clearTimeout(timeoutId);
+        deferred.resolve(value);
+    }, function (exception) {
+        clearTimeout(timeoutId);
+        deferred.reject(exception);
+    }, deferred.notify);
+
+    return deferred.promise;
+};
+
+/**
+ * Returns a promise for the given value (or promised value), some
+ * milliseconds after it resolved. Passes rejections immediately.
+ * @param {Any*} promise
+ * @param {Number} milliseconds
+ * @returns a promise for the resolution of the given promise after milliseconds
+ * time has elapsed since the resolution of the given promise.
+ * If the given promise rejects, that is passed immediately.
+ */
+Q.delay = function (object, timeout) {
+    if (timeout === void 0) {
+        timeout = object;
+        object = void 0;
+    }
+    return Q(object).delay(timeout);
+};
+
+Promise.prototype.delay = function (timeout) {
+    return this.then(function (value) {
+        var deferred = defer();
+        setTimeout(function () {
+            deferred.resolve(value);
+        }, timeout);
+        return deferred.promise;
+    });
+};
+
+/**
+ * Passes a continuation to a Node function, which is called with the given
+ * arguments provided as an array, and returns a promise.
+ *
+ *      Q.nfapply(FS.readFile, [__filename])
+ *      .then(function (content) {
+ *      })
+ *
+ */
+Q.nfapply = function (callback, args) {
+    return Q(callback).nfapply(args);
+};
+
+Promise.prototype.nfapply = function (args) {
+    var deferred = defer();
+    var nodeArgs = array_slice(args);
+    nodeArgs.push(deferred.makeNodeResolver());
+    this.fapply(nodeArgs).fail(deferred.reject);
+    return deferred.promise;
+};
+
+/**
+ * Passes a continuation to a Node function, which is called with the given
+ * arguments provided individually, and returns a promise.
+ * @example
+ * Q.nfcall(FS.readFile, __filename)
+ * .then(function (content) {
+ * })
+ *
+ */
+Q.nfcall = function (callback /*...args*/) {
+    var args = array_slice(arguments, 1);
+    return Q(callback).nfapply(args);
+};
+
+Promise.prototype.nfcall = function (/*...args*/) {
+    var nodeArgs = array_slice(arguments);
+    var deferred = defer();
+    nodeArgs.push(deferred.makeNodeResolver());
+    this.fapply(nodeArgs).fail(deferred.reject);
+    return deferred.promise;
+};
+
+/**
+ * Wraps a NodeJS continuation passing function and returns an equivalent
+ * version that returns a promise.
+ * @example
+ * Q.nfbind(FS.readFile, __filename)("utf-8")
+ * .then(console.log)
+ * .done()
+ */
+Q.nfbind =
+Q.denodeify = function (callback /*...args*/) {
+    var baseArgs = array_slice(arguments, 1);
+    return function () {
+        var nodeArgs = baseArgs.concat(array_slice(arguments));
+        var deferred = defer();
+        nodeArgs.push(deferred.makeNodeResolver());
+        Q(callback).fapply(nodeArgs).fail(deferred.reject);
+        return deferred.promise;
+    };
+};
+
+Promise.prototype.nfbind =
+Promise.prototype.denodeify = function (/*...args*/) {
+    var args = array_slice(arguments);
+    args.unshift(this);
+    return Q.denodeify.apply(void 0, args);
+};
+
+Q.nbind = function (callback, thisp /*...args*/) {
+    var baseArgs = array_slice(arguments, 2);
+    return function () {
+        var nodeArgs = baseArgs.concat(array_slice(arguments));
+        var deferred = defer();
+        nodeArgs.push(deferred.makeNodeResolver());
+        function bound() {
+            return callback.apply(thisp, arguments);
+        }
+        Q(bound).fapply(nodeArgs).fail(deferred.reject);
+        return deferred.promise;
+    };
+};
+
+Promise.prototype.nbind = function (/*thisp, ...args*/) {
+    var args = array_slice(arguments, 0);
+    args.unshift(this);
+    return Q.nbind.apply(void 0, args);
+};
+
+/**
+ * Calls a method of a Node-style object that accepts a Node-style
+ * callback with a given array of arguments, plus a provided callback.
+ * @param object an object that has the named method
+ * @param {String} name name of the method of object
+ * @param {Array} args arguments to pass to the method; the callback
+ * will be provided by Q and appended to these arguments.
+ * @returns a promise for the value or error
+ */
+Q.nmapply = // XXX As proposed by "Redsandro"
+Q.npost = function (object, name, args) {
+    return Q(object).npost(name, args);
+};
+
+Promise.prototype.nmapply = // XXX As proposed by "Redsandro"
+Promise.prototype.npost = function (name, args) {
+    var nodeArgs = array_slice(args || []);
+    var deferred = defer();
+    nodeArgs.push(deferred.makeNodeResolver());
+    this.dispatch("post", [name, nodeArgs]).fail(deferred.reject);
+    return deferred.promise;
+};
+
+/**
+ * Calls a method of a Node-style object that accepts a Node-style
+ * callback, forwarding the given variadic arguments, plus a provided
+ * callback argument.
+ * @param object an object that has the named method
+ * @param {String} name name of the method of object
+ * @param ...args arguments to pass to the method; the callback will
+ * be provided by Q and appended to these arguments.
+ * @returns a promise for the value or error
+ */
+Q.nsend = // XXX Based on Mark Miller's proposed "send"
+Q.nmcall = // XXX Based on "Redsandro's" proposal
+Q.ninvoke = function (object, name /*...args*/) {
+    var nodeArgs = array_slice(arguments, 2);
+    var deferred = defer();
+    nodeArgs.push(deferred.makeNodeResolver());
+    Q(object).dispatch("post", [name, nodeArgs]).fail(deferred.reject);
+    return deferred.promise;
+};
+
+Promise.prototype.nsend = // XXX Based on Mark Miller's proposed "send"
+Promise.prototype.nmcall = // XXX Based on "Redsandro's" proposal
+Promise.prototype.ninvoke = function (name /*...args*/) {
+    var nodeArgs = array_slice(arguments, 1);
+    var deferred = defer();
+    nodeArgs.push(deferred.makeNodeResolver());
+    this.dispatch("post", [name, nodeArgs]).fail(deferred.reject);
+    return deferred.promise;
+};
+
+/**
+ * If a function would like to support both Node continuation-passing-style and
+ * promise-returning-style, it can end its internal promise chain with
+ * `nodeify(nodeback)`, forwarding the optional nodeback argument.  If the user
+ * elects to use a nodeback, the result will be sent there.  If they do not
+ * pass a nodeback, they will receive the result promise.
+ * @param object a result (or a promise for a result)
+ * @param {Function} nodeback a Node.js-style callback
+ * @returns either the promise or nothing
+ */
+Q.nodeify = nodeify;
+function nodeify(object, nodeback) {
+    return Q(object).nodeify(nodeback);
+}
+
+Promise.prototype.nodeify = function (nodeback) {
+    if (nodeback) {
+        this.then(function (value) {
+            nextTick(function () {
+                nodeback(null, value);
+            });
+        }, function (error) {
+            nextTick(function () {
+                nodeback(error);
+            });
+        });
+    } else {
+        return this;
+    }
+};
+
+// All code before this point will be filtered from stack traces.
+var qEndingLine = captureLine();
+
+return Q;
+
+});
+
+}).call(this,require('_process'))
+},{"_process":2}]},{},[1]);
+;
 !function(e){if("object"==typeof exports&&"undefined"!=typeof module)module.exports=e();else if("function"==typeof define&&define.amd)define([],e);else{var o;"undefined"!=typeof window?o=window:"undefined"!=typeof global?o=global:"undefined"!=typeof self&&(o=self),o.pojoviz=e()}}(function(){var define,module,exports;return (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 var Q = require('q');
 var utils = require('./util/');
@@ -82200,14 +99750,12 @@ _.merge(libraries, {
   builtIn: new BuiltIn(),
   global: new Global(),
   //popular
-  angular: new Angular(),
-  //mine
-  t3: new Inspector({ entryPoint: 't3' }),
+  angular: new Angular()
   //huge
-  three: new Inspector({
-    entryPoint: 'THREE',
-    alwaysDirty: true
-  })
+  //three: new Inspector({
+  //  entryPoint: 'THREE',
+  //  alwaysDirty: true
+  //})
 });
 
 Inspector.instances = libraries;
@@ -83248,11 +100796,13 @@ function Inspector(config) {
    *
    *  pojoviz:builtIn|pojoviz:window|global:document
    *
-   * @type {Array}
+   * @type {string}
    */
-  this.forbiddenTokens = (config.forbiddenTokens || '').split('|').concat(
-    (config.additionalForbiddenTokens || '').split('|')
-  );
+  this.forbiddenTokens = [config.forbiddenTokens, config.additionalForbiddenTokens]
+    .filter(function (token) {
+      return !!token;
+    })
+    .join('|');
 
   /**
    * This inspector is initially in a dirty state
@@ -83317,7 +100867,7 @@ Inspector.DEFAULT_CONFIG = {
   alwaysDirty: false,
   debug: false,
   forbiddenTokens: Inspector.DEFAULT_FORBIDDEN_TOKENS,
-  additionalForbiddenTokens: '',
+  additionalForbiddenTokens: null,
   analyzerConfig: {}
 };
 
@@ -83423,7 +100973,7 @@ Inspector.prototype.afterInspectSelf = function () {
  */
 Inspector.prototype.parseForbiddenTokens = function () {
   var me = this;
-  var forbidden = [].concat(this.forbiddenTokens);
+  var forbidden = this.forbiddenTokens.split('|');
   var toForbid = [];
   me.debug && console.log('about to forbid: ', forbidden);
   forbidden
@@ -83702,7 +101252,7 @@ module.exports = [{
   entryPoint: 'pojoviz',
   alwaysDirty: true
 }, {
-  displayName: 't3'
+  entryPoint: 't3'
 }];
 },{}],18:[function(require,module,exports){
 /**
@@ -84204,7 +101754,6 @@ pojoviz.draw.setRenderer('d3');
 
 module.exports = pojoviz.draw;
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-
 },{"./d3/":10,"./draw":11,"./three/":13,"lodash":undefined}],2:[function(require,module,exports){
 // http://wiki.commonjs.org/wiki/Unit_Testing/1.0
 //
@@ -85247,15 +102796,15 @@ function hasOwnProperty(obj, prop) {
 }
 
 }).call(this,require('_process'),typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-
 },{"./support/isBuffer":5,"_process":4,"inherits":3}],7:[function(require,module,exports){
 (function (global){
 var d3 = (typeof window !== "undefined" ? window.d3 : typeof global !== "undefined" ? global.d3 : null),
+  assert = require('assert'),
   _ = require('lodash'),
   utils = require('../../renderer/utils'),
   pojoVizNode = require('./Node');
 
-var svg = d3.select('svg#canvas');
+var rootSvg;
 var prefix = utils.prefixer;
 var escapeCls = utils.escapeCls;
 var transformProperty = utils.transformProperty;
@@ -85268,10 +102817,11 @@ function getY(d) {
   return d.y - d.height / 2;
 }
 
-function Canvas(data) {
+function Canvas(data, el) {
+  assert(el);
   this.id = _.uniqueId();
   this.data = data;
-  this.createRoot();
+  this.createRoot(el);
   this.set({
     nodes: data.nodes,
     edges: data.edges
@@ -85280,15 +102830,18 @@ function Canvas(data) {
 
 Canvas.prototype.destroy = function() {
   this.data = null;
-  svg.attr('style', 'display: none');
-  svg
+  rootSvg
     .selectAll('*')
     .remove();
 };
 
-Canvas.prototype.createRoot = function() {
-  svg.attr('style', '');
-  this.root = svg
+Canvas.prototype.createRoot = function(el) {
+  var root = d3.select(el);
+  assert(root[0][0], "canvas couldn't be selected");
+  root.selectAll('*').remove();
+  rootSvg = root.append('svg');
+  rootSvg.attr('style', 'width: 100%; height: 100%');
+  this.root = rootSvg
     .append('g')
       .attr('class', 'root-' + this.id);
 };
@@ -85303,7 +102856,7 @@ Canvas.prototype.set = function(obj, render) {
 
 Canvas.prototype.fixZoom = function() {
   var me = this,
-      scr = svg.node(),
+      scr = rootSvg.node(),
       bbox = this.root.node().getBBox(),
       screenWidth = scr.clientWidth,
       screenHeight = scr.clientHeight,
@@ -85358,7 +102911,7 @@ Canvas.prototype.fixZoom = function() {
     .translate(translate)
     .scale(scale);
 
-  svg.call(zoom);
+  rootSvg.call(zoom);
 
   me.root
     .attr('transform', utils.transform({
@@ -85471,8 +103024,7 @@ Canvas.prototype.renderNodes = function() {
 
 module.exports = Canvas;
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-
-},{"../../renderer/utils":14,"./Node":8,"lodash":undefined}],8:[function(require,module,exports){
+},{"../../renderer/utils":14,"./Node":8,"assert":2,"lodash":undefined}],8:[function(require,module,exports){
 (function (global){
 var _ = require('lodash'),
   d3 = (typeof window !== "undefined" ? window.d3 : typeof global !== "undefined" ? global.d3 : null),
@@ -85590,8 +103142,8 @@ function Node(parent) {
       // setTimeout(function () {
       var bbox = el.node().getBBox();
       rect
-        .attr('width', bbox.width + 10 * 2)
-        .attr('height', bbox.height + 10);
+        .attr('width', bbox.width + 20)
+        .attr('height', bbox.height + 20);
       // }, 0);
     });
   }
@@ -85606,7 +103158,6 @@ function Node(parent) {
 
 module.exports = Node;
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-
 },{"../../renderer/utils":14,"../../util/hashKey":15,"./Property":9,"lodash":undefined}],9:[function(require,module,exports){
 (function (global){
 var d3 = (typeof window !== "undefined" ? window.d3 : typeof global !== "undefined" ? global.d3 : null),
@@ -85682,7 +103233,6 @@ function Property() {
         return d.property;
       })
       .on('click', function (d, i) {
-        console.log(d);
         var link = d.label.match(/\S*?-([\$\w-\.]*)/);
         var ev = new CustomEvent('property-click', {
           detail: {
@@ -85690,7 +103240,6 @@ function Property() {
             property: d.property
           }
         });
-        console.log(ev.detail);
         document.dispatchEvent(ev);
       });
 
@@ -85747,11 +103296,11 @@ function Property() {
 
 module.exports = Property;
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-
 },{"../../renderer/utils":14,"lodash":undefined}],10:[function(require,module,exports){
 (function (global){
 var Canvas = require('./Canvas'),
-  canvas;
+  canvas,
+  canvasEl;
 
 module.exports = {
   clear: function () {
@@ -85760,8 +103309,11 @@ module.exports = {
     }
   },
   render: function (data) {
-    canvas = new Canvas(data);
+    canvas = new Canvas(data, canvasEl);
     canvas.render();
+  },
+  setCanvasEl: function (el) {
+    canvasEl = el;
   }
 };
 
@@ -85773,7 +103325,6 @@ global.document && document.addEventListener('property-click', function (e) {
     .showSearch(detail.name, detail.property);
 });
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-
 },{"./Canvas":7}],11:[function(require,module,exports){
 (function (global){
 /**
@@ -85998,7 +103549,6 @@ module.exports = {
   }
 };
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-
 },{"assert":2,"dagre":undefined,"lodash":undefined}],12:[function(require,module,exports){
 /**
  * @author qiao / https://github.com/qiao
@@ -86655,12 +104205,12 @@ require('./PanControls');
 var t3 = (typeof window !== "undefined" ? window.t3 : typeof global !== "undefined" ? global.t3 : null),
   _ = require('lodash'),
   THREE = (typeof window !== "undefined" ? window.THREE : typeof global !== "undefined" ? global.THREE : null),
-  id = 'threejscanvas',
+  el,
   instance;
 
 module.exports = {
   clear: function () {
-    var el = document.getElementById(id);
+    var el = document.querySelector(el);
     while(el.firstChild) {
       el.removeChild(el.firstChild);
     }
@@ -86668,6 +104218,9 @@ module.exports = {
     if (instance) {
       instance.loopManager.stop();
     }
+  },
+  setCanvasEl: function (newEl) {
+    el = newEl;
   },
   render: function (data) {
     var nodes = data.nodes,
@@ -86696,7 +104249,7 @@ module.exports = {
       nodeMap[node.label] = node;
     });
 
-    var wrapperEl = document.getElementById(id);
+    var wrapperEl = document.querySelector(el);
     wrapperEl.style.display = 'block';
 
     // pre init
@@ -86705,8 +104258,8 @@ module.exports = {
       fogColor: 0xffffff,
       groundColor: 0xffffff
     };
-    var wrapper = document.getElementById(id),
-      bbox = wrapper.getBoundingClientRect();
+    var wrapper = document.querySelector(el);
+    var bbox = wrapper.getBoundingClientRect();
 
     function getY(node, i) {
       return node.y - node.height * 0.5 +
@@ -86962,7 +104515,7 @@ module.exports = {
     }
 
     instance = t3.run({
-      id: id,
+      id: el,
       width: bbox.width,
       height: bbox.height,
       theme: 'allWhite',
@@ -87082,7 +104635,6 @@ module.exports = {
   }
 };
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-
 },{"./PanControls":12,"lodash":undefined}],14:[function(require,module,exports){
 'use strict';
 
@@ -87524,146 +105076,25 @@ utils.propertyForbiddenRules = {
 };
 
 module.exports = utils;
-},{"lodash":undefined}]},{},[1])
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm5vZGVfbW9kdWxlcy9icm93c2VyaWZ5L25vZGVfbW9kdWxlcy9icm93c2VyLXBhY2svX3ByZWx1ZGUuanMiLCJzcmMvcmVuZGVyZXIvaW5kZXguanMiLCJub2RlX21vZHVsZXMvYnJvd3NlcmlmeS9ub2RlX21vZHVsZXMvYXNzZXJ0L2Fzc2VydC5qcyIsIm5vZGVfbW9kdWxlcy9icm93c2VyaWZ5L25vZGVfbW9kdWxlcy9pbmhlcml0cy9pbmhlcml0c19icm93c2VyLmpzIiwibm9kZV9tb2R1bGVzL2Jyb3dzZXJpZnkvbm9kZV9tb2R1bGVzL3Byb2Nlc3MvYnJvd3Nlci5qcyIsIm5vZGVfbW9kdWxlcy9icm93c2VyaWZ5L25vZGVfbW9kdWxlcy91dGlsL3N1cHBvcnQvaXNCdWZmZXJCcm93c2VyLmpzIiwibm9kZV9tb2R1bGVzL2Jyb3dzZXJpZnkvbm9kZV9tb2R1bGVzL3V0aWwvdXRpbC5qcyIsInNyYy9yZW5kZXJlci9kMy9DYW52YXMuanMiLCJzcmMvcmVuZGVyZXIvZDMvTm9kZS5qcyIsInNyYy9yZW5kZXJlci9kMy9Qcm9wZXJ0eS5qcyIsInNyYy9yZW5kZXJlci9kMy9pbmRleC5qcyIsInNyYy9yZW5kZXJlci9kcmF3LmpzIiwic3JjL3JlbmRlcmVyL3RocmVlL1BhbkNvbnRyb2xzLmpzIiwic3JjL3JlbmRlcmVyL3RocmVlL2luZGV4LmpzIiwic3JjL3JlbmRlcmVyL3V0aWxzLmpzIiwic3JjL3V0aWwvaGFzaEtleS5qcyIsInNyYy91dGlsL2luZGV4LmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBOztBQ0FBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7Ozs7QUNoQkE7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBOztBQ3ZXQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7O0FDdkJBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBOztBQ3pEQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7OztBQ0xBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7Ozs7O0FDMWtCQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTs7Ozs7QUMzTkE7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTs7Ozs7QUNsSUE7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTs7Ozs7QUN4SUE7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7Ozs7O0FDckJBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7Ozs7QUM1TkE7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBOzs7QUN2b0JBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7Ozs7QUM5YUE7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBOztBQ3RDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBOztBQ3BKQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQSIsImZpbGUiOiJnZW5lcmF0ZWQuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlc0NvbnRlbnQiOlsiKGZ1bmN0aW9uIGUodCxuLHIpe2Z1bmN0aW9uIHMobyx1KXtpZighbltvXSl7aWYoIXRbb10pe3ZhciBhPXR5cGVvZiByZXF1aXJlPT1cImZ1bmN0aW9uXCImJnJlcXVpcmU7aWYoIXUmJmEpcmV0dXJuIGEobywhMCk7aWYoaSlyZXR1cm4gaShvLCEwKTt2YXIgZj1uZXcgRXJyb3IoXCJDYW5ub3QgZmluZCBtb2R1bGUgJ1wiK28rXCInXCIpO3Rocm93IGYuY29kZT1cIk1PRFVMRV9OT1RfRk9VTkRcIixmfXZhciBsPW5bb109e2V4cG9ydHM6e319O3Rbb11bMF0uY2FsbChsLmV4cG9ydHMsZnVuY3Rpb24oZSl7dmFyIG49dFtvXVsxXVtlXTtyZXR1cm4gcyhuP246ZSl9LGwsbC5leHBvcnRzLGUsdCxuLHIpfXJldHVybiBuW29dLmV4cG9ydHN9dmFyIGk9dHlwZW9mIHJlcXVpcmU9PVwiZnVuY3Rpb25cIiYmcmVxdWlyZTtmb3IodmFyIG89MDtvPHIubGVuZ3RoO28rKylzKHJbb10pO3JldHVybiBzfSkiLCIvLyBpdCdzIG5vdCBhIHN0YW5kYWxvbmUgcGFja2FnZVxuLy8gYnV0IGl0IGV4dGVuZHMgcG9qb3ZpeidzIGZ1bmN0aW9uYWxpdHlcbnZhciBwb2pvdml6ID0gZ2xvYmFsLnBvam92aXo7XG5pZiAoIXBvam92aXopIHtcbiAgdGhyb3cgJ1RoaXMgaXMgbm90IGEgc3RhbmRhbG9uZSBwcm9qZWN0LCBwb2pvdml6IG5vdCBmb3VuZCc7XG59XG5cbnZhciBfID0gcmVxdWlyZSgnbG9kYXNoJyk7XG5fLm1lcmdlKHBvam92aXosIHtcbiAgZHJhdzogcmVxdWlyZSgnLi9kcmF3Jylcbn0pO1xuXG5wb2pvdml6LmRyYXcuYWRkUmVuZGVyZXIoJ2QzJywgcmVxdWlyZSgnLi9kMy8nKSk7XG5wb2pvdml6LmRyYXcuYWRkUmVuZGVyZXIoJ3RocmVlJywgcmVxdWlyZSgnLi90aHJlZS8nKSk7XG5wb2pvdml6LmRyYXcuc2V0UmVuZGVyZXIoJ2QzJyk7XG5cbm1vZHVsZS5leHBvcnRzID0gcG9qb3Zpei5kcmF3OyIsIi8vIGh0dHA6Ly93aWtpLmNvbW1vbmpzLm9yZy93aWtpL1VuaXRfVGVzdGluZy8xLjBcbi8vXG4vLyBUSElTIElTIE5PVCBURVNURUQgTk9SIExJS0VMWSBUTyBXT1JLIE9VVFNJREUgVjghXG4vL1xuLy8gT3JpZ2luYWxseSBmcm9tIG5hcndoYWwuanMgKGh0dHA6Ly9uYXJ3aGFsanMub3JnKVxuLy8gQ29weXJpZ2h0IChjKSAyMDA5IFRob21hcyBSb2JpbnNvbiA8Mjgwbm9ydGguY29tPlxuLy9cbi8vIFBlcm1pc3Npb24gaXMgaGVyZWJ5IGdyYW50ZWQsIGZyZWUgb2YgY2hhcmdlLCB0byBhbnkgcGVyc29uIG9idGFpbmluZyBhIGNvcHlcbi8vIG9mIHRoaXMgc29mdHdhcmUgYW5kIGFzc29jaWF0ZWQgZG9jdW1lbnRhdGlvbiBmaWxlcyAodGhlICdTb2Z0d2FyZScpLCB0b1xuLy8gZGVhbCBpbiB0aGUgU29mdHdhcmUgd2l0aG91dCByZXN0cmljdGlvbiwgaW5jbHVkaW5nIHdpdGhvdXQgbGltaXRhdGlvbiB0aGVcbi8vIHJpZ2h0cyB0byB1c2UsIGNvcHksIG1vZGlmeSwgbWVyZ2UsIHB1Ymxpc2gsIGRpc3RyaWJ1dGUsIHN1YmxpY2Vuc2UsIGFuZC9vclxuLy8gc2VsbCBjb3BpZXMgb2YgdGhlIFNvZnR3YXJlLCBhbmQgdG8gcGVybWl0IHBlcnNvbnMgdG8gd2hvbSB0aGUgU29mdHdhcmUgaXNcbi8vIGZ1cm5pc2hlZCB0byBkbyBzbywgc3ViamVjdCB0byB0aGUgZm9sbG93aW5nIGNvbmRpdGlvbnM6XG4vL1xuLy8gVGhlIGFib3ZlIGNvcHlyaWdodCBub3RpY2UgYW5kIHRoaXMgcGVybWlzc2lvbiBub3RpY2Ugc2hhbGwgYmUgaW5jbHVkZWQgaW5cbi8vIGFsbCBjb3BpZXMgb3Igc3Vic3RhbnRpYWwgcG9ydGlvbnMgb2YgdGhlIFNvZnR3YXJlLlxuLy9cbi8vIFRIRSBTT0ZUV0FSRSBJUyBQUk9WSURFRCAnQVMgSVMnLCBXSVRIT1VUIFdBUlJBTlRZIE9GIEFOWSBLSU5ELCBFWFBSRVNTIE9SXG4vLyBJTVBMSUVELCBJTkNMVURJTkcgQlVUIE5PVCBMSU1JVEVEIFRPIFRIRSBXQVJSQU5USUVTIE9GIE1FUkNIQU5UQUJJTElUWSxcbi8vIEZJVE5FU1MgRk9SIEEgUEFSVElDVUxBUiBQVVJQT1NFIEFORCBOT05JTkZSSU5HRU1FTlQuIElOIE5PIEVWRU5UIFNIQUxMIFRIRVxuLy8gQVVUSE9SUyBCRSBMSUFCTEUgRk9SIEFOWSBDTEFJTSwgREFNQUdFUyBPUiBPVEhFUiBMSUFCSUxJVFksIFdIRVRIRVIgSU4gQU5cbi8vIEFDVElPTiBPRiBDT05UUkFDVCwgVE9SVCBPUiBPVEhFUldJU0UsIEFSSVNJTkcgRlJPTSwgT1VUIE9GIE9SIElOIENPTk5FQ1RJT05cbi8vIFdJVEggVEhFIFNPRlRXQVJFIE9SIFRIRSBVU0UgT1IgT1RIRVIgREVBTElOR1MgSU4gVEhFIFNPRlRXQVJFLlxuXG4vLyB3aGVuIHVzZWQgaW4gbm9kZSwgdGhpcyB3aWxsIGFjdHVhbGx5IGxvYWQgdGhlIHV0aWwgbW9kdWxlIHdlIGRlcGVuZCBvblxuLy8gdmVyc3VzIGxvYWRpbmcgdGhlIGJ1aWx0aW4gdXRpbCBtb2R1bGUgYXMgaGFwcGVucyBvdGhlcndpc2Vcbi8vIHRoaXMgaXMgYSBidWcgaW4gbm9kZSBtb2R1bGUgbG9hZGluZyBhcyBmYXIgYXMgSSBhbSBjb25jZXJuZWRcbnZhciB1dGlsID0gcmVxdWlyZSgndXRpbC8nKTtcblxudmFyIHBTbGljZSA9IEFycmF5LnByb3RvdHlwZS5zbGljZTtcbnZhciBoYXNPd24gPSBPYmplY3QucHJvdG90eXBlLmhhc093blByb3BlcnR5O1xuXG4vLyAxLiBUaGUgYXNzZXJ0IG1vZHVsZSBwcm92aWRlcyBmdW5jdGlvbnMgdGhhdCB0aHJvd1xuLy8gQXNzZXJ0aW9uRXJyb3IncyB3aGVuIHBhcnRpY3VsYXIgY29uZGl0aW9ucyBhcmUgbm90IG1ldC4gVGhlXG4vLyBhc3NlcnQgbW9kdWxlIG11c3QgY29uZm9ybSB0byB0aGUgZm9sbG93aW5nIGludGVyZmFjZS5cblxudmFyIGFzc2VydCA9IG1vZHVsZS5leHBvcnRzID0gb2s7XG5cbi8vIDIuIFRoZSBBc3NlcnRpb25FcnJvciBpcyBkZWZpbmVkIGluIGFzc2VydC5cbi8vIG5ldyBhc3NlcnQuQXNzZXJ0aW9uRXJyb3IoeyBtZXNzYWdlOiBtZXNzYWdlLFxuLy8gICAgICAgICAgICAgICAgICAgICAgICAgICAgIGFjdHVhbDogYWN0dWFsLFxuLy8gICAgICAgICAgICAgICAgICAgICAgICAgICAgIGV4cGVjdGVkOiBleHBlY3RlZCB9KVxuXG5hc3NlcnQuQXNzZXJ0aW9uRXJyb3IgPSBmdW5jdGlvbiBBc3NlcnRpb25FcnJvcihvcHRpb25zKSB7XG4gIHRoaXMubmFtZSA9ICdBc3NlcnRpb25FcnJvcic7XG4gIHRoaXMuYWN0dWFsID0gb3B0aW9ucy5hY3R1YWw7XG4gIHRoaXMuZXhwZWN0ZWQgPSBvcHRpb25zLmV4cGVjdGVkO1xuICB0aGlzLm9wZXJhdG9yID0gb3B0aW9ucy5vcGVyYXRvcjtcbiAgaWYgKG9wdGlvbnMubWVzc2FnZSkge1xuICAgIHRoaXMubWVzc2FnZSA9IG9wdGlvbnMubWVzc2FnZTtcbiAgICB0aGlzLmdlbmVyYXRlZE1lc3NhZ2UgPSBmYWxzZTtcbiAgfSBlbHNlIHtcbiAgICB0aGlzLm1lc3NhZ2UgPSBnZXRNZXNzYWdlKHRoaXMpO1xuICAgIHRoaXMuZ2VuZXJhdGVkTWVzc2FnZSA9IHRydWU7XG4gIH1cbiAgdmFyIHN0YWNrU3RhcnRGdW5jdGlvbiA9IG9wdGlvbnMuc3RhY2tTdGFydEZ1bmN0aW9uIHx8IGZhaWw7XG5cbiAgaWYgKEVycm9yLmNhcHR1cmVTdGFja1RyYWNlKSB7XG4gICAgRXJyb3IuY2FwdHVyZVN0YWNrVHJhY2UodGhpcywgc3RhY2tTdGFydEZ1bmN0aW9uKTtcbiAgfVxuICBlbHNlIHtcbiAgICAvLyBub24gdjggYnJvd3NlcnMgc28gd2UgY2FuIGhhdmUgYSBzdGFja3RyYWNlXG4gICAgdmFyIGVyciA9IG5ldyBFcnJvcigpO1xuICAgIGlmIChlcnIuc3RhY2spIHtcbiAgICAgIHZhciBvdXQgPSBlcnIuc3RhY2s7XG5cbiAgICAgIC8vIHRyeSB0byBzdHJpcCB1c2VsZXNzIGZyYW1lc1xuICAgICAgdmFyIGZuX25hbWUgPSBzdGFja1N0YXJ0RnVuY3Rpb24ubmFtZTtcbiAgICAgIHZhciBpZHggPSBvdXQuaW5kZXhPZignXFxuJyArIGZuX25hbWUpO1xuICAgICAgaWYgKGlkeCA+PSAwKSB7XG4gICAgICAgIC8vIG9uY2Ugd2UgaGF2ZSBsb2NhdGVkIHRoZSBmdW5jdGlvbiBmcmFtZVxuICAgICAgICAvLyB3ZSBuZWVkIHRvIHN0cmlwIG91dCBldmVyeXRoaW5nIGJlZm9yZSBpdCAoYW5kIGl0cyBsaW5lKVxuICAgICAgICB2YXIgbmV4dF9saW5lID0gb3V0LmluZGV4T2YoJ1xcbicsIGlkeCArIDEpO1xuICAgICAgICBvdXQgPSBvdXQuc3Vic3RyaW5nKG5leHRfbGluZSArIDEpO1xuICAgICAgfVxuXG4gICAgICB0aGlzLnN0YWNrID0gb3V0O1xuICAgIH1cbiAgfVxufTtcblxuLy8gYXNzZXJ0LkFzc2VydGlvbkVycm9yIGluc3RhbmNlb2YgRXJyb3JcbnV0aWwuaW5oZXJpdHMoYXNzZXJ0LkFzc2VydGlvbkVycm9yLCBFcnJvcik7XG5cbmZ1bmN0aW9uIHJlcGxhY2VyKGtleSwgdmFsdWUpIHtcbiAgaWYgKHV0aWwuaXNVbmRlZmluZWQodmFsdWUpKSB7XG4gICAgcmV0dXJuICcnICsgdmFsdWU7XG4gIH1cbiAgaWYgKHV0aWwuaXNOdW1iZXIodmFsdWUpICYmICFpc0Zpbml0ZSh2YWx1ZSkpIHtcbiAgICByZXR1cm4gdmFsdWUudG9TdHJpbmcoKTtcbiAgfVxuICBpZiAodXRpbC5pc0Z1bmN0aW9uKHZhbHVlKSB8fCB1dGlsLmlzUmVnRXhwKHZhbHVlKSkge1xuICAgIHJldHVybiB2YWx1ZS50b1N0cmluZygpO1xuICB9XG4gIHJldHVybiB2YWx1ZTtcbn1cblxuZnVuY3Rpb24gdHJ1bmNhdGUocywgbikge1xuICBpZiAodXRpbC5pc1N0cmluZyhzKSkge1xuICAgIHJldHVybiBzLmxlbmd0aCA8IG4gPyBzIDogcy5zbGljZSgwLCBuKTtcbiAgfSBlbHNlIHtcbiAgICByZXR1cm4gcztcbiAgfVxufVxuXG5mdW5jdGlvbiBnZXRNZXNzYWdlKHNlbGYpIHtcbiAgcmV0dXJuIHRydW5jYXRlKEpTT04uc3RyaW5naWZ5KHNlbGYuYWN0dWFsLCByZXBsYWNlciksIDEyOCkgKyAnICcgK1xuICAgICAgICAgc2VsZi5vcGVyYXRvciArICcgJyArXG4gICAgICAgICB0cnVuY2F0ZShKU09OLnN0cmluZ2lmeShzZWxmLmV4cGVjdGVkLCByZXBsYWNlciksIDEyOCk7XG59XG5cbi8vIEF0IHByZXNlbnQgb25seSB0aGUgdGhyZWUga2V5cyBtZW50aW9uZWQgYWJvdmUgYXJlIHVzZWQgYW5kXG4vLyB1bmRlcnN0b29kIGJ5IHRoZSBzcGVjLiBJbXBsZW1lbnRhdGlvbnMgb3Igc3ViIG1vZHVsZXMgY2FuIHBhc3Ncbi8vIG90aGVyIGtleXMgdG8gdGhlIEFzc2VydGlvbkVycm9yJ3MgY29uc3RydWN0b3IgLSB0aGV5IHdpbGwgYmVcbi8vIGlnbm9yZWQuXG5cbi8vIDMuIEFsbCBvZiB0aGUgZm9sbG93aW5nIGZ1bmN0aW9ucyBtdXN0IHRocm93IGFuIEFzc2VydGlvbkVycm9yXG4vLyB3aGVuIGEgY29ycmVzcG9uZGluZyBjb25kaXRpb24gaXMgbm90IG1ldCwgd2l0aCBhIG1lc3NhZ2UgdGhhdFxuLy8gbWF5IGJlIHVuZGVmaW5lZCBpZiBub3QgcHJvdmlkZWQuICBBbGwgYXNzZXJ0aW9uIG1ldGhvZHMgcHJvdmlkZVxuLy8gYm90aCB0aGUgYWN0dWFsIGFuZCBleHBlY3RlZCB2YWx1ZXMgdG8gdGhlIGFzc2VydGlvbiBlcnJvciBmb3Jcbi8vIGRpc3BsYXkgcHVycG9zZXMuXG5cbmZ1bmN0aW9uIGZhaWwoYWN0dWFsLCBleHBlY3RlZCwgbWVzc2FnZSwgb3BlcmF0b3IsIHN0YWNrU3RhcnRGdW5jdGlvbikge1xuICB0aHJvdyBuZXcgYXNzZXJ0LkFzc2VydGlvbkVycm9yKHtcbiAgICBtZXNzYWdlOiBtZXNzYWdlLFxuICAgIGFjdHVhbDogYWN0dWFsLFxuICAgIGV4cGVjdGVkOiBleHBlY3RlZCxcbiAgICBvcGVyYXRvcjogb3BlcmF0b3IsXG4gICAgc3RhY2tTdGFydEZ1bmN0aW9uOiBzdGFja1N0YXJ0RnVuY3Rpb25cbiAgfSk7XG59XG5cbi8vIEVYVEVOU0lPTiEgYWxsb3dzIGZvciB3ZWxsIGJlaGF2ZWQgZXJyb3JzIGRlZmluZWQgZWxzZXdoZXJlLlxuYXNzZXJ0LmZhaWwgPSBmYWlsO1xuXG4vLyA0LiBQdXJlIGFzc2VydGlvbiB0ZXN0cyB3aGV0aGVyIGEgdmFsdWUgaXMgdHJ1dGh5LCBhcyBkZXRlcm1pbmVkXG4vLyBieSAhIWd1YXJkLlxuLy8gYXNzZXJ0Lm9rKGd1YXJkLCBtZXNzYWdlX29wdCk7XG4vLyBUaGlzIHN0YXRlbWVudCBpcyBlcXVpdmFsZW50IHRvIGFzc2VydC5lcXVhbCh0cnVlLCAhIWd1YXJkLFxuLy8gbWVzc2FnZV9vcHQpOy4gVG8gdGVzdCBzdHJpY3RseSBmb3IgdGhlIHZhbHVlIHRydWUsIHVzZVxuLy8gYXNzZXJ0LnN0cmljdEVxdWFsKHRydWUsIGd1YXJkLCBtZXNzYWdlX29wdCk7LlxuXG5mdW5jdGlvbiBvayh2YWx1ZSwgbWVzc2FnZSkge1xuICBpZiAoIXZhbHVlKSBmYWlsKHZhbHVlLCB0cnVlLCBtZXNzYWdlLCAnPT0nLCBhc3NlcnQub2spO1xufVxuYXNzZXJ0Lm9rID0gb2s7XG5cbi8vIDUuIFRoZSBlcXVhbGl0eSBhc3NlcnRpb24gdGVzdHMgc2hhbGxvdywgY29lcmNpdmUgZXF1YWxpdHkgd2l0aFxuLy8gPT0uXG4vLyBhc3NlcnQuZXF1YWwoYWN0dWFsLCBleHBlY3RlZCwgbWVzc2FnZV9vcHQpO1xuXG5hc3NlcnQuZXF1YWwgPSBmdW5jdGlvbiBlcXVhbChhY3R1YWwsIGV4cGVjdGVkLCBtZXNzYWdlKSB7XG4gIGlmIChhY3R1YWwgIT0gZXhwZWN0ZWQpIGZhaWwoYWN0dWFsLCBleHBlY3RlZCwgbWVzc2FnZSwgJz09JywgYXNzZXJ0LmVxdWFsKTtcbn07XG5cbi8vIDYuIFRoZSBub24tZXF1YWxpdHkgYXNzZXJ0aW9uIHRlc3RzIGZvciB3aGV0aGVyIHR3byBvYmplY3RzIGFyZSBub3QgZXF1YWxcbi8vIHdpdGggIT0gYXNzZXJ0Lm5vdEVxdWFsKGFjdHVhbCwgZXhwZWN0ZWQsIG1lc3NhZ2Vfb3B0KTtcblxuYXNzZXJ0Lm5vdEVxdWFsID0gZnVuY3Rpb24gbm90RXF1YWwoYWN0dWFsLCBleHBlY3RlZCwgbWVzc2FnZSkge1xuICBpZiAoYWN0dWFsID09IGV4cGVjdGVkKSB7XG4gICAgZmFpbChhY3R1YWwsIGV4cGVjdGVkLCBtZXNzYWdlLCAnIT0nLCBhc3NlcnQubm90RXF1YWwpO1xuICB9XG59O1xuXG4vLyA3LiBUaGUgZXF1aXZhbGVuY2UgYXNzZXJ0aW9uIHRlc3RzIGEgZGVlcCBlcXVhbGl0eSByZWxhdGlvbi5cbi8vIGFzc2VydC5kZWVwRXF1YWwoYWN0dWFsLCBleHBlY3RlZCwgbWVzc2FnZV9vcHQpO1xuXG5hc3NlcnQuZGVlcEVxdWFsID0gZnVuY3Rpb24gZGVlcEVxdWFsKGFjdHVhbCwgZXhwZWN0ZWQsIG1lc3NhZ2UpIHtcbiAgaWYgKCFfZGVlcEVxdWFsKGFjdHVhbCwgZXhwZWN0ZWQpKSB7XG4gICAgZmFpbChhY3R1YWwsIGV4cGVjdGVkLCBtZXNzYWdlLCAnZGVlcEVxdWFsJywgYXNzZXJ0LmRlZXBFcXVhbCk7XG4gIH1cbn07XG5cbmZ1bmN0aW9uIF9kZWVwRXF1YWwoYWN0dWFsLCBleHBlY3RlZCkge1xuICAvLyA3LjEuIEFsbCBpZGVudGljYWwgdmFsdWVzIGFyZSBlcXVpdmFsZW50LCBhcyBkZXRlcm1pbmVkIGJ5ID09PS5cbiAgaWYgKGFjdHVhbCA9PT0gZXhwZWN0ZWQpIHtcbiAgICByZXR1cm4gdHJ1ZTtcblxuICB9IGVsc2UgaWYgKHV0aWwuaXNCdWZmZXIoYWN0dWFsKSAmJiB1dGlsLmlzQnVmZmVyKGV4cGVjdGVkKSkge1xuICAgIGlmIChhY3R1YWwubGVuZ3RoICE9IGV4cGVjdGVkLmxlbmd0aCkgcmV0dXJuIGZhbHNlO1xuXG4gICAgZm9yICh2YXIgaSA9IDA7IGkgPCBhY3R1YWwubGVuZ3RoOyBpKyspIHtcbiAgICAgIGlmIChhY3R1YWxbaV0gIT09IGV4cGVjdGVkW2ldKSByZXR1cm4gZmFsc2U7XG4gICAgfVxuXG4gICAgcmV0dXJuIHRydWU7XG5cbiAgLy8gNy4yLiBJZiB0aGUgZXhwZWN0ZWQgdmFsdWUgaXMgYSBEYXRlIG9iamVjdCwgdGhlIGFjdHVhbCB2YWx1ZSBpc1xuICAvLyBlcXVpdmFsZW50IGlmIGl0IGlzIGFsc28gYSBEYXRlIG9iamVjdCB0aGF0IHJlZmVycyB0byB0aGUgc2FtZSB0aW1lLlxuICB9IGVsc2UgaWYgKHV0aWwuaXNEYXRlKGFjdHVhbCkgJiYgdXRpbC5pc0RhdGUoZXhwZWN0ZWQpKSB7XG4gICAgcmV0dXJuIGFjdHVhbC5nZXRUaW1lKCkgPT09IGV4cGVjdGVkLmdldFRpbWUoKTtcblxuICAvLyA3LjMgSWYgdGhlIGV4cGVjdGVkIHZhbHVlIGlzIGEgUmVnRXhwIG9iamVjdCwgdGhlIGFjdHVhbCB2YWx1ZSBpc1xuICAvLyBlcXVpdmFsZW50IGlmIGl0IGlzIGFsc28gYSBSZWdFeHAgb2JqZWN0IHdpdGggdGhlIHNhbWUgc291cmNlIGFuZFxuICAvLyBwcm9wZXJ0aWVzIChgZ2xvYmFsYCwgYG11bHRpbGluZWAsIGBsYXN0SW5kZXhgLCBgaWdub3JlQ2FzZWApLlxuICB9IGVsc2UgaWYgKHV0aWwuaXNSZWdFeHAoYWN0dWFsKSAmJiB1dGlsLmlzUmVnRXhwKGV4cGVjdGVkKSkge1xuICAgIHJldHVybiBhY3R1YWwuc291cmNlID09PSBleHBlY3RlZC5zb3VyY2UgJiZcbiAgICAgICAgICAgYWN0dWFsLmdsb2JhbCA9PT0gZXhwZWN0ZWQuZ2xvYmFsICYmXG4gICAgICAgICAgIGFjdHVhbC5tdWx0aWxpbmUgPT09IGV4cGVjdGVkLm11bHRpbGluZSAmJlxuICAgICAgICAgICBhY3R1YWwubGFzdEluZGV4ID09PSBleHBlY3RlZC5sYXN0SW5kZXggJiZcbiAgICAgICAgICAgYWN0dWFsLmlnbm9yZUNhc2UgPT09IGV4cGVjdGVkLmlnbm9yZUNhc2U7XG5cbiAgLy8gNy40LiBPdGhlciBwYWlycyB0aGF0IGRvIG5vdCBib3RoIHBhc3MgdHlwZW9mIHZhbHVlID09ICdvYmplY3QnLFxuICAvLyBlcXVpdmFsZW5jZSBpcyBkZXRlcm1pbmVkIGJ5ID09LlxuICB9IGVsc2UgaWYgKCF1dGlsLmlzT2JqZWN0KGFjdHVhbCkgJiYgIXV0aWwuaXNPYmplY3QoZXhwZWN0ZWQpKSB7XG4gICAgcmV0dXJuIGFjdHVhbCA9PSBleHBlY3RlZDtcblxuICAvLyA3LjUgRm9yIGFsbCBvdGhlciBPYmplY3QgcGFpcnMsIGluY2x1ZGluZyBBcnJheSBvYmplY3RzLCBlcXVpdmFsZW5jZSBpc1xuICAvLyBkZXRlcm1pbmVkIGJ5IGhhdmluZyB0aGUgc2FtZSBudW1iZXIgb2Ygb3duZWQgcHJvcGVydGllcyAoYXMgdmVyaWZpZWRcbiAgLy8gd2l0aCBPYmplY3QucHJvdG90eXBlLmhhc093blByb3BlcnR5LmNhbGwpLCB0aGUgc2FtZSBzZXQgb2Yga2V5c1xuICAvLyAoYWx0aG91Z2ggbm90IG5lY2Vzc2FyaWx5IHRoZSBzYW1lIG9yZGVyKSwgZXF1aXZhbGVudCB2YWx1ZXMgZm9yIGV2ZXJ5XG4gIC8vIGNvcnJlc3BvbmRpbmcga2V5LCBhbmQgYW4gaWRlbnRpY2FsICdwcm90b3R5cGUnIHByb3BlcnR5LiBOb3RlOiB0aGlzXG4gIC8vIGFjY291bnRzIGZvciBib3RoIG5hbWVkIGFuZCBpbmRleGVkIHByb3BlcnRpZXMgb24gQXJyYXlzLlxuICB9IGVsc2Uge1xuICAgIHJldHVybiBvYmpFcXVpdihhY3R1YWwsIGV4cGVjdGVkKTtcbiAgfVxufVxuXG5mdW5jdGlvbiBpc0FyZ3VtZW50cyhvYmplY3QpIHtcbiAgcmV0dXJuIE9iamVjdC5wcm90b3R5cGUudG9TdHJpbmcuY2FsbChvYmplY3QpID09ICdbb2JqZWN0IEFyZ3VtZW50c10nO1xufVxuXG5mdW5jdGlvbiBvYmpFcXVpdihhLCBiKSB7XG4gIGlmICh1dGlsLmlzTnVsbE9yVW5kZWZpbmVkKGEpIHx8IHV0aWwuaXNOdWxsT3JVbmRlZmluZWQoYikpXG4gICAgcmV0dXJuIGZhbHNlO1xuICAvLyBhbiBpZGVudGljYWwgJ3Byb3RvdHlwZScgcHJvcGVydHkuXG4gIGlmIChhLnByb3RvdHlwZSAhPT0gYi5wcm90b3R5cGUpIHJldHVybiBmYWxzZTtcbiAgLy8gaWYgb25lIGlzIGEgcHJpbWl0aXZlLCB0aGUgb3RoZXIgbXVzdCBiZSBzYW1lXG4gIGlmICh1dGlsLmlzUHJpbWl0aXZlKGEpIHx8IHV0aWwuaXNQcmltaXRpdmUoYikpIHtcbiAgICByZXR1cm4gYSA9PT0gYjtcbiAgfVxuICB2YXIgYUlzQXJncyA9IGlzQXJndW1lbnRzKGEpLFxuICAgICAgYklzQXJncyA9IGlzQXJndW1lbnRzKGIpO1xuICBpZiAoKGFJc0FyZ3MgJiYgIWJJc0FyZ3MpIHx8ICghYUlzQXJncyAmJiBiSXNBcmdzKSlcbiAgICByZXR1cm4gZmFsc2U7XG4gIGlmIChhSXNBcmdzKSB7XG4gICAgYSA9IHBTbGljZS5jYWxsKGEpO1xuICAgIGIgPSBwU2xpY2UuY2FsbChiKTtcbiAgICByZXR1cm4gX2RlZXBFcXVhbChhLCBiKTtcbiAgfVxuICB2YXIga2EgPSBvYmplY3RLZXlzKGEpLFxuICAgICAga2IgPSBvYmplY3RLZXlzKGIpLFxuICAgICAga2V5LCBpO1xuICAvLyBoYXZpbmcgdGhlIHNhbWUgbnVtYmVyIG9mIG93bmVkIHByb3BlcnRpZXMgKGtleXMgaW5jb3Jwb3JhdGVzXG4gIC8vIGhhc093blByb3BlcnR5KVxuICBpZiAoa2EubGVuZ3RoICE9IGtiLmxlbmd0aClcbiAgICByZXR1cm4gZmFsc2U7XG4gIC8vdGhlIHNhbWUgc2V0IG9mIGtleXMgKGFsdGhvdWdoIG5vdCBuZWNlc3NhcmlseSB0aGUgc2FtZSBvcmRlciksXG4gIGthLnNvcnQoKTtcbiAga2Iuc29ydCgpO1xuICAvL35+fmNoZWFwIGtleSB0ZXN0XG4gIGZvciAoaSA9IGthLmxlbmd0aCAtIDE7IGkgPj0gMDsgaS0tKSB7XG4gICAgaWYgKGthW2ldICE9IGtiW2ldKVxuICAgICAgcmV0dXJuIGZhbHNlO1xuICB9XG4gIC8vZXF1aXZhbGVudCB2YWx1ZXMgZm9yIGV2ZXJ5IGNvcnJlc3BvbmRpbmcga2V5LCBhbmRcbiAgLy9+fn5wb3NzaWJseSBleHBlbnNpdmUgZGVlcCB0ZXN0XG4gIGZvciAoaSA9IGthLmxlbmd0aCAtIDE7IGkgPj0gMDsgaS0tKSB7XG4gICAga2V5ID0ga2FbaV07XG4gICAgaWYgKCFfZGVlcEVxdWFsKGFba2V5XSwgYltrZXldKSkgcmV0dXJuIGZhbHNlO1xuICB9XG4gIHJldHVybiB0cnVlO1xufVxuXG4vLyA4LiBUaGUgbm9uLWVxdWl2YWxlbmNlIGFzc2VydGlvbiB0ZXN0cyBmb3IgYW55IGRlZXAgaW5lcXVhbGl0eS5cbi8vIGFzc2VydC5ub3REZWVwRXF1YWwoYWN0dWFsLCBleHBlY3RlZCwgbWVzc2FnZV9vcHQpO1xuXG5hc3NlcnQubm90RGVlcEVxdWFsID0gZnVuY3Rpb24gbm90RGVlcEVxdWFsKGFjdHVhbCwgZXhwZWN0ZWQsIG1lc3NhZ2UpIHtcbiAgaWYgKF9kZWVwRXF1YWwoYWN0dWFsLCBleHBlY3RlZCkpIHtcbiAgICBmYWlsKGFjdHVhbCwgZXhwZWN0ZWQsIG1lc3NhZ2UsICdub3REZWVwRXF1YWwnLCBhc3NlcnQubm90RGVlcEVxdWFsKTtcbiAgfVxufTtcblxuLy8gOS4gVGhlIHN0cmljdCBlcXVhbGl0eSBhc3NlcnRpb24gdGVzdHMgc3RyaWN0IGVxdWFsaXR5LCBhcyBkZXRlcm1pbmVkIGJ5ID09PS5cbi8vIGFzc2VydC5zdHJpY3RFcXVhbChhY3R1YWwsIGV4cGVjdGVkLCBtZXNzYWdlX29wdCk7XG5cbmFzc2VydC5zdHJpY3RFcXVhbCA9IGZ1bmN0aW9uIHN0cmljdEVxdWFsKGFjdHVhbCwgZXhwZWN0ZWQsIG1lc3NhZ2UpIHtcbiAgaWYgKGFjdHVhbCAhPT0gZXhwZWN0ZWQpIHtcbiAgICBmYWlsKGFjdHVhbCwgZXhwZWN0ZWQsIG1lc3NhZ2UsICc9PT0nLCBhc3NlcnQuc3RyaWN0RXF1YWwpO1xuICB9XG59O1xuXG4vLyAxMC4gVGhlIHN0cmljdCBub24tZXF1YWxpdHkgYXNzZXJ0aW9uIHRlc3RzIGZvciBzdHJpY3QgaW5lcXVhbGl0eSwgYXNcbi8vIGRldGVybWluZWQgYnkgIT09LiAgYXNzZXJ0Lm5vdFN0cmljdEVxdWFsKGFjdHVhbCwgZXhwZWN0ZWQsIG1lc3NhZ2Vfb3B0KTtcblxuYXNzZXJ0Lm5vdFN0cmljdEVxdWFsID0gZnVuY3Rpb24gbm90U3RyaWN0RXF1YWwoYWN0dWFsLCBleHBlY3RlZCwgbWVzc2FnZSkge1xuICBpZiAoYWN0dWFsID09PSBleHBlY3RlZCkge1xuICAgIGZhaWwoYWN0dWFsLCBleHBlY3RlZCwgbWVzc2FnZSwgJyE9PScsIGFzc2VydC5ub3RTdHJpY3RFcXVhbCk7XG4gIH1cbn07XG5cbmZ1bmN0aW9uIGV4cGVjdGVkRXhjZXB0aW9uKGFjdHVhbCwgZXhwZWN0ZWQpIHtcbiAgaWYgKCFhY3R1YWwgfHwgIWV4cGVjdGVkKSB7XG4gICAgcmV0dXJuIGZhbHNlO1xuICB9XG5cbiAgaWYgKE9iamVjdC5wcm90b3R5cGUudG9TdHJpbmcuY2FsbChleHBlY3RlZCkgPT0gJ1tvYmplY3QgUmVnRXhwXScpIHtcbiAgICByZXR1cm4gZXhwZWN0ZWQudGVzdChhY3R1YWwpO1xuICB9IGVsc2UgaWYgKGFjdHVhbCBpbnN0YW5jZW9mIGV4cGVjdGVkKSB7XG4gICAgcmV0dXJuIHRydWU7XG4gIH0gZWxzZSBpZiAoZXhwZWN0ZWQuY2FsbCh7fSwgYWN0dWFsKSA9PT0gdHJ1ZSkge1xuICAgIHJldHVybiB0cnVlO1xuICB9XG5cbiAgcmV0dXJuIGZhbHNlO1xufVxuXG5mdW5jdGlvbiBfdGhyb3dzKHNob3VsZFRocm93LCBibG9jaywgZXhwZWN0ZWQsIG1lc3NhZ2UpIHtcbiAgdmFyIGFjdHVhbDtcblxuICBpZiAodXRpbC5pc1N0cmluZyhleHBlY3RlZCkpIHtcbiAgICBtZXNzYWdlID0gZXhwZWN0ZWQ7XG4gICAgZXhwZWN0ZWQgPSBudWxsO1xuICB9XG5cbiAgdHJ5IHtcbiAgICBibG9jaygpO1xuICB9IGNhdGNoIChlKSB7XG4gICAgYWN0dWFsID0gZTtcbiAgfVxuXG4gIG1lc3NhZ2UgPSAoZXhwZWN0ZWQgJiYgZXhwZWN0ZWQubmFtZSA/ICcgKCcgKyBleHBlY3RlZC5uYW1lICsgJykuJyA6ICcuJykgK1xuICAgICAgICAgICAgKG1lc3NhZ2UgPyAnICcgKyBtZXNzYWdlIDogJy4nKTtcblxuICBpZiAoc2hvdWxkVGhyb3cgJiYgIWFjdHVhbCkge1xuICAgIGZhaWwoYWN0dWFsLCBleHBlY3RlZCwgJ01pc3NpbmcgZXhwZWN0ZWQgZXhjZXB0aW9uJyArIG1lc3NhZ2UpO1xuICB9XG5cbiAgaWYgKCFzaG91bGRUaHJvdyAmJiBleHBlY3RlZEV4Y2VwdGlvbihhY3R1YWwsIGV4cGVjdGVkKSkge1xuICAgIGZhaWwoYWN0dWFsLCBleHBlY3RlZCwgJ0dvdCB1bndhbnRlZCBleGNlcHRpb24nICsgbWVzc2FnZSk7XG4gIH1cblxuICBpZiAoKHNob3VsZFRocm93ICYmIGFjdHVhbCAmJiBleHBlY3RlZCAmJlxuICAgICAgIWV4cGVjdGVkRXhjZXB0aW9uKGFjdHVhbCwgZXhwZWN0ZWQpKSB8fCAoIXNob3VsZFRocm93ICYmIGFjdHVhbCkpIHtcbiAgICB0aHJvdyBhY3R1YWw7XG4gIH1cbn1cblxuLy8gMTEuIEV4cGVjdGVkIHRvIHRocm93IGFuIGVycm9yOlxuLy8gYXNzZXJ0LnRocm93cyhibG9jaywgRXJyb3Jfb3B0LCBtZXNzYWdlX29wdCk7XG5cbmFzc2VydC50aHJvd3MgPSBmdW5jdGlvbihibG9jaywgLypvcHRpb25hbCovZXJyb3IsIC8qb3B0aW9uYWwqL21lc3NhZ2UpIHtcbiAgX3Rocm93cy5hcHBseSh0aGlzLCBbdHJ1ZV0uY29uY2F0KHBTbGljZS5jYWxsKGFyZ3VtZW50cykpKTtcbn07XG5cbi8vIEVYVEVOU0lPTiEgVGhpcyBpcyBhbm5veWluZyB0byB3cml0ZSBvdXRzaWRlIHRoaXMgbW9kdWxlLlxuYXNzZXJ0LmRvZXNOb3RUaHJvdyA9IGZ1bmN0aW9uKGJsb2NrLCAvKm9wdGlvbmFsKi9tZXNzYWdlKSB7XG4gIF90aHJvd3MuYXBwbHkodGhpcywgW2ZhbHNlXS5jb25jYXQocFNsaWNlLmNhbGwoYXJndW1lbnRzKSkpO1xufTtcblxuYXNzZXJ0LmlmRXJyb3IgPSBmdW5jdGlvbihlcnIpIHsgaWYgKGVycikge3Rocm93IGVycjt9fTtcblxudmFyIG9iamVjdEtleXMgPSBPYmplY3Qua2V5cyB8fCBmdW5jdGlvbiAob2JqKSB7XG4gIHZhciBrZXlzID0gW107XG4gIGZvciAodmFyIGtleSBpbiBvYmopIHtcbiAgICBpZiAoaGFzT3duLmNhbGwob2JqLCBrZXkpKSBrZXlzLnB1c2goa2V5KTtcbiAgfVxuICByZXR1cm4ga2V5cztcbn07XG4iLCJpZiAodHlwZW9mIE9iamVjdC5jcmVhdGUgPT09ICdmdW5jdGlvbicpIHtcbiAgLy8gaW1wbGVtZW50YXRpb24gZnJvbSBzdGFuZGFyZCBub2RlLmpzICd1dGlsJyBtb2R1bGVcbiAgbW9kdWxlLmV4cG9ydHMgPSBmdW5jdGlvbiBpbmhlcml0cyhjdG9yLCBzdXBlckN0b3IpIHtcbiAgICBjdG9yLnN1cGVyXyA9IHN1cGVyQ3RvclxuICAgIGN0b3IucHJvdG90eXBlID0gT2JqZWN0LmNyZWF0ZShzdXBlckN0b3IucHJvdG90eXBlLCB7XG4gICAgICBjb25zdHJ1Y3Rvcjoge1xuICAgICAgICB2YWx1ZTogY3RvcixcbiAgICAgICAgZW51bWVyYWJsZTogZmFsc2UsXG4gICAgICAgIHdyaXRhYmxlOiB0cnVlLFxuICAgICAgICBjb25maWd1cmFibGU6IHRydWVcbiAgICAgIH1cbiAgICB9KTtcbiAgfTtcbn0gZWxzZSB7XG4gIC8vIG9sZCBzY2hvb2wgc2hpbSBmb3Igb2xkIGJyb3dzZXJzXG4gIG1vZHVsZS5leHBvcnRzID0gZnVuY3Rpb24gaW5oZXJpdHMoY3Rvciwgc3VwZXJDdG9yKSB7XG4gICAgY3Rvci5zdXBlcl8gPSBzdXBlckN0b3JcbiAgICB2YXIgVGVtcEN0b3IgPSBmdW5jdGlvbiAoKSB7fVxuICAgIFRlbXBDdG9yLnByb3RvdHlwZSA9IHN1cGVyQ3Rvci5wcm90b3R5cGVcbiAgICBjdG9yLnByb3RvdHlwZSA9IG5ldyBUZW1wQ3RvcigpXG4gICAgY3Rvci5wcm90b3R5cGUuY29uc3RydWN0b3IgPSBjdG9yXG4gIH1cbn1cbiIsIi8vIHNoaW0gZm9yIHVzaW5nIHByb2Nlc3MgaW4gYnJvd3NlclxuXG52YXIgcHJvY2VzcyA9IG1vZHVsZS5leHBvcnRzID0ge307XG52YXIgcXVldWUgPSBbXTtcbnZhciBkcmFpbmluZyA9IGZhbHNlO1xuXG5mdW5jdGlvbiBkcmFpblF1ZXVlKCkge1xuICAgIGlmIChkcmFpbmluZykge1xuICAgICAgICByZXR1cm47XG4gICAgfVxuICAgIGRyYWluaW5nID0gdHJ1ZTtcbiAgICB2YXIgY3VycmVudFF1ZXVlO1xuICAgIHZhciBsZW4gPSBxdWV1ZS5sZW5ndGg7XG4gICAgd2hpbGUobGVuKSB7XG4gICAgICAgIGN1cnJlbnRRdWV1ZSA9IHF1ZXVlO1xuICAgICAgICBxdWV1ZSA9IFtdO1xuICAgICAgICB2YXIgaSA9IC0xO1xuICAgICAgICB3aGlsZSAoKytpIDwgbGVuKSB7XG4gICAgICAgICAgICBjdXJyZW50UXVldWVbaV0oKTtcbiAgICAgICAgfVxuICAgICAgICBsZW4gPSBxdWV1ZS5sZW5ndGg7XG4gICAgfVxuICAgIGRyYWluaW5nID0gZmFsc2U7XG59XG5wcm9jZXNzLm5leHRUaWNrID0gZnVuY3Rpb24gKGZ1bikge1xuICAgIHF1ZXVlLnB1c2goZnVuKTtcbiAgICBpZiAoIWRyYWluaW5nKSB7XG4gICAgICAgIHNldFRpbWVvdXQoZHJhaW5RdWV1ZSwgMCk7XG4gICAgfVxufTtcblxucHJvY2Vzcy50aXRsZSA9ICdicm93c2VyJztcbnByb2Nlc3MuYnJvd3NlciA9IHRydWU7XG5wcm9jZXNzLmVudiA9IHt9O1xucHJvY2Vzcy5hcmd2ID0gW107XG5wcm9jZXNzLnZlcnNpb24gPSAnJzsgLy8gZW1wdHkgc3RyaW5nIHRvIGF2b2lkIHJlZ2V4cCBpc3N1ZXNcblxuZnVuY3Rpb24gbm9vcCgpIHt9XG5cbnByb2Nlc3Mub24gPSBub29wO1xucHJvY2Vzcy5hZGRMaXN0ZW5lciA9IG5vb3A7XG5wcm9jZXNzLm9uY2UgPSBub29wO1xucHJvY2Vzcy5vZmYgPSBub29wO1xucHJvY2Vzcy5yZW1vdmVMaXN0ZW5lciA9IG5vb3A7XG5wcm9jZXNzLnJlbW92ZUFsbExpc3RlbmVycyA9IG5vb3A7XG5wcm9jZXNzLmVtaXQgPSBub29wO1xuXG5wcm9jZXNzLmJpbmRpbmcgPSBmdW5jdGlvbiAobmFtZSkge1xuICAgIHRocm93IG5ldyBFcnJvcigncHJvY2Vzcy5iaW5kaW5nIGlzIG5vdCBzdXBwb3J0ZWQnKTtcbn07XG5cbi8vIFRPRE8oc2h0eWxtYW4pXG5wcm9jZXNzLmN3ZCA9IGZ1bmN0aW9uICgpIHsgcmV0dXJuICcvJyB9O1xucHJvY2Vzcy5jaGRpciA9IGZ1bmN0aW9uIChkaXIpIHtcbiAgICB0aHJvdyBuZXcgRXJyb3IoJ3Byb2Nlc3MuY2hkaXIgaXMgbm90IHN1cHBvcnRlZCcpO1xufTtcbnByb2Nlc3MudW1hc2sgPSBmdW5jdGlvbigpIHsgcmV0dXJuIDA7IH07XG4iLCJtb2R1bGUuZXhwb3J0cyA9IGZ1bmN0aW9uIGlzQnVmZmVyKGFyZykge1xuICByZXR1cm4gYXJnICYmIHR5cGVvZiBhcmcgPT09ICdvYmplY3QnXG4gICAgJiYgdHlwZW9mIGFyZy5jb3B5ID09PSAnZnVuY3Rpb24nXG4gICAgJiYgdHlwZW9mIGFyZy5maWxsID09PSAnZnVuY3Rpb24nXG4gICAgJiYgdHlwZW9mIGFyZy5yZWFkVUludDggPT09ICdmdW5jdGlvbic7XG59IiwiLy8gQ29weXJpZ2h0IEpveWVudCwgSW5jLiBhbmQgb3RoZXIgTm9kZSBjb250cmlidXRvcnMuXG4vL1xuLy8gUGVybWlzc2lvbiBpcyBoZXJlYnkgZ3JhbnRlZCwgZnJlZSBvZiBjaGFyZ2UsIHRvIGFueSBwZXJzb24gb2J0YWluaW5nIGFcbi8vIGNvcHkgb2YgdGhpcyBzb2Z0d2FyZSBhbmQgYXNzb2NpYXRlZCBkb2N1bWVudGF0aW9uIGZpbGVzICh0aGVcbi8vIFwiU29mdHdhcmVcIiksIHRvIGRlYWwgaW4gdGhlIFNvZnR3YXJlIHdpdGhvdXQgcmVzdHJpY3Rpb24sIGluY2x1ZGluZ1xuLy8gd2l0aG91dCBsaW1pdGF0aW9uIHRoZSByaWdodHMgdG8gdXNlLCBjb3B5LCBtb2RpZnksIG1lcmdlLCBwdWJsaXNoLFxuLy8gZGlzdHJpYnV0ZSwgc3VibGljZW5zZSwgYW5kL29yIHNlbGwgY29waWVzIG9mIHRoZSBTb2Z0d2FyZSwgYW5kIHRvIHBlcm1pdFxuLy8gcGVyc29ucyB0byB3aG9tIHRoZSBTb2Z0d2FyZSBpcyBmdXJuaXNoZWQgdG8gZG8gc28sIHN1YmplY3QgdG8gdGhlXG4vLyBmb2xsb3dpbmcgY29uZGl0aW9uczpcbi8vXG4vLyBUaGUgYWJvdmUgY29weXJpZ2h0IG5vdGljZSBhbmQgdGhpcyBwZXJtaXNzaW9uIG5vdGljZSBzaGFsbCBiZSBpbmNsdWRlZFxuLy8gaW4gYWxsIGNvcGllcyBvciBzdWJzdGFudGlhbCBwb3J0aW9ucyBvZiB0aGUgU29mdHdhcmUuXG4vL1xuLy8gVEhFIFNPRlRXQVJFIElTIFBST1ZJREVEIFwiQVMgSVNcIiwgV0lUSE9VVCBXQVJSQU5UWSBPRiBBTlkgS0lORCwgRVhQUkVTU1xuLy8gT1IgSU1QTElFRCwgSU5DTFVESU5HIEJVVCBOT1QgTElNSVRFRCBUTyBUSEUgV0FSUkFOVElFUyBPRlxuLy8gTUVSQ0hBTlRBQklMSVRZLCBGSVRORVNTIEZPUiBBIFBBUlRJQ1VMQVIgUFVSUE9TRSBBTkQgTk9OSU5GUklOR0VNRU5ULiBJTlxuLy8gTk8gRVZFTlQgU0hBTEwgVEhFIEFVVEhPUlMgT1IgQ09QWVJJR0hUIEhPTERFUlMgQkUgTElBQkxFIEZPUiBBTlkgQ0xBSU0sXG4vLyBEQU1BR0VTIE9SIE9USEVSIExJQUJJTElUWSwgV0hFVEhFUiBJTiBBTiBBQ1RJT04gT0YgQ09OVFJBQ1QsIFRPUlQgT1Jcbi8vIE9USEVSV0lTRSwgQVJJU0lORyBGUk9NLCBPVVQgT0YgT1IgSU4gQ09OTkVDVElPTiBXSVRIIFRIRSBTT0ZUV0FSRSBPUiBUSEVcbi8vIFVTRSBPUiBPVEhFUiBERUFMSU5HUyBJTiBUSEUgU09GVFdBUkUuXG5cbnZhciBmb3JtYXRSZWdFeHAgPSAvJVtzZGolXS9nO1xuZXhwb3J0cy5mb3JtYXQgPSBmdW5jdGlvbihmKSB7XG4gIGlmICghaXNTdHJpbmcoZikpIHtcbiAgICB2YXIgb2JqZWN0cyA9IFtdO1xuICAgIGZvciAodmFyIGkgPSAwOyBpIDwgYXJndW1lbnRzLmxlbmd0aDsgaSsrKSB7XG4gICAgICBvYmplY3RzLnB1c2goaW5zcGVjdChhcmd1bWVudHNbaV0pKTtcbiAgICB9XG4gICAgcmV0dXJuIG9iamVjdHMuam9pbignICcpO1xuICB9XG5cbiAgdmFyIGkgPSAxO1xuICB2YXIgYXJncyA9IGFyZ3VtZW50cztcbiAgdmFyIGxlbiA9IGFyZ3MubGVuZ3RoO1xuICB2YXIgc3RyID0gU3RyaW5nKGYpLnJlcGxhY2UoZm9ybWF0UmVnRXhwLCBmdW5jdGlvbih4KSB7XG4gICAgaWYgKHggPT09ICclJScpIHJldHVybiAnJSc7XG4gICAgaWYgKGkgPj0gbGVuKSByZXR1cm4geDtcbiAgICBzd2l0Y2ggKHgpIHtcbiAgICAgIGNhc2UgJyVzJzogcmV0dXJuIFN0cmluZyhhcmdzW2krK10pO1xuICAgICAgY2FzZSAnJWQnOiByZXR1cm4gTnVtYmVyKGFyZ3NbaSsrXSk7XG4gICAgICBjYXNlICclaic6XG4gICAgICAgIHRyeSB7XG4gICAgICAgICAgcmV0dXJuIEpTT04uc3RyaW5naWZ5KGFyZ3NbaSsrXSk7XG4gICAgICAgIH0gY2F0Y2ggKF8pIHtcbiAgICAgICAgICByZXR1cm4gJ1tDaXJjdWxhcl0nO1xuICAgICAgICB9XG4gICAgICBkZWZhdWx0OlxuICAgICAgICByZXR1cm4geDtcbiAgICB9XG4gIH0pO1xuICBmb3IgKHZhciB4ID0gYXJnc1tpXTsgaSA8IGxlbjsgeCA9IGFyZ3NbKytpXSkge1xuICAgIGlmIChpc051bGwoeCkgfHwgIWlzT2JqZWN0KHgpKSB7XG4gICAgICBzdHIgKz0gJyAnICsgeDtcbiAgICB9IGVsc2Uge1xuICAgICAgc3RyICs9ICcgJyArIGluc3BlY3QoeCk7XG4gICAgfVxuICB9XG4gIHJldHVybiBzdHI7XG59O1xuXG5cbi8vIE1hcmsgdGhhdCBhIG1ldGhvZCBzaG91bGQgbm90IGJlIHVzZWQuXG4vLyBSZXR1cm5zIGEgbW9kaWZpZWQgZnVuY3Rpb24gd2hpY2ggd2FybnMgb25jZSBieSBkZWZhdWx0LlxuLy8gSWYgLS1uby1kZXByZWNhdGlvbiBpcyBzZXQsIHRoZW4gaXQgaXMgYSBuby1vcC5cbmV4cG9ydHMuZGVwcmVjYXRlID0gZnVuY3Rpb24oZm4sIG1zZykge1xuICAvLyBBbGxvdyBmb3IgZGVwcmVjYXRpbmcgdGhpbmdzIGluIHRoZSBwcm9jZXNzIG9mIHN0YXJ0aW5nIHVwLlxuICBpZiAoaXNVbmRlZmluZWQoZ2xvYmFsLnByb2Nlc3MpKSB7XG4gICAgcmV0dXJuIGZ1bmN0aW9uKCkge1xuICAgICAgcmV0dXJuIGV4cG9ydHMuZGVwcmVjYXRlKGZuLCBtc2cpLmFwcGx5KHRoaXMsIGFyZ3VtZW50cyk7XG4gICAgfTtcbiAgfVxuXG4gIGlmIChwcm9jZXNzLm5vRGVwcmVjYXRpb24gPT09IHRydWUpIHtcbiAgICByZXR1cm4gZm47XG4gIH1cblxuICB2YXIgd2FybmVkID0gZmFsc2U7XG4gIGZ1bmN0aW9uIGRlcHJlY2F0ZWQoKSB7XG4gICAgaWYgKCF3YXJuZWQpIHtcbiAgICAgIGlmIChwcm9jZXNzLnRocm93RGVwcmVjYXRpb24pIHtcbiAgICAgICAgdGhyb3cgbmV3IEVycm9yKG1zZyk7XG4gICAgICB9IGVsc2UgaWYgKHByb2Nlc3MudHJhY2VEZXByZWNhdGlvbikge1xuICAgICAgICBjb25zb2xlLnRyYWNlKG1zZyk7XG4gICAgICB9IGVsc2Uge1xuICAgICAgICBjb25zb2xlLmVycm9yKG1zZyk7XG4gICAgICB9XG4gICAgICB3YXJuZWQgPSB0cnVlO1xuICAgIH1cbiAgICByZXR1cm4gZm4uYXBwbHkodGhpcywgYXJndW1lbnRzKTtcbiAgfVxuXG4gIHJldHVybiBkZXByZWNhdGVkO1xufTtcblxuXG52YXIgZGVidWdzID0ge307XG52YXIgZGVidWdFbnZpcm9uO1xuZXhwb3J0cy5kZWJ1Z2xvZyA9IGZ1bmN0aW9uKHNldCkge1xuICBpZiAoaXNVbmRlZmluZWQoZGVidWdFbnZpcm9uKSlcbiAgICBkZWJ1Z0Vudmlyb24gPSBwcm9jZXNzLmVudi5OT0RFX0RFQlVHIHx8ICcnO1xuICBzZXQgPSBzZXQudG9VcHBlckNhc2UoKTtcbiAgaWYgKCFkZWJ1Z3Nbc2V0XSkge1xuICAgIGlmIChuZXcgUmVnRXhwKCdcXFxcYicgKyBzZXQgKyAnXFxcXGInLCAnaScpLnRlc3QoZGVidWdFbnZpcm9uKSkge1xuICAgICAgdmFyIHBpZCA9IHByb2Nlc3MucGlkO1xuICAgICAgZGVidWdzW3NldF0gPSBmdW5jdGlvbigpIHtcbiAgICAgICAgdmFyIG1zZyA9IGV4cG9ydHMuZm9ybWF0LmFwcGx5KGV4cG9ydHMsIGFyZ3VtZW50cyk7XG4gICAgICAgIGNvbnNvbGUuZXJyb3IoJyVzICVkOiAlcycsIHNldCwgcGlkLCBtc2cpO1xuICAgICAgfTtcbiAgICB9IGVsc2Uge1xuICAgICAgZGVidWdzW3NldF0gPSBmdW5jdGlvbigpIHt9O1xuICAgIH1cbiAgfVxuICByZXR1cm4gZGVidWdzW3NldF07XG59O1xuXG5cbi8qKlxuICogRWNob3MgdGhlIHZhbHVlIG9mIGEgdmFsdWUuIFRyeXMgdG8gcHJpbnQgdGhlIHZhbHVlIG91dFxuICogaW4gdGhlIGJlc3Qgd2F5IHBvc3NpYmxlIGdpdmVuIHRoZSBkaWZmZXJlbnQgdHlwZXMuXG4gKlxuICogQHBhcmFtIHtPYmplY3R9IG9iaiBUaGUgb2JqZWN0IHRvIHByaW50IG91dC5cbiAqIEBwYXJhbSB7T2JqZWN0fSBvcHRzIE9wdGlvbmFsIG9wdGlvbnMgb2JqZWN0IHRoYXQgYWx0ZXJzIHRoZSBvdXRwdXQuXG4gKi9cbi8qIGxlZ2FjeTogb2JqLCBzaG93SGlkZGVuLCBkZXB0aCwgY29sb3JzKi9cbmZ1bmN0aW9uIGluc3BlY3Qob2JqLCBvcHRzKSB7XG4gIC8vIGRlZmF1bHQgb3B0aW9uc1xuICB2YXIgY3R4ID0ge1xuICAgIHNlZW46IFtdLFxuICAgIHN0eWxpemU6IHN0eWxpemVOb0NvbG9yXG4gIH07XG4gIC8vIGxlZ2FjeS4uLlxuICBpZiAoYXJndW1lbnRzLmxlbmd0aCA+PSAzKSBjdHguZGVwdGggPSBhcmd1bWVudHNbMl07XG4gIGlmIChhcmd1bWVudHMubGVuZ3RoID49IDQpIGN0eC5jb2xvcnMgPSBhcmd1bWVudHNbM107XG4gIGlmIChpc0Jvb2xlYW4ob3B0cykpIHtcbiAgICAvLyBsZWdhY3kuLi5cbiAgICBjdHguc2hvd0hpZGRlbiA9IG9wdHM7XG4gIH0gZWxzZSBpZiAob3B0cykge1xuICAgIC8vIGdvdCBhbiBcIm9wdGlvbnNcIiBvYmplY3RcbiAgICBleHBvcnRzLl9leHRlbmQoY3R4LCBvcHRzKTtcbiAgfVxuICAvLyBzZXQgZGVmYXVsdCBvcHRpb25zXG4gIGlmIChpc1VuZGVmaW5lZChjdHguc2hvd0hpZGRlbikpIGN0eC5zaG93SGlkZGVuID0gZmFsc2U7XG4gIGlmIChpc1VuZGVmaW5lZChjdHguZGVwdGgpKSBjdHguZGVwdGggPSAyO1xuICBpZiAoaXNVbmRlZmluZWQoY3R4LmNvbG9ycykpIGN0eC5jb2xvcnMgPSBmYWxzZTtcbiAgaWYgKGlzVW5kZWZpbmVkKGN0eC5jdXN0b21JbnNwZWN0KSkgY3R4LmN1c3RvbUluc3BlY3QgPSB0cnVlO1xuICBpZiAoY3R4LmNvbG9ycykgY3R4LnN0eWxpemUgPSBzdHlsaXplV2l0aENvbG9yO1xuICByZXR1cm4gZm9ybWF0VmFsdWUoY3R4LCBvYmosIGN0eC5kZXB0aCk7XG59XG5leHBvcnRzLmluc3BlY3QgPSBpbnNwZWN0O1xuXG5cbi8vIGh0dHA6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvQU5TSV9lc2NhcGVfY29kZSNncmFwaGljc1xuaW5zcGVjdC5jb2xvcnMgPSB7XG4gICdib2xkJyA6IFsxLCAyMl0sXG4gICdpdGFsaWMnIDogWzMsIDIzXSxcbiAgJ3VuZGVybGluZScgOiBbNCwgMjRdLFxuICAnaW52ZXJzZScgOiBbNywgMjddLFxuICAnd2hpdGUnIDogWzM3LCAzOV0sXG4gICdncmV5JyA6IFs5MCwgMzldLFxuICAnYmxhY2snIDogWzMwLCAzOV0sXG4gICdibHVlJyA6IFszNCwgMzldLFxuICAnY3lhbicgOiBbMzYsIDM5XSxcbiAgJ2dyZWVuJyA6IFszMiwgMzldLFxuICAnbWFnZW50YScgOiBbMzUsIDM5XSxcbiAgJ3JlZCcgOiBbMzEsIDM5XSxcbiAgJ3llbGxvdycgOiBbMzMsIDM5XVxufTtcblxuLy8gRG9uJ3QgdXNlICdibHVlJyBub3QgdmlzaWJsZSBvbiBjbWQuZXhlXG5pbnNwZWN0LnN0eWxlcyA9IHtcbiAgJ3NwZWNpYWwnOiAnY3lhbicsXG4gICdudW1iZXInOiAneWVsbG93JyxcbiAgJ2Jvb2xlYW4nOiAneWVsbG93JyxcbiAgJ3VuZGVmaW5lZCc6ICdncmV5JyxcbiAgJ251bGwnOiAnYm9sZCcsXG4gICdzdHJpbmcnOiAnZ3JlZW4nLFxuICAnZGF0ZSc6ICdtYWdlbnRhJyxcbiAgLy8gXCJuYW1lXCI6IGludGVudGlvbmFsbHkgbm90IHN0eWxpbmdcbiAgJ3JlZ2V4cCc6ICdyZWQnXG59O1xuXG5cbmZ1bmN0aW9uIHN0eWxpemVXaXRoQ29sb3Ioc3RyLCBzdHlsZVR5cGUpIHtcbiAgdmFyIHN0eWxlID0gaW5zcGVjdC5zdHlsZXNbc3R5bGVUeXBlXTtcblxuICBpZiAoc3R5bGUpIHtcbiAgICByZXR1cm4gJ1xcdTAwMWJbJyArIGluc3BlY3QuY29sb3JzW3N0eWxlXVswXSArICdtJyArIHN0ciArXG4gICAgICAgICAgICdcXHUwMDFiWycgKyBpbnNwZWN0LmNvbG9yc1tzdHlsZV1bMV0gKyAnbSc7XG4gIH0gZWxzZSB7XG4gICAgcmV0dXJuIHN0cjtcbiAgfVxufVxuXG5cbmZ1bmN0aW9uIHN0eWxpemVOb0NvbG9yKHN0ciwgc3R5bGVUeXBlKSB7XG4gIHJldHVybiBzdHI7XG59XG5cblxuZnVuY3Rpb24gYXJyYXlUb0hhc2goYXJyYXkpIHtcbiAgdmFyIGhhc2ggPSB7fTtcblxuICBhcnJheS5mb3JFYWNoKGZ1bmN0aW9uKHZhbCwgaWR4KSB7XG4gICAgaGFzaFt2YWxdID0gdHJ1ZTtcbiAgfSk7XG5cbiAgcmV0dXJuIGhhc2g7XG59XG5cblxuZnVuY3Rpb24gZm9ybWF0VmFsdWUoY3R4LCB2YWx1ZSwgcmVjdXJzZVRpbWVzKSB7XG4gIC8vIFByb3ZpZGUgYSBob29rIGZvciB1c2VyLXNwZWNpZmllZCBpbnNwZWN0IGZ1bmN0aW9ucy5cbiAgLy8gQ2hlY2sgdGhhdCB2YWx1ZSBpcyBhbiBvYmplY3Qgd2l0aCBhbiBpbnNwZWN0IGZ1bmN0aW9uIG9uIGl0XG4gIGlmIChjdHguY3VzdG9tSW5zcGVjdCAmJlxuICAgICAgdmFsdWUgJiZcbiAgICAgIGlzRnVuY3Rpb24odmFsdWUuaW5zcGVjdCkgJiZcbiAgICAgIC8vIEZpbHRlciBvdXQgdGhlIHV0aWwgbW9kdWxlLCBpdCdzIGluc3BlY3QgZnVuY3Rpb24gaXMgc3BlY2lhbFxuICAgICAgdmFsdWUuaW5zcGVjdCAhPT0gZXhwb3J0cy5pbnNwZWN0ICYmXG4gICAgICAvLyBBbHNvIGZpbHRlciBvdXQgYW55IHByb3RvdHlwZSBvYmplY3RzIHVzaW5nIHRoZSBjaXJjdWxhciBjaGVjay5cbiAgICAgICEodmFsdWUuY29uc3RydWN0b3IgJiYgdmFsdWUuY29uc3RydWN0b3IucHJvdG90eXBlID09PSB2YWx1ZSkpIHtcbiAgICB2YXIgcmV0ID0gdmFsdWUuaW5zcGVjdChyZWN1cnNlVGltZXMsIGN0eCk7XG4gICAgaWYgKCFpc1N0cmluZyhyZXQpKSB7XG4gICAgICByZXQgPSBmb3JtYXRWYWx1ZShjdHgsIHJldCwgcmVjdXJzZVRpbWVzKTtcbiAgICB9XG4gICAgcmV0dXJuIHJldDtcbiAgfVxuXG4gIC8vIFByaW1pdGl2ZSB0eXBlcyBjYW5ub3QgaGF2ZSBwcm9wZXJ0aWVzXG4gIHZhciBwcmltaXRpdmUgPSBmb3JtYXRQcmltaXRpdmUoY3R4LCB2YWx1ZSk7XG4gIGlmIChwcmltaXRpdmUpIHtcbiAgICByZXR1cm4gcHJpbWl0aXZlO1xuICB9XG5cbiAgLy8gTG9vayB1cCB0aGUga2V5cyBvZiB0aGUgb2JqZWN0LlxuICB2YXIga2V5cyA9IE9iamVjdC5rZXlzKHZhbHVlKTtcbiAgdmFyIHZpc2libGVLZXlzID0gYXJyYXlUb0hhc2goa2V5cyk7XG5cbiAgaWYgKGN0eC5zaG93SGlkZGVuKSB7XG4gICAga2V5cyA9IE9iamVjdC5nZXRPd25Qcm9wZXJ0eU5hbWVzKHZhbHVlKTtcbiAgfVxuXG4gIC8vIElFIGRvZXNuJ3QgbWFrZSBlcnJvciBmaWVsZHMgbm9uLWVudW1lcmFibGVcbiAgLy8gaHR0cDovL21zZG4ubWljcm9zb2Z0LmNvbS9lbi11cy9saWJyYXJ5L2llL2R3dzUyc2J0KHY9dnMuOTQpLmFzcHhcbiAgaWYgKGlzRXJyb3IodmFsdWUpXG4gICAgICAmJiAoa2V5cy5pbmRleE9mKCdtZXNzYWdlJykgPj0gMCB8fCBrZXlzLmluZGV4T2YoJ2Rlc2NyaXB0aW9uJykgPj0gMCkpIHtcbiAgICByZXR1cm4gZm9ybWF0RXJyb3IodmFsdWUpO1xuICB9XG5cbiAgLy8gU29tZSB0eXBlIG9mIG9iamVjdCB3aXRob3V0IHByb3BlcnRpZXMgY2FuIGJlIHNob3J0Y3V0dGVkLlxuICBpZiAoa2V5cy5sZW5ndGggPT09IDApIHtcbiAgICBpZiAoaXNGdW5jdGlvbih2YWx1ZSkpIHtcbiAgICAgIHZhciBuYW1lID0gdmFsdWUubmFtZSA/ICc6ICcgKyB2YWx1ZS5uYW1lIDogJyc7XG4gICAgICByZXR1cm4gY3R4LnN0eWxpemUoJ1tGdW5jdGlvbicgKyBuYW1lICsgJ10nLCAnc3BlY2lhbCcpO1xuICAgIH1cbiAgICBpZiAoaXNSZWdFeHAodmFsdWUpKSB7XG4gICAgICByZXR1cm4gY3R4LnN0eWxpemUoUmVnRXhwLnByb3RvdHlwZS50b1N0cmluZy5jYWxsKHZhbHVlKSwgJ3JlZ2V4cCcpO1xuICAgIH1cbiAgICBpZiAoaXNEYXRlKHZhbHVlKSkge1xuICAgICAgcmV0dXJuIGN0eC5zdHlsaXplKERhdGUucHJvdG90eXBlLnRvU3RyaW5nLmNhbGwodmFsdWUpLCAnZGF0ZScpO1xuICAgIH1cbiAgICBpZiAoaXNFcnJvcih2YWx1ZSkpIHtcbiAgICAgIHJldHVybiBmb3JtYXRFcnJvcih2YWx1ZSk7XG4gICAgfVxuICB9XG5cbiAgdmFyIGJhc2UgPSAnJywgYXJyYXkgPSBmYWxzZSwgYnJhY2VzID0gWyd7JywgJ30nXTtcblxuICAvLyBNYWtlIEFycmF5IHNheSB0aGF0IHRoZXkgYXJlIEFycmF5XG4gIGlmIChpc0FycmF5KHZhbHVlKSkge1xuICAgIGFycmF5ID0gdHJ1ZTtcbiAgICBicmFjZXMgPSBbJ1snLCAnXSddO1xuICB9XG5cbiAgLy8gTWFrZSBmdW5jdGlvbnMgc2F5IHRoYXQgdGhleSBhcmUgZnVuY3Rpb25zXG4gIGlmIChpc0Z1bmN0aW9uKHZhbHVlKSkge1xuICAgIHZhciBuID0gdmFsdWUubmFtZSA/ICc6ICcgKyB2YWx1ZS5uYW1lIDogJyc7XG4gICAgYmFzZSA9ICcgW0Z1bmN0aW9uJyArIG4gKyAnXSc7XG4gIH1cblxuICAvLyBNYWtlIFJlZ0V4cHMgc2F5IHRoYXQgdGhleSBhcmUgUmVnRXhwc1xuICBpZiAoaXNSZWdFeHAodmFsdWUpKSB7XG4gICAgYmFzZSA9ICcgJyArIFJlZ0V4cC5wcm90b3R5cGUudG9TdHJpbmcuY2FsbCh2YWx1ZSk7XG4gIH1cblxuICAvLyBNYWtlIGRhdGVzIHdpdGggcHJvcGVydGllcyBmaXJzdCBzYXkgdGhlIGRhdGVcbiAgaWYgKGlzRGF0ZSh2YWx1ZSkpIHtcbiAgICBiYXNlID0gJyAnICsgRGF0ZS5wcm90b3R5cGUudG9VVENTdHJpbmcuY2FsbCh2YWx1ZSk7XG4gIH1cblxuICAvLyBNYWtlIGVycm9yIHdpdGggbWVzc2FnZSBmaXJzdCBzYXkgdGhlIGVycm9yXG4gIGlmIChpc0Vycm9yKHZhbHVlKSkge1xuICAgIGJhc2UgPSAnICcgKyBmb3JtYXRFcnJvcih2YWx1ZSk7XG4gIH1cblxuICBpZiAoa2V5cy5sZW5ndGggPT09IDAgJiYgKCFhcnJheSB8fCB2YWx1ZS5sZW5ndGggPT0gMCkpIHtcbiAgICByZXR1cm4gYnJhY2VzWzBdICsgYmFzZSArIGJyYWNlc1sxXTtcbiAgfVxuXG4gIGlmIChyZWN1cnNlVGltZXMgPCAwKSB7XG4gICAgaWYgKGlzUmVnRXhwKHZhbHVlKSkge1xuICAgICAgcmV0dXJuIGN0eC5zdHlsaXplKFJlZ0V4cC5wcm90b3R5cGUudG9TdHJpbmcuY2FsbCh2YWx1ZSksICdyZWdleHAnKTtcbiAgICB9IGVsc2Uge1xuICAgICAgcmV0dXJuIGN0eC5zdHlsaXplKCdbT2JqZWN0XScsICdzcGVjaWFsJyk7XG4gICAgfVxuICB9XG5cbiAgY3R4LnNlZW4ucHVzaCh2YWx1ZSk7XG5cbiAgdmFyIG91dHB1dDtcbiAgaWYgKGFycmF5KSB7XG4gICAgb3V0cHV0ID0gZm9ybWF0QXJyYXkoY3R4LCB2YWx1ZSwgcmVjdXJzZVRpbWVzLCB2aXNpYmxlS2V5cywga2V5cyk7XG4gIH0gZWxzZSB7XG4gICAgb3V0cHV0ID0ga2V5cy5tYXAoZnVuY3Rpb24oa2V5KSB7XG4gICAgICByZXR1cm4gZm9ybWF0UHJvcGVydHkoY3R4LCB2YWx1ZSwgcmVjdXJzZVRpbWVzLCB2aXNpYmxlS2V5cywga2V5LCBhcnJheSk7XG4gICAgfSk7XG4gIH1cblxuICBjdHguc2Vlbi5wb3AoKTtcblxuICByZXR1cm4gcmVkdWNlVG9TaW5nbGVTdHJpbmcob3V0cHV0LCBiYXNlLCBicmFjZXMpO1xufVxuXG5cbmZ1bmN0aW9uIGZvcm1hdFByaW1pdGl2ZShjdHgsIHZhbHVlKSB7XG4gIGlmIChpc1VuZGVmaW5lZCh2YWx1ZSkpXG4gICAgcmV0dXJuIGN0eC5zdHlsaXplKCd1bmRlZmluZWQnLCAndW5kZWZpbmVkJyk7XG4gIGlmIChpc1N0cmluZyh2YWx1ZSkpIHtcbiAgICB2YXIgc2ltcGxlID0gJ1xcJycgKyBKU09OLnN0cmluZ2lmeSh2YWx1ZSkucmVwbGFjZSgvXlwifFwiJC9nLCAnJylcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIC5yZXBsYWNlKC8nL2csIFwiXFxcXCdcIilcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIC5yZXBsYWNlKC9cXFxcXCIvZywgJ1wiJykgKyAnXFwnJztcbiAgICByZXR1cm4gY3R4LnN0eWxpemUoc2ltcGxlLCAnc3RyaW5nJyk7XG4gIH1cbiAgaWYgKGlzTnVtYmVyKHZhbHVlKSlcbiAgICByZXR1cm4gY3R4LnN0eWxpemUoJycgKyB2YWx1ZSwgJ251bWJlcicpO1xuICBpZiAoaXNCb29sZWFuKHZhbHVlKSlcbiAgICByZXR1cm4gY3R4LnN0eWxpemUoJycgKyB2YWx1ZSwgJ2Jvb2xlYW4nKTtcbiAgLy8gRm9yIHNvbWUgcmVhc29uIHR5cGVvZiBudWxsIGlzIFwib2JqZWN0XCIsIHNvIHNwZWNpYWwgY2FzZSBoZXJlLlxuICBpZiAoaXNOdWxsKHZhbHVlKSlcbiAgICByZXR1cm4gY3R4LnN0eWxpemUoJ251bGwnLCAnbnVsbCcpO1xufVxuXG5cbmZ1bmN0aW9uIGZvcm1hdEVycm9yKHZhbHVlKSB7XG4gIHJldHVybiAnWycgKyBFcnJvci5wcm90b3R5cGUudG9TdHJpbmcuY2FsbCh2YWx1ZSkgKyAnXSc7XG59XG5cblxuZnVuY3Rpb24gZm9ybWF0QXJyYXkoY3R4LCB2YWx1ZSwgcmVjdXJzZVRpbWVzLCB2aXNpYmxlS2V5cywga2V5cykge1xuICB2YXIgb3V0cHV0ID0gW107XG4gIGZvciAodmFyIGkgPSAwLCBsID0gdmFsdWUubGVuZ3RoOyBpIDwgbDsgKytpKSB7XG4gICAgaWYgKGhhc093blByb3BlcnR5KHZhbHVlLCBTdHJpbmcoaSkpKSB7XG4gICAgICBvdXRwdXQucHVzaChmb3JtYXRQcm9wZXJ0eShjdHgsIHZhbHVlLCByZWN1cnNlVGltZXMsIHZpc2libGVLZXlzLFxuICAgICAgICAgIFN0cmluZyhpKSwgdHJ1ZSkpO1xuICAgIH0gZWxzZSB7XG4gICAgICBvdXRwdXQucHVzaCgnJyk7XG4gICAgfVxuICB9XG4gIGtleXMuZm9yRWFjaChmdW5jdGlvbihrZXkpIHtcbiAgICBpZiAoIWtleS5tYXRjaCgvXlxcZCskLykpIHtcbiAgICAgIG91dHB1dC5wdXNoKGZvcm1hdFByb3BlcnR5KGN0eCwgdmFsdWUsIHJlY3Vyc2VUaW1lcywgdmlzaWJsZUtleXMsXG4gICAgICAgICAga2V5LCB0cnVlKSk7XG4gICAgfVxuICB9KTtcbiAgcmV0dXJuIG91dHB1dDtcbn1cblxuXG5mdW5jdGlvbiBmb3JtYXRQcm9wZXJ0eShjdHgsIHZhbHVlLCByZWN1cnNlVGltZXMsIHZpc2libGVLZXlzLCBrZXksIGFycmF5KSB7XG4gIHZhciBuYW1lLCBzdHIsIGRlc2M7XG4gIGRlc2MgPSBPYmplY3QuZ2V0T3duUHJvcGVydHlEZXNjcmlwdG9yKHZhbHVlLCBrZXkpIHx8IHsgdmFsdWU6IHZhbHVlW2tleV0gfTtcbiAgaWYgKGRlc2MuZ2V0KSB7XG4gICAgaWYgKGRlc2Muc2V0KSB7XG4gICAgICBzdHIgPSBjdHguc3R5bGl6ZSgnW0dldHRlci9TZXR0ZXJdJywgJ3NwZWNpYWwnKTtcbiAgICB9IGVsc2Uge1xuICAgICAgc3RyID0gY3R4LnN0eWxpemUoJ1tHZXR0ZXJdJywgJ3NwZWNpYWwnKTtcbiAgICB9XG4gIH0gZWxzZSB7XG4gICAgaWYgKGRlc2Muc2V0KSB7XG4gICAgICBzdHIgPSBjdHguc3R5bGl6ZSgnW1NldHRlcl0nLCAnc3BlY2lhbCcpO1xuICAgIH1cbiAgfVxuICBpZiAoIWhhc093blByb3BlcnR5KHZpc2libGVLZXlzLCBrZXkpKSB7XG4gICAgbmFtZSA9ICdbJyArIGtleSArICddJztcbiAgfVxuICBpZiAoIXN0cikge1xuICAgIGlmIChjdHguc2Vlbi5pbmRleE9mKGRlc2MudmFsdWUpIDwgMCkge1xuICAgICAgaWYgKGlzTnVsbChyZWN1cnNlVGltZXMpKSB7XG4gICAgICAgIHN0ciA9IGZvcm1hdFZhbHVlKGN0eCwgZGVzYy52YWx1ZSwgbnVsbCk7XG4gICAgICB9IGVsc2Uge1xuICAgICAgICBzdHIgPSBmb3JtYXRWYWx1ZShjdHgsIGRlc2MudmFsdWUsIHJlY3Vyc2VUaW1lcyAtIDEpO1xuICAgICAgfVxuICAgICAgaWYgKHN0ci5pbmRleE9mKCdcXG4nKSA+IC0xKSB7XG4gICAgICAgIGlmIChhcnJheSkge1xuICAgICAgICAgIHN0ciA9IHN0ci5zcGxpdCgnXFxuJykubWFwKGZ1bmN0aW9uKGxpbmUpIHtcbiAgICAgICAgICAgIHJldHVybiAnICAnICsgbGluZTtcbiAgICAgICAgICB9KS5qb2luKCdcXG4nKS5zdWJzdHIoMik7XG4gICAgICAgIH0gZWxzZSB7XG4gICAgICAgICAgc3RyID0gJ1xcbicgKyBzdHIuc3BsaXQoJ1xcbicpLm1hcChmdW5jdGlvbihsaW5lKSB7XG4gICAgICAgICAgICByZXR1cm4gJyAgICcgKyBsaW5lO1xuICAgICAgICAgIH0pLmpvaW4oJ1xcbicpO1xuICAgICAgICB9XG4gICAgICB9XG4gICAgfSBlbHNlIHtcbiAgICAgIHN0ciA9IGN0eC5zdHlsaXplKCdbQ2lyY3VsYXJdJywgJ3NwZWNpYWwnKTtcbiAgICB9XG4gIH1cbiAgaWYgKGlzVW5kZWZpbmVkKG5hbWUpKSB7XG4gICAgaWYgKGFycmF5ICYmIGtleS5tYXRjaCgvXlxcZCskLykpIHtcbiAgICAgIHJldHVybiBzdHI7XG4gICAgfVxuICAgIG5hbWUgPSBKU09OLnN0cmluZ2lmeSgnJyArIGtleSk7XG4gICAgaWYgKG5hbWUubWF0Y2goL15cIihbYS16QS1aX11bYS16QS1aXzAtOV0qKVwiJC8pKSB7XG4gICAgICBuYW1lID0gbmFtZS5zdWJzdHIoMSwgbmFtZS5sZW5ndGggLSAyKTtcbiAgICAgIG5hbWUgPSBjdHguc3R5bGl6ZShuYW1lLCAnbmFtZScpO1xuICAgIH0gZWxzZSB7XG4gICAgICBuYW1lID0gbmFtZS5yZXBsYWNlKC8nL2csIFwiXFxcXCdcIilcbiAgICAgICAgICAgICAgICAgLnJlcGxhY2UoL1xcXFxcIi9nLCAnXCInKVxuICAgICAgICAgICAgICAgICAucmVwbGFjZSgvKF5cInxcIiQpL2csIFwiJ1wiKTtcbiAgICAgIG5hbWUgPSBjdHguc3R5bGl6ZShuYW1lLCAnc3RyaW5nJyk7XG4gICAgfVxuICB9XG5cbiAgcmV0dXJuIG5hbWUgKyAnOiAnICsgc3RyO1xufVxuXG5cbmZ1bmN0aW9uIHJlZHVjZVRvU2luZ2xlU3RyaW5nKG91dHB1dCwgYmFzZSwgYnJhY2VzKSB7XG4gIHZhciBudW1MaW5lc0VzdCA9IDA7XG4gIHZhciBsZW5ndGggPSBvdXRwdXQucmVkdWNlKGZ1bmN0aW9uKHByZXYsIGN1cikge1xuICAgIG51bUxpbmVzRXN0Kys7XG4gICAgaWYgKGN1ci5pbmRleE9mKCdcXG4nKSA+PSAwKSBudW1MaW5lc0VzdCsrO1xuICAgIHJldHVybiBwcmV2ICsgY3VyLnJlcGxhY2UoL1xcdTAwMWJcXFtcXGRcXGQ/bS9nLCAnJykubGVuZ3RoICsgMTtcbiAgfSwgMCk7XG5cbiAgaWYgKGxlbmd0aCA+IDYwKSB7XG4gICAgcmV0dXJuIGJyYWNlc1swXSArXG4gICAgICAgICAgIChiYXNlID09PSAnJyA/ICcnIDogYmFzZSArICdcXG4gJykgK1xuICAgICAgICAgICAnICcgK1xuICAgICAgICAgICBvdXRwdXQuam9pbignLFxcbiAgJykgK1xuICAgICAgICAgICAnICcgK1xuICAgICAgICAgICBicmFjZXNbMV07XG4gIH1cblxuICByZXR1cm4gYnJhY2VzWzBdICsgYmFzZSArICcgJyArIG91dHB1dC5qb2luKCcsICcpICsgJyAnICsgYnJhY2VzWzFdO1xufVxuXG5cbi8vIE5PVEU6IFRoZXNlIHR5cGUgY2hlY2tpbmcgZnVuY3Rpb25zIGludGVudGlvbmFsbHkgZG9uJ3QgdXNlIGBpbnN0YW5jZW9mYFxuLy8gYmVjYXVzZSBpdCBpcyBmcmFnaWxlIGFuZCBjYW4gYmUgZWFzaWx5IGZha2VkIHdpdGggYE9iamVjdC5jcmVhdGUoKWAuXG5mdW5jdGlvbiBpc0FycmF5KGFyKSB7XG4gIHJldHVybiBBcnJheS5pc0FycmF5KGFyKTtcbn1cbmV4cG9ydHMuaXNBcnJheSA9IGlzQXJyYXk7XG5cbmZ1bmN0aW9uIGlzQm9vbGVhbihhcmcpIHtcbiAgcmV0dXJuIHR5cGVvZiBhcmcgPT09ICdib29sZWFuJztcbn1cbmV4cG9ydHMuaXNCb29sZWFuID0gaXNCb29sZWFuO1xuXG5mdW5jdGlvbiBpc051bGwoYXJnKSB7XG4gIHJldHVybiBhcmcgPT09IG51bGw7XG59XG5leHBvcnRzLmlzTnVsbCA9IGlzTnVsbDtcblxuZnVuY3Rpb24gaXNOdWxsT3JVbmRlZmluZWQoYXJnKSB7XG4gIHJldHVybiBhcmcgPT0gbnVsbDtcbn1cbmV4cG9ydHMuaXNOdWxsT3JVbmRlZmluZWQgPSBpc051bGxPclVuZGVmaW5lZDtcblxuZnVuY3Rpb24gaXNOdW1iZXIoYXJnKSB7XG4gIHJldHVybiB0eXBlb2YgYXJnID09PSAnbnVtYmVyJztcbn1cbmV4cG9ydHMuaXNOdW1iZXIgPSBpc051bWJlcjtcblxuZnVuY3Rpb24gaXNTdHJpbmcoYXJnKSB7XG4gIHJldHVybiB0eXBlb2YgYXJnID09PSAnc3RyaW5nJztcbn1cbmV4cG9ydHMuaXNTdHJpbmcgPSBpc1N0cmluZztcblxuZnVuY3Rpb24gaXNTeW1ib2woYXJnKSB7XG4gIHJldHVybiB0eXBlb2YgYXJnID09PSAnc3ltYm9sJztcbn1cbmV4cG9ydHMuaXNTeW1ib2wgPSBpc1N5bWJvbDtcblxuZnVuY3Rpb24gaXNVbmRlZmluZWQoYXJnKSB7XG4gIHJldHVybiBhcmcgPT09IHZvaWQgMDtcbn1cbmV4cG9ydHMuaXNVbmRlZmluZWQgPSBpc1VuZGVmaW5lZDtcblxuZnVuY3Rpb24gaXNSZWdFeHAocmUpIHtcbiAgcmV0dXJuIGlzT2JqZWN0KHJlKSAmJiBvYmplY3RUb1N0cmluZyhyZSkgPT09ICdbb2JqZWN0IFJlZ0V4cF0nO1xufVxuZXhwb3J0cy5pc1JlZ0V4cCA9IGlzUmVnRXhwO1xuXG5mdW5jdGlvbiBpc09iamVjdChhcmcpIHtcbiAgcmV0dXJuIHR5cGVvZiBhcmcgPT09ICdvYmplY3QnICYmIGFyZyAhPT0gbnVsbDtcbn1cbmV4cG9ydHMuaXNPYmplY3QgPSBpc09iamVjdDtcblxuZnVuY3Rpb24gaXNEYXRlKGQpIHtcbiAgcmV0dXJuIGlzT2JqZWN0KGQpICYmIG9iamVjdFRvU3RyaW5nKGQpID09PSAnW29iamVjdCBEYXRlXSc7XG59XG5leHBvcnRzLmlzRGF0ZSA9IGlzRGF0ZTtcblxuZnVuY3Rpb24gaXNFcnJvcihlKSB7XG4gIHJldHVybiBpc09iamVjdChlKSAmJlxuICAgICAgKG9iamVjdFRvU3RyaW5nKGUpID09PSAnW29iamVjdCBFcnJvcl0nIHx8IGUgaW5zdGFuY2VvZiBFcnJvcik7XG59XG5leHBvcnRzLmlzRXJyb3IgPSBpc0Vycm9yO1xuXG5mdW5jdGlvbiBpc0Z1bmN0aW9uKGFyZykge1xuICByZXR1cm4gdHlwZW9mIGFyZyA9PT0gJ2Z1bmN0aW9uJztcbn1cbmV4cG9ydHMuaXNGdW5jdGlvbiA9IGlzRnVuY3Rpb247XG5cbmZ1bmN0aW9uIGlzUHJpbWl0aXZlKGFyZykge1xuICByZXR1cm4gYXJnID09PSBudWxsIHx8XG4gICAgICAgICB0eXBlb2YgYXJnID09PSAnYm9vbGVhbicgfHxcbiAgICAgICAgIHR5cGVvZiBhcmcgPT09ICdudW1iZXInIHx8XG4gICAgICAgICB0eXBlb2YgYXJnID09PSAnc3RyaW5nJyB8fFxuICAgICAgICAgdHlwZW9mIGFyZyA9PT0gJ3N5bWJvbCcgfHwgIC8vIEVTNiBzeW1ib2xcbiAgICAgICAgIHR5cGVvZiBhcmcgPT09ICd1bmRlZmluZWQnO1xufVxuZXhwb3J0cy5pc1ByaW1pdGl2ZSA9IGlzUHJpbWl0aXZlO1xuXG5leHBvcnRzLmlzQnVmZmVyID0gcmVxdWlyZSgnLi9zdXBwb3J0L2lzQnVmZmVyJyk7XG5cbmZ1bmN0aW9uIG9iamVjdFRvU3RyaW5nKG8pIHtcbiAgcmV0dXJuIE9iamVjdC5wcm90b3R5cGUudG9TdHJpbmcuY2FsbChvKTtcbn1cblxuXG5mdW5jdGlvbiBwYWQobikge1xuICByZXR1cm4gbiA8IDEwID8gJzAnICsgbi50b1N0cmluZygxMCkgOiBuLnRvU3RyaW5nKDEwKTtcbn1cblxuXG52YXIgbW9udGhzID0gWydKYW4nLCAnRmViJywgJ01hcicsICdBcHInLCAnTWF5JywgJ0p1bicsICdKdWwnLCAnQXVnJywgJ1NlcCcsXG4gICAgICAgICAgICAgICdPY3QnLCAnTm92JywgJ0RlYyddO1xuXG4vLyAyNiBGZWIgMTY6MTk6MzRcbmZ1bmN0aW9uIHRpbWVzdGFtcCgpIHtcbiAgdmFyIGQgPSBuZXcgRGF0ZSgpO1xuICB2YXIgdGltZSA9IFtwYWQoZC5nZXRIb3VycygpKSxcbiAgICAgICAgICAgICAgcGFkKGQuZ2V0TWludXRlcygpKSxcbiAgICAgICAgICAgICAgcGFkKGQuZ2V0U2Vjb25kcygpKV0uam9pbignOicpO1xuICByZXR1cm4gW2QuZ2V0RGF0ZSgpLCBtb250aHNbZC5nZXRNb250aCgpXSwgdGltZV0uam9pbignICcpO1xufVxuXG5cbi8vIGxvZyBpcyBqdXN0IGEgdGhpbiB3cmFwcGVyIHRvIGNvbnNvbGUubG9nIHRoYXQgcHJlcGVuZHMgYSB0aW1lc3RhbXBcbmV4cG9ydHMubG9nID0gZnVuY3Rpb24oKSB7XG4gIGNvbnNvbGUubG9nKCclcyAtICVzJywgdGltZXN0YW1wKCksIGV4cG9ydHMuZm9ybWF0LmFwcGx5KGV4cG9ydHMsIGFyZ3VtZW50cykpO1xufTtcblxuXG4vKipcbiAqIEluaGVyaXQgdGhlIHByb3RvdHlwZSBtZXRob2RzIGZyb20gb25lIGNvbnN0cnVjdG9yIGludG8gYW5vdGhlci5cbiAqXG4gKiBUaGUgRnVuY3Rpb24ucHJvdG90eXBlLmluaGVyaXRzIGZyb20gbGFuZy5qcyByZXdyaXR0ZW4gYXMgYSBzdGFuZGFsb25lXG4gKiBmdW5jdGlvbiAobm90IG9uIEZ1bmN0aW9uLnByb3RvdHlwZSkuIE5PVEU6IElmIHRoaXMgZmlsZSBpcyB0byBiZSBsb2FkZWRcbiAqIGR1cmluZyBib290c3RyYXBwaW5nIHRoaXMgZnVuY3Rpb24gbmVlZHMgdG8gYmUgcmV3cml0dGVuIHVzaW5nIHNvbWUgbmF0aXZlXG4gKiBmdW5jdGlvbnMgYXMgcHJvdG90eXBlIHNldHVwIHVzaW5nIG5vcm1hbCBKYXZhU2NyaXB0IGRvZXMgbm90IHdvcmsgYXNcbiAqIGV4cGVjdGVkIGR1cmluZyBib290c3RyYXBwaW5nIChzZWUgbWlycm9yLmpzIGluIHIxMTQ5MDMpLlxuICpcbiAqIEBwYXJhbSB7ZnVuY3Rpb259IGN0b3IgQ29uc3RydWN0b3IgZnVuY3Rpb24gd2hpY2ggbmVlZHMgdG8gaW5oZXJpdCB0aGVcbiAqICAgICBwcm90b3R5cGUuXG4gKiBAcGFyYW0ge2Z1bmN0aW9ufSBzdXBlckN0b3IgQ29uc3RydWN0b3IgZnVuY3Rpb24gdG8gaW5oZXJpdCBwcm90b3R5cGUgZnJvbS5cbiAqL1xuZXhwb3J0cy5pbmhlcml0cyA9IHJlcXVpcmUoJ2luaGVyaXRzJyk7XG5cbmV4cG9ydHMuX2V4dGVuZCA9IGZ1bmN0aW9uKG9yaWdpbiwgYWRkKSB7XG4gIC8vIERvbid0IGRvIGFueXRoaW5nIGlmIGFkZCBpc24ndCBhbiBvYmplY3RcbiAgaWYgKCFhZGQgfHwgIWlzT2JqZWN0KGFkZCkpIHJldHVybiBvcmlnaW47XG5cbiAgdmFyIGtleXMgPSBPYmplY3Qua2V5cyhhZGQpO1xuICB2YXIgaSA9IGtleXMubGVuZ3RoO1xuICB3aGlsZSAoaS0tKSB7XG4gICAgb3JpZ2luW2tleXNbaV1dID0gYWRkW2tleXNbaV1dO1xuICB9XG4gIHJldHVybiBvcmlnaW47XG59O1xuXG5mdW5jdGlvbiBoYXNPd25Qcm9wZXJ0eShvYmosIHByb3ApIHtcbiAgcmV0dXJuIE9iamVjdC5wcm90b3R5cGUuaGFzT3duUHJvcGVydHkuY2FsbChvYmosIHByb3ApO1xufVxuIiwidmFyIGQzID0gKHR5cGVvZiB3aW5kb3cgIT09IFwidW5kZWZpbmVkXCIgPyB3aW5kb3cuZDMgOiB0eXBlb2YgZ2xvYmFsICE9PSBcInVuZGVmaW5lZFwiID8gZ2xvYmFsLmQzIDogbnVsbCksXG4gIF8gPSByZXF1aXJlKCdsb2Rhc2gnKSxcbiAgdXRpbHMgPSByZXF1aXJlKCcuLi8uLi9yZW5kZXJlci91dGlscycpLFxuICBwb2pvVml6Tm9kZSA9IHJlcXVpcmUoJy4vTm9kZScpO1xuXG52YXIgc3ZnID0gZDMuc2VsZWN0KCdzdmcjY2FudmFzJyk7XG52YXIgcHJlZml4ID0gdXRpbHMucHJlZml4ZXI7XG52YXIgZXNjYXBlQ2xzID0gdXRpbHMuZXNjYXBlQ2xzO1xudmFyIHRyYW5zZm9ybVByb3BlcnR5ID0gdXRpbHMudHJhbnNmb3JtUHJvcGVydHk7XG5cbmZ1bmN0aW9uIGdldFgoZCkge1xuICByZXR1cm4gZC54IC0gZC53aWR0aCAvIDI7XG59XG5cbmZ1bmN0aW9uIGdldFkoZCkge1xuICByZXR1cm4gZC55IC0gZC5oZWlnaHQgLyAyO1xufVxuXG5mdW5jdGlvbiBDYW52YXMoZGF0YSkge1xuICB0aGlzLmlkID0gXy51bmlxdWVJZCgpO1xuICB0aGlzLmRhdGEgPSBkYXRhO1xuICB0aGlzLmNyZWF0ZVJvb3QoKTtcbiAgdGhpcy5zZXQoe1xuICAgIG5vZGVzOiBkYXRhLm5vZGVzLFxuICAgIGVkZ2VzOiBkYXRhLmVkZ2VzXG4gIH0pO1xufVxuXG5DYW52YXMucHJvdG90eXBlLmRlc3Ryb3kgPSBmdW5jdGlvbigpIHtcbiAgdGhpcy5kYXRhID0gbnVsbDtcbiAgc3ZnLmF0dHIoJ3N0eWxlJywgJ2Rpc3BsYXk6IG5vbmUnKTtcbiAgc3ZnXG4gICAgLnNlbGVjdEFsbCgnKicpXG4gICAgLnJlbW92ZSgpO1xufTtcblxuQ2FudmFzLnByb3RvdHlwZS5jcmVhdGVSb290ID0gZnVuY3Rpb24oKSB7XG4gIHN2Zy5hdHRyKCdzdHlsZScsICcnKTtcbiAgdGhpcy5yb290ID0gc3ZnXG4gICAgLmFwcGVuZCgnZycpXG4gICAgICAuYXR0cignY2xhc3MnLCAncm9vdC0nICsgdGhpcy5pZCk7XG59O1xuXG5DYW52YXMucHJvdG90eXBlLnNldCA9IGZ1bmN0aW9uKG9iaiwgcmVuZGVyKSB7XG4gIHRoaXMubm9kZXMgPSBvYmoubm9kZXM7XG4gIHRoaXMuZWRnZXMgPSBvYmouZWRnZXM7XG4gIGlmIChyZW5kZXIpIHtcbiAgICB0aGlzLnJlbmRlcigpO1xuICB9XG59O1xuXG5DYW52YXMucHJvdG90eXBlLmZpeFpvb20gPSBmdW5jdGlvbigpIHtcbiAgdmFyIG1lID0gdGhpcyxcbiAgICAgIHNjciA9IHN2Zy5ub2RlKCksXG4gICAgICBiYm94ID0gdGhpcy5yb290Lm5vZGUoKS5nZXRCQm94KCksXG4gICAgICBzY3JlZW5XaWR0aCA9IHNjci5jbGllbnRXaWR0aCxcbiAgICAgIHNjcmVlbkhlaWdodCA9IHNjci5jbGllbnRIZWlnaHQsXG4gICAgICBjYW52YXNXaWR0aCA9IGJib3gud2lkdGgsXG4gICAgICBjYW52YXNIZWlnaHQgPSBiYm94LmhlaWdodCxcbiAgICAgIHN4ID0gdGhpcy5kYXRhLm1uLngsXG4gICAgICBzeSA9IHRoaXMuZGF0YS5tbi55LFxuICAgICAgc2NhbGUgPSBNYXRoLm1pbihcbiAgICAgICAgc2NyZWVuV2lkdGggLyBjYW52YXNXaWR0aCxcbiAgICAgICAgc2NyZWVuSGVpZ2h0IC8gY2FudmFzSGVpZ2h0XG4gICAgICApLFxuICAgICAgdHJhbnNsYXRlO1xuXG4gIGlmICghaXNGaW5pdGUoc2NhbGUpKSB7XG4gICAgc2NhbGUgPSAwO1xuICB9XG4gIC8vIGNoYW5nZSB0aGUgc2NhbGUgcHJvcG9ydGlvbmFsbHkgdG8gaXRzIHByb3hpbWl0eSB0byB6ZXJvXG4gIHNjYWxlIC09IHNjYWxlIC8gMTA7XG5cbiAgdHJhbnNsYXRlID0gW1xuICAgIC1zeCAqIHNjYWxlICsgKHNjcmVlbldpZHRoIC8gMiAtXG4gICAgICBjYW52YXNXaWR0aCAqIHNjYWxlIC8gMiksXG4gICAgLXN5ICogc2NhbGUgKyAoc2NyZWVuSGVpZ2h0IC8gMiAtXG4gICAgICBjYW52YXNIZWlnaHQgKiBzY2FsZSAvIDIpLFxuICBdO1xuXG4gIGZ1bmN0aW9uIHJlZHJhdygpIHtcbiAgICB2YXIgdHJhbnNsYXRpb24gPSBkMy5ldmVudC50cmFuc2xhdGUsXG4gICAgICAgIG5ld1ggPSB0cmFuc2xhdGlvblswXSxcbiAgICAgICAgbmV3WSA9IHRyYW5zbGF0aW9uWzFdO1xuICAgIG1lLnJvb3QuYXR0cigndHJhbnNmb3JtJyxcbiAgICAgIHV0aWxzLnRyYW5zZm9ybSh7XG4gICAgICAgIHRyYW5zbGF0ZTogW25ld1gsIG5ld1ldLFxuICAgICAgICBzY2FsZTogW2QzLmV2ZW50LnNjYWxlXVxuICAgICAgfSlcbiAgICApO1xuICB9XG5cbiAgZnVuY3Rpb24gem9vbUJlaGF2aW9yKHR5cGUpIHtcbiAgICB2YXIgc3RhcnQgPSB0eXBlID09PSAnc3RhcnQnO1xuICAgIHJldHVybiBmdW5jdGlvbiAoKSB7XG4gICAgICBkMy5zZWxlY3QodGhpcykuY2xhc3NlZCgnZHJhZ2dlZCcsIHN0YXJ0KTtcbiAgICB9O1xuICB9XG5cbiAgLy8gY29uc29sZS5sb2coJ2NlbnRlcicsIHRyYW5zbGF0ZSk7XG4gIC8vIGNvbnNvbGUubG9nKHNjci5jbGllbnRXaWR0aCwgYmJveC53aWR0aCwgc3gpO1xuICB2YXIgem9vbSA9IGQzLmJlaGF2aW9yLnpvb20oKVxuICAgIC5vbignem9vbXN0YXJ0Jywgem9vbUJlaGF2aW9yKCdzdGFydCcpKVxuICAgIC5vbignem9vbScsIHJlZHJhdylcbiAgICAub24oJ3pvb21lbmQnLCB6b29tQmVoYXZpb3IoJ2VuZCcpKVxuICAgIC50cmFuc2xhdGUodHJhbnNsYXRlKVxuICAgIC5zY2FsZShzY2FsZSk7XG5cbiAgc3ZnLmNhbGwoem9vbSk7XG5cbiAgbWUucm9vdFxuICAgIC5hdHRyKCd0cmFuc2Zvcm0nLCB1dGlscy50cmFuc2Zvcm0oe1xuICAgICAgc2NhbGU6IFtzY2FsZV0sXG4gICAgICB0cmFuc2xhdGU6IFtcbiAgICAgICAgLXN4ICsgKHNjcmVlbldpZHRoIC8gc2NhbGUgLyAyIC0gY2FudmFzV2lkdGggLyAyKSxcbiAgICAgICAgLXN5ICsgKHNjcmVlbkhlaWdodCAvIHNjYWxlIC8gMiAtIGNhbnZhc0hlaWdodCAvIDIpXG4gICAgICBdXG4gICAgfSkpXG4gICAgLmF0dHIoJ29wYWNpdHknLCAwKVxuICAgIC50cmFuc2l0aW9uKClcbiAgICAuZHVyYXRpb24oNTAwKVxuICAgIC5hdHRyKCdvcGFjaXR5JywgMSk7XG59O1xuXG5DYW52YXMucHJvdG90eXBlLnJlbmRlciA9IGZ1bmN0aW9uKCkge1xuICB0aGlzLnJlbmRlck5vZGVzKCk7XG4gIHRoaXMucmVuZGVyRWRnZXMoKTtcbiAgdGhpcy5maXhab29tKCk7XG59O1xuXG5DYW52YXMucHJvdG90eXBlLnJlbmRlckVkZ2VzID0gZnVuY3Rpb24oKSB7XG4gIHZhciBtZSA9IHRoaXMsXG4gICAgICBlZGdlcyA9IHRoaXMuZWRnZXM7XG5cbiAgLy8gQ1JFQVRFXG4gIHZhciBkaWFnb25hbCA9IGQzLnN2Zy5kaWFnb25hbCgpXG4gIC5zb3VyY2UoZnVuY3Rpb24oZCkge1xuICAgIHZhciBmcm9tID0gbWUucm9vdC5zZWxlY3QoJy4nICtcbiAgICAgICAgICBwcmVmaXgoZXNjYXBlQ2xzKGQuZnJvbSkpXG4gICAgICAgICk7XG4gICAgaWYgKCFmcm9tLm5vZGUoKSkge1xuICAgICAgdGhyb3cgJ3NvdXJjZSBub2RlIG11c3QgZXhpc3QnO1xuICAgIH1cbiAgICB2YXIgZnJvbURhdGEgPSBmcm9tLmRhdHVtKCksXG4gICAgICAgIHByb3BlcnR5ID0gZnJvbS5zZWxlY3QoJy4nICsgcHJlZml4KFxuICAgICAgICAgIGVzY2FwZUNscyh0cmFuc2Zvcm1Qcm9wZXJ0eShkLnByb3BlcnR5KSlcbiAgICAgICAgKSksXG4gICAgICAgIHByb3BlcnR5RGF0YSA9IGQzLnRyYW5zZm9ybShwcm9wZXJ0eS5hdHRyKCd0cmFuc2Zvcm0nKSk7XG5cbiAgICByZXR1cm4ge1xuICAgICAgeDogZ2V0WShmcm9tRGF0YSkgKyBwcm9wZXJ0eURhdGEudHJhbnNsYXRlWzFdIC0gMixcbiAgICAgIHk6IGdldFgoZnJvbURhdGEpICsgcHJvcGVydHlEYXRhLnRyYW5zbGF0ZVswXSAtIDEwXG4gICAgfTtcbiAgfSlcbiAgLnRhcmdldChmdW5jdGlvbihkKSB7XG4gICAgdmFyIHRvID0gbWUucm9vdC5zZWxlY3QoJy4nICtcbiAgICAgICAgICBwcmVmaXgoZXNjYXBlQ2xzKGQudG8pKVxuICAgICAgICApLFxuICAgICAgICB0b0RhdGEsIGJib3g7XG4gICAgaWYgKCF0by5ub2RlKCkpIHtcbiAgICAgIHRocm93ICd0YXJnZXQgbm9kZSBtdXN0IGV4aXN0JztcbiAgICB9XG4gICAgdG9EYXRhID0gdG8uZGF0dW0oKTtcbiAgICBiYm94ID0gdG8ubm9kZSgpLmdldEJCb3goKTtcbiAgICByZXR1cm4ge1xuICAgICAgeDogZ2V0WSh0b0RhdGEpICsgMTAsLy8gKyBiYm94LmhlaWdodCAvIDIsXG4gICAgICB5OiBnZXRYKHRvRGF0YSkvLyArIGJib3gud2lkdGggLyAyXG4gICAgfTtcbiAgfSlcbiAgLnByb2plY3Rpb24oZnVuY3Rpb24oZCkge1xuICAgIHJldHVybiBbZC55LCBkLnhdO1xuICB9KTtcblxuICBmdW5jdGlvbiBtb3VzZUV2ZW50KHR5cGUpIHtcbiAgICB2YXIgb3ZlciA9IHR5cGUgPT09ICdvdmVyJztcbiAgICByZXR1cm4gZnVuY3Rpb24gKGQpIHtcbiAgICAgIGQzLnNlbGVjdCh0aGlzKVxuICAgICAgICAuY2xhc3NlZCgnc2VsZWN0ZWQnLCBvdmVyKTtcbiAgICB9O1xuICB9XG5cbiAgdmFyIGUgPSB0aGlzLnJvb3Quc2VsZWN0QWxsKCcubGluaycpXG4gICAgICAuZGF0YShlZGdlcylcbiAgICAuZW50ZXIoKVxuICAgICAgLmFwcGVuZCgncGF0aCcpXG4gICAgICAuYXR0cignY2xhc3MnLCBmdW5jdGlvbiAoZCkge1xuICAgICAgICByZXR1cm4gW1xuICAgICAgICAgIHByZWZpeCgndG8nLCBlc2NhcGVDbHMoZC50bykpLFxuICAgICAgICAgIHByZWZpeCgnZnJvbScsIGVzY2FwZUNscyhkLmZyb20pKSxcbiAgICAgICAgICBwcmVmaXgoJ2xpbmsnKVxuICAgICAgICBdLmpvaW4oJyAnKTtcbiAgICAgIH0pXG4gICAgICAuYXR0cignc3Ryb2tlJywgJ2xpZ2h0Z3JheScpXG4gICAgICAuYXR0cignc3Ryb2tlLW9wYWNpdHknLCAwLjMpXG4gICAgICAuYXR0cignZCcsIGRpYWdvbmFsKVxuICAgICAgLm9uKCdtb3VzZW92ZXInLCBtb3VzZUV2ZW50KCdvdmVyJykpXG4gICAgICAub24oJ21vdXNlb3V0JywgbW91c2VFdmVudCgnb3V0JykpO1xufTtcblxuQ2FudmFzLnByb3RvdHlwZS5vcGFjaXR5VG9nZ2xlID0gZnVuY3Rpb24oZGVjcmVhc2UpIHtcbiAgdGhpcy5yb290XG4gICAgLmNsYXNzZWQocHJlZml4KCdub2Rlcy1mb2N1c2VkJyksIGRlY3JlYXNlKTtcbn07XG5cbkNhbnZhcy5wcm90b3R5cGUucmVuZGVyTm9kZXMgPSBmdW5jdGlvbigpIHtcbiAgdmFyIG5vZGVzID0gdGhpcy5ub2RlcztcblxuICB2YXIgbm9kZUN0b3IgPSBwb2pvVml6Tm9kZSh0aGlzKTtcbiAgbm9kZUN0b3IubWFyZ2luKHtcbiAgICB0b3A6IDEwLFxuICAgIGxlZnQ6IDEwLFxuICAgIHJpZ2h0OiAxMCxcbiAgICBib3R0b206IDEwXG4gIH0pO1xuICB2YXIgbm9kZUdyb3VwID0gdGhpcy5yb290LnNlbGVjdEFsbChwcmVmaXgoJ25vZGUnKSlcbiAgICAuZGF0YShub2RlcylcbiAgICAuY2FsbChub2RlQ3Rvcik7XG59O1xuXG5tb2R1bGUuZXhwb3J0cyA9IENhbnZhczsiLCJ2YXIgXyA9IHJlcXVpcmUoJ2xvZGFzaCcpLFxuICBkMyA9ICh0eXBlb2Ygd2luZG93ICE9PSBcInVuZGVmaW5lZFwiID8gd2luZG93LmQzIDogdHlwZW9mIGdsb2JhbCAhPT0gXCJ1bmRlZmluZWRcIiA/IGdsb2JhbC5kMyA6IG51bGwpLFxuICB1dGlscyA9IHJlcXVpcmUoJy4uLy4uL3JlbmRlcmVyL3V0aWxzJyksXG4gIHBvam9WaXpQcm9wZXJ0eSA9IHJlcXVpcmUoJy4vUHJvcGVydHknKSxcbiAgaGFzaEtleSA9IHJlcXVpcmUoJy4uLy4uL3V0aWwvaGFzaEtleScpO1xuXG52YXIgcHJlZml4ID0gdXRpbHMucHJlZml4ZXI7XG52YXIgZXNjYXBlQ2xzID0gdXRpbHMuZXNjYXBlQ2xzO1xudmFyIG1hcmdpbiA9IHsgdG9wOiAwLCByaWdodDogMCwgbGVmdDogMCwgYm90dG9tOiAwIH07XG5cbmZ1bmN0aW9uIE5vZGUocGFyZW50KSB7XG5cbiAgZnVuY3Rpb24gbXkoc2VsZWN0aW9uKSB7XG4gICAgLy8gY3JlYXRlXG4gICAgdmFyIGVudGVyID0gc2VsZWN0aW9uLmVudGVyKCk7XG5cbiAgICBmdW5jdGlvbiBncm91cE1vdXNlQmVoYXZpb3IodHlwZSkge1xuICAgICAgdmFyIG92ZXIgPSB0eXBlID09PSAnb3Zlcic7XG4gICAgICByZXR1cm4gZnVuY3Rpb24gKGQsIGkpIHtcbiAgICAgICAgdmFyIGxhYmVsRXNjYXBlZCA9IGVzY2FwZUNscyhkLmxhYmVsKTtcblxuICAgICAgICAvLyBoaWRlIGFsbFxuICAgICAgICBwYXJlbnQub3BhY2l0eVRvZ2dsZShvdmVyKTtcblxuICAgICAgICAvLyBzZWxlY3QgbGlua3NcbiAgICAgICAgZDMuc2VsZWN0QWxsKCcuJyArIHByZWZpeCgndG8nLCBsYWJlbEVzY2FwZWQpKVxuICAgICAgICAgIC5jbGFzc2VkKCdzZWxlY3RlZCBwcmVkZWNlc3NvcicsIG92ZXIpO1xuICAgICAgICBkMy5zZWxlY3RBbGwoJy4nICsgcHJlZml4KCdmcm9tJywgbGFiZWxFc2NhcGVkKSlcbiAgICAgICAgICAuY2xhc3NlZCgnc2VsZWN0ZWQgc3VjY2Vzc29yJywgb3Zlcik7XG5cbiAgICAgICAgLy8gc2VsZWN0IGN1cnJlbnQgbm9kZVxuICAgICAgICBkMy5zZWxlY3QoJy4nICsgcHJlZml4KGxhYmVsRXNjYXBlZCkpXG4gICAgICAgICAgLmNsYXNzZWQoJ3NlbGVjdGVkIGN1cnJlbnQnLCBvdmVyKTtcblxuICAgICAgICAvLyBzZWxlY3QgcHJlZGVjZXNzb3Igbm9kZXNcbiAgICAgICAgZC5wcmVkZWNlc3NvcnNcbiAgICAgICAgICAuZm9yRWFjaChmdW5jdGlvbiAodikge1xuICAgICAgICAgICAgZDMuc2VsZWN0QWxsKCcuJyArIHByZWZpeChlc2NhcGVDbHModikpKVxuICAgICAgICAgICAgICAuY2xhc3NlZCgnc2VsZWN0ZWQgcHJlZGVjZXNzb3InLCBvdmVyKTtcbiAgICAgICAgICB9KTtcblxuICAgICAgICAvLyBzZWxlY3Qgc3VjY2Vzc29yIG5vZGVzXG4gICAgICAgIGQuc3VjY2Vzc29yc1xuICAgICAgICAgIC5mb3JFYWNoKGZ1bmN0aW9uICh2KSB7XG4gICAgICAgICAgICBkMy5zZWxlY3RBbGwoJy4nICsgcHJlZml4KGVzY2FwZUNscyh2KSkpXG4gICAgICAgICAgICAgIC5jbGFzc2VkKCdzZWxlY3RlZCBzdWNjZXNzb3InLCBvdmVyKTtcbiAgICAgICAgICB9KTtcbiAgICAgIH07XG4gICAgfVxuXG4gICAgdmFyIG5vZGVFbnRlciA9IGVudGVyXG4gICAgICAuYXBwZW5kKCdnJylcbiAgICAgIC5hdHRyKCdjbGFzcycsIGZ1bmN0aW9uIChkKSB7XG4gICAgICAgIHZhciB0eXBlID0gZC5sYWJlbFxuICAgICAgICAgIC5tYXRjaCgvXihcXHcpKi8pO1xuICAgICAgICByZXR1cm4gW1xuICAgICAgICAgIHByZWZpeCgnbm9kZScpLFxuICAgICAgICAgIHByZWZpeCh0eXBlWzBdKSxcbiAgICAgICAgICBwcmVmaXgoZXNjYXBlQ2xzKGQubGFiZWwpKVxuICAgICAgICBdLmpvaW4oJyAnKTtcbiAgICAgIH0pXG4gICAgICAuYXR0cigndHJhbnNmb3JtJywgZnVuY3Rpb24gKGQpIHtcbiAgICAgICAgcmV0dXJuIHV0aWxzLnRyYW5zbGF0ZShcbiAgICAgICAgICBkLnggLSBkLndpZHRoIC8gMixcbiAgICAgICAgICBkLnkgLSBkLmhlaWdodCAvIDJcbiAgICAgICAgKTtcbiAgICAgIH0pXG4gICAgICAub24oJ21vdXNlb3ZlcicsIGdyb3VwTW91c2VCZWhhdmlvcignb3ZlcicpKVxuICAgICAgLm9uKCdtb3VzZW91dCcsIGdyb3VwTW91c2VCZWhhdmlvcignb3V0JykpO1xuXG4gICAgbm9kZUVudGVyXG4gICAgICAuYXBwZW5kKCdyZWN0JylcbiAgICAgIC5hdHRyKCdyeCcsIDUpXG4gICAgICAuYXR0cigncnknLCA1KVxuICAgICAgLmF0dHIoJ2NsYXNzJywgJ25vZGUtYmFja2dyb3VuZCcpO1xuXG4gICAgbm9kZUVudGVyXG4gICAgICAvLyAuYXBwZW5kKCdnJylcbiAgICAgIC5hcHBlbmQoJ3RleHQnKVxuICAgICAgICAuYXR0cignY2xhc3MnLCBwcmVmaXgoJ3RpdGxlJykpXG4gICAgICAgIC5hdHRyKCd0cmFuc2Zvcm0nLCAndHJhbnNsYXRlKDIwLCAyNSknKVxuICAgICAgICAudGV4dChmdW5jdGlvbiAoZCkge1xuICAgICAgICAgIHZhciBuYW1lID0gZC5sYWJlbFxuICAgICAgICAgICAgLm1hdGNoKC9cXFMqPy0oLiopLylbMV1cbiAgICAgICAgICAgIC5yZXBsYWNlKCctJywgJy4nKTtcbiAgICAgICAgICByZXR1cm4gbmFtZTtcbiAgICAgICAgfSk7XG5cbiAgICAvLyBub2RlRW50ZXJcbiAgICAvLyAgIC5hcHBlbmQoJ3RleHQnKVxuICAgIC8vICAgICAuYXR0cignY2xhc3MnLCAndGl0bGUnKVxuICAgIC8vICAgICAudGV4dChmdW5jdGlvbiAoZCkgeyByZXR1cm4gZC5sYWJlbDsgfSk7XG5cbiAgICB2YXIgYm9keUVudGVyID0gbm9kZUVudGVyXG4gICAgICAuYXBwZW5kKCdnJylcbiAgICAgICAgLmF0dHIoJ2NsYXNzJywgcHJlZml4KCdib2R5JykpO1xuXG4gICAgdmFyIHByb3BlcnR5Q3RvciA9IHBvam9WaXpQcm9wZXJ0eSgpO1xuICAgIHByb3BlcnR5Q3Rvci5tYXJnaW4obWFyZ2luKTtcbiAgICBib2R5RW50ZXIuc2VsZWN0QWxsKCdnLicgKyBwcmVmaXgoJ3Byb3BlcnR5JykpXG4gICAgICAuZGF0YShmdW5jdGlvbiAoZCkge1xuICAgICAgICBkLnByb3BlcnRpZXMuZm9yRWFjaChmdW5jdGlvbiAocCkge1xuICAgICAgICAgIHAubGFiZWwgPSBkLmxhYmVsO1xuICAgICAgICB9KTtcbiAgICAgICAgcmV0dXJuIGQucHJvcGVydGllcztcbiAgICAgIH0pXG4gICAgICAuY2FsbChwcm9wZXJ0eUN0b3IpO1xuXG4gICAgLy8gZml4IG5vZGUgYmFja2dyb3VuZCB3aWR0aC9oZWlnaHRcbiAgICBzZWxlY3Rpb24uZWFjaChmdW5jdGlvbiAoZCwgaSkge1xuICAgICAgdmFyIGVsID0gZDMuc2VsZWN0KHRoaXMpLFxuICAgICAgICAgIHJlY3QgPSBlbC5zZWxlY3QoJ3JlY3Qubm9kZS1iYWNrZ3JvdW5kJyk7XG5cbiAgICAgIC8vIHNldFRpbWVvdXQoZnVuY3Rpb24gKCkge1xuICAgICAgdmFyIGJib3ggPSBlbC5ub2RlKCkuZ2V0QkJveCgpO1xuICAgICAgcmVjdFxuICAgICAgICAuYXR0cignd2lkdGgnLCBiYm94LndpZHRoICsgMTAgKiAyKVxuICAgICAgICAuYXR0cignaGVpZ2h0JywgYmJveC5oZWlnaHQgKyAxMCk7XG4gICAgICAvLyB9LCAwKTtcbiAgICB9KTtcbiAgfVxuICBteS5tYXJnaW4gPSBmdW5jdGlvbiAobSkge1xuICAgIGlmICghbSkge1xuICAgICAgcmV0dXJuIG1hcmdpbjtcbiAgICB9XG4gICAgbWFyZ2luID0gXy5tZXJnZShtYXJnaW4sIG0pO1xuICB9O1xuICByZXR1cm4gbXk7XG59XG5cbm1vZHVsZS5leHBvcnRzID0gTm9kZTsiLCJ2YXIgZDMgPSAodHlwZW9mIHdpbmRvdyAhPT0gXCJ1bmRlZmluZWRcIiA/IHdpbmRvdy5kMyA6IHR5cGVvZiBnbG9iYWwgIT09IFwidW5kZWZpbmVkXCIgPyBnbG9iYWwuZDMgOiBudWxsKSxcbiAgXyA9IHJlcXVpcmUoJ2xvZGFzaCcpLFxuICB1dGlscyA9IHJlcXVpcmUoJy4uLy4uL3JlbmRlcmVyL3V0aWxzJyk7XG5cbnZhciBwcmVmaXggPSB1dGlscy5wcmVmaXhlcjtcbnZhciBlc2NhcGVDbHMgPSB1dGlscy5lc2NhcGVDbHM7XG52YXIgdHJhbnNmb3JtUHJvcGVydHkgPSB1dGlscy50cmFuc2Zvcm1Qcm9wZXJ0eTtcblxuZnVuY3Rpb24gUHJvcGVydHkoKSB7XG4gIHZhciBtYXJnaW4gPSB7XG4gICAgdG9wOiAwLFxuICAgIHJpZ2h0OiAwLFxuICAgIGJvdHRvbTogMCxcbiAgICBsZWZ0OiAwXG4gIH07XG5cbiAgdmFyIHRpdGxlSGVpZ2h0ID0gNDA7XG5cbiAgZnVuY3Rpb24gbXkoc2VsZWN0aW9uKSB7XG5cbiAgICBmdW5jdGlvbiBwcm9wZXJ0eVkoZCwgaSkge1xuICAgICAgcmV0dXJuIFtcbiAgICAgICAgbWFyZ2luLmxlZnQgKyAxMCxcbiAgICAgICAgbWFyZ2luLnRvcCArIHRpdGxlSGVpZ2h0ICsgaSAqIDE1XG4gICAgICBdO1xuICAgIH1cblxuICAgIC8vIFBST1BFUlRZIENSRUFURVxuICAgIGZ1bmN0aW9uIG1vdXNlRXZlbnQodHlwZSkge1xuICAgICAgdmFyIG92ZXIgPSB0eXBlID09PSAnb3Zlcic7XG4gICAgICByZXR1cm4gZnVuY3Rpb24gKGQsIGkpIHtcbiAgICAgICAgZDMuc2VsZWN0KHRoaXMpXG4gICAgICAgICAgLnRyYW5zaXRpb24oKVxuICAgICAgICAgICAgLmR1cmF0aW9uKDMwMClcbiAgICAgICAgICAgIC5hdHRyKCd0cmFuc2Zvcm0nLCBmdW5jdGlvbiAoKSB7XG4gICAgICAgICAgICAgIHJldHVybiB1dGlscy50cmFuc2Zvcm0oe1xuICAgICAgICAgICAgICAgIHRyYW5zbGF0ZTogcHJvcGVydHlZKGQsIGkpLFxuICAgICAgICAgICAgICAgIHNjYWxlOiBbb3ZlciA/IDEuNSA6IDFdXG4gICAgICAgICAgICAgIH0pO1xuICAgICAgICAgICAgfSk7XG4gICAgICB9O1xuICAgIH1cbiAgICB2YXIgcHJvcGVydHlFbnRlciA9IHNlbGVjdGlvbi5lbnRlcigpXG4gICAgICAgIC5hcHBlbmQoJ2cnKVxuICAgICAgICAuYXR0cignY2xhc3MnLCBmdW5jdGlvbiAoZCkge1xuICAgICAgICAgIHJldHVybiBbXG4gICAgICAgICAgICBwcmVmaXgoJ3Byb3BlcnR5JyksXG4gICAgICAgICAgICBwcmVmaXgoXG4gICAgICAgICAgICAgIGVzY2FwZUNscyh0cmFuc2Zvcm1Qcm9wZXJ0eShkLnByb3BlcnR5KSlcbiAgICAgICAgICAgIClcbiAgICAgICAgICBdLmpvaW4oJyAnKTtcbiAgICAgICAgfSlcbiAgICAgICAgLmF0dHIoJ3RyYW5zZm9ybScsIGZ1bmN0aW9uIChkLCBpKSB7XG4gICAgICAgICAgcmV0dXJuIHV0aWxzLnRyYW5zZm9ybSh7XG4gICAgICAgICAgICB0cmFuc2xhdGU6IHByb3BlcnR5WShkLCBpKVxuICAgICAgICAgIH0pO1xuICAgICAgICB9KVxuICAgICAgICAub24oJ21vdXNlb3ZlcicsIG1vdXNlRXZlbnQoJ292ZXInKSlcbiAgICAgICAgLm9uKCdtb3VzZW91dCcsIG1vdXNlRXZlbnQoJ291dCcpKTtcblxuICAgIHByb3BlcnR5RW50ZXJcbiAgICAgIC5hcHBlbmQoJ3RleHQnKVxuICAgICAgLmF0dHIoJ2ZvbnQtc2l6ZScsIDEwKVxuICAgICAgLmF0dHIoJ3RleHQtYW5jaG9yJywgJ3N0YXJ0JylcbiAgICAgIC5hdHRyKCdjbGFzcycsIGZ1bmN0aW9uIChkKSB7XG4gICAgICAgIHJldHVybiBbXG4gICAgICAgICAgcHJlZml4KCdrZXknKVxuICAgICAgICBdLmpvaW4oJyAnKTtcbiAgICAgIH0pXG4gICAgICAudGV4dChmdW5jdGlvbiAoZCwgaSkge1xuICAgICAgICByZXR1cm4gZC5wcm9wZXJ0eTtcbiAgICAgIH0pXG4gICAgICAub24oJ2NsaWNrJywgZnVuY3Rpb24gKGQsIGkpIHtcbiAgICAgICAgY29uc29sZS5sb2coZCk7XG4gICAgICAgIHZhciBsaW5rID0gZC5sYWJlbC5tYXRjaCgvXFxTKj8tKFtcXCRcXHctXFwuXSopLyk7XG4gICAgICAgIHZhciBldiA9IG5ldyBDdXN0b21FdmVudCgncHJvcGVydHktY2xpY2snLCB7XG4gICAgICAgICAgZGV0YWlsOiB7XG4gICAgICAgICAgICBuYW1lOiBsaW5rWzFdLFxuICAgICAgICAgICAgcHJvcGVydHk6IGQucHJvcGVydHlcbiAgICAgICAgICB9XG4gICAgICAgIH0pO1xuICAgICAgICBjb25zb2xlLmxvZyhldi5kZXRhaWwpO1xuICAgICAgICBkb2N1bWVudC5kaXNwYXRjaEV2ZW50KGV2KTtcbiAgICAgIH0pO1xuXG4gICAgdmFyIHJlY3RXcmFwID0gcHJvcGVydHlFbnRlclxuICAgICAgLmluc2VydCgncmVjdCcsICd0ZXh0JylcbiAgICAgIC5hdHRyKCdjbGFzcycsIGZ1bmN0aW9uIChkKSB7XG4gICAgICAgIHJldHVybiBbXG4gICAgICAgICAgcHJlZml4KGQudHlwZSksXG4gICAgICAgICAgcHJlZml4KCdwcm9wZXJ0eScsICdiYWNrZ3JvdW5kJylcbiAgICAgICAgXS5qb2luKCcgJyk7XG4gICAgICB9KVxuICAgICAgLmF0dHIoJ3J4JywgMylcbiAgICAgIC5hdHRyKCdyeScsIDMpXG4gICAgICAuYXR0cigneCcsIC0yKVxuICAgICAgLmF0dHIoJ3knLCAtOSk7XG5cbiAgICBzZWxlY3Rpb24uc2VsZWN0QWxsKCdyZWN0LicgKyBwcmVmaXgoJ3Byb3BlcnR5JywgJ2JhY2tncm91bmQnKSlcbiAgICAgIC5lYWNoKGZ1bmN0aW9uIChkKSB7XG4gICAgICAgIHZhciBtZSA9IGQzLnNlbGVjdCh0aGlzKVxuICAgICAgICAgIC5hdHRyKCdoZWlnaHQnLCBmdW5jdGlvbiAoZCkge1xuICAgICAgICAgICAgdmFyIHRleHQgPSBkM1xuICAgICAgICAgICAgICAuc2VsZWN0KHRoaXMucGFyZW50Tm9kZSlcbiAgICAgICAgICAgICAgLnNlbGVjdCgndGV4dCcpO1xuICAgICAgICAgICAgcmV0dXJuIHRleHQucHJvcGVydHkoJ2NsaWVudEhlaWdodCcpO1xuICAgICAgICAgIH0pXG4gICAgICAgICAgLmF0dHIoJ3dpZHRoJywgZnVuY3Rpb24gKGQpIHtcbiAgICAgICAgICAgIHZhciB0ZXh0ID0gZDNcbiAgICAgICAgICAgICAgLnNlbGVjdCh0aGlzLnBhcmVudE5vZGUpXG4gICAgICAgICAgICAgIC5zZWxlY3QoJ3RleHQnKTtcbiAgICAgICAgICAgIHJldHVybiB0ZXh0LnByb3BlcnR5KCdjbGllbnRXaWR0aCcpICsgMztcbiAgICAgICAgICB9KTtcbiAgICAgIH0pO1xuXG4gICAgcHJvcGVydHlFbnRlci5lYWNoKGZ1bmN0aW9uIChkKSB7XG4gICAgICBpZiAoZC50eXBlID09PSAnb2JqZWN0JyB8fCBkLnR5cGUgPT09ICdmdW5jdGlvbicpIHtcbiAgICAgICAgZDMuc2VsZWN0KHRoaXMpXG4gICAgICAgICAgLmFwcGVuZCgnY2lyY2xlJylcbiAgICAgICAgICAuYXR0cigncicsIDQpXG4gICAgICAgICAgLmF0dHIoJ2NsYXNzJywgcHJlZml4KCdkb3QtJyArIGQudHlwZSkpXG4gICAgICAgICAgLmF0dHIoJ2N4JywgLTEwKVxuICAgICAgICAgIC5hdHRyKCdjeScsIC0yKVxuICAgICAgICAgIC5hdHRyKCdvcGFjaXR5JywgMSk7XG4gICAgICB9XG4gICAgfSk7XG4gIH1cbiAgbXkubWFyZ2luID0gZnVuY3Rpb24gKG0pIHtcbiAgICBpZiAoIW0pIHtcbiAgICAgIHJldHVybiBtYXJnaW47XG4gICAgfVxuICAgIG1hcmdpbiA9IF8ubWVyZ2UobWFyZ2luLCBtKTtcbiAgfTtcbiAgcmV0dXJuIG15O1xufVxuXG5tb2R1bGUuZXhwb3J0cyA9IFByb3BlcnR5OyIsInZhciBDYW52YXMgPSByZXF1aXJlKCcuL0NhbnZhcycpLFxuICBjYW52YXM7XG5cbm1vZHVsZS5leHBvcnRzID0ge1xuICBjbGVhcjogZnVuY3Rpb24gKCkge1xuICAgIGlmIChjYW52YXMpIHtcbiAgICAgIGNhbnZhcy5kZXN0cm95KCk7XG4gICAgfVxuICB9LFxuICByZW5kZXI6IGZ1bmN0aW9uIChkYXRhKSB7XG4gICAgY2FudmFzID0gbmV3IENhbnZhcyhkYXRhKTtcbiAgICBjYW52YXMucmVuZGVyKCk7XG4gIH1cbn07XG5cbi8vIGN1c3RvbSBldmVudHNcbmdsb2JhbC5kb2N1bWVudCAmJiBkb2N1bWVudC5hZGRFdmVudExpc3RlbmVyKCdwcm9wZXJ0eS1jbGljaycsIGZ1bmN0aW9uIChlKSB7XG4gIHZhciBkZXRhaWwgPSBlLmRldGFpbDtcbiAgZ2xvYmFsLnBvam92aXpcbiAgICAuZ2V0Q3VycmVudEluc3BlY3RvcigpXG4gICAgLnNob3dTZWFyY2goZGV0YWlsLm5hbWUsIGRldGFpbC5wcm9wZXJ0eSk7XG59KTsiLCIvKipcbiAqIENyZWF0ZWQgYnkgbWF1cmljaW8gb24gMi8xOC8xNS5cbiAqL1xudmFyIGRhZ3JlID0gcmVxdWlyZSgnZGFncmUnKTtcbnZhciBhc3NlcnQgPSByZXF1aXJlKCdhc3NlcnQnKTtcbnZhciBfID0gcmVxdWlyZSgnbG9kYXNoJyk7XG52YXIgcG9qb3ZpeiA9IGdsb2JhbC5wb2pvdml6O1xudmFyIHV0aWxzID0gcG9qb3Zpei51dGlscztcblxudmFyIHJlbmRlcmVyO1xubW9kdWxlLmV4cG9ydHMgPSB7XG4gIHJlbmRlcmVyczoge30sXG5cbiAgLyoqXG4gICAqIEdpdmVuIGFuIGluc3BlY3RvciBpbnN0YW5jZSBpdCBidWlsZCB0aGUgZ3JhcGggYW5kIGFsc28gdGhlXG4gICAqIGxheW91dCBvZiB0aGUgbm9kZXMgYmVsb25naW5nIHRvIGl0LCB0aGUgcmVzdWx0aW5nIG9iamVjdCBpc1xuICAgKiBhbiBvYmplY3Qgd2hpY2ggaXMgdXNlZCBieSBhIHJlbmRlcmVyIHRvIGJlIGRyYXduXG4gICAqIEBwYXJhbSB7SW5zcGVjdG9yfSBpbnNwZWN0b3JcbiAgICovXG4gIHByb2Nlc3M6IGZ1bmN0aW9uIChpbnNwZWN0b3IpIHtcbiAgICByZXR1cm4gdGhpcy5kb1Byb2Nlc3MoaW5zcGVjdG9yLmFuYWx5emVyLnN0cmluZ2lmeSgpKTtcbiAgfSxcbiAgLyoqXG4gICAqIEBwYXJhbSB7b2JqZWN0fSBub2Rlc1N0cmluZ2lmaWVkIEFuIG9iamVjdCB3aXRoIHRoZSBmb2xsb3dpbmcgcHJvcGVydGllc1xuICAgKiAge1xuICAgKiAgICBub2RlczogW3t9LCAuLl0gZWFjaCBvYmplY3QgaXMgZ2VuZXJhdGVkIGluIE9iamVjdEFuYWx5emVyI3N0cmluZ2lmeSxcbiAgICogICAgZWRnZXM6IFt7fSwgLi5dIGVhY2ggb2JqZWN0IGlzIGdlbmVyYXRlZCBpbiBPYmplY3RBbmFseXplciNzdHJpbmdpZnlcbiAgICogIH1cbiAgICpcbiAgICogQHJldHVybiB7T2JqZWN0fSByZXR1cm4gQW4gb2JqZWN0IHdpdGggdGhlIGZvbGxvd2luZyBpbmZvOlxuICAgKiAge1xuICAgKiAgICAgbm9kZXM6IFthcnJheSBvZiBvYmplY3RzLCBlYWNoIGhhdmluZyBsYWJlbCx4LHksaGVpZ2h0LFxuICAgKiAgICAgICAgICAgIHdpZHRoLHByb3BlcnRpZXMsc3VjY2Vzc29ycyxwcmVkZWNlc3NvcnNdLFxuICAgKiAgICAgZWRnZXM6IFthcnJheSBvZiBvYmplY3RzLCBlYWNoIGhhdmluZyB0byxmcm9tLHByb3BlcnR5XSxcbiAgICogICAgIGNlbnRlcjogYW4gb2JqZWN0IHdpdGggdGhlIGNlbnRlciBvZiB0aGUgYmJveCB0aGF0IGNvdmVyc1xuICAgKiAgICAgICAgICAgIHRoZSBsYXlvdXQgb2YgdGhlIGdyYXBoXG4gICAqICAgICBtbjogYW4gb2JqZWN0IHdpdGggaW5mbyBhYm91dCB0aGUgbWluaW11bSB4LHkgb2YgdGhlIGJib3hcbiAgICogICAgICAgICAgICB0aGF0IGNvdmVycyB0aGUgbGF5b3V0IG9mIHRoZSBncmFwaFxuICAgKiAgICAgbXg6IGFuIG9iamVjdCB3aXRoIGluZm8gYWJvdXQgdGhlIG1heGltdW0geCx5IG9mIHRoZSBiYm94XG4gICAqICAgICAgICAgICAgdGhhdCBjb3ZlcnMgdGhlIGxheW91dCBvZiB0aGUgZ3JhcGhcbiAgICogIH1cbiAgICovXG4gIGRvUHJvY2VzczogZnVuY3Rpb24gKG5vZGVzU3RyaW5naWZpZWQpIHtcbiAgICB2YXIgZyA9IG5ldyBkYWdyZS5EaWdyYXBoKCksXG4gICAgICBub2RlLFxuICAgICAgbGlicmFyeU5vZGVzID0gbm9kZXNTdHJpbmdpZmllZC5ub2RlcyxcbiAgICAgIGxpYnJhcnlFZGdlcyA9IG5vZGVzU3RyaW5naWZpZWQuZWRnZXM7XG5cbiAgICAvLyBjcmVhdGUgdGhlIGdyYXBoXG4gICAgLy8gZWFjaCBlbGVtZW50IG9mIHRoZSBncmFwaCBoYXNcbiAgICAvLyAtIGxhYmVsXG4gICAgLy8gLSB3aWR0aFxuICAgIC8vIC0gaGVpZ2h0XG4gICAgLy8gLSBwcm9wZXJ0aWVzXG4gICAgXy5mb3JPd24obGlicmFyeU5vZGVzLCBmdW5jdGlvbiAocHJvcGVydGllcywgaykge1xuICAgICAgdmFyIGxhYmVsID0gay5tYXRjaCgvXFxTKj8tKC4qKS8pWzFdO1xuICAgICAgLy9jb25zb2xlLmxvZyhrLCBsYWJlbC5sZW5ndGgpO1xuICAgICAgbm9kZSA9IHtcbiAgICAgICAgbGFiZWw6IGssXG4gICAgICAgIHdpZHRoOiBsYWJlbC5sZW5ndGggKiAxMFxuICAgICAgfTtcbiAgICAgIC8vIGxpbmVzICsgaGVhZGVyICsgcGFkZGluZyBib3R0b21cbiAgICAgIG5vZGUuaGVpZ2h0ID0gcHJvcGVydGllcy5sZW5ndGggKiAxNSArIDUwO1xuICAgICAgbm9kZS5wcm9wZXJ0aWVzID0gcHJvcGVydGllcztcbiAgICAgIHByb3BlcnRpZXMuZm9yRWFjaChmdW5jdGlvbiAodikge1xuICAgICAgICBub2RlLndpZHRoID0gTWF0aC5tYXgobm9kZS53aWR0aCwgdi5wcm9wZXJ0eS5sZW5ndGggKiAxMCk7XG4gICAgICB9KTtcbiAgICAgIGcuYWRkTm9kZShrLCBub2RlKTtcbiAgICB9KTtcblxuICAgIC8vIGJ1aWxkIHRoZSBlZGdlcyBmcm9tIG5vZGUgdG8gbm9kZVxuICAgIF8uZm9yT3duKGxpYnJhcnlFZGdlcywgZnVuY3Rpb24gKGxpbmtzKSB7XG4gICAgICBsaW5rcy5mb3JFYWNoKGZ1bmN0aW9uIChsaW5rKSB7XG4gICAgICAgIGlmIChnLmhhc05vZGUobGluay5mcm9tKSAmJiBnLmhhc05vZGUobGluay50bykpIHtcbiAgICAgICAgICBnLmFkZEVkZ2UobnVsbCwgbGluay5mcm9tLCBsaW5rLnRvKTtcbiAgICAgICAgfVxuICAgICAgfSk7XG4gICAgfSk7XG5cbiAgICAvLyBnZW5lcmF0ZSB0aGUgZ3JhcGggbGF5b3V0XG4gICAgdmFyIGxheW91dCA9IGRhZ3JlLmxheW91dCgpXG4gICAgICAubm9kZVNlcCgzMClcbiAgICAgIC8vIC5yYW5rU2VwKDcwKVxuICAgICAgLy8gLnJhbmtEaXIoJ1RCJylcbiAgICAgIC5ydW4oZyk7XG5cbiAgICB2YXIgbm9kZXMgPSBbXSxcbiAgICAgIGVkZ2VzID0gW10sXG4gICAgICBjZW50ZXIgPSB7eDogMCwgeTogMH0sXG4gICAgICBtbiA9IHt4OiBJbmZpbml0eSwgeTogSW5maW5pdHl9LFxuICAgICAgbXggPSB7eDogLUluZmluaXR5LCB5OiAtSW5maW5pdHl9LFxuICAgICAgdG90YWwgPSBnLm5vZGVzKCkubGVuZ3RoO1xuXG4gICAgLy8gdXBkYXRlIHRoZSBub2RlIGluZm8gYWRkaW5nOlxuICAgIC8vIC0geCAoeC1jb29yZGluYXRlIG9mIHRoZSBjZW50ZXIgb2YgdGhlIG5vZGUpXG4gICAgLy8gLSB5ICh5LWNvb3JkaW5hdGUgb2YgdGhlIGNlbnRlciBvZiB0aGUgbm9kZSlcbiAgICAvLyAtIHByZWRlY2Vzc29ycyAoYW4gYXJyYXkgd2l0aCB0aGUgaWRlbnRpZmllcnMgb2YgdGhlIHByZWRlY2Vzc29ycyBvZiB0aGlzIG5vZGUpXG4gICAgLy8gLSBzdWNjZXNzb3JzIChhbiBhcnJheSB3aXRoIHRoZSBpZGVudGlmaWVycyBvZiB0aGUgc3VjY2Vzc29yIG9mIHRoaXMgbm9kZSlcbiAgICBsYXlvdXQuZWFjaE5vZGUoZnVuY3Rpb24gKGssIGxheW91dEluZm8pIHtcbiAgICAgIHZhciB4ID0gbGF5b3V0SW5mby54O1xuICAgICAgdmFyIHkgPSBsYXlvdXRJbmZvLnk7XG5cbiAgICAgIG5vZGUgPSBnLm5vZGUoayk7XG4gICAgICBub2RlLnggPSB4O1xuICAgICAgbm9kZS55ID0geTtcbiAgICAgIG5vZGUucHJlZGVjZXNzb3JzID0gZy5wcmVkZWNlc3NvcnMoayk7XG4gICAgICBub2RlLnN1Y2Nlc3NvcnMgPSBnLnN1Y2Nlc3NvcnMoayk7XG4gICAgICBub2Rlcy5wdXNoKG5vZGUpO1xuXG4gICAgICAvLyBjYWxjdWxhdGUgdGhlIGJib3ggb2YgdGhlIGdyYXBoIHRvIGNlbnRlciB0aGUgZ3JhcGhcbiAgICAgIHZhciBtbnggPSB4IC0gbm9kZS53aWR0aCAvIDI7XG4gICAgICB2YXIgbW55ID0geSAtIG5vZGUuaGVpZ2h0IC8gMjtcbiAgICAgIHZhciBteHggPSB4ICsgbm9kZS53aWR0aCAvIDI7XG4gICAgICB2YXIgbXh5ID0geSArIG5vZGUuaGVpZ2h0IC8gMjtcblxuICAgICAgY2VudGVyLnggKz0geDtcbiAgICAgIGNlbnRlci55ICs9IHk7XG4gICAgICBtbi54ID0gTWF0aC5taW4obW4ueCwgbW54KTtcbiAgICAgIG1uLnkgPSBNYXRoLm1pbihtbi55LCBtbnkpO1xuICAgICAgLy8gY29uc29sZS5sb2coeCwgeSwgJyBkaW0gJywgbm9kZS53aWR0aCwgbm9kZS5oZWlnaHQpO1xuICAgICAgbXgueCA9IE1hdGgubWF4KG14LngsIG14eCk7XG4gICAgICBteC55ID0gTWF0aC5tYXgobXgueSwgbXh5KTtcbiAgICB9KTtcblxuICAgIGNlbnRlci54IC89ICh0b3RhbCB8fCAxKTtcbiAgICBjZW50ZXIueSAvPSAodG90YWwgfHwgMSk7XG5cbiAgICAvLyBjcmVhdGUgdGhlIGVkZ2VzIGZyb20gcHJvcGVydHkgdG8gbm9kZVxuICAgIF8uZm9yT3duKGxpYnJhcnlFZGdlcywgZnVuY3Rpb24gKGxpbmtzKSB7XG4gICAgICBsaW5rcy5mb3JFYWNoKGZ1bmN0aW9uIChsaW5rKSB7XG4gICAgICAgIGlmIChnLmhhc05vZGUobGluay5mcm9tKSAmJiBnLmhhc05vZGUobGluay50bykpIHtcbiAgICAgICAgICBlZGdlcy5wdXNoKGxpbmspO1xuICAgICAgICB9XG4gICAgICB9KTtcbiAgICB9KTtcblxuICAgIHJldHVybiB7XG4gICAgICBlZGdlczogZWRnZXMsXG4gICAgICBub2Rlczogbm9kZXMsXG4gICAgICBjZW50ZXI6IGNlbnRlcixcbiAgICAgIG1uOiBtbixcbiAgICAgIG14OiBteFxuICAgIH07XG4gIH0sXG5cbiAgLyoqXG4gICAqIERyYXdzIHRoZSBjdXJyZW50IGluc3BlY3RvciBpbiB0aGUgY2FudmFzIHdpdGggdGhlIGZvbGxvd2luZyBzdGVwczpcbiAgICpcbiAgICogLSBjbGVhcnMgdGhlIGNhbnZhc1xuICAgKiAtIHByb2Nlc3NlcyB0aGUgZGF0YSBvZiB0aGUgY3VycmVudCBpbnNwZWN0b3JcbiAgICogLSByZW5kZXJzIHRoZSBkYXRhIHByb2R1Y2VkIGJ5IHRoZSBtZXRob2QgYWJvdmVcbiAgICogLSBub3RpZmllcyB0aGUgdXNlciBvZiBhbnkgYWN0aW9uIHBlcmZvcm1lZFxuICAgKlxuICAgKiBAcGFyYW0ge0luc3BlY3Rvcn0gW2luc3BlY3Rvcl1cbiAgICogQHBhcmFtIHtPYmplY3R9IFtyZW5kZXJlcl1cbiAgICovXG4gIHJlbmRlcjogZnVuY3Rpb24gKGluc3BlY3RvciwgcmVuZGVyZXIpIHtcbiAgICB2YXIgZGF0YTtcbiAgICB2YXIgbWUgPSB0aGlzO1xuXG4gICAgaW5zcGVjdG9yID0gaW5zcGVjdG9yIHx8IHBvam92aXouZ2V0Q3VycmVudEluc3BlY3RvcigpO1xuICAgIHJlbmRlcmVyID0gcmVuZGVyZXIgfHwgcG9qb3Zpei5kcmF3LmdldFJlbmRlcmVyKCk7XG5cbiAgICB1dGlscy5ub3RpZmljYXRpb24oJ3Byb2Nlc3NpbmcgJyArIGluc3BlY3Rvci5lbnRyeVBvaW50KTtcblxuICAgIC8vIHByZSByZW5kZXJcbiAgICByZW5kZXJlci5jbGVhcigpO1xuXG4gICAgc2V0VGltZW91dChmdW5jdGlvbiAoKSB7XG4gICAgICBpbnNwZWN0b3IucHJlUmVuZGVyKCk7XG4gICAgICBjb25zb2xlLmxvZygncHJvY2VzcyAmIHJlbmRlciBzdGFydDogJywgbmV3IERhdGUoKSk7XG4gICAgICAvLyBkYXRhOlxuICAgICAgLy8gLSBlZGdlcyAocHJvcGVydHkgLT4gbm9kZSlcbiAgICAgIC8vIC0gbm9kZXNcbiAgICAgIC8vIC0gY2VudGVyXG4gICAgICBjb25zb2xlLnRpbWUoJ3Byb2Nlc3MnKTtcbiAgICAgIGRhdGEgPSBtZS5wcm9jZXNzKGluc3BlY3Rvcik7XG4gICAgICBjb25zb2xlLnRpbWVFbmQoJ3Byb2Nlc3MnKTtcblxuICAgICAgdXRpbHMubm90aWZpY2F0aW9uKCdyZW5kZXJpbmcgJyArIChpbnNwZWN0b3IuZGlzcGxheU5hbWUgfHwgaW5zcGVjdG9yLmVudHJ5UG9pbnQpKTtcblxuICAgICAgY29uc29sZS50aW1lKCdyZW5kZXInKTtcbiAgICAgIHJlbmRlcmVyLnJlbmRlcihkYXRhKTtcbiAgICAgIGNvbnNvbGUudGltZUVuZCgncmVuZGVyJyk7XG5cbiAgICAgIHV0aWxzLm5vdGlmaWNhdGlvbignY29tcGxldGUhJyk7XG4gICAgfSwgMCk7XG4gIH0sXG5cbiAgLyoqXG4gICAqIEFkZHMgYSByZW5kZXJlciB0byB0aGUgYXZhaWxhYmxlIHJlbmRlcmVyc1xuICAgKiBAcGFyYW0ge3N0cmluZ30ga2V5XG4gICAqIEBwYXJhbSB7T2JqZWN0fSB2YWx1ZSBJdCBuZWVkcyB0byBoYXZlIHRoZSBmb2xsb3dpbmcgbWV0aG9kczpcbiAgICogIC0gY2xlYXJcbiAgICogIC0gcmVuZGVyXG4gICAqL1xuICBhZGRSZW5kZXJlcjogZnVuY3Rpb24gKGtleSwgdmFsdWUpIHtcbiAgICAvLyB0aGUgcmVuZGVyZXIgbXVzdCBiZSBhbiBvYmplY3QgYW5kIGhhdmUgdGhlIGZvbGxvd2luZyBtZXRob2RzOlxuICAgIC8vIC0gcmVuZGVyXG4gICAgLy8gLSBjbGVhclxuICAgIGFzc2VydCh2YWx1ZSAmJiB0eXBlb2YgdmFsdWUgPT09ICdvYmplY3QnLCAndmFsdWUgaXMgbm90IGFuIG9iamVjdCcpO1xuICAgIGFzc2VydCh2YWx1ZS5jbGVhciAmJiB2YWx1ZS5yZW5kZXIsICdjbGVhciAmIHJlbmRlciBtdXN0IGJlIGRlZmluZWQgb24gb2JqZWN0Jyk7XG4gICAgdGhpcy5yZW5kZXJlcnNba2V5XSA9IHZhbHVlO1xuICB9LFxuXG4gIC8qKlxuICAgKiBVcGRhdGVzIHRoZSB2YWx1ZSBvZiB0aGUgY3VycmVudCByZW5kZXJlclxuICAgKiBAcGFyYW0ge3N0cmluZ30gclxuICAgKi9cbiAgc2V0UmVuZGVyZXI6IGZ1bmN0aW9uIChyKSB7XG4gICAgcmVuZGVyZXIgPSB0aGlzLnJlbmRlcmVyc1tyXTtcbiAgfSxcblxuICAvKipcbiAgICogR2V0cyB0aGUgY3VycmVudCByZW5kZXJlclxuICAgKiBAcmV0dXJucyB7Kn1cbiAgICovXG4gIGdldFJlbmRlcmVyOiBmdW5jdGlvbiAoKSB7XG4gICAgcmV0dXJuIHJlbmRlcmVyO1xuICB9XG59OyIsIi8qKlxuICogQGF1dGhvciBxaWFvIC8gaHR0cHM6Ly9naXRodWIuY29tL3FpYW9cbiAqIEBhdXRob3IgbXJkb29iIC8gaHR0cDovL21yZG9vYi5jb21cbiAqIEBhdXRob3IgYWx0ZXJlZHEgLyBodHRwOi8vYWx0ZXJlZHF1YWxpYS5jb20vXG4gKiBAYXV0aG9yIFdlc3RMYW5nbGV5IC8gaHR0cDovL2dpdGh1Yi5jb20vV2VzdExhbmdsZXlcbiAqIEBhdXRob3IgZXJpY2g2NjYgLyBodHRwOi8vZXJpY2hhaW5lcy5jb21cbiAqL1xuLypnbG9iYWwgVEhSRUUsIGNvbnNvbGUgKi9cblxuLy8gVGhpcyBzZXQgb2YgY29udHJvbHMgcGVyZm9ybXMgb3JiaXRpbmcsIGRvbGx5aW5nICh6b29taW5nKSwgYW5kIHBhbm5pbmcuIEl0IG1haW50YWluc1xuLy8gdGhlIFwidXBcIiBkaXJlY3Rpb24gYXMgK1ksIHVubGlrZSB0aGUgVHJhY2tiYWxsQ29udHJvbHMuIFRvdWNoIG9uIHRhYmxldCBhbmQgcGhvbmVzIGlzXG4vLyBzdXBwb3J0ZWQuXG4vL1xuLy8gICAgT3JiaXQgLSBsZWZ0IG1vdXNlIC8gdG91Y2g6IG9uZSBmaW5nZXIgbW92ZVxuLy8gICAgWm9vbSAtIG1pZGRsZSBtb3VzZSwgb3IgbW91c2V3aGVlbCAvIHRvdWNoOiB0d28gZmluZ2VyIHNwcmVhZCBvciBzcXVpc2hcbi8vICAgIFBhbiAtIHJpZ2h0IG1vdXNlLCBvciBhcnJvdyBrZXlzIC8gdG91Y2g6IHRocmVlIGZpbnRlciBzd2lwZVxuLy9cbi8vIFRoaXMgaXMgYSBkcm9wLWluIHJlcGxhY2VtZW50IGZvciAobW9zdCkgVHJhY2tiYWxsQ29udHJvbHMgdXNlZCBpbiBleGFtcGxlcy5cbi8vIFRoYXQgaXMsIGluY2x1ZGUgdGhpcyBqcyBmaWxlIGFuZCB3aGVyZXZlciB5b3Ugc2VlOlxuLy8gICAgICBjb250cm9scyA9IG5ldyBUSFJFRS5UcmFja2JhbGxDb250cm9scyggY2FtZXJhICk7XG4vLyAgICAgIGNvbnRyb2xzLnRhcmdldC56ID0gMTUwO1xuLy8gU2ltcGxlIHN1YnN0aXR1dGUgXCJQYW5Db250cm9sc1wiIGFuZCB0aGUgY29udHJvbCBzaG91bGQgd29yayBhcy1pcy5cblxuVEhSRUUuUGFuQ29udHJvbHMgPSBmdW5jdGlvbiAoIG9iamVjdCwgZG9tRWxlbWVudCApIHtcblxuXHR0aGlzLm9iamVjdCA9IG9iamVjdDtcblx0dGhpcy5kb21FbGVtZW50ID0gKCBkb21FbGVtZW50ICE9PSB1bmRlZmluZWQgKSA/IGRvbUVsZW1lbnQgOiBkb2N1bWVudDtcblxuXHQvLyBBUElcblxuXHQvLyBTZXQgdG8gZmFsc2UgdG8gZGlzYWJsZSB0aGlzIGNvbnRyb2xcblx0dGhpcy5lbmFibGVkID0gdHJ1ZTtcblxuXHQvLyBcInRhcmdldFwiIHNldHMgdGhlIGxvY2F0aW9uIG9mIGZvY3VzLCB3aGVyZSB0aGUgY29udHJvbCBvcmJpdHMgYXJvdW5kXG5cdC8vIGFuZCB3aGVyZSBpdCBwYW5zIHdpdGggcmVzcGVjdCB0by5cblx0dGhpcy50YXJnZXQgPSBuZXcgVEhSRUUuVmVjdG9yMygpO1xuXG5cdC8vIGNlbnRlciBpcyBvbGQsIGRlcHJlY2F0ZWQ7IHVzZSBcInRhcmdldFwiIGluc3RlYWRcblx0dGhpcy5jZW50ZXIgPSB0aGlzLnRhcmdldDtcblxuXHQvLyBUaGlzIG9wdGlvbiBhY3R1YWxseSBlbmFibGVzIGRvbGx5aW5nIGluIGFuZCBvdXQ7IGxlZnQgYXMgXCJ6b29tXCIgZm9yXG5cdC8vIGJhY2t3YXJkcyBjb21wYXRpYmlsaXR5XG5cdHRoaXMubm9ab29tID0gZmFsc2U7XG5cdHRoaXMuem9vbVNwZWVkID0gMS4wO1xuXG5cdC8vIExpbWl0cyB0byBob3cgZmFyIHlvdSBjYW4gZG9sbHkgaW4gYW5kIG91dFxuXHR0aGlzLm1pbkRpc3RhbmNlID0gMDtcblx0dGhpcy5tYXhEaXN0YW5jZSA9IEluZmluaXR5O1xuXG5cdC8vIFNldCB0byB0cnVlIHRvIGRpc2FibGUgdGhpcyBjb250cm9sXG5cdHRoaXMubm9Sb3RhdGUgPSBmYWxzZTtcblx0dGhpcy5yb3RhdGVTcGVlZCA9IDEuMDtcblxuXHQvLyBTZXQgdG8gdHJ1ZSB0byBkaXNhYmxlIHRoaXMgY29udHJvbFxuXHR0aGlzLm5vUGFuID0gZmFsc2U7XG5cdHRoaXMua2V5UGFuU3BlZWQgPSA3LjA7XHQvLyBwaXhlbHMgbW92ZWQgcGVyIGFycm93IGtleSBwdXNoXG5cblx0Ly8gU2V0IHRvIHRydWUgdG8gYXV0b21hdGljYWxseSByb3RhdGUgYXJvdW5kIHRoZSB0YXJnZXRcblx0dGhpcy5hdXRvUm90YXRlID0gZmFsc2U7XG5cdHRoaXMuYXV0b1JvdGF0ZVNwZWVkID0gMi4wOyAvLyAzMCBzZWNvbmRzIHBlciByb3VuZCB3aGVuIGZwcyBpcyA2MFxuXG5cdC8vIEhvdyBmYXIgeW91IGNhbiBvcmJpdCB2ZXJ0aWNhbGx5LCB1cHBlciBhbmQgbG93ZXIgbGltaXRzLlxuXHQvLyBSYW5nZSBpcyAwIHRvIE1hdGguUEkgcmFkaWFucy5cblx0dGhpcy5taW5Qb2xhckFuZ2xlID0gMDsgLy8gcmFkaWFuc1xuXHR0aGlzLm1heFBvbGFyQW5nbGUgPSBNYXRoLlBJOyAvLyByYWRpYW5zXG5cblx0Ly8gU2V0IHRvIHRydWUgdG8gZGlzYWJsZSB1c2Ugb2YgdGhlIGtleXNcblx0dGhpcy5ub0tleXMgPSBmYWxzZTtcblxuXHQvLyBUaGUgZm91ciBhcnJvdyBrZXlzXG5cdHRoaXMua2V5cyA9IHsgTEVGVDogMzcsIFVQOiAzOCwgUklHSFQ6IDM5LCBCT1RUT006IDQwIH07XG5cblx0Ly8vLy8vLy8vLy8vXG5cdC8vIGludGVybmFsc1xuXG5cdHZhciBzY29wZSA9IHRoaXM7XG5cblx0dmFyIEVQUyA9IDAuMDAwMDAxO1xuXG5cdHZhciByb3RhdGVTdGFydCA9IG5ldyBUSFJFRS5WZWN0b3IyKCk7XG5cdHZhciByb3RhdGVFbmQgPSBuZXcgVEhSRUUuVmVjdG9yMigpO1xuXHR2YXIgcm90YXRlRGVsdGEgPSBuZXcgVEhSRUUuVmVjdG9yMigpO1xuXG5cdHZhciBwYW5TdGFydCA9IG5ldyBUSFJFRS5WZWN0b3IyKCk7XG5cdHZhciBwYW5FbmQgPSBuZXcgVEhSRUUuVmVjdG9yMigpO1xuXHR2YXIgcGFuRGVsdGEgPSBuZXcgVEhSRUUuVmVjdG9yMigpO1xuXHR2YXIgcGFuT2Zmc2V0ID0gbmV3IFRIUkVFLlZlY3RvcjMoKTtcblxuXHR2YXIgb2Zmc2V0ID0gbmV3IFRIUkVFLlZlY3RvcjMoKTtcblxuXHR2YXIgZG9sbHlTdGFydCA9IG5ldyBUSFJFRS5WZWN0b3IyKCk7XG5cdHZhciBkb2xseUVuZCA9IG5ldyBUSFJFRS5WZWN0b3IyKCk7XG5cdHZhciBkb2xseURlbHRhID0gbmV3IFRIUkVFLlZlY3RvcjIoKTtcblxuXHR2YXIgcGhpRGVsdGEgPSAwO1xuXHR2YXIgdGhldGFEZWx0YSA9IDA7XG5cdHZhciBzY2FsZSA9IDE7XG5cdHZhciBwYW4gPSBuZXcgVEhSRUUuVmVjdG9yMygpO1xuXG5cdHZhciBsYXN0UG9zaXRpb24gPSBuZXcgVEhSRUUuVmVjdG9yMygpO1xuXHR2YXIgbGFzdFF1YXRlcm5pb24gPSBuZXcgVEhSRUUuUXVhdGVybmlvbigpO1xuXG5cdHZhciBTVEFURSA9IHsgTk9ORSA6IC0xLCBST1RBVEUgOiAwLCBET0xMWSA6IDEsIFBBTiA6IDIsIFRPVUNIX1JPVEFURSA6IDMsIFRPVUNIX0RPTExZIDogNCwgVE9VQ0hfUEFOIDogNSB9O1xuXG5cdHZhciBzdGF0ZSA9IFNUQVRFLk5PTkU7XG5cblx0Ly8gZm9yIHJlc2V0XG5cblx0dGhpcy50YXJnZXQwID0gdGhpcy50YXJnZXQuY2xvbmUoKTtcblx0dGhpcy5wb3NpdGlvbjAgPSB0aGlzLm9iamVjdC5wb3NpdGlvbi5jbG9uZSgpO1xuXG5cdC8vIHNvIGNhbWVyYS51cCBpcyB0aGUgb3JiaXQgYXhpc1xuXG5cdHZhciBxdWF0ID0gbmV3IFRIUkVFLlF1YXRlcm5pb24oKS5zZXRGcm9tVW5pdFZlY3RvcnMoIG9iamVjdC51cCwgbmV3IFRIUkVFLlZlY3RvcjMoIDAsIDEsIDAgKSApO1xuXHR2YXIgcXVhdEludmVyc2UgPSBxdWF0LmNsb25lKCkuaW52ZXJzZSgpO1xuXG5cdC8vIGV2ZW50c1xuXG5cdHZhciBjaGFuZ2VFdmVudCA9IHsgdHlwZTogJ2NoYW5nZScgfTtcblx0dmFyIHN0YXJ0RXZlbnQgPSB7IHR5cGU6ICdzdGFydCd9O1xuXHR2YXIgZW5kRXZlbnQgPSB7IHR5cGU6ICdlbmQnfTtcblxuXHR0aGlzLnJvdGF0ZUxlZnQgPSBmdW5jdGlvbiAoIGFuZ2xlICkge1xuXG5cdFx0aWYgKCBhbmdsZSA9PT0gdW5kZWZpbmVkICkge1xuXG5cdFx0XHRhbmdsZSA9IGdldEF1dG9Sb3RhdGlvbkFuZ2xlKCk7XG5cblx0XHR9XG5cblx0XHR0aGV0YURlbHRhIC09IGFuZ2xlO1xuXG5cdH07XG5cblx0dGhpcy5yb3RhdGVVcCA9IGZ1bmN0aW9uICggYW5nbGUgKSB7XG5cblx0XHRpZiAoIGFuZ2xlID09PSB1bmRlZmluZWQgKSB7XG5cblx0XHRcdGFuZ2xlID0gZ2V0QXV0b1JvdGF0aW9uQW5nbGUoKTtcblxuXHRcdH1cblxuXHRcdHBoaURlbHRhIC09IGFuZ2xlO1xuXG5cdH07XG5cblx0Ly8gcGFzcyBpbiBkaXN0YW5jZSBpbiB3b3JsZCBzcGFjZSB0byBtb3ZlIGxlZnRcblx0dGhpcy5wYW5MZWZ0ID0gZnVuY3Rpb24gKCBkaXN0YW5jZSApIHtcblxuXHRcdHZhciB0ZSA9IHRoaXMub2JqZWN0Lm1hdHJpeC5lbGVtZW50cztcblxuXHRcdC8vIGdldCBYIGNvbHVtbiBvZiBtYXRyaXhcblx0XHRwYW5PZmZzZXQuc2V0KCB0ZVsgMCBdLCB0ZVsgMSBdLCB0ZVsgMiBdICk7XG5cdFx0cGFuT2Zmc2V0Lm11bHRpcGx5U2NhbGFyKCAtIGRpc3RhbmNlICk7XG5cblx0XHRwYW4uYWRkKCBwYW5PZmZzZXQgKTtcblxuXHR9O1xuXG5cdC8vIHBhc3MgaW4gZGlzdGFuY2UgaW4gd29ybGQgc3BhY2UgdG8gbW92ZSB1cFxuXHR0aGlzLnBhblVwID0gZnVuY3Rpb24gKCBkaXN0YW5jZSApIHtcblxuXHRcdHZhciB0ZSA9IHRoaXMub2JqZWN0Lm1hdHJpeC5lbGVtZW50cztcblxuXHRcdC8vIGdldCBZIGNvbHVtbiBvZiBtYXRyaXhcblx0XHRwYW5PZmZzZXQuc2V0KCB0ZVsgNCBdLCB0ZVsgNSBdLCB0ZVsgNiBdICk7XG5cdFx0cGFuT2Zmc2V0Lm11bHRpcGx5U2NhbGFyKCBkaXN0YW5jZSApO1xuXG5cdFx0cGFuLmFkZCggcGFuT2Zmc2V0ICk7XG5cblx0fTtcblxuXHQvLyBwYXNzIGluIHgseSBvZiBjaGFuZ2UgZGVzaXJlZCBpbiBwaXhlbCBzcGFjZSxcblx0Ly8gcmlnaHQgYW5kIGRvd24gYXJlIHBvc2l0aXZlXG5cdHRoaXMucGFuID0gZnVuY3Rpb24gKCBkZWx0YVgsIGRlbHRhWSApIHtcblxuXHRcdHZhciBlbGVtZW50ID0gc2NvcGUuZG9tRWxlbWVudCA9PT0gZG9jdW1lbnQgPyBzY29wZS5kb21FbGVtZW50LmJvZHkgOiBzY29wZS5kb21FbGVtZW50O1xuXG5cdFx0aWYgKCBzY29wZS5vYmplY3QuZm92ICE9PSB1bmRlZmluZWQgKSB7XG5cblx0XHRcdC8vIHBlcnNwZWN0aXZlXG5cdFx0XHR2YXIgcG9zaXRpb24gPSBzY29wZS5vYmplY3QucG9zaXRpb247XG5cdFx0XHR2YXIgb2Zmc2V0ID0gcG9zaXRpb24uY2xvbmUoKS5zdWIoIHNjb3BlLnRhcmdldCApO1xuXHRcdFx0dmFyIHRhcmdldERpc3RhbmNlID0gb2Zmc2V0Lmxlbmd0aCgpO1xuXG5cdFx0XHQvLyBoYWxmIG9mIHRoZSBmb3YgaXMgY2VudGVyIHRvIHRvcCBvZiBzY3JlZW5cblx0XHRcdHRhcmdldERpc3RhbmNlICo9IE1hdGgudGFuKCAoIHNjb3BlLm9iamVjdC5mb3YgLyAyICkgKiBNYXRoLlBJIC8gMTgwLjAgKTtcblxuXHRcdFx0Ly8gd2UgYWN0dWFsbHkgZG9uJ3QgdXNlIHNjcmVlbldpZHRoLCBzaW5jZSBwZXJzcGVjdGl2ZSBjYW1lcmEgaXMgZml4ZWQgdG8gc2NyZWVuIGhlaWdodFxuXHRcdFx0c2NvcGUucGFuTGVmdCggMiAqIGRlbHRhWCAqIHRhcmdldERpc3RhbmNlIC8gZWxlbWVudC5jbGllbnRIZWlnaHQgKTtcblx0XHRcdHNjb3BlLnBhblVwKCAyICogZGVsdGFZICogdGFyZ2V0RGlzdGFuY2UgLyBlbGVtZW50LmNsaWVudEhlaWdodCApO1xuXG5cdFx0fSBlbHNlIGlmICggc2NvcGUub2JqZWN0LnRvcCAhPT0gdW5kZWZpbmVkICkge1xuXG5cdFx0XHQvLyBvcnRob2dyYXBoaWNcblx0XHRcdHNjb3BlLnBhbkxlZnQoIGRlbHRhWCAqIChzY29wZS5vYmplY3QucmlnaHQgLSBzY29wZS5vYmplY3QubGVmdCkgLyBlbGVtZW50LmNsaWVudFdpZHRoICk7XG5cdFx0XHRzY29wZS5wYW5VcCggZGVsdGFZICogKHNjb3BlLm9iamVjdC50b3AgLSBzY29wZS5vYmplY3QuYm90dG9tKSAvIGVsZW1lbnQuY2xpZW50SGVpZ2h0ICk7XG5cblx0XHR9IGVsc2Uge1xuXG5cdFx0XHQvLyBjYW1lcmEgbmVpdGhlciBvcnRob2dyYXBoaWMgb3IgcGVyc3BlY3RpdmVcblx0XHRcdGNvbnNvbGUud2FybiggJ1dBUk5JTkc6IFBhbkNvbnRyb2xzLmpzIGVuY291bnRlcmVkIGFuIHVua25vd24gY2FtZXJhIHR5cGUgLSBwYW4gZGlzYWJsZWQuJyApO1xuXG5cdFx0fVxuXG5cdH07XG5cblx0dGhpcy5kb2xseUluID0gZnVuY3Rpb24gKCBkb2xseVNjYWxlICkge1xuXG5cdFx0aWYgKCBkb2xseVNjYWxlID09PSB1bmRlZmluZWQgKSB7XG5cblx0XHRcdGRvbGx5U2NhbGUgPSBnZXRab29tU2NhbGUoKTtcblxuXHRcdH1cblxuXHRcdHNjYWxlIC89IGRvbGx5U2NhbGU7XG5cblx0fTtcblxuXHR0aGlzLmRvbGx5T3V0ID0gZnVuY3Rpb24gKCBkb2xseVNjYWxlICkge1xuXG5cdFx0aWYgKCBkb2xseVNjYWxlID09PSB1bmRlZmluZWQgKSB7XG5cblx0XHRcdGRvbGx5U2NhbGUgPSBnZXRab29tU2NhbGUoKTtcblxuXHRcdH1cblxuXHRcdHNjYWxlICo9IGRvbGx5U2NhbGU7XG5cblx0fTtcblxuXHR0aGlzLnVwZGF0ZSA9IGZ1bmN0aW9uICgpIHtcblxuXHRcdHZhciBwb3NpdGlvbiA9IHRoaXMub2JqZWN0LnBvc2l0aW9uO1xuXG5cdFx0b2Zmc2V0LmNvcHkoIHBvc2l0aW9uICkuc3ViKCB0aGlzLnRhcmdldCApO1xuXG5cdFx0Ly8gcm90YXRlIG9mZnNldCB0byBcInktYXhpcy1pcy11cFwiIHNwYWNlXG5cdFx0b2Zmc2V0LmFwcGx5UXVhdGVybmlvbiggcXVhdCApO1xuXG5cdFx0Ly8gYW5nbGUgZnJvbSB6LWF4aXMgYXJvdW5kIHktYXhpc1xuXG5cdFx0dmFyIHRoZXRhID0gTWF0aC5hdGFuMiggb2Zmc2V0LngsIG9mZnNldC56ICk7XG5cblx0XHQvLyBhbmdsZSBmcm9tIHktYXhpc1xuXG5cdFx0dmFyIHBoaSA9IE1hdGguYXRhbjIoIE1hdGguc3FydCggb2Zmc2V0LnggKiBvZmZzZXQueCArIG9mZnNldC56ICogb2Zmc2V0LnogKSwgb2Zmc2V0LnkgKTtcblxuXHRcdGlmICggdGhpcy5hdXRvUm90YXRlICkge1xuXG5cdFx0XHR0aGlzLnJvdGF0ZUxlZnQoIGdldEF1dG9Sb3RhdGlvbkFuZ2xlKCkgKTtcblxuXHRcdH1cblxuXHRcdHRoZXRhICs9IHRoZXRhRGVsdGE7XG5cdFx0cGhpICs9IHBoaURlbHRhO1xuXG5cdFx0Ly8gcmVzdHJpY3QgcGhpIHRvIGJlIGJldHdlZW4gZGVzaXJlZCBsaW1pdHNcblx0XHRwaGkgPSBNYXRoLm1heCggdGhpcy5taW5Qb2xhckFuZ2xlLCBNYXRoLm1pbiggdGhpcy5tYXhQb2xhckFuZ2xlLCBwaGkgKSApO1xuXG5cdFx0Ly8gcmVzdHJpY3QgcGhpIHRvIGJlIGJldHdlZSBFUFMgYW5kIFBJLUVQU1xuXHRcdHBoaSA9IE1hdGgubWF4KCBFUFMsIE1hdGgubWluKCBNYXRoLlBJIC0gRVBTLCBwaGkgKSApO1xuXG5cdFx0dmFyIHJhZGl1cyA9IG9mZnNldC5sZW5ndGgoKSAqIHNjYWxlO1xuXG5cdFx0Ly8gcmVzdHJpY3QgcmFkaXVzIHRvIGJlIGJldHdlZW4gZGVzaXJlZCBsaW1pdHNcblx0XHRyYWRpdXMgPSBNYXRoLm1heCggdGhpcy5taW5EaXN0YW5jZSwgTWF0aC5taW4oIHRoaXMubWF4RGlzdGFuY2UsIHJhZGl1cyApICk7XG5cblx0XHQvLyBtb3ZlIHRhcmdldCB0byBwYW5uZWQgbG9jYXRpb25cblx0XHR0aGlzLnRhcmdldC5hZGQoIHBhbiApO1xuXG5cdFx0b2Zmc2V0LnggPSByYWRpdXMgKiBNYXRoLnNpbiggcGhpICkgKiBNYXRoLnNpbiggdGhldGEgKTtcblx0XHRvZmZzZXQueSA9IHJhZGl1cyAqIE1hdGguY29zKCBwaGkgKTtcblx0XHRvZmZzZXQueiA9IHJhZGl1cyAqIE1hdGguc2luKCBwaGkgKSAqIE1hdGguY29zKCB0aGV0YSApO1xuXG5cdFx0Ly8gcm90YXRlIG9mZnNldCBiYWNrIHRvIFwiY2FtZXJhLXVwLXZlY3Rvci1pcy11cFwiIHNwYWNlXG5cdFx0b2Zmc2V0LmFwcGx5UXVhdGVybmlvbiggcXVhdEludmVyc2UgKTtcblxuXHRcdHBvc2l0aW9uLmNvcHkoIHRoaXMudGFyZ2V0ICkuYWRkKCBvZmZzZXQgKTtcblxuXHRcdHRoaXMub2JqZWN0Lmxvb2tBdCggdGhpcy50YXJnZXQgKTtcblxuXHRcdHRoZXRhRGVsdGEgPSAwO1xuXHRcdHBoaURlbHRhID0gMDtcblx0XHRzY2FsZSA9IDE7XG5cdFx0cGFuLnNldCggMCwgMCwgMCApO1xuXG5cdFx0Ly8gdXBkYXRlIGNvbmRpdGlvbiBpczpcblx0XHQvLyBtaW4oY2FtZXJhIGRpc3BsYWNlbWVudCwgY2FtZXJhIHJvdGF0aW9uIGluIHJhZGlhbnMpXjIgPiBFUFNcblx0XHQvLyB1c2luZyBzbWFsbC1hbmdsZSBhcHByb3hpbWF0aW9uIGNvcyh4LzIpID0gMSAtIHheMiAvIDhcblxuXHRcdGlmICggbGFzdFBvc2l0aW9uLmRpc3RhbmNlVG9TcXVhcmVkKCB0aGlzLm9iamVjdC5wb3NpdGlvbiApID4gRVBTXG5cdFx0ICAgIHx8IDggKiAoMSAtIGxhc3RRdWF0ZXJuaW9uLmRvdCh0aGlzLm9iamVjdC5xdWF0ZXJuaW9uKSkgPiBFUFMgKSB7XG5cblx0XHRcdHRoaXMuZGlzcGF0Y2hFdmVudCggY2hhbmdlRXZlbnQgKTtcblxuXHRcdFx0bGFzdFBvc2l0aW9uLmNvcHkoIHRoaXMub2JqZWN0LnBvc2l0aW9uICk7XG5cdFx0XHRsYXN0UXVhdGVybmlvbi5jb3B5ICh0aGlzLm9iamVjdC5xdWF0ZXJuaW9uICk7XG5cblx0XHR9XG5cblx0fTtcblxuXG5cdHRoaXMucmVzZXQgPSBmdW5jdGlvbiAoKSB7XG5cblx0XHRzdGF0ZSA9IFNUQVRFLk5PTkU7XG5cblx0XHR0aGlzLnRhcmdldC5jb3B5KCB0aGlzLnRhcmdldDAgKTtcblx0XHR0aGlzLm9iamVjdC5wb3NpdGlvbi5jb3B5KCB0aGlzLnBvc2l0aW9uMCApO1xuXG5cdFx0dGhpcy51cGRhdGUoKTtcblxuXHR9O1xuXG5cdGZ1bmN0aW9uIGdldEF1dG9Sb3RhdGlvbkFuZ2xlKCkge1xuXG5cdFx0cmV0dXJuIDIgKiBNYXRoLlBJIC8gNjAgLyA2MCAqIHNjb3BlLmF1dG9Sb3RhdGVTcGVlZDtcblxuXHR9XG5cblx0ZnVuY3Rpb24gZ2V0Wm9vbVNjYWxlKCkge1xuXG5cdFx0cmV0dXJuIE1hdGgucG93KCAwLjk1LCBzY29wZS56b29tU3BlZWQgKTtcblxuXHR9XG5cblx0ZnVuY3Rpb24gb25Nb3VzZURvd24oIGV2ZW50ICkge1xuXG5cdFx0aWYgKCBzY29wZS5lbmFibGVkID09PSBmYWxzZSApIHJldHVybjtcblx0XHRldmVudC5wcmV2ZW50RGVmYXVsdCgpO1xuXG5cdFx0aWYgKCBldmVudC5idXR0b24gPT09IDIgKSB7XG5cdFx0XHRpZiAoIHNjb3BlLm5vUm90YXRlID09PSB0cnVlICkgcmV0dXJuO1xuXG5cdFx0XHRzdGF0ZSA9IFNUQVRFLlJPVEFURTtcblxuXHRcdFx0cm90YXRlU3RhcnQuc2V0KCBldmVudC5jbGllbnRYLCBldmVudC5jbGllbnRZICk7XG5cblx0XHR9IGVsc2UgaWYgKCBldmVudC5idXR0b24gPT09IDEgKSB7XG5cdFx0XHRpZiAoIHNjb3BlLm5vWm9vbSA9PT0gdHJ1ZSApIHJldHVybjtcblxuXHRcdFx0c3RhdGUgPSBTVEFURS5ET0xMWTtcblxuXHRcdFx0ZG9sbHlTdGFydC5zZXQoIGV2ZW50LmNsaWVudFgsIGV2ZW50LmNsaWVudFkgKTtcblxuXHRcdH0gZWxzZSBpZiAoIGV2ZW50LmJ1dHRvbiA9PT0gMCApIHtcblx0XHRcdGlmICggc2NvcGUubm9QYW4gPT09IHRydWUgKSByZXR1cm47XG5cblx0XHRcdHN0YXRlID0gU1RBVEUuUEFOO1xuXG5cdFx0XHRwYW5TdGFydC5zZXQoIGV2ZW50LmNsaWVudFgsIGV2ZW50LmNsaWVudFkgKTtcblxuXHRcdH1cblxuXHRcdGRvY3VtZW50LmFkZEV2ZW50TGlzdGVuZXIoICdtb3VzZW1vdmUnLCBvbk1vdXNlTW92ZSwgZmFsc2UgKTtcblx0XHRkb2N1bWVudC5hZGRFdmVudExpc3RlbmVyKCAnbW91c2V1cCcsIG9uTW91c2VVcCwgZmFsc2UgKTtcblx0XHRzY29wZS5kaXNwYXRjaEV2ZW50KCBzdGFydEV2ZW50ICk7XG5cblx0fVxuXG5cdGZ1bmN0aW9uIG9uTW91c2VNb3ZlKCBldmVudCApIHtcblxuXHRcdGlmICggc2NvcGUuZW5hYmxlZCA9PT0gZmFsc2UgKSByZXR1cm47XG5cblx0XHRldmVudC5wcmV2ZW50RGVmYXVsdCgpO1xuXG5cdFx0dmFyIGVsZW1lbnQgPSBzY29wZS5kb21FbGVtZW50ID09PSBkb2N1bWVudCA/IHNjb3BlLmRvbUVsZW1lbnQuYm9keSA6IHNjb3BlLmRvbUVsZW1lbnQ7XG5cblx0XHRpZiAoIHN0YXRlID09PSBTVEFURS5ST1RBVEUgKSB7XG5cblx0XHRcdGlmICggc2NvcGUubm9Sb3RhdGUgPT09IHRydWUgKSByZXR1cm47XG5cblx0XHRcdHJvdGF0ZUVuZC5zZXQoIGV2ZW50LmNsaWVudFgsIGV2ZW50LmNsaWVudFkgKTtcblx0XHRcdHJvdGF0ZURlbHRhLnN1YlZlY3RvcnMoIHJvdGF0ZUVuZCwgcm90YXRlU3RhcnQgKTtcblxuXHRcdFx0Ly8gcm90YXRpbmcgYWNyb3NzIHdob2xlIHNjcmVlbiBnb2VzIDM2MCBkZWdyZWVzIGFyb3VuZFxuXHRcdFx0c2NvcGUucm90YXRlTGVmdCggMiAqIE1hdGguUEkgKiByb3RhdGVEZWx0YS54IC8gZWxlbWVudC5jbGllbnRXaWR0aCAqIHNjb3BlLnJvdGF0ZVNwZWVkICk7XG5cblx0XHRcdC8vIHJvdGF0aW5nIHVwIGFuZCBkb3duIGFsb25nIHdob2xlIHNjcmVlbiBhdHRlbXB0cyB0byBnbyAzNjAsIGJ1dCBsaW1pdGVkIHRvIDE4MFxuXHRcdFx0c2NvcGUucm90YXRlVXAoIDIgKiBNYXRoLlBJICogcm90YXRlRGVsdGEueSAvIGVsZW1lbnQuY2xpZW50SGVpZ2h0ICogc2NvcGUucm90YXRlU3BlZWQgKTtcblxuXHRcdFx0cm90YXRlU3RhcnQuY29weSggcm90YXRlRW5kICk7XG5cblx0XHR9IGVsc2UgaWYgKCBzdGF0ZSA9PT0gU1RBVEUuRE9MTFkgKSB7XG5cblx0XHRcdGlmICggc2NvcGUubm9ab29tID09PSB0cnVlICkgcmV0dXJuO1xuXG5cdFx0XHRkb2xseUVuZC5zZXQoIGV2ZW50LmNsaWVudFgsIGV2ZW50LmNsaWVudFkgKTtcblx0XHRcdGRvbGx5RGVsdGEuc3ViVmVjdG9ycyggZG9sbHlFbmQsIGRvbGx5U3RhcnQgKTtcblxuXHRcdFx0aWYgKCBkb2xseURlbHRhLnkgPiAwICkge1xuXG5cdFx0XHRcdHNjb3BlLmRvbGx5SW4oKTtcblxuXHRcdFx0fSBlbHNlIHtcblxuXHRcdFx0XHRzY29wZS5kb2xseU91dCgpO1xuXG5cdFx0XHR9XG5cblx0XHRcdGRvbGx5U3RhcnQuY29weSggZG9sbHlFbmQgKTtcblxuXHRcdH0gZWxzZSBpZiAoIHN0YXRlID09PSBTVEFURS5QQU4gKSB7XG5cblx0XHRcdGlmICggc2NvcGUubm9QYW4gPT09IHRydWUgKSByZXR1cm47XG5cblx0XHRcdHBhbkVuZC5zZXQoIGV2ZW50LmNsaWVudFgsIGV2ZW50LmNsaWVudFkgKTtcblx0XHRcdHBhbkRlbHRhLnN1YlZlY3RvcnMoIHBhbkVuZCwgcGFuU3RhcnQgKTtcblxuXHRcdFx0c2NvcGUucGFuKCBwYW5EZWx0YS54LCBwYW5EZWx0YS55ICk7XG5cblx0XHRcdHBhblN0YXJ0LmNvcHkoIHBhbkVuZCApO1xuXG5cdFx0fVxuXG5cdFx0c2NvcGUudXBkYXRlKCk7XG5cblx0fVxuXG5cdGZ1bmN0aW9uIG9uTW91c2VVcCggLyogZXZlbnQgKi8gKSB7XG5cblx0XHRpZiAoIHNjb3BlLmVuYWJsZWQgPT09IGZhbHNlICkgcmV0dXJuO1xuXG5cdFx0ZG9jdW1lbnQucmVtb3ZlRXZlbnRMaXN0ZW5lciggJ21vdXNlbW92ZScsIG9uTW91c2VNb3ZlLCBmYWxzZSApO1xuXHRcdGRvY3VtZW50LnJlbW92ZUV2ZW50TGlzdGVuZXIoICdtb3VzZXVwJywgb25Nb3VzZVVwLCBmYWxzZSApO1xuXHRcdHNjb3BlLmRpc3BhdGNoRXZlbnQoIGVuZEV2ZW50ICk7XG5cdFx0c3RhdGUgPSBTVEFURS5OT05FO1xuXG5cdH1cblxuXHRmdW5jdGlvbiBvbk1vdXNlV2hlZWwoIGV2ZW50ICkge1xuXG5cdFx0aWYgKCBzY29wZS5lbmFibGVkID09PSBmYWxzZSB8fCBzY29wZS5ub1pvb20gPT09IHRydWUgKSByZXR1cm47XG5cblx0XHRldmVudC5wcmV2ZW50RGVmYXVsdCgpO1xuXHRcdGV2ZW50LnN0b3BQcm9wYWdhdGlvbigpO1xuXG5cdFx0dmFyIGRlbHRhID0gMDtcblxuXHRcdGlmICggZXZlbnQud2hlZWxEZWx0YSAhPT0gdW5kZWZpbmVkICkgeyAvLyBXZWJLaXQgLyBPcGVyYSAvIEV4cGxvcmVyIDlcblxuXHRcdFx0ZGVsdGEgPSBldmVudC53aGVlbERlbHRhO1xuXG5cdFx0fSBlbHNlIGlmICggZXZlbnQuZGV0YWlsICE9PSB1bmRlZmluZWQgKSB7IC8vIEZpcmVmb3hcblxuXHRcdFx0ZGVsdGEgPSAtIGV2ZW50LmRldGFpbDtcblxuXHRcdH1cblxuXHRcdGlmICggZGVsdGEgPiAwICkge1xuXG5cdFx0XHRzY29wZS5kb2xseU91dCgpO1xuXG5cdFx0fSBlbHNlIHtcblxuXHRcdFx0c2NvcGUuZG9sbHlJbigpO1xuXG5cdFx0fVxuXG5cdFx0c2NvcGUudXBkYXRlKCk7XG5cdFx0c2NvcGUuZGlzcGF0Y2hFdmVudCggc3RhcnRFdmVudCApO1xuXHRcdHNjb3BlLmRpc3BhdGNoRXZlbnQoIGVuZEV2ZW50ICk7XG5cblx0fVxuXG5cdGZ1bmN0aW9uIG9uS2V5RG93biggZXZlbnQgKSB7XG5cblx0XHRpZiAoIHNjb3BlLmVuYWJsZWQgPT09IGZhbHNlIHx8IHNjb3BlLm5vS2V5cyA9PT0gdHJ1ZSB8fCBzY29wZS5ub1BhbiA9PT0gdHJ1ZSApIHJldHVybjtcblxuXHRcdHN3aXRjaCAoIGV2ZW50LmtleUNvZGUgKSB7XG5cblx0XHRcdGNhc2Ugc2NvcGUua2V5cy5VUDpcblx0XHRcdFx0c2NvcGUucGFuKCAwLCBzY29wZS5rZXlQYW5TcGVlZCApO1xuXHRcdFx0XHRzY29wZS51cGRhdGUoKTtcblx0XHRcdFx0YnJlYWs7XG5cblx0XHRcdGNhc2Ugc2NvcGUua2V5cy5CT1RUT006XG5cdFx0XHRcdHNjb3BlLnBhbiggMCwgLSBzY29wZS5rZXlQYW5TcGVlZCApO1xuXHRcdFx0XHRzY29wZS51cGRhdGUoKTtcblx0XHRcdFx0YnJlYWs7XG5cblx0XHRcdGNhc2Ugc2NvcGUua2V5cy5MRUZUOlxuXHRcdFx0XHRzY29wZS5wYW4oIHNjb3BlLmtleVBhblNwZWVkLCAwICk7XG5cdFx0XHRcdHNjb3BlLnVwZGF0ZSgpO1xuXHRcdFx0XHRicmVhaztcblxuXHRcdFx0Y2FzZSBzY29wZS5rZXlzLlJJR0hUOlxuXHRcdFx0XHRzY29wZS5wYW4oIC0gc2NvcGUua2V5UGFuU3BlZWQsIDAgKTtcblx0XHRcdFx0c2NvcGUudXBkYXRlKCk7XG5cdFx0XHRcdGJyZWFrO1xuXG5cdFx0fVxuXG5cdH1cblxuXHRmdW5jdGlvbiB0b3VjaHN0YXJ0KCBldmVudCApIHtcblxuXHRcdGlmICggc2NvcGUuZW5hYmxlZCA9PT0gZmFsc2UgKSByZXR1cm47XG5cblx0XHRzd2l0Y2ggKCBldmVudC50b3VjaGVzLmxlbmd0aCApIHtcblxuXHRcdFx0Y2FzZSAxOlx0Ly8gb25lLWZpbmdlcmVkIHRvdWNoOiByb3RhdGVcblxuXHRcdFx0XHRpZiAoIHNjb3BlLm5vUm90YXRlID09PSB0cnVlICkgcmV0dXJuO1xuXG5cdFx0XHRcdHN0YXRlID0gU1RBVEUuVE9VQ0hfUk9UQVRFO1xuXG5cdFx0XHRcdHJvdGF0ZVN0YXJ0LnNldCggZXZlbnQudG91Y2hlc1sgMCBdLnBhZ2VYLCBldmVudC50b3VjaGVzWyAwIF0ucGFnZVkgKTtcblx0XHRcdFx0YnJlYWs7XG5cblx0XHRcdGNhc2UgMjpcdC8vIHR3by1maW5nZXJlZCB0b3VjaDogZG9sbHlcblxuXHRcdFx0XHRpZiAoIHNjb3BlLm5vWm9vbSA9PT0gdHJ1ZSApIHJldHVybjtcblxuXHRcdFx0XHRzdGF0ZSA9IFNUQVRFLlRPVUNIX0RPTExZO1xuXG5cdFx0XHRcdHZhciBkeCA9IGV2ZW50LnRvdWNoZXNbIDAgXS5wYWdlWCAtIGV2ZW50LnRvdWNoZXNbIDEgXS5wYWdlWDtcblx0XHRcdFx0dmFyIGR5ID0gZXZlbnQudG91Y2hlc1sgMCBdLnBhZ2VZIC0gZXZlbnQudG91Y2hlc1sgMSBdLnBhZ2VZO1xuXHRcdFx0XHR2YXIgZGlzdGFuY2UgPSBNYXRoLnNxcnQoIGR4ICogZHggKyBkeSAqIGR5ICk7XG5cdFx0XHRcdGRvbGx5U3RhcnQuc2V0KCAwLCBkaXN0YW5jZSApO1xuXHRcdFx0XHRicmVhaztcblxuXHRcdFx0Y2FzZSAzOiAvLyB0aHJlZS1maW5nZXJlZCB0b3VjaDogcGFuXG5cblx0XHRcdFx0aWYgKCBzY29wZS5ub1BhbiA9PT0gdHJ1ZSApIHJldHVybjtcblxuXHRcdFx0XHRzdGF0ZSA9IFNUQVRFLlRPVUNIX1BBTjtcblxuXHRcdFx0XHRwYW5TdGFydC5zZXQoIGV2ZW50LnRvdWNoZXNbIDAgXS5wYWdlWCwgZXZlbnQudG91Y2hlc1sgMCBdLnBhZ2VZICk7XG5cdFx0XHRcdGJyZWFrO1xuXG5cdFx0XHRkZWZhdWx0OlxuXG5cdFx0XHRcdHN0YXRlID0gU1RBVEUuTk9ORTtcblxuXHRcdH1cblxuXHRcdHNjb3BlLmRpc3BhdGNoRXZlbnQoIHN0YXJ0RXZlbnQgKTtcblxuXHR9XG5cblx0ZnVuY3Rpb24gdG91Y2htb3ZlKCBldmVudCApIHtcblxuXHRcdGlmICggc2NvcGUuZW5hYmxlZCA9PT0gZmFsc2UgKSByZXR1cm47XG5cblx0XHRldmVudC5wcmV2ZW50RGVmYXVsdCgpO1xuXHRcdGV2ZW50LnN0b3BQcm9wYWdhdGlvbigpO1xuXG5cdFx0dmFyIGVsZW1lbnQgPSBzY29wZS5kb21FbGVtZW50ID09PSBkb2N1bWVudCA/IHNjb3BlLmRvbUVsZW1lbnQuYm9keSA6IHNjb3BlLmRvbUVsZW1lbnQ7XG5cblx0XHRzd2l0Y2ggKCBldmVudC50b3VjaGVzLmxlbmd0aCApIHtcblxuXHRcdFx0Y2FzZSAxOiAvLyBvbmUtZmluZ2VyZWQgdG91Y2g6IHJvdGF0ZVxuXG5cdFx0XHRcdGlmICggc2NvcGUubm9Sb3RhdGUgPT09IHRydWUgKSByZXR1cm47XG5cdFx0XHRcdGlmICggc3RhdGUgIT09IFNUQVRFLlRPVUNIX1JPVEFURSApIHJldHVybjtcblxuXHRcdFx0XHRyb3RhdGVFbmQuc2V0KCBldmVudC50b3VjaGVzWyAwIF0ucGFnZVgsIGV2ZW50LnRvdWNoZXNbIDAgXS5wYWdlWSApO1xuXHRcdFx0XHRyb3RhdGVEZWx0YS5zdWJWZWN0b3JzKCByb3RhdGVFbmQsIHJvdGF0ZVN0YXJ0ICk7XG5cblx0XHRcdFx0Ly8gcm90YXRpbmcgYWNyb3NzIHdob2xlIHNjcmVlbiBnb2VzIDM2MCBkZWdyZWVzIGFyb3VuZFxuXHRcdFx0XHRzY29wZS5yb3RhdGVMZWZ0KCAyICogTWF0aC5QSSAqIHJvdGF0ZURlbHRhLnggLyBlbGVtZW50LmNsaWVudFdpZHRoICogc2NvcGUucm90YXRlU3BlZWQgKTtcblx0XHRcdFx0Ly8gcm90YXRpbmcgdXAgYW5kIGRvd24gYWxvbmcgd2hvbGUgc2NyZWVuIGF0dGVtcHRzIHRvIGdvIDM2MCwgYnV0IGxpbWl0ZWQgdG8gMTgwXG5cdFx0XHRcdHNjb3BlLnJvdGF0ZVVwKCAyICogTWF0aC5QSSAqIHJvdGF0ZURlbHRhLnkgLyBlbGVtZW50LmNsaWVudEhlaWdodCAqIHNjb3BlLnJvdGF0ZVNwZWVkICk7XG5cblx0XHRcdFx0cm90YXRlU3RhcnQuY29weSggcm90YXRlRW5kICk7XG5cblx0XHRcdFx0c2NvcGUudXBkYXRlKCk7XG5cdFx0XHRcdGJyZWFrO1xuXG5cdFx0XHRjYXNlIDI6IC8vIHR3by1maW5nZXJlZCB0b3VjaDogZG9sbHlcblxuXHRcdFx0XHRpZiAoIHNjb3BlLm5vWm9vbSA9PT0gdHJ1ZSApIHJldHVybjtcblx0XHRcdFx0aWYgKCBzdGF0ZSAhPT0gU1RBVEUuVE9VQ0hfRE9MTFkgKSByZXR1cm47XG5cblx0XHRcdFx0dmFyIGR4ID0gZXZlbnQudG91Y2hlc1sgMCBdLnBhZ2VYIC0gZXZlbnQudG91Y2hlc1sgMSBdLnBhZ2VYO1xuXHRcdFx0XHR2YXIgZHkgPSBldmVudC50b3VjaGVzWyAwIF0ucGFnZVkgLSBldmVudC50b3VjaGVzWyAxIF0ucGFnZVk7XG5cdFx0XHRcdHZhciBkaXN0YW5jZSA9IE1hdGguc3FydCggZHggKiBkeCArIGR5ICogZHkgKTtcblxuXHRcdFx0XHRkb2xseUVuZC5zZXQoIDAsIGRpc3RhbmNlICk7XG5cdFx0XHRcdGRvbGx5RGVsdGEuc3ViVmVjdG9ycyggZG9sbHlFbmQsIGRvbGx5U3RhcnQgKTtcblxuXHRcdFx0XHRpZiAoIGRvbGx5RGVsdGEueSA+IDAgKSB7XG5cblx0XHRcdFx0XHRzY29wZS5kb2xseU91dCgpO1xuXG5cdFx0XHRcdH0gZWxzZSB7XG5cblx0XHRcdFx0XHRzY29wZS5kb2xseUluKCk7XG5cblx0XHRcdFx0fVxuXG5cdFx0XHRcdGRvbGx5U3RhcnQuY29weSggZG9sbHlFbmQgKTtcblxuXHRcdFx0XHRzY29wZS51cGRhdGUoKTtcblx0XHRcdFx0YnJlYWs7XG5cblx0XHRcdGNhc2UgMzogLy8gdGhyZWUtZmluZ2VyZWQgdG91Y2g6IHBhblxuXG5cdFx0XHRcdGlmICggc2NvcGUubm9QYW4gPT09IHRydWUgKSByZXR1cm47XG5cdFx0XHRcdGlmICggc3RhdGUgIT09IFNUQVRFLlRPVUNIX1BBTiApIHJldHVybjtcblxuXHRcdFx0XHRwYW5FbmQuc2V0KCBldmVudC50b3VjaGVzWyAwIF0ucGFnZVgsIGV2ZW50LnRvdWNoZXNbIDAgXS5wYWdlWSApO1xuXHRcdFx0XHRwYW5EZWx0YS5zdWJWZWN0b3JzKCBwYW5FbmQsIHBhblN0YXJ0ICk7XG5cblx0XHRcdFx0c2NvcGUucGFuKCBwYW5EZWx0YS54LCBwYW5EZWx0YS55ICk7XG5cblx0XHRcdFx0cGFuU3RhcnQuY29weSggcGFuRW5kICk7XG5cblx0XHRcdFx0c2NvcGUudXBkYXRlKCk7XG5cdFx0XHRcdGJyZWFrO1xuXG5cdFx0XHRkZWZhdWx0OlxuXG5cdFx0XHRcdHN0YXRlID0gU1RBVEUuTk9ORTtcblxuXHRcdH1cblxuXHR9XG5cblx0ZnVuY3Rpb24gdG91Y2hlbmQoIC8qIGV2ZW50ICovICkge1xuXG5cdFx0aWYgKCBzY29wZS5lbmFibGVkID09PSBmYWxzZSApIHJldHVybjtcblxuXHRcdHNjb3BlLmRpc3BhdGNoRXZlbnQoIGVuZEV2ZW50ICk7XG5cdFx0c3RhdGUgPSBTVEFURS5OT05FO1xuXG5cdH1cblxuXHR0aGlzLmRvbUVsZW1lbnQuYWRkRXZlbnRMaXN0ZW5lciggJ2NvbnRleHRtZW51JywgZnVuY3Rpb24gKCBldmVudCApIHsgZXZlbnQucHJldmVudERlZmF1bHQoKTsgfSwgZmFsc2UgKTtcblx0dGhpcy5kb21FbGVtZW50LmFkZEV2ZW50TGlzdGVuZXIoICdtb3VzZWRvd24nLCBvbk1vdXNlRG93biwgZmFsc2UgKTtcblx0dGhpcy5kb21FbGVtZW50LmFkZEV2ZW50TGlzdGVuZXIoICdtb3VzZXdoZWVsJywgb25Nb3VzZVdoZWVsLCBmYWxzZSApO1xuXHR0aGlzLmRvbUVsZW1lbnQuYWRkRXZlbnRMaXN0ZW5lciggJ0RPTU1vdXNlU2Nyb2xsJywgb25Nb3VzZVdoZWVsLCBmYWxzZSApOyAvLyBmaXJlZm94XG5cblx0dGhpcy5kb21FbGVtZW50LmFkZEV2ZW50TGlzdGVuZXIoICd0b3VjaHN0YXJ0JywgdG91Y2hzdGFydCwgZmFsc2UgKTtcblx0dGhpcy5kb21FbGVtZW50LmFkZEV2ZW50TGlzdGVuZXIoICd0b3VjaGVuZCcsIHRvdWNoZW5kLCBmYWxzZSApO1xuXHR0aGlzLmRvbUVsZW1lbnQuYWRkRXZlbnRMaXN0ZW5lciggJ3RvdWNobW92ZScsIHRvdWNobW92ZSwgZmFsc2UgKTtcblxuXHR3aW5kb3cuYWRkRXZlbnRMaXN0ZW5lciggJ2tleWRvd24nLCBvbktleURvd24sIGZhbHNlICk7XG5cblx0Ly8gZm9yY2UgYW4gdXBkYXRlIGF0IHN0YXJ0XG5cdHRoaXMudXBkYXRlKCk7XG5cbn07XG5cblRIUkVFLlBhbkNvbnRyb2xzLnByb3RvdHlwZSA9IE9iamVjdC5jcmVhdGUoIFRIUkVFLkV2ZW50RGlzcGF0Y2hlci5wcm90b3R5cGUgKTtcbiIsInJlcXVpcmUoJy4vUGFuQ29udHJvbHMnKTtcblxudmFyIHQzID0gKHR5cGVvZiB3aW5kb3cgIT09IFwidW5kZWZpbmVkXCIgPyB3aW5kb3cudDMgOiB0eXBlb2YgZ2xvYmFsICE9PSBcInVuZGVmaW5lZFwiID8gZ2xvYmFsLnQzIDogbnVsbCksXG4gIF8gPSByZXF1aXJlKCdsb2Rhc2gnKSxcbiAgVEhSRUUgPSAodHlwZW9mIHdpbmRvdyAhPT0gXCJ1bmRlZmluZWRcIiA/IHdpbmRvdy5USFJFRSA6IHR5cGVvZiBnbG9iYWwgIT09IFwidW5kZWZpbmVkXCIgPyBnbG9iYWwuVEhSRUUgOiBudWxsKSxcbiAgaWQgPSAndGhyZWVqc2NhbnZhcycsXG4gIGluc3RhbmNlO1xuXG5tb2R1bGUuZXhwb3J0cyA9IHtcbiAgY2xlYXI6IGZ1bmN0aW9uICgpIHtcbiAgICB2YXIgZWwgPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZChpZCk7XG4gICAgd2hpbGUoZWwuZmlyc3RDaGlsZCkge1xuICAgICAgZWwucmVtb3ZlQ2hpbGQoZWwuZmlyc3RDaGlsZCk7XG4gICAgfVxuICAgIGVsLnN0eWxlLmRpc3BsYXkgPSAnbm9uZSc7XG4gICAgaWYgKGluc3RhbmNlKSB7XG4gICAgICBpbnN0YW5jZS5sb29wTWFuYWdlci5zdG9wKCk7XG4gICAgfVxuICB9LFxuICByZW5kZXI6IGZ1bmN0aW9uIChkYXRhKSB7XG4gICAgdmFyIG5vZGVzID0gZGF0YS5ub2RlcyxcbiAgICAgIGVkZ2VzID0gZGF0YS5lZGdlcyxcbiAgICAgIG5vZGVNYXAgPSB7fSxcbiAgICAgIG1hcmdpbiA9IHtcbiAgICAgICAgdG9wOiAxMCxcbiAgICAgICAgbGVmdDogMTBcbiAgICAgIH0sXG4gICAgICBmaWxsU3R5bGUgPSB7XG4gICAgICAgIG51bWJlcjogJyM2NzNhYjcnLFxuICAgICAgICAnc3RyaW5nJzogJyNmZjk4MDAnLFxuICAgICAgICAnYm9vbGVhbic6ICcjMjU5YjI0JyxcbiAgICAgICAgJ3VuZGVmaW5lZCc6ICcjMDAwMDAwJ1xuICAgICAgfSxcbiAgICAgIGJvcmRlclN0eWxlID0ge1xuICAgICAgICBvYmplY3Q6ICcjMDNhOWY0JyxcbiAgICAgICAgJ2Z1bmN0aW9uJzogJyNlNTFjMjMnXG4gICAgICB9LFxuICAgICAgZGVmYXVsdENvbG9yID0gJyMwMDAwMDAnLFxuICAgICAgdGl0bGVIZWlnaHQgPSA0MCxcbiAgICAgIHByb2plY3RvciA9IG5ldyBUSFJFRS5Qcm9qZWN0b3IoKSxcbiAgICAgIG5vZGVNZXNoZXMgPSBbXTtcblxuICAgIG5vZGVzLmZvckVhY2goZnVuY3Rpb24gKG5vZGUpIHtcbiAgICAgIG5vZGVNYXBbbm9kZS5sYWJlbF0gPSBub2RlO1xuICAgIH0pO1xuXG4gICAgdmFyIHdyYXBwZXJFbCA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKGlkKTtcbiAgICB3cmFwcGVyRWwuc3R5bGUuZGlzcGxheSA9ICdibG9jayc7XG5cbiAgICAvLyBwcmUgaW5pdFxuICAgIHQzLnRoZW1lcy5hbGxXaGl0ZSA9IHtcbiAgICAgIGNsZWFyQ29sb3I6IDB4ZmZmZmZmLFxuICAgICAgZm9nQ29sb3I6IDB4ZmZmZmZmLFxuICAgICAgZ3JvdW5kQ29sb3I6IDB4ZmZmZmZmXG4gICAgfTtcbiAgICB2YXIgd3JhcHBlciA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKGlkKSxcbiAgICAgIGJib3ggPSB3cmFwcGVyLmdldEJvdW5kaW5nQ2xpZW50UmVjdCgpO1xuXG4gICAgZnVuY3Rpb24gZ2V0WShub2RlLCBpKSB7XG4gICAgICByZXR1cm4gbm9kZS55IC0gbm9kZS5oZWlnaHQgKiAwLjUgK1xuICAgICAgICAobm9kZS5wcm9wZXJ0aWVzLmxlbmd0aCAtIGkpICogMTU7XG4gICAgfVxuXG4gICAgZnVuY3Rpb24gZ2V0WChub2RlKSB7XG4gICAgICByZXR1cm4gbm9kZS54IC0gbm9kZS53aWR0aCAqIDAuNSArIG1hcmdpbi5sZWZ0O1xuICAgIH1cblxuICAgIGZ1bmN0aW9uIGNyZWF0ZUNhbWVyYUNvbnRyb2xzKGNhbWVyYSwgZG9tRWxlbWVudCkge1xuICAgICAgY2FtZXJhLmNhbWVyYUNvbnRyb2xzID0gbmV3IFRIUkVFLlBhbkNvbnRyb2xzKGNhbWVyYSwgZG9tRWxlbWVudCk7XG4gICAgfVxuXG4gICAgZnVuY3Rpb24gY3JlYXRlVGV4dFNwcml0ZXMoKSB7XG4gICAgICB2YXIgc2hhcGVzID0gVEhSRUUuRm9udFV0aWxzLmdlbmVyYXRlU2hhcGVzKFwiSGVsbG8gd29ybGRcIiwge1xuICAgICAgICBmb250OiBcImhlbHZldGlrZXJcIixcbiAgICAgICAgd2VpZ2h0OiBcImJvbGRcIixcbiAgICAgICAgc2l6ZTogMTBcbiAgICAgIH0pO1xuICAgICAgdmFyIGdlb20gPSBuZXcgVEhSRUUuU2hhcGVHZW9tZXRyeShzaGFwZXMpO1xuICAgICAgdmFyIG1hdCA9IG5ldyBUSFJFRS5NZXNoQmFzaWNNYXRlcmlhbCgpO1xuICAgICAgcmV0dXJuIG5ldyBUSFJFRS5NZXNoKGdlb20sIG1hdCk7XG4gICAgfVxuXG4gICAgZnVuY3Rpb24gZHJhd1Byb3BlcnRpZXMobm9kZSwgZ3JvdXApIHtcbiAgICAgIHZhciBjYW52YXMgPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50KCdjYW52YXMnKTtcbiAgICAgIGNhbnZhcy53aWR0aCA9IG5vZGUud2lkdGg7XG4gICAgICBjYW52YXMuaGVpZ2h0ID0gbm9kZS5oZWlnaHQ7XG4gICAgICB2YXIgY29udGV4dCA9IGNhbnZhcy5nZXRDb250ZXh0KCcyZCcpO1xuICAgICAgY29udGV4dC5mb250ID0gXCJub3JtYWwgMTAwIDE4cHggUm9ib3RvXCI7XG4gICAgICBjb250ZXh0LmZpbGxTdHlsZSA9IFwicmdiYSgwLCAwLCAwLCAxKVwiO1xuICAgICAgY29udGV4dC5maWxsVGV4dChcbiAgICAgICAgbm9kZS5sYWJlbFxuICAgICAgICAgIC5tYXRjaCgvXlxcUyo/LShbXFxTLV0qKSQvKVsxXVxuICAgICAgICAgIC5yZXBsYWNlKC8tLywgJy4nKSxcbiAgICAgICAgbWFyZ2luLmxlZnQsXG4gICAgICAgIG1hcmdpbi50b3AgKyAxNVxuICAgICAgKTtcblxuICAgICAgbm9kZS5wcm9wZXJ0aWVzLmZvckVhY2goZnVuY3Rpb24gKHByb3BlcnR5LCBpKSB7XG4gICAgICAgIHZhciBzcGhlcmU7XG5cbiAgICAgICAgLy8gZHJhdyB0ZXh0IG9uIHRoZSBjYW52YXNcbiAgICAgICAgY29udGV4dC5mb250ID0gXCJub3JtYWwgMTVweCBBcmlhbFwiO1xuICAgICAgICBjb250ZXh0LmZpbGxTdHlsZSA9IGZpbGxTdHlsZVtwcm9wZXJ0eS50eXBlXSB8fCBkZWZhdWx0Q29sb3I7XG4gICAgICAgIGNvbnRleHQuZmlsbFRleHQoXG4gICAgICAgICAgcHJvcGVydHkucHJvcGVydHksXG4gICAgICAgICAgbWFyZ2luLmxlZnQgKiAyLFxuICAgICAgICAgIG1hcmdpbi50b3AgKyB0aXRsZUhlaWdodCArIGkgKiAxNVxuICAgICAgICApO1xuICAgICAgfSk7XG5cbiAgICAgIHZhciB0ZXh0dXJlID0gbmV3IFRIUkVFLlRleHR1cmUoY2FudmFzKTtcbiAgICAgIHRleHR1cmUubmVlZHNVcGRhdGUgPSB0cnVlO1xuXG4gICAgICB2YXIgbWF0ZXJpYWwgPSBuZXcgVEhSRUUuTWVzaEJhc2ljTWF0ZXJpYWwoe1xuICAgICAgICBtYXA6IHRleHR1cmUsXG4gICAgICAgIHNpZGU6VEhSRUUuRG91YmxlU2lkZVxuICAgICAgfSk7XG4gICAgICBtYXRlcmlhbC50cmFuc3BhcmVudCA9IHRydWU7XG4gICAgICB2YXIgbWVzaCA9IG5ldyBUSFJFRS5NZXNoKFxuICAgICAgICAgIG5ldyBUSFJFRS5QbGFuZUdlb21ldHJ5KGNhbnZhcy53aWR0aCwgY2FudmFzLmhlaWdodCksXG4gICAgICAgICAgbWF0ZXJpYWxcbiAgICAgICk7XG4gICAgICAvLyBtZXNoLnBvc2l0aW9uLnggKz0gbm9kZS53aWR0aCAvIDI7XG4gICAgICAvLyBtZXNoLnBvc2l0aW9uLnkgKz0gbm9kZS5oZWlnaHQgLyAyO1xuXG4gICAgICBtZXNoLnBvc2l0aW9uLnNldChcbiAgICAgICAgbm9kZS54LFxuICAgICAgICBub2RlLnksXG4gICAgICAgIDAuMVxuICAgICAgKTtcblxuICAgICAgZ3JvdXAuYWRkKG1lc2gpO1xuICAgIH1cblxuICAgIGZ1bmN0aW9uIGRyYXdOb2RlcygpIHtcbiAgICAgIHZhciBtZSA9IHRoaXMsXG4gICAgICAgIG5vZGVHcm91cCA9IG5ldyBUSFJFRS5PYmplY3QzRCgpO1xuXG4gICAgICBub2Rlcy5mb3JFYWNoKGZ1bmN0aW9uIChub2RlKSB7XG4gICAgICAgIHZhciBwb2ludHMgPSBbXSxcbiAgICAgICAgIGcgPSBuZXcgVEhSRUUuT2JqZWN0M0QoKTtcbiAgICAgICAgcG9pbnRzLnB1c2gobmV3IFRIUkVFLlZlY3RvcjIoMCwgMCkpO1xuICAgICAgICBwb2ludHMucHVzaChuZXcgVEhSRUUuVmVjdG9yMihub2RlLndpZHRoLCAwKSk7XG4gICAgICAgIHBvaW50cy5wdXNoKG5ldyBUSFJFRS5WZWN0b3IyKG5vZGUud2lkdGgsIG5vZGUuaGVpZ2h0KSk7XG4gICAgICAgIHBvaW50cy5wdXNoKG5ldyBUSFJFRS5WZWN0b3IyKDAsIG5vZGUuaGVpZ2h0KSk7XG5cbiAgICAgICAgdmFyIHNoYXBlID0gbmV3IFRIUkVFLlNoYXBlKHBvaW50cyk7XG5cbiAgICAgICAgdmFyIGdlb21ldHJ5ID0gbmV3IFRIUkVFLlNoYXBlR2VvbWV0cnkoc2hhcGUpO1xuICAgICAgICB2YXIgbWVzaCA9IG5ldyBUSFJFRS5NZXNoKFxuICAgICAgICAgIGdlb21ldHJ5LFxuICAgICAgICAgIG5ldyBUSFJFRS5MaW5lQmFzaWNNYXRlcmlhbCh7XG4gICAgICAgICAgICBjb2xvcjogJyNlZWVlZWUnLC8vIGJvcmRlclN0eWxlWydmdW5jdGlvbiddLFxuICAgICAgICAgICAgbGluZVdpZHRoOiAxXG4gICAgICAgICAgfSlcbiAgICAgICAgKTtcblxuICAgICAgICBtZXNoLnVzZXJEYXRhLm5vZGUgPSBub2RlO1xuICAgICAgICBtZXNoLnBvc2l0aW9uLnNldChcbiAgICAgICAgICBub2RlLnggLSBub2RlLndpZHRoICogMC41LFxuICAgICAgICAgIG5vZGUueSAtIG5vZGUuaGVpZ2h0ICogMC41LFxuICAgICAgICAgIDBcbiAgICAgICAgKTtcblxuICAgICAgICAvLyBFQUNIIE9ORSBJUyBBIFNJTkdMRSBNRVNIXG4gICAgICAgIG1lLmFjdGl2ZVNjZW5lLmFkZChtZXNoKTtcbiAgICAgICAgbm9kZU1lc2hlcy5wdXNoKG1lc2gpO1xuXG4gICAgICAgIC8vIE1FUkdFXG4gICAgICAgIC8vIG1lc2gudXBkYXRlTWF0cml4KCk7XG4gICAgICAgIC8vIG5vZGVHZW9tZXRyeS5tZXJnZShtZXNoLmdlb21ldHJ5LCBtZXNoLm1hdHJpeCk7XG5cbiAgICAgICAgLy8gYWRkIHRoZSBkZXNjcmlwdGlvbiBpbiBhbm90aGVyIGdyb3VwXG4gICAgICAgIGRyYXdQcm9wZXJ0aWVzKG5vZGUsIG5vZGVHcm91cCk7XG4gICAgICB9KTtcblxuICAgICAgbWUuYWN0aXZlU2NlbmUuYWRkKG5vZGVHcm91cCk7XG5cbiAgICAgIC8vIE1FUkdFXG4gICAgICAvLyBtZS5hY3RpdmVTY2VuZS5hZGQobmV3IFRIUkVFLk1lc2goXG4gICAgICAvLyAgIG5vZGVHZW9tZXRyeSxcbiAgICAgIC8vICAgbmV3IFRIUkVFLkxpbmVCYXNpY01hdGVyaWFsKHtcbiAgICAgIC8vICAgICBjb2xvcjogJyNlZWVlZWUnLC8vIGJvcmRlclN0eWxlWydmdW5jdGlvbiddLFxuICAgICAgLy8gICAgIGxpbmVXaWR0aDogMVxuICAgICAgLy8gICB9KVxuICAgICAgLy8gKSk7XG4gICAgfVxuXG4gICAgZnVuY3Rpb24gZHJhd0NpcmNsZXMoKSB7XG4gICAgICB2YXIgbWUgPSB0aGlzLFxuICAgICAgICBjaXJjbGVNZXNoID0gbmV3IFRIUkVFLk1lc2gobmV3IFRIUkVFLkNpcmNsZUdlb21ldHJ5KDUsIDgpKSxcbiAgICAgICAgbWVzaGVzID0ge1xuICAgICAgICAgIG9iamVjdDoge1xuICAgICAgICAgICAgbWF0ZXJpYWw6IG5ldyBUSFJFRS5NZXNoQmFzaWNNYXRlcmlhbCh7XG4gICAgICAgICAgICAgIGNvbG9yOiBib3JkZXJTdHlsZS5vYmplY3RcbiAgICAgICAgICAgIH0pLFxuICAgICAgICAgICAgZ2VvbWV0cnk6IG5ldyBUSFJFRS5HZW9tZXRyeSgpXG4gICAgICAgICAgfSxcbiAgICAgICAgICAnZnVuY3Rpb24nOiB7XG4gICAgICAgICAgICBtYXRlcmlhbDogbmV3IFRIUkVFLk1lc2hCYXNpY01hdGVyaWFsKHtcbiAgICAgICAgICAgICAgY29sb3I6IGJvcmRlclN0eWxlWydmdW5jdGlvbiddXG4gICAgICAgICAgICB9KSxcbiAgICAgICAgICAgIGdlb21ldHJ5OiBuZXcgVEhSRUUuR2VvbWV0cnkoKVxuICAgICAgICAgIH1cbiAgICAgICAgfTtcbiAgICAgIG5vZGVzLmZvckVhY2goZnVuY3Rpb24gKG5vZGUpIHtcbiAgICAgICAgbm9kZS5wcm9wZXJ0aWVzLmZvckVhY2goZnVuY3Rpb24gKHByb3BlcnR5LCBpKSB7XG4gICAgICAgICAgaWYgKHByb3BlcnR5LnR5cGUgPT09ICdmdW5jdGlvbicgfHwgcHJvcGVydHkudHlwZSA9PT0gJ29iamVjdCcpIHtcbiAgICAgICAgICAgIGNpcmNsZU1lc2gucG9zaXRpb24uc2V0KFxuICAgICAgICAgICAgICBnZXRYKG5vZGUpLCBnZXRZKG5vZGUsIGkpICsgNSwgMC4yXG4gICAgICAgICAgICApO1xuICAgICAgICAgICAgY2lyY2xlTWVzaC51cGRhdGVNYXRyaXgoKTtcbiAgICAgICAgICAgIG1lc2hlc1twcm9wZXJ0eS50eXBlXS5nZW9tZXRyeVxuICAgICAgICAgICAgICAubWVyZ2UoY2lyY2xlTWVzaC5nZW9tZXRyeSwgY2lyY2xlTWVzaC5tYXRyaXgpO1xuICAgICAgICAgIH1cbiAgICAgICAgfSk7XG4gICAgICB9KTtcbiAgICAgIG1lLmFjdGl2ZVNjZW5lLmFkZChuZXcgVEhSRUUuTWVzaChcbiAgICAgICAgbWVzaGVzLm9iamVjdC5nZW9tZXRyeSwgbWVzaGVzLm9iamVjdC5tYXRlcmlhbFxuICAgICAgKSk7XG4gICAgICBtZS5hY3RpdmVTY2VuZS5hZGQobmV3IFRIUkVFLk1lc2goXG4gICAgICAgIG1lc2hlc1snZnVuY3Rpb24nXS5nZW9tZXRyeSwgbWVzaGVzWydmdW5jdGlvbiddLm1hdGVyaWFsXG4gICAgICApKTtcbiAgICB9XG5cbiAgICBmdW5jdGlvbiBnZW5lcmF0ZVNwbGluZShmLCBtaWQsIHQsIGQpIHtcbiAgICAgIHZhciBtdWx0ID0gMCxcbiAgICAgICAgYnVtcFogPSBtaWQueiAqIDAuMixcbiAgICAgICAgZm0gPSBuZXcgVEhSRUUuVmVjdG9yMygpXG4gICAgICAgICAgLmFkZFZlY3RvcnMoZiwgbWlkKVxuICAgICAgICAgIC5tdWx0aXBseVNjYWxhcigwLjUpXG4gICAgICAgICAgLmFkZChuZXcgVEhSRUUuVmVjdG9yMyhcbiAgICAgICAgICAgIChtaWQueCAtIGYueCkgKiBtdWx0LFxuICAgICAgICAgICAgKGYueSAtIG1pZC55KSAqIG11bHQsXG4gICAgICAgICAgICBidW1wWlxuICAgICAgICAgICkpLFxuICAgICAgICBtdCA9IG5ldyBUSFJFRS5WZWN0b3IzKClcbiAgICAgICAgICAuYWRkVmVjdG9ycyhtaWQsIHQpXG4gICAgICAgICAgLm11bHRpcGx5U2NhbGFyKDAuNSlcbiAgICAgICAgICAuYWRkKG5ldyBUSFJFRS5WZWN0b3IzKFxuICAgICAgICAgICAgKG1pZC54IC0gdC54KSAqIG11bHQsXG4gICAgICAgICAgICAodC55IC0gbWlkLnkpICogbXVsdCxcbiAgICAgICAgICAgIGJ1bXBaXG4gICAgICAgICAgKSk7XG5cbiAgICAgIHZhciBzcGxpbmUgPSBuZXcgVEhSRUUuU3BsaW5lKFtcbiAgICAgICAgZiwgZm0sIG1pZCwgbXQsIHRcbiAgICAgIF0pLCBpLCBsID0gMTAsIGluZGV4LCBwb3NpdGlvbixcbiAgICAgICAgZ2VvbWV0cnkgPSBuZXcgVEhSRUUuR2VvbWV0cnkoKTtcblxuICAgICAgZ2VvbWV0cnkuY29sb3JzID0gW107XG4gICAgICBmb3IgKGkgPSAwOyBpIDw9IGw7IGkgKz0gMSkge1xuICAgICAgICBpbmRleCA9IGkgLyBsO1xuICAgICAgICBwb3NpdGlvbiA9IHNwbGluZS5nZXRQb2ludChpbmRleCk7XG4gICAgICAgIGdlb21ldHJ5LnZlcnRpY2VzW2ldID0gbmV3IFRIUkVFLlZlY3RvcjMocG9zaXRpb24ueCwgcG9zaXRpb24ueSwgcG9zaXRpb24ueik7XG4gICAgICAgIGdlb21ldHJ5LmNvbG9yc1tpXSA9IG5ldyBUSFJFRS5Db2xvcigweGZmZmZmZik7XG4gICAgICAgIGdlb21ldHJ5LmNvbG9yc1tpXS5zZXRIU0woXG4gICAgICAgICAgLy8gMjAwIC8gMzYwLFxuICAgICAgICAgIC8vIGluZGV4LFxuICAgICAgICAgIC8vIDAuNVxuICAgICAgICAgIDIwMC8zNjAsXG4gICAgICAgICAgMSxcbiAgICAgICAgICAwLjlcbiAgICAgICAgKTtcbiAgICAgIH1cbiAgICAgIHJldHVybiBnZW9tZXRyeTtcbiAgICB9XG5cbiAgICBmdW5jdGlvbiBkcmF3RWRnZXMoc2NvcGUpIHtcbiAgICAgIHZhciBtZSA9IHRoaXMsXG4gICAgICAgIGZyb21WID0gbmV3IFRIUkVFLlZlY3RvcjMoKSxcbiAgICAgICAgdG9WID0gbmV3IFRIUkVFLlZlY3RvcjMoKSxcbiAgICAgICAgbWlkID0gbmV3IFRIUkVFLlZlY3RvcjMoKTtcblxuICAgICAgZWRnZXMuZm9yRWFjaChmdW5jdGlvbiAobGluaywgaSkge1xuICAgICAgICAvLyBjb25zb2xlLmxvZyhpLCBlZGdlcy5sZW5ndGgpO1xuICAgICAgICB2YXIgZnJvbSA9IG5vZGVNYXBbbGluay5mcm9tXTtcbiAgICAgICAgdmFyIHRvID0gbm9kZU1hcFtsaW5rLnRvXTtcblxuICAgICAgICB2YXIgaW5kZXggPSBfLmZpbmRJbmRleChcbiAgICAgICAgICBmcm9tLnByb3BlcnRpZXMsXG4gICAgICAgICAgeyBuYW1lOiBsaW5rLnByb3BlcnR5IH1cbiAgICAgICAgKTtcbiAgICAgICAgZnJvbVYuc2V0KFxuICAgICAgICAgIGZyb20ueCAtIGZyb20ud2lkdGggKiAwLjUgKyBtYXJnaW4ubGVmdCxcbiAgICAgICAgICBmcm9tLnkgLSBmcm9tLmhlaWdodCAqIDAuNSArIChmcm9tLnByb3BlcnRpZXMubGVuZ3RoIC0gaW5kZXgpICogMTUgKyA1LFxuICAgICAgICAgIDBcbiAgICAgICAgKTtcbiAgICAgICAgdG9WLnNldChcbiAgICAgICAgICB0by54IC0gdG8ud2lkdGggKiAwLjUsXG4gICAgICAgICAgdG8ueSAtIHRvLmhlaWdodCAqIDAuNSxcbiAgICAgICAgICAwXG4gICAgICAgICk7XG4gICAgICAgIHZhciBkID0gZnJvbVYuZGlzdGFuY2VUbyh0b1YpO1xuICAgICAgICBtaWRcbiAgICAgICAgICAuYWRkVmVjdG9ycyhmcm9tViwgdG9WKVxuICAgICAgICAgIC5tdWx0aXBseVNjYWxhcigwLjUpXG4gICAgICAgICAgLnNldFooNTApO1xuXG4gICAgICAgIHZhciBnZW9tZXRyeSA9IGdlbmVyYXRlU3BsaW5lKGZyb21WLCBtaWQsIHRvViwgZCk7XG4gICAgICAgIHZhciBtYXRlcmlhbCA9IG5ldyBUSFJFRS5MaW5lQmFzaWNNYXRlcmlhbCh7XG4gICAgICAgICAgY29sb3I6IDB4ZmZmZmZmLFxuICAgICAgICAgIG9wYWNpdHk6IDAuNSxcbiAgICAgICAgICBsaW5ld2lkdGg6IDMsXG4gICAgICAgICAgdmVydGV4Q29sb3JzOiBUSFJFRS5WZXJ0ZXhDb2xvcnNcbiAgICAgICAgfSk7XG4gICAgICAgIHZhciBtZXNoID0gbmV3IFRIUkVFLkxpbmUoZ2VvbWV0cnksIG1hdGVyaWFsKTtcbiAgICAgICAgbWUuYWN0aXZlU2NlbmUuYWRkKG1lc2gpO1xuICAgICAgfSk7XG4gICAgfVxuXG4gICAgaW5zdGFuY2UgPSB0My5ydW4oe1xuICAgICAgaWQ6IGlkLFxuICAgICAgd2lkdGg6IGJib3gud2lkdGgsXG4gICAgICBoZWlnaHQ6IGJib3guaGVpZ2h0LFxuICAgICAgdGhlbWU6ICdhbGxXaGl0ZScsXG4gICAgICBhbWJpZW50Q29uZmlnOiB7XG4gICAgICAgIGdyb3VuZDogZmFsc2UsXG4gICAgICAgIGF4ZXM6IGZhbHNlLFxuICAgICAgICBncmlkWTogZmFsc2UsXG4gICAgICAgIGdyaWRYOiBmYWxzZSxcbiAgICAgICAgZ3JpZFo6IGZhbHNlXG4gICAgICB9LFxuICAgICAgaW5pdDogZnVuY3Rpb24gKCkge1xuICAgICAgICB2YXIgbWUgPSB0aGlzLFxuICAgICAgICAgIHJlbmRlcmVyRWwgPSBtZS5yZW5kZXJlci5kb21FbGVtZW50O1xuICAgICAgICBtZS5kYXRndWkuY2xvc2UoKTtcbiAgICAgICAgbWUuYWN0aXZlU2NlbmUuZm9nID0gbnVsbDtcbiAgICAgICAgbWUucmVuZGVyZXIuc29ydE9iamVjdHMgPSBmYWxzZTtcbiAgICAgICAgbWUucmVuZGVyZXIuc2hhZG93TWFwRW5hYmxlZCA9IHRydWU7XG4gICAgICAgIG1lLnJlbmRlcmVyLnNoYWRvd01hcFR5cGUgPSBUSFJFRS5QQ0ZTaGFkb3dNYXA7XG5cbiAgICAgICAgdmFyIG1vdXNlID0gbmV3IFRIUkVFLlZlY3RvcjMoKTtcbiAgICAgICAgdmFyIG1vdmVkID0gZmFsc2UsIGRvd24gPSBmYWxzZTtcbiAgICAgICAgcmVuZGVyZXJFbC5hZGRFdmVudExpc3RlbmVyKCdtb3VzZW1vdmUnLCBmdW5jdGlvbiAoZSkge1xuICAgICAgICAgIGlmIChkb3duKSB7XG4gICAgICAgICAgICBtb3ZlZCA9IHRydWU7XG4gICAgICAgICAgICB3cmFwcGVyRWwuc3R5bGUuY3Vyc29yID0gJ21vdmUnO1xuICAgICAgICAgIH0gZWxzZSB7XG4gICAgICAgICAgICBtb3ZlZCA9IGZhbHNlO1xuICAgICAgICAgIH1cbiAgICAgICAgfSk7XG4gICAgICAgIHJlbmRlcmVyRWwuYWRkRXZlbnRMaXN0ZW5lcignbW91c2VvdXQnLCBmdW5jdGlvbiAoZSkge1xuXG4gICAgICAgIH0pO1xuICAgICAgICByZW5kZXJlckVsLmFkZEV2ZW50TGlzdGVuZXIoJ21vdXNlZG93bicsIGZ1bmN0aW9uIChlKSB7XG4gICAgICAgICAgZG93biA9IHRydWU7XG4gICAgICAgIH0pO1xuICAgICAgICByZW5kZXJlckVsLmFkZEV2ZW50TGlzdGVuZXIoJ21vdXNldXAnLCBmdW5jdGlvbiAoZSkge1xuICAgICAgICAgIGRvd24gPSBmYWxzZTtcbiAgICAgICAgICB3cmFwcGVyRWwuc3R5bGUuY3Vyc29yID0gJ2F1dG8nO1xuICAgICAgICB9KTtcbiAgICAgICAgcmVuZGVyZXJFbC5hZGRFdmVudExpc3RlbmVyKCdjbGljaycsIGZ1bmN0aW9uIChlKSB7XG4gICAgICAgICAgZS5wcmV2ZW50RGVmYXVsdCgpO1xuICAgICAgICAgIHZhciBiYm94ID0gcmVuZGVyZXJFbC5nZXRCb3VuZGluZ0NsaWVudFJlY3QoKTtcbiAgICAgICAgICB2YXIgY3ggPSBlLmNsaWVudFggLSBiYm94LmxlZnQ7XG4gICAgICAgICAgdmFyIGN5ID0gZS5jbGllbnRZIC0gYmJveC50b3A7XG4gICAgICAgICAgbW91c2UueCA9IChjeCAvIHJlbmRlcmVyRWwuY2xpZW50V2lkdGgpICogMiAtIDE7XG4gICAgICAgICAgbW91c2UueSA9IC0oY3kgLyByZW5kZXJlckVsLmNsaWVudEhlaWdodCkgKiAyICsgMTtcbiAgICAgICAgICB2YXIgdmVjdG9yID0gbmV3IFRIUkVFLlZlY3RvcjMoIG1vdXNlLngsIG1vdXNlLnksIDAuNSApO1xuICAgICAgICAgIHByb2plY3Rvci51bnByb2plY3RWZWN0b3IodmVjdG9yLCBtZS5hY3RpdmVDYW1lcmEpO1xuXG4gICAgICAgICAgdmFyIHJheWNhc3RlciA9IG5ldyBUSFJFRS5SYXljYXN0ZXIoXG4gICAgICAgICAgICBjYW1lcmEucG9zaXRpb24sXG4gICAgICAgICAgICB2ZWN0b3Iuc3ViKGNhbWVyYS5wb3NpdGlvbikubm9ybWFsaXplKClcbiAgICAgICAgICApO1xuICAgICAgICAgIHZhciBpbnRlcnNlY3RzID0gcmF5Y2FzdGVyLmludGVyc2VjdE9iamVjdHMobm9kZU1lc2hlcyksXG4gICAgICAgICAgICBpT2JqZWN0ID0gaW50ZXJzZWN0c1swXSAmJiBpbnRlcnNlY3RzWzBdLm9iamVjdDtcbiAgICAgICAgICBpZiAoaU9iamVjdCAmJiAhbW92ZWQpIHtcbiAgICAgICAgICAgIC8vIGZvY3VzIG9uIHRoaXMgb2JqZWN0IG9uIGNsaWNrXG4gICAgICAgICAgICAvLyBjb25zb2xlLmxvZyhpT2JqZWN0KTtcbiAgICAgICAgICAgIHZhciBkZXN0ID0ge1xuICAgICAgICAgICAgICB4OiBpT2JqZWN0LnBvc2l0aW9uLnggKyBpT2JqZWN0LnVzZXJEYXRhLm5vZGUud2lkdGggLyAyLFxuICAgICAgICAgICAgICB5OiBpT2JqZWN0LnBvc2l0aW9uLnkgKyBpT2JqZWN0LnVzZXJEYXRhLm5vZGUuaGVpZ2h0IC8gMlxuICAgICAgICAgICAgfTtcbiAgICAgICAgICAgIG5ldyBUV0VFTi5Ud2VlbihtZS5hY3RpdmVDYW1lcmEucG9zaXRpb24pXG4gICAgICAgICAgICAgIC50byhfLm1lcmdlKHt9LCBkZXN0LCB7XG4gICAgICAgICAgICAgICAgejogTWF0aC5tYXgoaU9iamVjdC51c2VyRGF0YS5ub2RlLmhlaWdodCwgMzUwKVxuICAgICAgICAgICAgICB9KSwgMTAwMClcbiAgICAgICAgICAgICAgLmVhc2luZyhUV0VFTi5FYXNpbmcuQ3ViaWMuSW5PdXQpXG4gICAgICAgICAgICAgIC5zdGFydCgpO1xuICAgICAgICAgICAgbmV3IFRXRUVOLlR3ZWVuKG1lLmFjdGl2ZUNhbWVyYS5jYW1lcmFDb250cm9scy50YXJnZXQpXG4gICAgICAgICAgICAgIC50byhkZXN0LCAxMDAwKVxuICAgICAgICAgICAgICAuZWFzaW5nKFRXRUVOLkVhc2luZy5DdWJpYy5Jbk91dClcbiAgICAgICAgICAgICAgLnN0YXJ0KCk7XG4gICAgICAgICAgfVxuICAgICAgICB9LCBmYWxzZSk7XG5cbiAgICAgICAgLy8gY2FtZXJhXG4gICAgICAgIHZhciBmb3YgPSA3MCxcbiAgICAgICAgICByYXRpbyA9IHJlbmRlcmVyRWwuY2xpZW50V2lkdGggL1xuICAgICAgICAgICAgcmVuZGVyZXJFbC5jbGllbnRIZWlnaHQsXG4gICAgICAgICAgbmVhciA9IDEsXG4gICAgICAgICAgZmFyID0gMjAwMDA7XG4gICAgICAgIHZhciBjYW1lcmEgPSBuZXcgVEhSRUUuUGVyc3BlY3RpdmVDYW1lcmEoZm92LCByYXRpbywgbmVhciwgZmFyKTtcbiAgICAgICAgY2FtZXJhLnBvc2l0aW9uLnNldChcbiAgICAgICAgICBkYXRhLmNlbnRlci54LFxuICAgICAgICAgIGRhdGEuY2VudGVyLnksXG4gICAgICAgICAgTWF0aC5taW4oZGF0YS5teC54IC0gZGF0YS5tbi54LCBkYXRhLm14LnkgLSBkYXRhLm1uLnkpXG4gICAgICAgICk7XG4gICAgICAgIC8vIGNhbWVyYS5sb29rQXQobmV3IFRIUkVFLlZlY3RvcjMoZGF0YS5jZW50ZXIueCwgZGF0YS5jZW50ZXIueSwgMCkpO1xuICAgICAgICBtZVxuICAgICAgICAgIC5hZGRDYW1lcmEoY2FtZXJhLCAnbWluZScpXG4gICAgICAgICAgLnNldEFjdGl2ZUNhbWVyYSgnbWluZScpO1xuICAgICAgICBjcmVhdGVDYW1lcmFDb250cm9scyhjYW1lcmEsIHJlbmRlcmVyRWwpO1xuICAgICAgICBjYW1lcmEuY2FtZXJhQ29udHJvbHMudGFyZ2V0LnNldChcbiAgICAgICAgICBkYXRhLmNlbnRlci54LFxuICAgICAgICAgIGRhdGEuY2VudGVyLnksXG4gICAgICAgICAgMFxuICAgICAgICApO1xuICAgICAgICBjYW1lcmEuY2FtZXJhQ29udHJvbHMubm9LZXlzID0gdHJ1ZTtcblxuICAgICAgICAvLyBkcmF3IHRoZSBub2Rlc1xuICAgICAgICBkcmF3Tm9kZXMuY2FsbChtZSk7XG4gICAgICAgIGRyYXdDaXJjbGVzLmNhbGwobWUpO1xuICAgICAgICBkcmF3RWRnZXMuY2FsbChtZSk7XG4gICAgICB9LFxuICAgICAgdXBkYXRlOiBmdW5jdGlvbiAoZGVsdGEpIHtcbiAgICAgICAgVFdFRU4udXBkYXRlKCk7XG4gICAgICAgIHZhciBtZSA9IHRoaXM7XG4gICAgICAgIG1lLmFjID0gbWUuYWMgfHwgMDtcbiAgICAgICAgbWUuYWMgKz0gZGVsdGE7XG4gICAgICAgIGlmIChtZS5hYyA+IDIpIHtcbiAgICAgICAgICAvLyBjb25zb2xlLmxvZyhtZS5yZW5kZXJlci5pbmZvLnJlbmRlcik7XG4gICAgICAgICAgLy8gY29uc29sZS5sb2cobWUucmVuZGVyZXIpO1xuICAgICAgICAgIG1lLmFjID0gMDtcbiAgICAgICAgfVxuICAgICAgfVxuICAgIH0pO1xuICB9XG59OyIsIid1c2Ugc3RyaWN0JztcblxudmFyIF8gPSByZXF1aXJlKCdsb2Rhc2gnKTtcblxudmFyIGNoYW5nZUZha2VQcm9wZXJ0eU5hbWUgPSB7XG4gICdbW1Byb3RvdHlwZV1dJzogJ19fcHJvdG9fXydcbn07XG5cbnZhciB1dGlscyA9IHtcbiAgdHJhbnNsYXRlOiBmdW5jdGlvbiAoeCwgeSkge1xuICAgIHJldHVybiAndHJhbnNsYXRlKCcgKyAoeCB8fCAwKSArICcsICcgKyAoeSB8fCAwKSArICcpJztcbiAgfSxcbiAgc2NhbGU6IGZ1bmN0aW9uIChzKSB7XG4gICAgcmV0dXJuICdzY2FsZSgnICsgKHMgfHwgMSkgKyAnKSc7XG4gIH0sXG4gIHRyYW5zZm9ybTogZnVuY3Rpb24gKG9iaikge1xuICAgIHZhciB0ID0gW107XG4gICAgXy5mb3JPd24ob2JqLCBmdW5jdGlvbiAodiwgaykge1xuICAgICAgdC5wdXNoKHV0aWxzW2tdLmFwcGx5KHV0aWxzLCB2KSk7XG4gICAgfSk7XG4gICAgcmV0dXJuIHQuam9pbignICcpO1xuICB9LFxuICBwcmVmaXhlcjogZnVuY3Rpb24gKCkge1xuICAgIHZhciBhcmdzID0gW10uc2xpY2UuY2FsbChhcmd1bWVudHMpO1xuICAgIGFyZ3MudW5zaGlmdCgncHYnKTtcbiAgICByZXR1cm4gYXJncy5qb2luKCctJyk7XG4gIH0sXG4gIHRyYW5zZm9ybVByb3BlcnR5OiBmdW5jdGlvbiAodikge1xuICAgIGlmIChjaGFuZ2VGYWtlUHJvcGVydHlOYW1lLmhhc093blByb3BlcnR5KHYpKSB7XG4gICAgICByZXR1cm4gY2hhbmdlRmFrZVByb3BlcnR5TmFtZVt2XTtcbiAgICB9XG4gICAgcmV0dXJuIHY7XG4gIH0sXG4gIGVzY2FwZUNsczogZnVuY3Rpb24odikge1xuICAgIHJldHVybiB2LnJlcGxhY2UoL1xcJC9nLCAnXycpO1xuICB9XG59O1xuXG5tb2R1bGUuZXhwb3J0cyA9IHV0aWxzOyIsIid1c2Ugc3RyaWN0JztcblxudmFyIF8gPSByZXF1aXJlKCdsb2Rhc2gnKTtcbnZhciBhc3NlcnQgPSByZXF1aXJlKCdhc3NlcnQnKTtcbnZhciB1dGlscyA9IHJlcXVpcmUoJy4vJyk7XG52YXIgbWUsIGhhc2hLZXk7XG4vKipcbiAqIEdldHMgYSBzdG9yZSBoYXNoa2V5IG9ubHkgaWYgaXQncyBhbiBvYmplY3RcbiAqIEBwYXJhbSAge1t0eXBlXX0gb2JqXG4gKiBAcmV0dXJuIHtbdHlwZV19XG4gKi9cbmZ1bmN0aW9uIGdldChvYmopIHtcbiAgYXNzZXJ0KHV0aWxzLmlzT2JqZWN0T3JGdW5jdGlvbihvYmopLCAnb2JqIG11c3QgYmUgYW4gb2JqZWN0fGZ1bmN0aW9uJyk7XG4gIHJldHVybiBPYmplY3QucHJvdG90eXBlLmhhc093blByb3BlcnR5LmNhbGwob2JqLCBtZS5oaWRkZW5LZXkpICYmXG4gICAgb2JqW21lLmhpZGRlbktleV07XG59XG5cbi8qKlxuICogVE9ETzogZG9jdW1lbnRcbiAqIFNldHMgYSBrZXkgb24gYW4gb2JqZWN0XG4gKiBAcGFyYW0ge1t0eXBlXX0gb2JqIFtkZXNjcmlwdGlvbl1cbiAqIEBwYXJhbSB7W3R5cGVdfSBrZXkgW2Rlc2NyaXB0aW9uXVxuICovXG5mdW5jdGlvbiBzZXQob2JqLCBrZXkpIHtcbiAgYXNzZXJ0KHV0aWxzLmlzT2JqZWN0T3JGdW5jdGlvbihvYmopLCAnb2JqIG11c3QgYmUgYW4gb2JqZWN0fGZ1bmN0aW9uJyk7XG4gIGFzc2VydChcbiAgICBrZXkgJiYgdHlwZW9mIGtleSA9PT0gJ3N0cmluZycsXG4gICAgJ1RoZSBrZXkgbmVlZHMgdG8gYmUgYSB2YWxpZCBzdHJpbmcnXG4gICk7XG4gIHZhciB2YWx1ZTtcbiAgaWYgKCFnZXQob2JqKSkge1xuICAgIHZhbHVlID0gdHlwZW9mIG9iaiArICctJyArIGtleTtcbiAgICBPYmplY3QuZGVmaW5lUHJvcGVydHkob2JqLCBtZS5oaWRkZW5LZXksIHtcbiAgICAgIHZhbHVlOiB2YWx1ZVxuICAgIH0pO1xuICAgIGlmICghb2JqW21lLmhpZGRlbktleV0pIHtcbiAgICAgIGNvbnNvbGUud2FybignT2JqZWN0LmRlZmluZVByb3BlcnR5IGRpZCBub3Qgd29yayEgc2V0dGluZyB0aGUgdmFsdWUgb24gdGhlIG9iamVjdCBkaXJlY3RseScpO1xuICAgICAgb2JqW21lLmhpZGRlbktleV0gPSB2YWx1ZTtcbiAgICB9XG4gICAgYXNzZXJ0KG9ialttZS5oaWRkZW5LZXldLCAnT2JqZWN0LmRlZmluZVByb3BlcnR5IGRpZCBub3Qgd29yayEnKTtcbiAgfVxuICByZXR1cm4gbWU7XG59XG5cbm1lID0gaGFzaEtleSA9IGZ1bmN0aW9uICh2KSB7XG4gIHZhciB1aWQgPSB2O1xuICBpZiAodXRpbHMuaXNPYmplY3RPckZ1bmN0aW9uKHYpKSB7XG4gICAgaWYgKCFnZXQodikpIHtcbiAgICAgIG1lLmNyZWF0ZUhhc2hLZXlzRm9yKHYpO1xuICAgIH1cbiAgICB1aWQgPSBnZXQodik7XG4gICAgaWYgKCF1aWQpIHtcbiAgICAgIHRocm93IEVycm9yKHYgKyAnIHNob3VsZCBoYXZlIGEgaGFzaEtleSBhdCB0aGlzIHBvaW50IDooJyk7XG4gICAgfVxuICAgIGFzc2VydCh1aWQsICdlcnJvciBnZXR0aW5nIHRoZSBrZXknKTtcbiAgICByZXR1cm4gdWlkO1xuICB9XG5cbiAgLy8gdiBpcyBhIHByaW1pdGl2ZVxuICByZXR1cm4gdHlwZW9mIHYgKyAnLScgKyB1aWQ7XG59O1xuXG5tZS5oaWRkZW5LZXkgPSAnX19wb2pvdml6S2V5X18nO1xuXG5tZS5jcmVhdGVIYXNoS2V5c0ZvciA9IGZ1bmN0aW9uIChvYmosIG5hbWUpIHtcblxuICBmdW5jdGlvbiBsb2NhbFRvU3RyaW5nKG9iaikge1xuICAgIHZhciBtYXRjaDtcbiAgICB0cnkge1xuICAgICAgbWF0Y2ggPSB7fS50b1N0cmluZy5jYWxsKG9iaikubWF0Y2goL15cXFtvYmplY3QgKFxcUyo/KVxcXS8pO1xuICAgIH0gY2F0Y2ggKGUpIHtcbiAgICAgIG1hdGNoID0gZmFsc2U7XG4gICAgfVxuICAgIHJldHVybiBtYXRjaCAmJiBtYXRjaFsxXTtcbiAgfVxuXG4gIC8qKlxuICAgKiBBbmFseXplIHRoZSBpbnRlcm5hbCBwcm9wZXJ0eSBbW0NsYXNzXV0gdG8gZ3Vlc3MgdGhlIG5hbWVcbiAgICogb2YgdGhpcyBvYmplY3QsIGUuZy4gW29iamVjdCBEYXRlXSwgW29iamVjdCBNYXRoXVxuICAgKiBNYW55IG9iamVjdCB3aWxsIGdpdmUgZmFsc2UgcG9zaXRpdmVzICh0aGV5IHdpbGwgbWF0Y2ggW29iamVjdCBPYmplY3RdKVxuICAgKiBzbyBsZXQncyBjb25zaWRlciBPYmplY3QgYXMgdGhlIG5hbWUgb25seSBpZiBpdCdzIGVxdWFsIHRvXG4gICAqIE9iamVjdC5wcm90b3R5cGVcbiAgICogQHBhcmFtICB7T2JqZWN0fSAgb2JqXG4gICAqIEByZXR1cm4ge0Jvb2xlYW59XG4gICAqL1xuICBmdW5jdGlvbiBoYXNBQ2xhc3NOYW1lKG9iaikge1xuICAgIHZhciBtYXRjaCA9IGxvY2FsVG9TdHJpbmcob2JqKTtcbiAgICBpZiAobWF0Y2ggPT09ICdPYmplY3QnKSB7XG4gICAgICByZXR1cm4gb2JqID09PSBPYmplY3QucHJvdG90eXBlICYmICdPYmplY3QnO1xuICAgIH1cbiAgICByZXR1cm4gbWF0Y2g7XG4gIH1cblxuICBmdW5jdGlvbiBnZXROYW1lKG9iaikge1xuICAgIHZhciBuYW1lLCBjbGFzc05hbWU7XG5cbiAgICAvLyByZXR1cm4gdGhlIGFscmVhZHkgZ2VuZXJhdGVkIGhhc2hLZXlcbiAgICBpZiAoZ2V0KG9iaikpIHtcbiAgICAgIHJldHVybiBnZXQob2JqKTtcbiAgICB9XG5cbiAgICAvLyBnZW5lcmF0ZSBhIG5ldyBrZXkgYmFzZWQgb25cbiAgICAvLyAtIHRoZSBuYW1lIGlmIGl0J3MgYSBmdW5jdGlvblxuICAgIC8vIC0gYSB1bmlxdWUgaWRcbiAgICBuYW1lID0gdHlwZW9mIG9iaiA9PT0gJ2Z1bmN0aW9uJyAmJlxuICAgICAgdHlwZW9mIG9iai5uYW1lID09PSAnc3RyaW5nJyAmJlxuICAgICAgb2JqLm5hbWU7XG5cbiAgICBjbGFzc05hbWUgPSBoYXNBQ2xhc3NOYW1lKG9iaik7XG4gICAgaWYgKCFuYW1lICYmIGNsYXNzTmFtZSkge1xuICAgICAgbmFtZSA9IGNsYXNzTmFtZTtcbiAgICB9XG5cbiAgICBuYW1lID0gbmFtZSB8fCBfLnVuaXF1ZUlkKCk7XG4gICAgcmV0dXJuIG5hbWU7XG4gIH1cblxuICAvLyB0aGUgbmFtZSBpcyBlcXVhbCB0byB0aGUgcGFzc2VkIG5hbWUgb3IgdGhlXG4gIC8vIGdlbmVyYXRlZCBuYW1lXG4gIG5hbWUgPSBuYW1lIHx8IGdldE5hbWUob2JqKTtcbiAgbmFtZSA9IG5hbWUucmVwbGFjZSgvW1xcLiBdL2ltZywgJy0nKTtcblxuICAvLyBpZiB0aGUgb2JqIGlzIGEgcHJvdG90eXBlIHRoZW4gdHJ5IHRvIGFuYWx5emVcbiAgLy8gdGhlIGNvbnN0cnVjdG9yIGZpcnN0IHNvIHRoYXQgdGhlIHByb3RvdHlwZSBiZWNvbWVzXG4gIC8vIFtuYW1lXS5wcm90b3R5cGVcbiAgLy8gc3BlY2lhbCBjYXNlOiBvYmplY3QuY29uc3RydWN0b3IgPSBvYmplY3RcbiAgaWYgKG9iai5oYXNPd25Qcm9wZXJ0eSAmJlxuICAgICAgb2JqLmhhc093blByb3BlcnR5KCdjb25zdHJ1Y3RvcicpICYmXG4gICAgICB0eXBlb2Ygb2JqLmNvbnN0cnVjdG9yID09PSAnZnVuY3Rpb24nICYmXG4gICAgICBvYmouY29uc3RydWN0b3IgIT09IG9iaikge1xuICAgIG1lLmNyZWF0ZUhhc2hLZXlzRm9yKG9iai5jb25zdHJ1Y3Rvcik7XG4gIH1cblxuICAvLyBzZXQgbmFtZSBvbiBzZWxmXG4gIHNldChvYmosIG5hbWUpO1xuXG4gIC8vIHNldCBuYW1lIG9uIHRoZSBwcm90b3R5cGVcbiAgaWYgKHR5cGVvZiBvYmogPT09ICdmdW5jdGlvbicgJiZcbiAgICAgIG9iai5oYXNPd25Qcm9wZXJ0eSgncHJvdG90eXBlJykpIHtcbiAgICBzZXQob2JqLnByb3RvdHlwZSwgbmFtZSArICctcHJvdG90eXBlJyk7XG4gIH1cbn07XG5cbm1lLmhhcyA9IGZ1bmN0aW9uICh2KSB7XG4gIHJldHVybiB2Lmhhc093blByb3BlcnR5ICYmXG4gICAgdi5oYXNPd25Qcm9wZXJ0eShtZS5oaWRkZW5LZXkpO1xufTtcblxubW9kdWxlLmV4cG9ydHMgPSBtZTsiLCIndXNlIHN0cmljdCc7XG5cbnZhciBfID0gcmVxdWlyZSgnbG9kYXNoJyk7XG5cbmZ1bmN0aW9uIHR5cGUodikge1xuICByZXR1cm4gT2JqZWN0LnByb3RvdHlwZS50b1N0cmluZy5jYWxsKHYpLnNsaWNlKDgsIC0xKTtcbn1cblxudmFyIHV0aWxzID0ge307XG5cbi8qKlxuICogQWZ0ZXIgY2FsbGluZyBgT2JqZWN0LnByb3RvdHlwZS50b1N0cmluZ2Agd2l0aCBgdmAgYXMgdGhlIHNjb3BlXG4gKiB0aGUgcmV0dXJuIHZhbHVlIHdvdWxkIGJlIHRoZSBjb25jYXRlbmF0aW9uIG9mICdbT2JqZWN0ICcsXG4gKiBjbGFzcyBhbmQgJ10nLCBgY2xhc3NgIGlzIHRoZSByZXR1cm5pbmcgdmFsdWUgb2YgdGhpcyBmdW5jdGlvblxuICpcbiAqIGUuZy4gICBPYmplY3QucHJvdG90eXBlLnRvU3RyaW5nLmNhbGwoW10pID09IFtvYmplY3QgQXJyYXldLFxuICogICAgICAgIHRoZSByZXR1cm5pbmcgdmFsdWUgaXMgdGhlIHN0cmluZyBBcnJheVxuICpcbiAqIEBwYXJhbSB7Kn0gdlxuICogQHJldHVybnMge3N0cmluZ31cbiAqL1xudXRpbHMuaW50ZXJuYWxDbGFzc1Byb3BlcnR5ID0gZnVuY3Rpb24gKHYpIHtcbiAgcmV0dXJuIHR5cGUodik7XG59O1xuXG4vKipcbiAqIENoZWNrcyBpZiBhIGdpdmVuIHZhbHVlIGlzIGEgZnVuY3Rpb24sIHRoZSBsaWJyYXJ5IG9ubHkgbmVlZHNcbiAqIHRvIGRpc3Rpbmd1aXNoIGJldHdlZW4gZGlmZmVyZW50IGtpbmRzIG9mIHByaW1pdGl2ZSB0eXBlcyAobm8gbmVlZCB0b1xuICogZGlzdGluZ3Vpc2ggYmV0d2VlbiBkaWZmZXJlbnQga2luZHMgb2Ygb2JqZWN0cylcbiAqXG4gKiBAcGFyYW0gIHsqfSAgdiBUaGUgdmFsdWUgdG8gYmUgY2hlY2tlZFxuICogQHJldHVybnMge0Jvb2xlYW59XG4gKi9cbnV0aWxzLmlzRnVuY3Rpb24gPSBmdW5jdGlvbiAodikge1xuICByZXR1cm4gISF2ICYmIHR5cGVvZiB2ID09PSAnZnVuY3Rpb24nO1xufTtcblxuLyoqXG4gKiBDaGVja3MgaWYgYSBnaXZlbiB2YWx1ZSBpcyBhbiBvYmplY3QsIHRoZSBsaWJyYXJ5IG9ubHkgbmVlZHNcbiAqIHRvIGRpc3Rpbmd1aXNoIGJldHdlZW4gZGlmZmVyZW50IGtpbmRzIG9mIHByaW1pdGl2ZSB0eXBlcyAobm8gbmVlZCB0b1xuICogZGlzdGluZ3Vpc2ggYmV0d2VlbiBkaWZmZXJlbnQga2luZHMgb2Ygb2JqZWN0cylcbiAqXG4gKiBOT1RFOiBhIGZ1bmN0aW9uIHdpbGwgbm90IHBhc3MgdGhpcyB0ZXN0XG4gKiBpLmUuXG4gKiAgICAgICAgdXRpbHMuaXNPYmplY3QoZnVuY3Rpb24oKSB7fSkgaXMgZmFsc2UhXG4gKlxuICogU3BlY2lhbCB2YWx1ZXMgd2hvc2UgYHR5cGVvZmAgcmVzdWx0cyBpbiBhbiBvYmplY3Q6XG4gKiAtIG51bGxcbiAqXG4gKiBAcGFyYW0gIHsqfSAgdiBUaGUgdmFsdWUgdG8gYmUgY2hlY2tlZFxuICogQHJldHVybnMge0Jvb2xlYW59XG4gKi9cbnV0aWxzLmlzT2JqZWN0ID0gZnVuY3Rpb24gKHYpIHtcbiAgcmV0dXJuICEhdiAmJiB0eXBlb2YgdiA9PT0gJ29iamVjdCc7XG59O1xuXG4vKipcbiAqIENoZWNrcyBpZiB0aGUgZ2l2ZW4gdmFsdWUgaXMgYW4gb2JqZWN0IG9yIGEgZnVuY3Rpb24gKG5vdGUgdGhhdCBmb3IgdGhlIHNha2VcbiAqIG9mIHRoZSBsaWJyYXJ5IEFycmF5cyBhcmUgbm90IG9iamVjdHMpXG4gKlxuICogQHBhcmFtIHsqfSB2XG4gKiBAcmV0dXJucyB7Qm9vbGVhbn1cbiAqL1xudXRpbHMuaXNPYmplY3RPckZ1bmN0aW9uID0gZnVuY3Rpb24gKHYpIHtcbiAgcmV0dXJuIHV0aWxzLmlzT2JqZWN0KHYpIHx8IHV0aWxzLmlzRnVuY3Rpb24odik7XG59O1xuXG4vKipcbiAqIEB0ZW1wbGF0ZVxuICpcbiAqIENoZWNrcyBpZiB0aGUgZ2l2ZW4gdmFsdWUgaXMgdHJhdmVyc2FibGUsIGZvciB0aGUgc2FrZSBvZiB0aGUgbGlicmFyeSBhblxuICogb2JqZWN0ICh3aGljaCBpcyBub3QgYW4gYXJyYXkpIG9yIGEgZnVuY3Rpb24gaXMgdHJhdmVyc2FibGUsIHNpbmNlIHRoaXMgZnVuY3Rpb25cbiAqIGlzIHVzZWQgYnkgdGhlIG9iamVjdCBhbmFseXplciBvdmVycmlkaW5nIGl0IHdpbGwgZGV0ZXJtaW5lIHdoaWNoIG9iamVjdHNcbiAqIGFyZSB0cmF2ZXJzYWJsZVxuICpcbiAqIEBwYXJhbSB7Kn0gdlxuICogQHJldHVybnMge0Jvb2xlYW59XG4gKi9cbnV0aWxzLmlzVHJhdmVyc2FibGUgPSBmdW5jdGlvbiAodikge1xuICByZXR1cm4gdXRpbHMuaXNPYmplY3RPckZ1bmN0aW9uKHYpO1xufTtcblxuLyoqXG4gKiBDcmVhdGVzIGEgc3BlY2lhbCBmdW5jdGlvbiB3aGljaCBpcyBhYmxlIHRvIGV4ZWN1dGUgYSBzZXJpZXMgb2YgZnVuY3Rpb25zIHRocm91Z2hcbiAqIGNoYWluaW5nLCB0byBydW4gYWxsIHRoZSBmdW5jdGlvbnMgc3RvcmVkIGluIHRoZSBjaGFpbiBleGVjdXRlIHRoZSByZXN1bHRpbmcgdmFsdWVcbiAqXG4gKiAtIGVhY2ggZnVuY3Rpb24gaXMgaW52b2tlZCB3aXRoIHRoZSBvcmlnaW5hbCBhcmd1bWVudHMgd2hpY2ggYGZ1bmN0aW9uQ2hhaW5gIHdhc1xuICogaW52b2tlZCB3aXRoICsgdGhlIHJlc3VsdGluZyB2YWx1ZSBvZiB0aGUgbGFzdCBvcGVyYXRpb24gYXMgdGhlIGxhc3QgYXJndW1lbnRcbiAqIC0gdGhlIHNjb3BlIG9mIGVhY2ggZnVuY3Rpb24gaXMgdGhlIHNhbWUgc2NvcGUgYXMgdGhlIG9uZSB0aGF0IHRoZSByZXN1bHRpbmdcbiAqIGZ1bmN0aW9uIHdpbGwgaGF2ZVxuICpcbiAqICAgIHZhciBmbnMgPSB1dGlscy5mdW5jdGlvbkNoYWluKClcbiAqICAgICAgICAgICAgICAgIC5jaGFpbihmdW5jdGlvbiAoYSwgYikge1xuICogICAgICAgICAgICAgICAgICBjb25zb2xlLmxvZyhhLCBiKTtcbiAqICAgICAgICAgICAgICAgICAgcmV0dXJuICdmaXJzdCc7XG4gKiAgICAgICAgICAgICAgICB9KVxuICogICAgICAgICAgICAgICAgLmNoYWluKGZ1bmN0aW9uIChhLCBiLCBjKSB7XG4gKiAgICAgICAgICAgICAgICAgIGNvbnNvbGUubG9nKGEsIGIsIGMpO1xuICogICAgICAgICAgICAgICAgICByZXR1cm4gJ3NlY29uZDtcbiAqICAgICAgICAgICAgICAgIH0pXG4gKiAgICBmbnMoMSwgMik7ICAvLyByZXR1cm5zICdzZWNvbmQnXG4gKiAgICAvLyBsb2dzIDEsIDJcbiAqICAgIC8vIGxvZ3MgMSwgMiwgJ2ZpcnN0J1xuICpcbiAqIEByZXR1cm5zIHtGdW5jdGlvbn1cbiAqL1xudXRpbHMuZnVuY3Rpb25DaGFpbiA9IGZ1bmN0aW9uICgpIHtcbiAgdmFyIHN0YWNrID0gW107XG4gIHZhciBpbm5lciA9IGZ1bmN0aW9uICgpIHtcbiAgICB2YXIgYXJncyA9IEFycmF5LnByb3RvdHlwZS5zbGljZS5jYWxsKGFyZ3VtZW50cyk7XG4gICAgdmFyIHZhbHVlID0gbnVsbDtcbiAgICBmb3IgKHZhciBpID0gMDsgaSA8IHN0YWNrLmxlbmd0aDsgaSArPSAxKSB7XG4gICAgICB2YWx1ZSA9IHN0YWNrW2ldLmFwcGx5KHRoaXMsIGFyZ3MuY29uY2F0KHZhbHVlKSk7XG4gICAgfVxuICAgIHJldHVybiB2YWx1ZTtcbiAgfTtcbiAgaW5uZXIuY2hhaW4gPSBmdW5jdGlvbiAodikge1xuICAgIHN0YWNrLnB1c2godik7XG4gICAgcmV0dXJuIGlubmVyO1xuICB9O1xuICByZXR1cm4gaW5uZXI7XG59O1xuXG51dGlscy5jcmVhdGVFdmVudCA9IGZ1bmN0aW9uIChldmVudE5hbWUsIGRldGFpbHMpIHtcbiAgcmV0dXJuIG5ldyBDdXN0b21FdmVudChldmVudE5hbWUsIHtcbiAgICBkZXRhaWw6IGRldGFpbHNcbiAgfSk7XG59O1xudXRpbHMubm90aWZpY2F0aW9uID0gZnVuY3Rpb24gKG1lc3NhZ2UsIGNvbnNvbGVUb28pIHtcbiAgdmFyIGV2ID0gdXRpbHMuY3JlYXRlRXZlbnQoJ3Bvam92aXotbm90aWZpY2F0aW9uJywgbWVzc2FnZSk7XG4gIGNvbnNvbGVUb28gJiYgY29uc29sZS5sb2cobWVzc2FnZSk7XG4gIGRvY3VtZW50LmRpc3BhdGNoRXZlbnQoZXYpO1xufTtcbnV0aWxzLmNyZWF0ZUpzb25wQ2FsbGJhY2sgPSBmdW5jdGlvbiAodXJsKSB7XG4gIHZhciBzY3JpcHQgPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50KCdzY3JpcHQnKTtcbiAgc2NyaXB0LnNyYyA9IHVybDtcbiAgZG9jdW1lbnQuaGVhZC5hcHBlbmRDaGlsZChzY3JpcHQpO1xufTtcbnV0aWxzLnRvUXVlcnlTdHJpbmcgPSBmdW5jdGlvbiAob2JqKSB7XG4gIHZhciBzID0gJycsXG4gICAgaSA9IDA7XG4gIF8uZm9yT3duKG9iaiwgZnVuY3Rpb24gKHYsIGspIHtcbiAgICBpZiAoaSkge1xuICAgICAgcyArPSAnJic7XG4gICAgfVxuICAgIHMgKz0gayArICc9JyArIHY7XG4gICAgaSArPSAxO1xuICB9KTtcbiAgcmV0dXJuIHM7XG59O1xuXG4vKipcbiAqIEB0ZW1wbGF0ZVxuICpcbiAqIEdpdmVuIGEgcHJvcGVydHkgbmFtZSB0aGlzIG1ldGhvZCBpZGVudGlmaWVzIGlmIGl0J3MgYSB2YWxpZCBwcm9wZXJ0eSBmb3IgdGhlIHNha2VcbiAqIG9mIHRoZSBsaWJyYXJ5LCBhIHZhbGlkIHByb3BlcnR5IGlzIGEgcHJvcGVydHkgd2hpY2ggZG9lcyBub3QgcHJvdm9rZSBhbiBlcnJvclxuICogd2hlbiB0cnlpbmcgdG8gYWNjZXNzIHRoZSB2YWx1ZSBhc3NvY2lhdGVkIHRvIGl0IGZyb20gYW55IG9iamVjdFxuICpcbiAqIEZvciBleGFtcGxlIGV4ZWN1dGluZyB0aGUgZm9sbG93aW5nIGNvZGUgaW4gc3RyaWN0IG1vZGUgd2lsbCB5aWVsZCBhbiBlcnJvcjpcbiAqXG4gKiAgICB2YXIgZm4gPSBmdW5jdGlvbigpIHt9O1xuICogICAgZm4uYXJndW1lbnRzXG4gKlxuICogU2luY2UgYXJndW1lbnRzIGlzIHByb2hpYml0ZWQgaW4gc3RyaWN0IG1vZGVcbiAqIGh0dHBzOi8vZGV2ZWxvcGVyLm1vemlsbGEub3JnL2VuLVVTL2RvY3MvV2ViL0phdmFTY3JpcHQvUmVmZXJlbmNlL1N0cmljdF9tb2RlXG4gKlxuICpcbiAqXG4gKiBAcGFyYW0ge09iamVjdHxGdW5jdGlvbn0gb2JqZWN0XG4gKiBAcGFyYW0ge3N0cmluZ30gcHJvcGVydHlcbiAqL1xudXRpbHMub2JqZWN0UHJvcGVydHlJc0ZvcmJpZGRlbiA9IGZ1bmN0aW9uIChvYmplY3QsIHByb3BlcnR5KSB7XG4gIHZhciBrZXk7XG4gIHZhciBydWxlcyA9IHV0aWxzLnByb3BlcnR5Rm9yYmlkZGVuUnVsZXM7XG4gIGZvciAoa2V5IGluIHJ1bGVzKSB7XG4gICAgaWYgKHJ1bGVzLmhhc093blByb3BlcnR5KGtleSkpIHtcbiAgICAgIGlmIChydWxlc1trZXldKG9iamVjdCwgcHJvcGVydHkpKSB7XG4gICAgICAgIHJldHVybiB0cnVlO1xuICAgICAgfVxuICAgIH1cbiAgfVxuICByZXR1cm4gZmFsc2U7XG59O1xuXG4vKipcbiAqIEB0ZW1wbGF0ZVxuICpcbiAqIE1vZGlmeSB0aGlzIG9iamVjdCB0byBhZGQvcmVtb3ZlIHJ1bGVzIHRoYXQgd2lsIGJlIHJ1biBieVxuICogI29iamVjdFByb3BlcnR5SXNGb3JiaWRkZW4sIHRvIGRldGVybWluZSBpZiBhIHByb3BlcnR5IGlzIGludmFsaWRcbiAqXG4gKiBAdHlwZSB7T2JqZWN0fVxuICovXG51dGlscy5wcm9wZXJ0eUZvcmJpZGRlblJ1bGVzID0ge1xuICAvKipcbiAgICogYGNhbGxlcmAgYW5kIGBhcmd1bWVudHNgIGFyZSBpbnZhbGlkIHByb3BlcnRpZXMgb2YgYSBmdW5jdGlvbiBpbiBzdHJpY3QgbW9kZVxuICAgKiBAcGFyYW0geyp9IG9iamVjdFxuICAgKiBAcGFyYW0ge3N0cmluZ30gcHJvcGVydHlcbiAgICogQHJldHVybnMge2Jvb2xlYW59XG4gICAqL1xuICBzdHJpY3RNb2RlOiBmdW5jdGlvbiAob2JqZWN0LCBwcm9wZXJ0eSkge1xuICAgIGlmICh1dGlscy5pc0Z1bmN0aW9uKG9iamVjdCkpIHtcbiAgICAgIHJldHVybiBwcm9wZXJ0eSA9PT0gJ2NhbGxlcicgfHwgcHJvcGVydHkgPT09ICdhcmd1bWVudHMnO1xuICAgIH1cbiAgICByZXR1cm4gZmFsc2U7XG4gIH0sXG5cbiAgLyoqXG4gICAqIFByb3BlcnRpZXMgdGhhdCBzdGFydCBhbmQgZW5kIHdpdGggX18gYXJlIHNwZWNpYWwgcHJvcGVydGllcyxcbiAgICogaW4gc29tZSBjYXNlcyB0aGV5IGFyZSB2YWxpZCAobGlrZSBfX3Byb3RvX18pIG9yIGRlcHJlY2F0ZWRcbiAgICogbGlrZSBfX2RlZmluZUdldHRlcl9fXG4gICAqXG4gICAqIGUuZy5cbiAgICogIC0gT2JqZWN0LnByb3RvdHlwZS5fX3Byb3RvX19cbiAgICogIC0gT2JqZWN0LnByb3RvdHlwZS5fX2RlZmluZUdldHRlcl9fXG4gICAqICAtIE9iamVjdC5wcm90b3R5cGUuX19kZWZpbmVTZXR0ZXJfX1xuICAgKiAgLSBPYmplY3QucHJvdG90eXBlLl9fbG9va3VwR2V0dGVyX19cbiAgICogIC0gT2JqZWN0LnByb3RvdHlwZS5fX2xvb2t1cFNldHRlcl9fXG4gICAqXG4gICAqIEBwYXJhbSB7Kn0gb2JqZWN0XG4gICAqIEBwYXJhbSB7c3RyaW5nfSBwcm9wZXJ0eVxuICAgKiBAcmV0dXJucyB7Ym9vbGVhbn1cbiAgICovXG4gIGhpZGRlblByb3BlcnR5OiBmdW5jdGlvbiAob2JqZWN0LCBwcm9wZXJ0eSkge1xuICAgIHJldHVybiBwcm9wZXJ0eS5zZWFyY2goL15fXy4qP19fJC8pID4gLTE7XG4gIH0sXG5cbiAgLyoqXG4gICAqIEFuZ3VsYXIgaGlkZGVuIHByb3BlcnRpZXMgc3RhcnQgYW5kIGVuZCB3aXRoICQkLCBmb3IgdGhlIHNha2VcbiAgICogb2YgdGhlIGxpYnJhcnkgdGhlc2UgYXJlIGludmFsaWQgcHJvcGVydGllc1xuICAgKiBAcGFyYW0geyp9IG9iamVjdFxuICAgKiBAcGFyYW0ge3N0cmluZ30gcHJvcGVydHlcbiAgICogQHJldHVybnMge2Jvb2xlYW59XG4gICAqL1xuICBhbmd1bGFySGlkZGVuUHJvcGVydHk6IGZ1bmN0aW9uIChvYmplY3QsIHByb3BlcnR5KSB7XG4gICAgcmV0dXJuIHByb3BlcnR5LnNlYXJjaCgvXlxcJFxcJC4qP1xcJFxcJCQvKSA+IC0xO1xuICB9LFxuXG4gIC8qKlxuICAgKiBUaGUgcHJvcGVydGllcyB0aGF0IGhhdmUgdGhlIGZvbGxvd2luZyBzeW1ib2xzIGFyZSBmb3JiaWRkZW46XG4gICAqIFs6K34hPjw9Ly9cXFtcXF1AXFwuIF1cbiAgICogQHBhcmFtIHsqfSBvYmplY3RcbiAgICogQHBhcmFtIHtzdHJpbmd9IHByb3BlcnR5XG4gICAqIEByZXR1cm5zIHtib29sZWFufVxuICAgKi9cbiAgc3ltYm9sczogZnVuY3Rpb24gKG9iamVjdCwgcHJvcGVydHkpIHtcbiAgICByZXR1cm4gcHJvcGVydHkuc2VhcmNoKC9bOit+IT48PS8vXFxdQFxcLiBdLykgPiAtMTtcbiAgfVxufTtcblxubW9kdWxlLmV4cG9ydHMgPSB1dGlsczsiXX0=
+},{"lodash":undefined}]},{},[1]);
 ;
+/**
+ * Created by mauricio on 2/20/15.
+ */
+// support onpushstate
+(function (history) {
+  var pushState = history.pushState;
+  history.pushState = function(state) {
+    if (typeof history.onpushstate === "function") {
+      history.onpushstate({state: state});
+    }
+    return pushState.apply(history, arguments);
+  };
+})(window.history);
 
-		// support onpushstate
-		(function (history) {
-			var pushState = history.pushState;
-			history.pushState = function(state) {
-				if (typeof history.onpushstate === "function") {
-					history.onpushstate({state: state});
-				}
-				return pushState.apply(history, arguments);
-			};
-		})(window.history);
-
-		(function () {
-			var schemas = document.querySelector('core-header-panel #schemas');
-			var pages = document.querySelector('core-animated-pages');
-			var scaffold = document.querySelector('core-scaffold');
-			var tool = document.querySelector('[tool] .title');
-
-			function runLibrary(entry) {
-				// global name, data properties
-                var schema = pojoviz.schemas.find(entry);
-				pojoviz
-                    .run(schema)
-					.then(function() {
-						pojoviz.draw.render();
-					})
-					.fail(function (e) {
-						pojoviz.utils.notification(e);
-						throw e;
-					})
-					.done();
-				// pojoviz.render();
-				pages.selected = 'app';
-				// change title
-//				tool.textContent = value[1];
-				scaffold.closeDrawer();
-			}
-
-            /**
-             * Pushes a new token to the history stack
-             * @param {string} hash
-             */
-			function changeHistory(hash) {
-				window.history.pushState(
-                    {command: hash},
-					hash,
-					'#' + hash
-				);
-			}
-
-			window.onpopstate = history.onpushstate = function(e) {
-				var command = e.state.command;
-				if (~command.indexOf('render/')) {
-					runLibrary(command.split('/')[1]);
-					return;
-				}
-                pages.selected = command;
-				tool.textContent = '';
-			};
-
-			window.pushState = function (hash) {
-				// if the hash doesn't start with render/
-				if (hash.indexOf('render/') === -1) {
-                    // default to readme
-					hash = 'readme';
-				}
-				changeHistory(hash);
-			};
-
-			// settings + readme on click event
-			[].slice.call(scaffold
-				.querySelectorAll('core-scaffold .toolbar-page'))
-				.forEach(function (v) {
-					v.addEventListener('click', function (event) {
-						changeHistory(event.target.dataset.command);
-					});
-				});
-
-			// listen for the event notification to update the status
-            // of the toast (polymer's notification)
-			var toast = document.getElementById('toast');
-			document
-				.addEventListener('pojoviz-notification', function (e) {
-					toast.text = e.detail;
-					toast.show();
-				});
-
-			window.addEventListener('polymer-ready', function () {
-				// query params
-				var params = {};
-				location.search.substring(1).split('&')
-					.forEach(function (v) {
-						var sp = v.split('=');
-						params[sp[0]] = sp[1];
-					});
-                // hide some elements
-                if (params.toolbar === 'false') {
-                    document.documentElement.className += ' notoolbar';
-                }
-
-                // fired from elements/libraryMenu.html
-                document.addEventListener('library-select', function (e) {
-                    changeHistory(e.detail);
-                });
-
-                // bind the configuration of known schemas to the sidebar
-                document.getElementById('libraries').sections = [{
-                    icon: 'exit-to-app',
-                    label: 'Known Schemas',
-                    libraries: pojoviz.schemas.knownSchemas
-                }, {
-                    icon: 'favorite',
-                    label: 'Notable Libraries',
-                    libraries: pojoviz.schemas.notableLibraries
-                }, {
-                    icon: 'stars',
-                    label: 'My libraries',
-                    libraries: pojoviz.schemas.myLibraries
-                }, {
-                    icon: 'warning',
-                    label: 'Huge Schemas',
-                    libraries: pojoviz.schemas.hugeSchemas
-                }, {
-                    icon: 'cloud',
-                    label: 'Downloaded',
-                    libraries: pojoviz.schemas.downloaded
-                }];
-
-                // hash autorender check
-                setTimeout(function () {
-                    var hash = (history.state && history.state.command) ||
-                        location.hash.substr(1);
-                    window.pushState(hash);
-                }, 0)
-            });
-		})();
-	;
+window.$$ = function (selector) {
+  return document.querySelector(selector);
+};;
 
 	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

@@ -48,14 +48,12 @@ _.merge(libraries, {
   builtIn: new BuiltIn(),
   global: new Global(),
   //popular
-  angular: new Angular(),
-  //mine
-  t3: new Inspector({ entryPoint: 't3' }),
+  angular: new Angular()
   //huge
-  three: new Inspector({
-    entryPoint: 'THREE',
-    alwaysDirty: true
-  })
+  //three: new Inspector({
+  //  entryPoint: 'THREE',
+  //  alwaysDirty: true
+  //})
 });
 
 Inspector.instances = libraries;

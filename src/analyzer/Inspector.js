@@ -126,11 +126,13 @@ function Inspector(config) {
    *
    *  pojoviz:builtIn|pojoviz:window|global:document
    *
-   * @type {Array}
+   * @type {string}
    */
-  this.forbiddenTokens = (config.forbiddenTokens || '').split('|').concat(
-    (config.additionalForbiddenTokens || '').split('|')
-  );
+  this.forbiddenTokens = [config.forbiddenTokens, config.additionalForbiddenTokens]
+    .filter(function (token) {
+      return !!token;
+    })
+    .join('|');
 
   /**
    * This inspector is initially in a dirty state
@@ -195,7 +197,7 @@ Inspector.DEFAULT_CONFIG = {
   alwaysDirty: false,
   debug: false,
   forbiddenTokens: Inspector.DEFAULT_FORBIDDEN_TOKENS,
-  additionalForbiddenTokens: '',
+  additionalForbiddenTokens: null,
   analyzerConfig: {}
 };
 
@@ -301,7 +303,7 @@ Inspector.prototype.afterInspectSelf = function () {
  */
 Inspector.prototype.parseForbiddenTokens = function () {
   var me = this;
-  var forbidden = [].concat(this.forbiddenTokens);
+  var forbidden = this.forbiddenTokens.split('|');
   var toForbid = [];
   me.debug && console.log('about to forbid: ', forbidden);
   forbidden

@@ -26,7 +26,7 @@
     "src"
   ],
   "dependencies": {
-    "t3": "~0.1.3",
+    "t3": "^0.2.0",
     "marked": "~0.3.2",
     "polymer": "Polymer/polymer#~0.5.4",
     "core-elements": "Polymer/core-elements#~0.5.4",

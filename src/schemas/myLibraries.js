@@ -6,5 +6,5 @@ module.exports = [{
   entryPoint: 'pojoviz',
   alwaysDirty: true
 }, {
-  displayName: 't3'
+  entryPoint: 't3'
 }];

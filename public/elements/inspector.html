@@ -72,7 +72,7 @@
                     Defines the maximum depth when running the dfs algorithm starting from the <i>entryPoint</i> object <br />
                     WARNING: The higher the value the longer the time needed for the browser to render the nodes
                 </p>
-                <paper-slider min="0" max="20" value="{{ record.analyzerConfig.levels }}" pin>
+                <paper-slider min="0" max="20" value="{{ record.analyzer.levels }}" pin>
                 </paper-slider>
             </div>
 
@@ -92,7 +92,7 @@
             <!--analyzer config-->
             <!--simple functions-->
             <div center horizontal layout>
-                <paper-toggle-button checked="{{ record.analyzerConfig.visitSimpleFunctions }}">
+                <paper-toggle-button checked="{{ record.analyzer.visitSimpleFunctions }}">
                 </paper-toggle-button>
                 <div vertical layout flex>
                     <div class="bold">Visit simple functions</div>
@@ -105,7 +105,7 @@
 
             <!--simple functions-->
             <div center horizontal layout>
-                <paper-toggle-button checked="{{ record.analyzerConfig.visitConstructors }}">
+                <paper-toggle-button checked="{{ record.analyzer.visitConstructors }}">
                 </paper-toggle-button>
                 <div vertical layout flex>
                     <div class="bold">Visit constructors</div>
@@ -143,25 +143,20 @@
 
             created: function () {
                 this.record = {
-                    analyzerConfig: {}
+                    analyzer: {}
                 };
-                // sync this variable with options
-//                this.record = JSON.parse(JSON.stringify(
-//                    pojoviz.Inspector.DEFAULT_CONFIG
-//                ));
-                // default options for the search
-//                this.record.analyzerConfig.levels = 10;
-//                this.record.analyzerConfig.visitSimpleFunctions = false;
-//                this.record.analyzerConfig.visitConstructors = true;
             },
             getValues: function () {
                 return this.record;
             },
-            setRecordWithDefaults: function (config) {
-                this.record = _.merge(
-                    pojoviz.Inspector.DEFAULT_CONFIG
-                , config);
-                console.log(this.record);
+
+            setRecord: function (record) {
+                this.original = _.merge({}, record);
+                this.record = record;
+            },
+
+            isDirty: function () {
+                return this.dirty;
             }
         });
     </script>

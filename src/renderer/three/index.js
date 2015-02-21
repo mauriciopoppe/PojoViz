@@ -3,19 +3,21 @@ require('./PanControls');
 var t3 = require('t3'),
   _ = require('lodash'),
   THREE = require('THREE'),
-  id = 'threejscanvas',
+  el,
   instance;
 
 module.exports = {
   clear: function () {
-    var el = document.getElementById(id);
-    while(el.firstChild) {
-      el.removeChild(el.firstChild);
+    var root = document.querySelector(el);
+    while(root.firstChild) {
+      root.removeChild(root.firstChild);
     }
-    el.style.display = 'none';
     if (instance) {
       instance.loopManager.stop();
     }
+  },
+  setCanvasEl: function (newEl) {
+    el = newEl;
   },
   render: function (data) {
     var nodes = data.nodes,
@@ -44,7 +46,7 @@ module.exports = {
       nodeMap[node.label] = node;
     });
 
-    var wrapperEl = document.getElementById(id);
+    var wrapperEl = document.querySelector(el);
     wrapperEl.style.display = 'block';
 
     // pre init
@@ -53,8 +55,8 @@ module.exports = {
       fogColor: 0xffffff,
       groundColor: 0xffffff
     };
-    var wrapper = document.getElementById(id),
-      bbox = wrapper.getBoundingClientRect();
+    var wrapper = document.querySelector(el);
+    var bbox = wrapper.getBoundingClientRect();
 
     function getY(node, i) {
       return node.y - node.height * 0.5 +
@@ -310,7 +312,7 @@ module.exports = {
     }
 
     instance = t3.run({
-      id: id,
+      selector: el,
       width: bbox.width,
       height: bbox.height,
       theme: 'allWhite',
@@ -322,6 +324,7 @@ module.exports = {
         gridZ: false
       },
       init: function () {
+      console.log(data);
         var me = this,
           rendererEl = me.renderer.domElement;
         me.datgui.close();
@@ -388,8 +391,7 @@ module.exports = {
 
         // camera
         var fov = 70,
-          ratio = rendererEl.clientWidth /
-            rendererEl.clientHeight,
+          ratio = rendererEl.clientWidth / rendererEl.clientHeight,
           near = 1,
           far = 20000;
         var camera = new THREE.PerspectiveCamera(fov, ratio, near, far);

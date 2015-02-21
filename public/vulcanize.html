@@ -818,6 +818,18 @@ object like this: `{v: 'top', h: 'right'}`.
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 <style shim-shadowdom="">
   /* FIXME consider theming */
 
@@ -853,7 +865,7 @@ object like this: `{v: 'top', h: 'right'}`.
 
 
 
-	
+
 
 
 
@@ -948,7 +960,7 @@ html /deep/ .paper-shadow-bottom-z-5 {
 
 
 
-	
+
 
 
 
@@ -1024,13 +1036,21 @@ in another form (e.g. a text block following the spinner).
 
 
 
+
+
+
+
+
+
+
+
+
+
 	
-
-
-
-
 	
-
+	
+	
+	
 	
 
 	<!-- normalize -->
@@ -1039,33 +1059,84 @@ in another form (e.g. a text block following the spinner).
  * In this file you should write your main styles. (or centralize your imports)
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
-/* line 24, ../sass/_base.scss */
-.unselectable {
+/* line 4, ../sass/_common.scss */
+html /deep/ .unselectable {
   -moz-user-select: none;
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
 }
+/* line 11, ../sass/_common.scss */
+html /deep/ .no-padding {
+  padding: 0 !important;
+}
 
-/* line 4, ../sass/elements/inspector.scss */
+/* line 21, ../sass/_common.scss */
+html /deep/ paper-toggle-button::shadow .toggle-ink {
+  color: #4fc3f7;
+}
+/* line 25, ../sass/_common.scss */
+html /deep/ paper-toggle-button::shadow [checked] .toggle-bar {
+  background-color: #b3e5fc;
+}
+/* line 28, ../sass/_common.scss */
+html /deep/ paper-toggle-button::shadow [checked] .toggle-button {
+  background-color: #4fc3f7;
+}
+/* line 36, ../sass/_common.scss */
+html /deep/ paper-input /deep/ .focused-underline {
+  background-color: #4fc3f7;
+}
+/* line 41, ../sass/_common.scss */
+html /deep/ paper-input /deep/ [focused] /deep/ .floated-label .label-text {
+  color: #4fc3f7;
+}
+/* line 47, ../sass/_common.scss */
+html /deep/ paper-slider::shadow #sliderKnobInner, html /deep/ paper-slider::shadow #sliderKnobInner::before {
+  background-color: #4fc3f7;
+}
+/* line 50, ../sass/_common.scss */
+html /deep/ paper-slider::shadow #sliderBar::shadow #activeProgress {
+  background-color: #4fc3f7;
+}
+
+/* line 7, ../sass/elements/settings.scss */
+pojoviz-settings::shadow paper-slider::shadow #sliderKnobInner, pojoviz-settings::shadow paper-slider::shadow #sliderKnobInner::before,
+pojoviz-settings::shadow paper-slider::shadow #sliderBar::shadow #activeProgress {
+  background-color: #03a9f4;
+}
+/* line 13, ../sass/elements/settings.scss */
+pojoviz-settings::shadow paper-checkbox::shadow #ink[checked] {
+  color: #03a9f4;
+}
+/* line 16, ../sass/elements/settings.scss */
+pojoviz-settings::shadow paper-checkbox::shadow #checkbox.checked {
+  border-color: #03a9f4;
+}
+/* line 22, ../sass/elements/settings.scss */
+pojoviz-settings::shadow paper-radio-button::shadow #onRadio {
+  background-color: #03a9f4;
+}
+
+/* line 6, ../sass/elements/inspector.scss */
 html /deep/ pojoviz-inspector-form /deep/ paper-input {
   width: 100%;
 }
-/* line 8, ../sass/elements/inspector.scss */
+/* line 10, ../sass/elements/inspector.scss */
 html /deep/ pojoviz-inspector-form /deep/ paper-spinner {
   position: relative;
   top: 40px;
   left: 20px;
 }
-/* line 15, ../sass/elements/inspector.scss */
+/* line 17, ../sass/elements/inspector.scss */
 html /deep/ pojoviz-inspector-form /deep/ .options .bold {
   font-weight: bold;
 }
-/* line 19, ../sass/elements/inspector.scss */
+/* line 21, ../sass/elements/inspector.scss */
 html /deep/ pojoviz-inspector-form /deep/ .options [center] {
   margin: 20px 0;
 }
-/* line 25, ../sass/elements/inspector.scss */
+/* line 27, ../sass/elements/inspector.scss */
 html /deep/ pojoviz-inspector-form /deep/ paper-toggle-button {
   width: 50px;
 }
@@ -1151,78 +1222,208 @@ html /deep/ #aboutPopup::shadow #scroller {
   height: 350px;
 }
 
-/* line 22, ../sass/app.scss */
+/* line 11, ../sass/renderer/d3.scss */
+html /deep/ .pv-link {
+  -webkit-transition-property: stroke;
+  -moz-transition-property: stroke;
+  -o-transition-property: stroke;
+  transition-property: stroke;
+  -webkit-transition-duration: 0.25s;
+  -moz-transition-duration: 0.25s;
+  -o-transition-duration: 0.25s;
+  transition-duration: 0.25s;
+  fill: none;
+  stroke-width: 3px;
+  stroke: lightgrey;
+}
+/* line 18, ../sass/renderer/d3.scss */
+html /deep/ .pv-link.selected {
+  stroke: #03a9f4;
+}
+/* line 20, ../sass/renderer/d3.scss */
+html /deep/ .pv-link.selected.predecessor {
+  stroke: #e51c23;
+}
+/* line 23, ../sass/renderer/d3.scss */
+html /deep/ .pv-link.selected.successor {
+  stroke: #03a9f4;
+}
+/* line 29, ../sass/renderer/d3.scss */
+html /deep/ .canvas-wrapper {
+  height: 100%;
+}
+/* line 32, ../sass/renderer/d3.scss */
+html /deep/ svg#canvas {
+  width: 100%;
+  height: 100%;
+}
+/* line 37, ../sass/renderer/d3.scss */
+html /deep/ svg#canvas.dragged {
+  cursor: move;
+}
+/* line 41, ../sass/renderer/d3.scss */
+html /deep/ svg#canvas .pv-nodes-focused .pv-node {
+  opacity: 0.3;
+}
+/* line 43, ../sass/renderer/d3.scss */
+html /deep/ svg#canvas .pv-nodes-focused .pv-node.selected {
+  opacity: 1;
+}
+/* line 47, ../sass/renderer/d3.scss */
+html /deep/ svg#canvas .pv-nodes-focused .pv-node.predecessor .node-background {
+  stroke: #e51c23;
+}
+/* line 52, ../sass/renderer/d3.scss */
+html /deep/ svg#canvas .pv-nodes-focused .pv-node.successor .node-background {
+  stroke: #03a9f4;
+}
+/* line 57, ../sass/renderer/d3.scss */
+html /deep/ svg#canvas .pv-nodes-focused .pv-node.current .node-background {
+  stroke: #673ab7;
+}
+/* line 65, ../sass/renderer/d3.scss */
+html /deep/ .pv-node {
+  -webkit-transition-property: opacity;
+  -moz-transition-property: opacity;
+  -o-transition-property: opacity;
+  transition-property: opacity;
+  -webkit-transition-duration: 0.25s;
+  -moz-transition-duration: 0.25s;
+  -o-transition-duration: 0.25s;
+  transition-duration: 0.25s;
+}
+/* line 69, ../sass/renderer/d3.scss */
+html /deep/ .pv-node .node-background {
+  fill: white;
+  fill-opacity: 1;
+  stroke-opacity: 1;
+  stroke: #b3e5fc;
+  stroke-width: 2px;
+}
+/* line 76, ../sass/renderer/d3.scss */
+html /deep/ .pv-node .pv-title {
+  font-size: 17px;
+  font-weight: 100;
+}
+/* line 83, ../sass/renderer/d3.scss */
+html /deep/ .pv-node .pv-body .pv-property .pv-dot-object {
+  fill: #03a9f4;
+  fill-opacity: 1;
+}
+/* line 87, ../sass/renderer/d3.scss */
+html /deep/ .pv-node .pv-body .pv-property .pv-dot-function {
+  fill: #f9bdbb;
+}
+/* line 92, ../sass/renderer/d3.scss */
+html /deep/ .pv-node .pv-body .pv-property .pv-property-background {
+  fill: white;
+}
+/* line 96, ../sass/renderer/d3.scss */
+html /deep/ .pv-node .pv-body .pv-property:hover {
+  cursor: pointer;
+}
+/* line 101, ../sass/renderer/d3.scss */
+html /deep/ .pv-node .pv-body .pv-property.pv-__proto__ rect {
+  fill: #b3e5fc;
+  fill-opacity: 0.15;
+  stroke-dasharray: 2;
+}
+/* line 106, ../sass/renderer/d3.scss */
+html /deep/ .pv-node .pv-body .pv-property.pv-__proto__ text {
+  stroke-dasharray: 1;
+  fill: #b3e5fc;
+}
+/* line 113, ../sass/renderer/d3.scss */
+html /deep/ .pv-node .pv-body .pv-property rect.pv-string {
+  stroke: #a3e9a4;
+}
+/* line 116, ../sass/renderer/d3.scss */
+html /deep/ .pv-node .pv-body .pv-property rect.pv-number {
+  stroke: #ffe0b2;
+}
+/* line 122, ../sass/renderer/d3.scss */
+html /deep/ .pv-node .pv-body .pv-property rect.pv-object {
+  stroke: #b3e5fc;
+}
+/* line 130, ../sass/renderer/d3.scss */
+html /deep/ .pv-node.pv-function rect.node-background {
+  stroke: #f9bdbb;
+}
+
+/* line 16, ../sass/app.scss */
 #__bs_notify__ {
   display: none !important;
 }
 
-/* line 26, ../sass/app.scss */
-*, *:before, *:after {
-  font-family: 'Roboto', sans-serif;
-}
-
-/* line 30, ../sass/app.scss */
-.no-padding {
-  padding: 0 !important;
-}
-
-/* line 36, ../sass/app.scss */
+/* line 22, ../sass/app.scss */
 html.notoolbar /deep/ core-toolbar {
   display: none;
 }
 
-/* line 44, ../sass/app.scss */
-body core-animated-pages {
+/* line 31, ../sass/app.scss */
+body /deep/ core-animated-pages {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
 }
-/* line 51, ../sass/app.scss */
-body core-animated-pages section {
+/* line 37, ../sass/app.scss */
+body /deep/ core-animated-pages section {
   padding: 40px;
 }
-/* line 57, ../sass/app.scss */
+/* line 41, ../sass/app.scss */
+body /deep/ .logo {
+  text-align: center;
+  padding: 30px 15px 15px;
+  font-size: 4em;
+  font-weight: 100;
+}
+/* line 46, ../sass/app.scss */
+body /deep/ .logo .subtitle {
+  padding-top: 10px;
+  font-size: 12px;
+}
+/* line 51, ../sass/app.scss */
 body /deep/ .center {
   display: block;
   margin: auto;
 }
-/* line 61, ../sass/app.scss */
+/* line 55, ../sass/app.scss */
 body /deep/ h1 {
   font-weight: 100;
   font-size: 3em;
 }
-/* line 65, ../sass/app.scss */
+/* line 59, ../sass/app.scss */
 body /deep/ core-header-panel[main] {
   background-color: white;
 }
-/* line 67, ../sass/app.scss */
+/* line 61, ../sass/app.scss */
 body /deep/ core-header-panel[main] core-toolbar {
   background-color: #03a9f4;
 }
-/* line 71, ../sass/app.scss */
+/* line 68, ../sass/app.scss */
 body /deep/ .pojoviz {
   font-weight: 100;
   font-size: 1.3rem;
   color: #03a9f4;
 }
-/* line 76, ../sass/app.scss */
+/* line 73, ../sass/app.scss */
 body /deep/ core-item:hover {
   cursor: pointer !important;
 }
-/* line 79, ../sass/app.scss */
+/* line 76, ../sass/app.scss */
 body /deep/ .readme-iframe {
   margin: auto;
   display: block;
 }
-/* line 82, ../sass/app.scss */
+/* line 79, ../sass/app.scss */
 body /deep/ .readme-iframe html {
   -webkit-box-shadow: inset 0px 0px 14px 0px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: inset 0px 0px 14px 0px rgba(0, 0, 0, 0.75);
   box-shadow: inset 0px 0px 14px 0px rgba(0, 0, 0, 0.75);
 }
-/* line 88, ../sass/app.scss */
+/* line 85, ../sass/app.scss */
 body /deep/ .as-button {
   text-decoration: none;
   padding: 10px;
@@ -1234,183 +1435,41 @@ body /deep/ .as-button {
   background: #03a9f4;
   color: white;
 }
-
-/* line 97, ../sass/app.scss */
-.logo {
-  text-align: center;
-  padding: 15px;
-  font-size: 4em;
-  font-weight: 100;
+/* line 95, ../sass/app.scss */
+body /deep/ pojoviz-library-menu::shadow .library {
+  font-size: 13px;
 }
-/* line 102, ../sass/app.scss */
-.logo .subtitle {
-  font-size: 12px;
-}
-
-/* line 108, ../sass/app.scss */
-.pv-link {
-  -webkit-transition-property: stroke;
-  -moz-transition-property: stroke;
-  -o-transition-property: stroke;
-  transition-property: stroke;
-  -webkit-transition-duration: 0.2s;
-  -moz-transition-duration: 0.2s;
-  -o-transition-duration: 0.2s;
-  transition-duration: 0.2s;
-  fill: none;
-  stroke-width: 3px;
-  stroke: lightgrey;
-}
-/* line 115, ../sass/app.scss */
-.pv-link.selected {
-  stroke: #03a9f4;
-}
-/* line 117, ../sass/app.scss */
-.pv-link.selected.predecessor {
-  stroke: #e51c23;
-}
-/* line 120, ../sass/app.scss */
-.pv-link.selected.successor {
-  stroke: #03a9f4;
-}
-
-/* line 126, ../sass/app.scss */
-.canvas-wrapper {
-  height: 100%;
-}
-
-/* line 129, ../sass/app.scss */
-svg#canvas {
-  width: 100%;
-  height: 100%;
-}
-/* line 134, ../sass/app.scss */
-svg#canvas.dragged {
-  cursor: move;
-}
-/* line 138, ../sass/app.scss */
-svg#canvas .pv-nodes-focused .pv-node {
+/* line 101, ../sass/app.scss */
+body /deep/ .library-runtime-configuration {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 13px;
   opacity: 0.3;
-}
-/* line 140, ../sass/app.scss */
-svg#canvas .pv-nodes-focused .pv-node.selected {
-  opacity: 1;
-}
-/* line 144, ../sass/app.scss */
-svg#canvas .pv-nodes-focused .pv-node.predecessor .node-background {
-  stroke: #e51c23;
-}
-/* line 149, ../sass/app.scss */
-svg#canvas .pv-nodes-focused .pv-node.successor .node-background {
-  stroke: #03a9f4;
-}
-/* line 154, ../sass/app.scss */
-svg#canvas .pv-nodes-focused .pv-node.current .node-background {
-  stroke: #673ab7;
-}
-
-/* line 162, ../sass/app.scss */
-.pv-node {
   -webkit-transition-property: opacity;
   -moz-transition-property: opacity;
   -o-transition-property: opacity;
   transition-property: opacity;
-  -webkit-transition-duration: 0.2s;
-  -moz-transition-duration: 0.2s;
-  -o-transition-duration: 0.2s;
-  transition-duration: 0.2s;
+  -webkit-transition-duration: 0.25s;
+  -moz-transition-duration: 0.25s;
+  -o-transition-duration: 0.25s;
+  transition-duration: 0.25s;
 }
-/* line 166, ../sass/app.scss */
-.pv-node .node-background {
-  fill: white;
-  fill-opacity: 1;
-  stroke-opacity: 1;
-  stroke: #b3e5fc;
-  stroke-width: 2px;
-}
-/* line 173, ../sass/app.scss */
-.pv-node .pv-title {
-  font-size: 17px;
-  font-weight: 100;
-}
-/* line 180, ../sass/app.scss */
-.pv-node .pv-body .pv-property .pv-dot-object {
-  fill: #03a9f4;
-  fill-opacity: 1;
-}
-/* line 184, ../sass/app.scss */
-.pv-node .pv-body .pv-property .pv-dot-function {
-  fill: #f9bdbb;
-}
-/* line 189, ../sass/app.scss */
-.pv-node .pv-body .pv-property .pv-property-background {
-  fill: white;
-}
-/* line 193, ../sass/app.scss */
-.pv-node .pv-body .pv-property:hover {
-  cursor: pointer;
-}
-/* line 198, ../sass/app.scss */
-.pv-node .pv-body .pv-property.pv-__proto__ rect {
-  fill: #b3e5fc;
-  fill-opacity: 0.15;
-  stroke-dasharray: 2;
-}
-/* line 203, ../sass/app.scss */
-.pv-node .pv-body .pv-property.pv-__proto__ text {
-  stroke-dasharray: 1;
-  fill: #b3e5fc;
-}
-/* line 210, ../sass/app.scss */
-.pv-node .pv-body .pv-property rect.pv-string {
-  stroke: #a3e9a4;
-}
-/* line 213, ../sass/app.scss */
-.pv-node .pv-body .pv-property rect.pv-number {
-  stroke: #ffe0b2;
-}
-/* line 219, ../sass/app.scss */
-.pv-node .pv-body .pv-property rect.pv-object {
-  stroke: #b3e5fc;
-}
-/* line 227, ../sass/app.scss */
-.pv-node.pv-function rect.node-background {
-  stroke: #f9bdbb;
+/* line 111, ../sass/app.scss */
+body /deep/ .library-runtime-configuration:hover {
+  opacity: 1;
 }
 
-/* line 234, ../sass/app.scss */
+/* line 123, ../sass/app.scss */
 html /deep/ .small {
   font-size: 12px !important;
   font-weight: 100;
 }
 
-/* line 242, ../sass/app.scss */
+/* line 131, ../sass/app.scss */
 html /deep/ paper-dialog::shadow #scroller {
   width: 850px;
   height: 650px;
-}
-
-/* line 253, ../sass/app.scss */
-pojoviz-settings::shadow paper-slider::shadow #sliderKnobInner, pojoviz-settings::shadow paper-slider::shadow #sliderKnobInner::before,
-pojoviz-settings::shadow paper-slider::shadow #sliderBar::shadow #activeProgress {
-  background-color: #03a9f4;
-}
-/* line 259, ../sass/app.scss */
-pojoviz-settings::shadow paper-checkbox::shadow #ink[checked] {
-  color: #03a9f4;
-}
-/* line 262, ../sass/app.scss */
-pojoviz-settings::shadow paper-checkbox::shadow #checkbox.checked {
-  border-color: #03a9f4;
-}
-/* line 268, ../sass/app.scss */
-pojoviz-settings::shadow paper-radio-button::shadow #onRadio {
-  background-color: #03a9f4;
-}
-
-/* line 276, ../sass/app.scss */
-pojoviz-library-menu::shadow .library {
-  font-size: 13px;
 }
 </style>
 
@@ -1419,12 +1478,14 @@ pojoviz-library-menu::shadow .library {
 	
 	<script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.min.js"></script>
 	<!-- bundle: three + t3 + marked + highlight -->
+
 	<!-- build:js lib/vendor.js -->
 	
 	
 	
 	
-	<!-- endbuild -->
+	
+    <!-- endbuild -->
 
 </head>
 <body unresolved="" fullbleed=""><div hidden=""><polymer-element name="core-toolbar" attributes="justify middleJustify bottomJustify" assetpath="bower_components/core-toolbar/">
@@ -4980,6 +5041,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             <template if="{{ !hideSrc }}">
                 <paper-input id="src" floatinglabel="" label="Library remote source" value="{{ record.src }}">
                 </paper-input>
+
+                <paper-input floatinglabel="" label="Name displayed" value="{{ record.displayName }}">
+                </paper-input>
             </template>
 
             <!--entry point-->
@@ -5022,7 +5086,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                     Defines the maximum depth when running the dfs algorithm starting from the <i>entryPoint</i> object <br>
                     WARNING: The higher the value the longer the time needed for the browser to render the nodes
                 </p>
-                <paper-slider min="0" max="20" value="{{ record.analyzerConfig.levels }}" pin="">
+                <paper-slider min="0" max="20" value="{{ record.analyzer.levels }}" pin="">
                 </paper-slider>
             </div>
 
@@ -5042,7 +5106,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             <!--analyzer config-->
             <!--simple functions-->
             <div center="" horizontal="" layout="">
-                <paper-toggle-button checked="{{ record.analyzerConfig.visitSimpleFunctions }}">
+                <paper-toggle-button checked="{{ record.analyzer.visitSimpleFunctions }}">
                 </paper-toggle-button>
                 <div vertical="" layout="" flex="">
                     <div class="bold">Visit simple functions</div>
@@ -5055,7 +5119,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
             <!--simple functions-->
             <div center="" horizontal="" layout="">
-                <paper-toggle-button checked="{{ record.analyzerConfig.visitConstructors }}">
+                <paper-toggle-button checked="{{ record.analyzer.visitConstructors }}">
                 </paper-toggle-button>
                 <div vertical="" layout="" flex="">
                     <div class="bold">Visit constructors</div>
@@ -5135,10 +5199,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 <div class="small">
                     <div>Display Name: <kbd>{{options.displayName}}</kbd></div>
                     <div>Source: <kbd>{{options.src}}</kbd></div>
-                    <div>Levels: <kbd>{{options.analyzerConfig.levels}}</kbd></div>
+                    <div>Levels: <kbd>{{options.analyzer.levels}}</kbd></div>
                     <div>Entry Point: <kbd>{{options.entryPoint}}</kbd></div>
                     <div>Always dirty: <kbd>{{options.alwaysDirty}}</kbd></div>
-                    <div>Visit simple functions: <kbd>{{options.analyzerConfig.visitSimpleFunctions}}</kbd></div>
+                    <div>Visit simple functions: <kbd>{{options.analyzer.visitSimpleFunctions}}</kbd></div>
                 </div>
             </template>
 
@@ -5281,79 +5345,93 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 	</template>
 	
+</polymer-element><polymer-element name="pojoviz-app" assetpath="elements/">
+    <template>
+        <core-scaffold id="scaffold" responsivewidth="1000px">
+            <!--sidebar-->
+            <core-header-panel navigation="" flex="" mode="seamed">
+                <div class="logo">
+                    PojoViz
+                    <div class="subtitle middle">
+                        Plain Old JavaScript Object Visualization
+                    </div>
+                </div>
+
+                <!-- libraries shown in the sidebar -->
+                <pojoviz-library-menu id="libraries">
+                </pojoviz-library-menu>
+
+            </core-header-panel>
+
+            <!-- title + toolbar -->
+            <div id="toolbar" tool="" horizontal="" layout="" center="" style="width: 100%">
+                <div class="title"></div>
+                <div flex=""></div>
+
+                <!-- GitHub buttons: see http://ghbtns.com -->
+                <iframe src="http://ghbtns.com/github-btn.html?user=maurizzzio&amp;repo=PojoViz&amp;type=watch&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
+
+                <pojoviz-search></pojoviz-search>
+                <pojoviz-about></pojoviz-about>
+                <core-icon-button data-command="settings" class="toolbar-page" icon="settings">
+                </core-icon-button>
+                <core-icon-button id="readme" data-command="readme" class="toolbar-page" icon="description">
+                </core-icon-button>
+            </div>
+
+            <!--content-->
+            <core-animated-pages id="pages" transitions="cross-fade" valueattr="label">
+
+                <section label="app" class="no-padding">
+                    <div class="canvas-wrapper" cross-fade="">
+
+                        <!--configuration options-->
+                        <div horizontal="" class="library-runtime-configuration">
+                            <paper-button id="runtime-configuration" on-click="{{ onRuntimeConfigurationClick }}">
+                                configuration
+                            </paper-button>
+                        </div>
+
+                        <!--three js renderer canvas-->
+                        <!--<div id="threejscanvas" style="display: none; height: 100%"></div>-->
+                        <!--d3 renderer canvas-->
+                        <!--<svg id="canvas" class="unselectable" style="display: none;"></svg>-->
+                        <div id="canvas" class="unselectable" style="height: 100%"></div>
+                    </div>
+                </section>
+                <section label="settings" class="page">
+                    <div class="wrapper" cross-fade="">
+                        <pojoviz-settings></pojoviz-settings>
+                    </div>
+                </section>
+                <section label="readme" class="page">
+                    <div class="wrapper" cross-fade="">
+                        <pojoviz-readme></pojoviz-readme>
+                    </div>
+                </section>
+            </core-animated-pages>
+
+            <!--popup shown to edit a known configuration -->
+            <paper-dialog id="knownConfigurationPopup" class="configuration-form" backdrop="" heading="Edit Configuration" transition="paper-dialog-transition-center">
+                <pojoviz-inspector-form id="inspectorForm"></pojoviz-inspector-form>
+            </paper-dialog>
+
+        </core-scaffold>
+
+        <!--notification-->
+        <paper-toast id="notification" text=""></paper-toast>
+
+    </template>
+    
 </polymer-element></div>
-
-    <core-scaffold responsivewidth="1000px">
-        <!--sidebar-->
-		<core-header-panel navigation="" flex="" mode="seamed">
-			<div class="logo">
-				PojoViz
-				<div class="subtitle middle">
-					Plain Old JavaScript Object Visualization
-				</div>
-			</div>
-
-			<!-- libraries shown in the sidebar -->
-            <pojoviz-library-menu id="libraries">
-            </pojoviz-library-menu>
-
-        </core-header-panel>
-
-		<!-- title + toolbar -->
-		<div tool="" horizontal="" layout="" center="" style="width: 100%">
-			<div class="title"></div>
-			<div flex=""></div>
-
-            <!-- GitHub buttons: see http://ghbtns.com -->
-            <iframe src="http://ghbtns.com/github-btn.html?user=maurizzzio&amp;repo=PojoViz&amp;type=watch&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
-
-			<pojoviz-search></pojoviz-search>
-			<pojoviz-about></pojoviz-about>
-			<core-icon-button data-command="settings" class="toolbar-page" icon="settings">
-			</core-icon-button>
-			<core-icon-button id="readme" data-command="readme" class="toolbar-page" icon="description">
-			</core-icon-button>
-		</div>
-
-        <!--content-->
-		<core-animated-pages transitions="cross-fade" valueattr="label">
-
-			<section label="app" class="no-padding">
-				<div class="canvas-wrapper" cross-fade="">
-                    <!--three js renderer canvas-->
-					<div id="threejscanvas" style="display: none; height: 100%"></div>
-                    <!--d3 renderer canvas-->
-					<svg id="canvas" class="unselectable" style="display: none;"></svg>
-				</div>
-			</section>
-			<section label="settings">
-				<div class="wrapper" cross-fade="">
-					<pojoviz-settings></pojoviz-settings>
-				</div>
-			</section>
-			<section label="readme">
-				<div class="wrapper" cross-fade="">
-					<pojoviz-readme></pojoviz-readme>
-				</div>
-			</section>
-		</core-animated-pages>
-
-        <!--popup shown to edit a known configuration -->
-        <paper-dialog id="knownConfigurationPopup" class="configuration-form" backdrop="" heading="Edit Configuration" transition="paper-dialog-transition-center">
-            <pojoviz-inspector-form></pojoviz-inspector-form>
-        </paper-dialog>
-
-	</core-scaffold>
-    <!--end app-->
-
-    <!--notification-->
-	<paper-toast id="toast" text=""></paper-toast>
+    <pojoviz-app></pojoviz-app>
 
 	<!-- app -->
 	
 	
 	
 
+    <!--index specific scripts-->
 	
 
 	

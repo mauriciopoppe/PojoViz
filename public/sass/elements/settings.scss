@@ -1,0 +1,26 @@
+@import '../base';
+
+pojoviz-settings::shadow {
+  // slider color
+  paper-slider::shadow {
+    #sliderKnobInner, #sliderKnobInner::before,
+    #sliderBar::shadow #activeProgress {
+      background-color: $main;
+    }
+  }
+  // checkbox color
+  paper-checkbox::shadow {
+    #ink[checked] {
+      color: $main;
+    }
+    #checkbox.checked {
+      border-color: $main;
+    }
+  }
+  // radio-button color
+  paper-radio-button::shadow {
+    #onRadio {
+      background-color: $main;
+    }
+  }
+}

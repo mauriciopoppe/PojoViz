@@ -5,30 +5,16 @@
 
 @import "compass/css3";
 @import "base";
+@import "common";
+@import "elements/settings";
 @import "elements/inspector";
 @import "elements/search";
 @import "elements/about";
 
-$main: $blue-500;
-$color-function: $red-100;
-$color-object: $blue-100;
-$color-string: $green-100;
-$color-number: $orange-100;
-$color-predecessor: $red-500;
-$color-successor: $blue-500;
-// $color-null: $red-100;
-// $color-undefined: $red-100;
+@import "renderer/d3";
 
 #__bs_notify__ {
   display: none!important;
-}
-
-*, *:before, *:after {
-  font-family: 'Roboto', sans-serif;
-}
-
-.no-padding {
-  padding: 0!important;
 }
 
 html {
@@ -94,139 +80,15 @@ body {
     }
   }
 }
+
 .logo {
   text-align: center;
-  padding: 15px;
+  padding: 30px 15px 15px;
   font-size: 4em;
   font-weight: 100;
   .subtitle {
+    padding-top: 10px;
     font-size: 12px;
-  }
-}
-
-// app
-.pv-link {
-  @include transition-property(stroke);
-  @include transition-duration(0.2s);
-
-  fill: none;
-  stroke-width: 3px;
-  stroke: lightgrey;
-  &.selected {
-    stroke: $main;
-    &.predecessor {
-      stroke: $color-predecessor;
-    }
-    &.successor {
-      stroke: $color-successor;
-    }
-  }
-}
-
-.canvas-wrapper {
-  height: 100%;
-}
-svg#canvas {
-  // background-color: $c50;
-  width: 100%;
-  height: 100%;
-
-  &.dragged {
-    cursor: move;
-  }
-  .pv-nodes-focused {
-    .pv-node {
-      opacity: 0.3;
-      &.selected {
-        opacity: 1;
-      }
-      &.predecessor {
-        .node-background {
-          stroke: $color-predecessor;
-        }
-      }
-      &.successor {
-        .node-background {
-          stroke: $color-successor;
-        }
-      }
-      &.current {
-        .node-background {
-          stroke: $deepPurple-500;
-        }
-      }
-    }
-  }
-}
-
-.pv-node {
-  @include transition-property(opacity);
-  @include transition-duration(0.2s);
-
-  .node-background {
-    fill: white;
-    fill-opacity: 1;
-    stroke-opacity: 1;
-    stroke: $color-object;
-    stroke-width: 2px;
-  }
-  .pv-title {
-    font-size: 17px;
-    font-weight: 100;
-  }
-	.pv-body {
-		.pv-property {
-
-      .pv-dot-object {
-        fill: $main;
-        fill-opacity: 1;
-      }
-      .pv-dot-function {
-        fill: $color-function;
-        // fill-opacity: 0.5;
-      }
-
-			.pv-property-background {
-        fill: white;
-      }
-
-      &:hover {
-        cursor: pointer;
-      }
-
-      &.pv-__proto__ {
-        rect {
-          fill: $color-object;
-          fill-opacity: 0.15;
-          stroke-dasharray: 2;
-        }
-        text {
-          stroke-dasharray: 1;
-          fill: $color-object;
-        }
-      }
-
-      rect {
-        &.pv-string {
-          stroke: $color-string;
-        }
-        &.pv-number {
-          stroke: $color-number;
-        }
-        &.pv-function {
-          // stroke: $color-function;
-        }
-        &.pv-object {
-          stroke: $color-object;
-        }
-      }
-		}
-	}
-
-  &.pv-function {
-    rect.node-background {
-      stroke: $color-function;
-    }
   }
 }
 
@@ -246,34 +108,25 @@ html /deep/ {
   }
 }
 
-pojoviz-settings::shadow {
-  // slider color
-  paper-slider::shadow {
-    #sliderKnobInner, #sliderKnobInner::before,
-    #sliderBar::shadow #activeProgress {
-      background-color: $main;
-    }
-  }
-  // checkbox color
-  paper-checkbox::shadow {
-    #ink[checked] {
-      color: $main;
-    }
-    #checkbox.checked {
-      border-color: $main;
-    }
-  }
-  // radio-button color
-  paper-radio-button::shadow {
-    #onRadio {
-      background-color: $main;
-    }
-  }
-}
-
 // lower the font size of the items in the sidebar
 pojoviz-library-menu::shadow {
   .library {
     font-size: 13px;
+  }
+}
+
+// library runtime configuration
+.library-runtime-configuration {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 13px;
+  opacity: 0.3;
+
+  @include transition-property(opacity);
+  @include transition-duration($transition-duration);
+
+  &:hover {
+    opacity: 1;
   }
 }

@@ -22,12 +22,17 @@
                      label="Library remote source"
                      value="{{ record.src }}">
                 </paper-input>
+
+                <paper-input floatingLabel
+                     label="Name displayed"
+                     value="{{ record.displayName }}">
+                </paper-input>
             </template>
 
             <!--entry point-->
             <paper-input id="entryPoint" floatingLabel
-                 label="Enter the entry point to this library (might be nested with .)"
-                 value="{{ record.entryPoint }}">
+                label="Enter the entry point to this library (might be nested with .)"
+                value="{{ record.entryPoint }}">
             </paper-input>
 
             <!--forbidden tokens-->
@@ -151,6 +156,12 @@
             },
             getValues: function () {
                 return this.record;
+            },
+            setRecordWithDefaults: function (config) {
+                this.record = _.merge(
+                    pojoviz.Inspector.DEFAULT_CONFIG
+                , config);
+                console.log(this.record);
             }
         });
     </script>

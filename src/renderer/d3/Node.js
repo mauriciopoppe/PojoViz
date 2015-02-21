@@ -114,8 +114,8 @@ function Node(parent) {
       // setTimeout(function () {
       var bbox = el.node().getBBox();
       rect
-        .attr('width', bbox.width + 10 * 2)
-        .attr('height', bbox.height + 10);
+        .attr('width', bbox.width + 20)
+        .attr('height', bbox.height + 20);
       // }, 0);
     });
   }

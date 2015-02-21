@@ -71,7 +71,6 @@ function Property() {
         return d.property;
       })
       .on('click', function (d, i) {
-        console.log(d);
         var link = d.label.match(/\S*?-([\$\w-\.]*)/);
         var ev = new CustomEvent('property-click', {
           detail: {
@@ -79,7 +78,6 @@ function Property() {
             property: d.property
           }
         });
-        console.log(ev.detail);
         document.dispatchEvent(ev);
       });
 

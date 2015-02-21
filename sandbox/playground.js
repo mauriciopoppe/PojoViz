@@ -3,8 +3,7 @@
  */
 var p = require('pojoviz');
 
-function withInspector() {
-  var inspector = p.getCurrentInspector();
+function withInspector(inspector) {
   inspector.analyzer.stringify();
 }
 

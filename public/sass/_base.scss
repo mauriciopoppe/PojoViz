@@ -4,7 +4,6 @@
 @import "palette/orange";
 @import "palette/green";
 
-
 // keyframes mixin
 @mixin keyframes($name) {
   @-webkit-keyframes #{$name} {
@@ -21,9 +20,13 @@
   } 
 }
 
-.unselectable {
-  -moz-user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
+$main: $blue-500;
+$color-function: $red-100;
+$color-object: $blue-100;
+$color-string: $green-100;
+$color-number: $orange-100;
+$color-predecessor: $red-500;
+$color-successor: $blue-500;
+// $color-null: $red-100;
+// $color-undefined: $red-100;
+$transition-duration: 0.25s;

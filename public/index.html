@@ -39,12 +39,14 @@
 	<script src="lib/tween.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.min.js"></script>
 	<!-- bundle: three + t3 + marked + highlight -->
+
 	<!-- build:js lib/vendor.js -->
 	<script type="text/javascript" src="bower_components/t3/examples/lib/three.js"></script>
 	<script type="text/javascript" src="bower_components/t3/dist/t3.js"></script>
 	<script type="text/javascript" src="bower_components/marked/lib/marked.js"></script>
 	<script type="text/javascript" src="bower_components/highlightjs/highlight.pack.js"></script>
-	<!-- endbuild -->
+	<script type="text/javascript" src="bower_components/lodash/lodash.min.js"></script>
+    <!-- endbuild -->
 
 </head>
 <body unresolved fullbleed>
@@ -95,6 +97,12 @@
 
 			<section label="app" class="no-padding">
 				<div class="canvas-wrapper" cross-fade>
+
+                    <!--configuration options-->
+                    <div horizontal class="library-runtime-configuration">
+                        <paper-button id="runtime-configuration">configuration</paper-button>
+                    </div>
+
                     <!--three js renderer canvas-->
 					<div id="threejscanvas" style="display: none; height: 100%"></div>
                     <!--d3 renderer canvas-->
@@ -130,143 +138,8 @@
 	<script src="../build/pojoviz.js"></script>
 	<script src="../build/pojoviz-renderers.js"></script>
 
-	<script>
-		// support onpushstate
-		(function (history) {
-			var pushState = history.pushState;
-			history.pushState = function(state) {
-				if (typeof history.onpushstate === "function") {
-					history.onpushstate({state: state});
-				}
-				return pushState.apply(history, arguments);
-			};
-		})(window.history);
-
-		(function () {
-			var schemas = document.querySelector('core-header-panel #schemas');
-			var pages = document.querySelector('core-animated-pages');
-			var scaffold = document.querySelector('core-scaffold');
-			var tool = document.querySelector('[tool] .title');
-
-			function runLibrary(entry) {
-				// global name, data properties
-                var schema = pojoviz.schemas.find(entry);
-				pojoviz
-                    .run(schema)
-					.then(function() {
-						pojoviz.draw.render();
-					})
-					.fail(function (e) {
-						pojoviz.utils.notification(e);
-						throw e;
-					})
-					.done();
-				// pojoviz.render();
-				pages.selected = 'app';
-				// change title
-//				tool.textContent = value[1];
-				scaffold.closeDrawer();
-			}
-
-            /**
-             * Pushes a new token to the history stack
-             * @param {string} hash
-             */
-			function changeHistory(hash) {
-				window.history.pushState(
-                    {command: hash},
-					hash,
-					'#' + hash
-				);
-			}
-
-			window.onpopstate = history.onpushstate = function(e) {
-				var command = e.state.command;
-				if (~command.indexOf('render/')) {
-					runLibrary(command.split('/')[1]);
-					return;
-				}
-                pages.selected = command;
-				tool.textContent = '';
-			};
-
-			window.pushState = function (hash) {
-				// if the hash doesn't start with render/
-				if (hash.indexOf('render/') === -1) {
-                    // default to readme
-					hash = 'readme';
-				}
-				changeHistory(hash);
-			};
-
-			// settings + readme on click event
-			[].slice.call(scaffold
-				.querySelectorAll('core-scaffold .toolbar-page'))
-				.forEach(function (v) {
-					v.addEventListener('click', function (event) {
-						changeHistory(event.target.dataset.command);
-					});
-				});
-
-			// listen for the event notification to update the status
-            // of the toast (polymer's notification)
-			var toast = document.getElementById('toast');
-			document
-				.addEventListener('pojoviz-notification', function (e) {
-					toast.text = e.detail;
-					toast.show();
-				});
-
-			window.addEventListener('polymer-ready', function () {
-				// query params
-				var params = {};
-				location.search.substring(1).split('&')
-					.forEach(function (v) {
-						var sp = v.split('=');
-						params[sp[0]] = sp[1];
-					});
-                // hide some elements
-                if (params.toolbar === 'false') {
-                    document.documentElement.className += ' notoolbar';
-                }
-
-                // fired from elements/libraryMenu.html
-                document.addEventListener('library-select', function (e) {
-                    changeHistory(e.detail);
-                });
-
-                // bind the configuration of known schemas to the sidebar
-                document.getElementById('libraries').sections = [{
-                    icon: 'exit-to-app',
-                    label: 'Known Schemas',
-                    libraries: pojoviz.schemas.knownSchemas
-                }, {
-                    icon: 'favorite',
-                    label: 'Notable Libraries',
-                    libraries: pojoviz.schemas.notableLibraries
-                }, {
-                    icon: 'stars',
-                    label: 'My libraries',
-                    libraries: pojoviz.schemas.myLibraries
-                }, {
-                    icon: 'warning',
-                    label: 'Huge Schemas',
-                    libraries: pojoviz.schemas.hugeSchemas
-                }, {
-                    icon: 'cloud',
-                    label: 'Downloaded',
-                    libraries: pojoviz.schemas.downloaded
-                }];
-
-                // hash autorender check
-                setTimeout(function () {
-                    var hash = (history.state && history.state.command) ||
-                        location.hash.substr(1);
-                    window.pushState(hash);
-                }, 0)
-            });
-		})();
-	</script>
+    <!--index specific scripts-->
+	<script src="scripts/main.js"></script>
 
 	<script>
 	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

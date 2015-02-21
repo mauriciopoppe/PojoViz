@@ -196,32 +196,32 @@ html /deep/ .canvas-wrapper {
   height: 100%;
 }
 /* line 32, ../sass/renderer/d3.scss */
-html /deep/ svg#canvas {
+html /deep/ svg {
   width: 100%;
   height: 100%;
 }
 /* line 37, ../sass/renderer/d3.scss */
-html /deep/ svg#canvas.dragged {
+html /deep/ svg.dragged {
   cursor: move;
 }
 /* line 41, ../sass/renderer/d3.scss */
-html /deep/ svg#canvas .pv-nodes-focused .pv-node {
+html /deep/ svg .pv-nodes-focused .pv-node {
   opacity: 0.3;
 }
 /* line 43, ../sass/renderer/d3.scss */
-html /deep/ svg#canvas .pv-nodes-focused .pv-node.selected {
+html /deep/ svg .pv-nodes-focused .pv-node.selected {
   opacity: 1;
 }
 /* line 47, ../sass/renderer/d3.scss */
-html /deep/ svg#canvas .pv-nodes-focused .pv-node.predecessor .node-background {
+html /deep/ svg .pv-nodes-focused .pv-node.predecessor .node-background {
   stroke: #e51c23;
 }
 /* line 52, ../sass/renderer/d3.scss */
-html /deep/ svg#canvas .pv-nodes-focused .pv-node.successor .node-background {
+html /deep/ svg .pv-nodes-focused .pv-node.successor .node-background {
   stroke: #03a9f4;
 }
 /* line 57, ../sass/renderer/d3.scss */
-html /deep/ svg#canvas .pv-nodes-focused .pv-node.current .node-background {
+html /deep/ svg .pv-nodes-focused .pv-node.current .node-background {
   stroke: #673ab7;
 }
 /* line 65, ../sass/renderer/d3.scss */

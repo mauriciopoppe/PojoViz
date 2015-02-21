@@ -80,7 +80,7 @@ Canvas.prototype.fixZoom = function() {
     -sx * scale + (screenWidth / 2 -
       canvasWidth * scale / 2),
     -sy * scale + (screenHeight / 2 -
-      canvasHeight * scale / 2),
+      canvasHeight * scale / 2)
   ];
 
   function redraw() {
@@ -166,7 +166,6 @@ Canvas.prototype.renderEdges = function() {
       throw 'target node must exist';
     }
     toData = to.datum();
-    bbox = to.node().getBBox();
     return {
       x: getY(toData) + 10,// + bbox.height / 2,
       y: getX(toData)// + bbox.width / 2
@@ -184,7 +183,7 @@ Canvas.prototype.renderEdges = function() {
     };
   }
 
-  var e = this.root.selectAll('.link')
+  this.root.selectAll('.link')
       .data(edges)
     .enter()
       .append('path')

@@ -36,10 +36,6 @@ module.exports = function (options) {
    * @return {stream}
    */
   function generateBundler(local) {
-    //local = _.merge({
-    //  onPreBundle: function () {
-    //  }
-    //}, local);
     var name = local.name;
 
     var bundleOptions = {

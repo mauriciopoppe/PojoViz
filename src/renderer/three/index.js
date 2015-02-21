@@ -20,6 +20,7 @@ module.exports = {
     el = newEl;
   },
   render: function (data) {
+    var rootEl;
     var nodes = data.nodes,
       edges = data.edges,
       nodeMap = {},
@@ -42,21 +43,18 @@ module.exports = {
       projector = new THREE.Projector(),
       nodeMeshes = [];
 
+    // the actual root element is a div created under the root
+    rootEl = document.createElement('div');
+    rootEl.id = 'root';
+    rootEl.style.height = '100%';
+    document.querySelector(el).appendChild(rootEl);
+
     nodes.forEach(function (node) {
       nodeMap[node.label] = node;
     });
 
-    var wrapperEl = document.querySelector(el);
-    wrapperEl.style.display = 'block';
-
-    // pre init
-    t3.themes.allWhite = {
-      clearColor: 0xffffff,
-      fogColor: 0xffffff,
-      groundColor: 0xffffff
-    };
-    var wrapper = document.querySelector(el);
-    var bbox = wrapper.getBoundingClientRect();
+    var wrapperEl = rootEl;
+    var bbox = rootEl.getBoundingClientRect();
 
     function getY(node, i) {
       return node.y - node.height * 0.5 +
@@ -311,8 +309,14 @@ module.exports = {
       });
     }
 
+    // pre init
+    t3.themes.allWhite = {
+      clearColor: 0xffffff,
+      fogColor: 0xffffff,
+      groundColor: 0xffffff
+    };
     instance = t3.run({
-      selector: el,
+      selector: el + ' #root',
       width: bbox.width,
       height: bbox.height,
       theme: 'allWhite',
@@ -324,7 +328,6 @@ module.exports = {
         gridZ: false
       },
       init: function () {
-      console.log(data);
         var me = this,
           rendererEl = me.renderer.domElement;
         me.datgui.close();
@@ -342,9 +345,6 @@ module.exports = {
           } else {
             moved = false;
           }
-        });
-        rendererEl.addEventListener('mouseout', function (e) {
-
         });
         rendererEl.addEventListener('mousedown', function (e) {
           down = true;
@@ -389,18 +389,12 @@ module.exports = {
           }
         }, false);
 
-        // camera
+        // camera setup
         var fov = 70,
           ratio = rendererEl.clientWidth / rendererEl.clientHeight,
           near = 1,
           far = 20000;
         var camera = new THREE.PerspectiveCamera(fov, ratio, near, far);
-        camera.position.set(
-          data.center.x,
-          data.center.y,
-          Math.min(data.mx.x - data.mn.x, data.mx.y - data.mn.y)
-        );
-        // camera.lookAt(new THREE.Vector3(data.center.x, data.center.y, 0));
         me
           .addCamera(camera, 'mine')
           .setActiveCamera('mine');
@@ -416,6 +410,15 @@ module.exports = {
         drawNodes.call(me);
         drawCircles.call(me);
         drawEdges.call(me);
+
+        setTimeout(function () {
+          camera.position.set(
+            data.center.x,
+            data.center.y,
+            Math.min(data.mx.x - data.mn.x, data.mx.y - data.mn.y)
+          );
+          //camera.lookAt(new THREE.Vector3(data.center.x, data.center.y, 0));
+        }, 0);
       },
       update: function (delta) {
         TWEEN.update();

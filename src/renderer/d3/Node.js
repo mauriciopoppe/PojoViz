@@ -9,7 +9,7 @@ var escapeCls = utils.escapeCls;
 var margin = { top: 0, right: 0, left: 0, bottom: 0 };
 
 function Node(parent) {
-
+  var root = d3.select(parent.root).node();
   function my(selection) {
     // create
     var enter = selection.enter();
@@ -23,26 +23,31 @@ function Node(parent) {
         parent.opacityToggle(over);
 
         // select links
-        d3.selectAll('.' + prefix('to', labelEscaped))
+        root
+          .selectAll('.' + prefix('to', labelEscaped))
           .classed('selected predecessor', over);
-        d3.selectAll('.' + prefix('from', labelEscaped))
+        root
+          .selectAll('.' + prefix('from', labelEscaped))
           .classed('selected successor', over);
 
         // select current node
-        d3.select('.' + prefix(labelEscaped))
+        root
+          .select('.' + prefix(labelEscaped))
           .classed('selected current', over);
 
         // select predecessor nodes
         d.predecessors
           .forEach(function (v) {
-            d3.selectAll('.' + prefix(escapeCls(v)))
+            root
+              .selectAll('.' + prefix(escapeCls(v)))
               .classed('selected predecessor', over);
           });
 
         // select successor nodes
         d.successors
           .forEach(function (v) {
-            d3.selectAll('.' + prefix(escapeCls(v)))
+            root
+              .selectAll('.' + prefix(escapeCls(v)))
               .classed('selected successor', over);
           });
       };

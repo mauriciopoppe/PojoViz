@@ -53,7 +53,7 @@ module.exports = {
     // - height
     // - properties
     _.forOwn(libraryNodes, function (properties, k) {
-      var label = properties.labels.first().label;
+      var label = properties.labels[0].label;
       //console.log(k, label.length);
       node = {
         hashKey: k,

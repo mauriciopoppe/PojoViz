@@ -98,6 +98,13 @@ module.exports = function (options) {
 
   gulp.task('browserify:vendor', vendor);
 
+  gulp.task('browserify:remote', function () {
+    return generateBundler({
+      name: 'pojoviz-remote',
+      src: './src/remote/'
+    });
+  });
+
   gulp.task('browserify:renderers', function () {
     return generateBundler({
       name: 'pojoviz-renderers',
@@ -113,7 +120,9 @@ module.exports = function (options) {
     });
   });
 
-  gulp.task('browserify', ['browserify:vendor', 'browserify:app', 'browserify:renderers']);
+  var commonTasks = ['browserify:app', 'browserify:renderers', 'browserify:remote'];
 
-  gulp.task('watch:browserify', ['browserify:app', 'browserify:renderers']);
+  gulp.task('browserify', ['browserify:vendor'].concat(commonTasks));
+
+  gulp.task('watch:browserify', commonTasks);
 };

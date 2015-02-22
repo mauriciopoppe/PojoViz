@@ -562,8 +562,9 @@ Analyzer.prototype = {
   stringifyObjectProperties: function (obj) {
     var properties = this.getProperties(obj);
     // append the labels created with labeler
-    properties.labels = labeler(obj);
-    assert(properties.labels.size(), 'object must have labels');
+    var labels = labeler(obj);
+    assert(labels.size(), 'object must have labels');
+    properties.labels = labels.getValues();
     return properties;
   },
 

@@ -19,8 +19,8 @@ describe('labeler', function () {
 
   it('should generate a label for an object', function () {
     var label = lb(nested, 'object');
-    expect( utils.internalClassProperty(nested.object[lb.hiddenLabel]) ).equals('Array');
-    expect( nested.object[lb.hiddenLabel].length ).equals(1);
+    expect( lb.has(nested.object) ).equals(true);
+    expect( label.size() ).equals(1);
     expect( label.first() ).deep.equals({
       from: hk(nested),
       label: 'object'
@@ -31,7 +31,7 @@ describe('labeler', function () {
     lb(nested, 'object');
     lb(nested, 'object');
     lb(nested, 'object');
-    expect( nested.object[lb.hiddenLabel].length ).equals(1);
+    expect( lb(nested, 'object').size() ) .equals(1);
   });
 
   it('should not generate labels on primitive values', function () {
@@ -110,5 +110,28 @@ describe('labeler', function () {
         from: hk(v),
         label: 'prototype'
       }]);
+  });
+
+  it('should generate a label on a constructor', function () {
+    function A(){}
+    var x = {};
+    var parent = { a: A };
+
+    lb(parent, 'a');
+    var label = lb(A);
+    expect( label.size() ).equals(3);
+    expect( label.getValues() )
+      .deep.equals([{
+        from: null,
+        label: 'A'
+      }, {
+        from: hk(parent),
+        label: 'a'
+      }, {
+        from: null,
+        label: hk(A)
+      }]);
+
+    expect( lb(x).size() ).equals(1);
   });
 });

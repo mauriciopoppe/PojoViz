@@ -1,9 +1,9 @@
 var expect = require('chai').expect;
 var _ = require('lodash');
 var hashKey = require('../src/util/hashKey');
+var labeler = require('../src/util/labeler');
 var ObjectAnalyzer = require('../src/ObjectAnalyzer');
 var utils = require('../src/util/');
-var hk = hashKey;
 
 // NOTE: objects.keys.shim does not exist in the browser
 delete Object.keys.shim;
@@ -27,15 +27,14 @@ describe('ObjectAnalyzer', function () {
     });
 
     it('should forbid objects when forbid(obj) is called', function () {
-      function A(){}
+      function A() {}
       analyzer.forbid([A]);
       expect(_.size(analyzer.forbidden)).to.equal(1);
       expect(_.size(analyzer.items)).to.equal(0);
     });
 
-    it('should forbid with prototype when forbid(obj,true) ' +
-        'is called', function () {
-      function A(){}
+    it('should forbid with prototype when forbid(obj,true) is called', function () {
+      function A() {}
       analyzer.forbid([A], true);
       expect(_.size(analyzer.forbidden)).to.equal(2);
       expect(_.size(analyzer.items)).to.equal(0);
@@ -51,13 +50,12 @@ describe('ObjectAnalyzer', function () {
       expect(_.size(analyzer.items)).to.equal(4);
     });
 
-    xit('should store the objects in the items HashMap', function () {
+    it('should store the objects in the items HashMap', function () {
       analyzer.add([Object]);
-      expect(analyzer.items['function-Object']).to.equal(Object);
-      expect(analyzer.items['object-Object-prototype']).to.equal(Object.prototype);
-      expect(analyzer.items['function-Function']).to.equal(Function);
-      expect(analyzer.items['function-Function-prototype']).to.equal(Function.prototype);
-      expect(analyzer.items['object-Function-prototype']).equals(undefined);
+      expect(analyzer.items[hashKey(Object)]).to.equal(Object);
+      expect(analyzer.items[hashKey(Object.prototype)]).to.equal(Object.prototype);
+      expect(analyzer.items[hashKey(Function)]).to.equal(Function);
+      expect(analyzer.items[hashKey(Function.prototype)]).to.equal(Function.prototype);
     });
 
     it('should not store forbidden objects', function () {
@@ -118,14 +116,14 @@ describe('ObjectAnalyzer', function () {
     });
 
     it('should return an array when calling stringifyObjectProperties', function () {
-      var obj = {};
-      obj.Number = 1;
-      obj.Boolean = false;
-      obj.String = "hi";
-      obj.Function = function () {};
-      obj.Object = {};
-      obj.Null = null;
-      obj.Undefined = undefined;
+      var A = function () {};
+      A.Number = 1;
+      A.Boolean = false;
+      A.String = "hi";
+      A.Function = function () {};
+      A.Object = {};
+      A.Null = null;
+      A.Undefined = undefined;
 
       function checkProperties(s, d) {
         var valid = true;
@@ -134,17 +132,26 @@ describe('ObjectAnalyzer', function () {
         });
         return valid;
       }
-
-      var s = analyzer.stringifyObjectProperties(obj);
+      analyzer.debug = false;
+      analyzer.add([A]);
+      var str = analyzer.stringify();
+      var s = str.nodes[hashKey(A)];
 
       // enumerable properties are retrieved in the same order as they
       // were declared, so getOwnPropertyNames should have the same order
-      expect(Object.getOwnPropertyNames(obj)).deep.equals(
-        ['Number', 'Boolean', 'String', 'Function', 'Object', 'Null', 'Undefined', hashKey.hiddenKey]
+      expect(Object.getOwnPropertyNames(A)).deep.equals(
+        ['length', 'name', 'arguments', 'caller', 'prototype',
+          'Number', 'Boolean', 'String', 'Function', 'Object', 'Null', 'Undefined', hashKey.hiddenKey]
       );
       expect(_.pluck(s, 'property')).deep.equals(
-        ['Number', 'Boolean', 'String', 'Function', 'Object', 'Null', 'Undefined', '[[Prototype]]']
+        [ 'length', 'name', 'prototype',
+          'Number', 'Boolean', 'String', 'Function', 'Object', 'Null', 'Undefined', '[[Prototype]]']
       );
+
+      // don't need to check the first three properties since they are
+      // length, name and prototype
+      s.splice(0, 3);
+
       expect(checkProperties({
         property: 'Number',
         type: 'number',
@@ -204,11 +211,11 @@ describe('ObjectAnalyzer', function () {
       }, s[6])).equals(true);
       expect(checkProperties({
         property: '[[Prototype]]',
-        type: 'object',
+        type: 'function',
         isTraversable: true,
-        isFunction: false,
-        isObject: true,
-        toString: 'Object'
+        isFunction: true,
+        isObject: false,
+        toString: 'Function'
       }, s[7])).equals(true);
     });
 
@@ -221,12 +228,18 @@ describe('ObjectAnalyzer', function () {
         aUndefined: undefined,
         aError: new Error(),
         aObject: {},
-        aFunction: function () {}
+        aFunction: function () {
+        }
       };
-      function A(){}
+
+      function A() {
+      }
 
       function check(target) {
-        var arr = analyzer.stringifyObjectProperties(target);
+        analyzer.debug = false;
+        analyzer.add([target]);
+        var nodes = analyzer.stringify().nodes;
+        var arr = nodes[hashKey(target)];
         // console.log(arr);
         expect(arr).to.be.a('array');
         _(arr).forEach(function (v) {
@@ -248,55 +261,71 @@ describe('ObjectAnalyzer', function () {
       check(t1);
       check(A);
     });
+  });
 
-    xit('should return a string representation of the analyzer when `stringify` is called', function () {
-      analyzer.debug = false;
-      analyzer.add([Object]);
-      var s = analyzer.stringify();
+  describe('stringify', function () {
+    var functionObject = hashKey(Object);
+    var objectObjectPrototype = hashKey(Object.prototype);
+    var functionFunction = hashKey(Function);
+    var functionFunctionPrototype = hashKey(Function.prototype);
+    var analyzer = new ObjectAnalyzer();
+    analyzer.debug = false;
+    analyzer.add([Object]);
+    var s = analyzer.stringify();
+
+    it('should return an array representation per node', function () {
       var nodes = s.nodes;
       expect(_(nodes).size()).to.equal(4);
-      expect(nodes['function-Object']).to.be.a('array');
-      expect(nodes['object-Object-prototype']).to.be.a('array');
-      expect(nodes['function-Function']).to.be.a('array');
-      expect(nodes['function-Function-prototype']).to.be.a('array');
+      expect(nodes[functionObject]).to.be.a('array');
+      expect(nodes[objectObjectPrototype]).to.be.a('array');
+      expect(nodes[functionFunction]).to.be.a('array');
+      expect(nodes[functionFunctionPrototype]).to.be.a('array');
+    });
 
+    it('should return the correct representation for function-Object', function () {
       // analyzing Object
-      expect(s.edges['function-Object']).deep.equals([{
-        from: 'function-Object',
-        to: 'object-Object-prototype',
+      expect(s.edges[functionObject]).deep.equals([{
+        from: functionObject,
+        to: objectObjectPrototype,
         property: 'prototype'
       }, {
-        from: 'function-Object',
-        to: 'function-Function-prototype',
+        from: functionObject,
+        to: functionFunctionPrototype,
         property: '[[Prototype]]'
       }]);
+    });
 
+    it('should return the correct representation for object-Object-prototype', function () {
       // analyzing Object-prototype
-      expect(s.edges['object-Object-prototype']).deep.equals([{
-        from: 'object-Object-prototype',
-        to: 'function-Object',
+      expect(s.edges[objectObjectPrototype]).deep.equals([{
+        from: objectObjectPrototype,
+        to: functionObject,
         property: 'constructor'
       }]);
+    });
 
+    it('should return the correct representation for function-Function-prototype', function () {
       // analyzing function-Function-prototype
-      expect(s.edges['function-Function-prototype']).deep.equals([{
-        from: 'function-Function-prototype',
-        to: 'function-Function',
+      expect(s.edges[functionFunctionPrototype]).deep.equals([{
+        from: functionFunctionPrototype,
+        to: functionFunction,
         property: 'constructor'
       }, {
-        from: 'function-Function-prototype',
-        to: 'object-Object-prototype',
+        from: functionFunctionPrototype,
+        to: objectObjectPrototype,
         property: '[[Prototype]]'
       }]);
+    });
 
+    it('should return the correct representation for object-Object-prototype', function () {
       // analyzing function-Function
-      expect(s.edges['function-Function']).deep.equals([{
-        from: 'function-Function',
-        to: 'function-Function-prototype',
+      expect(s.edges[functionFunction]).deep.equals([{
+        from: functionFunction,
+        to: functionFunctionPrototype,
         property: 'prototype'
       }, {
-        from: 'function-Function',
-        to: 'function-Function-prototype',
+        from: functionFunction,
+        to: functionFunctionPrototype,
         property: '[[Prototype]]'
       }]);
     });
@@ -310,6 +339,7 @@ describe('ObjectAnalyzer', function () {
       expect(first.to).to.be.a('string');
       expect(first.from).to.be.a('string');
       expect(first.property).to.be.a('string');
+      // isTraversable Object.prototype
       expect(
         utils.isTraversable(Object[first.property])
       ).equals(true);

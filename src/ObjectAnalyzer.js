@@ -5,6 +5,7 @@ var assert = require('assert');
 
 var HashMap = require('./util/HashMap');
 var hashKey = require('./util/hashKey');
+var labeler = require('./util/labeler');
 var utils = require('./util');
 
 /**
@@ -205,7 +206,7 @@ Analyzer.prototype = {
    * returns an object with a summary of the properties of `value` which are
    * useful to know for the analyzer:
    *
-   * - parent         {*} an predecessor of value (an object which can reach value)
+   * - parent         {string} the hashKey of the parent
    * - property       {string} the name of the property used to reach value,
    *                      i.e. parent[property] = value
    * - value          {*} the value itself
@@ -222,9 +223,9 @@ Analyzer.prototype = {
    */
   buildNodeProperties: function (value, parent, property) {
     return {
-      parent: parent,
+      parent: hashKey(parent),
       property: property,
-      value: value,
+      //value: value,
       type: typeof value,
       isTraversable: utils.isTraversable(value),
       isFunction: utils.isFunction(value),
@@ -256,7 +257,7 @@ Analyzer.prototype = {
       value = obj[property];
     } catch (e) {
       return {
-        parent: obj,
+        parent: hashKey(obj),
         property: property,
         unreachable: true,
         isTraversable: false
@@ -357,6 +358,15 @@ Analyzer.prototype = {
         return true;
       });
 
+    // <labeler>
+    // set a name on itself if it's a constructor
+    labeler(obj);
+    // set a name on each property
+    allProperties
+      .forEach(function (propertyDescription) {
+        labeler(obj, propertyDescription.property);
+      });
+
     // special properties
     // __proto__
     var proto = Object.getPrototypeOf(obj);
@@ -365,22 +375,6 @@ Analyzer.prototype = {
       nodeProperties.hidden = true;
       allProperties.push(nodeProperties);
     }
-
-    // constructor (if it's a function)
-    //var isConstructor = obj.hasOwnProperty &&
-    //  obj.hasOwnProperty('constructor') &&
-    //  typeof obj.constructor === 'function';
-    //if (isConstructor &&
-    //    _.findIndex(allProperties, { property: 'constructor' }) === -1) {
-    //  nodeProperties = me.buildNodeProperties();
-    //
-    //  allProperties.push({
-    //    // cls: hashKey(obj),
-    //    name: 'constructor',
-    //    type: 'function',
-    //    linkeable: true
-    //  });
-    //}
 
     if (this.cache && !traversableOnly) {
       this.__objectsCache__[hk] = allProperties;
@@ -557,28 +551,24 @@ Analyzer.prototype = {
   },
 
   /**
-   * Alias for #getProperties
+   * @private
+   * This method stringifies the properties of the object `obj`, to avoid
+   * getting the JSON.stringify cyclic error let's delete some properties
+   * that are know to be objects/functions
+   *
    * @param  obj
-   * @param  plain True to return only primitive properties
    * @return {Array}
    */
-  stringifyObjectProperties: function (obj, plain) {
+  stringifyObjectProperties: function (obj) {
     var properties = this.getProperties(obj);
-
-    if (plain) {
-    // delete non primitive properties
-      properties.forEach(function (property) {
-        _.forOwn(property, function (value, key) {
-          if (value && (typeof value === 'object' || typeof value === 'function')) {
-            delete property[key];
-          }
-        });
-      });
-    }
+    // append the labels created with labeler
+    properties.labels = labeler(obj);
+    assert(properties.labels.size(), 'object must have labels');
     return properties;
   },
 
   /**
+   * @private
    * Returns a representation of the outgoing links of
    * an object
    * @return {Object}
@@ -597,19 +587,25 @@ Analyzer.prototype = {
 
   /**
    * Stringifies the objects saved in this analyzer
-   * @param {boolean} plain True to return a plain output (without links to objects/functions)
    * @return {Object}
    */
-  stringify: function (plain) {
+  stringify: function () {
     var me = this,
       nodes = {},
       edges = {};
+    if (me.debug) {
+      console.log(me);
+    }
     me.debug && console.time('stringify');
     _.forOwn(me.items, function (v) {
       var hk = hashKey(v);
-      nodes[hk] = me.stringifyObjectProperties(v, plain);
+      nodes[hk] = me.stringifyObjectProperties(v);
       edges[hk] = me.stringifyObjectLinks(v);
     });
+    if (me.debug) {
+      console.log('nodes', nodes);
+      console.log('edges', edges);
+    }
     me.debug && console.timeEnd('stringify');
     return {
       nodes: nodes,

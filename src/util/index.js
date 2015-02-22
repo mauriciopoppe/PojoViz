@@ -44,8 +44,7 @@ utils.isFunction = function (v) {
  */
 utils.isConstructor = function (v) {
   return this.isFunction(v) && typeof v.name === 'string' &&
-      v.name.search(/^[A-Z]/) > -1 && v.prototype &&
-      v.prototype.constructor === v;
+      v.name.length && v.prototype && v.prototype.constructor === v;
 };
 
 /**

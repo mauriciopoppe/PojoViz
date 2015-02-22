@@ -40,21 +40,21 @@ function Property() {
       };
     }
     var propertyEnter = selection.enter()
-        .append('g')
-        .attr('class', function (d) {
-          return [
-            prefix('property'),
-            // e.g. object-1-length
-            prefix(hashKey(d.parent), hashCode(d.property))
-          ].join(' ');
-        })
-        .attr('transform', function (d, i) {
-          return utils.transform({
-            translate: propertyY(d, i)
-          });
-        })
-        .on('mouseover', mouseEvent('over'))
-        .on('mouseout', mouseEvent('out'));
+      .append('g')
+      .attr('class', function (d) {
+        return [
+          prefix('property'),
+          // e.g. object-1-length
+          prefix(d.parent, hashCode(d.property))
+        ].join(' ');
+      })
+      .attr('transform', function (d, i) {
+        return utils.transform({
+          translate: propertyY(d, i)
+        });
+      })
+      .on('mouseover', mouseEvent('over'))
+      .on('mouseout', mouseEvent('out'));
 
     propertyEnter
       .append('text')

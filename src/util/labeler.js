@@ -6,7 +6,10 @@ var assert = require('assert');
 var hashKey = require('./hashKey');
 var utils = require('./');
 var me, labeler;
-var doGet, doSet, doInsert;
+var doInsert, doGet;
+
+// labels per each object will be saved inside this object
+var labelCache = {};
 
 var proto = {
   first: function () {
@@ -22,7 +25,7 @@ var proto = {
 
 /**
  * @param {Object} from
- * @param {string} property
+ * @param {string} [property]
  * @param {string} [config]
  *
  *  - config.labelOverride Overrides the property label with this value
@@ -34,29 +37,47 @@ var proto = {
 me = labeler = function (from, property, config) {
   assert(utils.isObjectOrFunction(from), 'from needs to be an object or a function');
   config = config || {};
-  var to = from[property];
-  if (utils.isObjectOrFunction(to)) {
-    var fromHash = hashKey(from);
-    // creates the array to hold all the labels
-    doSet(to);
+  var obj;
+  var label;
 
+  function attempToInsert(obj, from, label) {
+    if (utils.isObjectOrFunction(obj)) {
+      var objHash = hashKey(obj);
+      var fromHash = from ? hashKey(from) : null;
+      var labelCfg = {
+        from: fromHash,
+        label: label
+      };
+      if (!_.find(labelCache[objHash] || [], labelCfg)) {
+        doInsert(obj, labelCfg, config);
+      }
+    }
+  }
+
+
+  if (property) {
+    obj = from[property];
+    label = property;
     // if the property is `prototype` append the name of the constructor
     // this means that it has a higher priority so the item should be prepended
     if (property === 'prototype' && utils.isConstructor(from)) {
-      property = from.name + '.' + property;
       config.highPriority = true;
+      label = from.name + '.' + property;
     }
+    attempToInsert(obj, from, label);
+  } else {
+    // the default label for an iterable is the hashkey
+    attempToInsert(from, null, hashKey(from));
 
-    if (!_.find(to[me.hiddenLabel], { from: fromHash, label: property })) {
-      doInsert(to, {
-        from: fromHash,
-        label: property
-      }, config);
+    // if it's called with the second arg === undefined then only
+    // set a label if it's a constructor
+    if (utils.isConstructor(from)) {
+      config.highPriority = true;
+      attempToInsert(from, null, from.name);
     }
   }
-  var r = Object.create(proto);
-  r.values = to[me.hiddenLabel] || [];
-  return r;
+
+  return doGet(from, property);
 };
 
 me.hiddenLabel = '__pojovizLabel__';
@@ -68,19 +89,16 @@ me.hiddenLabel = '__pojovizLabel__';
  * @returns {boolean}
  */
 me.has = function (v) {
-  return utils.internalClassProperty(doGet(v)) === 'Array';
+  return typeof labelCache[hashKey(v)] !== 'undefined';
 };
 
-/**
- * Gets a store hashkey only if it's an object
- * @param  {*} obj
- * @return {*} False if it there's not a hidden label, a string if there is
- */
-doGet = function (obj) {
-  assert(utils.isObjectOrFunction(obj), 'obj must be an object|function');
-  return Object.prototype.hasOwnProperty.call(obj, me.hiddenLabel) &&
-    obj[me.hiddenLabel];
+doGet = function (from, property) {
+  var obj = property ? from[property] : from;
+  var r = Object.create(proto);
+  r.values = (utils.isObjectOrFunction(obj) && labelCache[hashKey(obj)]) || [];
+  return r;
 };
+'length', 'name', 'prototype',
 
 /**
  * @private
@@ -92,28 +110,14 @@ doGet = function (obj) {
  *    label: string
  *  }
  *
- * @param {*} obj The object to set the hiddenKey
+ * @param {*} obj The object whose label need to be saved
+ * @param {Object} properties The properties of the labels
+ * @param {Object} config additional configuration options
  */
-doSet = function (obj) {
-  var value;
-  if (!me.has(obj)) {
-    value = [];
-    Object.defineProperty(obj, me.hiddenLabel, {
-      configurable: true,
-      value: value
-    });
-    if (!obj[me.hiddenLabel]) {
-      // in node setting the instruction above might not have worked
-      console.warn('hashKey#doSet() setting the value on the object directly');
-      obj[me.hiddenLabel] = value;
-    }
-    assert(obj[me.hiddenLabel], 'Object.defineProperty did not work!');
-  }
-  return me;
-};
-
-doInsert = function (destination, properties, config) {
-  var arr = destination[me.hiddenLabel];
+doInsert = function (obj, properties, config) {
+  var hkObj = hashKey(obj);
+  labelCache[hkObj] = labelCache[hkObj] || [];
+  var arr = labelCache[hkObj];
   var index = config.highPriority ? 0 : arr.length;
 
   // label override
@@ -125,4 +129,5 @@ doInsert = function (destination, properties, config) {
   arr.splice(index, 0, properties);
 };
 
+//me.labelCache = labelCache;
 module.exports = me;

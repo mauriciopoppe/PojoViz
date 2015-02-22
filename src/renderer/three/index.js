@@ -50,7 +50,7 @@ module.exports = {
     document.querySelector(el).appendChild(rootEl);
 
     nodes.forEach(function (node) {
-      nodeMap[node.label] = node;
+      nodeMap[node.hashKey] = node;
     });
 
     var wrapperEl = rootEl;
@@ -88,9 +88,7 @@ module.exports = {
       context.font = "normal 100 18px Roboto";
       context.fillStyle = "rgba(0, 0, 0, 1)";
       context.fillText(
-        node.label
-          .match(/^\S*?-([\S-]*)$/)[1]
-          .replace(/-/, '.'),
+        node.label,
         margin.left,
         margin.top + 15
       );

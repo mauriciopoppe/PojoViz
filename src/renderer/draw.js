@@ -53,12 +53,11 @@ module.exports = {
     // - height
     // - properties
     _.forOwn(libraryNodes, function (properties, k) {
-      var label = k.match(/\S*?-(.*)/)[1];
+      var label = properties.labels.first().label;
       //console.log(k, label.length);
       node = {
         hashKey: k,
-        // TODO: gather the label from labelable
-        label: k,
+        label: label,
         width: label.length * 10
       };
       // lines + header + padding bottom

@@ -4,7 +4,11 @@
 module.exports = [{
   label: 'PojoViz',
   entryPoint: 'pojoviz',
-  alwaysDirty: true
+  alwaysDirty: true,
+  additionalForbiddenTokens: 'global:pojoviz.InspectedInstances.pojoviz.analyzer.items',
+  analyzerConfig: {
+    visitArrays: false
+  }
 }, {
   entryPoint: 't3'
 }];

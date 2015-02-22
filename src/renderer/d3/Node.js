@@ -5,7 +5,6 @@ var _ = require('lodash'),
   hashKey = require('../../util/hashKey');
 
 var prefix = utils.prefixer;
-var escapeCls = utils.escapeCls;
 var margin = { top: 0, right: 0, left: 0, bottom: 0 };
 
 function Node(parent) {
@@ -17,29 +16,29 @@ function Node(parent) {
     function groupMouseBehavior(type) {
       var over = type === 'over';
       return function (d, i) {
-        var labelEscaped = escapeCls(d.label);
+        var hk = d.hashKey;
 
         // hide all
         parent.opacityToggle(over);
 
         // select links
         root
-          .selectAll('.' + prefix('to', labelEscaped))
+          .selectAll('.' + prefix('to', hk))
           .classed('selected predecessor', over);
         root
-          .selectAll('.' + prefix('from', labelEscaped))
+          .selectAll('.' + prefix('from', hk))
           .classed('selected successor', over);
 
         // select current node
         root
-          .select('.' + prefix(labelEscaped))
+          .select('.' + prefix(hk))
           .classed('selected current', over);
 
         // select predecessor nodes
         d.predecessors
           .forEach(function (v) {
             root
-              .selectAll('.' + prefix(escapeCls(v)))
+              .selectAll('.' + prefix(v))
               .classed('selected predecessor', over);
           });
 
@@ -47,7 +46,7 @@ function Node(parent) {
         d.successors
           .forEach(function (v) {
             root
-              .selectAll('.' + prefix(escapeCls(v)))
+              .selectAll('.' + prefix(v))
               .classed('selected successor', over);
           });
       };
@@ -57,10 +56,9 @@ function Node(parent) {
       .append('g')
       .attr('class', function (d) {
         // string,number,boolean.undefined,object,function
-        var type = d.label.match(/^(\w)*/);
+        //var type = d.label;
         return [
           prefix('node'),
-          prefix(type[0]),
           prefix(d.hashKey)
         ].join(' ');
       })
@@ -85,10 +83,7 @@ function Node(parent) {
         .attr('class', prefix('title'))
         .attr('transform', 'translate(20, 25)')
         .text(function (d) {
-          var name = d.label
-            .match(/\S*?-(.*)/)[1]
-            .replace('-', '.');
-          return name;
+          return d.label;
         });
 
     // nodeEnter

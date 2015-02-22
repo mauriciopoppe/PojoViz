@@ -7,8 +7,8 @@ if (!pojoviz) {
 }
 
 var request = require('request');
-//var url = 'http://rest.heroku.mauriciopoppe.com/pojoviz/node/global';
-var url = 'http://localhost:5000/pojoviz/node/global';
+var url = 'http://rest.heroku.mauriciopoppe.com/pojoviz/node/global';
+//var url = 'http://localhost:5000/pojoviz/node/global';
 pojoviz.remote = {
   nodeGlobal: function (config) {
     request

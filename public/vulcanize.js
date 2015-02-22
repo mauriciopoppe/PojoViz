@@ -92973,8 +92973,12 @@ var proto = {
 libraries = Object.create(proto);
 //console.log(libraries);
 _.merge(libraries, {
-  object: new PObject(),
-  builtIn: new BuiltIn(),
+  object: new PObject({
+    displayName: 'Object'
+  }),
+  builtIn: new BuiltIn({
+    displayName: 'Built In'
+  }),
   global: new Global(),
   //popular
   angular: new Angular()
@@ -92997,6 +93001,7 @@ var assert = require('assert');
 
 var HashMap = require('./util/HashMap');
 var hashKey = require('./util/hashKey');
+var labeler = require('./util/labeler');
 var utils = require('./util');
 
 /**
@@ -93131,7 +93136,7 @@ function Analyzer(config) {
    * generated in #getProperties
    * @type {Object}
    */
-  this.__objectsCache = {};
+  this.__objectsCache__ = {};
 
   /**
    * @private
@@ -93139,7 +93144,7 @@ function Analyzer(config) {
    * generated in #getOwnLinks
    * @type {Object}
    */
-  this.__linksCache = {};
+  this.__linksCache__ = {};
 }
 
 /**
@@ -93197,7 +93202,7 @@ Analyzer.prototype = {
    * returns an object with a summary of the properties of `value` which are
    * useful to know for the analyzer:
    *
-   * - parent         {*} an predecessor of value (an object which can reach value)
+   * - parent         {string} the hashKey of the parent
    * - property       {string} the name of the property used to reach value,
    *                      i.e. parent[property] = value
    * - value          {*} the value itself
@@ -93214,9 +93219,9 @@ Analyzer.prototype = {
    */
   buildNodeProperties: function (value, parent, property) {
     return {
-      parent: parent,
+      parent: hashKey(parent),
       property: property,
-      value: value,
+      //value: value,
       type: typeof value,
       isTraversable: utils.isTraversable(value),
       isFunction: utils.isFunction(value),
@@ -93248,7 +93253,7 @@ Analyzer.prototype = {
       value = obj[property];
     } catch (e) {
       return {
-        parent: obj,
+        parent: hashKey(obj),
         property: property,
         unreachable: true,
         isTraversable: false
@@ -93323,8 +93328,8 @@ Analyzer.prototype = {
     }
 
     if (this.cache) {
-      if (!traversableOnly && this.__objectsCache[hk]) {
-        return this.__objectsCache[hk];
+      if (!traversableOnly && this.__objectsCache__[hk]) {
+        return this.__objectsCache__[hk];
       }
     }
 
@@ -93349,6 +93354,15 @@ Analyzer.prototype = {
         return true;
       });
 
+    // <labeler>
+    // set a name on itself if it's a constructor
+    labeler(obj);
+    // set a name on each property
+    allProperties
+      .forEach(function (propertyDescription) {
+        labeler(obj, propertyDescription.property);
+      });
+
     // special properties
     // __proto__
     var proto = Object.getPrototypeOf(obj);
@@ -93358,24 +93372,8 @@ Analyzer.prototype = {
       allProperties.push(nodeProperties);
     }
 
-    // constructor (if it's a function)
-    //var isConstructor = obj.hasOwnProperty &&
-    //  obj.hasOwnProperty('constructor') &&
-    //  typeof obj.constructor === 'function';
-    //if (isConstructor &&
-    //    _.findIndex(allProperties, { property: 'constructor' }) === -1) {
-    //  nodeProperties = me.buildNodeProperties();
-    //
-    //  allProperties.push({
-    //    // cls: hashKey(obj),
-    //    name: 'constructor',
-    //    type: 'function',
-    //    linkeable: true
-    //  });
-    //}
-
     if (this.cache && !traversableOnly) {
-      this.__objectsCache[hk] = allProperties;
+      this.__objectsCache__[hk] = allProperties;
     }
 
     return allProperties;
@@ -93447,8 +93445,8 @@ Analyzer.prototype = {
     //console.log(name);
     // </debug>
 
-    if (me.cache && me.__linksCache[name]) {
-      return me.__linksCache[name];
+    if (me.cache && me.__linksCache__[name]) {
+      return me.__linksCache__[name];
     }
 
     // args:
@@ -93475,27 +93473,29 @@ Analyzer.prototype = {
       throw 'the object needs to have a hashkey';
     }
 
-    _.forEach(properties, function (desc) {
-      var ref = obj[desc.property];
-      // because of the levels a reference might not exist
-      if (!ref) {
-        return;
-      }
+    properties
+      .filter(function (desc) {
+        // desc.property might be [[Prototype]], since obj["[[Prototype]]"]
+        // doesn't exist it's not valid a property to be accessed
+        return desc.property !== '[[Prototype]]';
+      })
+      .forEach(function (desc) {
+        var ref = obj[desc.property];
+        assert(ref, 'obj[property] should exist');
+        // if the object doesn't have a hashKey
+        // let's give it a name equal to the property being analyzed
+        //getAugmentedHash(ref, desc.property);
 
-      // if the object doesn't have a hashKey
-      // let's give it a name equal to the property being analyzed
-      getAugmentedHash(ref, desc.property);
-
-      if (!me.isForbidden(ref)) {
-        links.push({
-          from: obj,
-          fromHash: hashKey(obj),
-          to: ref,
-          toHash: hashKey(ref),
-          property: desc.property
-        });
-      }
-    });
+        if (!me.isForbidden(ref)) {
+          links.push({
+            from: obj,
+            fromHash: hashKey(obj),
+            to: ref,
+            toHash: hashKey(ref),
+            property: desc.property
+          });
+        }
+      });
 
     var proto = Object.getPrototypeOf(obj);
     if (proto && !me.isForbidden(proto)) {
@@ -93509,7 +93509,7 @@ Analyzer.prototype = {
     }
 
     if (this.cache) {
-      this.__linksCache[name] = links;
+      this.__linksCache__[name] = links;
     }
 
     return links;
@@ -93547,28 +93547,24 @@ Analyzer.prototype = {
   },
 
   /**
-   * Alias for #getProperties
+   * @private
+   * This method stringifies the properties of the object `obj`, to avoid
+   * getting the JSON.stringify cyclic error let's delete some properties
+   * that are know to be objects/functions
+   *
    * @param  obj
-   * @param  plain True to return only primitive properties
    * @return {Array}
    */
-  stringifyObjectProperties: function (obj, plain) {
+  stringifyObjectProperties: function (obj) {
     var properties = this.getProperties(obj);
-
-    if (plain) {
-    // delete non primitive properties
-      properties.forEach(function (property) {
-        _.forOwn(property, function (value, key) {
-          if (value && (typeof value === 'object' || typeof value === 'function')) {
-            delete property[key];
-          }
-        });
-      });
-    }
+    // append the labels created with labeler
+    properties.labels = labeler(obj);
+    assert(properties.labels.size(), 'object must have labels');
     return properties;
   },
 
   /**
+   * @private
    * Returns a representation of the outgoing links of
    * an object
    * @return {Object}
@@ -93587,19 +93583,25 @@ Analyzer.prototype = {
 
   /**
    * Stringifies the objects saved in this analyzer
-   * @param {boolean} plain True to return a plain output (without links to objects/functions)
    * @return {Object}
    */
-  stringify: function (plain) {
+  stringify: function () {
     var me = this,
       nodes = {},
       edges = {};
+    if (me.debug) {
+      console.log(me);
+    }
     me.debug && console.time('stringify');
     _.forOwn(me.items, function (v) {
       var hk = hashKey(v);
-      nodes[hk] = me.stringifyObjectProperties(v, plain);
+      nodes[hk] = me.stringifyObjectProperties(v);
       edges[hk] = me.stringifyObjectLinks(v);
     });
+    if (me.debug) {
+      console.log('nodes', nodes);
+      console.log('edges', edges);
+    }
     me.debug && console.timeEnd('stringify');
     return {
       nodes: nodes,
@@ -93692,8 +93694,8 @@ Analyzer.prototype = {
    * Empties all the info stored in this analyzer
    */
   reset: function () {
-    this.__linksCache = {};
-    this.__objectsCache = {};
+    this.__linksCache__ = {};
+    this.__objectsCache__ = {};
     this.forbidden.empty();
     this.items.empty();
   }
@@ -93715,7 +93717,7 @@ chain('allow');
 
 module.exports = Analyzer;
 
-},{"./util":21,"./util/HashMap":19,"./util/hashKey":20,"assert":2,"lodash":undefined}],9:[function(require,module,exports){
+},{"./util":21,"./util/HashMap":19,"./util/hashKey":20,"./util/labeler":22,"assert":2,"lodash":undefined}],9:[function(require,module,exports){
 (function (global){
 'use strict';
 
@@ -94092,7 +94094,7 @@ Inspector.DEFAULT_CONFIG = {
   entryPoint: '',
   displayName: '',
   alwaysDirty: false,
-  debug: false,
+  debug: !!global.window,
   forbiddenTokens: Inspector.DEFAULT_FORBIDDEN_TOKENS,
   additionalForbiddenTokens: null,
   analyzerConfig: {}
@@ -94128,7 +94130,11 @@ Inspector.prototype.init = function () {
   me.debug && console.log('%cPojoViz', 'font-size: 15px; color: ');
   return me.fetch()
     .then(function () {
-      if (me.alwaysDirty || me.dirty) {
+      if (me.alwaysDirty) {
+        me.setDirty();
+      }
+      if (me.dirty) {
+        me.debug && console.log('%cInspecting: %s', 'color: red', me.entryPoint || me.displayName);
         me.inspect();
       }
       return me;
@@ -94155,9 +94161,6 @@ Inspector.prototype.inspectSelf = function () {
   }
   me.debug && console.log('analyzing global.' + me.entryPoint);
 
-  // set a predefined global name (so that it's known as entryPoint)
-  hashKey.createHashKeysFor(start, me.entryPoint);
-
   // before inspect hook
   me.beforeInspectSelf();
 
@@ -94178,12 +94181,8 @@ Inspector.prototype.inspectSelf = function () {
 /**
  * @template
  * before inspect self hook
- * Cleans the items stored in the analyzer
  */
 Inspector.prototype.beforeInspectSelf = function () {
-  // clean the analyzer
-  this.analyzer.items.empty();
-  //this.analyzer.forbidden.empty();
 };
 
 /**
@@ -94230,6 +94229,8 @@ Inspector.prototype.parseForbiddenTokens = function () {
  */
 Inspector.prototype.setDirty = function () {
   this.dirty = true;
+  this.analyzer.items.empty();
+  this.analyzer.forbidden.empty();
   return this;
 };
 
@@ -94477,7 +94478,11 @@ module.exports = [{
 module.exports = [{
   label: 'PojoViz',
   entryPoint: 'pojoviz',
-  alwaysDirty: true
+  alwaysDirty: true,
+  additionalForbiddenTokens: 'global:pojoviz.InspectedInstances.pojoviz.analyzer.items',
+  analyzerConfig: {
+    visitArrays: false
+  }
 }, {
   entryPoint: 't3'
 }];
@@ -94565,55 +94570,18 @@ var _ = require('lodash');
 var assert = require('assert');
 var utils = require('./');
 var me, hashKey;
-/**
- * Gets a store hashkey only if it's an object
- * @param  {[type]} obj
- * @return {[type]}
- */
-function get(obj) {
-  assert(utils.isObjectOrFunction(obj), 'obj must be an object|function');
-  return Object.prototype.hasOwnProperty.call(obj, me.hiddenKey) &&
-    obj[me.hiddenKey];
-}
-
-/**
- * TODO: document
- * Sets a key on an object
- * @param {[type]} obj [description]
- * @param {[type]} key [description]
- */
-function set(obj, key) {
-  assert(utils.isObjectOrFunction(obj), 'obj must be an object|function');
-  assert(
-    key && typeof key === 'string',
-    'The key needs to be a valid string'
-  );
-  var value;
-  if (!get(obj)) {
-    value = typeof obj + '-' + key;
-    Object.defineProperty(obj, me.hiddenKey, {
-      value: value
-    });
-    if (!obj[me.hiddenKey]) {
-      console.warn('Object.defineProperty did not work! setting the value on the object directly');
-      obj[me.hiddenKey] = value;
-    }
-    assert(obj[me.hiddenKey], 'Object.defineProperty did not work!');
-  }
-  return me;
-}
+var doGet, doSet;
 
 me = hashKey = function (v) {
   var uid = v;
   if (utils.isObjectOrFunction(v)) {
-    if (!get(v)) {
-      me.createHashKeysFor(v);
+    if (!me.has(v)) {
+      doSet(v, _.uniqueId());
     }
-    uid = get(v);
-    if (!uid) {
+    uid = doGet(v);
+    if (!me.has(v)) {
       throw Error(v + ' should have a hashKey at this point :(');
     }
-    assert(uid, 'error getting the key');
     return uid;
   }
 
@@ -94621,90 +94589,61 @@ me = hashKey = function (v) {
   return typeof v + '-' + uid;
 };
 
-me.hiddenKey = '__pojovizKey__';
-
-me.createHashKeysFor = function (obj, name) {
-
-  function localToString(obj) {
-    var match;
-    try {
-      match = {}.toString.call(obj).match(/^\[object (\S*?)\]/);
-    } catch (e) {
-      match = false;
-    }
-    return match && match[1];
-  }
-
-  /**
-   * Analyze the internal property [[Class]] to guess the name
-   * of this object, e.g. [object Date], [object Math]
-   * Many object will give false positives (they will match [object Object])
-   * so let's consider Object as the name only if it's equal to
-   * Object.prototype
-   * @param  {Object}  obj
-   * @return {Boolean}
-   */
-  function hasAClassName(obj) {
-    var match = localToString(obj);
-    if (match === 'Object') {
-      return obj === Object.prototype && 'Object';
-    }
-    return match;
-  }
-
-  function getName(obj) {
-    var name, className;
-
-    // return the already generated hashKey
-    if (get(obj)) {
-      return get(obj);
-    }
-
-    // generate a new key based on
-    // - the name if it's a function
-    // - a unique id
-    name = typeof obj === 'function' &&
-      typeof obj.name === 'string' &&
-      obj.name;
-
-    className = hasAClassName(obj);
-    if (!name && className) {
-      name = className;
-    }
-
-    name = name || _.uniqueId();
-    return name;
-  }
-
-  // the name is equal to the passed name or the
-  // generated name
-  name = name || getName(obj);
-  name = name.replace(/[\. ]/img, '-');
-
-  // if the obj is a prototype then try to analyze
-  // the constructor first so that the prototype becomes
-  // [name].prototype
-  // special case: object.constructor = object
-  if (obj.hasOwnProperty &&
-      obj.hasOwnProperty('constructor') &&
-      typeof obj.constructor === 'function' &&
-      obj.constructor !== obj) {
-    me.createHashKeysFor(obj.constructor);
-  }
-
-  // set name on self
-  set(obj, name);
-
-  // set name on the prototype
-  if (typeof obj === 'function' &&
-      obj.hasOwnProperty('prototype')) {
-    set(obj.prototype, name + '-prototype');
-  }
+/**
+ * @private
+ * Gets the stored hashkey, since there are object that might not have a chain
+ * up to Object.prototype the check is done with Object.prototype.hasOwnProperty explicitly
+ *
+ * @param  {*} obj
+ * @return {string}
+ */
+doGet = function (obj) {
+  assert(utils.isObjectOrFunction(obj), 'obj must be an object|function');
+  return Object.prototype.hasOwnProperty.call(obj, me.hiddenKey) &&
+    obj[me.hiddenKey];
 };
 
+/**
+ * @private
+ * Sets a hidden key on an object, the hidden key is determined as follows:
+ *
+ * - null object-null
+ * - numbers: number-{value}
+ * - boolean: boolean-{true|false}
+ * - string: string-{value}
+ * - undefined undefined-undefined
+ * - function: function-{id} id = _.uniqueId
+ * - object: object-{id} id = _.uniqueId
+ *
+ * @param {*} obj The object to set the hiddenKey
+ * @param {string} key The key to be set in the object
+ */
+doSet = function (obj, key) {
+  assert(utils.isObjectOrFunction(obj), 'obj must be an object|function');
+  assert(
+    typeof key === 'string',
+    'The key needs to be a valid string'
+  );
+  var value;
+  if (!me.has(obj)) {
+    value = typeof obj + '-' + key;
+    Object.defineProperty(obj, me.hiddenKey, {
+      value: value
+    });
+    if (!obj[me.hiddenKey]) {
+      // in node setting the instruction above might not have worked
+      console.warn('hashKey#doSet() setting the value on the object directly');
+      obj[me.hiddenKey] = value;
+    }
+    assert(obj[me.hiddenKey], 'Object.defineProperty did not work!');
+  }
+  return me;
+};
+
+me.hiddenKey = '__pojovizKey__';
+
 me.has = function (v) {
-  return v.hasOwnProperty &&
-    v.hasOwnProperty(me.hiddenKey);
+  return typeof doGet(v) === 'string';
 };
 
 module.exports = me;
@@ -94744,6 +94683,18 @@ utils.internalClassProperty = function (v) {
  */
 utils.isFunction = function (v) {
   return !!v && typeof v === 'function';
+};
+
+/**
+ * Checks if the value is a constructor,
+ * NOTE: for the sake of this library a constructor is a function
+ * that has a name which starts with an uppercase letter and also
+ * that the prototype's constructor is itself
+ * @param {*} v
+ */
+utils.isConstructor = function (v) {
+  return this.isFunction(v) && typeof v.name === 'string' &&
+      v.name.length && v.prototype && v.prototype.constructor === v;
 };
 
 /**
@@ -94830,6 +94781,21 @@ utils.functionChain = function () {
     return inner;
   };
   return inner;
+};
+
+/**
+ * Given a str made of any characters this method returns a string
+ * representation of a signed int
+ * @param {string} str
+ */
+utils.hashCode = function (str) {
+  var i, length, char, hash = 0;
+  for (i = 0, length = str.length; i < length; i += 1) {
+    char = str.charCodeAt(i);
+    hash = ((hash << 5) - hash) + char;
+    hash = hash & hash;
+  }
+  return String(hash);
 };
 
 utils.createEvent = function (eventName, details) {
@@ -94953,13 +94919,147 @@ utils.propertyForbiddenRules = {
    * @param {string} property
    * @returns {boolean}
    */
-  symbols: function (object, property) {
-    return property.search(/[:+~!><=//\]@\. ]/) > -1;
-  }
+  //symbols: function (object, property) {
+  //  return property.search(/[:+~!><=//\]@\. ]/) > -1;
+  //}
 };
 
 module.exports = utils;
-},{"lodash":undefined}]},{},[1])(1)
+},{"lodash":undefined}],22:[function(require,module,exports){
+/**
+ * Created by mauricio on 2/21/15.
+ */
+var _ = require('lodash');
+var assert = require('assert');
+var hashKey = require('./hashKey');
+var utils = require('./');
+var me, labeler;
+var doInsert, doGet;
+
+// labels per each object will be saved inside this object
+var labelCache = {};
+
+var proto = {
+  first: function () {
+    return this.values[0];
+  },
+  size: function () {
+    return this.values.length;
+  },
+  getValues: function () {
+    return this.values;
+  }
+};
+
+/**
+ * @param {Object} from
+ * @param {string} [property]
+ * @param {string} [config]
+ *
+ *  - config.labelOverride Overrides the property label with this value
+ *  - config.highPriority {boolean} if set to true then the label will be
+ *  prepended instead of being append
+ *
+ * @type {Function}
+ */
+me = labeler = function (from, property, config) {
+  assert(utils.isObjectOrFunction(from), 'from needs to be an object or a function');
+  config = config || {};
+  var obj;
+  var label;
+
+  function attempToInsert(obj, from, label) {
+    if (utils.isObjectOrFunction(obj)) {
+      var objHash = hashKey(obj);
+      var fromHash = from ? hashKey(from) : null;
+      var labelCfg = {
+        from: fromHash,
+        label: label
+      };
+      if (!_.find(labelCache[objHash] || [], labelCfg)) {
+        doInsert(obj, labelCfg, config);
+      }
+    }
+  }
+
+
+  if (property) {
+    obj = from[property];
+    label = property;
+    // if the property is `prototype` append the name of the constructor
+    // this means that it has a higher priority so the item should be prepended
+    if (property === 'prototype' && utils.isConstructor(from)) {
+      config.highPriority = true;
+      label = from.name + '.' + property;
+    }
+    attempToInsert(obj, from, label);
+  } else {
+    // the default label for an iterable is the hashkey
+    attempToInsert(from, null, hashKey(from));
+
+    // if it's called with the second arg === undefined then only
+    // set a label if it's a constructor
+    if (utils.isConstructor(from)) {
+      config.highPriority = true;
+      attempToInsert(from, null, from.name);
+    }
+  }
+
+  return doGet(from, property);
+};
+
+me.hiddenLabel = '__pojovizLabel__';
+
+/**
+ * The object has a hidden key if it exists and is
+ * an array
+ * @param v
+ * @returns {boolean}
+ */
+me.has = function (v) {
+  return typeof labelCache[hashKey(v)] !== 'undefined';
+};
+
+doGet = function (from, property) {
+  var obj = property ? from[property] : from;
+  var r = Object.create(proto);
+  r.values = (utils.isObjectOrFunction(obj) && labelCache[hashKey(obj)]) || [];
+  return r;
+};
+'length', 'name', 'prototype',
+
+/**
+ * @private
+ * Sets a hidden key on an object, the hidden key is an array of objects,
+ * each object has the following structure:
+ *
+ *  {
+ *    from: string,
+ *    label: string
+ *  }
+ *
+ * @param {*} obj The object whose label need to be saved
+ * @param {Object} properties The properties of the labels
+ * @param {Object} config additional configuration options
+ */
+doInsert = function (obj, properties, config) {
+  var hkObj = hashKey(obj);
+  labelCache[hkObj] = labelCache[hkObj] || [];
+  var arr = labelCache[hkObj];
+  var index = config.highPriority ? 0 : arr.length;
+
+  // label override
+  if (config.labelOverride) {
+    properties.label = config.labelOverride;
+  }
+
+  // insertion either at start or end
+  arr.splice(index, 0, properties);
+};
+
+//me.labelCache = labelCache;
+module.exports = me;
+},{"./":21,"./hashKey":20,"assert":2,"lodash":undefined}]},{},[1])(1)
 });;
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 (function (global){
@@ -96034,7 +96134,8 @@ var d3 = (typeof window !== "undefined" ? window.d3 : typeof global !== "undefin
 var rootSvg;
 var prefix = utils.prefixer;
 var escapeCls = utils.escapeCls;
-var transformProperty = utils.transformProperty;
+var hashCode = require('../../util/').hashCode;
+var hashKey = require('../../util/hashKey');
 
 function getX(d) {
   return d.x - d.width / 2;
@@ -96175,7 +96276,7 @@ Canvas.prototype.renderEdges = function() {
     }
     var fromData = from.datum(),
         property = from.select('.' + prefix(
-          escapeCls(transformProperty(d.property))
+          d.from, hashCode(d.property)
         )),
         propertyData = d3.transform(property.attr('transform'));
 
@@ -96250,7 +96351,7 @@ Canvas.prototype.renderNodes = function() {
 
 module.exports = Canvas;
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"../../renderer/utils":14,"./Node":8,"assert":2,"lodash":undefined}],8:[function(require,module,exports){
+},{"../../renderer/utils":14,"../../util/":16,"../../util/hashKey":15,"./Node":8,"assert":2,"lodash":undefined}],8:[function(require,module,exports){
 (function (global){
 var _ = require('lodash'),
   d3 = (typeof window !== "undefined" ? window.d3 : typeof global !== "undefined" ? global.d3 : null),
@@ -96259,7 +96360,6 @@ var _ = require('lodash'),
   hashKey = require('../../util/hashKey');
 
 var prefix = utils.prefixer;
-var escapeCls = utils.escapeCls;
 var margin = { top: 0, right: 0, left: 0, bottom: 0 };
 
 function Node(parent) {
@@ -96271,29 +96371,29 @@ function Node(parent) {
     function groupMouseBehavior(type) {
       var over = type === 'over';
       return function (d, i) {
-        var labelEscaped = escapeCls(d.label);
+        var hk = d.hashKey;
 
         // hide all
         parent.opacityToggle(over);
 
         // select links
         root
-          .selectAll('.' + prefix('to', labelEscaped))
+          .selectAll('.' + prefix('to', hk))
           .classed('selected predecessor', over);
         root
-          .selectAll('.' + prefix('from', labelEscaped))
+          .selectAll('.' + prefix('from', hk))
           .classed('selected successor', over);
 
         // select current node
         root
-          .select('.' + prefix(labelEscaped))
+          .select('.' + prefix(hk))
           .classed('selected current', over);
 
         // select predecessor nodes
         d.predecessors
           .forEach(function (v) {
             root
-              .selectAll('.' + prefix(escapeCls(v)))
+              .selectAll('.' + prefix(v))
               .classed('selected predecessor', over);
           });
 
@@ -96301,7 +96401,7 @@ function Node(parent) {
         d.successors
           .forEach(function (v) {
             root
-              .selectAll('.' + prefix(escapeCls(v)))
+              .selectAll('.' + prefix(v))
               .classed('selected successor', over);
           });
       };
@@ -96310,12 +96410,11 @@ function Node(parent) {
     var nodeEnter = enter
       .append('g')
       .attr('class', function (d) {
-        var type = d.label
-          .match(/^(\w)*/);
+        // string,number,boolean.undefined,object,function
+        //var type = d.label;
         return [
           prefix('node'),
-          prefix(type[0]),
-          prefix(escapeCls(d.label))
+          prefix(d.hashKey)
         ].join(' ');
       })
       .attr('transform', function (d) {
@@ -96339,10 +96438,7 @@ function Node(parent) {
         .attr('class', prefix('title'))
         .attr('transform', 'translate(20, 25)')
         .text(function (d) {
-          var name = d.label
-            .match(/\S*?-(.*)/)[1]
-            .replace('-', '.');
-          return name;
+          return d.label;
         });
 
     // nodeEnter
@@ -96394,10 +96490,9 @@ module.exports = Node;
 var d3 = (typeof window !== "undefined" ? window.d3 : typeof global !== "undefined" ? global.d3 : null),
   _ = require('lodash'),
   utils = require('../../renderer/utils');
-
+var hashKey = require('../../util/hashKey');
 var prefix = utils.prefixer;
-var escapeCls = utils.escapeCls;
-var transformProperty = utils.transformProperty;
+var hashCode = require('../../util/').hashCode;
 
 function Property() {
   var margin = {
@@ -96434,22 +96529,21 @@ function Property() {
       };
     }
     var propertyEnter = selection.enter()
-        .append('g')
-        .attr('class', function (d) {
-          return [
-            prefix('property'),
-            prefix(
-              escapeCls(transformProperty(d.property))
-            )
-          ].join(' ');
-        })
-        .attr('transform', function (d, i) {
-          return utils.transform({
-            translate: propertyY(d, i)
-          });
-        })
-        .on('mouseover', mouseEvent('over'))
-        .on('mouseout', mouseEvent('out'));
+      .append('g')
+      .attr('class', function (d) {
+        return [
+          prefix('property'),
+          // e.g. object-1-length
+          prefix(d.parent, hashCode(d.property))
+        ].join(' ');
+      })
+      .attr('transform', function (d, i) {
+        return utils.transform({
+          translate: propertyY(d, i)
+        });
+      })
+      .on('mouseover', mouseEvent('over'))
+      .on('mouseout', mouseEvent('out'));
 
     propertyEnter
       .append('text')
@@ -96527,7 +96621,7 @@ function Property() {
 
 module.exports = Property;
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"../../renderer/utils":14,"lodash":undefined}],10:[function(require,module,exports){
+},{"../../renderer/utils":14,"../../util/":16,"../../util/hashKey":15,"lodash":undefined}],10:[function(require,module,exports){
 (function (global){
 var Canvas = require('./Canvas'),
   canvas,
@@ -96613,10 +96707,11 @@ module.exports = {
     // - height
     // - properties
     _.forOwn(libraryNodes, function (properties, k) {
-      var label = k.match(/\S*?-(.*)/)[1];
+      var label = properties.labels.first().label;
       //console.log(k, label.length);
       node = {
-        label: k,
+        hashKey: k,
+        label: label,
         width: label.length * 10
       };
       // lines + header + padding bottom
@@ -97492,7 +97587,7 @@ module.exports = {
     document.querySelector(el).appendChild(rootEl);
 
     nodes.forEach(function (node) {
-      nodeMap[node.label] = node;
+      nodeMap[node.hashKey] = node;
     });
 
     var wrapperEl = rootEl;
@@ -97530,9 +97625,7 @@ module.exports = {
       context.font = "normal 100 18px Roboto";
       context.fillStyle = "rgba(0, 0, 0, 1)";
       context.fillText(
-        node.label
-          .match(/^\S*?-([\S-]*)$/)[1]
-          .replace(/-/, '.'),
+        node.label,
         margin.left,
         margin.top + 15
       );
@@ -97924,55 +98017,18 @@ var _ = require('lodash');
 var assert = require('assert');
 var utils = require('./');
 var me, hashKey;
-/**
- * Gets a store hashkey only if it's an object
- * @param  {[type]} obj
- * @return {[type]}
- */
-function get(obj) {
-  assert(utils.isObjectOrFunction(obj), 'obj must be an object|function');
-  return Object.prototype.hasOwnProperty.call(obj, me.hiddenKey) &&
-    obj[me.hiddenKey];
-}
-
-/**
- * TODO: document
- * Sets a key on an object
- * @param {[type]} obj [description]
- * @param {[type]} key [description]
- */
-function set(obj, key) {
-  assert(utils.isObjectOrFunction(obj), 'obj must be an object|function');
-  assert(
-    key && typeof key === 'string',
-    'The key needs to be a valid string'
-  );
-  var value;
-  if (!get(obj)) {
-    value = typeof obj + '-' + key;
-    Object.defineProperty(obj, me.hiddenKey, {
-      value: value
-    });
-    if (!obj[me.hiddenKey]) {
-      console.warn('Object.defineProperty did not work! setting the value on the object directly');
-      obj[me.hiddenKey] = value;
-    }
-    assert(obj[me.hiddenKey], 'Object.defineProperty did not work!');
-  }
-  return me;
-}
+var doGet, doSet;
 
 me = hashKey = function (v) {
   var uid = v;
   if (utils.isObjectOrFunction(v)) {
-    if (!get(v)) {
-      me.createHashKeysFor(v);
+    if (!me.has(v)) {
+      doSet(v, _.uniqueId());
     }
-    uid = get(v);
-    if (!uid) {
+    uid = doGet(v);
+    if (!me.has(v)) {
       throw Error(v + ' should have a hashKey at this point :(');
     }
-    assert(uid, 'error getting the key');
     return uid;
   }
 
@@ -97980,90 +98036,61 @@ me = hashKey = function (v) {
   return typeof v + '-' + uid;
 };
 
-me.hiddenKey = '__pojovizKey__';
-
-me.createHashKeysFor = function (obj, name) {
-
-  function localToString(obj) {
-    var match;
-    try {
-      match = {}.toString.call(obj).match(/^\[object (\S*?)\]/);
-    } catch (e) {
-      match = false;
-    }
-    return match && match[1];
-  }
-
-  /**
-   * Analyze the internal property [[Class]] to guess the name
-   * of this object, e.g. [object Date], [object Math]
-   * Many object will give false positives (they will match [object Object])
-   * so let's consider Object as the name only if it's equal to
-   * Object.prototype
-   * @param  {Object}  obj
-   * @return {Boolean}
-   */
-  function hasAClassName(obj) {
-    var match = localToString(obj);
-    if (match === 'Object') {
-      return obj === Object.prototype && 'Object';
-    }
-    return match;
-  }
-
-  function getName(obj) {
-    var name, className;
-
-    // return the already generated hashKey
-    if (get(obj)) {
-      return get(obj);
-    }
-
-    // generate a new key based on
-    // - the name if it's a function
-    // - a unique id
-    name = typeof obj === 'function' &&
-      typeof obj.name === 'string' &&
-      obj.name;
-
-    className = hasAClassName(obj);
-    if (!name && className) {
-      name = className;
-    }
-
-    name = name || _.uniqueId();
-    return name;
-  }
-
-  // the name is equal to the passed name or the
-  // generated name
-  name = name || getName(obj);
-  name = name.replace(/[\. ]/img, '-');
-
-  // if the obj is a prototype then try to analyze
-  // the constructor first so that the prototype becomes
-  // [name].prototype
-  // special case: object.constructor = object
-  if (obj.hasOwnProperty &&
-      obj.hasOwnProperty('constructor') &&
-      typeof obj.constructor === 'function' &&
-      obj.constructor !== obj) {
-    me.createHashKeysFor(obj.constructor);
-  }
-
-  // set name on self
-  set(obj, name);
-
-  // set name on the prototype
-  if (typeof obj === 'function' &&
-      obj.hasOwnProperty('prototype')) {
-    set(obj.prototype, name + '-prototype');
-  }
+/**
+ * @private
+ * Gets the stored hashkey, since there are object that might not have a chain
+ * up to Object.prototype the check is done with Object.prototype.hasOwnProperty explicitly
+ *
+ * @param  {*} obj
+ * @return {string}
+ */
+doGet = function (obj) {
+  assert(utils.isObjectOrFunction(obj), 'obj must be an object|function');
+  return Object.prototype.hasOwnProperty.call(obj, me.hiddenKey) &&
+    obj[me.hiddenKey];
 };
 
+/**
+ * @private
+ * Sets a hidden key on an object, the hidden key is determined as follows:
+ *
+ * - null object-null
+ * - numbers: number-{value}
+ * - boolean: boolean-{true|false}
+ * - string: string-{value}
+ * - undefined undefined-undefined
+ * - function: function-{id} id = _.uniqueId
+ * - object: object-{id} id = _.uniqueId
+ *
+ * @param {*} obj The object to set the hiddenKey
+ * @param {string} key The key to be set in the object
+ */
+doSet = function (obj, key) {
+  assert(utils.isObjectOrFunction(obj), 'obj must be an object|function');
+  assert(
+    typeof key === 'string',
+    'The key needs to be a valid string'
+  );
+  var value;
+  if (!me.has(obj)) {
+    value = typeof obj + '-' + key;
+    Object.defineProperty(obj, me.hiddenKey, {
+      value: value
+    });
+    if (!obj[me.hiddenKey]) {
+      // in node setting the instruction above might not have worked
+      console.warn('hashKey#doSet() setting the value on the object directly');
+      obj[me.hiddenKey] = value;
+    }
+    assert(obj[me.hiddenKey], 'Object.defineProperty did not work!');
+  }
+  return me;
+};
+
+me.hiddenKey = '__pojovizKey__';
+
 me.has = function (v) {
-  return v.hasOwnProperty &&
-    v.hasOwnProperty(me.hiddenKey);
+  return typeof doGet(v) === 'string';
 };
 
 module.exports = me;
@@ -98103,6 +98130,18 @@ utils.internalClassProperty = function (v) {
  */
 utils.isFunction = function (v) {
   return !!v && typeof v === 'function';
+};
+
+/**
+ * Checks if the value is a constructor,
+ * NOTE: for the sake of this library a constructor is a function
+ * that has a name which starts with an uppercase letter and also
+ * that the prototype's constructor is itself
+ * @param {*} v
+ */
+utils.isConstructor = function (v) {
+  return this.isFunction(v) && typeof v.name === 'string' &&
+      v.name.length && v.prototype && v.prototype.constructor === v;
 };
 
 /**
@@ -98189,6 +98228,21 @@ utils.functionChain = function () {
     return inner;
   };
   return inner;
+};
+
+/**
+ * Given a str made of any characters this method returns a string
+ * representation of a signed int
+ * @param {string} str
+ */
+utils.hashCode = function (str) {
+  var i, length, char, hash = 0;
+  for (i = 0, length = str.length; i < length; i += 1) {
+    char = str.charCodeAt(i);
+    hash = ((hash << 5) - hash) + char;
+    hash = hash & hash;
+  }
+  return String(hash);
 };
 
 utils.createEvent = function (eventName, details) {
@@ -98312,9 +98366,9 @@ utils.propertyForbiddenRules = {
    * @param {string} property
    * @returns {boolean}
    */
-  symbols: function (object, property) {
-    return property.search(/[:+~!><=//\]@\. ]/) > -1;
-  }
+  //symbols: function (object, property) {
+  //  return property.search(/[:+~!><=//\]@\. ]/) > -1;
+  //}
 };
 
 module.exports = utils;

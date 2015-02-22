@@ -36,9 +36,9 @@ describe('Known configuration schemas', function () {
     }];
 
     schemas.forEach(function (cfg) {
-      cfg.debug = true;
+      cfg.debug = false;
       promises.push(
-        pojoviz.setCurrentInspector(cfg)
+        pojoviz.run(cfg)
           .then(function () {
             console.time('process');
             console.log('processing: ', cfg.displayName || cfg.entryPoint);

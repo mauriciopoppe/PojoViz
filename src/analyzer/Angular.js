@@ -51,7 +51,6 @@ Angular.prototype.getSelectedServices = function () {
   me.services.forEach(function (s) {
     if (s.checked) {
       var obj = me.injector.get(s.name);
-      hashKey.createHashKeysFor(obj, s.name);
       toAnalyze.push(obj);
     }
   });
@@ -64,7 +63,6 @@ Angular.prototype.getSelectedServices = function () {
 Angular.prototype.inspectSelf = function () {
   var me = this;
   this.debug && console.log('inspecting angular');
-  hashKey.createHashKeysFor(global.angular, 'angular');
 
   // get the objects that need to be forbidden
   var toForbid = me.parseForbiddenTokens();

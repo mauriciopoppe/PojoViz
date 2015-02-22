@@ -139,7 +139,7 @@ function Analyzer(config) {
    * generated in #getProperties
    * @type {Object}
    */
-  this.__objectsCache = {};
+  this.__objectsCache__ = {};
 
   /**
    * @private
@@ -147,7 +147,7 @@ function Analyzer(config) {
    * generated in #getOwnLinks
    * @type {Object}
    */
-  this.__linksCache = {};
+  this.__linksCache__ = {};
 }
 
 /**
@@ -331,8 +331,8 @@ Analyzer.prototype = {
     }
 
     if (this.cache) {
-      if (!traversableOnly && this.__objectsCache[hk]) {
-        return this.__objectsCache[hk];
+      if (!traversableOnly && this.__objectsCache__[hk]) {
+        return this.__objectsCache__[hk];
       }
     }
 
@@ -383,7 +383,7 @@ Analyzer.prototype = {
     //}
 
     if (this.cache && !traversableOnly) {
-      this.__objectsCache[hk] = allProperties;
+      this.__objectsCache__[hk] = allProperties;
     }
 
     return allProperties;
@@ -455,8 +455,8 @@ Analyzer.prototype = {
     //console.log(name);
     // </debug>
 
-    if (me.cache && me.__linksCache[name]) {
-      return me.__linksCache[name];
+    if (me.cache && me.__linksCache__[name]) {
+      return me.__linksCache__[name];
     }
 
     // args:
@@ -483,27 +483,29 @@ Analyzer.prototype = {
       throw 'the object needs to have a hashkey';
     }
 
-    _.forEach(properties, function (desc) {
-      var ref = obj[desc.property];
-      // because of the levels a reference might not exist
-      if (!ref) {
-        return;
-      }
+    properties
+      .filter(function (desc) {
+        // desc.property might be [[Prototype]], since obj["[[Prototype]]"]
+        // doesn't exist it's not valid a property to be accessed
+        return desc.property !== '[[Prototype]]';
+      })
+      .forEach(function (desc) {
+        var ref = obj[desc.property];
+        assert(ref, 'obj[property] should exist');
+        // if the object doesn't have a hashKey
+        // let's give it a name equal to the property being analyzed
+        //getAugmentedHash(ref, desc.property);
 
-      // if the object doesn't have a hashKey
-      // let's give it a name equal to the property being analyzed
-      getAugmentedHash(ref, desc.property);
-
-      if (!me.isForbidden(ref)) {
-        links.push({
-          from: obj,
-          fromHash: hashKey(obj),
-          to: ref,
-          toHash: hashKey(ref),
-          property: desc.property
-        });
-      }
-    });
+        if (!me.isForbidden(ref)) {
+          links.push({
+            from: obj,
+            fromHash: hashKey(obj),
+            to: ref,
+            toHash: hashKey(ref),
+            property: desc.property
+          });
+        }
+      });
 
     var proto = Object.getPrototypeOf(obj);
     if (proto && !me.isForbidden(proto)) {
@@ -517,7 +519,7 @@ Analyzer.prototype = {
     }
 
     if (this.cache) {
-      this.__linksCache[name] = links;
+      this.__linksCache__[name] = links;
     }
 
     return links;
@@ -700,8 +702,8 @@ Analyzer.prototype = {
    * Empties all the info stored in this analyzer
    */
   reset: function () {
-    this.__linksCache = {};
-    this.__objectsCache = {};
+    this.__linksCache__ = {};
+    this.__objectsCache__ = {};
     this.forbidden.empty();
     this.items.empty();
   }

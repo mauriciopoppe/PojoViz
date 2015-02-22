@@ -1,10 +1,9 @@
 var d3 = require('d3'),
   _ = require('lodash'),
   utils = require('../../renderer/utils');
-
+var hashKey = require('../../util/hashKey');
 var prefix = utils.prefixer;
-var escapeCls = utils.escapeCls;
-var transformProperty = utils.transformProperty;
+var hashCode = require('../../util/').hashCode;
 
 function Property() {
   var margin = {
@@ -45,9 +44,8 @@ function Property() {
         .attr('class', function (d) {
           return [
             prefix('property'),
-            prefix(
-              escapeCls(transformProperty(d.property))
-            )
+            // e.g. object-1-length
+            prefix(hashKey(d.parent), hashCode(d.property))
           ].join(' ');
         })
         .attr('transform', function (d, i) {

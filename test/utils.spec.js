@@ -49,7 +49,6 @@ describe('utilities', function () {
     expect(fn({}, 'arguments')).equals(false);
     expect(fn(function () {}, 'arguments')).equals(true);
     expect(fn(function () {}, 'caller')).equals(true);
-    expect(fn({}, '[]')).equals(true);
     expect(fn({}, '$$digestCount$$')).equals(true);
   });
 });

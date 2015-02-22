@@ -56,6 +56,8 @@ module.exports = {
       var label = k.match(/\S*?-(.*)/)[1];
       //console.log(k, label.length);
       node = {
+        hashKey: k,
+        // TODO: gather the label from labelable
         label: k,
         width: label.length * 10
       };

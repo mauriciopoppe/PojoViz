@@ -56,12 +56,12 @@ function Node(parent) {
     var nodeEnter = enter
       .append('g')
       .attr('class', function (d) {
-        var type = d.label
-          .match(/^(\w)*/);
+        // string,number,boolean.undefined,object,function
+        var type = d.label.match(/^(\w)*/);
         return [
           prefix('node'),
           prefix(type[0]),
-          prefix(escapeCls(d.label))
+          prefix(d.hashKey)
         ].join(' ');
       })
       .attr('transform', function (d) {

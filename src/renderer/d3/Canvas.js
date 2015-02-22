@@ -7,7 +7,8 @@ var d3 = require('d3'),
 var rootSvg;
 var prefix = utils.prefixer;
 var escapeCls = utils.escapeCls;
-var transformProperty = utils.transformProperty;
+var hashCode = require('../../util/').hashCode;
+var hashKey = require('../../util/hashKey');
 
 function getX(d) {
   return d.x - d.width / 2;
@@ -148,7 +149,7 @@ Canvas.prototype.renderEdges = function() {
     }
     var fromData = from.datum(),
         property = from.select('.' + prefix(
-          escapeCls(transformProperty(d.property))
+          d.from, hashCode(d.property)
         )),
         propertyData = d3.transform(property.attr('transform'));
 

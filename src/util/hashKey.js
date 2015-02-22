@@ -4,55 +4,18 @@ var _ = require('lodash');
 var assert = require('assert');
 var utils = require('./');
 var me, hashKey;
-/**
- * Gets a store hashkey only if it's an object
- * @param  {[type]} obj
- * @return {[type]}
- */
-function get(obj) {
-  assert(utils.isObjectOrFunction(obj), 'obj must be an object|function');
-  return Object.prototype.hasOwnProperty.call(obj, me.hiddenKey) &&
-    obj[me.hiddenKey];
-}
-
-/**
- * TODO: document
- * Sets a key on an object
- * @param {[type]} obj [description]
- * @param {[type]} key [description]
- */
-function set(obj, key) {
-  assert(utils.isObjectOrFunction(obj), 'obj must be an object|function');
-  assert(
-    key && typeof key === 'string',
-    'The key needs to be a valid string'
-  );
-  var value;
-  if (!get(obj)) {
-    value = typeof obj + '-' + key;
-    Object.defineProperty(obj, me.hiddenKey, {
-      value: value
-    });
-    if (!obj[me.hiddenKey]) {
-      console.warn('Object.defineProperty did not work! setting the value on the object directly');
-      obj[me.hiddenKey] = value;
-    }
-    assert(obj[me.hiddenKey], 'Object.defineProperty did not work!');
-  }
-  return me;
-}
+var doGet, doSet;
 
 me = hashKey = function (v) {
   var uid = v;
   if (utils.isObjectOrFunction(v)) {
-    if (!get(v)) {
-      me.createHashKeysFor(v);
+    if (!me.has(v)) {
+      doSet(v, _.uniqueId());
     }
-    uid = get(v);
-    if (!uid) {
+    uid = doGet(v);
+    if (!me.has(v)) {
       throw Error(v + ' should have a hashKey at this point :(');
     }
-    assert(uid, 'error getting the key');
     return uid;
   }
 
@@ -60,90 +23,61 @@ me = hashKey = function (v) {
   return typeof v + '-' + uid;
 };
 
-me.hiddenKey = '__pojovizKey__';
-
-me.createHashKeysFor = function (obj, name) {
-
-  function localToString(obj) {
-    var match;
-    try {
-      match = {}.toString.call(obj).match(/^\[object (\S*?)\]/);
-    } catch (e) {
-      match = false;
-    }
-    return match && match[1];
-  }
-
-  /**
-   * Analyze the internal property [[Class]] to guess the name
-   * of this object, e.g. [object Date], [object Math]
-   * Many object will give false positives (they will match [object Object])
-   * so let's consider Object as the name only if it's equal to
-   * Object.prototype
-   * @param  {Object}  obj
-   * @return {Boolean}
-   */
-  function hasAClassName(obj) {
-    var match = localToString(obj);
-    if (match === 'Object') {
-      return obj === Object.prototype && 'Object';
-    }
-    return match;
-  }
-
-  function getName(obj) {
-    var name, className;
-
-    // return the already generated hashKey
-    if (get(obj)) {
-      return get(obj);
-    }
-
-    // generate a new key based on
-    // - the name if it's a function
-    // - a unique id
-    name = typeof obj === 'function' &&
-      typeof obj.name === 'string' &&
-      obj.name;
-
-    className = hasAClassName(obj);
-    if (!name && className) {
-      name = className;
-    }
-
-    name = name || _.uniqueId();
-    return name;
-  }
-
-  // the name is equal to the passed name or the
-  // generated name
-  name = name || getName(obj);
-  name = name.replace(/[\. ]/img, '-');
-
-  // if the obj is a prototype then try to analyze
-  // the constructor first so that the prototype becomes
-  // [name].prototype
-  // special case: object.constructor = object
-  if (obj.hasOwnProperty &&
-      obj.hasOwnProperty('constructor') &&
-      typeof obj.constructor === 'function' &&
-      obj.constructor !== obj) {
-    me.createHashKeysFor(obj.constructor);
-  }
-
-  // set name on self
-  set(obj, name);
-
-  // set name on the prototype
-  if (typeof obj === 'function' &&
-      obj.hasOwnProperty('prototype')) {
-    set(obj.prototype, name + '-prototype');
-  }
+/**
+ * @private
+ * Gets the stored hashkey, since there are object that might not have a chain
+ * up to Object.prototype the check is done with Object.prototype.hasOwnProperty explicitly
+ *
+ * @param  {*} obj
+ * @return {string}
+ */
+doGet = function (obj) {
+  assert(utils.isObjectOrFunction(obj), 'obj must be an object|function');
+  return Object.prototype.hasOwnProperty.call(obj, me.hiddenKey) &&
+    obj[me.hiddenKey];
 };
 
+/**
+ * @private
+ * Sets a hidden key on an object, the hidden key is determined as follows:
+ *
+ * - null object-null
+ * - numbers: number-{value}
+ * - boolean: boolean-{true|false}
+ * - string: string-{value}
+ * - undefined undefined-undefined
+ * - function: function-{id} id = _.uniqueId
+ * - object: object-{id} id = _.uniqueId
+ *
+ * @param {*} obj The object to set the hiddenKey
+ * @param {string} key The key to be set in the object
+ */
+doSet = function (obj, key) {
+  assert(utils.isObjectOrFunction(obj), 'obj must be an object|function');
+  assert(
+    typeof key === 'string',
+    'The key needs to be a valid string'
+  );
+  var value;
+  if (!me.has(obj)) {
+    value = typeof obj + '-' + key;
+    Object.defineProperty(obj, me.hiddenKey, {
+      value: value
+    });
+    if (!obj[me.hiddenKey]) {
+      // in node setting the instruction above might not have worked
+      console.warn('hashKey#doSet() setting the value on the object directly');
+      obj[me.hiddenKey] = value;
+    }
+    assert(obj[me.hiddenKey], 'Object.defineProperty did not work!');
+  }
+  return me;
+};
+
+me.hiddenKey = '__pojovizKey__';
+
 me.has = function (v) {
-  return v.hasOwnProperty &&
-    v.hasOwnProperty(me.hiddenKey);
+  return typeof doGet(v) === 'string';
 };
 
 module.exports = me;

@@ -44,8 +44,12 @@ var proto = {
 libraries = Object.create(proto);
 //console.log(libraries);
 _.merge(libraries, {
-  object: new PObject(),
-  builtIn: new BuiltIn(),
+  object: new PObject({
+    displayName: 'Object'
+  }),
+  builtIn: new BuiltIn({
+    displayName: 'Built In'
+  }),
   global: new Global(),
   //popular
   angular: new Angular()

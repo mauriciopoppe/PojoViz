@@ -195,7 +195,7 @@ Inspector.DEFAULT_CONFIG = {
   entryPoint: '',
   displayName: '',
   alwaysDirty: false,
-  debug: false,
+  debug: !!global.window,
   forbiddenTokens: Inspector.DEFAULT_FORBIDDEN_TOKENS,
   additionalForbiddenTokens: null,
   analyzerConfig: {}
@@ -231,7 +231,11 @@ Inspector.prototype.init = function () {
   me.debug && console.log('%cPojoViz', 'font-size: 15px; color: ');
   return me.fetch()
     .then(function () {
-      if (me.alwaysDirty || me.dirty) {
+      if (me.alwaysDirty) {
+        me.setDirty();
+      }
+      if (me.dirty) {
+        me.debug && console.log('%cInspecting: %s', 'color: red', me.entryPoint || me.displayName);
         me.inspect();
       }
       return me;
@@ -258,9 +262,6 @@ Inspector.prototype.inspectSelf = function () {
   }
   me.debug && console.log('analyzing global.' + me.entryPoint);
 
-  // set a predefined global name (so that it's known as entryPoint)
-  hashKey.createHashKeysFor(start, me.entryPoint);
-
   // before inspect hook
   me.beforeInspectSelf();
 
@@ -281,12 +282,8 @@ Inspector.prototype.inspectSelf = function () {
 /**
  * @template
  * before inspect self hook
- * Cleans the items stored in the analyzer
  */
 Inspector.prototype.beforeInspectSelf = function () {
-  // clean the analyzer
-  this.analyzer.items.empty();
-  //this.analyzer.forbidden.empty();
 };
 
 /**
@@ -333,6 +330,8 @@ Inspector.prototype.parseForbiddenTokens = function () {
  */
 Inspector.prototype.setDirty = function () {
   this.dirty = true;
+  this.analyzer.items.empty();
+  this.analyzer.forbidden.empty();
   return this;
 };
 

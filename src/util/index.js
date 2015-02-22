@@ -36,6 +36,19 @@ utils.isFunction = function (v) {
 };
 
 /**
+ * Checks if the value is a constructor,
+ * NOTE: for the sake of this library a constructor is a function
+ * that has a name which starts with an uppercase letter and also
+ * that the prototype's constructor is itself
+ * @param {*} v
+ */
+utils.isConstructor = function (v) {
+  return this.isFunction(v) && typeof v.name === 'string' &&
+      v.name.search(/^[A-Z]/) > -1 && v.prototype &&
+      v.prototype.constructor === v;
+};
+
+/**
  * Checks if a given value is an object, the library only needs
  * to distinguish between different kinds of primitive types (no need to
  * distinguish between different kinds of objects)
@@ -119,6 +132,21 @@ utils.functionChain = function () {
     return inner;
   };
   return inner;
+};
+
+/**
+ * Given a str made of any characters this method returns a string
+ * representation of a signed int
+ * @param {string} str
+ */
+utils.hashCode = function (str) {
+  var i, length, char, hash = 0;
+  for (i = 0, length = str.length; i < length; i += 1) {
+    char = str.charCodeAt(i);
+    hash = ((hash << 5) - hash) + char;
+    hash = hash & hash;
+  }
+  return String(hash);
 };
 
 utils.createEvent = function (eventName, details) {
@@ -242,9 +270,9 @@ utils.propertyForbiddenRules = {
    * @param {string} property
    * @returns {boolean}
    */
-  symbols: function (object, property) {
-    return property.search(/[:+~!><=//\]@\. ]/) > -1;
-  }
+  //symbols: function (object, property) {
+  //  return property.search(/[:+~!><=//\]@\. ]/) > -1;
+  //}
 };
 
 module.exports = utils;

@@ -15,31 +15,6 @@ describe('hashKey', function () {
     expect(hk(obj)).to.equal(hk(obj));
   });
 
-  it('should look for the name property that function/object may have', function () {
-    function A(){}
-    expect(hk(A)).to.equal('function-A');
-  });
-
-  it('should set the name overriden by createHashKeysFor', function () {
-    function A(){}
-    hk.createHashKeysFor(A, 'X');
-    expect(hk(A)).to.equal('function-X');
-  });
-
-  it('should set the name on the prototype too', function () {
-    function A(){}
-    expect(hk(A)).to.equal('function-A');
-    expect(hk(A.prototype)).to.equal('object-A-prototype');
-  });
-
-  it('should set the name on the prototype when the ' +
-    'hashKey is applied on the prototype', function () {
-    function A(){}
-    hk(A.prototype);
-    expect(hk(A.prototype)).to.equal('object-A-prototype');
-    expect(hk(A)).to.equal('function-A');
-  });
-
   it("should not set a key on an object which doesn't inherit from Object", function () {
     var x = Object.create(null);
     hk(x);

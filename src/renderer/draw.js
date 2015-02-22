@@ -43,6 +43,7 @@ module.exports = {
   doProcess: function (nodesStringified) {
     var g = new dagre.Digraph(),
       node,
+      libraryLabels = nodesStringified.labels,
       libraryNodes = nodesStringified.nodes,
       libraryEdges = nodesStringified.edges;
 
@@ -53,8 +54,7 @@ module.exports = {
     // - height
     // - properties
     _.forOwn(libraryNodes, function (properties, k) {
-      var label = properties.labels[0].label;
-      //console.log(k, label.length);
+      var label = libraryLabels[k][0].label;
       node = {
         hashKey: k,
         label: label,

@@ -552,6 +552,20 @@ Analyzer.prototype = {
 
   /**
    * @private
+   * Returns the labels of the object `obj`, each label is stored in
+   * the labeler util
+   *
+   * @param  obj
+   * @return {Array}
+   */
+  stringifyObjectLabels: function (obj) {
+    var labels = labeler(obj);
+    assert(labels.size(), 'object must have labels');
+    return labels.getValues();
+  },
+
+  /**
+   * @private
    * This method stringifies the properties of the object `obj`, to avoid
    * getting the JSON.stringify cyclic error let's delete some properties
    * that are know to be objects/functions
@@ -560,12 +574,7 @@ Analyzer.prototype = {
    * @return {Array}
    */
   stringifyObjectProperties: function (obj) {
-    var properties = this.getProperties(obj);
-    // append the labels created with labeler
-    var labels = labeler(obj);
-    assert(labels.size(), 'object must have labels');
-    properties.labels = labels.getValues();
-    return properties;
+    return this.getProperties(obj);
   },
 
   /**
@@ -592,6 +601,7 @@ Analyzer.prototype = {
    */
   stringify: function () {
     var me = this,
+      labels = {},
       nodes = {},
       edges = {};
     if (me.debug) {
@@ -600,17 +610,20 @@ Analyzer.prototype = {
     me.debug && console.time('stringify');
     _.forOwn(me.items, function (v) {
       var hk = hashKey(v);
+      labels[hk] = me.stringifyObjectLabels(v);
       nodes[hk] = me.stringifyObjectProperties(v);
       edges[hk] = me.stringifyObjectLinks(v);
     });
     if (me.debug) {
       console.log('nodes', nodes);
       console.log('edges', edges);
+      console.log('labels', labels);
     }
     me.debug && console.timeEnd('stringify');
     return {
-      nodes: nodes,
-      edges: edges
+      labels: labels,
+      edges: edges,
+      nodes: nodes
     };
   },
 

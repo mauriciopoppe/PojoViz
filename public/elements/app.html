@@ -114,7 +114,7 @@
                 window.onpopstate = history.onpushstate = function(e) {
                     var command = e.state.command;
                     if (~command.indexOf('render/')) {
-                        me.runLibrary(me.getLibraryFromHash());
+                        me.runLibrary(me.getLibraryFromCommand(command));
                         return;
                     }
                     me.$.pages.selected = command;
@@ -178,7 +178,7 @@
                 var me = this;
                 var inspector = pojoviz.getCurrentInspector();
                 inspector.setDirty();
-                me.runLibrary(me.getLibraryFromHash());
+                me.runLibrary(me.getLibraryFromCommand(location.hash));
             },
 
             pojovizAppConfiguration: function () {
@@ -239,8 +239,8 @@
                 this.$.scaffold.closeDrawer();
             },
 
-            getLibraryFromHash: function () {
-                var tokens = location.hash.split('/');
+            getLibraryFromCommand: function (command) {
+                var tokens = command.split('/');
                 tokens.shift();
                 return tokens.join('');
             }

@@ -42,12 +42,6 @@ pojoviz = {
    * @returns {Promise}
    */
   run: function (options) {
-    var inspector = this.getInspectorFromOptions(options);
-    inspector.modifyInstance(options);
-    return inspector.init();
-  },
-
-  getInspectorFromOptions: function (options) {
     assert(options);
     var entryPoint = options.displayName || options.entryPoint;
     assert(entryPoint);
@@ -57,7 +51,8 @@ pojoviz = {
     if (!inspector) {
       inspector = InspectedInstances.create(options);
     }
-    return inspector;
+    inspector.modifyInstance(options);
+    return inspector.init();
   },
 
   // expose inner modules

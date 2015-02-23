@@ -37,15 +37,18 @@ describe('Known configuration schemas', function () {
 
     schemas.forEach(function (cfg) {
       cfg.debug = false;
-      promises.push(
-        pojoviz.run(cfg)
-          .then(function () {
-            console.time('process');
-            console.log('processing: ', cfg.displayName || cfg.entryPoint);
-            pojoviz.draw.process(pojoviz.getCurrentInspector());
-            console.timeEnd('process');
-          })
-      );
+      var promise;
+      var inspector = pojoviz.getInspectorFromOptions(cfg);
+      inspector.debug = false;
+      promise = pojoviz
+        .run(cfg)
+        .then(function () {
+          console.time('process');
+          console.log('processing: ', cfg.displayName || cfg.entryPoint);
+          pojoviz.draw.process(pojoviz.getCurrentInspector());
+          console.timeEnd('process');
+        });
+      promises.push(promise);
     });
 
     Q.all(promises)

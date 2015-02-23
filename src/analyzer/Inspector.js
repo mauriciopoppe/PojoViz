@@ -195,7 +195,7 @@ Inspector.DEFAULT_CONFIG = {
   entryPoint: '',
   displayName: '',
   alwaysDirty: false,
-  debug: !!global.window && !global.phantom,
+  debug: !!global.window,
   forbiddenTokens: Inspector.DEFAULT_FORBIDDEN_TOKENS,
   additionalForbiddenTokens: null,
   analyzerConfig: {}

@@ -157,7 +157,7 @@ utils.notification = function (message) {
   utils.fireGlobalEvent('pojoviz-notification', message);
 };
 utils.fireGlobalEvent = function (event, params) {
-  if (!global.document) {
+  if (!global.document || !global.CustomEvent) {
     return;
   }
   var ev = utils.createEvent(event, params);

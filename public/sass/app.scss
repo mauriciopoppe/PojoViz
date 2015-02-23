@@ -5,6 +5,7 @@
 
 @import "compass/css3";
 @import "base";
+@import "palette/red";
 @import "common";
 @import "elements/settings";
 @import "elements/inspector";
@@ -113,8 +114,20 @@ body {
       }
     }
 
-    .unselectable {
+    paper-progress.app-progress {
+      width: 100%;
+      position: absolute;
+      display: none;
 
+      &::shadow {
+        #activeProgress {
+          background-color: $red-900;
+        }
+      }
+
+      &.visible {
+        display: block;
+      }
     }
   }
 }

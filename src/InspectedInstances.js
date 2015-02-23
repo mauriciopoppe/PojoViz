@@ -2,6 +2,7 @@
 
 var _ = require('lodash');
 var Inspector = require('./analyzer/Inspector');
+var RemoteInspector = require('./analyzer/Remote');
 var PObject = require('./analyzer/Object');
 var BuiltIn = require('./analyzer/BuiltIn');
 var Global = require('./analyzer/Global');
@@ -17,8 +18,9 @@ var proto = {
    */
   create: function (options) {
     var displayName = options.displayName || options.entryPoint;
+    var Constructor = options.remote ? RemoteInspector : Inspector;
     console.log('creating a generic container for: ' + displayName, options);
-    return (libraries[displayName] = new Inspector(options));
+    return (libraries[displayName] = new Constructor(options));
   },
   /**
    * Execute `fn` with all the properties saved in `this`

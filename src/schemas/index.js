@@ -23,6 +23,7 @@ _.merge(schemas, {
   notableLibraries: require('./notableLibraries'),
   myLibraries: require('./myLibraries'),
   hugeSchemas: require('./hugeSchemas'),
+  nodeGlobals: require('./nodeGlobals'),
   downloaded: []
 });
 

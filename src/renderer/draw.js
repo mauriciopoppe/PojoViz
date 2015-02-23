@@ -19,7 +19,7 @@ module.exports = {
    */
   process: function (inspector) {
     if (inspector.remote) {
-      return this.doProcess(inspector.stringified);
+      return this.doProcess(inspector.json);
     }
     return this.doProcess(inspector.analyzer.stringify());
   },
@@ -166,6 +166,7 @@ module.exports = {
     renderer = renderer || pojoviz.draw.getCurrentRenderer();
 
     utils.notification('processing ' + inspector.entryPoint);
+    utils.fireGlobalEvent('pojoviz-render-start');
 
     // pre render
     renderer.clear();
@@ -187,6 +188,7 @@ module.exports = {
       renderer.render(data);
       console.timeEnd('render');
 
+      utils.fireGlobalEvent('pojoviz-render-end');
       utils.notification('complete!');
     }, 0);
   },

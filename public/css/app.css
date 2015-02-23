@@ -83,6 +83,10 @@ html /deep/ pojoviz-inspector-form /deep/ .options [center] {
 html /deep/ pojoviz-inspector-form /deep/ paper-toggle-button {
   width: 50px;
 }
+/* line 31, ../sass/elements/inspector.scss */
+html /deep/ pojoviz-inspector-form /deep/ paper-slider {
+  width: 770px;
+}
 
 /* popup */
 /* line 6, ../sass/elements/search.scss */
@@ -293,17 +297,17 @@ html /deep/ .pv-node.pv-function rect.node-background {
   stroke: #f9bdbb;
 }
 
-/* line 16, ../sass/app.scss */
+/* line 17, ../sass/app.scss */
 #__bs_notify__ {
   display: none !important;
 }
 
-/* line 22, ../sass/app.scss */
+/* line 23, ../sass/app.scss */
 html.notoolbar /deep/ core-toolbar {
   display: none;
 }
 
-/* line 31, ../sass/app.scss */
+/* line 32, ../sass/app.scss */
 body /deep/ core-animated-pages {
   position: absolute;
   top: 0;
@@ -311,62 +315,62 @@ body /deep/ core-animated-pages {
   width: 100%;
   height: 100%;
 }
-/* line 37, ../sass/app.scss */
+/* line 38, ../sass/app.scss */
 body /deep/ core-animated-pages section {
   padding: 40px;
 }
-/* line 41, ../sass/app.scss */
+/* line 42, ../sass/app.scss */
 body /deep/ .logo {
   text-align: center;
   padding: 30px 15px 15px;
   font-size: 4em;
   font-weight: 100;
 }
-/* line 46, ../sass/app.scss */
+/* line 47, ../sass/app.scss */
 body /deep/ .logo .subtitle {
   padding-top: 10px;
   font-size: 12px;
 }
-/* line 51, ../sass/app.scss */
+/* line 52, ../sass/app.scss */
 body /deep/ .center {
   display: block;
   margin: auto;
 }
-/* line 55, ../sass/app.scss */
+/* line 56, ../sass/app.scss */
 body /deep/ h1 {
   font-weight: 100;
   font-size: 3em;
 }
-/* line 59, ../sass/app.scss */
+/* line 60, ../sass/app.scss */
 body /deep/ core-header-panel[main] {
   background-color: white;
 }
-/* line 61, ../sass/app.scss */
+/* line 62, ../sass/app.scss */
 body /deep/ core-header-panel[main] core-toolbar {
   background-color: #03a9f4;
 }
-/* line 68, ../sass/app.scss */
+/* line 69, ../sass/app.scss */
 body /deep/ .pojoviz {
   font-weight: 100;
   font-size: 1.3rem;
   color: #03a9f4;
 }
-/* line 73, ../sass/app.scss */
+/* line 74, ../sass/app.scss */
 body /deep/ core-item:hover {
   cursor: pointer !important;
 }
-/* line 76, ../sass/app.scss */
+/* line 77, ../sass/app.scss */
 body /deep/ .readme-iframe {
   margin: auto;
   display: block;
 }
-/* line 79, ../sass/app.scss */
+/* line 80, ../sass/app.scss */
 body /deep/ .readme-iframe html {
   -webkit-box-shadow: inset 0px 0px 14px 0px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: inset 0px 0px 14px 0px rgba(0, 0, 0, 0.75);
   box-shadow: inset 0px 0px 14px 0px rgba(0, 0, 0, 0.75);
 }
-/* line 85, ../sass/app.scss */
+/* line 86, ../sass/app.scss */
 body /deep/ .as-button {
   text-decoration: none;
   padding: 10px;
@@ -378,11 +382,11 @@ body /deep/ .as-button {
   background: #03a9f4;
   color: white;
 }
-/* line 95, ../sass/app.scss */
+/* line 96, ../sass/app.scss */
 body /deep/ pojoviz-library-menu::shadow .library {
   font-size: 13px;
 }
-/* line 101, ../sass/app.scss */
+/* line 102, ../sass/app.scss */
 body /deep/ .library-runtime-configuration {
   position: absolute;
   bottom: 0;
@@ -398,18 +402,32 @@ body /deep/ .library-runtime-configuration {
   -o-transition-duration: 0.25s;
   transition-duration: 0.25s;
 }
-/* line 111, ../sass/app.scss */
+/* line 112, ../sass/app.scss */
 body /deep/ .library-runtime-configuration:hover {
   opacity: 1;
 }
-
+/* line 117, ../sass/app.scss */
+body /deep/ paper-progress.app-progress {
+  width: 100%;
+  position: absolute;
+  display: none;
+}
 /* line 123, ../sass/app.scss */
+body /deep/ paper-progress.app-progress::shadow #activeProgress {
+  background-color: #b0120a;
+}
+/* line 128, ../sass/app.scss */
+body /deep/ paper-progress.app-progress.visible {
+  display: block;
+}
+
+/* line 136, ../sass/app.scss */
 html /deep/ .small {
   font-size: 12px !important;
   font-weight: 100;
 }
 
-/* line 131, ../sass/app.scss */
+/* line 144, ../sass/app.scss */
 html /deep/ paper-dialog::shadow #scroller {
   width: 850px;
   height: 650px;

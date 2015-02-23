@@ -229,8 +229,10 @@ Inspector.setBuiltInVisibility = function (visible) {
 Inspector.prototype.init = function () {
   var me = this;
   me.debug && console.log('%cPojoViz', 'font-size: 15px; color: ');
+  utils.fireGlobalEvent('pojoviz-fetch-start');
   return me.fetch()
     .then(function () {
+      utils.fireGlobalEvent('pojoviz-fetch-end');
       if (me.alwaysDirty) {
         me.setDirty();
       }

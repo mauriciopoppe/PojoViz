@@ -8,6 +8,7 @@
 <link rel="import" href="../bower_components/core-tooltip/core-tooltip.html">
 <link rel="import" href="../bower_components/core-icon/core-icon.html">
 <link rel="import" href="../bower_components/paper-toast/paper-toast.html">
+<link rel="import" href="../bower_components/paper-progress/paper-progress.html">
 
 <link rel="import" href="app.html">
 <link rel="import" href="settings.html">
@@ -20,6 +21,10 @@
 <polymer-element name="pojoviz-app">
     <template>
         <core-scaffold id="scaffold" responsiveWidth="1000px">
+
+            <!--progress-->
+            <paper-progress class="app-progress" id="progress" indeterminate></paper-progress>
+
             <!--sidebar-->
             <core-header-panel navigation flex mode="seamed">
                 <div class="logo">
@@ -139,6 +144,15 @@
                     });
 
                 document
+                    .addEventListener('pojoviz-fetch-start', function (e) {
+                        me.$.progress.classList.toggle('visible', true);
+                    });
+                document
+                    .addEventListener('pojoviz-render-end', function (e) {
+                        me.$.progress.classList.toggle('visible', false);
+                    });
+
+                document
                     .addEventListener('pojoviz-notification', function (e) {
                         me.$.notification.text = e.detail;
                         me.$.notification.show();
@@ -203,6 +217,11 @@
                     label: 'Huge Schemas',
                     libraries: pojoviz.schemas.hugeSchemas
                 }, {
+                    icon: 'nodejs',
+                    label: 'Node Globals',
+                    src: 'images/node.png',
+                    libraries: pojoviz.schemas.nodeGlobals
+                }, {
                     icon: 'cloud',
                     label: 'Downloaded',
                     libraries: pojoviz.schemas.downloaded
@@ -242,7 +261,7 @@
             getLibraryFromCommand: function (command) {
                 var tokens = command.split('/');
                 tokens.shift();
-                return tokens.join('');
+                return tokens.join('/');
             }
         });
     </script>

@@ -68,8 +68,6 @@ function withFunctionAndPrototype(obj, fn) {
  * - Function.prototype (Reachable from Object through the __proto__ link)
  *
  * @param {Object} config
- * @param {Object} [config.items = new HashMap]
- * @param {Object} [config.forbidden = new HashMap]
  * @param {Object} [config.cache = true]
  * @param {Object} [config.levels = Analyzer.DFS_LEVELS]
  * @param {Object} [config.visitConstructors = Analyzer.VISIT_CONSTRUCTORS]
@@ -82,13 +80,13 @@ function Analyzer(config) {
    * items registered in this instance
    * @type {HashMap}
    */
-  this.items = config.items || new HashMap();
+  this.items = new HashMap();
 
   /**
    * Forbidden objects
    * @type {HashMap}
    */
-  this.forbidden = config.forbidden || new HashMap();
+  this.forbidden = new HashMap();
 
   /**
    * Print debug info in the console

@@ -153,9 +153,14 @@ utils.createEvent = function (eventName, details) {
     detail: details
   });
 };
-utils.notification = function (message, consoleToo) {
-  var ev = utils.createEvent('pojoviz-notification', message);
-  consoleToo && console.log(message);
+utils.notification = function (message) {
+  utils.fireGlobalEvent('pojoviz-notification', message);
+};
+utils.fireGlobalEvent = function (event, params) {
+  if (!global.document) {
+    return;
+  }
+  var ev = utils.createEvent(event, params);
   document.dispatchEvent(ev);
 };
 utils.createJsonpCallback = function (url) {

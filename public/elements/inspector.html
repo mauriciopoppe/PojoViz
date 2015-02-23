@@ -67,12 +67,12 @@
 
             <!--levels-->
             <div center layout>
-                <div class="bold">Levels: {{record.analyzerConfig.levels}}</div>
+                <div class="bold">Levels: {{record.analyzer.levels}}</div>
                 <p class="small">
                     Defines the maximum depth when running the dfs algorithm starting from the <i>entryPoint</i> object <br />
                     WARNING: The higher the value the longer the time needed for the browser to render the nodes
                 </p>
-                <paper-slider min="0" max="30" value="{{ record.analyzer.levels }}" pin>
+                <paper-slider pin min="0" max="30" value="{{ record.analyzer.levels }}" pin>
                 </paper-slider>
             </div>
 

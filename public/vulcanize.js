@@ -71736,6 +71736,139 @@ Polymer('core-transition-pages',{
 ;
 
 
+  Polymer('core-range', {
+    
+    /**
+     * The number that represents the current value.
+     *
+     * @attribute value
+     * @type number
+     * @default 0
+     */
+    value: 0,
+    
+    /**
+     * The number that indicates the minimum value of the range.
+     *
+     * @attribute min
+     * @type number
+     * @default 0
+     */
+    min: 0,
+    
+    /**
+     * The number that indicates the maximum value of the range.
+     *
+     * @attribute max
+     * @type number
+     * @default 100
+     */
+    max: 100,
+    
+    /**
+     * Specifies the value granularity of the range's value.
+     *
+     * @attribute step
+     * @type number
+     * @default 1
+     */
+    step: 1,
+    
+    /**
+     * Returns the ratio of the value.
+     *
+     * @attribute ratio
+     * @type number
+     * @default 0
+     */
+    ratio: 0,
+    
+    observe: {
+      'value min max step': 'update'
+    },
+    
+    calcRatio: function(value) {
+      return (this.clampValue(value) - this.min) / (this.max - this.min);
+    },
+    
+    clampValue: function(value) {
+      return Math.min(this.max, Math.max(this.min, this.calcStep(value)));
+    },
+    
+    calcStep: function(value) {
+      return this.step ? (Math.round(value / this.step) / (1 / this.step)) : value;
+    },
+    
+    validateValue: function() {
+      var v = this.clampValue(this.value);
+      this.value = this.oldValue = isNaN(v) ? this.oldValue : v;
+      return this.value !== v;
+    },
+    
+    update: function() {
+      this.validateValue();
+      this.ratio = this.calcRatio(this.value) * 100;
+    }
+    
+  });
+  
+;
+
+  
+    Polymer('paper-progress', {
+      
+      /**
+       * The number that represents the current secondary progress.
+       *
+       * @attribute secondaryProgress
+       * @type number
+       * @default 0
+       */
+      secondaryProgress: 0,
+      
+      /**
+       * Use an indeterminate progress indicator.
+       *
+       * @attribute indeterminate
+       * @type boolean
+       * @default false
+       */
+      indeterminate: false,
+
+      step: 0,
+      
+      observe: {
+        'value secondaryProgress min max indeterminate': 'update'
+      },
+      
+      update: function() {
+        this.super();
+        this.secondaryProgress = this.clampValue(this.secondaryProgress);
+        this.secondaryRatio = this.calcRatio(this.secondaryProgress) * 100;
+
+        // If we use attribute/class binding, the animation sometimes doesn't translate properly
+        // on Safari 7.1. So instead, we toggle the class here in the update method.
+        this.$.activeProgress.classList.toggle('indeterminate', this.indeterminate);
+      },
+
+      transformProgress: function(progress, ratio) {
+        var transform = 'scaleX(' + (ratio / 100) + ')';
+        progress.style.transform = progress.style.webkitTransform = transform;
+      },
+
+      ratioChanged: function() {
+        this.transformProgress(this.$.activeProgress, this.ratio);
+      },
+
+      secondaryRatioChanged: function() {
+        this.transformProgress(this.$.secondaryProgress, this.secondaryRatio);
+      }
+      
+    });
+    
+  ;
+
+
   (function() {
 
     var waveMaxRadius = 150;
@@ -72198,139 +72331,6 @@ Polymer('core-transition-pages',{
 
     });
 
-  ;
-
-
-  Polymer('core-range', {
-    
-    /**
-     * The number that represents the current value.
-     *
-     * @attribute value
-     * @type number
-     * @default 0
-     */
-    value: 0,
-    
-    /**
-     * The number that indicates the minimum value of the range.
-     *
-     * @attribute min
-     * @type number
-     * @default 0
-     */
-    min: 0,
-    
-    /**
-     * The number that indicates the maximum value of the range.
-     *
-     * @attribute max
-     * @type number
-     * @default 100
-     */
-    max: 100,
-    
-    /**
-     * Specifies the value granularity of the range's value.
-     *
-     * @attribute step
-     * @type number
-     * @default 1
-     */
-    step: 1,
-    
-    /**
-     * Returns the ratio of the value.
-     *
-     * @attribute ratio
-     * @type number
-     * @default 0
-     */
-    ratio: 0,
-    
-    observe: {
-      'value min max step': 'update'
-    },
-    
-    calcRatio: function(value) {
-      return (this.clampValue(value) - this.min) / (this.max - this.min);
-    },
-    
-    clampValue: function(value) {
-      return Math.min(this.max, Math.max(this.min, this.calcStep(value)));
-    },
-    
-    calcStep: function(value) {
-      return this.step ? (Math.round(value / this.step) / (1 / this.step)) : value;
-    },
-    
-    validateValue: function() {
-      var v = this.clampValue(this.value);
-      this.value = this.oldValue = isNaN(v) ? this.oldValue : v;
-      return this.value !== v;
-    },
-    
-    update: function() {
-      this.validateValue();
-      this.ratio = this.calcRatio(this.value) * 100;
-    }
-    
-  });
-  
-;
-
-  
-    Polymer('paper-progress', {
-      
-      /**
-       * The number that represents the current secondary progress.
-       *
-       * @attribute secondaryProgress
-       * @type number
-       * @default 0
-       */
-      secondaryProgress: 0,
-      
-      /**
-       * Use an indeterminate progress indicator.
-       *
-       * @attribute indeterminate
-       * @type boolean
-       * @default false
-       */
-      indeterminate: false,
-
-      step: 0,
-      
-      observe: {
-        'value secondaryProgress min max indeterminate': 'update'
-      },
-      
-      update: function() {
-        this.super();
-        this.secondaryProgress = this.clampValue(this.secondaryProgress);
-        this.secondaryRatio = this.calcRatio(this.secondaryProgress) * 100;
-
-        // If we use attribute/class binding, the animation sometimes doesn't translate properly
-        // on Safari 7.1. So instead, we toggle the class here in the update method.
-        this.$.activeProgress.classList.toggle('indeterminate', this.indeterminate);
-      },
-
-      transformProgress: function(progress, ratio) {
-        var transform = 'scaleX(' + (ratio / 100) + ')';
-        progress.style.transform = progress.style.webkitTransform = transform;
-      },
-
-      ratioChanged: function() {
-        this.transformProgress(this.$.activeProgress, this.ratio);
-      },
-
-      secondaryRatioChanged: function() {
-        this.transformProgress(this.$.secondaryProgress, this.secondaryRatio);
-      }
-      
-    });
-    
   ;
 
 
@@ -74358,7 +74358,7 @@ Polymer('paper-dialog');;
                 window.onpopstate = history.onpushstate = function(e) {
                     var command = e.state.command;
                     if (~command.indexOf('render/')) {
-                        me.runLibrary(me.getLibraryFromHash());
+                        me.runLibrary(me.getLibraryFromCommand(command));
                         return;
                     }
                     me.$.pages.selected = command;
@@ -74380,6 +74380,15 @@ Polymer('paper-dialog');;
                 document
                     .addEventListener('library-select', function (e) {
                         me.changeHistory(e.detail);
+                    });
+
+                document
+                    .addEventListener('pojoviz-fetch-start', function (e) {
+                        me.$.progress.classList.toggle('visible', true);
+                    });
+                document
+                    .addEventListener('pojoviz-render-end', function (e) {
+                        me.$.progress.classList.toggle('visible', false);
                     });
 
                 document
@@ -74422,7 +74431,7 @@ Polymer('paper-dialog');;
                 var me = this;
                 var inspector = pojoviz.getCurrentInspector();
                 inspector.setDirty();
-                me.runLibrary(me.getLibraryFromHash());
+                me.runLibrary(me.getLibraryFromCommand(location.hash));
             },
 
             pojovizAppConfiguration: function () {
@@ -74446,6 +74455,11 @@ Polymer('paper-dialog');;
                     icon: 'warning',
                     label: 'Huge Schemas',
                     libraries: pojoviz.schemas.hugeSchemas
+                }, {
+                    icon: 'nodejs',
+                    label: 'Node Globals',
+                    src: 'images/node.png',
+                    libraries: pojoviz.schemas.nodeGlobals
                 }, {
                     icon: 'cloud',
                     label: 'Downloaded',
@@ -74483,10 +74497,10 @@ Polymer('paper-dialog');;
                 this.$.scaffold.closeDrawer();
             },
 
-            getLibraryFromHash: function () {
-                var tokens = location.hash.split('/');
+            getLibraryFromCommand: function (command) {
+                var tokens = command.split('/');
                 tokens.shift();
-                return tokens.join('');
+                return tokens.join('/');
             }
         });
     ;
@@ -91860,9 +91874,9 @@ pojoviz = {
    * @returns {Promise}
    */
   run: function (options) {
-    var inspector = this.getInspectorFromOptions(options);
-    inspector.modifyInstance(options);
-    return inspector.init();
+    var instance = this.getInspectorFromOptions(options);
+    instance.modifyInstance(options);
+    return instance.init();
   },
 
   getInspectorFromOptions: function (options) {
@@ -91895,7 +91909,7 @@ pojoviz = {
 pojoviz.setCurrentInspector = pojoviz.run;
 
 module.exports = pojoviz;
-},{"./InspectedInstances":7,"./ObjectAnalyzer":8,"./analyzer/Inspector":12,"./schemas":15,"./util":21,"./util/":21,"assert":2,"q":undefined}],2:[function(require,module,exports){
+},{"./InspectedInstances":7,"./ObjectAnalyzer":8,"./analyzer/Inspector":12,"./schemas":16,"./util":23,"./util/":23,"assert":2,"q":undefined}],2:[function(require,module,exports){
 // http://wiki.commonjs.org/wiki/Unit_Testing/1.0
 //
 // THIS IS NOT TESTED NOR LIKELY TO WORK OUTSIDE V8!
@@ -92942,6 +92956,7 @@ function hasOwnProperty(obj, prop) {
 
 var _ = require('lodash');
 var Inspector = require('./analyzer/Inspector');
+var RemoteInspector = require('./analyzer/Remote');
 var PObject = require('./analyzer/Object');
 var BuiltIn = require('./analyzer/BuiltIn');
 var Global = require('./analyzer/Global');
@@ -92957,8 +92972,9 @@ var proto = {
    */
   create: function (options) {
     var displayName = options.displayName || options.entryPoint;
+    var Constructor = options.remote ? RemoteInspector : Inspector;
     console.log('creating a generic container for: ' + displayName, options);
-    return (libraries[displayName] = new Inspector(options));
+    return (libraries[displayName] = new Constructor(options));
   },
   /**
    * Execute `fn` with all the properties saved in `this`
@@ -93004,7 +93020,7 @@ Inspector.instances = libraries;
 
 module.exports = libraries;
 
-},{"./analyzer/Angular":9,"./analyzer/BuiltIn":10,"./analyzer/Global":11,"./analyzer/Inspector":12,"./analyzer/Object":13,"lodash":undefined}],8:[function(require,module,exports){
+},{"./analyzer/Angular":9,"./analyzer/BuiltIn":10,"./analyzer/Global":11,"./analyzer/Inspector":12,"./analyzer/Object":13,"./analyzer/Remote":14,"lodash":undefined}],8:[function(require,module,exports){
 'use strict';
 
 var _ = require('lodash');
@@ -93075,8 +93091,6 @@ function withFunctionAndPrototype(obj, fn) {
  * - Function.prototype (Reachable from Object through the __proto__ link)
  *
  * @param {Object} config
- * @param {Object} [config.items = new HashMap]
- * @param {Object} [config.forbidden = new HashMap]
  * @param {Object} [config.cache = true]
  * @param {Object} [config.levels = Analyzer.DFS_LEVELS]
  * @param {Object} [config.visitConstructors = Analyzer.VISIT_CONSTRUCTORS]
@@ -93089,13 +93103,13 @@ function Analyzer(config) {
    * items registered in this instance
    * @type {HashMap}
    */
-  this.items = config.items || new HashMap();
+  this.items = new HashMap();
 
   /**
    * Forbidden objects
    * @type {HashMap}
    */
-  this.forbidden = config.forbidden || new HashMap();
+  this.forbidden = new HashMap();
 
   /**
    * Print debug info in the console
@@ -93746,7 +93760,7 @@ chain('allow');
 
 module.exports = Analyzer;
 
-},{"./util":21,"./util/HashMap":19,"./util/hashKey":20,"./util/labeler":22,"assert":2,"lodash":undefined}],9:[function(require,module,exports){
+},{"./util":23,"./util/HashMap":21,"./util/hashKey":22,"./util/labeler":24,"assert":2,"lodash":undefined}],9:[function(require,module,exports){
 (function (global){
 'use strict';
 
@@ -93836,7 +93850,7 @@ Angular.prototype.modifyInstance = function (options) {
 
 module.exports = Angular;
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"../util/hashKey":20,"./Inspector":12,"lodash":undefined}],10:[function(require,module,exports){
+},{"../util/hashKey":22,"./Inspector":12,"lodash":undefined}],10:[function(require,module,exports){
 'use strict';
 
 var GenericAnalyzer = require('./Inspector'),
@@ -93879,7 +93893,7 @@ BuiltIn.prototype.showSearch = function (nodeName, nodeProperty) {
 };
 
 module.exports = BuiltIn;
-},{"../util/":21,"./Inspector":12}],11:[function(require,module,exports){
+},{"../util/":23,"./Inspector":12}],11:[function(require,module,exports){
 (function (global){
 'use strict';
 
@@ -93922,7 +93936,7 @@ Global.prototype.inspectSelf = function () {
 
 module.exports = Global;
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"../util/hashKey":20,"./Inspector":12,"lodash":undefined}],12:[function(require,module,exports){
+},{"../util/hashKey":22,"./Inspector":12,"lodash":undefined}],12:[function(require,module,exports){
 (function (global){
 'use strict';
 
@@ -94155,8 +94169,10 @@ Inspector.setBuiltInVisibility = function (visible) {
 Inspector.prototype.init = function () {
   var me = this;
   me.debug && console.log('%cPojoViz', 'font-size: 15px; color: ');
+  utils.fireGlobalEvent('pojoviz-fetch-start');
   return me.fetch()
     .then(function () {
+      utils.fireGlobalEvent('pojoviz-fetch-end');
       if (me.alwaysDirty) {
         me.setDirty();
       }
@@ -94414,7 +94430,7 @@ Inspector.prototype.showSearch = function (nodeName, nodeProperty) {
 
 module.exports = Inspector;
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"../ObjectAnalyzer":8,"../util/":21,"../util/hashKey":20,"assert":2,"lodash":undefined,"q":undefined,"util":6}],13:[function(require,module,exports){
+},{"../ObjectAnalyzer":8,"../util/":23,"../util/hashKey":22,"assert":2,"lodash":undefined,"q":undefined,"util":6}],13:[function(require,module,exports){
 'use strict';
 var Inspector = require('./Inspector');
 function PObject(options) {
@@ -94435,6 +94451,54 @@ PObject.prototype.getItems = function () {
 
 module.exports = PObject;
 },{"./Inspector":12}],14:[function(require,module,exports){
+(function (global){
+'use strict';
+var _ = require('lodash');
+var GenericAnalyzer = require('./Inspector');
+
+function Remote(options) {
+  var me = this;
+  GenericAnalyzer.call(this, options);
+  this.remote = true;
+}
+
+Remote.prototype = Object.create(GenericAnalyzer.prototype);
+
+/**
+ * @override
+ */
+Remote.prototype.inspectSelf = function () {
+};
+
+/**
+ * @override
+ */
+Remote.prototype.fetch = function () {
+  var me = this;
+  var pojoviz = global.pojoviz;
+  console.log('fetching from remote with this', this);
+
+  return pojoviz.remote.nodeGlobal(me.prepareConfig())
+      .then(function (json) {
+        me.json = json;
+      });
+};
+
+Remote.prototype.prepareConfig = function () {
+  var options = _.merge({}, this);
+  options.analyzerConfig = {
+    visitConstructors: options.analyzer.visitConstructors,
+    visitSimpleFunctions: options.analyzer.visitSimpleFunctions,
+    visitArrays: options.analyzer.visitArrays,
+    levels: options.analyzer.levels
+  };
+  delete options.analyzer;
+  return options;
+};
+
+module.exports = Remote;
+}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+},{"./Inspector":12,"lodash":undefined}],15:[function(require,module,exports){
 /**
  * Created by mauricio on 2/17/15.
  */
@@ -94456,7 +94520,7 @@ module.exports = [{
     visitSimpleFunctions: true
   }
 }];
-},{}],15:[function(require,module,exports){
+},{}],16:[function(require,module,exports){
 /**
  * Created by mauricio on 2/17/15.
  */
@@ -94482,11 +94546,12 @@ _.merge(schemas, {
   notableLibraries: require('./notableLibraries'),
   myLibraries: require('./myLibraries'),
   hugeSchemas: require('./hugeSchemas'),
+  nodeGlobals: require('./nodeGlobals'),
   downloaded: []
 });
 
 module.exports = schemas;
-},{"./hugeSchemas":14,"./knownSchemas":16,"./myLibraries":17,"./notableLibraries":18,"lodash":undefined}],16:[function(require,module,exports){
+},{"./hugeSchemas":15,"./knownSchemas":17,"./myLibraries":18,"./nodeGlobals":19,"./notableLibraries":20,"lodash":undefined}],17:[function(require,module,exports){
 /**
  * Created by mauricio on 2/17/15.
  */
@@ -94497,7 +94562,7 @@ module.exports = [{
   label: 'BuiltIn Objects',
   displayName: 'builtIn'
 }];
-},{}],17:[function(require,module,exports){
+},{}],18:[function(require,module,exports){
 /**
  * Created by mauricio on 2/17/15.
  */
@@ -94513,7 +94578,56 @@ module.exports = [{
 }, {
   entryPoint: 't3'
 }];
-},{}],18:[function(require,module,exports){
+},{}],19:[function(require,module,exports){
+/**
+ * Created by mauricio on 2/17/15.
+ */
+module.exports = [{
+//  displayName: 'node/x',
+//  entryPoint: 'x'
+//}, {
+  label: 'global',
+  entryPoint: 'global',
+  displayName: 'node/global',
+  forbiddenTokens: 'pojoviz:builtIn',
+  analyzerConfig: {
+    levels: 3
+  }
+}, {
+  label: 'process',
+  entryPoint: 'process',
+  displayName: 'node/process',
+  analyzerConfig: {
+    levels: 5
+  }
+}, {
+  label: 'console',
+  entryPoint: 'console',
+  displayName: 'node/console'
+}, {
+  label: 'Buffer',
+  entryPoint: 'Buffer',
+  displayName: 'node/Buffer'
+//}, {
+//  label: 'require',
+//  entryPoint: 'require',
+//  displayName: 'node/require',
+//  analyzerConfig: {
+//    levels: 0
+//  }
+//}, {
+//  label: 'module',
+//  entryPoint: 'module',
+//  displayName: 'node/module'
+//}, {
+//  label: 'exports',
+//  entryPoint: 'exports',
+//  displayName: 'node/exports'
+}].map(function (v) {
+    v.remote = true;
+    return v;
+  });
+},{}],20:[function(require,module,exports){
 /**
  * Created by mauricio on 2/17/15.
  */
@@ -94555,7 +94669,7 @@ module.exports = [{
   src: '//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js|//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.js|//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone.js|http://marionettejs.com/downloads/backbone.marionette.js',
   entryPoint: 'Marionette'
 }];
-},{}],19:[function(require,module,exports){
+},{}],21:[function(require,module,exports){
 'use strict';
 
 var hashKey = require('./hashKey');
@@ -94590,7 +94704,7 @@ HashMap.prototype = {
 HashMap.prototype.set = HashMap.prototype.put;
 
 module.exports = HashMap;
-},{"./hashKey":20}],20:[function(require,module,exports){
+},{"./hashKey":22}],22:[function(require,module,exports){
 'use strict';
 
 var _ = require('lodash');
@@ -94674,7 +94788,8 @@ me.has = function (v) {
 };
 
 module.exports = me;
-},{"./":21,"assert":2,"lodash":undefined}],21:[function(require,module,exports){
+},{"./":23,"assert":2,"lodash":undefined}],23:[function(require,module,exports){
+(function (global){
 'use strict';
 
 var _ = require('lodash');
@@ -94830,9 +94945,14 @@ utils.createEvent = function (eventName, details) {
     detail: details
   });
 };
-utils.notification = function (message, consoleToo) {
-  var ev = utils.createEvent('pojoviz-notification', message);
-  consoleToo && console.log(message);
+utils.notification = function (message) {
+  utils.fireGlobalEvent('pojoviz-notification', message);
+};
+utils.fireGlobalEvent = function (event, params) {
+  if (!global.document) {
+    return;
+  }
+  var ev = utils.createEvent(event, params);
   document.dispatchEvent(ev);
 };
 utils.createJsonpCallback = function (url) {
@@ -94952,7 +95072,8 @@ utils.propertyForbiddenRules = {
 };
 
 module.exports = utils;
-},{"lodash":undefined}],22:[function(require,module,exports){
+}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+},{"lodash":undefined}],24:[function(require,module,exports){
 /**
  * Created by mauricio on 2/21/15.
  */
@@ -95084,7 +95205,7 @@ doInsert = function (obj, properties, config) {
 
 //me.labelCache = labelCache;
 module.exports = me;
-},{"./":21,"./hashKey":20,"assert":2,"lodash":undefined}]},{},[1])(1)
+},{"./":23,"./hashKey":22,"assert":2,"lodash":undefined}]},{},[1])(1)
 });;
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 (function (global){
@@ -96698,7 +96819,7 @@ module.exports = {
    */
   process: function (inspector) {
     if (inspector.remote) {
-      return this.doProcess(inspector.stringified);
+      return this.doProcess(inspector.json);
     }
     return this.doProcess(inspector.analyzer.stringify());
   },
@@ -96845,6 +96966,7 @@ module.exports = {
     renderer = renderer || pojoviz.draw.getCurrentRenderer();
 
     utils.notification('processing ' + inspector.entryPoint);
+    utils.fireGlobalEvent('pojoviz-render-start');
 
     // pre render
     renderer.clear();
@@ -96866,6 +96988,7 @@ module.exports = {
       renderer.render(data);
       console.timeEnd('render');
 
+      utils.fireGlobalEvent('pojoviz-render-end');
       utils.notification('complete!');
     }, 0);
   },
@@ -98123,6 +98246,7 @@ me.has = function (v) {
 
 module.exports = me;
 },{"./":16,"assert":2,"lodash":undefined}],16:[function(require,module,exports){
+(function (global){
 'use strict';
 
 var _ = require('lodash');
@@ -98278,9 +98402,14 @@ utils.createEvent = function (eventName, details) {
     detail: details
   });
 };
-utils.notification = function (message, consoleToo) {
-  var ev = utils.createEvent('pojoviz-notification', message);
-  consoleToo && console.log(message);
+utils.notification = function (message) {
+  utils.fireGlobalEvent('pojoviz-notification', message);
+};
+utils.fireGlobalEvent = function (event, params) {
+  if (!global.document) {
+    return;
+  }
+  var ev = utils.createEvent(event, params);
   document.dispatchEvent(ev);
 };
 utils.createJsonpCallback = function (url) {
@@ -98400,6 +98529,7 @@ utils.propertyForbiddenRules = {
 };
 
 module.exports = utils;
+}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 },{"lodash":undefined}]},{},[1]);
 ;
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
@@ -98408,15 +98538,17 @@ module.exports = utils;
  * Created by mauricio on 2/22/15.
  */
 var pojoviz = global.pojoviz;
-if (!pojoviz) {
-  throw 'This is not a standalone project, pojoviz not found';
-}
+//if (!pojoviz) {
+//  throw 'This is not a standalone project, pojoviz not found';
+//}
 
+var Q = require('q');
 var xhr = require('xhr');
-var url = 'http://rest.heroku.mauriciopoppe.com/pojoviz/node/global';
-//var url = 'http://localhost:5000/pojoviz/node/global';
+//var url = 'http://rest.heroku.mauriciopoppe.com/pojoviz/node/global';
+var url = 'http://localhost:5000/pojoviz/node/global';
 pojoviz.remote = {
   nodeGlobal: function (config) {
+    var deferred = Q.defer();
     xhr({
       json: config,
       uri: url,
@@ -98425,18 +98557,19 @@ pojoviz.remote = {
         'Content-Type': 'application/json'
       }
     }, function (err, response, body) {
-        pojoviz.draw.render({
-          remote: true,
-          preRender: function () {},
-          stringified: body
-        });
-      });
+      if (err) {
+        deferred.reject(err);
+        return;
+      }
+      deferred.fulfill(body);
+    });
+    return deferred.promise;
   }
 };
 
 module.exports = pojoviz.remote;
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"xhr":2}],2:[function(require,module,exports){
+},{"q":undefined,"xhr":2}],2:[function(require,module,exports){
 "use strict";
 var window = require("global/window")
 var once = require("once")

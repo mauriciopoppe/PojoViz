@@ -265,7 +265,7 @@ utils.propertyForbiddenRules = {
    */
   angularHiddenProperty: function (object, property) {
     return property.search(/^\$\$.*?\$\$$/) > -1;
-  },
+  }
 
   /**
    * The properties that have the following symbols are forbidden:

@@ -94949,7 +94949,7 @@ utils.notification = function (message) {
   utils.fireGlobalEvent('pojoviz-notification', message);
 };
 utils.fireGlobalEvent = function (event, params) {
-  if (!global.document) {
+  if (!global.document || !global.CustomEvent) {
     return;
   }
   var ev = utils.createEvent(event, params);
@@ -95057,7 +95057,7 @@ utils.propertyForbiddenRules = {
    */
   angularHiddenProperty: function (object, property) {
     return property.search(/^\$\$.*?\$\$$/) > -1;
-  },
+  }
 
   /**
    * The properties that have the following symbols are forbidden:
@@ -98406,7 +98406,7 @@ utils.notification = function (message) {
   utils.fireGlobalEvent('pojoviz-notification', message);
 };
 utils.fireGlobalEvent = function (event, params) {
-  if (!global.document) {
+  if (!global.document || !global.CustomEvent) {
     return;
   }
   var ev = utils.createEvent(event, params);
@@ -98514,7 +98514,7 @@ utils.propertyForbiddenRules = {
    */
   angularHiddenProperty: function (object, property) {
     return property.search(/^\$\$.*?\$\$$/) > -1;
-  },
+  }
 
   /**
    * The properties that have the following symbols are forbidden:

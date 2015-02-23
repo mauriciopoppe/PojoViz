@@ -5092,7 +5092,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                     Defines the maximum depth when running the dfs algorithm starting from the <i>entryPoint</i> object <br>
                     WARNING: The higher the value the longer the time needed for the browser to render the nodes
                 </p>
-                <paper-slider min="0" max="20" value="{{ record.analyzer.levels }}" pin="">
+                <paper-slider min="0" max="30" value="{{ record.analyzer.levels }}" pin="">
                 </paper-slider>
             </div>
 
@@ -5418,7 +5418,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             </core-animated-pages>
 
             <!--popup shown to edit a known configuration -->
-            <paper-dialog id="knownConfigurationPopup" class="configuration-form" backdrop="" heading="Edit Configuration" transition="paper-dialog-transition-center">
+            <paper-dialog id="knownConfigurationPopup" class="configuration-form" backdrop="" on-core-overlay-close-completed="{{onRuntimeConfigurationChange}}" heading="Edit Configuration" transition="paper-dialog-transition-center">
                 <pojoviz-inspector-form id="inspectorForm"></pojoviz-inspector-form>
             </paper-dialog>
 

@@ -91860,6 +91860,12 @@ pojoviz = {
    * @returns {Promise}
    */
   run: function (options) {
+    var inspector = this.getInspectorFromOptions(options);
+    inspector.modifyInstance(options);
+    return inspector.init();
+  },
+
+  getInspectorFromOptions: function (options) {
     assert(options);
     var entryPoint = options.displayName || options.entryPoint;
     assert(entryPoint);
@@ -91869,8 +91875,7 @@ pojoviz = {
     if (!inspector) {
       inspector = InspectedInstances.create(options);
     }
-    inspector.modifyInstance(options);
-    return inspector.init();
+    return inspector;
   },
 
   // expose inner modules
@@ -94116,7 +94121,7 @@ Inspector.DEFAULT_CONFIG = {
   entryPoint: '',
   displayName: '',
   alwaysDirty: false,
-  debug: !!global.window && !global.phantom,
+  debug: !!global.window,
   forbiddenTokens: Inspector.DEFAULT_FORBIDDEN_TOKENS,
   additionalForbiddenTokens: null,
   analyzerConfig: {}

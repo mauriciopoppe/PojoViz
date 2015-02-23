@@ -61,10 +61,10 @@
     "karma-phantomjs-launcher": "^0.1.4",
     "minifyify": "~3.0.12",
     "mocha": "^2.1.0",
-    "request": "^2.53.0",
     "sinon": "^1.12.2",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "~0.1.1",
-    "watchify": "^2.3.0"
+    "watchify": "^2.3.0",
+    "xhr": "^2.0.1"
   }
 }

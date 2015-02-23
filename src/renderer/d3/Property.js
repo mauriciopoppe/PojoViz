@@ -69,10 +69,10 @@ function Property() {
         return d.property;
       })
       .on('click', function (d, i) {
-        var link = d.label.match(/\S*?-([\$\w-\.]*)/);
+        var link = d.label;
         var ev = new CustomEvent('property-click', {
           detail: {
-            name: link[1],
+            name: link,
             property: d.property
           }
         });

@@ -94,7 +94,7 @@ function Analyzer(config) {
    * Print debug info in the console
    * @type {boolean}
    */
-  this.debug = true;
+  this.debug = config.debug;
 
   /**
    * True to save the properties of the objects analyzed in an
@@ -183,6 +183,7 @@ Analyzer.DFS_LEVELS = 15;
  */
 Analyzer.DEFAULT_CONFIG = {
   cache: true,
+  debug: false,
   visitConstructors: Analyzer.VISIT_CONSTRUCTORS,
   visitSimpleFunctions: Analyzer.VISIT_SIMPLE_FUNCTIONS,
   visitArrays: Analyzer.VISIT_ARRAYS,
@@ -361,8 +362,11 @@ Analyzer.prototype = {
     // <labeler>
     // set a name on itself if it's a constructor
     labeler(obj);
-    // set a name on each property
+    // set a name on each traversable property
     allProperties
+      .filter(function (propertyDescription) {
+        return propertyDescription.isTraversable;
+      })
       .forEach(function (propertyDescription) {
         labeler(obj, propertyDescription.property);
       });

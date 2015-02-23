@@ -18,6 +18,9 @@ module.exports = {
    * @param {Inspector} inspector
    */
   process: function (inspector) {
+    if (inspector.remote) {
+      return this.doProcess(inspector.stringified);
+    }
     return this.doProcess(inspector.analyzer.stringify());
   },
   /**

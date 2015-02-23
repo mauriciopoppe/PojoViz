@@ -195,7 +195,7 @@ Inspector.DEFAULT_CONFIG = {
   entryPoint: '',
   displayName: '',
   alwaysDirty: false,
-  debug: !!global.window,
+  debug: !!global.window && !global.phantom,
   forbiddenTokens: Inspector.DEFAULT_FORBIDDEN_TOKENS,
   additionalForbiddenTokens: null,
   analyzerConfig: {}
@@ -330,8 +330,7 @@ Inspector.prototype.parseForbiddenTokens = function () {
  */
 Inspector.prototype.setDirty = function () {
   this.dirty = true;
-  this.analyzer.items.empty();
-  this.analyzer.forbidden.empty();
+  this.analyzer.reset();
   return this;
 };
 

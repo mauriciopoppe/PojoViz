@@ -96,6 +96,7 @@
 
             <!--popup shown to edit a known configuration -->
             <paper-dialog id="knownConfigurationPopup" class="configuration-form" backdrop
+                    on-core-overlay-close-completed="{{onRuntimeConfigurationChange}}"
                     heading="Edit Configuration" transition="paper-dialog-transition-center">
                 <pojoviz-inspector-form id="inspectorForm"></pojoviz-inspector-form>
             </paper-dialog>
@@ -113,7 +114,7 @@
                 window.onpopstate = history.onpushstate = function(e) {
                     var command = e.state.command;
                     if (~command.indexOf('render/')) {
-                        me.runLibrary(command.split('/')[1]);
+                        me.runLibrary(me.getLibraryFromHash());
                         return;
                     }
                     me.$.pages.selected = command;
@@ -168,16 +169,16 @@
                 var me = this;
                 var form = this.$.inspectorForm;
                 var popup = this.$.knownConfigurationPopup;
-                var hash = location.hash.substr(1);
-                var schema = pojoviz.schemas.find(hash.split('/')[1]);
-                if (schema) {
-                    pojoviz
-                        .run(schema)
-                        .then(function(inspector) {
-                            form.setRecord(inspector);
-                            popup.toggle();
-                        });
-                }
+                var inspector = pojoviz.getCurrentInspector();
+                form.setRecord(inspector);
+                popup.toggle();
+            },
+
+            onRuntimeConfigurationChange: function () {
+                var me = this;
+                var inspector = pojoviz.getCurrentInspector();
+                inspector.setDirty();
+                me.runLibrary(me.getLibraryFromHash());
             },
 
             pojovizAppConfiguration: function () {
@@ -236,6 +237,12 @@
                 // pojoviz.render();
                 this.$.pages.selected = 'app';
                 this.$.scaffold.closeDrawer();
+            },
+
+            getLibraryFromHash: function () {
+                var tokens = location.hash.split('/');
+                tokens.shift();
+                return tokens.join('');
             }
         });
     </script>

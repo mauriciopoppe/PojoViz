@@ -54,7 +54,6 @@ me = labeler = function (from, property, config) {
     }
   }
 
-
   if (property) {
     obj = from[property];
     label = property;
@@ -98,7 +97,6 @@ doGet = function (from, property) {
   r.values = (utils.isObjectOrFunction(obj) && labelCache[hashKey(obj)]) || [];
   return r;
 };
-'length', 'name', 'prototype',
 
 /**
  * @private

@@ -7,6 +7,7 @@ module.exports = [{
   alwaysDirty: true,
   additionalForbiddenTokens: 'global:pojoviz.InspectedInstances.pojoviz.analyzer.items',
   analyzerConfig: {
+    levels: 3,
     visitArrays: false
   }
 }, {

@@ -32,13 +32,10 @@ Remote.prototype.fetch = function () {
 
 Remote.prototype.prepareConfig = function () {
   var options = _.merge({}, this);
-  options.analyzerConfig = {
-    visitConstructors: options.analyzer.visitConstructors,
-    visitSimpleFunctions: options.analyzer.visitSimpleFunctions,
-    visitArrays: options.analyzer.visitArrays,
-    levels: options.analyzer.levels
-  };
+  options.analyzerConfig = options.analyzer;
   delete options.analyzer;
+  delete options.remote;
+  delete options.json;
   return options;
 };
 

@@ -27,21 +27,26 @@ module.exports = [{
   label: 'Buffer',
   entryPoint: 'Buffer',
   displayName: 'node/Buffer'
-//}, {
-//  label: 'require',
-//  entryPoint: 'require',
-//  displayName: 'node/require',
-//  analyzerConfig: {
-//    levels: 0
-//  }
-//}, {
-//  label: 'module',
-//  entryPoint: 'module',
-//  displayName: 'node/module'
-//}, {
-//  label: 'exports',
-//  entryPoint: 'exports',
-//  displayName: 'node/exports'
+}, {
+  label: 'Promise',
+  entryPoint: 'Promise',
+  displayName: 'node/Promise'
+}, {
+  label: 'Set',
+  entryPoint: 'Set',
+  displayName: 'node/Set'
+}, {
+  label: 'WeakSet',
+  entryPoint: 'WeakSet',
+  displayName: 'node/WeakSet'
+}, {
+  label: 'Map',
+  entryPoint: 'Map',
+  displayName: 'node/Map'
+}, {
+  label: 'WeakMap',
+  entryPoint: 'WeakMap',
+  displayName: 'node/WeakMap'
 }].map(function (v) {
     v.remote = true;
     return v;

@@ -7,6 +7,7 @@
 @import "base";
 @import "palette/red";
 @import "common";
+@import "elements/readme";
 @import "elements/settings";
 @import "elements/inspector";
 @import "elements/search";
@@ -121,7 +122,7 @@ body {
 
       &::shadow {
         #activeProgress {
-          background-color: $red-900;
+          background-color: $red-400;
         }
       }
 

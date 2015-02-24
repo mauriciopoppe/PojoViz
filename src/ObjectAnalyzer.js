@@ -80,13 +80,13 @@ function Analyzer(config) {
    * items registered in this instance
    * @type {HashMap}
    */
-  this.items = new HashMap();
+  this.__items__ = new HashMap();
 
   /**
    * Forbidden objects
    * @type {HashMap}
    */
-  this.forbidden = new HashMap();
+  this.__forbidden__ = new HashMap();
 
   /**
    * Print debug info in the console
@@ -191,13 +191,22 @@ Analyzer.DEFAULT_CONFIG = {
 Analyzer.prototype = {
   constructor: Analyzer,
 
+  set: function (options) {
+    var me = this;
+    _.forOwn(options, function (v, k) {
+      if (me.hasOwnProperty(k) && k.indexOf('__') === -1) {
+        me[k] = v;
+      }
+    });
+  },
+
   /**
    * Checks if an object is in the forbidden hash
    * @param  {Object}  obj
    * @return {boolean}
    */
   isForbidden: function (obj) {
-    return this.forbidden.get(obj);
+    return this.__forbidden__.get(obj);
   },
 
   /**
@@ -405,12 +414,12 @@ Analyzer.prototype = {
     var me = this;
     if (currentLevel <= me.levels) {
       objects.forEach(function (v) {
-        if (!me.items.get(v) &&           // registered check
+        if (!me.__items__.get(v) &&           // registered check
           !me.isForbidden(v)            // forbidden check
         ) {
 
           // add the item to the registered items pool
-          me.items.put(v);
+          me.__items__.put(v);
 
           // dfs to the next level
           me.analyzeObjects(
@@ -460,21 +469,6 @@ Analyzer.prototype = {
     // - traversable properties only
     properties = me.getProperties(obj, true);
 
-    // given an `obj` let's find out if it has a hash or not
-    // if it doesn't have a hash then we have to analyze the name of
-    // the property which when applied on an external objects gives obj
-    //
-    // it's not needed to set a hash for `prototype` or `constructor`
-    // since the hashKey function takes care of assigning it
-    function getAugmentedHash(obj, name) {
-      if (!hashKey.has(obj) &&
-          name !== 'prototype' &&
-          name !== 'constructor') {
-        hashKey.createHashKeysFor(obj, name);
-      }
-      return hashKey(obj);
-    }
-
     if (!name) {
       throw 'the object needs to have a hashkey';
     }
@@ -488,10 +482,6 @@ Analyzer.prototype = {
       .forEach(function (desc) {
         var ref = obj[desc.property];
         assert(ref, 'obj[property] should exist');
-        // if the object doesn't have a hashKey
-        // let's give it a name equal to the property being analyzed
-        //getAugmentedHash(ref, desc.property);
-
         if (!me.isForbidden(ref)) {
           links.push({
             from: obj,
@@ -537,19 +527,19 @@ Analyzer.prototype = {
   },
 
   /**
-   * Sets the dirty state of this analyzer
-   * @param {boolean} d
+   * Gets the items stored in this Analyzer
+   * @returns {HashMap}
    */
-  setDirty: function (d) {
-    this.dirty = d;
+  getItems: function () {
+    return this.__items__;
   },
 
   /**
    * Gets the items stored in this Analyzer
    * @returns {HashMap}
    */
-  getItems: function () {
-    return this.items;
+  getForbidden: function () {
+    return this.__forbidden__;
   },
 
   /**
@@ -610,7 +600,7 @@ Analyzer.prototype = {
       console.log(me);
     }
     me.debug && console.time('stringify');
-    _.forOwn(me.items, function (v) {
+    _.forOwn(me.__items__, function (v) {
       var hk = hashKey(v);
       labels[hk] = me.stringifyObjectLabels(v);
       nodes[hk] = me.stringifyObjectProperties(v);
@@ -652,7 +642,7 @@ Analyzer.prototype = {
     var me = this;
 
     function doRemove(obj) {
-      me.items.remove(obj);
+      me.__items__.remove(obj);
     }
 
     objects.forEach(function (obj) {
@@ -676,7 +666,7 @@ Analyzer.prototype = {
     me.remove(objects, withPrototype);
 
     function doForbid(obj) {
-      me.forbidden.put(obj);
+      me.__forbidden__.put(obj);
     }
     objects.forEach(function (obj) {
       if (withPrototype) {
@@ -699,7 +689,7 @@ Analyzer.prototype = {
     var me = this;
 
     function doAllow(obj) {
-      me.forbidden.remove(obj);
+      me.__forbidden__.remove(obj);
     }
     objects.forEach(function (obj) {
       if (withPrototype) {
@@ -716,8 +706,8 @@ Analyzer.prototype = {
   reset: function () {
     this.__linksCache__ = {};
     this.__objectsCache__ = {};
-    this.forbidden.empty();
-    this.items.empty();
+    this.__forbidden__.empty();
+    this.__items__.empty();
   }
 };
 

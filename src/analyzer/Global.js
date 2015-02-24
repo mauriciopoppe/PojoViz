@@ -33,7 +33,7 @@ Global.prototype.inspectSelf = function () {
   //    me.analyzer.forbid([v.getItems()], true);
   //  }
   //});
-  this.analyzer.items.empty();
+  this.analyzer.getItems().empty();
   this.analyzer.add(me.getItems());
 };
 

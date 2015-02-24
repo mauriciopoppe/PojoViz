@@ -19,10 +19,10 @@ var proto = {
 var schemas = Object.create(proto);
 
 _.merge(schemas, {
-  knownSchemas: require('./knownSchemas'),
+  knownHierarchies: require('./knownHierarchies'),
   notableLibraries: require('./notableLibraries'),
   myLibraries: require('./myLibraries'),
-  hugeSchemas: require('./hugeSchemas'),
+  hugeHierarchies: require('./hugeHierarchies'),
   nodeGlobals: require('./nodeGlobals'),
   downloaded: []
 });

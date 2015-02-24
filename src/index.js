@@ -70,7 +70,7 @@ pojoviz = {
   utils: require('./util'),
 
   // known configurations
-  schemas: require('./schemas')
+  schemas: require('./hierarchies')
 };
 
 // alias

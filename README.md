@@ -1,7 +1,7 @@
 PojoViz - Plain Old JavaScript Object Visualization [![Build Status](https://travis-ci.org/maurizzzio/PojoViz.svg?branch=master)](https://travis-ci.org/maurizzzio/PojoViz)
 =======
 
-%PojoViz is a tool to analyze the plain objects of a JavaScript library/framework by finding all the relationships found among the library entry point (typically a global variable) and the objects/functions linked to it.
+%PojoViz is a tool to analyze the plain objects of a JavaScript object hierarchy by finding all the relationships found between the hierarchy entry point (in most libraries/frameworks a global variable) and the objects/functions linked to it.
 
 Note: this webpage uses <a href="http://caniuse.com/shadowdom">Shadow DOM</a>, it's suggested that you use a browser that supports this technology for a complete experience.
 
@@ -11,14 +11,9 @@ How many times did you find an awesome library/framework and wanted to see how i
 
 ## Features
 
-- Export the generated graph to a simple JSON file consisting of nodes/edges
-- Two renderers: SVG (d3) and WebGL (threejs)
-
-<img class="center" src="http://f.cl.ly/items/1h1Y1b1y3z363T1d0U3z/pojovizthree.mov.gif" alt="">
-
-- Analyze your preferred library/framework hosted anywhere, additional support to search libraries hosted on [http://cdnjs.com](http://cdnjs.com)
-
-<img class="center" src="http://f.cl.ly/items/0s2I0u2t2y1x2N3o0n2P/pojoviz-search.mov.gif" alt="">
+- Render the browser's built in objects (Object, Function, etc)
+- Render global node objects (process, Buffer, etc)
+- Render a library/framework hosted anywhere through the Library Search widget
 
 ## The algorithm
 
@@ -26,24 +21,40 @@ How many times did you find an awesome library/framework and wanted to see how i
 
 ### Configuration phase
 
-- The library's representation in %PojoViz is configured with the following properties:
+An object hierarchy is represented in %PojoViz with the following properties:
 
-	- Global access point to the library (e.g. window.d3 or window.THREE)
-	- The maximum number of levels allowed while running the DFS algorithm
-	- The *src* of the script (if it's an external resource)
-	- The *forbidden objects* which are discarded when found by the DFS algorithm
+- Entry point to the hierarchy (e.g. window.d3, window.THREE, window.document.head)
+- Hierarchy *src* (if the hierarchy is an external resource that needs to be fetched on runtime)
+- *forbidden objects* which are discarded when found by the DFS algorithm
+- The maximum number of *levels* allowed while running the DFS algorithm
 
 ### Process phase
 
-- After the configuration is read %PojoViz's `ObjectAnalyzer` class analyzes the properties the global library/framework object, if any of these properties is an object/function constructor (configurable in settings) then `ObjectAnalyzer` will follow this link
-- The previous step is done recursively saving each object/function found in a `HashMap` until the maximum number of levels has been reached discarding the *fobidden objects* in the process, these are the nodes of the graph
-- `ObjectAnalyzer` will also in the process save the links found (from an object property to an object/function constructor), these are the edges of the graph
-- The main program then asks `ObjectAnalyzer` for a JSON representation of the nodes/edges of the generated graph
-- [Dagre](https://github.com/cpettitt/dagre)'s layout program is executed with the generated JSON which returns the positions of each node in a 2D plane
+The process phase is done in demand and it does the following:
+
+- fetch any required external resource (if *src* was set)
+- forbid any existing object (configured through *forbiddenTokens*) from being inspected
+- perform the analysis of all the objects added to the inspector (recursively)
+  - checks if the current object is forbidden to discard it
+  - if not then all the properties of the objects are retrieved with `Object.getOwnPropertyNames`
+  - when a property is evaluated, e.g. `obj.property`
+    - if it's non-accessible the property is discarded (e.g. function.caller, function.arguments)
+    - if it's non-traversable the property is discarded (object are traversable properties)
+  - the process above is run again for all the remaining objects until a recursion limit is reached
+  (configured with *levels*) or all the objects in the hierarchy have been analyzed
 
 ### Render phase
 
-- The chosen renderer (d3 or three.js) renders the graph provided by the process phase
+The process phase above will store all the traversable objects in a `HashMap`, in the render phase:
+
+- The traversable objects are stringified, what this means is that a simple object is returned for each
+traversable object, each object has properties describing the value of the object (i.e. if a given property
+is traversable, if it's a primitive value, etc)
+- The edges connecting the objects are also stringified, each edge is represented a simple object
+telling the source node, destination node and the property to get there, (e.g. `sourceNode[property] = destinationNode` )
+- The stringified representation of the hierarchy is passed to the layout program (run by [Dagre](https://github.com/cpettitt/dagre))
+which augments the info above with cartesian coordinates `(x, y)`, `width`, `height`
+- The chosen renderer (d3 or three.js) renders the hierarchy representation created above
 
 ### Development notes
 
@@ -311,6 +322,10 @@ v0.1.0
 - Render scope variables analyzing the ast (see Esprima)
 - Move to the selected object on dot click
 - Undo/redo
+
+## Screenshots
+<img class="center" src="http://f.cl.ly/items/0s2I0u2t2y1x2N3o0n2P/pojoviz-search.mov.gif" alt="">
+<img class="center" src="http://f.cl.ly/items/1h1Y1b1y3z363T1d0U3z/pojovizthree.mov.gif" alt="">
 
 ## Acknowledgments
 

@@ -217,6 +217,15 @@ Inspector.setBuiltInVisibility = function (visible) {
   me.DEFAULT_CONFIG.forbiddenTokens = arr.join('|');
 };
 
+Inspector.prototype.set = function (options) {
+  var me = this;
+  _.forOwn(options, function (v, k) {
+    if (me.hasOwnProperty(k)) {
+      me[k] = v;
+    }
+  });
+};
+
 /**
  * Init routine, should be called on demand to initialize the
  * analysis process, it orchestrates the following:

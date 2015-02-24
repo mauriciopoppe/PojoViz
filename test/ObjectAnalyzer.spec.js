@@ -14,8 +14,8 @@ describe('ObjectAnalyzer', function () {
     // todo: create better constructor tests
     it('sets all default properties', function () {
       var instance = new ObjectAnalyzer();
-      expect(instance.items).be.a('object');
-      expect(instance.forbidden).be.a('object');
+      expect(instance.getItems()).be.a('object');
+      expect(instance.getForbidden()).be.a('object');
     });
   });
 
@@ -29,66 +29,66 @@ describe('ObjectAnalyzer', function () {
     it('should forbid objects when forbid(obj) is called', function () {
       function A() {}
       analyzer.forbid([A]);
-      expect(_.size(analyzer.forbidden)).to.equal(1);
-      expect(_.size(analyzer.items)).to.equal(0);
+      expect(_.size(analyzer.getForbidden())).to.equal(1);
+      expect(_.size(analyzer.getItems())).to.equal(0);
     });
 
     it('should forbid with prototype when forbid(obj,true) is called', function () {
       function A() {}
       analyzer.forbid([A], true);
-      expect(_.size(analyzer.forbidden)).to.equal(2);
-      expect(_.size(analyzer.items)).to.equal(0);
+      expect(_.size(analyzer.getForbidden())).to.equal(2);
+      expect(_.size(analyzer.getItems())).to.equal(0);
     });
 
     it('should store 4 objects when add is called with [Object]', function () {
       analyzer.add([Object]);
-      expect(_.size(analyzer.forbidden)).to.equal(0);
+      expect(_.size(analyzer.getForbidden())).to.equal(0);
       // Object
       //   + Function.prototype
       //     + Function
       // Object.prototype
-      expect(_.size(analyzer.items)).to.equal(4);
+      expect(_.size(analyzer.getItems())).to.equal(4);
     });
 
-    it('should store the objects in the items HashMap', function () {
+    it('should store the objects in the getItems() HashMap', function () {
       analyzer.add([Object]);
-      expect(analyzer.items[hashKey(Object)]).to.equal(Object);
-      expect(analyzer.items[hashKey(Object.prototype)]).to.equal(Object.prototype);
-      expect(analyzer.items[hashKey(Function)]).to.equal(Function);
-      expect(analyzer.items[hashKey(Function.prototype)]).to.equal(Function.prototype);
+      expect(analyzer.getItems()[hashKey(Object)]).to.equal(Object);
+      expect(analyzer.getItems()[hashKey(Object.prototype)]).to.equal(Object.prototype);
+      expect(analyzer.getItems()[hashKey(Function)]).to.equal(Function);
+      expect(analyzer.getItems()[hashKey(Function.prototype)]).to.equal(Function.prototype);
     });
 
     it('should not store forbidden objects', function () {
       analyzer = new ObjectAnalyzer();
       analyzer.forbid([Object]);
       analyzer.add([Object]);
-      expect(_.size(analyzer.forbidden)).to.equal(1);
-      expect(_.size(analyzer.items)).to.equal(0);
+      expect(_.size(analyzer.getForbidden())).to.equal(1);
+      expect(_.size(analyzer.getItems())).to.equal(0);
 
       analyzer = new ObjectAnalyzer();
       analyzer.forbid([Object.prototype]);
       analyzer.add([Object]);
-      expect(_.size(analyzer.forbidden)).to.equal(1);
-      expect(_.size(analyzer.items)).to.equal(3);
+      expect(_.size(analyzer.getForbidden())).to.equal(1);
+      expect(_.size(analyzer.getItems())).to.equal(3);
 
       analyzer = new ObjectAnalyzer();
       analyzer.forbid([Object.prototype, Function]);
       analyzer.add([Object]);
-      expect(_.size(analyzer.forbidden)).to.equal(2);
-      expect(_.size(analyzer.items)).to.equal(2);
+      expect(_.size(analyzer.getForbidden())).to.equal(2);
+      expect(_.size(analyzer.getItems())).to.equal(2);
 
       analyzer = new ObjectAnalyzer();
       analyzer.forbid([Object.prototype, Function, Function.prototype]);
       analyzer.add([Object]);
-      expect(_.size(analyzer.forbidden)).to.equal(3);
-      expect(_.size(analyzer.items)).to.equal(1);
+      expect(_.size(analyzer.getForbidden())).to.equal(3);
+      expect(_.size(analyzer.getItems())).to.equal(1);
     });
 
     it('should not store an object that is unreachable', function () {
       analyzer.forbid([Function.prototype]);
       analyzer.add([Object]);
-      expect(_.size(analyzer.forbidden)).to.equal(1);
-      expect(_.size(analyzer.items)).to.equal(2);
+      expect(_.size(analyzer.getForbidden())).to.equal(1);
+      expect(_.size(analyzer.getItems())).to.equal(2);
     });
 
     it('should not save the same hash for different objects with the same name', function () {
@@ -104,7 +104,7 @@ describe('ObjectAnalyzer', function () {
         }
       };
       analyzer.add([a, b]);
-      expect(_.size(analyzer.items)).equals(6);
+      expect(_.size(analyzer.getItems())).equals(6);
     });
 
     it('should return only objects when calling getProperties(obj, true)', function () {

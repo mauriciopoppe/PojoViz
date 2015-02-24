@@ -19,7 +19,7 @@ describe('Inspector', function () {
       var inspector = new PObject();
       inspector.init()
         .then(function () {
-          expect(_.size(inspector.analyzer.items)).equals(4);
+          expect(_.size(inspector.analyzer.getItems())).equals(4);
         })
         .done(done, done);
     });
@@ -36,7 +36,7 @@ describe('Inspector', function () {
 
       inspector.init()
         .then(function () {
-          expect(_.size(inspector.analyzer.items) >= length).equals(true);
+          expect(_.size(inspector.analyzer.getItems()) >= length).equals(true);
         })
         .done(done, done);
     });
@@ -51,7 +51,7 @@ describe('Inspector', function () {
     inspector.init()
       .then(function () {
         // x + object + object.prototype + function + function.prototype
-        expect(_.size(inspector.analyzer.items)).equals(5);
+        expect(_.size(inspector.analyzer.getItems())).equals(5);
       })
       .done(done, done);
   });
@@ -65,7 +65,7 @@ describe('Inspector', function () {
     inspector.analyzer.forbid([Object.prototype]);
     inspector.init()
       .then(function () {
-        expect(_.size(inspector.analyzer.items)).equals(1);
+        expect(_.size(inspector.analyzer.getItems())).equals(1);
       })
       .done(done, done);
   });
@@ -79,7 +79,7 @@ describe('Inspector', function () {
     });
     inspector.init()
       .then(function () {
-        expect(_.size(inspector.analyzer.items)).equals(1);
+        expect(_.size(inspector.analyzer.getItems())).equals(1);
       })
       .done(done, done);
   });
@@ -93,7 +93,7 @@ describe('Inspector', function () {
     expect(inspector.forbiddenTokens).equals('pojoviz:global|pojoviz:builtIn|global:document');
     inspector.init()
       .then(function () {
-        expect(_.size(inspector.analyzer.items)).equals(1);
+        expect(_.size(inspector.analyzer.getItems())).equals(1);
       })
       .done(done, done);
   });
@@ -108,7 +108,7 @@ describe('Inspector', function () {
     expect(inspector.forbiddenTokens).equals('pojoviz:global|pojoviz:builtIn|global:document|global:x');
     inspector.init()
       .then(function () {
-        expect(_.size(inspector.analyzer.items)).equals(0);
+        expect(_.size(inspector.analyzer.getItems())).equals(0);
       })
       .done(done, done);
   });
@@ -124,7 +124,7 @@ describe('Inspector', function () {
     });
     inspector.init()
       .then(function () {
-        expect(_.size(inspector.analyzer.items)).equals(1);
+        expect(_.size(inspector.analyzer.getItems())).equals(1);
       })
       .done(done, done);
   });

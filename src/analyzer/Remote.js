@@ -22,7 +22,7 @@ Remote.prototype.inspectSelf = function () {
 Remote.prototype.fetch = function () {
   var me = this;
   var pojoviz = global.pojoviz;
-  console.log('fetching from remote with this', this);
+  console.log('fetching from remote', this);
 
   return pojoviz.remote.nodeGlobal(me.prepareConfig())
       .then(function (json) {

@@ -74441,8 +74441,8 @@ Polymer('paper-dialog');;
 
                 this.$.libraries.sections = [{
                     icon: 'exit-to-app',
-                    label: 'Known Schemas',
-                    libraries: pojoviz.schemas.knownSchemas
+                    label: 'Known Hierarchies',
+                    libraries: pojoviz.schemas.knownHierarchies
                 }, {
                     icon: 'favorite',
                     label: 'Notable Libraries',
@@ -74453,8 +74453,8 @@ Polymer('paper-dialog');;
                     libraries: pojoviz.schemas.myLibraries
                 }, {
                     icon: 'warning',
-                    label: 'Huge Schemas',
-                    libraries: pojoviz.schemas.hugeSchemas
+                    label: 'Huge Hierarchies',
+                    libraries: pojoviz.schemas.hugeHierarchies
                 }, {
                     icon: 'nodejs',
                     label: 'Node Globals',
@@ -91902,14 +91902,14 @@ pojoviz = {
   utils: require('./util'),
 
   // known configurations
-  schemas: require('./schemas')
+  schemas: require('./hierarchies')
 };
 
 // alias
 pojoviz.setCurrentInspector = pojoviz.run;
 
 module.exports = pojoviz;
-},{"./InspectedInstances":7,"./ObjectAnalyzer":8,"./analyzer/Inspector":12,"./schemas":16,"./util":23,"./util/":23,"assert":2,"q":undefined}],2:[function(require,module,exports){
+},{"./InspectedInstances":7,"./ObjectAnalyzer":8,"./analyzer/Inspector":12,"./hierarchies":16,"./util":23,"./util/":23,"assert":2,"q":undefined}],2:[function(require,module,exports){
 // http://wiki.commonjs.org/wiki/Unit_Testing/1.0
 //
 // THIS IS NOT TESTED NOR LIKELY TO WORK OUTSIDE V8!
@@ -93103,13 +93103,13 @@ function Analyzer(config) {
    * items registered in this instance
    * @type {HashMap}
    */
-  this.items = new HashMap();
+  this.__items__ = new HashMap();
 
   /**
    * Forbidden objects
    * @type {HashMap}
    */
-  this.forbidden = new HashMap();
+  this.__forbidden__ = new HashMap();
 
   /**
    * Print debug info in the console
@@ -93214,13 +93214,22 @@ Analyzer.DEFAULT_CONFIG = {
 Analyzer.prototype = {
   constructor: Analyzer,
 
+  set: function (options) {
+    var me = this;
+    _.forOwn(options, function (v, k) {
+      if (me.hasOwnProperty(k) && k.indexOf('__') === -1) {
+        me[k] = v;
+      }
+    });
+  },
+
   /**
    * Checks if an object is in the forbidden hash
    * @param  {Object}  obj
    * @return {boolean}
    */
   isForbidden: function (obj) {
-    return this.forbidden.get(obj);
+    return this.__forbidden__.get(obj);
   },
 
   /**
@@ -93428,12 +93437,12 @@ Analyzer.prototype = {
     var me = this;
     if (currentLevel <= me.levels) {
       objects.forEach(function (v) {
-        if (!me.items.get(v) &&           // registered check
+        if (!me.__items__.get(v) &&           // registered check
           !me.isForbidden(v)            // forbidden check
         ) {
 
           // add the item to the registered items pool
-          me.items.put(v);
+          me.__items__.put(v);
 
           // dfs to the next level
           me.analyzeObjects(
@@ -93483,21 +93492,6 @@ Analyzer.prototype = {
     // - traversable properties only
     properties = me.getProperties(obj, true);
 
-    // given an `obj` let's find out if it has a hash or not
-    // if it doesn't have a hash then we have to analyze the name of
-    // the property which when applied on an external objects gives obj
-    //
-    // it's not needed to set a hash for `prototype` or `constructor`
-    // since the hashKey function takes care of assigning it
-    function getAugmentedHash(obj, name) {
-      if (!hashKey.has(obj) &&
-          name !== 'prototype' &&
-          name !== 'constructor') {
-        hashKey.createHashKeysFor(obj, name);
-      }
-      return hashKey(obj);
-    }
-
     if (!name) {
       throw 'the object needs to have a hashkey';
     }
@@ -93511,10 +93505,6 @@ Analyzer.prototype = {
       .forEach(function (desc) {
         var ref = obj[desc.property];
         assert(ref, 'obj[property] should exist');
-        // if the object doesn't have a hashKey
-        // let's give it a name equal to the property being analyzed
-        //getAugmentedHash(ref, desc.property);
-
         if (!me.isForbidden(ref)) {
           links.push({
             from: obj,
@@ -93560,19 +93550,19 @@ Analyzer.prototype = {
   },
 
   /**
-   * Sets the dirty state of this analyzer
-   * @param {boolean} d
+   * Gets the items stored in this Analyzer
+   * @returns {HashMap}
    */
-  setDirty: function (d) {
-    this.dirty = d;
+  getItems: function () {
+    return this.__items__;
   },
 
   /**
    * Gets the items stored in this Analyzer
    * @returns {HashMap}
    */
-  getItems: function () {
-    return this.items;
+  getForbidden: function () {
+    return this.__forbidden__;
   },
 
   /**
@@ -93633,7 +93623,7 @@ Analyzer.prototype = {
       console.log(me);
     }
     me.debug && console.time('stringify');
-    _.forOwn(me.items, function (v) {
+    _.forOwn(me.__items__, function (v) {
       var hk = hashKey(v);
       labels[hk] = me.stringifyObjectLabels(v);
       nodes[hk] = me.stringifyObjectProperties(v);
@@ -93675,7 +93665,7 @@ Analyzer.prototype = {
     var me = this;
 
     function doRemove(obj) {
-      me.items.remove(obj);
+      me.__items__.remove(obj);
     }
 
     objects.forEach(function (obj) {
@@ -93699,7 +93689,7 @@ Analyzer.prototype = {
     me.remove(objects, withPrototype);
 
     function doForbid(obj) {
-      me.forbidden.put(obj);
+      me.__forbidden__.put(obj);
     }
     objects.forEach(function (obj) {
       if (withPrototype) {
@@ -93722,7 +93712,7 @@ Analyzer.prototype = {
     var me = this;
 
     function doAllow(obj) {
-      me.forbidden.remove(obj);
+      me.__forbidden__.remove(obj);
     }
     objects.forEach(function (obj) {
       if (withPrototype) {
@@ -93739,8 +93729,8 @@ Analyzer.prototype = {
   reset: function () {
     this.__linksCache__ = {};
     this.__objectsCache__ = {};
-    this.forbidden.empty();
-    this.items.empty();
+    this.__forbidden__.empty();
+    this.__items__.empty();
   }
 };
 
@@ -93930,7 +93920,7 @@ Global.prototype.inspectSelf = function () {
   //    me.analyzer.forbid([v.getItems()], true);
   //  }
   //});
-  this.analyzer.items.empty();
+  this.analyzer.getItems().empty();
   this.analyzer.add(me.getItems());
 };
 
@@ -94155,6 +94145,15 @@ Inspector.setBuiltInVisibility = function (visible) {
     arr.splice(arr.indexOf(token), 1);
   }
   me.DEFAULT_CONFIG.forbiddenTokens = arr.join('|');
+};
+
+Inspector.prototype.set = function (options) {
+  var me = this;
+  _.forOwn(options, function (v, k) {
+    if (me.hasOwnProperty(k)) {
+      me[k] = v;
+    }
+  });
 };
 
 /**
@@ -94476,7 +94475,7 @@ Remote.prototype.inspectSelf = function () {
 Remote.prototype.fetch = function () {
   var me = this;
   var pojoviz = global.pojoviz;
-  console.log('fetching from remote with this', this);
+  console.log('fetching from remote', this);
 
   return pojoviz.remote.nodeGlobal(me.prepareConfig())
       .then(function (json) {
@@ -94486,13 +94485,10 @@ Remote.prototype.fetch = function () {
 
 Remote.prototype.prepareConfig = function () {
   var options = _.merge({}, this);
-  options.analyzerConfig = {
-    visitConstructors: options.analyzer.visitConstructors,
-    visitSimpleFunctions: options.analyzer.visitSimpleFunctions,
-    visitArrays: options.analyzer.visitArrays,
-    levels: options.analyzer.levels
-  };
+  options.analyzerConfig = options.analyzer;
   delete options.analyzer;
+  delete options.remote;
+  delete options.json;
   return options;
 };
 
@@ -94542,16 +94538,16 @@ var proto = {
 var schemas = Object.create(proto);
 
 _.merge(schemas, {
-  knownSchemas: require('./knownSchemas'),
+  knownHierarchies: require('./knownHierarchies'),
   notableLibraries: require('./notableLibraries'),
   myLibraries: require('./myLibraries'),
-  hugeSchemas: require('./hugeSchemas'),
+  hugeHierarchies: require('./hugeHierarchies'),
   nodeGlobals: require('./nodeGlobals'),
   downloaded: []
 });
 
 module.exports = schemas;
-},{"./hugeSchemas":15,"./knownSchemas":17,"./myLibraries":18,"./nodeGlobals":19,"./notableLibraries":20,"lodash":undefined}],17:[function(require,module,exports){
+},{"./hugeHierarchies":15,"./knownHierarchies":17,"./myLibraries":18,"./nodeGlobals":19,"./notableLibraries":20,"lodash":undefined}],17:[function(require,module,exports){
 /**
  * Created by mauricio on 2/17/15.
  */
@@ -94608,21 +94604,26 @@ module.exports = [{
   label: 'Buffer',
   entryPoint: 'Buffer',
   displayName: 'node/Buffer'
-//}, {
-//  label: 'require',
-//  entryPoint: 'require',
-//  displayName: 'node/require',
-//  analyzerConfig: {
-//    levels: 0
-//  }
-//}, {
-//  label: 'module',
-//  entryPoint: 'module',
-//  displayName: 'node/module'
-//}, {
-//  label: 'exports',
-//  entryPoint: 'exports',
-//  displayName: 'node/exports'
+}, {
+  label: 'Promise',
+  entryPoint: 'Promise',
+  displayName: 'node/Promise'
+}, {
+  label: 'Set',
+  entryPoint: 'Set',
+  displayName: 'node/Set'
+}, {
+  label: 'WeakSet',
+  entryPoint: 'WeakSet',
+  displayName: 'node/WeakSet'
+}, {
+  label: 'Map',
+  entryPoint: 'Map',
+  displayName: 'node/Map'
+}, {
+  label: 'WeakMap',
+  entryPoint: 'WeakMap',
+  displayName: 'node/WeakMap'
 }].map(function (v) {
     v.remote = true;
     return v;
@@ -98544,8 +98545,8 @@ var pojoviz = global.pojoviz;
 
 var Q = require('q');
 var xhr = require('xhr');
-var url = 'http://rest.heroku.mauriciopoppe.com/pojoviz/node/global';
-//var url = 'http://localhost:5000/pojoviz/node/global';
+//var url = 'http://rest.heroku.mauriciopoppe.com/pojoviz/node/global';
+var url = 'http://localhost:5000/pojoviz/node/global';
 pojoviz.remote = {
   nodeGlobal: function (config) {
     var deferred = Q.defer();

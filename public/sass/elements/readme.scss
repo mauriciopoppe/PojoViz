@@ -1,0 +1,7 @@
+html {
+  /deep/ {
+    section[label=readme] {
+      line-height: 20px;
+    }
+  }
+}

@@ -175,7 +175,7 @@ html /deep/ #aboutPopup::shadow #scroller {
 }
 
 /* line 11, ../sass/renderer/d3.scss */
-html /deep/ .pv-link {
+html /deep/ .pv-link, html .pv-link {
   -webkit-transition-property: stroke;
   -moz-transition-property: stroke;
   -o-transition-property: stroke;
@@ -189,52 +189,52 @@ html /deep/ .pv-link {
   stroke: lightgrey;
 }
 /* line 18, ../sass/renderer/d3.scss */
-html /deep/ .pv-link.selected {
+html /deep/ .pv-link.selected, html .pv-link.selected {
   stroke: #03a9f4;
 }
 /* line 20, ../sass/renderer/d3.scss */
-html /deep/ .pv-link.selected.predecessor {
+html /deep/ .pv-link.selected.predecessor, html .pv-link.selected.predecessor {
   stroke: #e51c23;
 }
 /* line 23, ../sass/renderer/d3.scss */
-html /deep/ .pv-link.selected.successor {
+html /deep/ .pv-link.selected.successor, html .pv-link.selected.successor {
   stroke: #03a9f4;
 }
 /* line 29, ../sass/renderer/d3.scss */
-html /deep/ .canvas-wrapper {
+html /deep/ .canvas-wrapper, html .canvas-wrapper {
   height: 100%;
 }
 /* line 32, ../sass/renderer/d3.scss */
-html /deep/ svg {
+html /deep/ svg, html svg {
   width: 100%;
   height: 100%;
 }
 /* line 37, ../sass/renderer/d3.scss */
-html /deep/ svg.dragged {
+html /deep/ svg.dragged, html svg.dragged {
   cursor: move;
 }
 /* line 41, ../sass/renderer/d3.scss */
-html /deep/ svg .pv-nodes-focused .pv-node {
+html /deep/ svg .pv-nodes-focused .pv-node, html svg .pv-nodes-focused .pv-node {
   opacity: 0.3;
 }
 /* line 43, ../sass/renderer/d3.scss */
-html /deep/ svg .pv-nodes-focused .pv-node.selected {
+html /deep/ svg .pv-nodes-focused .pv-node.selected, html svg .pv-nodes-focused .pv-node.selected {
   opacity: 1;
 }
 /* line 47, ../sass/renderer/d3.scss */
-html /deep/ svg .pv-nodes-focused .pv-node.predecessor .node-background {
+html /deep/ svg .pv-nodes-focused .pv-node.predecessor .node-background, html svg .pv-nodes-focused .pv-node.predecessor .node-background {
   stroke: #e51c23;
 }
 /* line 52, ../sass/renderer/d3.scss */
-html /deep/ svg .pv-nodes-focused .pv-node.successor .node-background {
+html /deep/ svg .pv-nodes-focused .pv-node.successor .node-background, html svg .pv-nodes-focused .pv-node.successor .node-background {
   stroke: #03a9f4;
 }
 /* line 57, ../sass/renderer/d3.scss */
-html /deep/ svg .pv-nodes-focused .pv-node.current .node-background {
+html /deep/ svg .pv-nodes-focused .pv-node.current .node-background, html svg .pv-nodes-focused .pv-node.current .node-background {
   stroke: #673ab7;
 }
 /* line 65, ../sass/renderer/d3.scss */
-html /deep/ .pv-node {
+html /deep/ .pv-node, html .pv-node {
   -webkit-transition-property: opacity;
   -moz-transition-property: opacity;
   -o-transition-property: opacity;
@@ -245,7 +245,7 @@ html /deep/ .pv-node {
   transition-duration: 0.25s;
 }
 /* line 69, ../sass/renderer/d3.scss */
-html /deep/ .pv-node .node-background {
+html /deep/ .pv-node .node-background, html .pv-node .node-background {
   fill: white;
   fill-opacity: 1;
   stroke-opacity: 1;
@@ -253,66 +253,66 @@ html /deep/ .pv-node .node-background {
   stroke-width: 2px;
 }
 /* line 76, ../sass/renderer/d3.scss */
-html /deep/ .pv-node .pv-title {
+html /deep/ .pv-node .pv-title, html .pv-node .pv-title {
   font-size: 17px;
   font-weight: 100;
 }
 /* line 83, ../sass/renderer/d3.scss */
-html /deep/ .pv-node .pv-body .pv-property .pv-dot-object {
+html /deep/ .pv-node .pv-body .pv-property .pv-dot-object, html .pv-node .pv-body .pv-property .pv-dot-object {
   fill: #03a9f4;
   fill-opacity: 1;
 }
 /* line 87, ../sass/renderer/d3.scss */
-html /deep/ .pv-node .pv-body .pv-property .pv-dot-function {
+html /deep/ .pv-node .pv-body .pv-property .pv-dot-function, html .pv-node .pv-body .pv-property .pv-dot-function {
   fill: #f9bdbb;
 }
 /* line 92, ../sass/renderer/d3.scss */
-html /deep/ .pv-node .pv-body .pv-property .pv-property-background {
+html /deep/ .pv-node .pv-body .pv-property .pv-property-background, html .pv-node .pv-body .pv-property .pv-property-background {
   fill: white;
 }
 /* line 96, ../sass/renderer/d3.scss */
-html /deep/ .pv-node .pv-body .pv-property:hover {
+html /deep/ .pv-node .pv-body .pv-property:hover, html .pv-node .pv-body .pv-property:hover {
   cursor: pointer;
 }
 /* line 101, ../sass/renderer/d3.scss */
-html /deep/ .pv-node .pv-body .pv-property.pv-__proto__ rect {
+html /deep/ .pv-node .pv-body .pv-property.pv-__proto__ rect, html .pv-node .pv-body .pv-property.pv-__proto__ rect {
   fill: #b3e5fc;
   fill-opacity: 0.15;
   stroke-dasharray: 2;
 }
 /* line 106, ../sass/renderer/d3.scss */
-html /deep/ .pv-node .pv-body .pv-property.pv-__proto__ text {
+html /deep/ .pv-node .pv-body .pv-property.pv-__proto__ text, html .pv-node .pv-body .pv-property.pv-__proto__ text {
   stroke-dasharray: 1;
   fill: #b3e5fc;
 }
 /* line 113, ../sass/renderer/d3.scss */
-html /deep/ .pv-node .pv-body .pv-property rect.pv-string {
+html /deep/ .pv-node .pv-body .pv-property rect.pv-string, html .pv-node .pv-body .pv-property rect.pv-string {
   stroke: #a3e9a4;
 }
 /* line 116, ../sass/renderer/d3.scss */
-html /deep/ .pv-node .pv-body .pv-property rect.pv-number {
+html /deep/ .pv-node .pv-body .pv-property rect.pv-number, html .pv-node .pv-body .pv-property rect.pv-number {
   stroke: #ffe0b2;
 }
 /* line 122, ../sass/renderer/d3.scss */
-html /deep/ .pv-node .pv-body .pv-property rect.pv-object {
+html /deep/ .pv-node .pv-body .pv-property rect.pv-object, html .pv-node .pv-body .pv-property rect.pv-object {
   stroke: #b3e5fc;
 }
 /* line 130, ../sass/renderer/d3.scss */
-html /deep/ .pv-node.pv-function rect.node-background {
+html /deep/ .pv-node.pv-function rect.node-background, html .pv-node.pv-function rect.node-background {
   stroke: #f9bdbb;
 }
 
-/* line 18, ../sass/app.scss */
+/* line 18, ../sass/pojoviz.scss */
 #__bs_notify__ {
   display: none !important;
 }
 
-/* line 24, ../sass/app.scss */
+/* line 24, ../sass/pojoviz.scss */
 html.notoolbar /deep/ core-toolbar {
   display: none;
 }
 
-/* line 33, ../sass/app.scss */
+/* line 33, ../sass/pojoviz.scss */
 body /deep/ core-animated-pages {
   position: absolute;
   top: 0;
@@ -320,62 +320,62 @@ body /deep/ core-animated-pages {
   width: 100%;
   height: 100%;
 }
-/* line 39, ../sass/app.scss */
+/* line 39, ../sass/pojoviz.scss */
 body /deep/ core-animated-pages section {
   padding: 40px;
 }
-/* line 43, ../sass/app.scss */
+/* line 43, ../sass/pojoviz.scss */
 body /deep/ .logo {
   text-align: center;
   padding: 30px 15px 15px;
   font-size: 4em;
   font-weight: 100;
 }
-/* line 48, ../sass/app.scss */
+/* line 48, ../sass/pojoviz.scss */
 body /deep/ .logo .subtitle {
   padding-top: 10px;
   font-size: 12px;
 }
-/* line 53, ../sass/app.scss */
+/* line 53, ../sass/pojoviz.scss */
 body /deep/ .center {
   display: block;
   margin: auto;
 }
-/* line 57, ../sass/app.scss */
+/* line 57, ../sass/pojoviz.scss */
 body /deep/ h1 {
   font-weight: 100;
   font-size: 3em;
 }
-/* line 61, ../sass/app.scss */
+/* line 61, ../sass/pojoviz.scss */
 body /deep/ core-header-panel[main] {
   background-color: white;
 }
-/* line 63, ../sass/app.scss */
+/* line 63, ../sass/pojoviz.scss */
 body /deep/ core-header-panel[main] core-toolbar {
   background-color: #03a9f4;
 }
-/* line 70, ../sass/app.scss */
+/* line 70, ../sass/pojoviz.scss */
 body /deep/ .pojoviz {
   font-weight: 100;
   font-size: 1.3rem;
   color: #03a9f4;
 }
-/* line 75, ../sass/app.scss */
+/* line 75, ../sass/pojoviz.scss */
 body /deep/ core-item:hover {
   cursor: pointer !important;
 }
-/* line 78, ../sass/app.scss */
+/* line 78, ../sass/pojoviz.scss */
 body /deep/ .readme-iframe {
   margin: auto;
   display: block;
 }
-/* line 81, ../sass/app.scss */
+/* line 81, ../sass/pojoviz.scss */
 body /deep/ .readme-iframe html {
   -webkit-box-shadow: inset 0px 0px 14px 0px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: inset 0px 0px 14px 0px rgba(0, 0, 0, 0.75);
   box-shadow: inset 0px 0px 14px 0px rgba(0, 0, 0, 0.75);
 }
-/* line 87, ../sass/app.scss */
+/* line 87, ../sass/pojoviz.scss */
 body /deep/ .as-button {
   text-decoration: none;
   padding: 10px;
@@ -387,11 +387,11 @@ body /deep/ .as-button {
   background: #03a9f4;
   color: white;
 }
-/* line 97, ../sass/app.scss */
+/* line 97, ../sass/pojoviz.scss */
 body /deep/ pojoviz-library-menu::shadow .library {
   font-size: 13px;
 }
-/* line 103, ../sass/app.scss */
+/* line 103, ../sass/pojoviz.scss */
 body /deep/ .library-runtime-configuration {
   position: absolute;
   bottom: 0;
@@ -407,32 +407,32 @@ body /deep/ .library-runtime-configuration {
   -o-transition-duration: 0.25s;
   transition-duration: 0.25s;
 }
-/* line 113, ../sass/app.scss */
+/* line 113, ../sass/pojoviz.scss */
 body /deep/ .library-runtime-configuration:hover {
   opacity: 1;
 }
-/* line 118, ../sass/app.scss */
+/* line 118, ../sass/pojoviz.scss */
 body /deep/ paper-progress.app-progress {
   width: 100%;
   position: absolute;
   display: none;
 }
-/* line 124, ../sass/app.scss */
+/* line 124, ../sass/pojoviz.scss */
 body /deep/ paper-progress.app-progress::shadow #activeProgress {
   background-color: #e84e40;
 }
-/* line 129, ../sass/app.scss */
+/* line 129, ../sass/pojoviz.scss */
 body /deep/ paper-progress.app-progress.visible {
   display: block;
 }
 
-/* line 137, ../sass/app.scss */
+/* line 137, ../sass/pojoviz.scss */
 html /deep/ .small {
   font-size: 12px !important;
   font-weight: 100;
 }
 
-/* line 145, ../sass/app.scss */
+/* line 145, ../sass/pojoviz.scss */
 html /deep/ paper-dialog::shadow #scroller {
   width: 850px;
   height: 650px;

@@ -15,18 +15,9 @@ How many times did you find an awesome library/framework and wanted to see how i
 - Renders the hierarchy of Node global objects (process, Buffer, etc)
 - Renders a library/framework hosted anywhere through the Library Search widget (as long as there is a way to access it, e.g. for d3 `window.d3` would be the access point to the library)
 
-## What does it do?
-
-Let's say we have a simple plain object:
-
-```javascript
-var obj = {};
-```
-
-<iframe src="readme/?src=simple"></iframe>
-
 ## Development
 
+TODO
 See [development]
 
 ## Changelog
@@ -78,4 +69,4 @@ Special thanks once again to [@mrdoob](https://twitter.com/mrdoob) the author of
 - [t3](http://maurizzzio.github.io/t3/docs/)
 
 ----
-[development]:
+[development]: https://github.com/maurizzzio/PojoViz/

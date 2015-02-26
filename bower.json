@@ -1,5 +1,5 @@
 {
-  "name": "PojoViz",
+  "name": "pojoviz",
   "version": "0.2.4",
   "authors": [
     "Mauricio Poppe <mauricio.poppe@gmail.com>"
@@ -19,7 +19,8 @@
   "ignore": [
     "/*",
     "!/build",
-    "!/README.md"
+    "!/README.md",
+    "!/public/css/"
   ],
   "devDependencies": {
     "t3": "^0.2.0",

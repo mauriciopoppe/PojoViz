@@ -7,7 +7,7 @@ $color-number: $orange-100;
 $color-predecessor: $red-500;
 $color-successor: $blue-500;
 
-html /deep/ {
+html /deep/, html {
   .pv-link {
     @include transition-property(stroke);
     @include transition-duration($transition-duration);

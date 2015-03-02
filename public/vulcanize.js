@@ -47816,6 +47816,9 @@ Polymer('paper-dialog');;
 		Polymer('pojoviz-readme', {
             script: false,
             ready: function () {
+                if (window.location.origin.search(/localhost/) === -1) {
+                    this.$.ajax.url = '/PojoViz/' + this.$.ajax.url;
+                }
 				this.$.ajax.go();
 			},
 			handleResponse: function (ev, detail, el) {

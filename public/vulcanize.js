@@ -47817,7 +47817,7 @@ Polymer('paper-dialog');;
             script: false,
             ready: function () {
                 if (window.location.origin.search(/localhost/) === -1) {
-                    this.$.ajax.url = '/PojoViz/' + this.$.ajax.url;
+                    this.$.ajax.url = '/PojoViz' + this.$.ajax.url;
                 }
 				this.$.ajax.go();
 			},
@@ -70711,7 +70711,7 @@ module.exports = {
 
   renderToIFrame: function (code) {
     iFrameEl.setHTML({
-      src: '/public/playground.html',
+      src: '../public/playground.html',
       sandboxAttributes: ['allow-same-origin', 'allow-scripts']
     });
     // iframes are weird!

@@ -1900,7 +1900,7 @@ module.exports = {
 
   renderToIFrame: function (code) {
     iFrameEl.setHTML({
-      src: '/public/playground.html',
+      src: '../public/playground.html',
       sandboxAttributes: ['allow-same-origin', 'allow-scripts']
     });
     // iframes are weird!

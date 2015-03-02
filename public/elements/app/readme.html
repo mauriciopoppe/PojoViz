@@ -1,0 +1,71 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/core-icon/core-icon.html">
+<link rel="import" href="../../bower_components/core-ajax/core-ajax.html">
+
+<polymer-element name="pojoviz-readme" attributes="url script">
+	<template>
+		<link rel="stylesheet" href="../../bower_components/highlightjs/styles/tomorrow.css">
+
+		<core-ajax id="ajax" url="{{ url }}" on-core-response="{{handleResponse}}">
+        </core-ajax>
+
+		<!-- content filled dynamically -->
+        <div class="{{ script ? 'playground' : '' }}">
+            <template if="{{ script }}">
+                <span class="script-src">{{ url }}</span>
+                <div class="script-mask" on-click="{{ runExample }}">
+                    <core-icon icon="chevron-right" style="width: 100px; height: 100px;"></core-icon>
+                </div>
+            </template>
+            <section id="parsed">
+            </section>
+        </div>
+
+	</template>
+	<script>
+		Polymer('pojoviz-readme', {
+            script: false,
+            ready: function () {
+				this.$.ajax.go();
+			},
+			handleResponse: function (ev, detail, el) {
+				var me = this;
+                var parsed;
+
+                if (this.script) {
+                    detail.response = '```javascript\n'  + detail.response + '\n```';
+                }
+
+                parsed = marked(detail.response, {
+                    emoji: true,
+                    highlight: function (code, lang) {
+                        return hljs.highlight(lang, code).value;
+                    }
+                });
+
+				function changeImg(str) {
+					if (me.isLocal) {
+						return str;
+					}
+					return str.replace(/src="/g, 'src="http://maurizzzio.github.io/PojoViz/public/');
+				}
+
+				function replacePojoViz(str) {
+					return str.replace(/%PojoViz/g, '<span class="pojoviz">PojoViz</span>');
+				}
+
+				me.$.parsed.innerHTML = [parsed]
+					.map(replacePojoViz)[0];
+					// .map(changeImg)[
+					// 0];
+			},
+
+            runExample: function () {
+                var event = new CustomEvent('pojoviz-render-example', {
+                    detail: this.url
+                });
+                document.dispatchEvent(event);
+            }
+		});
+	</script>
+</polymer-element>

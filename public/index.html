@@ -12,37 +12,23 @@
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 	<link rel="icon" href="favicon.ico" type="image/x-icon">
 
-	<link rel="import" href="bower_components/core-scaffold/core-scaffold.html">
-	<link rel="import" href="bower_components/core-toolbar/core-toolbar.html">
-	<link rel="import" href="bower_components/core-menu/core-menu.html">
-	<link rel="import" href="bower_components/core-menu/core-submenu.html">
-	<link rel="import" href="bower_components/core-item/core-item.html">
 	<link rel="import" href="bower_components/core-animated-pages/core-animated-pages.html">
-	<link rel="import" href="bower_components/core-animated-pages/transitions/cross-fade.html">
-	<link rel="import" href="bower_components/core-tooltip/core-tooltip.html">
-	<link rel="import" href="bower_components/core-icon/core-icon.html">
-	<link rel="import" href="bower_components/paper-toast/paper-toast.html">
+	<link rel="import" href="bower_components/core-animated-pages/transitions/slide-from-right.html">
 
-	<link rel="import" href="elements/app.html">
-	<link rel="import" href="elements/settings.html">
-	<link rel="import" href="elements/about.html">
-	<link rel="import" href="elements/search.html">
-	<link rel="import" href="elements/libraryMenu.html">
-	<link rel="import" href="elements/readme.html">
-	<link rel="import" href="elements/inspector.html">
+	<link rel="import" href="elements/app/index.html">
+	<link rel="import" href="elements/dev/index.html">
 
 	<!-- normalize -->
-	<link rel="stylesheet" href="css/normalize.min.css">
+	<!--<link rel="stylesheet" href="css/normalize.min.css">-->
 	<link rel="stylesheet" href="css/pojoviz.css">
 
 	<!-- renderer libraries -->
 	<script type="text/javascript" src="lib/d3.js"></script>
 	<script src="lib/tween.min.js"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.min.js"></script>
 	<!-- bundle: three + t3 + marked + highlight -->
 
 	<!-- build:js lib/vendor.js -->
-	<script type="text/javascript" src="bower_components/t3/examples/lib/three.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r70/three.min.js"></script>
 	<script type="text/javascript" src="bower_components/t3/dist/t3.js"></script>
 	<script type="text/javascript" src="bower_components/marked/lib/marked.js"></script>
 	<script type="text/javascript" src="bower_components/highlightjs/highlight.pack.js"></script>
@@ -51,7 +37,15 @@
 
 </head>
 <body unresolved fullbleed>
-    <pojoviz-app></pojoviz-app>
+    <core-animated-pages id="root-pages" transitions="slide-from-right" valueattr="label" selected="app">
+        <section label="app">
+            <pojoviz-app></pojoviz-app>
+        </section>
+
+        <section label="dev">
+            <pojoviz-dev></pojoviz-dev>
+        </section>
+    </core-animated-pages>
 
 	<!-- app -->
 	<script src="../build/pojoviz-vendor.js"></script>
@@ -59,7 +53,6 @@
 	<script src="../build/pojoviz-renderers.js"></script>
 	<script src="../build/pojoviz-remote.js"></script>
 
-    <!--index specific scripts-->
 	<script src="scripts/main.js"></script>
 
 	<script>
@@ -71,6 +64,5 @@
 	  ga('create', 'UA-52923805-1', 'auto');
 	  ga('send', 'pageview');
 	</script>
-</script>
 </body>
 </html>

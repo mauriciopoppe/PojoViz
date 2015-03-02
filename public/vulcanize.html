@@ -310,90 +310,6 @@ html /deep/ [segment], html /deep/ segment {
 
 
 
-
-
-
-<style shim-shadowdom="">/* Copyright (c) 2014 The Polymer Project Authors. All rights reserved.
-This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
-The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
-The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
-Code distributed by Google as part of the polymer project is also
-subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt */
-
-html /deep/ core-icon {
-  display: inline-block;
-  vertical-align: middle;
-  background-repeat: no-repeat;
-  fill: currentcolor;
-  position: relative;
-  height: 24px;
-  width: 24px;
-}</style>
-
-
-
-
-
-
-
-
-
-
-
-	
-	
-
-
-<style shim-shadowdom="">
-  html /deep/ core-a11y-keys {
-    display: none;
-  }
-</style>
-
-
-
-
-	
-
-
-
-
-
-<style shim-shadowdom="">/*
-Copyright (c) 2014 The Polymer Project Authors. All rights reserved.
-This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
-The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
-The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
-Code distributed by Google as part of the polymer project is also
-subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
-*/
-
-html /deep/ core-collapse {
-  display: block;
-}
-
-html /deep/ .core-collapse-closed {
-  display: none;
-}
-</style>
-
-
-
-
-	
-	
-
-
-
-
-
-
-
-
-
-
-
-
 <!--
 
 `core-transition-pages` represents a page transition, which may include CSS and/or
@@ -661,7 +577,102 @@ Fired when a page transition completes.
 -->
 
 	
+
+<!--
+Warning: This transition does not work well in combination with other transitions, because
+it operates on the page rather than the page's children.
+-->
+
+
+
 	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style shim-shadowdom="">/* Copyright (c) 2014 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt */
+
+html /deep/ core-icon {
+  display: inline-block;
+  vertical-align: middle;
+  background-repeat: no-repeat;
+  fill: currentcolor;
+  position: relative;
+  height: 24px;
+  width: 24px;
+}</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style shim-shadowdom="">
+  html /deep/ core-a11y-keys {
+    display: none;
+  }
+</style>
+
+
+
+
+
+
+
+
+
+
+<style shim-shadowdom="">/*
+Copyright (c) 2014 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+*/
+
+html /deep/ core-collapse {
+  display: block;
+}
+
+html /deep/ .core-collapse-closed {
+  display: none;
+}
+</style>
+
+
+
+
+
+
+
+
 
 
 
@@ -676,8 +687,8 @@ Fired when a page transition completes.
            control. -->
 <!-- TODO: possibly reuse core-overlay. -->
 
-	
-	
+
+
 
 
 
@@ -801,17 +812,6 @@ object like this: `{v: 'top', h: 'right'}`.
 
 
 
-	
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -845,6 +845,7 @@ object like this: `{v: 'top', h: 'right'}`.
     outline: none;
   }
 </style>
+
 
 
 
@@ -978,6 +979,7 @@ html /deep/ .paper-shadow-bottom-z-5 {
 
 
 
+
 <!--
 Element providing material design circular spinner.
 
@@ -1048,15 +1050,26 @@ in another form (e.g. a text block following the spinner).
 
 
 
-	
-	
-	
-	
-	
+
+
+
+
+
 	
 
+
+
+
+
+
+
+
+
+
+
+
 	<!-- normalize -->
-	<style>/*! normalize.css v3.0.1 | MIT License | git.io/normalize */html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block;vertical-align:baseline}audio:not([controls]){display:none;height:0}[hidden],template{display:none}a{background:transparent}a:active,a:hover{outline:0}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:bold}dfn{font-style:italic}h1{font-size:2em;margin:.67em 0}mark{background:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-0.5em}sub{bottom:-0.25em}img{border:0}svg:not(:root){overflow:hidden}figure{margin:1em 40px}hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0}pre{overflow:auto}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}button,input,optgroup,select,textarea{color:inherit;font:inherit;margin:0}button{overflow:visible}button,select{text-transform:none}button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}input{line-height:normal}input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0}input[type="number"]::-webkit-inner-spin-button,input[type="number"]::-webkit-outer-spin-button{height:auto}input[type="search"]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}fieldset{border:1px solid #c0c0c0;margin:0 2px;padding:.35em .625em .75em}legend{border:0;padding:0}textarea{overflow:auto}optgroup{font-weight:bold}table{border-collapse:collapse;border-spacing:0}td,th{padding:0}</style>
+	<!--<link rel="stylesheet" href="css/normalize.min.css">-->
 	<style>/* Welcome to Compass.
  * In this file you should write your main styles. (or centralize your imports)
  * Import this file using the following HTML or equivalent:
@@ -1102,26 +1115,105 @@ html /deep/ paper-slider::shadow #sliderBar::shadow #activeProgress {
   background-color: #4fc3f7;
 }
 
-/* line 3, ../sass/elements/readme.scss */
+/* line 4, ../sass/elements/ide.scss */
+html /deep/ pojoviz-dev /deep/ code-mirror {
+  margin: 20px;
+  -webkit-box-shadow: #eeeeee 0 0 25px;
+  -moz-box-shadow: #eeeeee 0 0 25px;
+  box-shadow: #eeeeee 0 0 25px;
+}
+
+/* line 5, ../sass/elements/readme.scss */
 html /deep/ section[label=readme] {
   line-height: 20px;
 }
-
-/* line 7, ../sass/elements/settings.scss */
-pojoviz-settings::shadow paper-slider::shadow #sliderKnobInner, pojoviz-settings::shadow paper-slider::shadow #sliderKnobInner::before,
-pojoviz-settings::shadow paper-slider::shadow #sliderBar::shadow #activeProgress {
-  background-color: #03a9f4;
+/* line 10, ../sass/elements/readme.scss */
+html /deep/ pojoviz-readme /deep/ #parsed {
+  padding: 40px;
 }
-/* line 13, ../sass/elements/settings.scss */
-pojoviz-settings::shadow paper-checkbox::shadow #ink[checked] {
+/* line 18, ../sass/elements/readme.scss */
+html /deep/ pojoviz-readme[script] /deep/ #parsed {
+  padding: 0;
+}
+/* line 22, ../sass/elements/readme.scss */
+html /deep/ pojoviz-readme[script] /deep/ .playground {
+  padding: 20px;
+  border: 1px solid black;
+  width: 800px;
+  margin: 0 auto;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  border-radius: 10px;
+  position: relative;
+}
+/* line 29, ../sass/elements/readme.scss */
+html /deep/ pojoviz-readme[script] /deep/ .playground .script-src {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #4fc3f7;
+  color: white;
+  padding: 5px 10px;
+  -moz-border-radius-topright: 10px;
+  -webkit-border-top-right-radius: 10px;
+  border-top-right-radius: 10px;
+  -moz-border-radius-bottomleft: 10px;
+  -webkit-border-bottom-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+/* line 41, ../sass/elements/readme.scss */
+html /deep/ pojoviz-readme[script] /deep/ .script-mask {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+  margin: -20px 0 0 -20px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  border-radius: 10px;
+}
+/* line 48, ../sass/elements/readme.scss */
+html /deep/ pojoviz-readme[script] /deep/ .script-mask:hover {
+  cursor: pointer;
+}
+/* line 50, ../sass/elements/readme.scss */
+html /deep/ pojoviz-readme[script] /deep/ .script-mask:hover core-icon {
   color: #03a9f4;
 }
-/* line 16, ../sass/elements/settings.scss */
-pojoviz-settings::shadow paper-checkbox::shadow #checkbox.checked {
+/* line 56, ../sass/elements/readme.scss */
+html /deep/ pojoviz-readme[script] /deep/ core-icon {
+  position: absolute;
+  top: calc(50% - 50px);
+  left: calc(50% - 50px);
+}
+/* line 62, ../sass/elements/readme.scss */
+html /deep/ pojoviz-readme[script] /deep/ pre {
+  margin: 0;
+}
+
+/* line 5, ../sass/elements/settings.scss */
+html /deep/ pojoviz-settings::shadow section {
+  padding: 40px;
+}
+/* line 12, ../sass/elements/settings.scss */
+html /deep/ pojoviz-settings::shadow paper-slider::shadow #sliderKnobInner, html /deep/ pojoviz-settings::shadow paper-slider::shadow #sliderKnobInner::before,
+html /deep/ pojoviz-settings::shadow paper-slider::shadow #sliderBar::shadow #activeProgress {
+  background-color: #03a9f4;
+}
+/* line 18, ../sass/elements/settings.scss */
+html /deep/ pojoviz-settings::shadow paper-checkbox::shadow #ink[checked] {
+  color: #03a9f4;
+}
+/* line 21, ../sass/elements/settings.scss */
+html /deep/ pojoviz-settings::shadow paper-checkbox::shadow #checkbox.checked {
   border-color: #03a9f4;
 }
-/* line 22, ../sass/elements/settings.scss */
-pojoviz-settings::shadow paper-radio-button::shadow #onRadio {
+/* line 27, ../sass/elements/settings.scss */
+html /deep/ pojoviz-settings::shadow paper-radio-button::shadow #onRadio {
   background-color: #03a9f4;
 }
 
@@ -1361,17 +1453,22 @@ html /deep/ .pv-node.pv-function rect.node-background, html .pv-node.pv-function
   stroke: #f9bdbb;
 }
 
-/* line 18, ../sass/pojoviz.scss */
+/* line 19, ../sass/pojoviz.scss */
+*, *:before, *:after {
+  font-family: Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+/* line 23, ../sass/pojoviz.scss */
 #__bs_notify__ {
   display: none !important;
 }
 
-/* line 24, ../sass/pojoviz.scss */
+/* line 29, ../sass/pojoviz.scss */
 html.notoolbar /deep/ core-toolbar {
   display: none;
 }
 
-/* line 33, ../sass/pojoviz.scss */
+/* line 38, ../sass/pojoviz.scss */
 body /deep/ core-animated-pages {
   position: absolute;
   top: 0;
@@ -1379,62 +1476,62 @@ body /deep/ core-animated-pages {
   width: 100%;
   height: 100%;
 }
-/* line 39, ../sass/pojoviz.scss */
-body /deep/ core-animated-pages section {
-  padding: 40px;
-}
-/* line 43, ../sass/pojoviz.scss */
+/* line 45, ../sass/pojoviz.scss */
 body /deep/ .logo {
   text-align: center;
   padding: 30px 15px 15px;
   font-size: 4em;
   font-weight: 100;
 }
-/* line 48, ../sass/pojoviz.scss */
+/* line 50, ../sass/pojoviz.scss */
 body /deep/ .logo .subtitle {
   padding-top: 10px;
   font-size: 12px;
 }
-/* line 53, ../sass/pojoviz.scss */
+/* line 55, ../sass/pojoviz.scss */
 body /deep/ .center {
   display: block;
   margin: auto;
 }
-/* line 57, ../sass/pojoviz.scss */
+/* line 59, ../sass/pojoviz.scss */
 body /deep/ h1 {
   font-weight: 100;
   font-size: 3em;
 }
-/* line 61, ../sass/pojoviz.scss */
+/* line 63, ../sass/pojoviz.scss */
 body /deep/ core-header-panel[main] {
   background-color: white;
 }
-/* line 63, ../sass/pojoviz.scss */
+/* line 65, ../sass/pojoviz.scss */
 body /deep/ core-header-panel[main] core-toolbar {
   background-color: #03a9f4;
 }
-/* line 70, ../sass/pojoviz.scss */
+/* line 69, ../sass/pojoviz.scss */
+body /deep/ #playground {
+  font-size: 12px;
+}
+/* line 75, ../sass/pojoviz.scss */
 body /deep/ .pojoviz {
   font-weight: 100;
   font-size: 1.3rem;
   color: #03a9f4;
 }
-/* line 75, ../sass/pojoviz.scss */
+/* line 80, ../sass/pojoviz.scss */
 body /deep/ core-item:hover {
   cursor: pointer !important;
 }
-/* line 78, ../sass/pojoviz.scss */
+/* line 83, ../sass/pojoviz.scss */
 body /deep/ .readme-iframe {
   margin: auto;
   display: block;
 }
-/* line 81, ../sass/pojoviz.scss */
+/* line 86, ../sass/pojoviz.scss */
 body /deep/ .readme-iframe html {
   -webkit-box-shadow: inset 0px 0px 14px 0px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: inset 0px 0px 14px 0px rgba(0, 0, 0, 0.75);
   box-shadow: inset 0px 0px 14px 0px rgba(0, 0, 0, 0.75);
 }
-/* line 87, ../sass/pojoviz.scss */
+/* line 92, ../sass/pojoviz.scss */
 body /deep/ .as-button {
   text-decoration: none;
   padding: 10px;
@@ -1446,11 +1543,11 @@ body /deep/ .as-button {
   background: #03a9f4;
   color: white;
 }
-/* line 97, ../sass/pojoviz.scss */
+/* line 102, ../sass/pojoviz.scss */
 body /deep/ pojoviz-library-menu::shadow .library {
   font-size: 13px;
 }
-/* line 103, ../sass/pojoviz.scss */
+/* line 108, ../sass/pojoviz.scss */
 body /deep/ .library-runtime-configuration {
   position: absolute;
   bottom: 0;
@@ -1466,32 +1563,32 @@ body /deep/ .library-runtime-configuration {
   -o-transition-duration: 0.25s;
   transition-duration: 0.25s;
 }
-/* line 113, ../sass/pojoviz.scss */
+/* line 118, ../sass/pojoviz.scss */
 body /deep/ .library-runtime-configuration:hover {
   opacity: 1;
 }
-/* line 118, ../sass/pojoviz.scss */
+/* line 123, ../sass/pojoviz.scss */
 body /deep/ paper-progress.app-progress {
   width: 100%;
   position: absolute;
   display: none;
 }
-/* line 124, ../sass/pojoviz.scss */
+/* line 129, ../sass/pojoviz.scss */
 body /deep/ paper-progress.app-progress::shadow #activeProgress {
   background-color: #e84e40;
 }
-/* line 129, ../sass/pojoviz.scss */
+/* line 134, ../sass/pojoviz.scss */
 body /deep/ paper-progress.app-progress.visible {
   display: block;
 }
 
-/* line 137, ../sass/pojoviz.scss */
+/* line 142, ../sass/pojoviz.scss */
 html /deep/ .small {
   font-size: 12px !important;
   font-weight: 100;
 }
 
-/* line 145, ../sass/pojoviz.scss */
+/* line 150, ../sass/pojoviz.scss */
 html /deep/ paper-dialog::shadow #scroller {
   width: 850px;
   height: 650px;
@@ -1501,11 +1598,10 @@ html /deep/ paper-dialog::shadow #scroller {
 	<!-- renderer libraries -->
 	
 	
-	<script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.min.js"></script>
 	<!-- bundle: three + t3 + marked + highlight -->
 
 	<!-- build:js lib/vendor.js -->
-	
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r70/three.min.js"></script>
 	
 	
 	
@@ -1513,7 +1609,356 @@ html /deep/ paper-dialog::shadow #scroller {
     <!-- endbuild -->
 
 </head>
-<body unresolved="" fullbleed=""><div hidden=""><polymer-element name="core-toolbar" attributes="justify middleJustify bottomJustify" assetpath="bower_components/core-toolbar/">
+<body unresolved="" fullbleed=""><div hidden="">
+<polymer-element name="core-selection" attributes="multi" hidden="" assetpath="bower_components/core-selection/">
+  
+</polymer-element>
+<polymer-element name="core-selector" attributes="selected multi valueattr selectedClass selectedProperty selectedAttribute selectedItem selectedModel selectedIndex notap excludedLocalNames target itemsSelector activateEvent" assetpath="bower_components/core-selector/">
+
+  <template>
+    <core-selection id="selection" multi="{{multi}}" on-core-select="{{selectionSelect}}"></core-selection>
+    <content id="items" select="*"></content>
+  </template>
+
+  
+</polymer-element>
+
+
+<polymer-element name="core-style" hidden="" assetpath="bower_components/core-style/">
+
+</polymer-element>
+
+<polymer-element name="core-meta" attributes="label type" hidden="" assetpath="bower_components/core-meta/">
+
+</polymer-element>
+<polymer-element name="core-transition" extends="core-meta" assetpath="bower_components/core-transition/">
+  
+  
+</polymer-element>
+<polymer-element name="core-transition-pages" extends="core-transition" assetpath="bower_components/core-animated-pages/transitions/">
+
+</polymer-element>
+<core-style id="hero-transition">
+  /* Hide heroes that are not currently transitioning */
+  polyfill-next-selector { content: ':host &gt; [animate]:not(.core-selected) [hero]'; }
+  ::content &gt; [animate]:not(.core-selected) /deep/ [hero] {
+    opacity: 0;
+  }
+
+  polyfill-next-selector { content: ':host &gt; .core-selected[animate] [hero]'; }
+  ::content &gt; .core-selected[animate] /deep/ [hero] {
+    opacity: 1;
+    z-index: 10000;
+  }
+
+  polyfill-next-selector { content: ':host &gt; * [hero-p]'; }
+  ::content &gt; * /deep/ [hero-p] {
+    -webkit-transition: box-shadow 100ms ease-out;
+    transition: box-shadow 100ms ease-out;
+  }
+
+  polyfill-next-selector { content: ':host &gt; [animate] [hero-p]'; }
+  ::content &gt; [animate] /deep/ [hero-p] {
+    box-shadow: none !important;
+  }
+</core-style>
+
+
+<!--
+
+`hero-transition` transforms two elements in different pages such that they appear
+to be shared across the pages.
+
+Example:
+
+    <core-animated-pages transition="hero-transition">
+      <section layout horizontal>
+        <div id="div1" flex></div>
+        <div id="div2" flex hero-id="shared" hero></div>
+      </section>
+      <section>
+      <section layout horizontal>
+        <div id="div3" flex hero-id="shared" hero></div>
+        <div id="div4" flex></div>
+      </section>
+      </section>
+    </core-animated-pages>
+
+In the above example, the elements `#div2` and `#div3` shares the same `hero-id`
+attribute and a single element appears to translate and scale smoothly between
+the two positions during a page transition.
+
+Both elements from the source and destination pages must share the same `hero-id`
+and must both contain the `hero` attribute to trigger the transition. The separate
+`hero` attribute allows you to use binding to configure the transition:
+
+Example:
+
+    <core-animated-pages transition="hero-transition">
+      <section layout horizontal>
+        <div id="div1" flex hero-id="shared" hero?="{{selected == 0}}"></div>
+        <div id="div2" flex hero-id="shared" hero?="{{selected == 1}}"></div>
+      </section>
+      <section>
+      <section layout horizontal>
+        <div id="div3" flex hero-id="shared" hero></div>
+      </section>
+      </section>
+    </core-animated-pages>
+
+In the above example, either `#div1` or `#div2` scales to `#div3` during a page transition,
+depending on the value of `selected`.
+
+Because it is common to share elements with different `border-radius` values, by default
+this transition will also animate the `border-radius` property.
+
+You can configure the duration of the hero transition with the global variable
+`CoreStyle.g.transitions.heroDuration`.
+
+@class hero-transition
+@extends core-transition-pages
+@status beta
+@homepage github.io
+-->
+<polymer-element name="hero-transition" extends="core-transition-pages" assetpath="bower_components/core-animated-pages/transitions/">
+
+</polymer-element>
+
+<hero-transition id="hero-transition"></hero-transition>
+
+<core-style id="cross-fade">
+  polyfill-next-selector { content: ':host &gt; * [cross-fade]'; }
+  ::content &gt; * /deep/ [cross-fade] {
+    -webkit-transition: opacity {{g.transitions.xfadeDuration || g.transitions.duration}} cubic-bezier(0.4, 0, 0.2, 1);
+    transition: opacity {{g.transitions.xfadeDuration || g.transitions.duration}} cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  polyfill-next-selector { content: ':host &gt; * [cross-fade][bg]'; }
+  ::content &gt; * /deep/ [cross-fade][bg] {
+    -webkit-transition: background-color {{g.transitions.xfadeDuration || g.transitions.duration}} cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background-color {{g.transitions.xfadeDuration || g.transitions.duration}} cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  polyfill-next-selector { content: ':host &gt; * [cross-fade][hero-p]'; }
+  ::content &gt; * /deep/ [cross-fade][hero-p] {
+    -webkit-transition: background-color {{g.transitions.xfadeDuration || g.transitions.duration}} cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background-color {{g.transitions.xfadeDuration || g.transitions.duration}} cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  polyfill-next-selector { content: ':host &gt; .core-selected [cross-fade]'; }
+  ::content &gt; .core-selected /deep/ [cross-fade] {
+    opacity: 1;
+  }
+
+  polyfill-next-selector { content: ':host &gt; [animate]:not(.core-selected) [cross-fade]:not([hero-p]):not([bg])'; }
+  ::content &gt; [animate]:not(.core-selected) /deep/ [cross-fade]:not([hero-p]):not([bg]) {
+    opacity: 0;
+  }
+
+  polyfill-next-selector { content: ':host &gt; [animate]:not(.core-selected) [cross-fade][bg]'; }
+  ::content &gt; [animate]:not(.core-selected) /deep/ [cross-fade][bg] {
+    background-color: rgba(0, 0, 0, 0);
+  }
+
+  polyfill-next-selector { content: ':host &gt; [animate]:not(.core-selected) [cross-fade][hero-p]'; }
+  ::content &gt; [animate]:not(.core-selected) /deep/ [cross-fade][hero-p] {
+    background-color: rgba(0, 0, 0, 0);
+  }
+</core-style>
+
+<core-style id="cross-fade-delayed">
+  polyfill-next-selector { content: ':host &gt; * [cross-fade-delayed]'; }
+  ::content &gt; * /deep/ [cross-fade-delayed] {
+    -webkit-transition: opacity {{g.transitions.xfadeDuration || g.transitions.duration}} ease-out;
+    transition: opacity {{g.transitions.xfadeDuration || g.transitions.duration}} ease-out;
+  }
+
+  polyfill-next-selector { content: ':host &gt; .core-selected [cross-fade-delayed]'; }
+  ::content &gt; .core-selected /deep/ [cross-fade-delayed] {
+    -webkit-transition: opacity {{g.transitions.xfadeDuration || g.transitions.duration}} ease-out {{g.transitions.xfadeDelay || g.transitions.xfadeDuration || g.transitions.duration}};
+    transition: opacity {{g.transitions.xfadeDuration || g.transitions.duration}} ease-out {{g.transitions.xfadeDelay || g.transitions.xfadeDuration || g.transitions.duration}};
+  }
+
+  polyfill-next-selector { content: ':host &gt; [animate]:not(.core-selected) [cross-fade-delayed]'; }
+  ::content &gt; [animate]:not(.core-selected) /deep/ [cross-fade-delayed] {
+    opacity: 0;
+  }
+
+  polyfill-next-selector { content: ':host &gt; .core-selected [cross-fade-delayed]'; }
+  ::content &gt; .core-selected /deep/ [cross-fade-delayed] {
+    opacity: 1;
+  }
+
+</core-style>
+
+<core-style id="cross-fade-all">
+  /* cross-fade-all: cross fade everything except for heroes and their parents */
+  polyfill-next-selector { content: ':host(.cross-fade-all) &gt; * *:not([hero]):not([hero-p]):not([cross-fade])'; }
+  :host(.cross-fade-all) ::content &gt; * /deep/ *:not([hero]):not([hero-p]):not([cross-fade]) {
+    -webkit-transition: opacity {{g.transitions.xfadeDuration || g.transitions.duration}} ease-out;
+    transition: opacity {{g.transitions.xfadeDuration || g.transitions.duration}} ease-out;
+  }
+
+  polyfill-next-selector { content: ':host(.cross-fade-all) &gt; [animate]:not(.core-selected) *:not([hero]):not([hero-p]):not([cross-fade])'; }
+  :host(.cross-fade-all) ::content &gt; [animate]:not(.core-selected) /deep/ *:not([hero]):not([hero-p]):not([cross-fade]) {
+    opacity: 0;
+  }
+
+  polyfill-next-selector { content: ':host(.cross-fade-all) &gt; .core-selected *:not([hero])'; }
+  .host(.cross-fade-all) ::content &gt; .core-selected /deep/ * {
+    opacity: 1;
+  }
+
+  /* Only background-color is allowed for the hero's parents, no opacity transitions */
+  polyfill-next-selector { content: ':host(.cross-fade-all) &gt; * [hero-p]'; }
+  :host(.cross-fade-all) ::content &gt; * /deep/ [hero-p] {
+    -webkit-transition: background-color {{g.transitions.xfadeDuration || g.transitions.duration}} ease-out;
+    transition: background-color {{g.transitions.xfadeDuration || g.transitions.duration}} ease-out;
+    opacity: 1;
+  }
+
+  polyfill-next-selector { content: ':host(.cross-fade-all) &gt; [animate]:not(.core-selected) [hero-p]'; }
+  :host(.cross-fade-all) ::content &gt; [animate]:not(.core-selected) /deep/ [hero-p] {
+    background-color: rgba(0, 0, 0, 0);
+  }
+</core-style>
+
+<!--
+
+`cross-fade` fades out elements in the outgoing page and fades in elements in the
+incoming page during a page transition. You can configure the duration of the
+transition with the global variable `CoreStyle.g.transitions.xfadeDuration`.
+
+Example:
+
+    <core-animated-pages transition="cross-fade">
+      <section>
+        <div id="div1" cross-fade></div>
+      </section>
+      <section>
+        <div id="div2" cross-fade bg>
+          <div id="div3" cross-fade></div>
+          <div id="div4"></div>
+        </div>
+      </section>
+    </core-animated-pages>
+
+In the above example, `#div1` and `#div3` has the `cross-fade` attribute. `#div1`
+will fade out and `#div3` will fade in with opacity transitions when the page switches
+from 0 to 1. Sometimes, you may want to only fade the background color of an element
+but not its children, and you can use the `bg` attribute along with the `#div1`
+attribute as in `#div2`.
+
+@class cross-fade
+@extends core-transition-pages
+@status beta
+@homepage github.io
+
+-->
+
+<!--
+
+`cross-fade-delayed` performs a cross-fade after some delay, either specified in
+the global variable `CoreStyle.g.transitions.xfadeDelay` or the duration of the
+transition.
+
+Example:
+
+    <core-animated-pages transition="hero-transition cross-fade-delayed">
+      <section>
+        <div id="div1" hero-id hero></div>
+      </section>
+      <section>
+        <div id="div2" hero-id hero>
+          <div id="div3" cross-fade-delayed></div>
+        </div>
+      </section>
+    </core-animated-pages>
+
+In the above example, `#div3` fades in after the hero transition from `#div1` to
+`#div2` completes.
+
+@class cross-fade-delayed
+@extends core-transition-pages
+@status beta
+@homepage github.io
+
+-->
+
+<core-transition-pages id="cross-fade"></core-transition-pages>
+<core-transition-pages id="cross-fade-delayed"></core-transition-pages>
+<core-transition-pages id="cross-fade-all" scopeclass="cross-fade-all"></core-transition-pages>
+<polymer-element name="core-animated-pages" extends="core-selector" notap="" attributes="transitions" assetpath="bower_components/core-animated-pages/">
+
+<template>
+
+  <style>/*
+ * @license
+ * Copyright (c) 2014 The Polymer Project Authors. All rights reserved.
+ * This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+ * The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+ * The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+ * Code distributed by Google as part of the polymer project is also
+ * subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+ */
+
+:host {
+  display: block;
+  position: relative;
+}
+
+polyfill-next-selector { content: ':host > *'; }
+::content > * {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+polyfill-next-selector { content: ':host > *:not(.core-selected):not([animate])'; }
+::content > *:not(.core-selected):not([animate]) {
+  display: none !important;
+}
+</style>
+
+  <shadow></shadow>
+
+</template>
+
+
+
+</polymer-element>
+
+<core-style id="slide-from-right">
+  polyfill-next-selector { content: ':host(.slide-from-right) &gt; *'; }
+  :host(.slide-from-right) ::content &gt; * {
+    -webkit-transition: -webkit-transform {{g.transitions.slideDuration || g.transitions.duration}} cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform {{g.transitions.slideDuration || g.transitions.duration}} cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  polyfill-next-selector { content: ':host(.slide-from-right) &gt; .core-selected ~ [animate]:not(.core-selected)'; }
+  :host(.slide-from-right) ::content &gt; .core-selected ~ [animate]:not(.core-selected) {
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+  }
+
+  polyfill-next-selector { content: ':host(.slide-from-right) &gt; [animate]:not(.core-selected)'; }
+  :host(.slide-from-right) ::content &gt; [animate]:not(.core-selected) {
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+  }
+
+  polyfill-next-selector { content: ':host(.slide-from-right) &gt; .core-selected'; }
+  :host(.slide-from-right) ::content &gt; .core-selected {
+    -webkit-transform: none;
+    transform: none;
+  }
+</core-style>
+
+<core-transition-pages id="slide-from-right" scopeclass="slide-from-right"></core-transition-pages>
+
+<polymer-element name="core-toolbar" attributes="justify middleJustify bottomJustify" assetpath="bower_components/core-toolbar/">
 <template>
 
   <style>/*
@@ -1659,19 +2104,6 @@ polyfill-next-selector { content: ':host .indent'; }
       }
     </style>
   </template>
-  
-</polymer-element>
-
-<polymer-element name="core-selection" attributes="multi" hidden="" assetpath="bower_components/core-selection/">
-  
-</polymer-element>
-<polymer-element name="core-selector" attributes="selected multi valueattr selectedClass selectedProperty selectedAttribute selectedItem selectedModel selectedIndex notap excludedLocalNames target itemsSelector activateEvent" assetpath="bower_components/core-selector/">
-
-  <template>
-    <core-selection id="selection" multi="{{multi}}" on-core-select="{{selectionSelect}}"></core-selection>
-    <content id="items" select="*"></content>
-  </template>
-
   
 </polymer-element>
 <polymer-element name="core-drawer-panel" touch-action="auto" assetpath="bower_components/core-drawer-panel/">
@@ -1962,9 +2394,6 @@ mode: cover
 
 </polymer-element>
 
-<polymer-element name="core-meta" attributes="label type" hidden="" assetpath="bower_components/core-meta/">
-
-</polymer-element>
 <polymer-element name="core-iconset" extends="core-meta" attributes="src width icons iconSize" assetpath="bower_components/core-iconset/">
   
   
@@ -2528,310 +2957,6 @@ core-item {
   <core-collapse target="{{$.submenu}}" opened="{{opened}}"></core-collapse>
 
 </template>
-
-</polymer-element>
-
-
-<polymer-element name="core-style" hidden="" assetpath="bower_components/core-style/">
-
-</polymer-element>
-
-<polymer-element name="core-transition" extends="core-meta" assetpath="bower_components/core-transition/">
-  
-  
-</polymer-element>
-<polymer-element name="core-transition-pages" extends="core-transition" assetpath="bower_components/core-animated-pages/transitions/">
-
-</polymer-element>
-<core-style id="hero-transition">
-  /* Hide heroes that are not currently transitioning */
-  polyfill-next-selector { content: ':host &gt; [animate]:not(.core-selected) [hero]'; }
-  ::content &gt; [animate]:not(.core-selected) /deep/ [hero] {
-    opacity: 0;
-  }
-
-  polyfill-next-selector { content: ':host &gt; .core-selected[animate] [hero]'; }
-  ::content &gt; .core-selected[animate] /deep/ [hero] {
-    opacity: 1;
-    z-index: 10000;
-  }
-
-  polyfill-next-selector { content: ':host &gt; * [hero-p]'; }
-  ::content &gt; * /deep/ [hero-p] {
-    -webkit-transition: box-shadow 100ms ease-out;
-    transition: box-shadow 100ms ease-out;
-  }
-
-  polyfill-next-selector { content: ':host &gt; [animate] [hero-p]'; }
-  ::content &gt; [animate] /deep/ [hero-p] {
-    box-shadow: none !important;
-  }
-</core-style>
-
-
-<!--
-
-`hero-transition` transforms two elements in different pages such that they appear
-to be shared across the pages.
-
-Example:
-
-    <core-animated-pages transition="hero-transition">
-      <section layout horizontal>
-        <div id="div1" flex></div>
-        <div id="div2" flex hero-id="shared" hero></div>
-      </section>
-      <section>
-      <section layout horizontal>
-        <div id="div3" flex hero-id="shared" hero></div>
-        <div id="div4" flex></div>
-      </section>
-      </section>
-    </core-animated-pages>
-
-In the above example, the elements `#div2` and `#div3` shares the same `hero-id`
-attribute and a single element appears to translate and scale smoothly between
-the two positions during a page transition.
-
-Both elements from the source and destination pages must share the same `hero-id`
-and must both contain the `hero` attribute to trigger the transition. The separate
-`hero` attribute allows you to use binding to configure the transition:
-
-Example:
-
-    <core-animated-pages transition="hero-transition">
-      <section layout horizontal>
-        <div id="div1" flex hero-id="shared" hero?="{{selected == 0}}"></div>
-        <div id="div2" flex hero-id="shared" hero?="{{selected == 1}}"></div>
-      </section>
-      <section>
-      <section layout horizontal>
-        <div id="div3" flex hero-id="shared" hero></div>
-      </section>
-      </section>
-    </core-animated-pages>
-
-In the above example, either `#div1` or `#div2` scales to `#div3` during a page transition,
-depending on the value of `selected`.
-
-Because it is common to share elements with different `border-radius` values, by default
-this transition will also animate the `border-radius` property.
-
-You can configure the duration of the hero transition with the global variable
-`CoreStyle.g.transitions.heroDuration`.
-
-@class hero-transition
-@extends core-transition-pages
-@status beta
-@homepage github.io
--->
-<polymer-element name="hero-transition" extends="core-transition-pages" assetpath="bower_components/core-animated-pages/transitions/">
-
-</polymer-element>
-
-<hero-transition id="hero-transition"></hero-transition>
-
-<core-style id="cross-fade">
-  polyfill-next-selector { content: ':host &gt; * [cross-fade]'; }
-  ::content &gt; * /deep/ [cross-fade] {
-    -webkit-transition: opacity {{g.transitions.xfadeDuration || g.transitions.duration}} cubic-bezier(0.4, 0, 0.2, 1);
-    transition: opacity {{g.transitions.xfadeDuration || g.transitions.duration}} cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  polyfill-next-selector { content: ':host &gt; * [cross-fade][bg]'; }
-  ::content &gt; * /deep/ [cross-fade][bg] {
-    -webkit-transition: background-color {{g.transitions.xfadeDuration || g.transitions.duration}} cubic-bezier(0.4, 0, 0.2, 1);
-    transition: background-color {{g.transitions.xfadeDuration || g.transitions.duration}} cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  polyfill-next-selector { content: ':host &gt; * [cross-fade][hero-p]'; }
-  ::content &gt; * /deep/ [cross-fade][hero-p] {
-    -webkit-transition: background-color {{g.transitions.xfadeDuration || g.transitions.duration}} cubic-bezier(0.4, 0, 0.2, 1);
-    transition: background-color {{g.transitions.xfadeDuration || g.transitions.duration}} cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  polyfill-next-selector { content: ':host &gt; .core-selected [cross-fade]'; }
-  ::content &gt; .core-selected /deep/ [cross-fade] {
-    opacity: 1;
-  }
-
-  polyfill-next-selector { content: ':host &gt; [animate]:not(.core-selected) [cross-fade]:not([hero-p]):not([bg])'; }
-  ::content &gt; [animate]:not(.core-selected) /deep/ [cross-fade]:not([hero-p]):not([bg]) {
-    opacity: 0;
-  }
-
-  polyfill-next-selector { content: ':host &gt; [animate]:not(.core-selected) [cross-fade][bg]'; }
-  ::content &gt; [animate]:not(.core-selected) /deep/ [cross-fade][bg] {
-    background-color: rgba(0, 0, 0, 0);
-  }
-
-  polyfill-next-selector { content: ':host &gt; [animate]:not(.core-selected) [cross-fade][hero-p]'; }
-  ::content &gt; [animate]:not(.core-selected) /deep/ [cross-fade][hero-p] {
-    background-color: rgba(0, 0, 0, 0);
-  }
-</core-style>
-
-<core-style id="cross-fade-delayed">
-  polyfill-next-selector { content: ':host &gt; * [cross-fade-delayed]'; }
-  ::content &gt; * /deep/ [cross-fade-delayed] {
-    -webkit-transition: opacity {{g.transitions.xfadeDuration || g.transitions.duration}} ease-out;
-    transition: opacity {{g.transitions.xfadeDuration || g.transitions.duration}} ease-out;
-  }
-
-  polyfill-next-selector { content: ':host &gt; .core-selected [cross-fade-delayed]'; }
-  ::content &gt; .core-selected /deep/ [cross-fade-delayed] {
-    -webkit-transition: opacity {{g.transitions.xfadeDuration || g.transitions.duration}} ease-out {{g.transitions.xfadeDelay || g.transitions.xfadeDuration || g.transitions.duration}};
-    transition: opacity {{g.transitions.xfadeDuration || g.transitions.duration}} ease-out {{g.transitions.xfadeDelay || g.transitions.xfadeDuration || g.transitions.duration}};
-  }
-
-  polyfill-next-selector { content: ':host &gt; [animate]:not(.core-selected) [cross-fade-delayed]'; }
-  ::content &gt; [animate]:not(.core-selected) /deep/ [cross-fade-delayed] {
-    opacity: 0;
-  }
-
-  polyfill-next-selector { content: ':host &gt; .core-selected [cross-fade-delayed]'; }
-  ::content &gt; .core-selected /deep/ [cross-fade-delayed] {
-    opacity: 1;
-  }
-
-</core-style>
-
-<core-style id="cross-fade-all">
-  /* cross-fade-all: cross fade everything except for heroes and their parents */
-  polyfill-next-selector { content: ':host(.cross-fade-all) &gt; * *:not([hero]):not([hero-p]):not([cross-fade])'; }
-  :host(.cross-fade-all) ::content &gt; * /deep/ *:not([hero]):not([hero-p]):not([cross-fade]) {
-    -webkit-transition: opacity {{g.transitions.xfadeDuration || g.transitions.duration}} ease-out;
-    transition: opacity {{g.transitions.xfadeDuration || g.transitions.duration}} ease-out;
-  }
-
-  polyfill-next-selector { content: ':host(.cross-fade-all) &gt; [animate]:not(.core-selected) *:not([hero]):not([hero-p]):not([cross-fade])'; }
-  :host(.cross-fade-all) ::content &gt; [animate]:not(.core-selected) /deep/ *:not([hero]):not([hero-p]):not([cross-fade]) {
-    opacity: 0;
-  }
-
-  polyfill-next-selector { content: ':host(.cross-fade-all) &gt; .core-selected *:not([hero])'; }
-  .host(.cross-fade-all) ::content &gt; .core-selected /deep/ * {
-    opacity: 1;
-  }
-
-  /* Only background-color is allowed for the hero's parents, no opacity transitions */
-  polyfill-next-selector { content: ':host(.cross-fade-all) &gt; * [hero-p]'; }
-  :host(.cross-fade-all) ::content &gt; * /deep/ [hero-p] {
-    -webkit-transition: background-color {{g.transitions.xfadeDuration || g.transitions.duration}} ease-out;
-    transition: background-color {{g.transitions.xfadeDuration || g.transitions.duration}} ease-out;
-    opacity: 1;
-  }
-
-  polyfill-next-selector { content: ':host(.cross-fade-all) &gt; [animate]:not(.core-selected) [hero-p]'; }
-  :host(.cross-fade-all) ::content &gt; [animate]:not(.core-selected) /deep/ [hero-p] {
-    background-color: rgba(0, 0, 0, 0);
-  }
-</core-style>
-
-<!--
-
-`cross-fade` fades out elements in the outgoing page and fades in elements in the
-incoming page during a page transition. You can configure the duration of the
-transition with the global variable `CoreStyle.g.transitions.xfadeDuration`.
-
-Example:
-
-    <core-animated-pages transition="cross-fade">
-      <section>
-        <div id="div1" cross-fade></div>
-      </section>
-      <section>
-        <div id="div2" cross-fade bg>
-          <div id="div3" cross-fade></div>
-          <div id="div4"></div>
-        </div>
-      </section>
-    </core-animated-pages>
-
-In the above example, `#div1` and `#div3` has the `cross-fade` attribute. `#div1`
-will fade out and `#div3` will fade in with opacity transitions when the page switches
-from 0 to 1. Sometimes, you may want to only fade the background color of an element
-but not its children, and you can use the `bg` attribute along with the `#div1`
-attribute as in `#div2`.
-
-@class cross-fade
-@extends core-transition-pages
-@status beta
-@homepage github.io
-
--->
-
-<!--
-
-`cross-fade-delayed` performs a cross-fade after some delay, either specified in
-the global variable `CoreStyle.g.transitions.xfadeDelay` or the duration of the
-transition.
-
-Example:
-
-    <core-animated-pages transition="hero-transition cross-fade-delayed">
-      <section>
-        <div id="div1" hero-id hero></div>
-      </section>
-      <section>
-        <div id="div2" hero-id hero>
-          <div id="div3" cross-fade-delayed></div>
-        </div>
-      </section>
-    </core-animated-pages>
-
-In the above example, `#div3` fades in after the hero transition from `#div1` to
-`#div2` completes.
-
-@class cross-fade-delayed
-@extends core-transition-pages
-@status beta
-@homepage github.io
-
--->
-
-<core-transition-pages id="cross-fade"></core-transition-pages>
-<core-transition-pages id="cross-fade-delayed"></core-transition-pages>
-<core-transition-pages id="cross-fade-all" scopeclass="cross-fade-all"></core-transition-pages>
-<polymer-element name="core-animated-pages" extends="core-selector" notap="" attributes="transitions" assetpath="bower_components/core-animated-pages/">
-
-<template>
-
-  <style>/*
- * @license
- * Copyright (c) 2014 The Polymer Project Authors. All rights reserved.
- * This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
- * The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
- * The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
- * Code distributed by Google as part of the polymer project is also
- * subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
- */
-
-:host {
-  display: block;
-  position: relative;
-}
-
-polyfill-next-selector { content: ':host > *'; }
-::content > * {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
-
-polyfill-next-selector { content: ':host > *:not(.core-selected):not([animate])'; }
-::content > *:not(.core-selected):not([animate]) {
-  display: none !important;
-}
-</style>
-
-  <shadow></shadow>
-
-</template>
-
-
 
 </polymer-element>
 
@@ -4130,7 +4255,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   
   
 </polymer-element>
-<polymer-element name="pojoviz-settings" assetpath="elements/">
+<polymer-element name="pojoviz-settings" assetpath="elements/app/">
 	<template>
 		<style>
 			paper-checkbox, paper-radio-button {
@@ -4476,7 +4601,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 <paper-dialog-transition id="paper-dialog-transition-bottom" transitiontype="bottom"></paper-dialog-transition>
 <paper-dialog-transition id="paper-dialog-transition-center" transitiontype="center"></paper-dialog-transition>
-<polymer-element name="pojoviz-about" assetpath="elements/">
+<polymer-element name="pojoviz-about" assetpath="elements/app/">
 	<template>
 		<style>
 			paper-dialog {
@@ -5060,7 +5185,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 </polymer-element>
 
-<polymer-element name="pojoviz-inspector-form" attributes="record hideSrc" assetpath="elements/">
+<polymer-element name="pojoviz-inspector-form" attributes="record hideSrc" assetpath="elements/app/">
     <template>
         <!--spinner-->
         <paper-spinner id="spinner"></paper-spinner>
@@ -5178,7 +5303,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     </template>
 
     
-</polymer-element><polymer-element name="pojoviz-search" attributes="globals" assetpath="elements/">
+</polymer-element><polymer-element name="pojoviz-search" attributes="globals" assetpath="elements/app/">
     <template>
 
         <core-icon-button icon="search" on-click="{{onIconClick}}"></core-icon-button>
@@ -5255,7 +5380,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     
 </polymer-element>
-<polymer-element name="pojoviz-library-menu" attributes="sections" assetpath="elements/">
+<polymer-element name="pojoviz-library-menu" attributes="sections" assetpath="elements/app/">
 	<template>
         <core-menu valueattr="label" selected="Known Schemas">
             <template repeat="{{section in sections}}">
@@ -5270,7 +5395,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 	</template>
 	
 </polymer-element>
-<polymer-element name="pojoviz-readme" assetpath="elements/">
+<polymer-element name="pojoviz-readme" attributes="url script" assetpath="elements/app/">
 	<template>
 		<style>/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
 
@@ -5366,16 +5491,24 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 }
 </style>
 
-		<style>
-		</style>
-		<core-ajax id="ajax" url="../../README.md" on-core-response="{{handleResponse}}"></core-ajax>
+		<core-ajax id="ajax" url="{{ url }}" on-core-response="{{handleResponse}}">
+        </core-ajax>
 
-		<!-- content filled dinamically -->
-		<section id="parsed"></section>
+		<!-- content filled dynamically -->
+        <div class="{{ script ? 'playground' : '' }}">
+            <template if="{{ script }}">
+                <span class="script-src">{{ url }}</span>
+                <div class="script-mask" on-click="{{ runExample }}">
+                    <core-icon icon="chevron-right" style="width: 100px; height: 100px;"></core-icon>
+                </div>
+            </template>
+            <section id="parsed">
+            </section>
+        </div>
 
 	</template>
 	
-</polymer-element><polymer-element name="pojoviz-app" assetpath="elements/">
+</polymer-element><polymer-element name="pojoviz-app" assetpath="elements/app/">
     <template>
         <core-scaffold id="scaffold" responsivewidth="1000px">
 
@@ -5399,7 +5532,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
             <!-- title + toolbar -->
             <div id="toolbar" tool="" horizontal="" layout="" center="" style="width: 100%">
-                <div class="title"></div>
+                <!--<div class="title"></div>-->
+                <paper-button id="playground" icon="exit-to-app" on-click="{{ onPlaygroundClick }}">
+                    <core-icon icon="exit-to-app"></core-icon>
+                    Playground
+                </paper-button>
+
+                <!--separator-->
                 <div flex=""></div>
 
                 <!-- GitHub buttons: see http://ghbtns.com -->
@@ -5410,6 +5549,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 <core-icon-button data-command="settings" class="toolbar-page" icon="settings">
                 </core-icon-button>
                 <core-icon-button id="readme" data-command="readme" class="toolbar-page" icon="description">
+                </core-icon-button>
+                <core-icon-button id="development" data-command="development" class="toolbar-page" icon="create">
                 </core-icon-button>
             </div>
 
@@ -5440,7 +5581,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 </section>
                 <section label="readme" class="page">
                     <div class="wrapper" cross-fade="">
-                        <pojoviz-readme></pojoviz-readme>
+                        <pojoviz-readme url="/README.md"></pojoviz-readme>
+                    </div>
+                </section>
+                <section label="development" class="page">
+                    <div class="wrapper" cross-fade="">
+                        <pojoviz-readme url="/src/DEV_README.md"></pojoviz-readme>
                     </div>
                 </section>
             </core-animated-pages>
@@ -5457,8 +5603,442 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     </template>
     
+</polymer-element>
+<polymer-element name="code-mirror" attributes="value mode theme tabSize lineNumbers" assetpath="elements/dev/">
+    <template>
+        <style>/* BASICS */
+
+.CodeMirror {
+  /* Set height, width, borders, and global font properties here */
+  font-family: monospace;
+  height: 300px;
+  color: black;
+}
+
+/* PADDING */
+
+.CodeMirror-lines {
+  padding: 4px 0; /* Vertical padding around content */
+}
+.CodeMirror pre {
+  padding: 0 4px; /* Horizontal padding of content */
+}
+
+.CodeMirror-scrollbar-filler, .CodeMirror-gutter-filler {
+  background-color: white; /* The little square between H and V scrollbars */
+}
+
+/* GUTTER */
+
+.CodeMirror-gutters {
+  border-right: 1px solid #ddd;
+  background-color: #f7f7f7;
+  white-space: nowrap;
+}
+.CodeMirror-linenumbers {}
+.CodeMirror-linenumber {
+  padding: 0 3px 0 5px;
+  min-width: 20px;
+  text-align: right;
+  color: #999;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+.CodeMirror-guttermarker { color: black; }
+.CodeMirror-guttermarker-subtle { color: #999; }
+
+/* CURSOR */
+
+.CodeMirror div.CodeMirror-cursor {
+  border-left: 1px solid black;
+}
+/* Shown when moving in bi-directional text */
+.CodeMirror div.CodeMirror-secondarycursor {
+  border-left: 1px solid silver;
+}
+.CodeMirror.cm-fat-cursor div.CodeMirror-cursor {
+  width: auto;
+  border: 0;
+  background: #7e7;
+}
+.CodeMirror.cm-fat-cursor div.CodeMirror-cursors {
+  z-index: 1;
+}
+
+.cm-animate-fat-cursor {
+  width: auto;
+  border: 0;
+  -webkit-animation: blink 1.06s steps(1) infinite;
+  -moz-animation: blink 1.06s steps(1) infinite;
+  animation: blink 1.06s steps(1) infinite;
+}
+@-moz-keyframes blink {
+  0% { background: #7e7; }
+  50% { background: none; }
+  100% { background: #7e7; }
+}
+@-webkit-keyframes blink {
+  0% { background: #7e7; }
+  50% { background: none; }
+  100% { background: #7e7; }
+}
+@keyframes blink {
+  0% { background: #7e7; }
+  50% { background: none; }
+  100% { background: #7e7; }
+}
+
+/* Can style cursor different in overwrite (non-insert) mode */
+div.CodeMirror-overwrite div.CodeMirror-cursor {}
+
+.cm-tab { display: inline-block; text-decoration: inherit; }
+
+.CodeMirror-ruler {
+  border-left: 1px solid #ccc;
+  position: absolute;
+}
+
+/* DEFAULT THEME */
+
+.cm-s-default .cm-keyword {color: #708;}
+.cm-s-default .cm-atom {color: #219;}
+.cm-s-default .cm-number {color: #164;}
+.cm-s-default .cm-def {color: #00f;}
+.cm-s-default .cm-variable,
+.cm-s-default .cm-punctuation,
+.cm-s-default .cm-property,
+.cm-s-default .cm-operator {}
+.cm-s-default .cm-variable-2 {color: #05a;}
+.cm-s-default .cm-variable-3 {color: #085;}
+.cm-s-default .cm-comment {color: #a50;}
+.cm-s-default .cm-string {color: #a11;}
+.cm-s-default .cm-string-2 {color: #f50;}
+.cm-s-default .cm-meta {color: #555;}
+.cm-s-default .cm-qualifier {color: #555;}
+.cm-s-default .cm-builtin {color: #30a;}
+.cm-s-default .cm-bracket {color: #997;}
+.cm-s-default .cm-tag {color: #170;}
+.cm-s-default .cm-attribute {color: #00c;}
+.cm-s-default .cm-header {color: blue;}
+.cm-s-default .cm-quote {color: #090;}
+.cm-s-default .cm-hr {color: #999;}
+.cm-s-default .cm-link {color: #00c;}
+
+.cm-negative {color: #d44;}
+.cm-positive {color: #292;}
+.cm-header, .cm-strong {font-weight: bold;}
+.cm-em {font-style: italic;}
+.cm-link {text-decoration: underline;}
+.cm-strikethrough {text-decoration: line-through;}
+
+.cm-s-default .cm-error {color: #f00;}
+.cm-invalidchar {color: #f00;}
+
+/* Default styles for common addons */
+
+div.CodeMirror span.CodeMirror-matchingbracket {color: #0f0;}
+div.CodeMirror span.CodeMirror-nonmatchingbracket {color: #f22;}
+.CodeMirror-matchingtag { background: rgba(255, 150, 0, .3); }
+.CodeMirror-activeline-background {background: #e8f2ff;}
+
+/* STOP */
+
+/* The rest of this file contains styles related to the mechanics of
+   the editor. You probably shouldn't touch them. */
+
+.CodeMirror {
+  position: relative;
+  overflow: hidden;
+  background: white;
+}
+
+.CodeMirror-scroll {
+  overflow: scroll !important; /* Things will break if this is overridden */
+  /* 30px is the magic margin used to hide the element's real scrollbars */
+  /* See overflow: hidden in .CodeMirror */
+  margin-bottom: -30px; margin-right: -30px;
+  padding-bottom: 30px;
+  height: 100%;
+  outline: none; /* Prevent dragging from highlighting the element */
+  position: relative;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+.CodeMirror-sizer {
+  position: relative;
+  border-right: 30px solid transparent;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+/* The fake, visible scrollbars. Used to force redraw during scrolling
+   before actuall scrolling happens, thus preventing shaking and
+   flickering artifacts. */
+.CodeMirror-vscrollbar, .CodeMirror-hscrollbar, .CodeMirror-scrollbar-filler, .CodeMirror-gutter-filler {
+  position: absolute;
+  z-index: 6;
+  display: none;
+}
+.CodeMirror-vscrollbar {
+  right: 0; top: 0;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+.CodeMirror-hscrollbar {
+  bottom: 0; left: 0;
+  overflow-y: hidden;
+  overflow-x: scroll;
+}
+.CodeMirror-scrollbar-filler {
+  right: 0; bottom: 0;
+}
+.CodeMirror-gutter-filler {
+  left: 0; bottom: 0;
+}
+
+.CodeMirror-gutters {
+  position: absolute; left: 0; top: 0;
+  z-index: 3;
+}
+.CodeMirror-gutter {
+  white-space: normal;
+  height: 100%;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  display: inline-block;
+  margin-bottom: -30px;
+  /* Hack to make IE7 behave */
+  *zoom:1;
+  *display:inline;
+}
+.CodeMirror-gutter-wrapper {
+  position: absolute;
+  z-index: 4;
+  height: 100%;
+}
+.CodeMirror-gutter-elt {
+  position: absolute;
+  cursor: default;
+  z-index: 4;
+}
+.CodeMirror-gutter-wrapper {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+.CodeMirror-lines {
+  cursor: text;
+  min-height: 1px; /* prevents collapsing before first draw */
+}
+.CodeMirror pre {
+  /* Reset some styles that the rest of the page might have set */
+  -moz-border-radius: 0; -webkit-border-radius: 0; border-radius: 0;
+  border-width: 0;
+  background: transparent;
+  font-family: inherit;
+  font-size: inherit;
+  margin: 0;
+  white-space: pre;
+  word-wrap: normal;
+  line-height: inherit;
+  color: inherit;
+  z-index: 2;
+  position: relative;
+  overflow: visible;
+  -webkit-tap-highlight-color: transparent;
+}
+.CodeMirror-wrap pre {
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  word-break: normal;
+}
+
+.CodeMirror-linebackground {
+  position: absolute;
+  left: 0; right: 0; top: 0; bottom: 0;
+  z-index: 0;
+}
+
+.CodeMirror-linewidget {
+  position: relative;
+  z-index: 2;
+  overflow: auto;
+}
+
+.CodeMirror-widget {}
+
+.CodeMirror-code {
+  outline: none;
+}
+
+.CodeMirror-measure {
+  position: absolute;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+}
+.CodeMirror-measure pre { position: static; }
+
+.CodeMirror div.CodeMirror-cursor {
+  position: absolute;
+  border-right: none;
+  width: 0;
+}
+
+div.CodeMirror-cursors {
+  visibility: hidden;
+  position: relative;
+  z-index: 3;
+}
+.CodeMirror-focused div.CodeMirror-cursors {
+  visibility: visible;
+}
+
+.CodeMirror-selected { background: #d9d9d9; }
+.CodeMirror-focused .CodeMirror-selected { background: #d7d4f0; }
+.CodeMirror-crosshair { cursor: crosshair; }
+.CodeMirror ::selection { background: #d7d4f0; }
+.CodeMirror ::-moz-selection { background: #d7d4f0; }
+
+.cm-searching {
+  background: #ffa;
+  background: rgba(255, 255, 0, .4);
+}
+
+/* IE7 hack to prevent it from returning funny offsetTops on the spans */
+.CodeMirror span { *vertical-align: text-bottom; }
+
+/* Used to force a border model for a node */
+.cm-force-border { padding-right: .1px; }
+
+@media print {
+  /* Hide the cursor when printing */
+  .CodeMirror div.CodeMirror-cursors {
+    visibility: hidden;
+  }
+}
+
+/* See issue #2901 */
+.cm-tab-wrap-hack:after { content: ''; }
+
+/* Help users use markselection to safely style text background */
+span.CodeMirror-selectedtext { background: none; }
+</style>
+        <style>/*
+Copyright (C) 2011 by MarkLogic Corporation
+Author: Mike Brevoort <mike@brevoort.com>
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+*/
+.cm-s-xq-light span.cm-keyword {line-height: 1em; font-weight: bold; color: #5A5CAD; }
+.cm-s-xq-light span.cm-atom {color: #6C8CD5;}
+.cm-s-xq-light span.cm-number {color: #164;}
+.cm-s-xq-light span.cm-def {text-decoration:underline;}
+.cm-s-xq-light span.cm-variable {color: black; }
+.cm-s-xq-light span.cm-variable-2 {color:black;}
+.cm-s-xq-light span.cm-variable-3 {color: black; }
+.cm-s-xq-light span.cm-property {}
+.cm-s-xq-light span.cm-operator {}
+.cm-s-xq-light span.cm-comment {color: #0080FF; font-style: italic;}
+.cm-s-xq-light span.cm-string {color: red;}
+.cm-s-xq-light span.cm-meta {color: yellow;}
+.cm-s-xq-light span.cm-qualifier {color: grey}
+.cm-s-xq-light span.cm-builtin {color: #7EA656;}
+.cm-s-xq-light span.cm-bracket {color: #cc7;}
+.cm-s-xq-light span.cm-tag {color: #3F7F7F;}
+.cm-s-xq-light span.cm-attribute {color: #7F007F;}
+.cm-s-xq-light span.cm-error {color: #f00;}
+
+.cm-s-xq-light .CodeMirror-activeline-background {background: #e8f2ff !important;}
+.cm-s-xq-light .CodeMirror-matchingbracket {outline:1px solid grey;color:black !important;background:yellow;}</style>
+
+        <style>
+            :host {
+                display: block;
+                position: relative;
+            }
+            .CodeMirror {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+            }
+        </style>
+    </template>
+    
+</polymer-element><polymer-element name="pojoviz-dev" assetpath="elements/dev/">
+    <template>
+        <style>
+            .full-height {
+                height: 100vh!important;
+            }
+
+            code-mirror {
+                height: 600px;
+            }
+
+            iframe {
+                height: 100vh!important;
+            }
+
+            .red {
+                color: red;
+            }
+
+            .green {
+                color: green;
+            }
+        </style>
+
+        <core-ajax id="ajax" on-core-response="{{handleResponse}}">
+        </core-ajax>
+
+        <div horizontal="" layout="">
+            <div flex="" class="full-height">
+                <h1>Playground</h1>
+                <paper-button class="red" on-click="{{ goBack }}">Go Back</paper-button>
+                <paper-button class="green" on-click="{{ runCode }}">Run code</paper-button>
+
+                <code-mirror id="codeMirror" mode="javascript" on-code-change="{{ onCodeChange }}" value="{{ code }}"></code-mirror>
+            </div>
+
+            <div flex="" two="" class="full-height">
+                <div id="iframe"></div>
+            </div>
+        </div>
+
+    </template>
+    
 </polymer-element></div>
-    <pojoviz-app></pojoviz-app>
+    <core-animated-pages id="root-pages" transitions="slide-from-right" valueattr="label" selected="app">
+        <section label="app">
+            <pojoviz-app></pojoviz-app>
+        </section>
+
+        <section label="dev">
+            <pojoviz-dev></pojoviz-dev>
+        </section>
+    </core-animated-pages>
 
 	<!-- app -->
 	
@@ -5466,10 +6046,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 	
 	
 
-    <!--index specific scripts-->
 	
 
 	
-
 
 <script charset="utf-8" src="vulcanize.js"></script></body></html>

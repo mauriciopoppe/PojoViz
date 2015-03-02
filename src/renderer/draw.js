@@ -4,8 +4,13 @@
 var dagre = require('dagre');
 var assert = require('assert');
 var _ = require('lodash');
+var iframe = require('iframe');
+
 var pojoviz = global.pojoviz;
 var utils = pojoviz.utils;
+
+// the iframe created to append in the playground
+var iFrameEl;
 
 var renderer;
 module.exports = {
@@ -232,5 +237,26 @@ module.exports = {
    */
   getCurrentRenderer: function () {
     return renderer;
+  },
+
+  createIFrame: function (selector) {
+    iFrameEl = iframe({
+      container: document.querySelector(selector)
+    });
+  },
+
+  renderToIFrame: function (code) {
+    iFrameEl.setHTML({
+      src: '/public/playground.html',
+      sandboxAttributes: ['allow-same-origin', 'allow-scripts']
+    });
+    // iframes are weird!
+    var iframeWindow = iFrameEl.iframe.contentWindow;
+    iframeWindow.onload = function () {
+      var doc = iframeWindow.document;
+      var script = doc.createElement('script');
+      doc.head.appendChild(script);
+      script.innerHTML = 'setTimeout(function(){\n;' + code + '\n;}, 0)';
+    };
   }
 };

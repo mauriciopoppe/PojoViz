@@ -91,6 +91,7 @@ module.exports = function (options) {
     return bundle
       .bundle()
       .pipe(source(pkg.name + '-vendor.js'))
+      // uncommenting this gives a strange error in the light file of the t3 package
       //.pipe(buffer())
       //.pipe(uglify())
       .pipe(gulp.dest(options.build));

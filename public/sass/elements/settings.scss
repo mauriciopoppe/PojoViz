@@ -1,26 +1,32 @@
 @import '../base';
 
-pojoviz-settings::shadow {
-  // slider color
-  paper-slider::shadow {
-    #sliderKnobInner, #sliderKnobInner::before,
-    #sliderBar::shadow #activeProgress {
-      background-color: $main;
+html /deep/ {
+  pojoviz-settings::shadow {
+    section {
+      padding: 40px;
     }
-  }
-  // checkbox color
-  paper-checkbox::shadow {
-    #ink[checked] {
-      color: $main;
+
+    // slider color
+    paper-slider::shadow {
+      #sliderKnobInner, #sliderKnobInner::before,
+      #sliderBar::shadow #activeProgress {
+        background-color: $main;
+      }
     }
-    #checkbox.checked {
-      border-color: $main;
+    // checkbox color
+    paper-checkbox::shadow {
+      #ink[checked] {
+        color: $main;
+      }
+      #checkbox.checked {
+        border-color: $main;
+      }
     }
-  }
-  // radio-button color
-  paper-radio-button::shadow {
-    #onRadio {
-      background-color: $main;
+    // radio-button color
+    paper-radio-button::shadow {
+      #onRadio {
+        background-color: $main;
+      }
     }
   }
 }

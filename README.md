@@ -68,5 +68,4 @@ Special thanks once again to [@mrdoob](https://twitter.com/mrdoob) the author of
 - [marked](https://github.com/chjj/marked)
 - [t3](http://maurizzzio.github.io/t3/docs/)
 
-----
-[development]: https://github.com/maurizzzio/PojoViz/
+[development]: https://github.com/maurizzzio/PojoViz/tree/master/src/DEV_README.md

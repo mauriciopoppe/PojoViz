@@ -12,6 +12,13 @@
   };
 })(window.history);
 
-window.$$ = function (selector) {
-  return document.querySelector(selector);
-};
+//window.$$ = function (selector) {
+//  return document.querySelector(selector);
+//};
+
+(function () {
+  var pages = document.querySelector('#root-pages');
+  document.addEventListener('page-change', function (e) {
+    pages.selected = e.detail;
+  });
+})();

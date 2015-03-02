@@ -1495,8 +1495,7 @@ Analyzer.prototype = {
     // visit function constructors verify if `value` is a
     // function constructor (it's name must be capitalized to be one)
     if (properties.isFunction && this.visitConstructors) {
-      if (typeof value.name === 'string' &&
-          value.name.search(/^[A-Z]/) > -1) {
+      if (utils.isConstructor(value)) {
         properties.isTraversable = true;
         properties.isConstructor = true;
       }
@@ -3006,7 +3005,8 @@ utils.isFunction = function (v) {
  */
 utils.isConstructor = function (v) {
   return this.isFunction(v) && typeof v.name === 'string' &&
-      v.name.length && v.prototype && v.prototype.constructor === v;
+      v.name.length && v.name.search(/^[A-Z]/) > -1 &&
+      v.prototype && v.prototype.constructor === v;
 };
 
 /**

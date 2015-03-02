@@ -3,7 +3,7 @@ var path = require('path');
 var _ = require('lodash');
 var me = __dirname;
 var pkg = require('./package.json');
-
+var exec = require('child_process').exec;
 var options = {
   // client side project
   self: './',
@@ -57,8 +57,11 @@ gulp.task('default', ['watch'], function () {
   gulp.start('server');
 });
 
-gulp.task('build:page', ['compass'], function () {
+gulp.task('build:page', ['compass'], function (cb) {
   gulp.start('polymer');
+  exec('cp -r public/css/ build/', function (err) {
+    cb(err);
+  });
 });
 
 gulp.task('build:app', ['browserify']);

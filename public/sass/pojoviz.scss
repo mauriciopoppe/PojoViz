@@ -7,6 +7,7 @@
 @import "base";
 @import "palette/red";
 @import "common";
+@import "elements/ide";
 @import "elements/readme";
 @import "elements/settings";
 @import "elements/inspector";
@@ -14,6 +15,10 @@
 @import "elements/about";
 
 @import "renderer/d3";
+
+*, *:before, *:after {
+  font-family: Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
 
 #__bs_notify__ {
   display: none!important;
@@ -36,9 +41,6 @@ body {
       left: 0;
       width: 100%;
       height: 100%;
-      section {
-        padding: 40px;
-      }
     }
     .logo {
       text-align: center;
@@ -63,6 +65,9 @@ body {
       core-toolbar {
         background-color: $main;
       }
+    }
+    #playground {
+      font-size: 12px;
     }
 
     // readme

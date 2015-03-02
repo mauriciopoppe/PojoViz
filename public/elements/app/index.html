@@ -1,16 +1,16 @@
-<link rel="import" href="../bower_components/core-scaffold/core-scaffold.html">
-<link rel="import" href="../bower_components/core-toolbar/core-toolbar.html">
-<link rel="import" href="../bower_components/core-menu/core-menu.html">
-<link rel="import" href="../bower_components/core-menu/core-submenu.html">
-<link rel="import" href="../bower_components/core-item/core-item.html">
-<link rel="import" href="../bower_components/core-animated-pages/core-animated-pages.html">
-<link rel="import" href="../bower_components/core-animated-pages/transitions/cross-fade.html">
-<link rel="import" href="../bower_components/core-tooltip/core-tooltip.html">
-<link rel="import" href="../bower_components/core-icon/core-icon.html">
-<link rel="import" href="../bower_components/paper-toast/paper-toast.html">
-<link rel="import" href="../bower_components/paper-progress/paper-progress.html">
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/core-scaffold/core-scaffold.html">
+<link rel="import" href="../../bower_components/core-toolbar/core-toolbar.html">
+<link rel="import" href="../../bower_components/core-menu/core-menu.html">
+<link rel="import" href="../../bower_components/core-menu/core-submenu.html">
+<link rel="import" href="../../bower_components/core-item/core-item.html">
+<link rel="import" href="../../bower_components/core-animated-pages/core-animated-pages.html">
+<link rel="import" href="../../bower_components/core-animated-pages/transitions/cross-fade.html">
+<link rel="import" href="../../bower_components/core-tooltip/core-tooltip.html">
+<link rel="import" href="../../bower_components/core-icon/core-icon.html">
+<link rel="import" href="../../bower_components/paper-toast/paper-toast.html">
+<link rel="import" href="../../bower_components/paper-progress/paper-progress.html">
 
-<link rel="import" href="app.html">
 <link rel="import" href="settings.html">
 <link rel="import" href="about.html">
 <link rel="import" href="search.html">
@@ -42,7 +42,13 @@
 
             <!-- title + toolbar -->
             <div id="toolbar" tool horizontal layout center style="width: 100%">
-                <div class="title"></div>
+                <!--<div class="title"></div>-->
+                <paper-button id="playground" icon="exit-to-app" on-click="{{ onPlaygroundClick }}">
+                    <core-icon icon="exit-to-app"></core-icon>
+                    Playground
+                </paper-button>
+
+                <!--separator-->
                 <div flex></div>
 
                 <!-- GitHub buttons: see http://ghbtns.com -->
@@ -60,6 +66,12 @@
                     data-command="readme"
                     class="toolbar-page"
                     icon="description">
+                </core-icon-button>
+                <core-icon-button
+                    id="development"
+                    data-command="development"
+                    class="toolbar-page"
+                    icon="create">
                 </core-icon-button>
             </div>
 
@@ -94,7 +106,12 @@
                 </section>
                 <section label="readme" class="page">
                     <div class="wrapper" cross-fade>
-                        <pojoviz-readme></pojoviz-readme>
+                        <pojoviz-readme url="/README.md"></pojoviz-readme>
+                    </div>
+                </section>
+                <section label="development" class="page">
+                    <div class="wrapper" cross-fade>
+                        <pojoviz-readme url="/src/DEV_README.md"></pojoviz-readme>
                     </div>
                 </section>
             </core-animated-pages>
@@ -129,7 +146,7 @@
                   // if the hash doesn't start with render/
                   if (hash.indexOf('render/') === -1) {
                     // default to readme
-                    hash = 'readme';
+//                    hash = 'readme';
                   }
                   me.changeHistory(hash);
                 };
@@ -262,6 +279,10 @@
                 var tokens = command.split('/');
                 tokens.shift();
                 return tokens.join('/');
+            },
+
+            onPlaygroundClick: function () {
+                this.fire('page-change', 'dev', document);
             }
         });
     </script>

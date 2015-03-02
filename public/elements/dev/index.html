@@ -1,0 +1,87 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/core-ajax/core-ajax.html">
+<link rel="import" href="../../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../app/readme.html">
+
+<link rel="import" href="codeMirror.html"/>
+
+<polymer-element name="pojoviz-dev">
+    <template>
+        <style>
+            .full-height {
+                height: 100vh!important;
+            }
+
+            code-mirror {
+                height: 600px;
+            }
+
+            iframe {
+                height: 100vh!important;
+            }
+
+            .red {
+                color: red;
+            }
+
+            .green {
+                color: green;
+            }
+        </style>
+
+        <core-ajax id="ajax" on-core-response="{{handleResponse}}">
+        </core-ajax>
+
+        <div horizontal layout>
+            <div flex class="full-height">
+                <h1>Playground</h1>
+                <paper-button class="red" on-click="{{ goBack }}">Go Back</paper-button>
+                <paper-button class="green" on-click="{{ runCode }}">Run code</paper-button>
+
+                <code-mirror id="codeMirror" mode="javascript" on-code-change="{{ onCodeChange }}" value="{{ code }}"></code-mirror>
+            </div>
+
+            <div flex two class="full-height">
+                <div id="iframe"></div>
+            </div>
+        </div>
+
+    </template>
+    <script>
+        Polymer('pojoviz-dev', {
+            ready: function () {
+                var me = this;
+                document.addEventListener('pojoviz-render-example', function (e) {
+                    var scriptUrl = e.detail;
+                    me.$.ajax.url = scriptUrl;
+                    me.$.ajax.go();
+                });
+
+                pojoviz.draw.createIFrame('html /deep/ #iframe');
+            },
+
+            handleResponse: function (ev, detail) {
+                var me = this;
+                var response = detail.response;
+                this.code = response;
+                me.refreshEditor();
+                this.fire('page-change', 'dev', document);
+            },
+
+            refreshEditor: function () {
+                var me = this;
+                setTimeout(function () {
+                    me.$.codeMirror.refresh();
+                }, 0);
+            },
+
+            goBack: function () {
+                this.fire('page-change', 'app', document);
+            },
+
+            runCode: function () {
+                pojoviz.draw.renderToIFrame(this.$.codeMirror.mirror.getValue());
+            }
+        });
+    </script>
+</polymer-element>

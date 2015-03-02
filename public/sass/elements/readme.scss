@@ -1,7 +1,68 @@
+@import '../base';
+
 html {
   /deep/ {
     section[label=readme] {
       line-height: 20px;
+    }
+
+    pojoviz-readme {
+      /deep/ #parsed {
+        padding: 40px;
+      }
+    }
+
+    pojoviz-readme[script] {
+      /deep/ {
+
+        #parsed {
+          padding: 0;
+        }
+
+        .playground {
+          padding: 20px;
+          border: 1px solid black;
+          width: 800px;
+          margin: 0 auto;
+          @include border-radius(10px);
+          position: relative;
+          .script-src {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: $main-light;
+            color: white;
+            padding: 5px 10px;
+            @include border-top-right-radius(10px);
+            @include border-bottom-left-radius(10px);
+          }
+        }
+
+        .script-mask {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          opacity: 0.5;
+          margin: -20px 0 0 -20px;
+          @include border-radius(10px);
+          &:hover {
+            cursor: pointer;
+            core-icon {
+              color: $main;
+            }
+          }
+        }
+
+        core-icon {
+          position: absolute;
+          top: calc(50% - 50px);
+          left: calc(50% - 50px);
+        }
+
+        pre {
+          margin: 0;
+        }
+      }
     }
   }
 }

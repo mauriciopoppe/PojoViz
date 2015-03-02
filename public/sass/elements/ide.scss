@@ -1,0 +1,9 @@
+@import '../base';
+html /deep/ {
+  pojoviz-dev /deep/ {
+    code-mirror {
+      margin: 20px;
+      @include box-shadow(#eee 0 0 25px);
+    }
+  }
+}

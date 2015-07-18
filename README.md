@@ -17,7 +17,6 @@ How many times did you find an awesome library/framework and wanted to see how i
 
 ## Development
 
-TODO
 See [development]
 
 ## Changelog
@@ -42,12 +41,11 @@ v0.1.0
 
 ## TODO list
 
-- Render NodeJS global objects
-- Render NodeJS packages
-- Create a dev tutorial on how to visualize libraries
-- Render scope variables analyzing the ast (see Esprima)
-- Move to the selected object on dot click
-- Undo/redo
+[x] Render NodeJS global objects
+[x] Render NodeJS packages (done in [colony](http://hughsk.io/colony/)) 
+[x] Create a dev tutorial on how to visualize libraries
+[ ] Render scope variables analyzing the ast (see Esprima)
+[ ] Move to the selected object on edge click
 
 ## Screenshots
 <img class="center" src="http://f.cl.ly/items/0s2I0u2t2y1x2N3o0n2P/pojoviz-search.mov.gif" alt="">
@@ -68,4 +66,4 @@ Special thanks once again to [@mrdoob](https://twitter.com/mrdoob) the author of
 - [marked](https://github.com/chjj/marked)
 - [t3](http://maurizzzio.github.io/t3/docs/)
 
-[development]: https://github.com/maurizzzio/PojoViz/tree/master/src/DEV_README.md
+[development]: http://maurizzzio.github.io/PojoViz/public/vulcanize.html#development

@@ -26,13 +26,13 @@ In short %PojoViz receives as input a collection of JS objects and then:
 
 ## Development
 
-See [development](#development)
+See [development](http://maurizzzio.github.io/PojoViz/public/vulcanize.html#development)
 
 ## FAQ
 
 ### I want to see the structure of my library, how can I do it?
 
-See [an interactive tutorial on how to visualize your stuff](#development)
+See [an interactive tutorial on how to visualize your stuff](http://maurizzzio.github.io/PojoViz/public/vulcanize.html#development)
 
 ### This project is not analyzing some stuff I have, why?
 
@@ -61,7 +61,7 @@ To make the method `foo` and the object `bar` reachable you'd need to
 create an instance of `Point` e.g. `instance = new Point(1, 2)` %PojoViz doesn't know about how to instantiate stuff,
  however if you feed %Pojoviz `Point` AND `instance` you're good to go :)
  
-A huge description of this and other uses of %PojoViz can be found in the [development section](#development)
+A huge description of this and other uses of %PojoViz can be found in the [development section](http://maurizzzio.github.io/PojoViz/public/vulcanize.html#development)
 
 ### Can I use this stuff within the node environment
 

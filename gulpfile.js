@@ -54,6 +54,7 @@ require('./gulp/release')();
 // NOTE: gulp.watch has conflicts with watchify
 gulp.task('watch', ['watch:test', 'watch:compass', 'watch:browserify']);
 gulp.task('default', ['watch'], function () {
+  // open http://localhost:3000/public/
   gulp.start('server');
 });
 

@@ -4,7 +4,7 @@ node_js:
   - "0.10"
 
 before_install:
-  - npm install -g gulp vulcanize bower
+  - npm install -g gulp@3.8.11 vulcanize@0.7.9 bower
 #  - npm install -g browserify testem
 
 install:

@@ -17,6 +17,7 @@
 <link rel="import" href="libraryMenu.html">
 <link rel="import" href="readme.html">
 <link rel="import" href="inspector.html">
+<link rel="import" href="x-twitter-button.html">
 
 <polymer-element name="pojoviz-app">
     <template>
@@ -52,8 +53,7 @@
                 <div flex></div>
 
                 <!--twitter-->
-                <a href="https://twitter.com/share" class="twitter-share-button" data-text="pojoviz - visualization of plain old JS objects" data-via="iMauricio" data-hashtags="dataviz,d3,three.js">Tweet</a>
-                <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                <x-twitter-button tweetText="pojoviz - visualization of plain old JS objects" via="iMauricio" hashtag="pojoviz,dataviz,d3,threejs"></x-twitter-button>
 
                 <!-- GitHub buttons: see http://ghbtns.com -->
                 <iframe src="http://ghbtns.com/github-btn.html?user=maurizzzio&amp;repo=PojoViz&amp;type=watch&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>

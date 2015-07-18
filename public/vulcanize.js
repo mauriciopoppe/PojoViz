@@ -47861,7 +47861,32 @@ Polymer('paper-dialog');;
             }
 		});
 	;
-!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');;
+
+		Polymer('x-twitter-button', {
+			lang: this.lang ? this.lang : 'en',
+			count: this.count ? this.count : 'horizontal', 
+			size: this.size ? this.size : 'm',
+			referer: encodeURIComponent(document.location.href),
+			tweetText: this.tweetText ? this.tweetText : escape(document.title),
+			url: this.url ? this.url : encodeURIComponent(window.location.href),
+			hashtag: this.hashtag ? this.hashtag : '',
+			related: this.related ? this.related : '',
+			dnt: this.dnt ? true : false,
+			height: '',
+			width: '',
+			ready: function() {
+				this.getVia()
+				},
+			getVia: function() {
+				var v = '';
+				if(this.via){
+					v = '&via='+this.via;
+				}
+				this.via = v;
+			}
+			
+		});
+	;
 
         Polymer('pojoviz-app', {
             created: function () {

@@ -1055,6 +1055,7 @@ in another form (e.g. a text block following the spinner).
 
 
 
+
 	
 
 
@@ -5508,6 +5509,23 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 	</template>
 	
+</polymer-element>
+<polymer-element name="x-twitter-button" attributes="lang count size tweetText url hashtag via related dnt height width" assetpath="elements/app/">
+
+	<template>	
+		<iframe scrolling="no" frameborder="0" allowtransparency="true" src="https://platform.twitter.com/widgets/tweet_button.html?count={{count}}&amp;id=twitter-widget-0&amp;lang={{lang}}&amp;hashtags={{hashtag}}&amp;original_referer={{referer}}&amp;size={{size}}&amp;text={{tweetText}}&amp;url={{url}}&amp;related={{related}}&amp;dnt={{dnt}}{{via}}" class="twitter-share-button twitter-tweet-button twitter-count-{{count}} {{size}}" title="Twitter Tweet Button" data-twttr-rendered="true" style="height:{{height}}px;width:{{width}}px"></iframe>
+		
+			
+		<style>
+		.twitter-share-button {width:110px; height:20px;}
+		.twitter-share-button.l {width:140px; height:28px;}
+		.twitter-share-button.twitter-count-vertical {width:65px; height:62px;}	
+		.twitter-share-button.twitter-count-none {width:90px;}		
+		</style>
+	</template>
+
+	
+
 </polymer-element><polymer-element name="pojoviz-app" assetpath="elements/app/">
     <template>
         <core-scaffold id="scaffold" responsivewidth="1000px">
@@ -5542,8 +5560,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 <div flex=""></div>
 
                 <!--twitter-->
-                <a href="https://twitter.com/share" class="twitter-share-button" data-text="pojoviz - visualization of plain old JS objects" data-via="iMauricio" data-hashtags="dataviz,d3,three.js">Tweet</a>
-                
+                <x-twitter-button tweettext="pojoviz - visualization of plain old JS objects" via="iMauricio" hashtag="pojoviz,dataviz,d3,threejs"></x-twitter-button>
 
                 <!-- GitHub buttons: see http://ghbtns.com -->
                 <iframe src="http://ghbtns.com/github-btn.html?user=maurizzzio&amp;repo=PojoViz&amp;type=watch&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>

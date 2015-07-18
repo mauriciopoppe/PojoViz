@@ -137,8 +137,12 @@
         Polymer('pojoviz-app', {
             created: function () {
                 var me = this;
+                window.onhashchange = function () {
+                    window.pushState(window.location.hash.substr(1));
+                };
+
                 window.onpopstate = history.onpushstate = function(e) {
-                    var command = e.state.command;
+                    var command = (e.state && e.state.command) || window.location.hash.substr(1);
                     if (~command.indexOf('render/')) {
                         me.runLibrary(me.getLibraryFromCommand(command));
                         return;

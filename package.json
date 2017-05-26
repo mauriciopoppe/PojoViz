@@ -4,7 +4,7 @@
   "description": "Plain Old JavaScript Visualization",
   "repository": {
     "type": "git",
-    "url": "https://github.com/maurizzzio/PojoViz"
+    "url": "https://github.com/mauriciopoppe/PojoViz"
   },
   "keywords": [
     "visualization",
@@ -20,7 +20,7 @@
     "src/*"
   ],
   "author": "Mauricio Poppe <mauricio.poppe@gmail.com>",
-  "bugs": "https://github.com/maurizzzio/PojoViz/issues",
+  "bugs": "https://github.com/mauriciopoppe/PojoViz/issues",
   "license": "BSD",
   "browserify": {
     "transform": [

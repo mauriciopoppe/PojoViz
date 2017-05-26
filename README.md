@@ -1,4 +1,4 @@
-PojoViz - Plain Old JavaScript Object Visualization [![Build Status](https://travis-ci.org/maurizzzio/PojoViz.svg?branch=master)](https://travis-ci.org/maurizzzio/PojoViz)
+PojoViz - Plain Old JavaScript Object Visualization [![Build Status](https://travis-ci.org/mauriciopoppe/PojoViz.svg?branch=master)](https://travis-ci.org/mauriciopoppe/PojoViz)
 =======
 
 %PojoViz is a tool to analyze the plain objects of a JavaScript object hierarchy by finding all the relationships found between the hierarchy entry point (in most libraries/frameworks a global variable) and the objects/functions linked to it.
@@ -26,13 +26,13 @@ In short %PojoViz receives as input a collection of JS objects and then:
 
 ## Development
 
-See [development](http://maurizzzio.github.io/PojoViz/public/vulcanize.html#development)
+See [development](http://mauriciopoppe.github.io/PojoViz/public/vulcanize.html#development)
 
 ## FAQ
 
 ### I want to see the structure of my library, how can I do it?
 
-See [an interactive tutorial on how to visualize your stuff](http://maurizzzio.github.io/PojoViz/public/vulcanize.html#development)
+See [an interactive tutorial on how to visualize your stuff](http://mauriciopoppe.github.io/PojoViz/public/vulcanize.html#development)
 
 ### This project is not analyzing some stuff I have, why?
 
@@ -61,7 +61,7 @@ To make the method `foo` and the object `bar` reachable you'd need to
 create an instance of `Point` e.g. `instance = new Point(1, 2)` %PojoViz doesn't know about how to instantiate stuff,
  however if you feed %Pojoviz `Point` AND `instance` you're good to go :)
  
-A huge description of this and other uses of %PojoViz can be found in the [development section](http://maurizzzio.github.io/PojoViz/public/vulcanize.html#development)
+A huge description of this and other uses of %PojoViz can be found in the [development section](http://mauriciopoppe.github.io/PojoViz/public/vulcanize.html#development)
 
 ### Can I use this stuff within the node environment
 
@@ -95,4 +95,4 @@ Special thanks once again to [@mrdoob](https://twitter.com/mrdoob) the author of
 - [Dagre](https://github.com/cpettitt/dagre)
 - [Gulp](http://gulpjs.com/)
 - [marked](https://github.com/chjj/marked)
-- [t3](http://maurizzzio.github.io/t3/docs/)
+- [t3](http://mauriciopoppe.github.io/t3/docs/)

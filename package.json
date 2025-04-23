@@ -19,7 +19,7 @@
   "files": [
     "src/*"
   ],
-  "author": "Mauricio Poppe <mauricio.poppe@gmail.com>",
+  "author": "Mauricio Poppe",
   "bugs": "https://github.com/mauriciopoppe/PojoViz/issues",
   "license": "BSD",
   "browserify": {

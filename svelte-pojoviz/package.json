@@ -14,8 +14,11 @@
     "vite": "^6.3.5"
   },
   "dependencies": {
+    "dagre": "~0.4.6",
     "highlight.js": "^11.11.1",
+    "lodash": "~3.2.0",
     "marked": "^16.0.0",
-    "monaco-editor": "^0.52.2"
+    "monaco-editor": "^0.52.2",
+    "t3-boilerplate": "^0.2.0"
   }
 }

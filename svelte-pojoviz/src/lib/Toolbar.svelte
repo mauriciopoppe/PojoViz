@@ -23,7 +23,7 @@
   <Search />
   <About />
   <button on:click={() => onPageClick('settings')}>Settings</button>
-  <button on:click={() => onPageClick('readme')}>Readme</button>
+  <button on:click={() => onPageClick('')}>Readme</button>
   <button on:click={() => onPageClick('development')}>Development</button>
 </div>
 

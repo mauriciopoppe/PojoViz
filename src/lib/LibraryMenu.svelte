@@ -1,6 +1,7 @@
 <script>
   import { createEventDispatcher } from 'svelte';
 
+  const apiUrl = import.meta.env.BASE_URL
   export let sections = [];
 
   const dispatch = createEventDispatcher();
@@ -21,7 +22,7 @@
           history.pushState(
             { command: "" },
             "",
-            "/"
+            `${apiUrl}`
           )
         }}> README </a>
       </li>
@@ -30,7 +31,7 @@
           history.pushState(
             { command: "development" },
             "",
-            "/development"
+            `${apiUrl}development`
           )
         }}> Development </a>
       </li>

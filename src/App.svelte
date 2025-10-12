@@ -13,6 +13,7 @@
   import Dialog from './lib/Dialog.svelte';
   import InspectorForm from './lib/InspectorForm.svelte';
 
+  const apiUrl = import.meta.env.BASE_URL
   let page = location.pathname.substring(1);
   let notificationText = '';
   let showNotification = false;
@@ -45,7 +46,7 @@
   function onPageChange(event) {
     history.pushState({
       command: event.detail
-    }, "", "/" +event.detail)
+    }, "", `${apiUrl}/` +event.detail)
   }
 
   function getLibraryFromCommand(command) {
@@ -108,7 +109,7 @@
   onMount(() => {
     function onPageChange(e) {
       const command = e.detail?.state?.command;
-      if (command.startsWith('render/')) {
+      if (command.includes('render/')) {
         runLibrary(getLibraryFromCommand(command));
       } else {
         page = command;
@@ -164,16 +165,15 @@
   </aside>
   <main>
     {#if page === 'readme' || page === ''}
-      <Readme url="/README.md" />
+      <Readme url="./README.md" />
+    {:else if page === 'development'}
+      <Readme url="./DEV_README.md" />
     {:else if page === 'app'}
       <Canvas />
-      <button on:click={onRuntimeConfigurationClick}>Configuration</button>
     {:else if page === 'dev'}
       <Playground />
     {:else if page === 'settings'}
       <Settings />
-    {:else if page === 'development'}
-      <Readme url="/DEV_README.md" />
     {:else if page === 'search'}
       <Search />
     {:else if page === 'about'}

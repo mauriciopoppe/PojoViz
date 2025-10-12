@@ -1,11 +1,11 @@
 // d3 renderer setup
-pojoviz.draw.getRenderer('d3').setCanvasEl('#canvas');
+pojoviz.draw.getRenderer('d3').setCanvasEl('#canvas')
 
 // hello world object created on the window object
 window.hello = {
   world: 'pojoviz',
   aFunction: function () {}
-};
+}
 
 // internally does the following:
 // var inspector = new Inspector(config);
@@ -19,6 +19,6 @@ pojoviz.run({
     // - stringify the analyzer
     // - create a layout for the nodes
     // - render the nodes
-    pojoviz.draw.render(inspector);
+    pojoviz.draw.render(inspector)
   })
-  .done();
+  .done()

@@ -1,8 +1,8 @@
-import utils from "../util/";
-import Analyzer from "../ObjectAnalyzer";
-import { deepClone, deepMerge, template } from "../util/lodash-replacements";
+import utils from '../util/'
+import Analyzer from '../ObjectAnalyzer'
+import { deepClone, deepMerge } from '../util/lodash-replacements'
 
-const searchEngine = "https://duckduckgo.com/?q=";
+const searchEngine = 'https://duckduckgo.com/?q='
 
 /**
  * @constructor
@@ -65,7 +65,7 @@ const searchEngine = "https://duckduckgo.com/?q=";
  */
 class Inspector {
   constructor(config) {
-    config = deepMerge(deepClone(Inspector.DEFAULT_CONFIG), config);
+    config = deepMerge(deepClone(Inspector.DEFAULT_CONFIG), config)
 
     /**
      * If provided it'll be used as the starting object from the
@@ -73,13 +73,13 @@ class Inspector {
      * with the dot notation
      * @type {string}
      */
-    this.entryPoint = config.entryPoint;
+    this.entryPoint = config.entryPoint
 
     /**
      * Name to be displayed
      * @type {string}
      */
-    this.displayName = config.displayName;
+    this.displayName = config.displayName
 
     /**
      * If the inspector needs to fetch external resources use
@@ -88,7 +88,7 @@ class Inspector {
      * of another before it's fetched
      * @type {string}
      */
-    this.src = config.src;
+    this.src = config.src
 
     /**
      * Each token determines which objects will be forbidden
@@ -123,26 +123,23 @@ class Inspector {
      *
      * @type {string}
      */
-    this.forbiddenTokens = [
-      config.forbiddenTokens,
-      config.additionalForbiddenTokens,
-    ]
+    this.forbiddenTokens = [config.forbiddenTokens, config.additionalForbiddenTokens]
       .filter(function (token) {
-        return !!token;
+        return !!token
       })
-      .join("|");
+      .join('|')
 
     /**
      * This inspector is initially in a dirty state
      * @type {boolean}
      */
-    this.dirty = true;
+    this.dirty = true
 
     /**
      * Print debug info
      * @type {boolean}
      */
-    this.debug = config.debug;
+    this.debug = config.debug
 
     /**
      * To avoid reanalyzing the same structure multiple times a small
@@ -150,21 +147,21 @@ class Inspector {
      * this optimization pass alwaysDirty as true in the options
      * @type {boolean}
      */
-    this.alwaysDirty = config.alwaysDirty;
+    this.alwaysDirty = config.alwaysDirty
 
     /**
      * An instance of ObjectAnalyzer which will save all
      * the inspected objects
      * @type {ObjectAnalyzer}
      */
-    this.analyzer = new Analyzer(config.analyzerConfig);
+    this.analyzer = new Analyzer(config.analyzerConfig)
   }
 
   set(options) {
     for (const k in options) {
       if (Object.prototype.hasOwnProperty.call(options, k)) {
-        if (this.hasOwnProperty(k)) {
-          this[k] = options[k];
+        if (Object.prototype.hasOwnProperty.call(this, k)) {
+          this[k] = options[k]
         }
       }
     }
@@ -180,28 +177,21 @@ class Inspector {
    * @returns {Promise}
    */
   async init() {
-    this.debug && console.log("%cPojoViz", "font-size: 15px; color: ");
-    utils.fireGlobalEvent("pojoviz-fetch-start");
-    await this.fetch();
-    utils.fireGlobalEvent("pojoviz-fetch-end");
+    this.debug && console.log('%cPojoViz', 'font-size: 15px; color: ')
+    utils.fireGlobalEvent('pojoviz-fetch-start')
+    await this.fetch()
+    utils.fireGlobalEvent('pojoviz-fetch-end')
     if (this.alwaysDirty) {
-      this.setDirty();
+      this.setDirty()
     }
     if (this.dirty) {
-      this.debug &&
-        console.log(
-          "%cInspecting: %s",
-          "color: red",
-          this.entryPoint || this.displayName,
-        );
-      this.inspect();
+      this.debug && console.log('%cInspecting: %s', 'color: red', this.entryPoint || this.displayName)
+      this.inspect()
     }
-    return this;
+    return this
   }
 
   /**
-   * @template
-   *
    * Performs the analysis of an object given an entryPoint, before
    * performing the analysis it identifies which object need to be
    * forbidden (forbiddenTokens)
@@ -209,41 +199,39 @@ class Inspector {
    * @chainable
    */
   inspectSelf() {
-    const me = this;
-    const start = me.findNestedValueInGlobal(me.entryPoint);
-    const analyzer = this.analyzer;
+    const me = this
+    const start = me.findNestedValueInGlobal(me.entryPoint)
+    const analyzer = this.analyzer
 
     if (!start) {
-      console.error(this);
-      throw "entry point not found!";
+      console.error(this)
+      throw new Error('entry point not found!')
     }
-    me.debug && console.log("analyzing window." + me.entryPoint);
+    me.debug && console.log('analyzing window.' + me.entryPoint)
 
     // before inspect hook
-    me.beforeInspectSelf();
+    me.beforeInspectSelf()
 
     // get the objects that need to be forbidden
-    const toForbid = me.parseForbiddenTokens();
-    me.debug && console.log("forbidding: ", toForbid);
-    analyzer.forbid(toForbid, true);
+    const toForbid = me.parseForbiddenTokens()
+    me.debug && console.log('forbidding: ', toForbid)
+    analyzer.forbid(toForbid, true)
 
     // perform the analysis
-    me.debug && console.log("adding: " + start);
-    analyzer.add([start]);
+    me.debug && console.log('adding: ' + start)
+    analyzer.add([start])
 
     // after inspect hook
-    me.afterInspectSelf();
-    return me;
+    me.afterInspectSelf()
+    return me
   }
 
   /**
-   * @template
    * before inspect self hook
    */
   beforeInspectSelf() {}
 
   /**
-   * @template
    * after inspect self hook
    */
   afterInspectSelf() {}
@@ -254,35 +242,33 @@ class Inspector {
    * @returns {Array}
    */
   parseForbiddenTokens() {
-    const me = this;
-    const forbidden = this.forbiddenTokens.split("|");
-    let toForbid = [];
-    me.debug && console.log("about to forbid: ", forbidden);
+    const me = this
+    const forbidden = this.forbiddenTokens.split('|')
+    let toForbid = []
+    me.debug && console.log('about to forbid: ', forbidden)
     forbidden
       .filter(function (v) {
-        return !!v;
+        return !!v
       })
       .forEach(function (token) {
-        let arr = [];
-        let tokens;
+        let arr = []
+        let tokens
         if (token.search(/^pojoviz:/) > -1) {
-          tokens = token.split(":");
+          tokens = token.split(':')
 
           // if it's a command for the library then make sure it exists
           if (!(tokens[1] in Inspector.instances)) {
-            throw new Error(
-              `expected ${tokens[1]} to be part of Inspect.instances but it was not found!`,
-            );
+            throw new Error(`expected ${tokens[1]} to be part of Inspect.instances but it was not found!`)
           }
-          arr = Inspector.instances[tokens[1]].getItems();
+          arr = Inspector.instances[tokens[1]].getItems()
         } else if (token.search(/^window:/) > -1) {
-          tokens = token.split(":");
-          arr = [me.findNestedValueInGlobal(tokens[1])];
+          tokens = token.split(':')
+          arr = [me.findNestedValueInGlobal(tokens[1])]
         }
 
-        toForbid = toForbid.concat(arr);
-      });
-    return toForbid;
+        toForbid = toForbid.concat(arr)
+      })
+    return toForbid
   }
 
   /**
@@ -290,9 +276,9 @@ class Inspector {
    * @chainable
    */
   setDirty() {
-    this.dirty = true;
-    this.analyzer.reset();
-    return this;
+    this.dirty = true
+    this.analyzer.reset()
+    return this
   }
 
   /**
@@ -301,16 +287,15 @@ class Inspector {
    * @chainable
    */
   unsetDirty() {
-    this.dirty = false;
-    return this;
+    this.dirty = false
+    return this
   }
 
   /**
-   * @template
    * Should be called after the instance is created to modify it with
    * additional options
    */
-  modifyInstance(options) {}
+  modifyInstance() {}
 
   /**
    * @private
@@ -318,17 +303,15 @@ class Inspector {
    * @chainable
    */
   inspect() {
-    return this.unsetDirty().inspectSelf();
+    return this.unsetDirty().inspectSelf()
   }
 
   /**
-   * @template
    * Prerender hook
    */
   preRender() {}
 
   /**
-   * @template
    * Postrender hook
    */
   postRender() {}
@@ -340,7 +323,7 @@ class Inspector {
    * #inspectSelf
    */
   getItems() {
-    return [];
+    return []
   }
 
   /**
@@ -357,18 +340,18 @@ class Inspector {
    */
   findNestedValueInGlobal(nestedConfiguration) {
     if (!nestedConfiguration) {
-      return null;
+      return null
     }
-    const tokens = nestedConfiguration.split(".");
-    let start = window;
+    const tokens = nestedConfiguration.split('.')
+    let start = window
     while (tokens.length) {
-      const token = tokens.shift();
-      if (!start.hasOwnProperty(token)) {
-        return null;
+      const token = tokens.shift()
+      if (!Object.prototype.hasOwnProperty.call(start, token)) {
+        return null
       }
-      start = start[token];
+      start = start[token]
     }
-    return start;
+    return start
   }
 
   /**
@@ -379,31 +362,31 @@ class Inspector {
    */
   async fetch() {
     if (!this.src) {
-      return;
+      return
     }
 
     if (this.findNestedValueInGlobal(this.entryPoint)) {
-      console.log("resource already fetched: " + this.entryPoint);
-      return;
+      console.log('resource already fetched: ' + this.entryPoint)
+      return
     }
 
-    const srcs = this.src.split("|");
+    const srcs = this.src.split('|')
 
     const loadScript = (v) => {
       return new Promise((resolve) => {
-        utils.notification("fetching script " + v, true);
-        const script = document.createElement("script");
-        script.src = v;
+        utils.notification('fetching script ' + v, true)
+        const script = document.createElement('script')
+        script.src = v
         script.onload = () => {
-          utils.notification("completed fetching script " + v, true);
-          resolve(this.findNestedValueInGlobal(this.entryPoint));
-        };
-        document.head.appendChild(script);
-      });
-    };
+          utils.notification('completed fetching script ' + v, true)
+          resolve(this.findNestedValueInGlobal(this.entryPoint))
+        }
+        document.head.appendChild(script)
+      })
+    }
 
     for (const src of srcs) {
-      await loadScript(src);
+      await loadScript(src)
     }
   }
 
@@ -412,29 +395,22 @@ class Inspector {
    * @param visible
    */
   setBuiltInVisibility(visible) {
-    const me = this;
-    const token = "pojoviz:builtIn";
-    const arr = me.forbiddenTokens;
+    const me = this
+    const token = 'pojoviz:builtIn'
+    const arr = me.forbiddenTokens
     if (visible) {
-      arr.push(token);
+      arr.push(token)
     } else {
-      arr.splice(arr.indexOf(token), 1);
+      arr.slice(arr.indexOf(token), 1)
     }
   }
 
   showSearch(nodeName, nodeProperty) {
-    const me = this;
-    const tpl = template(
-      "${searchEngine}${lucky}${libraryName} ${nodeName} ${nodeProperty}",
-    );
-    const compiled = tpl({
-      searchEngine: searchEngine,
-      lucky: Inspector.lucky ? "!ducky" : "",
-      libraryName: me.entryPoint,
-      nodeName: nodeName,
-      nodeProperty: nodeProperty,
-    });
-    window.open(compiled);
+    const me = this
+    const lucky = Inspector.lucky ? '!ducky' : ''
+    const libraryName = me.entryPoint
+    const url = `${searchEngine}${lucky}${libraryName} ${nodeName} ${nodeProperty}`
+    window.open(url)
   }
 }
 
@@ -443,23 +419,19 @@ class Inspector {
  * (filled in the file InspectedInstances)
  * @type {Object}
  */
-Inspector.instances = null;
+Inspector.instances = null
 
 /**
  * Default forbidden commands (in node window is the window object)
  * @type {string[]}
  */
-Inspector.DEFAULT_FORBIDDEN_TOKENS_ARRAY = [
-  "pojoviz:builtIn",
-  "window:document",
-];
+Inspector.DEFAULT_FORBIDDEN_TOKENS_ARRAY = ['pojoviz:builtIn', 'window:document']
 
 /**
  * Forbidden tokens which are set by default on any Inspector instance
  * @type {string}
  */
-Inspector.DEFAULT_FORBIDDEN_TOKENS =
-  Inspector.DEFAULT_FORBIDDEN_TOKENS_ARRAY.join("|");
+Inspector.DEFAULT_FORBIDDEN_TOKENS = Inspector.DEFAULT_FORBIDDEN_TOKENS_ARRAY.join('|')
 
 /**
  * Default config used whenever an instance of Inspector is created
@@ -467,29 +439,29 @@ Inspector.DEFAULT_FORBIDDEN_TOKENS =
  */
 Inspector.DEFAULT_CONFIG = {
   src: null,
-  entryPoint: "",
-  displayName: "",
+  entryPoint: '',
+  displayName: '',
   alwaysDirty: false,
   debug: !!window.window,
   forbiddenTokens: Inspector.DEFAULT_FORBIDDEN_TOKENS,
   additionalForbiddenTokens: null,
-  analyzerConfig: {},
-};
+  analyzerConfig: {}
+}
 
 /**
  * Update the builtIn visibility of all the new instances to be created
  * @param visible
  */
 Inspector.setBuiltInVisibility = function (visible) {
-  const me = this;
-  const token = "pojoviz:builtIn";
-  const arr = me.DEFAULT_FORBIDDEN_TOKENS_ARRAY;
+  const me = this
+  const token = 'pojoviz:builtIn'
+  const arr = me.DEFAULT_FORBIDDEN_TOKENS_ARRAY
   if (visible) {
-    arr.push(token);
+    arr.push(token)
   } else {
-    arr.splice(arr.indexOf(token), 1);
+    arr.splice(arr.indexOf(token), 1)
   }
-  me.DEFAULT_CONFIG.forbiddenTokens = arr.join("|");
-};
+  me.DEFAULT_CONFIG.forbiddenTokens = arr.join('|')
+}
 
-export default Inspector;
+export default Inspector

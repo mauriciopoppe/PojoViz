@@ -1,10 +1,8 @@
-import Inspector from "./analyzer/Inspector";
-import PObject from "./analyzer/Object";
-import BuiltIn from "./analyzer/BuiltIn";
-import Global from "./analyzer/Global";
-import Angular from "./analyzer/Angular";
-
-let libraries;
+import Inspector from './analyzer/Inspector'
+import PObject from './analyzer/Object'
+import BuiltIn from './analyzer/BuiltIn'
+import Global from './analyzer/Global'
+import Angular from './analyzer/Angular'
 
 const proto = {
   /**
@@ -14,10 +12,10 @@ const proto = {
    * @chainable
    */
   create: function (options) {
-    const displayName = options.displayName || options.entryPoint;
-    const Constructor = Inspector;
-    console.log("creating a generic container for: " + displayName, options);
-    return (libraries[displayName] = new Constructor(options));
+    const displayName = options.displayName || options.entryPoint
+    const Constructor = Inspector
+    console.log('creating a generic container for: ' + displayName, options)
+    return (libraries[displayName] = new Constructor(options))
   },
   /**
    * Execute `fn` with all the properties saved in `this`
@@ -25,8 +23,8 @@ const proto = {
    * @chainable
    */
   all: function (fn) {
-    Object.values(libraries).forEach(fn);
-    return this;
+    Object.values(libraries).forEach(fn)
+    return this
   },
   /**
    * Marks all the properties saved in `this` as dirty
@@ -34,31 +32,31 @@ const proto = {
    */
   setDirty: function () {
     this.all(function (v) {
-      v.setDirty();
-    });
-    return this;
-  },
-};
+      v.setDirty()
+    })
+    return this
+  }
+}
 
-libraries = Object.create(proto);
-//console.log(libraries);
+const libraries = Object.create(proto)
+// console.log(libraries);
 Object.assign(libraries, {
   object: new PObject({
-    displayName: "Object",
+    displayName: 'Object'
   }),
   builtIn: new BuiltIn({
-    displayName: "Built In",
+    displayName: 'Built In'
   }),
   global: new Global(),
-  //popular
-  angular: new Angular(),
-  //huge
-  //three: new Inspector({
+  // popular
+  angular: new Angular()
+  // huge
+  // three: new Inspector({
   //  entryPoint: 'THREE',
   //  alwaysDirty: true
-  //})
-});
+  // })
+})
 
-Inspector.instances = libraries;
+Inspector.instances = libraries
 
-export default libraries;
+export default libraries

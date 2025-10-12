@@ -1,7 +1,7 @@
-import HashMap from "./util/HashMap";
-import hashKey from "./util/hashKey";
-import labeler from "./util/labeler";
-import utils from "./util";
+import HashMap from './util/HashMap'
+import hashKey from './util/hashKey'
+import labeler from './util/labeler'
+import utils from './util'
 
 /**
  * Given an object `obj`, this function executes `fn` only if `obj` is
@@ -15,11 +15,11 @@ import utils from "./util";
  * @param {Function} fn Function to be invoked with obj/obj.prototype according
  * to the rules cited above
  */
-function withFunctionAndPrototype(obj, fn) {
+function withFunctionAndPrototype (obj, fn) {
   if (utils.isObjectOrFunction(obj)) {
-    fn(obj);
+    fn(obj)
     if (utils.isFunction(obj) && utils.isObjectOrFunction(obj.prototype)) {
-      fn(obj.prototype);
+      fn(obj.prototype)
     }
   }
 }
@@ -68,26 +68,26 @@ function withFunctionAndPrototype(obj, fn) {
  * @param {Object} [config.visitSimpleFunctions = Analyzer.VISIT_SIMPLE_FUNCTIONS]
  */
 class Analyzer {
-  constructor(config) {
-    config = Object.assign({}, Analyzer.DEFAULT_CONFIG, config);
+  constructor (config) {
+    config = Object.assign({}, Analyzer.DEFAULT_CONFIG, config)
 
     /**
      * items registered in this instance
      * @type {HashMap}
      */
-    this.__items__ = new HashMap();
+    this.__items__ = new HashMap()
 
     /**
      * Forbidden objects
      * @type {HashMap}
      */
-    this.__forbidden__ = new HashMap();
+    this.__forbidden__ = new HashMap()
 
     /**
      * Print debug info in the console
      * @type {boolean}
      */
-    this.debug = config.debug;
+    this.debug = config.debug
 
     /**
      * True to save the properties of the objects analyzed in an
@@ -95,13 +95,13 @@ class Analyzer {
      * @type {Boolean}
      * @cfg {boolean} [cache=true]
      */
-    this.cache = config.cache;
+    this.cache = config.cache
 
     /**
      * Dfs levels
      * @type {number}
      */
-    this.levels = config.levels;
+    this.levels = config.levels
 
     /**
      * True to include function constructors in the analysis graph
@@ -109,7 +109,7 @@ class Analyzer {
      * @type {boolean}
      * @cfg {boolean} [visitConstructors=false]
      */
-    this.visitConstructors = config.visitConstructors;
+    this.visitConstructors = config.visitConstructors
 
     /**
      * True to include all the functions in the analysis graph,
@@ -117,7 +117,7 @@ class Analyzer {
      * @type {boolean}
      * @cfg {boolean} [visitSimpleFunctions=false]
      */
-    this.visitSimpleFunctions = config.visitSimpleFunctions;
+    this.visitSimpleFunctions = config.visitSimpleFunctions
 
     /**
      * True to include all the functions in the analysis graph,
@@ -125,7 +125,7 @@ class Analyzer {
      * @type {boolean}
      * @cfg {boolean} [visitSimpleFunctions=false]
      */
-    this.visitArrays = config.visitArrays;
+    this.visitArrays = config.visitArrays
 
     /**
      * @private
@@ -133,7 +133,7 @@ class Analyzer {
      * generated in #getProperties
      * @type {Object}
      */
-    this.__objectsCache__ = {};
+    this.__objectsCache__ = {}
 
     /**
      * @private
@@ -141,15 +141,15 @@ class Analyzer {
      * generated in #getOwnLinks
      * @type {Object}
      */
-    this.__linksCache__ = {};
+    this.__linksCache__ = {}
   }
 
-  set(options) {
+  set (options) {
     for (const k in options) {
       if (Object.prototype.hasOwnProperty.call(options, k)) {
-        const v = options[k];
-        if (this.hasOwnProperty(k) && k.indexOf("__") === -1) {
-          this[k] = v;
+        const v = options[k]
+        if (Object.prototype.hasOwnProperty.call(this, k) && k.indexOf('__') === -1) {
+          this[k] = v
         }
       }
     }
@@ -160,8 +160,8 @@ class Analyzer {
    * @param  {Object}  obj
    * @return {boolean}
    */
-  isForbidden(obj) {
-    return this.__forbidden__.get(obj);
+  isForbidden (obj) {
+    return this.__forbidden__.get(obj)
   }
 
   /**
@@ -184,17 +184,17 @@ class Analyzer {
    * @param {string} property
    * @returns {Object}
    */
-  buildNodeProperties(value, parent, property) {
+  buildNodeProperties (value, parent, property) {
     return {
       parent: hashKey(parent),
-      property: property,
-      //value: value,
+      property,
+      // value: value,
       type: typeof value,
       isTraversable: utils.isTraversable(value),
       isFunction: utils.isFunction(value),
       isObject: utils.isObject(value),
-      toString: utils.internalClassProperty(value),
-    };
+      toString: utils.internalClassProperty(value)
+    }
   }
 
   /**
@@ -213,44 +213,44 @@ class Analyzer {
    * @param property
    * @returns {Object}
    */
-  traversableObjectProperties(obj, property) {
-    const me = this;
-    let value;
+  traversableObjectProperties (obj, property) {
+    const me = this
+    let value
     try {
-      value = obj[property];
+      value = obj[property]
     } catch (e) {
       return {
         parent: hashKey(obj),
-        property: property,
+        property,
         unreachable: true,
-        isTraversable: false,
-      };
+        isTraversable: false
+      }
     }
     // self, parent, property
-    const properties = me.buildNodeProperties(value, obj, property);
+    const properties = me.buildNodeProperties(value, obj, property)
 
     // if the current property is a function and it's not allowed to
     // visit simple functions mark the property as not traversable
     if (properties.isFunction && !this.visitSimpleFunctions) {
-      const ownProperties = Object.getOwnPropertyNames(value);
-      let length = ownProperties.length;
+      const ownProperties = Object.getOwnPropertyNames(value)
+      let length = ownProperties.length
       // the minimum number of properties a normal function has is 5
       // - ["length", "name", "arguments", "caller", "prototype"]
 
       // an additional property retrieved is the hidden key that
       // the hash function may have already set
       if (ownProperties.indexOf(hashKey.hiddenKey) > -1) {
-        --length;
+        --length
       }
       // discard the prototype link to consider a property simple
-      if (ownProperties.indexOf("prototype") > -1) {
-        --length;
+      if (ownProperties.indexOf('prototype') > -1) {
+        --length
       }
       if (length <= 4) {
         // it's simple if it only has
         // - ["length", "name", "arguments", "caller"]
-        properties.isTraversable = false;
-        properties.isSimpleFunction = true;
+        properties.isTraversable = false
+        properties.isSimpleFunction = true
       }
     }
 
@@ -259,17 +259,17 @@ class Analyzer {
     // function constructor (it's name must be capitalized to be one)
     if (properties.isFunction && this.visitConstructors) {
       if (utils.isConstructor(value)) {
-        properties.isTraversable = true;
-        properties.isConstructor = true;
+        properties.isTraversable = true
+        properties.isConstructor = true
       }
     }
 
     // verification of the flag visitArrays when it's set to false
-    if (properties.toString === "Array" && !this.visitArrays) {
-      properties.isTraversable = false;
+    if (properties.toString === 'Array' && !this.visitArrays) {
+      properties.isTraversable = false
     }
 
-    return properties;
+    return properties
   }
 
   /**
@@ -283,69 +283,69 @@ class Analyzer {
    * @param  {boolean} [traversableOnly] True to return only the traversable properties
    * @return {Array} Array of objects with the properties described above
    */
-  getProperties(obj, traversableOnly) {
-    const me = this;
-    const hk = hashKey(obj);
-    let allProperties;
-    let nodeProperties;
+  getProperties (obj, traversableOnly) {
+    const me = this
+    const hk = hashKey(obj)
+    let allProperties
+    let nodeProperties
 
     if (!obj) {
-      throw "this method needs an object to analyze";
+      throw new Error('this method needs an object to analyze')
     }
 
     if (this.cache) {
       if (!traversableOnly && this.__objectsCache__[hk]) {
-        return this.__objectsCache__[hk];
+        return this.__objectsCache__[hk]
       }
     }
 
     // Object.getOwnPropertyNames returns an array of strings
     // with the properties (enumerable or not)
-    allProperties = Object.getOwnPropertyNames(obj);
+    allProperties = Object.getOwnPropertyNames(obj)
 
     allProperties = allProperties
       .filter(function (property) {
         // filter out forbidden properties
-        return !utils.objectPropertyIsForbidden(obj, property);
+        return !utils.objectPropertyIsForbidden(obj, property)
       })
       .map(function (property) {
         // obtain detailed info of all the valid properties
-        return me.traversableObjectProperties(obj, property);
+        return me.traversableObjectProperties(obj, property)
       })
       .filter(function (propertyDescription) {
         if (traversableOnly) {
           // filter out non traversable properties
-          return propertyDescription.isTraversable;
+          return propertyDescription.isTraversable
         }
-        return true;
-      });
+        return true
+      })
 
     // <labeler>
     // set a name on itself if it's a constructor
-    labeler(obj);
+    labeler(obj)
     // set a name on each traversable property
     allProperties
       .filter(function (propertyDescription) {
-        return propertyDescription.isTraversable;
+        return propertyDescription.isTraversable
       })
       .forEach(function (propertyDescription) {
-        labeler(obj, propertyDescription.property);
-      });
+        labeler(obj, propertyDescription.property)
+      })
 
     // special properties
     // __proto__
-    const proto = Object.getPrototypeOf(obj);
+    const proto = Object.getPrototypeOf(obj)
     if (proto) {
-      nodeProperties = me.buildNodeProperties(proto, obj, "[[Prototype]]");
-      nodeProperties.hidden = true;
-      allProperties.push(nodeProperties);
+      nodeProperties = me.buildNodeProperties(proto, obj, '[[Prototype]]')
+      nodeProperties.hidden = true
+      allProperties.push(nodeProperties)
     }
 
     if (this.cache && !traversableOnly) {
-      this.__objectsCache__[hk] = allProperties;
+      this.__objectsCache__[hk] = allProperties
     }
 
-    return allProperties;
+    return allProperties
   }
 
   /**
@@ -364,8 +364,8 @@ class Analyzer {
    * @param  {Array} objects      Array of objects to be analyzed
    * @param  {number} currentLevel Current dfs level
    */
-  analyzeObjects(objects, currentLevel) {
-    const me = this;
+  analyzeObjects (objects, currentLevel) {
+    const me = this
     if (currentLevel <= me.levels) {
       objects.forEach(function (v) {
         if (
@@ -373,7 +373,7 @@ class Analyzer {
           !me.isForbidden(v) // forbidden check
         ) {
           // add the item to the registered items pool
-          me.__items__.put(v);
+          me.__items__.put(v)
 
           // dfs to the next level
           me.analyzeObjects(
@@ -382,12 +382,12 @@ class Analyzer {
               .getOwnLinks(v)
               // to analyze the tree only the `to` property is needed
               .map(function (link) {
-                return link.to;
+                return link.to
               }),
-            currentLevel + 1,
-          );
+            currentLevel + 1
+          )
         }
-      });
+      })
     }
   }
 
@@ -405,40 +405,40 @@ class Analyzer {
    * @param  {Object} obj
    * @return {Array}
    */
-  getOwnLinks(obj) {
-    const me = this;
-    const links = [];
-    let properties;
-    const name = hashKey(obj);
+  getOwnLinks (obj) {
+    const me = this
+    const links = []
+    let properties = null
+    const name = hashKey(obj)
 
     // <debug>
-    //console.log(name);
+    // console.log(name);
     // </debug>
 
     if (me.cache && me.__linksCache__[name]) {
-      return me.__linksCache__[name];
+      return me.__linksCache__[name]
     }
 
     // args:
     // - object whose properties will be analyzed
     // - traversable properties only
-    properties = me.getProperties(obj, true);
+    properties = me.getProperties(obj, true)
 
     if (!name) {
-      console.error("the object needs to have a hashkey");
-      return [];
+      console.error('the object needs to have a hashkey')
+      return []
     }
 
     properties
       .filter(function (desc) {
         // desc.property might be [[Prototype]], since obj["[[Prototype]]"]
         // doesn't exist it's not valid a property to be accessed
-        return desc.property !== "[[Prototype]]";
+        return desc.property !== '[[Prototype]]'
       })
       .forEach(function (desc) {
-        const ref = obj[desc.property];
+        const ref = obj[desc.property]
         if (!ref) {
-          throw new Error("obj[property] should exist");
+          throw new Error('obj[property] should exist')
         }
         if (!me.isForbidden(ref)) {
           links.push({
@@ -446,58 +446,58 @@ class Analyzer {
             fromHash: hashKey(obj),
             to: ref,
             toHash: hashKey(ref),
-            property: desc.property,
-          });
+            property: desc.property
+          })
         }
-      });
+      })
 
-    const proto = Object.getPrototypeOf(obj);
+    const proto = Object.getPrototypeOf(obj)
     if (proto && !me.isForbidden(proto)) {
       links.push({
         from: obj,
         fromHash: hashKey(obj),
         to: proto,
         toHash: hashKey(proto),
-        property: "[[Prototype]]",
-      });
+        property: '[[Prototype]]'
+      })
     }
 
     if (this.cache) {
-      this.__linksCache__[name] = links;
+      this.__linksCache__[name] = links
     }
 
-    return links;
+    return links
   }
 
   /**
    * Marks this analyzer as dirty
    */
-  makeDirty() {
-    this.dirty = true;
+  makeDirty () {
+    this.dirty = true
   }
 
   /**
    * Set the number of levels for the dfs routine
    * @param {number} l
    */
-  setLevels(l) {
-    this.levels = l;
+  setLevels (l) {
+    this.levels = l
   }
 
   /**
    * Gets the items stored in this Analyzer
    * @returns {HashMap}
    */
-  getItems() {
-    return this.__items__;
+  getItems () {
+    return this.__items__
   }
 
   /**
    * Gets the items stored in this Analyzer
    * @returns {HashMap}
    */
-  getForbidden() {
-    return this.__forbidden__;
+  getForbidden () {
+    return this.__forbidden__
   }
 
   /**
@@ -508,12 +508,12 @@ class Analyzer {
    * @param  obj
    * @return {Array}
    */
-  stringifyObjectLabels(obj) {
-    const labels = labeler(obj);
+  stringifyObjectLabels (obj) {
+    const labels = labeler(obj)
     if (!labels.size()) {
-      throw new Error("object must have labels");
+      throw new Error('object must have labels')
     }
-    return labels.getValues();
+    return labels.getValues()
   }
 
   /**
@@ -525,8 +525,8 @@ class Analyzer {
    * @param  obj
    * @return {Array}
    */
-  stringifyObjectProperties(obj) {
-    return this.getProperties(obj);
+  stringifyObjectProperties (obj) {
+    return this.getProperties(obj)
   }
 
   /**
@@ -535,48 +535,48 @@ class Analyzer {
    * an object
    * @return {Object}
    */
-  stringifyObjectLinks(obj) {
-    const me = this;
+  stringifyObjectLinks (obj) {
+    const me = this
     return me.getOwnLinks(obj).map(function (link) {
       // discarded: from, to
       return {
         from: link.fromHash,
         to: link.toHash,
-        property: link.property,
-      };
-    });
+        property: link.property
+      }
+    })
   }
 
   /**
    * Stringifies the objects saved in this analyzer
    * @return {Object}
    */
-  stringify() {
-    const me = this;
-    const labels = {};
-    const nodes = {};
-    const edges = {};
+  stringify () {
+    const me = this
+    const labels = {}
+    const nodes = {}
+    const edges = {}
     if (me.debug) {
-      console.log(me);
+      console.log(me)
     }
-    me.debug && console.time("stringify");
-    Object.values(me.__items__).forEach(v => {
-      const hk = hashKey(v);
-      labels[hk] = me.stringifyObjectLabels(v);
-      nodes[hk] = me.stringifyObjectProperties(v);
-      edges[hk] = me.stringifyObjectLinks(v);
-    });
+    me.debug && console.time('stringify')
+    Object.values(me.__items__).forEach((v) => {
+      const hk = hashKey(v)
+      labels[hk] = me.stringifyObjectLabels(v)
+      nodes[hk] = me.stringifyObjectProperties(v)
+      edges[hk] = me.stringifyObjectLinks(v)
+    })
     if (me.debug) {
-      console.log("nodes", nodes);
-      console.log("edges", edges);
-      console.log("labels", labels);
+      console.log('nodes', nodes)
+      console.log('edges', edges)
+      console.log('labels', labels)
     }
-    me.debug && console.timeEnd("stringify");
+    me.debug && console.timeEnd('stringify')
     return {
-      labels: labels,
-      edges: edges,
-      nodes: nodes,
-    };
+      labels,
+      edges,
+      nodes
+    }
   }
 
   /**
@@ -584,10 +584,10 @@ class Analyzer {
    * @param {Array} objects
    * @chainable
    */
-  add(objects) {
-    this.makeDirty();
-    this.analyzeObjects(objects, 0);
-    return this;
+  add (objects) {
+    this.makeDirty()
+    this.analyzeObjects(objects, 0)
+    return this
   }
 
   /**
@@ -597,22 +597,22 @@ class Analyzer {
    * if the current object being removed is a function
    * @chainable
    */
-  remove(objects, withPrototype) {
-    this.makeDirty();
-    const me = this;
+  remove (objects, withPrototype) {
+    this.makeDirty()
+    const me = this
 
-    function doRemove(obj) {
-      me.__items__.remove(obj);
+    function doRemove (obj) {
+      me.__items__.remove(obj)
     }
 
     objects.forEach(function (obj) {
       if (withPrototype) {
-        withFunctionAndPrototype(obj, doRemove);
+        withFunctionAndPrototype(obj, doRemove)
       } else {
-        doRemove(obj);
+        doRemove(obj)
       }
-    });
-    return me;
+    })
+    return me
   }
 
   /**
@@ -621,21 +621,21 @@ class Analyzer {
    * @param {boolean} withPrototype True to forbid the prototype
    * if the current object being forbidden is a function
    */
-  forbid(objects, withPrototype) {
-    const me = this;
-    this.makeDirty();
-    me.remove(objects, withPrototype);
+  forbid (objects, withPrototype) {
+    const me = this
+    this.makeDirty()
+    me.remove(objects, withPrototype)
 
-    function doForbid(obj) {
-      me.__forbidden__.put(obj);
+    function doForbid (obj) {
+      me.__forbidden__.put(obj)
     }
     objects.forEach(function (obj) {
       if (withPrototype) {
-        withFunctionAndPrototype(obj, doForbid);
+        withFunctionAndPrototype(obj, doForbid)
       } else {
-        doForbid(obj);
+        doForbid(obj)
       }
-    });
+    })
   }
 
   /**
@@ -646,30 +646,30 @@ class Analyzer {
    * @param {boolean} withPrototype True to forbid the prototype
    * if the current object being forbidden is a function
    */
-  allow(objects, withPrototype) {
-    const me = this;
+  allow (objects, withPrototype) {
+    const me = this
 
-    this.makeDirty();
-    function doAllow(obj) {
-      me.__forbidden__.remove(obj);
+    this.makeDirty()
+    function doAllow (obj) {
+      me.__forbidden__.remove(obj)
     }
     objects.forEach(function (obj) {
       if (withPrototype) {
-        withFunctionAndPrototype(obj, doAllow);
+        withFunctionAndPrototype(obj, doAllow)
       } else {
-        doAllow(obj);
+        doAllow(obj)
       }
-    });
+    })
   }
 
   /**
    * Empties all the info stored in this analyzer
    */
-  reset() {
-    this.__linksCache__ = {};
-    this.__objectsCache__ = {};
-    this.__forbidden__.empty();
-    this.__items__.empty();
+  reset () {
+    this.__linksCache__ = {}
+    this.__objectsCache__ = {}
+    this.__forbidden__.empty()
+    this.__items__.empty()
   }
 }
 
@@ -678,26 +678,26 @@ class Analyzer {
  * if the node is a constructor
  * @type {boolean}
  */
-Analyzer.VISIT_CONSTRUCTORS = true;
+Analyzer.VISIT_CONSTRUCTORS = true
 
 /**
  * True to visit simple functions which don't have additional links, see
  * #traversableObjectProperties
  * @type {boolean}
  */
-Analyzer.VISIT_SIMPLE_FUNCTIONS = false;
+Analyzer.VISIT_SIMPLE_FUNCTIONS = false
 
 /**
  * True to visit arrays
  * @type {boolean}
  */
-Analyzer.VISIT_ARRAYS = true;
+Analyzer.VISIT_ARRAYS = true
 
 /**
  * Default number of levels to be analyzed by this constructor
  * @type {number}
  */
-Analyzer.DFS_LEVELS = 15;
+Analyzer.DFS_LEVELS = 15
 
 /**
  * Default config used whenever an instance of Analyzer is created
@@ -709,7 +709,7 @@ Analyzer.DEFAULT_CONFIG = {
   visitConstructors: Analyzer.VISIT_CONSTRUCTORS,
   visitSimpleFunctions: Analyzer.VISIT_SIMPLE_FUNCTIONS,
   visitArrays: Analyzer.VISIT_ARRAYS,
-  levels: Analyzer.DFS_LEVELS,
-};
+  levels: Analyzer.DFS_LEVELS
+}
 
-export default Analyzer;
+export default Analyzer

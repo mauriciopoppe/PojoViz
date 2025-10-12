@@ -1,8 +1,8 @@
-function type(v) {
-  return Object.prototype.toString.call(v).slice(8, -1);
+function type (v) {
+  return Object.prototype.toString.call(v).slice(8, -1)
 }
 
-const utils = {};
+const utils = {}
 
 /**
  * After calling `Object.prototype.toString` with `v` as the scope
@@ -16,8 +16,8 @@ const utils = {};
  * @returns {string}
  */
 utils.internalClassProperty = function (v) {
-  return type(v);
-};
+  return type(v)
+}
 
 /**
  * Checks if a given value is a function, the library only needs
@@ -28,8 +28,8 @@ utils.internalClassProperty = function (v) {
  * @returns {Boolean}
  */
 utils.isFunction = function (v) {
-  return !!v && typeof v === "function";
-};
+  return !!v && typeof v === 'function'
+}
 
 /**
  * Checks if the value is a constructor,
@@ -41,13 +41,13 @@ utils.isFunction = function (v) {
 utils.isConstructor = function (v) {
   return (
     this.isFunction(v) &&
-    typeof v.name === "string" &&
+    typeof v.name === 'string' &&
     v.name.length &&
     v.name.search(/^[A-Z]/) > -1 &&
     v.prototype &&
     v.prototype.constructor === v
-  );
-};
+  )
+}
 
 /**
  * Checks if a given value is an object, the library only needs
@@ -65,8 +65,8 @@ utils.isConstructor = function (v) {
  * @returns {Boolean}
  */
 utils.isObject = function (v) {
-  return !!v && typeof v === "object";
-};
+  return !!v && typeof v === 'object'
+}
 
 /**
  * Checks if the given value is an object or a function (note that for the sake
@@ -76,8 +76,8 @@ utils.isObject = function (v) {
  * @returns {Boolean}
  */
 utils.isObjectOrFunction = function (v) {
-  return utils.isObject(v) || utils.isFunction(v);
-};
+  return utils.isObject(v) || utils.isFunction(v)
+}
 
 /**
  * @template
@@ -91,8 +91,8 @@ utils.isObjectOrFunction = function (v) {
  * @returns {Boolean}
  */
 utils.isTraversable = function (v) {
-  return utils.isObjectOrFunction(v);
-};
+  return utils.isObjectOrFunction(v)
+}
 
 /**
  * Creates a special function which is able to execute a series of functions through
@@ -119,21 +119,21 @@ utils.isTraversable = function (v) {
  * @returns {Function}
  */
 utils.functionChain = function () {
-  var stack = [];
-  var inner = function () {
-    var args = Array.prototype.slice.call(arguments);
-    var value = null;
-    for (var i = 0; i < stack.length; i += 1) {
-      value = stack[i].apply(this, args.concat(value));
+  const stack = []
+  const inner = function () {
+    const args = Array.prototype.slice.call(arguments)
+    let value = null
+    for (let i = 0; i < stack.length; i += 1) {
+      value = stack[i].apply(this, args.concat(value))
     }
-    return value;
-  };
+    return value
+  }
   inner.chain = function (v) {
-    stack.push(v);
-    return inner;
-  };
-  return inner;
-};
+    stack.push(v)
+    return inner
+  }
+  return inner
+}
 
 /**
  * Given a str made of any characters this method returns a string
@@ -141,43 +141,43 @@ utils.functionChain = function () {
  * @param {string} str
  */
 utils.hashCode = function (str) {
-  var i,
-    length,
-    char,
-    hash = 0;
+  let i
+  let length
+  let char
+  let hash = 0
   for (i = 0, length = str.length; i < length; i += 1) {
-    char = str.charCodeAt(i);
-    hash = (hash << 5) - hash + char;
-    hash = hash & hash;
+    char = str.charCodeAt(i)
+    hash = (hash << 5) - hash + char
+    hash = hash & hash
   }
-  return String(hash);
-};
+  return String(hash)
+}
 
 utils.createEvent = function (eventName, details) {
   return new CustomEvent(eventName, {
-    detail: details,
-  });
-};
+    detail: details
+  })
+}
 utils.notification = function (message) {
-  utils.fireGlobalEvent("pojoviz-notification", message);
-};
+  utils.fireGlobalEvent('pojoviz-notification', message)
+}
 utils.fireGlobalEvent = function (event, params) {
   if (!window.document || !window.CustomEvent) {
-    return;
+    return
   }
-  var ev = utils.createEvent(event, params);
-  document.dispatchEvent(ev);
-};
+  const ev = utils.createEvent(event, params)
+  document.dispatchEvent(ev)
+}
 utils.createJsonpCallback = function (url) {
-  var script = document.createElement("script");
-  script.src = url;
-  document.head.appendChild(script);
-};
+  const script = document.createElement('script')
+  script.src = url
+  document.head.appendChild(script)
+}
 utils.toQueryString = function (obj) {
   return Object.entries(obj)
     .map(([k, v]) => `${k}=${v}`)
-    .join('&');
-};
+    .join('&')
+}
 
 /**
  * Given a property name this method identifies if it's a valid property for the sake
@@ -198,17 +198,17 @@ utils.toQueryString = function (obj) {
  * @param {string} property
  */
 utils.objectPropertyIsForbidden = function (object, property) {
-  var key;
-  var rules = utils.propertyForbiddenRules;
+  let key
+  const rules = utils.propertyForbiddenRules
   for (key in rules) {
-    if (rules.hasOwnProperty(key)) {
+    if (Object.prototype.hasOwnProperty.call(rules, key)) {
       if (rules[key](object, property)) {
-        return true;
+        return true
       }
     }
   }
-  return false;
-};
+  return false
+}
 
 /**
  * @template
@@ -227,9 +227,9 @@ utils.propertyForbiddenRules = {
    */
   strictMode: function (object, property) {
     if (utils.isFunction(object)) {
-      return property === "caller" || property === "arguments";
+      return property === 'caller' || property === 'arguments'
     }
-    return false;
+    return false
   },
 
   /**
@@ -249,7 +249,7 @@ utils.propertyForbiddenRules = {
    * @returns {boolean}
    */
   hiddenProperty: function (object, property) {
-    return property.search(/^__.*?__$/) > -1;
+    return property.search(/^__.*?__$/) > -1
   },
 
   /**
@@ -260,8 +260,8 @@ utils.propertyForbiddenRules = {
    * @returns {boolean}
    */
   angularHiddenProperty: function (object, property) {
-    return property.search(/^\$\$.*?\$\$$/) > -1;
-  },
+    return property.search(/^\$\$.*?\$\$$/) > -1
+  }
 
   /**
    * The properties that have the following symbols are forbidden:
@@ -270,9 +270,9 @@ utils.propertyForbiddenRules = {
    * @param {string} property
    * @returns {boolean}
    */
-  //symbols: function (object, property) {
+  // symbols: function (object, property) {
   //  return property.search(/[:+~!><=//\]@\. ]/) > -1;
-  //}
-};
+  // }
+}
 
-export default utils;
+export default utils

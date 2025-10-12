@@ -1,30 +1,28 @@
-import utils from "./util/";
+import utils from './util/'
 
-import Inspector from "./analyzer/Inspector";
-import InspectedInstances from "./InspectedInstances";
-import ObjectAnalyzer from "./ObjectAnalyzer";
-import schemas from "./hierarchies";
+import Inspector from './analyzer/Inspector'
+import InspectedInstances from './InspectedInstances'
+import ObjectAnalyzer from './ObjectAnalyzer'
+import schemas from './hierarchies'
 
-let inspector, oldInspector;
-let pojoviz;
+let inspector
 
 // public api
-pojoviz = {
+const pojoviz = {
   /**
    * Clears the inspector variable
    * @chainable
    */
   unsetInspector: function () {
-    oldInspector = inspector;
-    inspector = null;
-    return this;
+    inspector = null
+    return this
   },
   /**
    * Gets the current inspector (set through #setCurrentInspector)
    * @returns {*}
    */
   getCurrentInspector: function () {
-    return inspector;
+    return inspector
   },
   /**
    * Given an object containing the configuration options of a
@@ -39,44 +37,43 @@ pojoviz = {
    * @returns {Promise}
    */
   run: function (options) {
-    const instance = this.getInspectorFromOptions(options);
-    instance.modifyInstance(options);
-    return instance.init();
+    const instance = this.getInspectorFromOptions(options)
+    instance.modifyInstance(options)
+    return instance.init()
   },
 
   getInspectorFromOptions: function (options) {
     if (!options) {
-      throw new Error("Options must be provided");
+      throw new Error('Options must be provided')
     }
-    const entryPoint = options.entryPoint;
+    const entryPoint = options.entryPoint
     if (!entryPoint) {
-      throw new Error("Entry point must be provided");
+      throw new Error('Entry point must be provided')
     }
-    oldInspector = inspector;
-    inspector = InspectedInstances[entryPoint];
+    inspector = InspectedInstances[entryPoint]
 
     if (!inspector) {
-      inspector = InspectedInstances.create(options);
+      inspector = InspectedInstances.create(options)
     }
-    return inspector;
+    return inspector
   },
 
   // expose inner modules
-  ObjectAnalyzer: ObjectAnalyzer,
-  InspectedInstances: InspectedInstances,
+  ObjectAnalyzer,
+  InspectedInstances,
   analyzer: {
-    Inspector: Inspector,
+    Inspector
   },
-  Inspector: Inspector,
-  utils: utils,
+  Inspector,
+  utils,
 
   // known configurations
-  schemas: schemas,
-};
+  schemas
+}
 
 // alias
-pojoviz.setCurrentInspector = pojoviz.run;
+pojoviz.setCurrentInspector = pojoviz.run
 
-window.pojoviz = pojoviz;
+window.pojoviz = pojoviz
 
-export default pojoviz;
+export default pojoviz

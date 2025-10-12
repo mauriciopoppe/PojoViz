@@ -1,1 +1,1 @@
-export const rootUrl = "/PojoViz";
+export const rootUrl = '/PojoViz'

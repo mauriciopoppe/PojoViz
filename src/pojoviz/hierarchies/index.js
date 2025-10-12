@@ -1,33 +1,33 @@
-import builtInObjects from "./builtInObjects";
-import notableLibraries from "./notableLibraries";
-import myLibraries from "./myLibraries";
-import hugeLibraries from "./hugeLibraries";
+import builtInObjects from './builtInObjects'
+import notableLibraries from './notableLibraries'
+import myLibraries from './myLibraries'
+import hugeLibraries from './hugeLibraries'
 
 const proto = {
   find: function (entry) {
-    function predicate(v) {
-      return v.entryPoint === entry;
+    function predicate (v) {
+      return v.entryPoint === entry
     }
-    let result;
+    let result
     for (const schema of Object.values(this)) {
       if (Array.isArray(schema)) {
-        result = schema.find(predicate);
+        result = schema.find(predicate)
         if (result) {
-          return result;
+          return result
         }
       }
     }
-  },
-};
+  }
+}
 
-const schemas = Object.create(proto);
+const schemas = Object.create(proto)
 
 Object.assign(schemas, {
-  builtInObjects: builtInObjects,
-  notableLibraries: notableLibraries,
-  myLibraries: myLibraries,
-  hugeLibraries: hugeLibraries,
-});
+  builtInObjects,
+  notableLibraries,
+  myLibraries,
+  hugeLibraries
+})
 
-export { builtInObjects, notableLibraries, myLibraries, hugeLibraries };
-export default schemas;
+export { builtInObjects, notableLibraries, myLibraries, hugeLibraries }
+export default schemas

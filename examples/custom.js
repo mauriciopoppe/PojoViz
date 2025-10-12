@@ -1,21 +1,21 @@
-'use strict';
+'use strict'
 
 // d3 renderer setup
-pojoviz.draw.getRenderer('d3').setCanvasEl('#canvas');
+pojoviz.draw.getRenderer('d3').setCanvasEl('#canvas')
 
-var Inspector = pojoviz.Inspector;
+const Inspector = pojoviz.Inspector
 
-var toInspect = [
+const toInspect = [
   Object, Function,
   Array, Date, Boolean, Number, Math, String, RegExp, JSON,
   Error
-];
+]
 
-function BuiltIn(options) {
-  Inspector.call(this, options);
+function BuiltIn (options) {
+  Inspector.call(this, options)
 }
 
-BuiltIn.prototype = Object.create(Inspector.prototype);
+BuiltIn.prototype = Object.create(Inspector.prototype)
 
 /**
  * @override
@@ -25,14 +25,14 @@ BuiltIn.prototype = Object.create(Inspector.prototype);
  * object is forbidden this way
  */
 BuiltIn.prototype.inspectSelf = function () {
-  this.analyzer.add(toInspect);
-};
+  this.analyzer.add(toInspect)
+}
 
 // let's create a BuiltIn
-var inspector = new BuiltIn();
+const inspector = new BuiltIn()
 inspector
   .init()
   .then(function (inspector) {
-    pojoviz.draw.render(inspector);
+    pojoviz.draw.render(inspector)
   })
-  .done();
+  .done()

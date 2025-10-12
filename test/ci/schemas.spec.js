@@ -1,24 +1,24 @@
 /**
  * Created by mauricio on 2/17/15.
  */
-/*jshint loopfunc: true */
-var expect = require('chai').expect;
-var Q = require('q');
-var pojoviz = require('../../src/');
-var utils = pojoviz.utils;
-global.pojoviz = pojoviz;
-pojoviz.draw = require('../../src/renderer/draw');
+/* jshint loopfunc: true */
+const expect = require('chai').expect
+const Q = require('q')
+const pojoviz = require('../../src/')
+const utils = pojoviz.utils
+global.pojoviz = pojoviz
+pojoviz.draw = require('../../src/renderer/draw')
 
 describe('Known configuration schemas', function () {
   it('should be processed without errors', function (done) {
-    this.timeout(3 * 60 * 1000);
+    this.timeout(3 * 60 * 1000)
 
     // avoid CustomEvent error, to be fixed in PhantomJS 2
-    utils.notification = function () {};
+    utils.notification = function () {}
 
-    var promises = [];
+    const promises = []
 
-    var schemas = [{
+    const schemas = [{
       label: 'Object',
       displayName: 'object'
     }, {
@@ -33,30 +33,30 @@ describe('Known configuration schemas', function () {
       src: '//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.js',
       entryPoint: 'angular',
       label: 'Angular JS'
-    }];
+    }]
 
     schemas.forEach(function (cfg) {
-      cfg.debug = false;
-      var promise;
-      var inspector = pojoviz.getInspectorFromOptions(cfg);
-      inspector.debug = false;
+      cfg.debug = false
+      let promise
+      const inspector = pojoviz.getInspectorFromOptions(cfg)
+      inspector.debug = false
       promise = pojoviz
         .run(cfg)
         .then(function () {
-          console.time('process');
-          console.log('processing: ', cfg.displayName || cfg.entryPoint);
-          pojoviz.draw.process(pojoviz.getCurrentInspector());
-          console.timeEnd('process');
-        });
-      promises.push(promise);
-    });
+          console.time('process')
+          console.log('processing: ', cfg.displayName || cfg.entryPoint)
+          pojoviz.draw.process(pojoviz.getCurrentInspector())
+          console.timeEnd('process')
+        })
+      promises.push(promise)
+    })
 
     Q.all(promises)
       .then(function () {
-        done();
+        done()
       })
-      .done(null, done);
-  });
-});
+      .done(null, done)
+  })
+})
 
-module.exports = pojoviz;
+module.exports = pojoviz

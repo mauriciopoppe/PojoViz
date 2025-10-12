@@ -1,37 +1,36 @@
-import Inspector from "./Inspector";
+import Inspector from './Inspector'
 
-const toInspect = [window];
+const toInspect = [window]
 
 class Global extends Inspector {
-  constructor() {
+  constructor () {
     super({
       analyzerConfig: {
         levels: 1,
-        visitConstructors: false,
+        visitConstructors: false
       },
-      alwaysDirty: true,
-    });
+      alwaysDirty: true
+    })
   }
 
-  getItems() {
-    return toInspect;
+  getItems () {
+    return toInspect
   }
 
-  inspectSelf() {
-    const me = this;
-    this.debug && console.log("inspecting global");
-    //var me = this,
+  inspectSelf () {
+    const me = this
+    this.debug && console.log('inspecting global')
+    // var me = this,
     //  hashes = require('../InspectedInstances');
     //
-    //_.forOwn(hashes, function (v, k) {
+    // _.forOwn(hashes, function (v, k) {
     //  if (v.getItems()) {
     //    me.analyzer.forbid([v.getItems()], true);
     //  }
-    //});
-    this.analyzer.getItems().empty();
-    this.analyzer.add(me.getItems());
+    // });
+    this.analyzer.getItems().empty()
+    this.analyzer.add(me.getItems())
   }
 }
 
-export default Global;
-
+export default Global

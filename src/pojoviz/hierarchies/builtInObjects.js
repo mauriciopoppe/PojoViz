@@ -3,11 +3,11 @@
  */
 export default [
   {
-    label: "Object",
-    entryPoint: "object",
+    label: 'Object',
+    entryPoint: 'object'
   },
   {
-    label: "BuiltIn Objects",
-    entryPoint: "builtIn",
-  },
-];
+    label: 'BuiltIn Objects',
+    entryPoint: 'builtIn'
+  }
+]

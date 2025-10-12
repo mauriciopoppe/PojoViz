@@ -1,13 +1,13 @@
-import dagre from "dagre";
-import iframe from "iframe";
+import dagre from 'dagre'
+import iframe from 'iframe'
 
-const pojoviz = window.pojoviz;
-const utils = pojoviz.utils;
+const pojoviz = window.pojoviz
+const utils = pojoviz.utils
 
 // the iframe created to append in the playground
-let iFrameEl;
+let iFrameEl
 
-let renderer;
+let renderer
 const draw = {
   renderers: {},
 
@@ -19,9 +19,9 @@ const draw = {
    */
   process: function (inspector) {
     if (inspector.remote) {
-      return this.doProcess(inspector.json);
+      return this.doProcess(inspector.json)
     }
-    return this.doProcess(inspector.analyzer.stringify());
+    return this.doProcess(inspector.analyzer.stringify())
   },
   /**
    * @param {object} nodesStringified An object with the following properties
@@ -44,11 +44,11 @@ const draw = {
    *  }
    */
   doProcess: function (nodesStringified) {
-    const g = new dagre.Digraph();
-    let node;
-    const libraryLabels = nodesStringified.labels;
-    const libraryNodes = nodesStringified.nodes;
-    const libraryEdges = nodesStringified.edges;
+    const g = new dagre.Digraph()
+    let node
+    const libraryLabels = nodesStringified.labels
+    const libraryNodes = nodesStringified.nodes
+    const libraryEdges = nodesStringified.edges
 
     // create the graph
     // each element of the graph has
@@ -58,20 +58,20 @@ const draw = {
     // - properties
     for (const k in libraryNodes) {
       if (Object.prototype.hasOwnProperty.call(libraryNodes, k)) {
-        const properties = libraryNodes[k];
-        const label = libraryLabels[k][0].label;
+        const properties = libraryNodes[k]
+        const label = libraryLabels[k][0].label
         node = {
           hashKey: k,
-          label: label,
-          width: label.length * 10,
-        };
+          label,
+          width: label.length * 10
+        }
         // lines + header + padding bottom
-        node.height = properties.length * 15 + 50;
-        node.properties = properties;
+        node.height = properties.length * 15 + 50
+        node.properties = properties
         properties.forEach(function (v) {
-          node.width = Math.max(node.width, v.property.length * 10);
-        });
-        g.addNode(k, node);
+          node.width = Math.max(node.width, v.property.length * 10)
+        })
+        g.addNode(k, node)
       }
     }
 
@@ -79,9 +79,9 @@ const draw = {
     for (const links of Object.values(libraryEdges)) {
       links.forEach(function (link) {
         if (g.hasNode(link.from) && g.hasNode(link.to)) {
-          g.addEdge(null, link.from, link.to);
+          g.addEdge(null, link.from, link.to)
         }
-      });
+      })
     }
 
     // generate the graph layout
@@ -90,14 +90,14 @@ const draw = {
       .nodeSep(30)
       // .rankSep(70)
       // .rankDir('TB')
-      .run(g);
+      .run(g)
 
-    const nodes = [];
-    const edges = [];
-    const center = { x: 0, y: 0 };
-    const mn = { x: Infinity, y: Infinity };
-    const mx = { x: -Infinity, y: -Infinity };
-    const total = g.nodes().length;
+    const nodes = []
+    const edges = []
+    const center = { x: 0, y: 0 }
+    const mn = { x: Infinity, y: Infinity }
+    const mx = { x: -Infinity, y: -Infinity }
+    const total = g.nodes().length
 
     // update the node info adding:
     // - x (x-coordinate of the center of the node)
@@ -105,50 +105,50 @@ const draw = {
     // - predecessors (an array with the identifiers of the predecessors of this node)
     // - successors (an array with the identifiers of the successor of this node)
     layout.eachNode(function (k, layoutInfo) {
-      const x = layoutInfo.x;
-      const y = layoutInfo.y;
+      const x = layoutInfo.x
+      const y = layoutInfo.y
 
-      node = g.node(k);
-      node.x = x;
-      node.y = y;
-      node.predecessors = g.predecessors(k);
-      node.successors = g.successors(k);
-      nodes.push(node);
+      node = g.node(k)
+      node.x = x
+      node.y = y
+      node.predecessors = g.predecessors(k)
+      node.successors = g.successors(k)
+      nodes.push(node)
 
       // calculate the bbox of the graph to center the graph
-      const mnx = x - node.width / 2;
-      const mny = y - node.height / 2;
-      const mxx = x + node.width / 2;
-      const mxy = y + node.height / 2;
+      const mnx = x - node.width / 2
+      const mny = y - node.height / 2
+      const mxx = x + node.width / 2
+      const mxy = y + node.height / 2
 
-      center.x += x;
-      center.y += y;
-      mn.x = Math.min(mn.x, mnx);
-      mn.y = Math.min(mn.y, mny);
+      center.x += x
+      center.y += y
+      mn.x = Math.min(mn.x, mnx)
+      mn.y = Math.min(mn.y, mny)
       // console.log(x, y, ' dim ', node.width, node.height);
-      mx.x = Math.max(mx.x, mxx);
-      mx.y = Math.max(mx.y, mxy);
-    });
+      mx.x = Math.max(mx.x, mxx)
+      mx.y = Math.max(mx.y, mxy)
+    })
 
-    center.x /= total || 1;
-    center.y /= total || 1;
+    center.x /= total || 1
+    center.y /= total || 1
 
     // create the edges from property to node
     for (const links of Object.values(libraryEdges)) {
       links.forEach(function (link) {
         if (g.hasNode(link.from) && g.hasNode(link.to)) {
-          edges.push(link);
+          edges.push(link)
         }
-      });
+      })
     }
 
     return {
-      edges: edges,
-      nodes: nodes,
-      center: center,
-      mn: mn,
-      mx: mx,
-    };
+      edges,
+      nodes,
+      center,
+      mn,
+      mx
+    }
   },
 
   /**
@@ -163,40 +163,40 @@ const draw = {
    * @param {Object} [renderer]
    */
   render: function (inspector, renderer) {
-    let data;
-    const me = this;
+    let data
+    const me = this
 
-    inspector = inspector || pojoviz.getCurrentInspector();
-    renderer = renderer || pojoviz.draw.getCurrentRenderer();
+    inspector = inspector || pojoviz.getCurrentInspector()
+    renderer = renderer || pojoviz.draw.getCurrentRenderer()
 
-    utils.notification("processing " + inspector.entryPoint);
-    utils.fireGlobalEvent("pojoviz-render-start");
+    utils.notification('processing ' + inspector.entryPoint)
+    utils.fireGlobalEvent('pojoviz-render-start')
 
     // pre render
-    renderer.clear();
+    renderer.clear()
 
     setTimeout(function () {
-      inspector.preRender();
-      console.log("process & render start: ", new Date());
+      inspector.preRender()
+      console.log('process & render start: ', new Date())
       // data:
       // - edges (property -> node)
       // - nodes
       // - center
-      console.time("process");
-      data = me.process(inspector);
-      console.timeEnd("process");
+      console.time('process')
+      data = me.process(inspector)
+      console.timeEnd('process')
 
       utils.notification(
-        "rendering " + (inspector.displayName || inspector.entryPoint),
-      );
+        'rendering ' + (inspector.displayName || inspector.entryPoint)
+      )
 
-      console.time("render");
-      renderer.render(data);
-      console.timeEnd("render");
+      console.time('render')
+      renderer.render(data)
+      console.timeEnd('render')
 
-      utils.fireGlobalEvent("pojoviz-render-end");
-      utils.notification("complete!");
-    }, 0);
+      utils.fireGlobalEvent('pojoviz-render-end')
+      utils.notification('complete!')
+    }, 0)
   },
 
   /**
@@ -210,13 +210,13 @@ const draw = {
     // the renderer must be an object and have the following methods:
     // - render
     // - clear
-    if (!(value && typeof value === "object")) {
-      throw new Error("value is not an object");
+    if (!(value && typeof value === 'object')) {
+      throw new Error('value is not an object')
     }
     if (!(value.clear && value.render)) {
-      throw new Error("clear & render must be defined on object");
+      throw new Error('clear & render must be defined on object')
     }
-    this.renderers[key] = value;
+    this.renderers[key] = value
   },
 
   /**
@@ -224,7 +224,7 @@ const draw = {
    * @param {string} r
    */
   setRenderer: function (r) {
-    renderer = this.renderers[r];
+    renderer = this.renderers[r]
   },
 
   /**
@@ -233,7 +233,7 @@ const draw = {
    * @returns {*}
    */
   getRenderer: function (key) {
-    return this.renderers[key];
+    return this.renderers[key]
   },
 
   /**
@@ -241,30 +241,29 @@ const draw = {
    * @returns {*}
    */
   getCurrentRenderer: function () {
-    return renderer;
+    return renderer
   },
 
   createIFrame: function (selector) {
     iFrameEl = iframe({
-      container: document.querySelector(selector),
-    });
+      container: document.querySelector(selector)
+    })
   },
 
   renderToIFrame: function (code) {
     iFrameEl.setHTML({
-      src: "../public/playground.html",
-      sandboxAttributes: ["allow-same-origin", "allow-scripts"],
-    });
+      src: '../public/playground.html',
+      sandboxAttributes: ['allow-same-origin', 'allow-scripts']
+    })
     // iframes are weird!
-    const iframeWindow = iFrameEl.iframe.contentWindow;
+    const iframeWindow = iFrameEl.iframe.contentWindow
     iframeWindow.onload = function () {
-      const doc = iframeWindow.document;
-      const script = doc.createElement("script");
-      doc.head.appendChild(script);
-      script.innerHTML = "setTimeout(function(){\n;" + code + "\n;}, 0)";
-    };
-  },
-};
+      const doc = iframeWindow.document
+      const script = doc.createElement('script')
+      doc.head.appendChild(script)
+      script.innerHTML = 'setTimeout(function(){\n;' + code + '\n;}, 0)'
+    }
+  }
+}
 
-export default draw;
-
+export default draw

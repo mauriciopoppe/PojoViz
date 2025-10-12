@@ -1,5 +1,5 @@
 // d3 renderer setup
-pojoviz.draw.getRenderer('d3').setCanvasEl('#canvas');
+pojoviz.draw.getRenderer('d3').setCanvasEl('#canvas')
 
 pojoviz.run({
   entryPoint: 'pojoviz',
@@ -8,6 +8,6 @@ pojoviz.run({
   }
 })
   .then(function (inspector) {
-    pojoviz.draw.render(inspector);
+    pojoviz.draw.render(inspector)
   })
-  .done();
+  .done()

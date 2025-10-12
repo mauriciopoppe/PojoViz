@@ -1,21 +1,23 @@
 import { defineConfig } from "vite";
 import { svelte } from "@sveltejs/vite-plugin-svelte";
+import { viteStaticCopy } from "vite-plugin-static-copy";
 import path from "path";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [svelte()],
-  build: {
-    lib: {
-      entry: {
-        pojoviz: path.resolve(__dirname, "src/pojoviz/index.js"),
-        "pojoviz-renderers": path.resolve(
-          __dirname,
-          "src/pojoviz/renderer/index.js",
-        ),
-      },
-      name: "pojoviz",
-      fileName: (format, entryName) => `${entryName}.${format}.js`,
-    },
-  },
+  plugins: [
+    svelte(),
+    viteStaticCopy({
+      targets: [
+        {
+          src: "README.md",
+          dest: ".",
+        },
+        {
+          src: "DEV_README.md",
+          dest: ".",
+        },
+      ],
+    }),
+  ],
 });

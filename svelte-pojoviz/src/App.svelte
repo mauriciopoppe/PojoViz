@@ -7,7 +7,6 @@
   import About from './lib/About.svelte';
   import Search from './lib/Search.svelte';
   import Readme from './lib/Readme.svelte';
-  import Development from './lib/Development.svelte';
   import Playground from './lib/Playground.svelte';
   import Notification from './lib/Notification.svelte';
   import ProgressBar from './lib/ProgressBar.svelte';
@@ -174,7 +173,7 @@
     {:else if page === 'settings'}
       <Settings />
     {:else if page === 'development'}
-      <Readme url="/src/DEV_README.md" />
+      <Readme url="/DEV_README.md" />
     {:else if page === 'search'}
       <Search />
     {:else if page === 'about'}

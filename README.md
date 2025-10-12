@@ -1,7 +1,7 @@
 PojoViz - Plain Old JavaScript Object Visualization
 =======
 
-%PojoViz is a tool to analyze the plain objects of a JavaScript object hierarchy by finding all the relationships found between the hierarchy entry point (in most libraries/frameworks a global variable) and the objects/functions linked to it.
+PojoViz is a tool to analyze the plain objects of a JavaScript object hierarchy by finding all the relationships found between the hierarchy entry point (in most libraries/frameworks a global variable) and the objects/functions linked to it.
 
 Note: this webpage uses <a href="http://caniuse.com/shadowdom">Shadow DOM</a>, it's suggested that you use a browser that supports this technology for a complete experience.
 
@@ -17,7 +17,7 @@ How many times did you find an awesome library/framework and wanted to see how i
 
 ## How does it work?
 
-In short %PojoViz receives as input a collection of JS objects and then:
+In short PojoViz receives as input a collection of JS objects and then:
 
 - it does a Depth First Search through the properties of objects/functions it finds along the way
 - it finishes whenever it reaches a max-depth or it completes visiting all reachable nodes
@@ -36,10 +36,10 @@ See [an interactive tutorial on how to visualize your stuff](http://mauriciopopp
 
 ### This project is not analyzing some stuff I have, why?
 
-%PojoViz doesn't analyze the AST of your code (which might be done by [Esprima](http://esprima.org/doc/index.html) btw),
+PojoViz doesn't analyze the AST of your code (which might be done by [Esprima](http://esprima.org/doc/index.html) btw),
  it's sort of an static analysis tool but it doesn't analyze your code, it just traverses JS objects
 
-Let's say that you give %PojoViz the following constructor `Point`
+Let's say that you give PojoViz the following constructor `Point`
 
 ```javascript
 // reachable
@@ -58,15 +58,15 @@ Point.prototype.publicMethod = function () {
 ```
 
 To make the method `foo` and the object `bar` reachable you'd need to
-create an instance of `Point` e.g. `instance = new Point(1, 2)` %PojoViz doesn't know about how to instantiate stuff,
- however if you feed %Pojoviz `Point` AND `instance` you're good to go :)
+create an instance of `Point` e.g. `instance = new Point(1, 2)` PojoViz doesn't know about how to instantiate stuff,
+ however if you feed PojoViz `Point` AND `instance` you're good to go :)
 
-A huge description of this and other uses of %PojoViz can be found in the [development section](http://mauriciopoppe.github.io/PojoViz/public/vulcanize.html#development)
+A huge description of this and other uses of PojoViz can be found in the [development section](http://mauriciopoppe.github.io/PojoViz/public/vulcanize.html#development)
 
 ### Can I use this stuff within the node environment
 
 Sure you can, in fact the **Node Globals** section makes a query to a node server hosted on heroku and the analysis is done on runtime!
-The output of %PojoViz is an "stringifiable" collection which is rendered by pojoviz-renderer, you can even analyze
+The output of PojoViz is an "stringifiable" collection which is rendered by pojoviz-renderer, you can even analyze
 code of other programming languages with an adapter that outputs a similar collection and render it with pojoviz-renderer!
 
 ## TODO list

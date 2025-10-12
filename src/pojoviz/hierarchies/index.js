@@ -1,4 +1,3 @@
-import _ from "lodash";
 import builtInObjects from "./builtInObjects";
 import notableLibraries from "./notableLibraries";
 import myLibraries from "./myLibraries";
@@ -10,22 +9,25 @@ const proto = {
       return v.entryPoint === entry;
     }
     let result;
-    _.forOwn(this, function (schema) {
-      result = result || _.find(schema, predicate);
-    });
-    return result;
+    for (const schema of Object.values(this)) {
+      if (Array.isArray(schema)) {
+        result = schema.find(predicate);
+        if (result) {
+          return result;
+        }
+      }
+    }
   },
 };
 
 const schemas = Object.create(proto);
 
 Object.assign(schemas, {
-  builtInObjects,
-  notableLibraries,
-  myLibraries,
-  hugeLibraries,
+  builtInObjects: builtInObjects,
+  notableLibraries: notableLibraries,
+  myLibraries: myLibraries,
+  hugeLibraries: hugeLibraries,
 });
 
 export { builtInObjects, notableLibraries, myLibraries, hugeLibraries };
 export default schemas;
-

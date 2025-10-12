@@ -1,5 +1,4 @@
 import dagre from "dagre";
-import _ from "lodash";
 import iframe from "iframe";
 
 const pojoviz = window.pojoviz;
@@ -57,30 +56,33 @@ const draw = {
     // - width
     // - height
     // - properties
-    _.forOwn(libraryNodes, function (properties, k) {
-      const label = libraryLabels[k][0].label;
-      node = {
-        hashKey: k,
-        label: label,
-        width: label.length * 10,
-      };
-      // lines + header + padding bottom
-      node.height = properties.length * 15 + 50;
-      node.properties = properties;
-      properties.forEach(function (v) {
-        node.width = Math.max(node.width, v.property.length * 10);
-      });
-      g.addNode(k, node);
-    });
+    for (const k in libraryNodes) {
+      if (Object.prototype.hasOwnProperty.call(libraryNodes, k)) {
+        const properties = libraryNodes[k];
+        const label = libraryLabels[k][0].label;
+        node = {
+          hashKey: k,
+          label: label,
+          width: label.length * 10,
+        };
+        // lines + header + padding bottom
+        node.height = properties.length * 15 + 50;
+        node.properties = properties;
+        properties.forEach(function (v) {
+          node.width = Math.max(node.width, v.property.length * 10);
+        });
+        g.addNode(k, node);
+      }
+    }
 
     // build the edges from node to node
-    _.forOwn(libraryEdges, function (links) {
+    for (const links of Object.values(libraryEdges)) {
       links.forEach(function (link) {
         if (g.hasNode(link.from) && g.hasNode(link.to)) {
           g.addEdge(null, link.from, link.to);
         }
       });
-    });
+    }
 
     // generate the graph layout
     const layout = dagre
@@ -132,13 +134,13 @@ const draw = {
     center.y /= total || 1;
 
     // create the edges from property to node
-    _.forOwn(libraryEdges, function (links) {
+    for (const links of Object.values(libraryEdges)) {
       links.forEach(function (link) {
         if (g.hasNode(link.from) && g.hasNode(link.to)) {
           edges.push(link);
         }
       });
-    });
+    }
 
     return {
       edges: edges,

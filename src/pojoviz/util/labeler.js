@@ -1,5 +1,3 @@
-import _ from "lodash";
-
 import hashKey from "./hashKey";
 import utils from "./";
 
@@ -48,7 +46,7 @@ me = labeler = function (from, property, config) {
         from: fromHash,
         label: label,
       };
-      if (!_.find(labelCache[objHash] || [], labelCfg)) {
+      if (!(labelCache[objHash] || []).find(item => item.from === labelCfg.from && item.label === labelCfg.label)) {
         doInsert(obj, labelCfg, config);
       }
     }

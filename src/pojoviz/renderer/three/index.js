@@ -1,6 +1,5 @@
 import "./PanControls";
 import t3 from "t3-boilerplate";
-import _ from "lodash";
 
 let el;
 let instance;
@@ -270,7 +269,7 @@ const threeRenderer = {
         const from = nodeMap[link.from];
         const to = nodeMap[link.to];
 
-        const index = _.findIndex(from.properties, { name: link.property });
+        const index = from.properties.findIndex(p => p.name === link.property);
         fromV.set(
           from.x - from.width * 0.5 + margin.left,
           from.y -
@@ -367,7 +366,7 @@ const threeRenderer = {
               };
               new TWEEN.Tween(me.activeCamera.position)
                 .to(
-                  _.merge({}, dest, {
+                  Object.assign({}, dest, {
                     z: Math.max(iObject.userData.node.height, 350),
                   }),
                   1000,

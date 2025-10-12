@@ -1,5 +1,3 @@
-import _ from "lodash";
-
 const changeFakePropertyName = {
   "[[Prototype]]": "__proto__",
 };
@@ -12,11 +10,9 @@ const utils = {
     return "scale(" + (s || 1) + ")";
   },
   transform: function (obj) {
-    const t = [];
-    _.forOwn(obj, function (v, k) {
-      t.push(utils[k].apply(utils, v));
-    });
-    return t.join(" ");
+    return Object.keys(obj)
+      .map(k => utils[k].apply(utils, obj[k]))
+      .join(" ");
   },
   prefixer: function () {
     const args = [].slice.call(arguments);

@@ -1,5 +1,3 @@
-import _ from "lodash";
-
 import HashMap from "./util/HashMap";
 import hashKey from "./util/hashKey";
 import labeler from "./util/labeler";
@@ -71,7 +69,7 @@ function withFunctionAndPrototype(obj, fn) {
  */
 class Analyzer {
   constructor(config) {
-    config = _.merge(_.clone(Analyzer.DEFAULT_CONFIG, true), config);
+    config = Object.assign({}, Analyzer.DEFAULT_CONFIG, config);
 
     /**
      * items registered in this instance
@@ -147,12 +145,14 @@ class Analyzer {
   }
 
   set(options) {
-    const me = this;
-    _.forOwn(options, function (v, k) {
-      if (me.hasOwnProperty(k) && k.indexOf("__") === -1) {
-        me[k] = v;
+    for (const k in options) {
+      if (Object.prototype.hasOwnProperty.call(options, k)) {
+        const v = options[k];
+        if (this.hasOwnProperty(k) && k.indexOf("__") === -1) {
+          this[k] = v;
+        }
       }
-    });
+    }
   }
 
   /**
@@ -560,7 +560,7 @@ class Analyzer {
       console.log(me);
     }
     me.debug && console.time("stringify");
-    _.forOwn(me.__items__, function (v) {
+    Object.values(me.__items__).forEach(v => {
       const hk = hashKey(v);
       labels[hk] = me.stringifyObjectLabels(v);
       nodes[hk] = me.stringifyObjectProperties(v);
@@ -585,9 +585,8 @@ class Analyzer {
    * @chainable
    */
   add(objects) {
-    //console.time('analyze');
+    this.makeDirty();
     this.analyzeObjects(objects, 0);
-    //console.timeEnd('analyze');
     return this;
   }
 
@@ -599,6 +598,7 @@ class Analyzer {
    * @chainable
    */
   remove(objects, withPrototype) {
+    this.makeDirty();
     const me = this;
 
     function doRemove(obj) {
@@ -623,6 +623,7 @@ class Analyzer {
    */
   forbid(objects, withPrototype) {
     const me = this;
+    this.makeDirty();
     me.remove(objects, withPrototype);
 
     function doForbid(obj) {
@@ -648,6 +649,7 @@ class Analyzer {
   allow(objects, withPrototype) {
     const me = this;
 
+    this.makeDirty();
     function doAllow(obj) {
       me.__forbidden__.remove(obj);
     }
@@ -709,20 +711,5 @@ Analyzer.DEFAULT_CONFIG = {
   visitArrays: Analyzer.VISIT_ARRAYS,
   levels: Analyzer.DFS_LEVELS,
 };
-
-const proto = Analyzer.prototype;
-function chain(method) {
-  const originalMethod = proto[method];
-  proto[method] = function (...args) {
-    proto.makeDirty.call(this);
-    return originalMethod.apply(this, args);
-  };
-}
-
-// call #makeDirty before all these methods are called
-chain("add");
-chain("remove");
-chain("forbid");
-chain("allow");
 
 export default Analyzer;

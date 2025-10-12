@@ -1,6 +1,4 @@
-import _ from "lodash";
 import Inspector from "./analyzer/Inspector";
-import RemoteInspector from "./analyzer/Remote";
 import PObject from "./analyzer/Object";
 import BuiltIn from "./analyzer/BuiltIn";
 import Global from "./analyzer/Global";
@@ -17,7 +15,7 @@ const proto = {
    */
   create: function (options) {
     const displayName = options.displayName || options.entryPoint;
-    const Constructor = options.remote ? RemoteInspector : Inspector;
+    const Constructor = Inspector;
     console.log("creating a generic container for: " + displayName, options);
     return (libraries[displayName] = new Constructor(options));
   },
@@ -27,7 +25,7 @@ const proto = {
    * @chainable
    */
   all: function (fn) {
-    _.forOwn(libraries, fn);
+    Object.values(libraries).forEach(fn);
     return this;
   },
   /**
@@ -44,7 +42,7 @@ const proto = {
 
 libraries = Object.create(proto);
 //console.log(libraries);
-_.merge(libraries, {
+Object.assign(libraries, {
   object: new PObject({
     displayName: "Object",
   }),

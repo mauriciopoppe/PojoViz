@@ -1,4 +1,3 @@
-import _ from "lodash";
 import draw from "./draw";
 import d3Renderer from "./d3/";
 import threeRenderer from "./three/";
@@ -10,7 +9,7 @@ if (!pojoviz) {
   throw "This is not a standalone project, pojoviz not found";
 }
 
-_.merge(pojoviz, {
+Object.assign(pojoviz, {
   draw: draw,
 });
 

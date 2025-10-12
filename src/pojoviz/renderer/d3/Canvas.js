@@ -1,4 +1,4 @@
-import _ from "lodash";
+import { uniqueId } from "../../util/lodash-replacements";
 import utils from "../../renderer/utils";
 import pojoVizNode from "./Node";
 import pojoVizUtils from "../../util/";
@@ -7,7 +7,6 @@ let rootSvg;
 const prefix = utils.prefixer;
 const escapeCls = utils.escapeCls;
 const hashCode = pojoVizUtils.hashCode;
-const hashKey = pojoVizUtils.hashKey;
 
 function getX(d) {
   return d.x - d.width / 2;
@@ -22,7 +21,7 @@ class Canvas {
     if (!el) {
       throw new Error("el must be provided");
     }
-    this.id = _.uniqueId();
+    this.id = uniqueId();
     this.data = data;
     this.createRoot(el);
     this.set({

@@ -1,7 +1,6 @@
-import _ from "lodash";
+import { deepMerge } from "../../util/lodash-replacements";
 import utils from "../../renderer/utils";
 import pojoVizProperty from "./Property";
-import hashKey from "../../util/hashKey";
 
 const prefix = utils.prefixer;
 let margin = { top: 0, right: 0, left: 0, bottom: 0 };
@@ -105,7 +104,7 @@ function Node(parent) {
     if (!m) {
       return margin;
     }
-    margin = _.merge(margin, m);
+    margin = deepMerge(margin, m);
   };
   return my;
 }

@@ -1,5 +1,3 @@
-import _ from "lodash";
-
 function type(v) {
   return Object.prototype.toString.call(v).slice(8, -1);
 }
@@ -176,21 +174,12 @@ utils.createJsonpCallback = function (url) {
   document.head.appendChild(script);
 };
 utils.toQueryString = function (obj) {
-  var s = "",
-    i = 0;
-  _.forOwn(obj, function (v, k) {
-    if (i) {
-      s += "&";
-    }
-    s += k + "=" + v;
-    i += 1;
-  });
-  return s;
+  return Object.entries(obj)
+    .map(([k, v]) => `${k}=${v}`)
+    .join('&');
 };
 
 /**
- * @template
- *
  * Given a property name this method identifies if it's a valid property for the sake
  * of the library, a valid property is a property which does not provoke an error
  * when trying to access the value associated to it from any object
@@ -287,4 +276,3 @@ utils.propertyForbiddenRules = {
 };
 
 export default utils;
-

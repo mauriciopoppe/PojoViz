@@ -1,7 +1,6 @@
-import _ from "lodash";
 import utils from "../util/";
-import hashKey from "../util/hashKey";
 import Analyzer from "../ObjectAnalyzer";
+import { deepClone, deepMerge, template } from "../util/lodash-replacements";
 
 const searchEngine = "https://duckduckgo.com/?q=";
 
@@ -66,7 +65,7 @@ const searchEngine = "https://duckduckgo.com/?q=";
  */
 class Inspector {
   constructor(config) {
-    config = _.merge(_.clone(Inspector.DEFAULT_CONFIG, true), config);
+    config = deepMerge(deepClone(Inspector.DEFAULT_CONFIG), config);
 
     /**
      * If provided it'll be used as the starting object from the
@@ -162,12 +161,13 @@ class Inspector {
   }
 
   set(options) {
-    const me = this;
-    _.forOwn(options, function (v, k) {
-      if (me.hasOwnProperty(k)) {
-        me[k] = v;
+    for (const k in options) {
+      if (Object.prototype.hasOwnProperty.call(options, k)) {
+        if (this.hasOwnProperty(k)) {
+          this[k] = options[k];
+        }
       }
-    });
+    }
   }
 
   /**
@@ -356,6 +356,9 @@ class Inspector {
    * @returns {*}
    */
   findNestedValueInGlobal(nestedConfiguration) {
+    if (!nestedConfiguration) {
+      return null;
+    }
     const tokens = nestedConfiguration.split(".");
     let start = window;
     while (tokens.length) {
@@ -421,7 +424,7 @@ class Inspector {
 
   showSearch(nodeName, nodeProperty) {
     const me = this;
-    const tpl = _.template(
+    const tpl = template(
       "${searchEngine}${lucky}${libraryName} ${nodeName} ${nodeProperty}",
     );
     const compiled = tpl({

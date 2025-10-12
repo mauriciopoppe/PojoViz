@@ -1,4 +1,4 @@
-import _ from "lodash";
+import { deepMerge } from "../../util/lodash-replacements";
 import utils from "../../renderer/utils";
 import pojoVizUtils from "../../util/";
 
@@ -116,7 +116,7 @@ function Property() {
     if (!m) {
       return margin;
     }
-    margin = _.merge(margin, m);
+    margin = deepMerge(margin, m);
   };
   return my;
 }

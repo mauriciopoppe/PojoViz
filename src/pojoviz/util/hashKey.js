@@ -1,4 +1,4 @@
-import _ from "lodash";
+import { uniqueId } from "./lodash-replacements";
 
 import utils from "./";
 
@@ -10,7 +10,7 @@ me = hashKey = function (v) {
   if (utils.isObjectOrFunction(v)) {
     let hasError = false;
     if (!me.has(v)) {
-      hasError = doSet(v, _.uniqueId());
+      hasError = doSet(v, uniqueId());
     }
     uid = doGet(v);
     if (!hasError && !me.has(v)) {

@@ -1,6 +1,4 @@
-import _ from 'lodash';
-import hashKey from '../util/hashKey';
-import Inspector from './Inspector';
+import Inspector from "./Inspector";
 
 const toInspect = [window];
 
@@ -9,9 +7,9 @@ class Global extends Inspector {
     super({
       analyzerConfig: {
         levels: 1,
-        visitConstructors: false
+        visitConstructors: false,
       },
-      alwaysDirty: true
+      alwaysDirty: true,
     });
   }
 
@@ -21,7 +19,7 @@ class Global extends Inspector {
 
   inspectSelf() {
     const me = this;
-    this.debug && console.log('inspecting global');
+    this.debug && console.log("inspecting global");
     //var me = this,
     //  hashes = require('../InspectedInstances');
     //
@@ -36,3 +34,4 @@ class Global extends Inspector {
 }
 
 export default Global;
+

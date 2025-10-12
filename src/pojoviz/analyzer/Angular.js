@@ -1,10 +1,10 @@
-import _ from "lodash";
 import Inspector from "./Inspector";
+import { deepMerge } from "../util/lodash-replacements";
 
 class Angular extends Inspector {
   constructor(config) {
     super(
-      _.merge(
+      deepMerge(
         {
           entryPoint: "angular",
           displayName: "AngularJS",

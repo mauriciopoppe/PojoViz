@@ -560,3 +560,11 @@ paper-dialog::shadow #scroller {
 pre code, pre [class^="hljs"] {
   font-family: monospace;
 }
+
+svg text {
+  font-family: monospace;
+}
+
+svg text.pv-title {
+  letter-spacing: -1px;
+}

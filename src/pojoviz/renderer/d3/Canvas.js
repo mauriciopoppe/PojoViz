@@ -9,21 +9,51 @@ const prefix = utils.prefixer
 const escapeCls = utils.escapeCls
 const hashCode = pojoVizUtils.hashCode
 
-function getX (d) {
+function segmentIntersection(p1, p2, p3, p4) {
+  const x1 = p1.x,
+    y1 = p1.y
+  const x2 = p2.x,
+    y2 = p2.y
+  const x3 = p3.x,
+    y3 = p3.y
+  const x4 = p4.x,
+    y4 = p4.y
+
+  const denominator = (x1 - x2) * (y3 - y4) - (y1 - y2) * (x3 - x4)
+
+  if (denominator === 0) {
+    return null // parallel
+  }
+
+  const t = ((x1 - x3) * (y3 - y4) - (y1 - y3) * (x3 - x4)) / denominator
+  const u = -((x1 - x2) * (y1 - y3) - (y1 - y2) * (x1 - x3)) / denominator
+
+  if (t >= 0 && t <= 1 && u >= 0 && u <= 1) {
+    return {
+      x: x1 + t * (x2 - x1),
+      y: y1 + t * (y2 - y1)
+    }
+  }
+
+  return null // no intersection within segments
+}
+
+function getX(d) {
   return d.x - d.width / 2
 }
 
-function getY (d) {
+function getY(d) {
   return d.y - d.height / 2
 }
 
 class Canvas {
-  constructor (data, el) {
+  constructor(data, el) {
     if (!el) {
       throw new Error('el must be provided')
     }
     this.id = uniqueId()
     this.data = data
+    console.log(this.data)
     this.createRoot(el)
     this.set({
       nodes: data.nodes,
@@ -31,12 +61,12 @@ class Canvas {
     })
   }
 
-  destroy () {
+  destroy() {
     this.data = null
     rootSvg.selectAll('*').remove()
   }
 
-  createRoot (el) {
+  createRoot(el) {
     const root = d3.select(el)
     if (!root[0][0]) {
       throw new Error("canvas couldn't be selected")
@@ -44,10 +74,29 @@ class Canvas {
     root.selectAll('*').remove()
     rootSvg = root.append('svg')
     rootSvg.attr('style', 'width: 100%; height: 100%')
+
+    // Add marker definition
+    rootSvg
+      .append('defs')
+      .selectAll('marker')
+      .data(['arrow'])
+      .enter()
+      .append('marker')
+      .attr('id', String)
+      .attr('viewBox', '0 -5 10 10')
+      .attr('refX', 10)
+      .attr('refY', 0)
+      .attr('markerWidth', 3)
+      .attr('markerHeight', 3)
+      .attr('orient', 'auto')
+      .append('path')
+      .attr('d', 'M0,-5L10,0L0,5')
+      .attr('fill', 'gray')
+
     this.root = rootSvg.append('g').attr('class', 'root-' + this.id)
   }
 
-  set (obj, render) {
+  set(obj, render) {
     this.nodes = obj.nodes
     this.edges = obj.edges
     if (render) {
@@ -55,7 +104,7 @@ class Canvas {
     }
   }
 
-  fixZoom () {
+  fixZoom() {
     const me = this
     const scr = rootSvg.node()
     const bbox = this.root.node().getBBox()
@@ -65,10 +114,7 @@ class Canvas {
     const canvasHeight = bbox.height
     const sx = this.data.mn.x
     const sy = this.data.mn.y
-    let scale = Math.min(
-      screenWidth / canvasWidth,
-      screenHeight / canvasHeight
-    )
+    let scale = Math.min(screenWidth / canvasWidth, screenHeight / canvasHeight)
     const translate = [
       -sx * scale + (screenWidth / 2 - (canvasWidth * scale) / 2),
       -sy * scale + (screenHeight / 2 - (canvasHeight * scale) / 2)
@@ -80,7 +126,7 @@ class Canvas {
     // change the scale proportionally to its proximity to zero
     scale -= scale / 10
 
-    function redraw () {
+    function redraw() {
       const translation = d3.event.translate
       const newX = translation[0]
       const newY = translation[1]
@@ -93,7 +139,7 @@ class Canvas {
       )
     }
 
-    function zoomBehavior (type) {
+    function zoomBehavior(type) {
       const start = type === 'start'
       return function () {
         d3.select(this).classed('dragged', start)
@@ -129,51 +175,81 @@ class Canvas {
       .attr('opacity', 1)
   }
 
-  render () {
+  render() {
     this.renderNodes()
     this.renderEdges()
     this.fixZoom()
   }
 
-  renderEdges () {
+  renderEdges() {
     const me = this
     const edges = this.edges
 
-    // CREATE
-    const diagonal = d3.svg
-      .diagonal()
-      .source(function (d) {
-        const from = me.root.select('.' + prefix(escapeCls(d.from)))
-        if (!from.node()) {
-          throw new Error('source node must exist')
-        }
-        const fromData = from.datum()
-        const property = from.select(
-          '.' + prefix(d.from, hashCode(d.property))
-        )
-        const propertyData = d3.transform(property.attr('transform'))
+    const sourceAccessor = function (d) {
+      const from = me.root.select('.' + prefix(escapeCls(d.from)))
+      if (!from.node()) {
+        throw new Error('source node must exist')
+      }
+      const fromData = from.datum()
+      const property = from.select('.' + prefix(d.from, hashCode(d.property)))
+      const propertyData = d3.transform(property.attr('transform'))
 
-        return {
-          x: getY(fromData) + propertyData.translate[1] - 2,
-          y: getX(fromData) + propertyData.translate[0] - 10
-        }
-      })
-      .target(function (d) {
-        const to = me.root.select('.' + prefix(escapeCls(d.to)))
-        if (!to.node()) {
-          throw new Error('target node must exist')
-        }
-        const toData = to.datum()
-        return {
-          x: getY(toData) + 10, // + bbox.height / 2,
-          y: getX(toData) // + bbox.width / 2
-        }
-      })
-      .projection(function (d) {
-        return [d.y, d.x]
-      })
+      return {
+        x: getX(fromData) + propertyData.translate[0] - 10,
+        y: getY(fromData) + propertyData.translate[1] - 2
+      }
+    }
 
-    function mouseEvent (type) {
+    function getTargetPoint(d, sourcePoint) {
+      const toNode = me.root.select('.' + prefix(escapeCls(d.to)))
+      if (!toNode.node()) {
+        throw new Error('target node must exist')
+      }
+      const toData = toNode.datum()
+
+      const targetCenter = { x: toData.x, y: toData.y }
+
+      const x_left = getX(toData)
+      const y_top = getY(toData)
+      const x_right = getX(toData) + toData.width
+      const y_bottom = getY(toData) + toData.height
+
+      const nodeSegments = [
+        [
+          { x: x_left, y: y_top },
+          { x: x_right, y: y_top }
+        ], // top
+        [
+          { x: x_right, y: y_top },
+          { x: x_right, y: y_bottom }
+        ], // right
+        [
+          { x: x_right, y: y_bottom },
+          { x: x_left, y: y_bottom }
+        ], // bottom
+        [
+          { x: x_left, y: y_bottom },
+          { x: x_left, y: y_top }
+        ] // left
+      ]
+
+      let intersectionPoint = targetCenter
+      for (const segment of nodeSegments) {
+        const intersection = segmentIntersection(sourcePoint, targetCenter, segment[0], segment[1])
+        if (intersection) {
+          intersectionPoint = intersection
+          break
+        }
+      }
+      return intersectionPoint
+    }
+
+    const line = d3.svg
+      .line()
+      .x((d) => d.x)
+      .y((d) => d.y)
+
+    function mouseEvent(type) {
       const over = type === 'over'
       return function () {
         d3.select(this).classed('selected', over)
@@ -186,24 +262,25 @@ class Canvas {
       .enter()
       .append('path')
       .attr('class', function (d) {
-        return [
-          prefix('to', escapeCls(d.to)),
-          prefix('from', escapeCls(d.from)),
-          prefix('link')
-        ].join(' ')
+        return [prefix('to', escapeCls(d.to)), prefix('from', escapeCls(d.from)), prefix('link')].join(' ')
       })
       .attr('stroke', 'lightgray')
       .attr('stroke-opacity', 0.3)
-      .attr('d', diagonal)
+      .attr('d', function (d) {
+        const sourcePoint = sourceAccessor(d)
+        const targetPoint = getTargetPoint(d, sourcePoint)
+        return line([sourcePoint, targetPoint])
+      })
+      .attr('marker-end', 'url(#arrow)')
       .on('mouseover', mouseEvent('over'))
       .on('mouseout', mouseEvent('out'))
   }
 
-  opacityToggle (decrease) {
+  opacityToggle(decrease) {
     this.root.classed(prefix('nodes-focused'), decrease)
   }
 
-  renderNodes () {
+  renderNodes() {
     const nodes = this.nodes
 
     const nodeCtor = pojoVizNode(this)
@@ -213,10 +290,7 @@ class Canvas {
       right: 10,
       bottom: 10
     })
-    this.root
-      .selectAll(prefix('node'))
-      .data(nodes)
-      .call(nodeCtor)
+    this.root.selectAll(prefix('node')).data(nodes).call(nodeCtor)
   }
 }
 

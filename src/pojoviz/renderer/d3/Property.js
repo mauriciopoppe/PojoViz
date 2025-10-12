@@ -6,7 +6,7 @@ import pojoVizUtils from '../../util/'
 const prefix = utils.prefixer
 const hashCode = pojoVizUtils.hashCode
 
-function Property () {
+function Property() {
   let margin = {
     top: 0,
     right: 0,
@@ -16,13 +16,13 @@ function Property () {
 
   const titleHeight = 40
 
-  function my (selection) {
-    function propertyY (d, i) {
+  function my(selection) {
+    function propertyY(d, i) {
       return [margin.left + 10, margin.top + titleHeight + i * 15]
     }
 
     // PROPERTY CREATE
-    function mouseEvent (type) {
+    function mouseEvent(type) {
       const over = type === 'over'
       return function (d, i) {
         d3.select(this)
@@ -85,20 +85,17 @@ function Property () {
       .attr('x', -2)
       .attr('y', -9)
 
-    selection
-      .selectAll('rect.' + prefix('property', 'background'))
-      .each(function (d) {
-        d3
-          .select(this)
-          .attr('height', function (d) {
-            const text = d3.select(this.parentNode).select('text')
-            return text.property('clientHeight')
-          })
-          .attr('width', function (d) {
-            const text = d3.select(this.parentNode).select('text')
-            return text.property('clientWidth') + 3
-          })
-      })
+    selection.selectAll('rect.' + prefix('property', 'background')).each(function (d) {
+      d3.select(this)
+        .attr('height', function (d) {
+          const text = d3.select(this.parentNode).select('text')
+          return text.property('clientHeight')
+        })
+        .attr('width', function (d) {
+          const text = d3.select(this.parentNode).select('text')
+          return text.property('clientWidth') + 3
+        })
+    })
 
     propertyEnter.each(function (d) {
       if (d.type === 'object' || d.type === 'function') {

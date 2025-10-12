@@ -16,7 +16,8 @@
 
 <Dialog show={showAboutDialog} on:close={onClose} heading="About">
   <p>
-    Author <a target="_blank" href="https://twitter.com/iMauricio">@iMauricio</a>, have fun!
+    <a target="_blank" href="https://mauriciopoppe.com/links">Made by Mauricio Poppe</a>, thank you for checking this
+    tool!
   </p>
 
   <p>
@@ -25,13 +26,10 @@
 
   <div class="powered-by">
     <a href="https://d3js.org" target="_blank">
-      <img src="/images/d3.png" alt="D3.js" height="64">
-    </a>
-    <a href="https://threejs.org" target="_blank">
-      <img src="/images/threejs.png" alt="Three.js" height="64">
+      d3
     </a>
     <a href="https://github.com/cpettitt/dagre" target="_blank">
-      <img src="/images/dagre.png" alt="Dagre">
+      Dagre
     </a>
     <a href="https://duckduckgo.com" target="_blank">
       <img src="https://duckduckgo.com/assets/icons/meta/DDG-icon_64x64.png" alt="DuckDuckGo">

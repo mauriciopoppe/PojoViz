@@ -25,3 +25,6 @@
 <div class="sidebar">
   <LibraryMenu {sections} />
 </div>
+
+<style>
+</style>

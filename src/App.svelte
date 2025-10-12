@@ -3,7 +3,6 @@
   import Toolbar from './lib/Toolbar.svelte';
   import Sidebar from './lib/Sidebar.svelte';
   import Canvas from './lib/Canvas.svelte';
-  import About from './lib/About.svelte';
   import Search from './lib/Search.svelte';
   import Readme from './lib/Readme.svelte';
   import Notification from './lib/Notification.svelte';
@@ -159,8 +158,6 @@
       <Canvas />
     {:else if page === '#search'}
       <Search />
-    {:else if page === '#about'}
-      <About />
     {/if}
   </main>
   <Notification text={notificationText} visible={showNotification} />
@@ -171,15 +168,27 @@
   </Dialog>
 </div>
 
-
-
 <style>
-  main {
-    padding: 1em;
+  .app {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    grid-template-rows: auto 1fr;
+    height: 100vh;
+  }
+
+  header {
+    grid-column: 1 / 3;
   }
 
   aside {
-    max-height: 90vh;
+    grid-row: 2;
     overflow: scroll;
+    border-right: 1px solid #ccc;
+  }
+
+  main {
+    padding: 1em;
+    grid-row: 2;
+    grid-column: 2;
   }
 </style>

@@ -32,15 +32,9 @@
   })
 </script>
 
-<div class="readme">
+<div class="markdown-body">
   {@html readme}
 </div>
 
 <style>
-  .readme {
-    padding: 1rem;
-  }
-  :global(pre[class*="language-"]) {
-    font-family: monospace !important;
-  }
 </style>

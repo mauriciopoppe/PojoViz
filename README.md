@@ -1,9 +1,9 @@
 PojoViz - Plain Old JavaScript Object Visualization
 =======
 
-PojoViz is a tool to analyze the plain objects of a JavaScript object hierarchy by finding all the relationships found between the hierarchy entry point (in most libraries/frameworks a global variable) and the objects/functions linked to it.
+PojoViz is a tool to visualize the plain objects of a JavaScript object hierarchy by finding all the relationships found between the hierarchy entry point (in most libraries/frameworks a global variable) and the objects/functions linked to it.
 
-To start, click on any of the links on the sidebar on the left ⬅️.
+To start, click on any of the links on the left ⬅️.
 
 ## How does it work?
 

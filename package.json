@@ -10,9 +10,11 @@
   },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^5.1.0",
+    "@tailwindcss/vite": "^4.1.14",
     "eslint": "^8.57.1",
     "standard": "^17.1.2",
     "svelte": "^5.34.7",
+    "tailwindcss": "^4.1.14",
     "vite": "^6.3.5",
     "vite-plugin-static-copy": "^3.1.3"
   },

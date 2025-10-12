@@ -12,26 +12,25 @@
   }
 </script>
 
-<div class="library-menu">
-  <div class="section">
+<div class="tw:p-3">
+  <div>
+    <h2 class="tw:text-xl tw:mt-2 tw:font-sans">What's PojoViz?</h2>
     <ul>
       <li>
-        <a href="{apiUrl}" on:click|preventDefault={pushHref}> README </a>
+        <a class="tw:block tw:px-2 tw:py-1 tw:font-serif tw:hover:bg-gray-100" href="{apiUrl}" on:click|preventDefault={pushHref}> README </a>
       </li>
       <li>
-        <a href="{apiUrl}#development" on:click|preventDefault={pushHref}> Development </a>
+        <a class="tw:block tw:px-2 tw:py-1 tw:font-serif tw:hover:bg-gray-100" href="{apiUrl}#development" on:click|preventDefault={pushHref}> Development </a>
       </li>
     </ul>
   </div>
-  <div class="section">
-  </div>
   {#each sections as section}
     <div class="section">
-      <h2>{section.label}</h2>
+      <h2 class="tw:text-xl tw:mt-2 tw:font-sans">{section.label}</h2>
       <ul>
         {#each section.libraries as library}
           <li>
-            <a href="{apiUrl + '#render/' + library.entryPoint}" on:click|preventDefault={pushHref}>
+            <a class="tw:block tw:px-2 tw:py-1 tw:font-serif tw:hover:bg-gray-100" href="{apiUrl + '#render/' + library.entryPoint}" on:click|preventDefault={pushHref}>
               {library.label || library.entryPoint}
             </a>
           </li>
@@ -42,29 +41,4 @@
 </div>
 
 <style>
-  .library-menu {
-    padding: 1em;
-  }
-
-  .section h2 {
-    font-size: 1.2em;
-    margin-bottom: 0.5em;
-  }
-
-  ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  li a {
-    display: block;
-    padding: 0.5em;
-    text-decoration: none;
-    color: #333;
-  }
-
-  li a:hover {
-    background-color: #eee;
-  }
 </style>

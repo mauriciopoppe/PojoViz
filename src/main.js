@@ -1,5 +1,5 @@
 import { mount } from 'svelte'
-import './app.css'
+import './github-markdown.css'
 import App from './App.svelte'
 
 import './pojoviz/index.js'

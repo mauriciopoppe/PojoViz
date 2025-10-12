@@ -15,18 +15,19 @@ const proto = {
   }
 }
 
-function doGet (from, property) {
+function doGet(from, property) {
   const obj = property ? from[property] : from
   const r = Object.create(proto)
   r.values = (utils.isObjectOrFunction(obj) && labelCache[hashKey(obj)]) || []
+  console.log(r.values)
   return r
 }
 
-function doInsert (obj, properties, config) {
+function doInsert(obj, properties, config) {
   const hkObj = hashKey(obj)
   labelCache[hkObj] = labelCache[hkObj] || []
   const arr = labelCache[hkObj]
-  const index = config.highPriority ? 0 : arr.length
+  const index = config.insertAtTheStart ? 0 : arr.length
 
   // label override
   if (config.labelOverride) {
@@ -37,7 +38,7 @@ function doInsert (obj, properties, config) {
   arr.splice(index, 0, properties)
 }
 
-function labeler (from, property, config) {
+function labeler(from, property, config) {
   if (!utils.isObjectOrFunction(from)) {
     throw new Error('from needs to be an object or a function')
   }
@@ -45,7 +46,7 @@ function labeler (from, property, config) {
   let obj
   let label
 
-  function attempToInsert (obj, from, label) {
+  function attempToInsert(obj, from, label) {
     if (utils.isObjectOrFunction(obj)) {
       const objHash = hashKey(obj)
       const fromHash = from ? hashKey(from) : null
@@ -53,7 +54,7 @@ function labeler (from, property, config) {
         from: fromHash,
         label
       }
-      if (!(labelCache[objHash] || []).find(item => item.from === labelCfg.from && item.label === labelCfg.label)) {
+      if (!(labelCache[objHash] || []).find((item) => item.from === labelCfg.from && item.label === labelCfg.label)) {
         doInsert(obj, labelCfg, config)
       }
     }
@@ -61,24 +62,16 @@ function labeler (from, property, config) {
 
   if (property) {
     obj = from[property]
-    label = property
+    label = obj[Symbol.toStringTag] || obj.name || property
     // if the property is `prototype` append the name of the constructor
     // this means that it has a higher priority so the item should be prepended
-    if (property === 'prototype' && utils.isConstructor(from)) {
-      config.highPriority = true
-      label = from.name + '.' + property
+    if (property === 'prototype') {
+      config.insertAtTheStart = true
+      label = doGet(from).first().label + '.prototype'
     }
     attempToInsert(obj, from, label)
   } else {
-    // the default label for an iterable is the hashkey
-    attempToInsert(from, null, hashKey(from))
-
-    // if it's called with the second arg === undefined then only
-    // set a label if it's a constructor
-    if (utils.isConstructor(from)) {
-      config.highPriority = true
-      attempToInsert(from, null, from.name)
-    }
+    attempToInsert(from, null, from[Symbol.toStringTag] || from.name || hashKey(from))
   }
 
   return doGet(from, property)

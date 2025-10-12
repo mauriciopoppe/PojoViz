@@ -1,47 +1,32 @@
-# Svelte + Vite
+PojoViz - Plain Old JavaScript Object Visualization
+=======
 
-This template should help get you started developing with Svelte in Vite.
+PojoViz is a tool to analyze the plain objects of a JavaScript object hierarchy by finding all the relationships found between the hierarchy entry point (in most libraries/frameworks a global variable) and the objects/functions linked to it.
 
-## Recommended IDE Setup
+To start, click on any of the links on the sidebar on the left.
 
-[VS Code](https://code.visualstudio.com/) + [Svelte](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode).
+## Why?
 
-## Need an official Svelte framework?
+I wanted a way to visualize the object structure of libraries, meaning, if you take the `Object` and follow `Object.prototype` how
+many other objects will you find?
 
-Check out [SvelteKit](https://github.com/sveltejs/kit#readme), which is also powered by Vite. Deploy anywhere with its serverless-first approach and adapt to various platforms, with out of the box support for TypeScript, SCSS, and Less, and easily-added support for mdsvex, GraphQL, PostCSS, Tailwind CSS, and more.
+PojoViz can do a depth first search from a set of source objects and render a graph using SVG objects that represent them.
 
-## Technical considerations
+## How does it work?
 
-**Why use this over SvelteKit?**
+In short PojoViz receives as input a collection of JS objects and then:
 
-- It brings its own routing solution which might not be preferable for some users.
-- It is first and foremost a framework that just happens to use Vite under the hood, not a Vite app.
+- It does a Depth First Search through the properties of objects/functions it finds along the way
+- It finishes whenever it reaches a max-depth or it completes visiting all reachable nodes
+- It creates a graph whose layout is computed by [dagre](https://github.com/cpettitt/dagre)
+- The graph is rendered by [d3.js](http://d3js.org/)
 
-This template contains as little as possible to get started with Vite + Svelte, while taking into account the developer experience with regards to HMR and intellisense. It demonstrates capabilities on par with the other `create-vite` templates and is a good starting point for beginners dipping their toes into a Vite + Svelte project.
+## Features
 
-Should you later need the extended capabilities and extensibility provided by SvelteKit, the template has been structured similarly to SvelteKit so that it is easy to migrate.
+- Renders the hierarchy of the browser's built in objects (Object, Function, etc)
+- Renders a library/framework hosted anywhere through the Library Search widget (as long as there is a way to access it, e.g. for d3 `window.d3` would be the access point to the library)
 
-**Why `global.d.ts` instead of `compilerOptions.types` inside `jsconfig.json` or `tsconfig.json`?**
+## Technologies used in this project
 
-Setting `compilerOptions.types` shuts out all other types not explicitly listed in the configuration. Using triple-slash references keeps the default TypeScript setting of accepting type information from the entire workspace, while also adding `svelte` and `vite/client` type information.
-
-**Why include `.vscode/extensions.json`?**
-
-Other templates indirectly recommend extensions via the README, but this file allows VS Code to prompt the user to install the recommended extension upon opening the project.
-
-**Why enable `checkJs` in the JS template?**
-
-It is likely that most cases of changing variable types in runtime are likely to be accidental, rather than deliberate. This provides advanced typechecking out of the box. Should you like to take advantage of the dynamically-typed nature of JavaScript, it is trivial to change the configuration.
-
-**Why is HMR not preserving my local component state?**
-
-HMR state preservation comes with a number of gotchas! It has been disabled by default in both `svelte-hmr` and `@sveltejs/vite-plugin-svelte` due to its often surprising behavior. You can read the details [here](https://github.com/sveltejs/svelte-hmr/tree/master/packages/svelte-hmr#preservation-of-local-state).
-
-If you have state that's important to retain within a component, consider creating an external store which would not be replaced by HMR.
-
-```js
-// store.js
-// An extremely simple external store
-import { writable } from 'svelte/store'
-export default writable(0)
-```
+- [d3](http://d3js.org/)
+- [Dagre](https://github.com/cpettitt/dagre)

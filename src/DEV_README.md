@@ -2,11 +2,11 @@
 
 ## The algorithm
 
-%PojoViz works in three phases:
+PojoViz works in three phases:
 
 ### Configuration phase
 
-An object hierarchy is represented in %PojoViz with the following properties:
+An object hierarchy is represented in PojoViz with the following properties:
 
 - Entry point to the hierarchy (e.g. window.d3, window.THREE, window.document.head)
 - Hierarchy *src* (if the hierarchy comes from an external resource that needs to be fetched on runtime)
@@ -50,7 +50,7 @@ under the hood to set/get the unique hash of any object/primitive.
 
 ### hashKey
 
-- %PojoViz's `hashKey` is a function that generates a unique hash of the argument that it receives and
+- PojoViz's `hashKey` is a function that generates a unique hash of the argument that it receives and
 it can be applied in both primitives and objects:
   - when it's applied to object `hashKey` defines an additional property whose key is `__pojovizKey__`
   created with the code below (which is done only once), whenever `hashKey` is called on the same object
@@ -298,7 +298,7 @@ should be forbidden, to forbid the 4 objects seen above (`Object, Object.prototy
 Function.prototype`) the command to forbid them all is `pojoviz:builtIn`, if also `window` needs to be
 forbidden then the string should be `pojoviz:builtIn|pojoviz:window`, see the documentation
 of the property for a deep explanation on how it works
-- `alwaysDirty`, a hierarchy might be constantly changing, %PojoViz has an internal cache of these
+- `alwaysDirty`, a hierarchy might be constantly changing, PojoViz has an internal cache of these
 inspector instances so once a hierarchy has been analyzed the next time it's analyzed it won't be
 processed again but gathered from the cache
 - `analyzerConfig` configuration passed to the `ObjectAnalyzer` instance this inspector has
@@ -364,7 +364,7 @@ what dirty means is that the analyzer will redo the same analysis even if there'
 
 ### pojoviz
 
-%PojoViz has a useful method to create an inspector running `init` immediately on it, that method is
+PojoViz has a useful method to create an inspector running `init` immediately on it, that method is
 called `run`:
 
 ```javascript
@@ -456,7 +456,7 @@ happening under the hood**_
 ### hello world
 
 Let's create a simple object reached with `window.hello`, to render the object we need to
-tell %PojoViz the `entryPoint` to this object which is just `hello` (remember that the entry
+tell PojoViz the `entryPoint` to this object which is just `hello` (remember that the entry
 point is a path followed from the `window` object)
 
 <pojoviz-readme url="/examples/helloWorld.js" script></pojoviz-readme>
@@ -466,7 +466,7 @@ After looking at the demo many questions arise:
 - **why is it labeled as `object-23`?**
  - remember that under the hood the `hashKey` class sets a unique identifier on the object and
  the `labeler` class gives it a name, `labeler` couldn't identify a name for the object and that's
- why the label is equal to `hashKey(window.hello)`, but it should be `object-1` right? well %PojoViz
+ why the label is equal to `hashKey(window.hello)`, but it should be `object-1` right? well PojoViz
  actually forbade some objects for you (see [this][Inspector default config]) and in the process the
  hashKey of those objects were also computed
 
@@ -479,11 +479,11 @@ After looking at the demo many questions arise:
 
 - **I know that the hidden [[Prototype]] property of a simple object points to `Object.prototype` but I
 can't see it, why is that?**
- - %PojoViz default constructor for the analyzer actually forbade all the builtIn objects (more on this
+ - PojoViz default constructor for the analyzer actually forbade all the builtIn objects (more on this
  later)
 
 Let's render the same object without forbidding any object from being analyzed, to do that
-pass the option `forbiddenTokens: ''` to the Inspector constructor or to the `run` method of %PojoViz
+pass the option `forbiddenTokens: ''` to the Inspector constructor or to the `run` method of PojoViz
 
 <pojoviz-readme url="/examples/helloWorldNoForbid.js" script></pojoviz-readme>
 
@@ -499,7 +499,7 @@ so for the example above the command needs to be `global:Function|global:Functio
 
 <pojoviz-readme url="/examples/helloWorldForbidFunction.js" script></pojoviz-readme>
 
-What if we make %PojoViz render itself?
+What if we make PojoViz render itself?
 
 <pojoviz-readme url="/examples/pojoviz.js" script></pojoviz-readme>
 
@@ -513,7 +513,7 @@ the options available are shown above in the development notes.
 
 <pojoviz-readme url="/examples/pojovizNoArrays.js" script></pojoviz-readme>
 
-Still too many nodes, let's limit the number of levels to `0` (only the %PojoViz object will be
+Still too many nodes, let's limit the number of levels to `0` (only the PojoViz object will be
 analyzed), try changing the number of levels to experiment
 
 <pojoviz-readme url="/examples/pojovizLevels.js" script></pojoviz-readme>
@@ -522,7 +522,7 @@ Let's go back to a simpler example, how about rendering a constructor:
 
 <pojoviz-readme url="/examples/simple.js" script></pojoviz-readme>
 
-As seen the constructor nor its prototype were rendered, %PojoViz will only analyze functions
+As seen the constructor nor its prototype were rendered, PojoViz will only analyze functions
 whose name starts with an uppercase letter, why? this assumption was done to limit the number of nodes
 created (otherwise any function would be a constructor)
 
@@ -530,7 +530,7 @@ Let's solve this problem by making the name of the constructor uppercase:
 
 <pojoviz-readme url="/examples/simpleUppercase.js" script></pojoviz-readme>
 
-Now that works, but what if we can't change the code? we need to force %PojoViz to analye all
+Now that works, but what if we can't change the code? we need to force PojoViz to analye all
 kind of functions, to do so pass `visitSimpleFunctions: true` in the `analyzerConfig` object,
 <span style="font-size: 20px; color: rgb(179, 171, 12);">be warned though, a lot of nodes will be created
 in a complex structure</span>
@@ -538,7 +538,7 @@ in a complex structure</span>
 <pojoviz-readme url="/examples/simpleForceVisit.js" script></pojoviz-readme>
 
 What if the things to analyze are not available yet? this is the case of the libraries and frameworks
-rendered in this app, to indicate %PojoViz that we need to fetch an external resource let's
+rendered in this app, to indicate PojoViz that we need to fetch an external resource let's
 use the `src` configuration, how about rendering [Katex](http://khan.github.io/KaTeX/)
 
 <pojoviz-readme url="/examples/external.js" script></pojoviz-readme>

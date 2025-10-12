@@ -7,20 +7,44 @@
 
   function selectLibrary(libraryId) {
     const event = new CustomEvent('my-library-select', {
-      detail: `render/${libraryId}`,
+      detail: `${libraryId}`,
     });
     document.dispatchEvent(event);
   }
 </script>
 
 <div class="library-menu">
+  <div class="section">
+    <ul>
+      <li>
+        <a href="/" on:click|preventDefault={() => {
+          history.pushState(
+            { command: "" },
+            "",
+            "/"
+          )
+        }}> README </a>
+      </li>
+      <li>
+        <a href="/development" on:click|preventDefault={() => {
+          history.pushState(
+            { command: "development" },
+            "",
+            "/development"
+          )
+        }}> Development </a>
+      </li>
+    </ul>
+  </div>
+  <div class="section">
+  </div>
   {#each sections as section}
     <div class="section">
       <h2>{section.label}</h2>
       <ul>
         {#each section.libraries as library}
           <li>
-            <a href="{library.entrypoint}" on:click|preventDefault={() => selectLibrary(library.entrypoint)}>
+            <a href="{library.entrypoint}" on:click|preventDefault={() => selectLibrary(`render/${library.entrypoint}`)}>
               {library.label}
             </a>
           </li>

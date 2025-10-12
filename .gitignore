@@ -1,6 +1,4 @@
-/build/
-/public/
-/gulp/
+/dist
 
 # Created by http://www.gitignore.io
 

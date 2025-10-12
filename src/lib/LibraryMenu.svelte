@@ -18,7 +18,7 @@
   <div class="section">
     <ul>
       <li>
-        <a href="/" on:click|preventDefault={() => {
+        <a href="{apiUrl}" on:click|preventDefault={() => {
           history.pushState(
             { command: "" },
             "",
@@ -27,7 +27,7 @@
         }}> README </a>
       </li>
       <li>
-        <a href="/development" on:click|preventDefault={() => {
+        <a href="{apiUrl}development" on:click|preventDefault={() => {
           history.pushState(
             { command: "development" },
             "",
@@ -45,7 +45,7 @@
       <ul>
         {#each section.libraries as library}
           <li>
-            <a href="{library.entrypoint}" on:click|preventDefault={() => selectLibrary(`render/${library.entrypoint}`)}>
+            <a href="{apiUrl + 'render/' + library.entrypoint}" on:click|preventDefault={() => selectLibrary(`render/${library.entrypoint}`)}>
               {library.label}
             </a>
           </li>

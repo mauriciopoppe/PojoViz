@@ -71,6 +71,8 @@
         })
         .catch((e) => {
           if (window.pojoviz.utils && window.pojoviz.utils.notification) {
+            console.error('An error ocurred', e)
+            console.error('Stack', e.stack)
             window.pojoviz.utils.notification(e);
           } else {
             console.error('Error running library:', e);

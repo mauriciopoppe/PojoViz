@@ -4,8 +4,8 @@
 
   const sections = [
     {
-      label: 'Known Hierarchies',
-      libraries: schemas.knownHierarchies,
+      label: 'BuiltIn Objects',
+      libraries: schemas.builtInObjects,
     },
     {
       label: 'Notable Libraries',

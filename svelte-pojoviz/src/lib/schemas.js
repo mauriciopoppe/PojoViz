@@ -6,10 +6,6 @@ const myLibraries = [
     additionalForbiddenTokens:
       "global:pojoviz.InspectedInstances.pojoviz.analyzer.items",
   },
-  {
-    label: "t3",
-    entrypoint: "t3",
-  },
 ];
 
 const hugeHierarchies = [
@@ -81,7 +77,7 @@ const nodeGlobals = [
 });
 
 export const schemas = {
-  knownHierarchies: [
+  builtInObjects: [
     { entrypoint: "object", label: "Object" },
     { entrypoint: "builtIn", label: "Built In" },
   ],
@@ -96,4 +92,3 @@ export const schemas = {
   // nodeGlobals depended on my Heroku instance so it doesn't work anymore :(
   nodeGlobals,
 };
-

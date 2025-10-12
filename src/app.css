@@ -303,18 +303,6 @@ pojoviz-inspector-form paper-slider {
   stroke-width: 3px;
   stroke: lightgrey;
 }
-/* line 18, ../sass/renderer/d3.scss */
-.pv-link.selected {
-  stroke: #03a9f4;
-}
-/* line 20, ../sass/renderer/d3.scss */
-.pv-link.selected.predecessor {
-  stroke: #e51c23;
-}
-/* line 23, ../sass/renderer/d3.scss */
-.pv-link.selected.successor {
-  stroke: #03a9f4;
-}
 /* line 29, ../sass/renderer/d3.scss */
 .canvas-wrapper {
   height: 100%;
@@ -364,7 +352,7 @@ svg .pv-nodes-focused .pv-node.current .node-background {
   fill: white;
   fill-opacity: 1;
   stroke-opacity: 1;
-  stroke: #b3e5fc;
+  stroke: lightgrey;
   stroke-width: 2px;
 }
 /* line 76, ../sass/renderer/d3.scss */

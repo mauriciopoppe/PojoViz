@@ -16,25 +16,44 @@ function Node(parent) {
       const over = type === 'over'
       return function (d, i) {
         const hk = d.hashKey
+        const colors = parent.legendColors
 
         // hide all
         parent.opacityToggle(over)
 
         // select links
-        root.selectAll('.' + prefix('to', hk)).classed('selected predecessor', over)
-        root.selectAll('.' + prefix('from', hk)).classed('selected successor', over)
+        root
+          .selectAll('.' + prefix('to', hk))
+          .classed('selected predecessor', over)
+          .style('stroke', over ? colors.predecessor : null)
+        root
+          .selectAll('.' + prefix('from', hk))
+          .classed('selected successor', over)
+          .style('stroke', over ? colors.successor : null)
 
         // select current node
-        root.select('.' + prefix(hk)).classed('selected current', over)
+        root
+          .select('.' + prefix(hk))
+          .classed('selected current', over)
+          .select('rect.node-background')
+          .style('stroke', over ? colors.current : null)
 
         // select predecessor nodes
         d.predecessors.forEach(function (v) {
-          root.selectAll('.' + prefix(v)).classed('selected predecessor', over)
+          root
+            .selectAll('.' + prefix(v))
+            .classed('selected predecessor', over)
+            .select('rect.node-background')
+            .style('stroke', over ? colors.predecessor : null)
         })
 
         // select successor nodes
         d.successors.forEach(function (v) {
-          root.selectAll('.' + prefix(v)).classed('selected successor', over)
+          root
+            .selectAll('.' + prefix(v))
+            .classed('selected successor', over)
+            .select('rect.node-background')
+            .style('stroke', over ? colors.successor : null)
         })
       }
     }

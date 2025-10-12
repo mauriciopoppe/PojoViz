@@ -53,6 +53,15 @@ class Canvas {
     }
     this.id = uniqueId()
     this.data = data
+    this.legendItems = [
+      { id: 'current', text: 'Current Node', color: '#ff7f0e' },
+      { id: 'successor', text: 'Successor', color: '#2ca02c' },
+      { id: 'predecessor', text: 'Predecessor', color: '#1f77b4' }
+    ]
+    this.legendColors = this.legendItems.reduce((acc, item) => {
+      acc[item.id] = item.color
+      return acc
+    }, {})
     console.log(this.data)
     this.createRoot(el)
     this.set({
@@ -94,6 +103,58 @@ class Canvas {
       .attr('fill', 'gray')
 
     this.root = rootSvg.append('g').attr('class', 'root-' + this.id)
+    this.addLegend()
+  }
+
+  addLegend() {
+    const legendItems = this.legendItems;
+
+    const legendWidth = 150;
+    const legendHeight = 95;
+
+    const parentNode = rootSvg.node().parentNode;
+    if (!parentNode) {
+      return;
+    }
+    const screenWidth = parentNode.clientWidth;
+    const screenHeight = parentNode.clientHeight;
+
+    if (screenWidth === 0 || screenHeight === 0) {
+      // Can't create legend if canvas is not visible
+      return;
+    }
+
+    const legendX = screenWidth - legendWidth - 20;
+    const legendY = screenHeight - legendHeight - 20;
+
+    const legend = rootSvg.append('g')
+      .attr('class', prefix('legend'))
+      .attr('transform', `translate(${legendX}, ${legendY})`);
+
+    legend.append('rect')
+      .attr('width', legendWidth)
+      .attr('height', legendHeight)
+      .attr('rx', 5)
+      .attr('ry', 5)
+      .style('fill', 'rgba(255, 255, 255, 0.9)')
+      .style('stroke', '#ccc');
+
+    const items = legend.selectAll('.' + prefix('legend-item'))
+      .data(legendItems)
+      .enter()
+      .append('g')
+      .attr('class', prefix('legend-item'))
+      .attr('transform', (d, i) => `translate(15, ${i * 25 + 20})`);
+
+    items.append('rect')
+      .attr('width', 15)
+      .attr('height', 15)
+      .style('fill', d => d.color);
+
+    items.append('text')
+      .attr('x', 25)
+      .attr('y', 12)
+      .text(d => d.text);
   }
 
   set(obj, render) {

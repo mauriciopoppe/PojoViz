@@ -4,34 +4,26 @@
   const apiUrl = import.meta.env.BASE_URL
   export let sections = [];
 
-  const dispatch = createEventDispatcher();
-
-  function selectLibrary(libraryId) {
-    const event = new CustomEvent('my-library-select', {
-      detail: `${libraryId}`,
-    });
-    document.dispatchEvent(event);
-  }
 </script>
 
 <div class="library-menu">
   <div class="section">
     <ul>
       <li>
-        <a href="{apiUrl}" on:click|preventDefault={() => {
+        <a href="{apiUrl}" on:click|preventDefault={(e) => {
           history.pushState(
-            { command: "" },
+            { command: e.target.href },
             "",
-            `${apiUrl}`
+            e.target.href
           )
         }}> README </a>
       </li>
       <li>
-        <a href="{apiUrl}development" on:click|preventDefault={() => {
+        <a href="{apiUrl}#development" on:click|preventDefault={(e) => {
           history.pushState(
-            { command: "development" },
+            { command: e.target.href },
             "",
-            `${apiUrl}development`
+            e.target.href
           )
         }}> Development </a>
       </li>
@@ -45,7 +37,13 @@
       <ul>
         {#each section.libraries as library}
           <li>
-            <a href="{apiUrl + 'render/' + library.entrypoint}" on:click|preventDefault={() => selectLibrary(`render/${library.entrypoint}`)}>
+            <a href="{apiUrl + '#render/' + library.entrypoint}" on:click|preventDefault={(e) => {
+              history.pushState(
+                { command: e.target.href },
+                "",
+                e.target.href
+              )
+            }}>
               {library.label}
             </a>
           </li>

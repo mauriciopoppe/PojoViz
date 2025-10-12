@@ -1,13 +1,14 @@
-import _ from 'lodash';
-import knownHierarchies from './knownHierarchies';
-import notableLibraries from './notableLibraries';
-import myLibraries from './myLibraries';
-import hugeHierarchies from './hugeHierarchies';
-import nodeGlobals from './nodeGlobals';
+import _ from "lodash";
+import knownHierarchies from "./knownHierarchies";
+import notableLibraries from "./notableLibraries";
+import myLibraries from "./myLibraries";
+import hugeHierarchies from "./hugeHierarchies";
+import nodeGlobals from "./nodeGlobals";
 
 const proto = {
   find: function (entry) {
     function predicate(v) {
+      console.log(entry, v.displayName, v.entryPoint);
       return v.displayName === entry || v.entryPoint === entry;
     }
     let result;
@@ -15,7 +16,7 @@ const proto = {
       result = result || _.find(schema, predicate);
     });
     return result;
-  }
+  },
 };
 
 const schemas = Object.create(proto);
@@ -26,7 +27,8 @@ _.merge(schemas, {
   myLibraries: myLibraries,
   hugeHierarchies: hugeHierarchies,
   nodeGlobals: nodeGlobals,
-  downloaded: []
+  downloaded: [],
 });
 
 export default schemas;
+

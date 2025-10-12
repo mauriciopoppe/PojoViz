@@ -21,6 +21,12 @@
   </p>
 
   <p>
+    <a target="_blank" href="https://github.com/mauriciopoppe/PojoViz">
+      Here's the source code
+    </a>
+  </p>
+
+  <p>
     Powered by:
   </p>
 

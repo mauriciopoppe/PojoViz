@@ -6,6 +6,16 @@ const myLibraries = [
     additionalForbiddenTokens:
       "global:pojoviz.InspectedInstances.pojoviz.analyzer.items",
   },
+  {
+    label: "function-plot",
+    entrypoint: "functionPlot",
+    src: "https://cdnjs.cloudflare.com/ajax/libs/function-plot/1.25.1/function-plot.js",
+  },
+  {
+    label: "greuler",
+    entrypoint: "greuler",
+    src: "https://cdn.jsdelivr.net/npm/greuler@1.0.0/dist/greuler.min.js",
+  },
 ];
 
 const hugeHierarchies = [

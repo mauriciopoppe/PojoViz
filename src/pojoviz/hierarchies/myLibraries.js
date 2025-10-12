@@ -14,7 +14,13 @@ export default [
     },
   },
   {
-    entryPoint: "t3",
+    label: "function-plot",
+    entryPoint: "functionPlot",
+    src: "https://cdnjs.cloudflare.com/ajax/libs/function-plot/1.25.1/function-plot.js",
+  },
+  {
+    label: "greuler",
+    entryPoint: "greuler",
+    src: "https://cdn.jsdelivr.net/npm/greuler@1.0.0/dist/greuler.min.js",
   },
 ];
-

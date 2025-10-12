@@ -14,7 +14,7 @@
   import InspectorForm from './lib/InspectorForm.svelte';
 
   const apiUrl = import.meta.env.BASE_URL
-  let page = location.pathname.substring(1);
+  let page = window.location.hash
   let notificationText = '';
   let showNotification = false;
   let showConfigurationDialog = false;
@@ -67,6 +67,7 @@
       window.pojoviz
         .run(schema)
         .then(() => {
+          page = '#app';
           window.pojoviz.draw.render();
         })
         .catch((e) => {
@@ -78,9 +79,6 @@
             console.error('Error running library:', e);
           }
         })
-        .finally(() => {
-          page = 'app'; // Go back to app page after running library
-        });
     } else {
       console.warn('Schema not found for entry:', entry);
     }
@@ -108,24 +106,16 @@
 
   onMount(() => {
     function onPageChange(e) {
-      const command = e.detail?.state?.command;
+      const command = window.location.hash;
       if (command.includes('render/')) {
         runLibrary(getLibraryFromCommand(command));
       } else {
+        console.log(`Setting page to ${command}`)
         page = command;
       }
     }
     window.addEventListener('pushstate', onPageChange)
     window.addEventListener('popstate', onPageChange)
-
-    document.addEventListener('my-library-select', (e) => {
-      const toRender = e.detail
-      history.pushState(
-        { command: toRender },
-        toRender,
-        `/${toRender}`
-      );
-    });
 
     document.addEventListener('pojoviz-fetch-start', () => {
       showProgressBar = true;
@@ -164,19 +154,19 @@
     <Sidebar />
   </aside>
   <main>
-    {#if page === 'readme' || page === ''}
+    {#if page === '#readme' || page === '#' || page === ''}
       <Readme url="./README.md" />
-    {:else if page === 'development'}
+    {:else if page === '#development'}
       <Readme url="./DEV_README.md" />
-    {:else if page === 'app'}
+    {:else if page === '#app'}
       <Canvas />
-    {:else if page === 'dev'}
+    {:else if page === '#dev'}
       <Playground />
-    {:else if page === 'settings'}
+    {:else if page === '#settings'}
       <Settings />
-    {:else if page === 'search'}
+    {:else if page === '#search'}
       <Search />
-    {:else if page === 'about'}
+    {:else if page === '#about'}
       <About />
     {/if}
   </main>

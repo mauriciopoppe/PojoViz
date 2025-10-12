@@ -447,7 +447,6 @@ Inspector.instances = null;
  * @type {string[]}
  */
 Inspector.DEFAULT_FORBIDDEN_TOKENS_ARRAY = [
-  "pojoviz:global",
   "pojoviz:builtIn",
   "window:document",
 ];

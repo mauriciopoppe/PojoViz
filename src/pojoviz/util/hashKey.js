@@ -72,6 +72,7 @@ doSet = function (obj, key) {
     } catch (e) {
       console.error(
         `Cannot set property ${me.hiddenKey} on object, skipping it.`,
+        obj,
       );
       return e;
     }

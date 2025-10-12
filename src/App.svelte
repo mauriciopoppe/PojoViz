@@ -3,11 +3,9 @@
   import Toolbar from './lib/Toolbar.svelte';
   import Sidebar from './lib/Sidebar.svelte';
   import Canvas from './lib/Canvas.svelte';
-  import Settings from './lib/Settings.svelte';
   import About from './lib/About.svelte';
   import Search from './lib/Search.svelte';
   import Readme from './lib/Readme.svelte';
-  import Playground from './lib/Playground.svelte';
   import Notification from './lib/Notification.svelte';
   import ProgressBar from './lib/ProgressBar.svelte';
   import Dialog from './lib/Dialog.svelte';
@@ -110,7 +108,6 @@
       if (command.includes('render/')) {
         runLibrary(getLibraryFromCommand(command));
       } else {
-        console.log(`Setting page to ${command}`)
         page = command;
       }
     }
@@ -160,10 +157,6 @@
       <Readme url="./DEV_README.md" />
     {:else if page === '#app'}
       <Canvas />
-    {:else if page === '#dev'}
-      <Playground />
-    {:else if page === '#settings'}
-      <Settings />
     {:else if page === '#search'}
       <Search />
     {:else if page === '#about'}
@@ -183,5 +176,10 @@
 <style>
   main {
     padding: 1em;
+  }
+
+  aside {
+    max-height: 90vh;
+    overflow: scroll;
   }
 </style>

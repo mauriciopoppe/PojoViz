@@ -1,7 +1,7 @@
 <script>
   export let record = {
     src: '',
-    displayName: '',
+    label: '',
     entryPoint: '',
     forbiddenTokens: '',
     analyzer: {
@@ -38,8 +38,8 @@
       </div>
 
       <div class="form-group">
-        <label for="displayName">Name displayed</label>
-        <input id="displayName" type="text" bind:value={record.displayName} />
+        <label for="label">Name displayed</label>
+        <input id="label" type="text" bind:value={record.label} />
       </div>
     {/if}
 

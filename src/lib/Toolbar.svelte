@@ -1,6 +1,5 @@
 <script>
   import { createEventDispatcher } from 'svelte';
-  import TwitterButton from './TwitterButton.svelte';
   import About from './About.svelte';
   import Search from './Search.svelte';
 

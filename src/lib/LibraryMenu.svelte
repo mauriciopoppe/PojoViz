@@ -2,30 +2,24 @@
   import { createEventDispatcher } from 'svelte';
 
   const apiUrl = import.meta.env.BASE_URL
-  export let sections = [];
-
+  let { sections } = $props()
+  const pushHref = (e) => {
+    history.pushState(
+      { command: e.target.href },
+      "",
+      e.target.href
+    )
+  }
 </script>
 
 <div class="library-menu">
   <div class="section">
     <ul>
       <li>
-        <a href="{apiUrl}" on:click|preventDefault={(e) => {
-          history.pushState(
-            { command: e.target.href },
-            "",
-            e.target.href
-          )
-        }}> README </a>
+        <a href="{apiUrl}" on:click|preventDefault={pushHref}> README </a>
       </li>
       <li>
-        <a href="{apiUrl}#development" on:click|preventDefault={(e) => {
-          history.pushState(
-            { command: e.target.href },
-            "",
-            e.target.href
-          )
-        }}> Development </a>
+        <a href="{apiUrl}#development" on:click|preventDefault={pushHref}> Development </a>
       </li>
     </ul>
   </div>
@@ -37,14 +31,8 @@
       <ul>
         {#each section.libraries as library}
           <li>
-            <a href="{apiUrl + '#render/' + library.entrypoint}" on:click|preventDefault={(e) => {
-              history.pushState(
-                { command: e.target.href },
-                "",
-                e.target.href
-              )
-            }}>
-              {library.label}
+            <a href="{apiUrl + '#render/' + library.entryPoint}" on:click|preventDefault={pushHref}>
+              {library.label || library.entryPoint}
             </a>
           </li>
         {/each}

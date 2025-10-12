@@ -2,7 +2,6 @@
   import { createEventDispatcher } from 'svelte';
   import Dialog from './Dialog.svelte';
   import InspectorForm from './InspectorForm.svelte';
-  import { schemas } from './schemas.js';
 
   let showSearchDialog = false;
   let query = '';
@@ -27,7 +26,7 @@
       },
       alwaysDirty: false,
       src: '',
-      displayName: '',
+      label: '',
       entryPoint: '',
       forbiddenTokens: '',
     };
@@ -48,7 +47,7 @@
         const urlRegex = /^\s*https?:\/\/.*/i;
         if (urlRegex.test(query)) {
           options.src = query;
-          options.displayName = query;
+          options.label = query;
           selectedLibrary = { name: query, latest: query };
         } else {
           onSearch();
@@ -74,28 +73,28 @@
     const selectedValue = event.target.value;
     const selectedName = event.target.dataset.name;
 
-    options.displayName = selectedName;
+    options.label = selectedName;
     options.src = selectedValue;
     selectedLibrary = { name: selectedName, latest: selectedValue };
   }
 
   function onAddLibrary() {
-    if (options.displayName && options.entryPoint) {
+    if (options.label && options.entryPoint) {
       // Assuming pojoviz.utils.notification and pojoviz.schemas.downloaded are available globally
       if (window.pojoviz && window.pojoviz.utils && window.pojoviz.schemas) {
         window.pojoviz.utils.notification(
-          `added library ${options.displayName}! Find it under the "Downloaded" accordion`
+          `added library ${options.label}! Find it under the "Downloaded" accordion`
         );
         // Deep copy to avoid reactivity issues with the form
         const newLibrary = JSON.parse(JSON.stringify(options));
         // The original Polymer component had analyzer and analyzerConfig. We'll keep analyzer for now.
         // newLibrary.analyzerConfig = newLibrary.analyzer;
         // delete newLibrary.analyzer;
-        schemas.downloaded.push(newLibrary);
+        window.pojoviz.schemas.downloaded.push(newLibrary);
       } else {
         console.warn('pojoviz global object not fully available for adding library.');
         // Fallback for demonstration if pojoviz is not fully loaded
-        schemas.downloaded.push(JSON.parse(JSON.stringify(options)));
+        window.pojoviz.schemas.downloaded.push(JSON.parse(JSON.stringify(options)));
       }
       closeDialog();
     } else {
@@ -147,9 +146,9 @@
     {#if selectedLibrary}
       <InspectorForm bind:record={options} hideSrc={true} />
 
-      <h3>{options.displayName || selectedLibrary.name} configuration</h3>
+      <h3>{options.label || selectedLibrary.name} configuration</h3>
       <div class="small">
-        <div>Display Name: <kbd>{options.displayName || selectedLibrary.name}</kbd></div>
+        <div>Display Name: <kbd>{options.label || selectedLibrary.name}</kbd></div>
         <div>Source: <kbd>{options.src || selectedLibrary.latest}</kbd></div>
         <div>Levels: <kbd>{options.analyzer.levels}</kbd></div>
         <div>Entry Point: <kbd>{options.entryPoint}</kbd></div>
@@ -159,7 +158,7 @@
     {/if}
 
     <div class="docked-bottom">
-      <button on:click={onAddLibrary} disabled={!(options.displayName && options.entryPoint)}>Add Library</button>
+      <button on:click={onAddLibrary} disabled={!(options.label && options.entryPoint)}>Add Library</button>
       <button on:click={closeDialog}>Close</button>
     </div>
   </div>

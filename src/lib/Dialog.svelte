@@ -1,8 +1,7 @@
 <script>
   import { createEventDispatcher } from 'svelte';
 
-  export let show = false;
-  export let heading = '';
+  let { show = false, title = ''} = $props()
 
   const dispatch = createEventDispatcher();
 
@@ -16,7 +15,7 @@
   <div class="dialog-backdrop" on:click={closeDialog}></div>
   <div class="dialog-content">
     <div class="dialog-header">
-      <h2>{heading}</h2>
+      <h2>{title}</h2>
       <button on:click={closeDialog}>&times;</button>
     </div>
     <div class="dialog-body">

@@ -2,19 +2,11 @@
   import Dialog from './Dialog.svelte';
 
   let showAboutDialog = false;
-
-  function onClick() {
-    showAboutDialog = true;
-  }
-
-  function onClose() {
-    showAboutDialog = false;
-  }
 </script>
 
-<button on:click={onClick}>About</button>
+<button on:click={() => showAboutDialog = true}>About</button>
 
-<Dialog show={showAboutDialog} on:close={onClose} heading="About">
+<Dialog show={showAboutDialog} on:close={() => showAboutDialog = false} title="About">
   <p>
     <a target="_blank" href="https://mauriciopoppe.com/links">Made by Mauricio Poppe</a>, thank you for checking this
     tool!

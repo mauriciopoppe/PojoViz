@@ -1,8 +1,7 @@
 <script>
   import { createEventDispatcher } from 'svelte';
 
-  export let text = '';
-  export let visible = false;
+  let {text = '', visible = false} = $props()
 
   const dispatch = createEventDispatcher();
 

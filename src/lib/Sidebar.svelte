@@ -1,23 +1,23 @@
 <script>
   import LibraryMenu from './LibraryMenu.svelte';
-  import { schemas } from './schemas.js';
+  import { builtInObjects, notableLibraries, myLibraries, hugeLibraries } from '../pojoviz/hierarchies/index.js';
 
   const sections = [
     {
       label: 'BuiltIn Objects',
-      libraries: schemas.builtInObjects,
+      libraries: builtInObjects,
     },
     {
       label: 'Notable Libraries',
-      libraries: schemas.notableLibraries,
+      libraries: notableLibraries,
     },
     {
       label: 'My libraries',
-      libraries: schemas.myLibraries,
+      libraries: myLibraries,
     },
     {
       label: 'Huge Hierarchies',
-      libraries: schemas.hugeHierarchies,
+      libraries: hugeLibraries,
     },
   ];
 </script>

@@ -7,20 +7,19 @@ export default [
     entryPoint: "jQuery",
   },
   {
-    entryPoint: "Polymer",
-    additionalForbiddenTokens: "global:Polymer.elements",
-  },
-  {
     entryPoint: "d3",
   },
   {
-    displayName: "Lo-Dash",
+    label: "Lo-Dash",
     entryPoint: "_",
     src: "//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.js",
   },
   {
-    src: "//fb.me/react-0.12.2.js",
+    src: "https://unpkg.com/react@18/umd/react.development.js",
     entryPoint: "React",
+    analyzerConfig: {
+      levels: 1,
+    },
   },
   {
     src: "//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.js",
@@ -36,13 +35,6 @@ export default [
     entryPoint: "Handlebars",
   },
   {
-    label: "EmberJS",
-    src: "//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js|//cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.1.2/handlebars.js|//cdnjs.cloudflare.com/ajax/libs/ember.js/1.6.1/ember.js",
-    entryPoint: "Ember",
-    forbiddenTokens:
-      "global:$|global:Handlebars|pojoviz:builtIn|global:window|global:document",
-  },
-  {
     src: "//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.js|//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone.js",
     entryPoint: "Backbone",
   },
@@ -52,4 +44,3 @@ export default [
     entryPoint: "Marionette",
   },
 ];
-

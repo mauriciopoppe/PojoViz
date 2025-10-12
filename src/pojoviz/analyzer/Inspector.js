@@ -361,7 +361,6 @@ class Inspector {
     while (tokens.length) {
       const token = tokens.shift();
       if (!start.hasOwnProperty(token)) {
-        this.debug && console.warn("nestedConfig not found!");
         return null;
       }
       start = start[token];

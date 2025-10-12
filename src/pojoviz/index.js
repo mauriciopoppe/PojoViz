@@ -29,12 +29,12 @@ pojoviz = {
   /**
    * Given an object containing the configuration options of a
    * possible new instance of Inspector, this method checks if there's
-   * already an instance with the same displayName/entryPoint to avoid
+   * already an instance with the same entryPoint to avoid
    * creating more Instances of the same type, calls the hook
    * `modifyInstance` after the inspector is retrieved/created
    *
    * @param {config} options Options passed to an Inspector instance
-   * if the entryPoint/displayName wasn't created yet in
+   * if the entryPoint wasn't created yet in
    * InspectorInstances
    * @returns {Promise}
    */
@@ -48,7 +48,7 @@ pojoviz = {
     if (!options) {
       throw new Error("Options must be provided");
     }
-    const entryPoint = options.displayName || options.entryPoint;
+    const entryPoint = options.entryPoint;
     if (!entryPoint) {
       throw new Error("Entry point must be provided");
     }

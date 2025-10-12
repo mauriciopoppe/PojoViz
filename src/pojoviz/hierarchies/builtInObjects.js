@@ -4,11 +4,10 @@
 export default [
   {
     label: "Object",
-    displayName: "object",
+    entryPoint: "object",
   },
   {
     label: "BuiltIn Objects",
-    displayName: "builtIn",
+    entryPoint: "builtIn",
   },
 ];
-

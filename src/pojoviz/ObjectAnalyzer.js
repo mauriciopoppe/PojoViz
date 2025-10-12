@@ -425,7 +425,8 @@ class Analyzer {
     properties = me.getProperties(obj, true);
 
     if (!name) {
-      throw "the object needs to have a hashkey";
+      console.error("the object needs to have a hashkey");
+      return [];
     }
 
     properties

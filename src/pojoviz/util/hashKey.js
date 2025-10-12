@@ -8,11 +8,12 @@ let doGet, doSet;
 me = hashKey = function (v) {
   let uid = v;
   if (utils.isObjectOrFunction(v)) {
+    let hasError = false;
     if (!me.has(v)) {
-      doSet(v, _.uniqueId());
+      hasError = doSet(v, _.uniqueId());
     }
     uid = doGet(v);
-    if (!me.has(v)) {
+    if (!hasError && !me.has(v)) {
       throw Error(v + " should have a hashKey at this point :(");
     }
     return uid;
@@ -64,9 +65,16 @@ doSet = function (obj, key) {
   let value;
   if (!me.has(obj)) {
     value = typeof obj + "-" + key;
-    Object.defineProperty(obj, me.hiddenKey, {
-      value: value,
-    });
+    try {
+      Object.defineProperty(obj, me.hiddenKey, {
+        value: value,
+      });
+    } catch (e) {
+      console.error(
+        `Cannot set property ${me.hiddenKey} on object, skipping it.`,
+      );
+      return e;
+    }
     if (!obj[me.hiddenKey]) {
       // in node setting the instruction above might not have worked
       console.warn("hashKey#doSet() setting the value on the object directly");
@@ -76,7 +84,6 @@ doSet = function (obj, key) {
       throw new Error("Object.defineProperty did not work!");
     }
   }
-  return me;
 };
 
 me.hiddenKey = "__pojovizKey__";

@@ -1,15 +1,13 @@
 import _ from "lodash";
-import knownHierarchies from "./knownHierarchies";
+import builtInObjects from "./builtInObjects";
 import notableLibraries from "./notableLibraries";
 import myLibraries from "./myLibraries";
-import hugeHierarchies from "./hugeHierarchies";
-import nodeGlobals from "./nodeGlobals";
+import hugeLibraries from "./hugeLibraries";
 
 const proto = {
   find: function (entry) {
     function predicate(v) {
-      console.log(entry, v.displayName, v.entryPoint);
-      return v.displayName === entry || v.entryPoint === entry;
+      return v.entryPoint === entry;
     }
     let result;
     _.forOwn(this, function (schema) {
@@ -21,14 +19,13 @@ const proto = {
 
 const schemas = Object.create(proto);
 
-_.merge(schemas, {
-  knownHierarchies: knownHierarchies,
-  notableLibraries: notableLibraries,
-  myLibraries: myLibraries,
-  hugeHierarchies: hugeHierarchies,
-  nodeGlobals: nodeGlobals,
-  downloaded: [],
+Object.assign(schemas, {
+  builtInObjects,
+  notableLibraries,
+  myLibraries,
+  hugeLibraries,
 });
 
+export { builtInObjects, notableLibraries, myLibraries, hugeLibraries };
 export default schemas;
 

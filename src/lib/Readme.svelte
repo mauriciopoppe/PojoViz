@@ -3,8 +3,8 @@
   import hljs from 'highlight.js';
   import 'highlight.js/styles/default.css';
 
-  export let url;
-  let readme = '';
+  let { url } = $props()
+  let readme = $state('');
 
   const md = markdownit({
     highlight: function (str, lang) {
@@ -21,13 +21,15 @@
   });
 
 
-  $: if (url) {
-    fetch(url)
-      .then(res => res.text())
-      .then(text => {
-        readme = md.render(text);
-      });
-  }
+  $effect(() => {
+    if (url) {
+      fetch(url)
+        .then(res => res.text())
+        .then(text => {
+          readme = md.render(text);
+        });
+    }
+  })
 </script>
 
 <div class="readme">

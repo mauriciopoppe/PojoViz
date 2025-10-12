@@ -16,15 +16,11 @@
 </script>
 
 <div class="toolbar">
-  <button on:click={onPlaygroundClick}>Playground</button>
   <div class="spacer"></div>
-  <TwitterButton tweetText="pojoviz - visualization of plain old JS objects" via="iMauricio" hashtag="pojoviz,dataviz,d3,threejs" />
-  <iframe src="http://ghbtns.com/github-btn.html?user=maurizzzio&amp;repo=PojoViz&amp;type=watch&amp;count=true" allowtransparency="true" frameborder="0" scrolling="no" width="110" height="20"></iframe>
-  <Search />
+  <img style="padding-right: 5px" alt="Stars" src="https://img.shields.io/github/stars/mauriciopoppe/PojoViz?style=flat-square&labelColor=343b41"/>
+  <!-- <button on:click={() => onPageClick('settings')}>Settings</button> -->
+  <!-- <Search /> -->
   <About />
-  <button on:click={() => onPageClick('settings')}>Settings</button>
-  <button on:click={() => onPageClick('')}>Readme</button>
-  <button on:click={() => onPageClick('development')}>Development</button>
 </div>
 
 <style>

@@ -41,27 +41,24 @@
       tool!
     </p>
 
-    <p>
-      <a target="_blank" href="https://github.com/mauriciopoppe/PojoViz">
+    <p class="tw:my-3">
+      <a target="_blank" class="tw:underline" href="https://github.com/mauriciopoppe/PojoViz">
         Here's the source code
       </a>
     </p>
 
     <p>
       Powered by:
-    </p>
-
-    <div class="powered-by">
-      <a href="https://d3js.org" target="_blank">
+      <a href="https://d3js.org" class="tw:underline" target="_blank">
         d3
-      </a>
-      <a href="https://github.com/cpettitt/dagre" target="_blank">
+      </a>,
+      <a href="https://github.com/cpettitt/dagre" class="tw:underline" target="_blank">
         Dagre
+      </a>,
+      <a href="https://duckduckgo.com" class="tw:underline" target="_blank">
+        DuckDuckGo
       </a>
-      <a href="https://duckduckgo.com" target="_blank">
-        <img src="https://duckduckgo.com/assets/icons/meta/DDG-icon_64x64.png" alt="DuckDuckGo">
-      </a>
-    </div>
+    </p>
   </Dialog>
 </div>
 
@@ -75,17 +72,5 @@
 
   .spacer {
     flex-grow: 1;
-  }
-
-  .powered-by {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin-top: 1em;
-  }
-
-  .powered-by img {
-    max-height: 64px;
-    width: auto;
   }
 </style>

@@ -5,6 +5,7 @@ import pojoVizNode from './Node'
 import pojoVizUtils from '../../util/'
 
 let rootSvg
+let nodeConnectionDetails
 const prefix = utils.prefixer
 const escapeCls = utils.escapeCls
 const hashCode = pojoVizUtils.hashCode
@@ -62,7 +63,6 @@ class Canvas {
       acc[item.id] = item.color
       return acc
     }, {})
-    console.log(this.data)
     this.createRoot(el)
     this.set({
       nodes: data.nodes,
@@ -104,57 +104,157 @@ class Canvas {
 
     this.root = rootSvg.append('g').attr('class', 'root-' + this.id)
     this.addLegend()
+    this.addNodeConnectionDetails()
   }
 
   addLegend() {
-    const legendItems = this.legendItems;
+    const legendItems = this.legendItems
 
-    const legendWidth = 150;
-    const legendHeight = 95;
+    const legendWidth = 150
+    const legendHeight = 95
 
-    const parentNode = rootSvg.node().parentNode;
+    const parentNode = rootSvg.node().parentNode
     if (!parentNode) {
-      return;
+      return
     }
-    const screenWidth = parentNode.clientWidth;
-    const screenHeight = parentNode.clientHeight;
+    const screenWidth = parentNode.clientWidth
+    const screenHeight = parentNode.clientHeight
 
     if (screenWidth === 0 || screenHeight === 0) {
       // Can't create legend if canvas is not visible
-      return;
+      return
     }
 
-    const legendX = screenWidth - legendWidth - 20;
-    const legendY = screenHeight - legendHeight - 20;
+    const legendX = screenWidth - legendWidth - 20
+    const legendY = screenHeight - legendHeight - 20
 
-    const legend = rootSvg.append('g')
+    const legend = rootSvg
+      .append('g')
       .attr('class', prefix('legend'))
-      .attr('transform', `translate(${legendX}, ${legendY})`);
+      .attr('transform', `translate(${legendX}, ${legendY})`)
 
-    legend.append('rect')
+    legend
+      .append('rect')
       .attr('width', legendWidth)
       .attr('height', legendHeight)
       .attr('rx', 5)
       .attr('ry', 5)
       .style('fill', 'rgba(255, 255, 255, 0.9)')
-      .style('stroke', '#ccc');
+      .style('stroke', '#ccc')
 
-    const items = legend.selectAll('.' + prefix('legend-item'))
+    const items = legend
+      .selectAll('.' + prefix('legend-item'))
       .data(legendItems)
       .enter()
       .append('g')
       .attr('class', prefix('legend-item'))
-      .attr('transform', (d, i) => `translate(15, ${i * 25 + 20})`);
+      .attr('transform', (d, i) => `translate(15, ${i * 25 + 20})`)
 
-    items.append('rect')
+    items
+      .append('rect')
       .attr('width', 15)
       .attr('height', 15)
-      .style('fill', d => d.color);
+      .style('fill', (d) => d.color)
 
-    items.append('text')
+    items
+      .append('text')
       .attr('x', 25)
       .attr('y', 12)
-      .text(d => d.text);
+      .text((d) => d.text)
+  }
+
+  addNodeConnectionDetails() {
+    const detailsWidth = 250
+    const detailsHeight = 200
+
+    const parentNode = rootSvg.node().parentNode
+    if (!parentNode) {
+      return
+    }
+    const screenWidth = parentNode.clientWidth
+    const screenHeight = parentNode.clientHeight
+
+    if (screenWidth === 0 || screenHeight === 0) {
+      // Can't create details view if canvas is not visible
+      return
+    }
+
+    // Position it above the legend
+    const legendHeight = 95
+    const detailsX = screenWidth - detailsWidth - 20
+    const detailsY = screenHeight - legendHeight - detailsHeight - 30
+
+    nodeConnectionDetails = rootSvg
+      .append('g')
+      .attr('class', prefix('node-connection-details'))
+      .attr('transform', `translate(${detailsX}, ${detailsY})`)
+      .style('display', 'none')
+
+    nodeConnectionDetails
+      .append('rect')
+      .attr('width', detailsWidth)
+      .attr('height', detailsHeight)
+      .attr('rx', 5)
+      .attr('ry', 5)
+      .style('fill', 'rgba(255, 255, 255, 0.9)')
+      .style('stroke', '#ccc')
+
+    const detailsContent = nodeConnectionDetails
+      .append('foreignObject')
+      .attr('width', detailsWidth)
+      .attr('height', detailsHeight)
+      .append('xhtml:div')
+      .attr('class', 'details-content')
+      .style('padding', '10px')
+
+    detailsContent.append('div').attr('class', 'current-node')
+    detailsContent.append('div').attr('class', 'predecessors')
+    detailsContent.append('div').attr('class', 'successors')
+  }
+
+  showNodeConnectionDetails(nodeData) {
+    if (!nodeConnectionDetails) {
+      return
+    }
+
+    const predecessors = this.edges
+      .filter((edge) => edge.to === nodeData.hashKey)
+      .map((edge) => {
+        const node = this.nodes.find((n) => n.hashKey === edge.from)
+        return { name: node.label, property: edge.property }
+      })
+
+    const successors = this.edges
+      .filter((edge) => edge.from === nodeData.hashKey)
+      .map((edge) => {
+        const node = this.nodes.find((n) => n.hashKey === edge.to)
+        return { name: node.label, property: edge.property }
+      })
+
+    const currentNodeHtml = '<b>Current Node:</b> ' + nodeData.label
+    const predecessorsHtml =
+      '<b>Predecessors:</b>' +
+      (predecessors.length
+        ? '<ul>' + predecessors.map((p) => `<li>${p.name} (${p.property})</li>`).join('') + '</ul>'
+        : ' None')
+    const successorsHtml =
+      '<b>Successors:</b>' +
+      (successors.length
+        ? '<ul>' + successors.map((s) => `<li>${s.name} (${s.property})</li>`).join('') + '</ul>'
+        : ' None')
+
+    const detailsContent = nodeConnectionDetails.select('.details-content')
+    detailsContent.select('.current-node').html(currentNodeHtml)
+    detailsContent.select('.predecessors').html(predecessorsHtml)
+    detailsContent.select('.successors').html(successorsHtml)
+
+    nodeConnectionDetails.style('display', 'block')
+  }
+
+  hideNodeConnectionDetails() {
+    if (nodeConnectionDetails) {
+      nodeConnectionDetails.style('display', 'none')
+    }
   }
 
   set(obj, render) {

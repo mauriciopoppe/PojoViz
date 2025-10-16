@@ -131,3 +131,17 @@ svg text {
 svg text.pv-title {
   letter-spacing: -1px;
 }
+
+.pv-node-connection-details .details-content {
+  font-size: 12px;
+}
+
+.pv-node-connection-details ul {
+  list-style-type: none;
+  padding-left: 10px;
+  margin: 0;
+}
+
+.pv-node-connection-details li {
+  margin-bottom: 5px;
+}

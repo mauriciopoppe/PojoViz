@@ -22,7 +22,6 @@ function Node(parent) {
         }
 
         const hk = d.hashKey
-        const colors = parent.legendColors
 
         // hide all
         parent.opacityToggle(over)
@@ -31,18 +30,15 @@ function Node(parent) {
         root
           .selectAll('.' + prefix('to', hk))
           .classed('selected predecessor', over)
-          .style('stroke', over ? colors.predecessor : null)
         root
           .selectAll('.' + prefix('from', hk))
           .classed('selected successor', over)
-          .style('stroke', over ? colors.successor : null)
 
         // select current node
         root
           .select('.' + prefix(hk))
           .classed('selected current', over)
           .select('rect.node-background')
-          .style('stroke', over ? colors.current : null)
 
         // select predecessor nodes
         d.predecessors.forEach(function (v) {
@@ -50,7 +46,6 @@ function Node(parent) {
             .selectAll('.' + prefix(v))
             .classed('selected predecessor', over)
             .select('rect.node-background')
-            .style('stroke', over ? colors.predecessor : null)
         })
 
         // select successor nodes
@@ -59,7 +54,6 @@ function Node(parent) {
             .selectAll('.' + prefix(v))
             .classed('selected successor', over)
             .select('rect.node-background')
-            .style('stroke', over ? colors.successor : null)
         })
       }
     }

@@ -3,7 +3,7 @@
 **Feature Branch**: `001-node-details-sidebar`
 **Created**: 2025-10-15
 **Status**: Draft
-**Input**: User description: "Currently, the svelte webapp shows an svg graph with nodes and edges. When I hover over a node I highlight the current node and the predecessor and successor node. I would like to add a sidebar on top of the legend that shows details about all the predecessors (their names and which property they used to get to the current node) and all the successors (their names, and which property was used from the current node to get to the successor node)."
+**Input**: User description: "Currently, the svelte webapp shows an svg graph with nodes and edges. When I hover over a node I highlight the current node and the predecessor and successor node. I would like to add a sidebar on the bottom right corner with details about all the predecessors (their names and which property they used to get to the current node) and all the successors (their names, and which property was used from the current node to get to the successor node)."
 
 ## User Scenarios & Testing *(mandatory)*
 
@@ -40,7 +40,6 @@ As a user exploring the graph, I want to hover over any node and instantly see a
 -   **Node with no predecessors**: If a user hovers over a node with no incoming connections, the "Predecessors" section in the sidebar should be empty or display a "None" message.
 -   **Node with no successors**: If a user hovers over a node with no outgoing connections, the "Successors" section in the sidebar should be empty or display a "None" message.
 -   **Node with no connections**: If a user hovers over an isolated node, both the "Predecessors" and "Successors" sections should indicate that there are no connections.
--   **Sidebar and Legend overlap**: The feature description states the sidebar should be "on top of the legend". This could obscure the legend. The exact behavior needs to be defined.
 
 ## Requirements *(mandatory)*
 
@@ -54,7 +53,6 @@ As a user exploring the graph, I want to hover over any node and instantly see a
 -   **FR-006**: The sidebar MUST contain a section titled "Successors".
 -   **FR-007**: The "Successors" section MUST list all nodes that the hovered node has a direct connection *to*.
 -   **FR-008**: For each successor listed, the system MUST display its name and the name of the property used for the connection.
--   **FR-009**: The sidebar MUST be rendered directly above the existing legend, ensuring both elements are visible simultaneously.
 -   **FR-010**: The sidebar MUST contain a section titled "Current Node" with the label of the current node, it must be shown before the predecessors section.
 
 ### Key Entities *(include if feature involves data)*

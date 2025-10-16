@@ -16,7 +16,7 @@
 ### 1.2. Existing Codebase & Approach
 - The user has specified that this feature should be implemented entirely within the `src/pojoviz` directory.
 - The logic for the node connection details view will be encapsulated within the `Canvas` class in `src/pojoviz/renderer/d3/Canvas.js`.
-- A new method, `addNodeConnectionDetails`, will be created in the `Canvas` class, similar to the existing `addLegend` method.
+- A new method, `addNodeConnectionDetails`, will be created in the `Canvas` class.
 - Hover logic will be triggered from `src/pojoviz/renderer/d3/Node.js`.
 
 ### 1.3. Key Files for This Feature
@@ -64,7 +64,7 @@
 
 - **Manual Testing**:
     - Verify that hovering a node shows the details panel with correct predecessor/successor info.
-    - Verify that the panel is correctly positioned above the legend.
+    - Verify that the panel is correctly positioned in the lower right corner.
     - Verify that the panel hides on mouseout.
     - Test with nodes that have no predecessors, no successors, and no connections at all.
 

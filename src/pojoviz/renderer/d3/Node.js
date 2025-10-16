@@ -15,6 +15,12 @@ function Node(parent) {
     function groupMouseBehavior(type) {
       const over = type === 'over'
       return function (d, i) {
+        if (over) {
+          parent.showNodeConnectionDetails(d)
+        } else {
+          parent.hideNodeConnectionDetails()
+        }
+
         const hk = d.hashKey
         const colors = parent.legendColors
 
@@ -63,6 +69,7 @@ function Node(parent) {
       .attr('class', function (d) {
         // string,number,boolean.undefined,object,function
         // var type = d.label;
+        console.log(d)
         return [prefix('node'), prefix(d.hashKey)].join(' ')
       })
       .attr('transform', function (d) {
